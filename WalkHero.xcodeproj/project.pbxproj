@@ -3,23 +3,476 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
+
+/* Begin PBXBuildFile section */
+		CE0EB3CC260DF31B00D607C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0EB3CB260DF31B00D607C9 /* Assets.xcassets */; };
+		CE0EB3DC260DF37A00D607C9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0EB3DB260DF37A00D607C9 /* WidgetKit.framework */; };
+		CE0EB3DE260DF37A00D607C9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0EB3DD260DF37A00D607C9 /* SwiftUI.framework */; };
+		CE0EB3E1260DF37A00D607C9 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EB3E0260DF37A00D607C9 /* widget.swift */; };
+		CE0EB3E3260DF37A00D607C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0EB3E2260DF37A00D607C9 /* Assets.xcassets */; };
+		CE0EB3E7260DF37A00D607C9 /* WalkHero.widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE0EB3D9260DF37A00D607C9 /* WalkHero.widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE0EB3F1260DF38E00D607C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0EB3F0260DF38E00D607C9 /* Assets.xcassets */; };
+		CE0EB3F8260DF38E00D607C9 /* WalkHero.wrapper.watch.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE0EB3F7260DF38E00D607C9 /* WalkHero.wrapper.watch.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE0EB3FD260DF38F00D607C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EB3FC260DF38F00D607C9 /* ContentView.swift */; };
+		CE0EB3FF260DF38F00D607C9 /* WalkHeroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EB3FE260DF38F00D607C9 /* WalkHeroApp.swift */; };
+		CE0EB401260DF38F00D607C9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EB400260DF38F00D607C9 /* ComplicationController.swift */; };
+		CE0EB403260DF38F00D607C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0EB402260DF38F00D607C9 /* Assets.xcassets */; };
+		CE0EB40A260DF38F00D607C9 /* WalkHero.wrapper.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CE0EB3EE260DF38E00D607C9 /* WalkHero.wrapper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CEB1EF5B260DF9330036ECB5 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEB1EF5A260DF9330036ECB5 /* Hero */; };
+		CEB1EF62260DF9950036ECB5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF61260DF9950036ECB5 /* CloudKit.framework */; };
+		CEB1EF64260DF9BD0036ECB5 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */; };
+		CEB1EF66260DF9C10036ECB5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF65260DF9C10036ECB5 /* HealthKit.framework */; };
+		CEEA459C260DFF8E004FC710 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEEA459B260DFF8E004FC710 /* Hero */; };
+		CEEA45A0260E0709004FC710 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA459F260E0709004FC710 /* CloudKit.framework */; };
+		CEEA45A2260E0717004FC710 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA45A1260E0717004FC710 /* HealthKit.framework */; };
+		CEEA45A4260E07D0004FC710 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA45A3260E07D0004FC710 /* GameKit.framework */; };
+		CEEA45B8260E0A50004FC710 /* Detail.Steps.Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45AD260E0A50004FC710 /* Detail.Steps.Chart.swift */; };
+		CEEA45B9260E0A50004FC710 /* Detail.Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45AE260E0A50004FC710 /* Detail.Steps.swift */; };
+		CEEA45BA260E0A50004FC710 /* Challenge.Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */; };
+		CEEA45BB260E0A50004FC710 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B0260E0A50004FC710 /* App.swift */; };
+		CEEA45BC260E0A50004FC710 /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B1260E0A50004FC710 /* App.Delegate.swift */; };
+		CEEA45BD260E0A50004FC710 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B2260E0A50004FC710 /* Control.swift */; };
+		CEEA45BE260E0A50004FC710 /* Detail.Streak.Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B3260E0A50004FC710 /* Detail.Streak.Header.swift */; };
+		CEEA45BF260E0A50004FC710 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B4260E0A50004FC710 /* Detail.swift */; };
+		CEEA45C0260E0A50004FC710 /* Ephemeris.Month.Continuous.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B5260E0A50004FC710 /* Ephemeris.Month.Continuous.swift */; };
+		CEEA45C1260E0A50004FC710 /* Detail.Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B6260E0A50004FC710 /* Detail.Streak.swift */; };
+		CEEA45C2260E0A50004FC710 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B7260E0A50004FC710 /* Bar.swift */; };
+		CEEA45E7260E0A73004FC710 /* Walking.Segmented.Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45CB260E0A73004FC710 /* Walking.Segmented.Status.swift */; };
+		CEEA45E8260E0A74004FC710 /* Walking.Time.Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45CC260E0A73004FC710 /* Walking.Time.Ring.swift */; };
+		CEEA45E9260E0A74004FC710 /* Ephemeris.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45CD260E0A73004FC710 /* Ephemeris.swift */; };
+		CEEA45EA260E0A74004FC710 /* Walking.Segmented.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45CE260E0A73004FC710 /* Walking.Segmented.Item.swift */; };
+		CEEA45EB260E0A74004FC710 /* Home.Greet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45CF260E0A73004FC710 /* Home.Greet.swift */; };
+		CEEA45EC260E0A74004FC710 /* Leaderboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45D0260E0A73004FC710 /* Leaderboards.swift */; };
+		CEEA45ED260E0A74004FC710 /* Session.Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45D1260E0A73004FC710 /* Session.Section.swift */; };
+		CEEA45EE260E0A74004FC710 /* Walking.Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45D2260E0A73004FC710 /* Walking.Streak.swift */; };
+		CEEA45EF260E0A74004FC710 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45D3260E0A73004FC710 /* Window.swift */; };
+		CEEA45F0260E0A74004FC710 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45D4260E0A73004FC710 /* Game.swift */; };
+		CEEA45F1260E0A74004FC710 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45D5260E0A73004FC710 /* UIApplication.swift */; };
+		CEEA45F2260E0A74004FC710 /* Session.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45D6260E0A73004FC710 /* Session.Player.swift */; };
+		CEEA45F3260E0A74004FC710 /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45D7260E0A73004FC710 /* Walking.swift */; };
+		CEEA45F4260E0A74004FC710 /* Walking.Segmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45D8260E0A73004FC710 /* Walking.Segmented.swift */; };
+		CEEA45F5260E0A74004FC710 /* Ephemeris.Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45D9260E0A73004FC710 /* Ephemeris.Navigation.swift */; };
+		CEEA45F6260E0A74004FC710 /* Listed.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45DA260E0A73004FC710 /* Listed.Item.swift */; };
+		CEEA45F7260E0A74004FC710 /* Ephemeris.Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45DB260E0A73004FC710 /* Ephemeris.Month.swift */; };
+		CEEA45F8260E0A74004FC710 /* Leaderboards.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45DC260E0A73004FC710 /* Leaderboards.Coordinator.swift */; };
+		CEEA45F9260E0A74004FC710 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45DD260E0A73004FC710 /* Home.swift */; };
+		CEEA45FA260E0A74004FC710 /* Walking.Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45DE260E0A73004FC710 /* Walking.Time.swift */; };
+		CEEA45FB260E0A74004FC710 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45DF260E0A73004FC710 /* Metrics.swift */; };
+		CEEA45FC260E0A74004FC710 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45E0260E0A73004FC710 /* Ring.swift */; };
+		CEEA45FD260E0A74004FC710 /* Ephemeris.Month.Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45E1260E0A73004FC710 /* Ephemeris.Month.Day.swift */; };
+		CEEA45FE260E0A74004FC710 /* Shadowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45E2260E0A73004FC710 /* Shadowed.swift */; };
+		CEEA45FF260E0A74004FC710 /* Home.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45E3260E0A73004FC710 /* Home.Item.swift */; };
+		CEEA4600260E0A74004FC710 /* Walking.Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45E4260E0A73004FC710 /* Walking.Steps.swift */; };
+		CEEA4601260E0A74004FC710 /* Listed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45E5260E0A73004FC710 /* Listed.swift */; };
+		CEEA4602260E0A74004FC710 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45E6260E0A73004FC710 /* Session.swift */; };
+		CEEA460C260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */; };
+		CEEA460D260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */; };
+		CEEA460E260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */; };
+		CEEA4614260E0C7D004FC710 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA4613260E0C7D004FC710 /* Health.swift */; };
+		CEEA4615260E0C7D004FC710 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA4613260E0C7D004FC710 /* Health.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE0EB3E5260DF37A00D607C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE0EB37B260DEC0900D607C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE0EB3D8260DF37A00D607C9;
+			remoteInfo = widgetExtension;
+		};
+		CE0EB3F9260DF38E00D607C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE0EB37B260DEC0900D607C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE0EB3F6260DF38E00D607C9;
+			remoteInfo = "watch Extension";
+		};
+		CE0EB408260DF38F00D607C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE0EB37B260DEC0900D607C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE0EB3ED260DF38E00D607C9;
+			remoteInfo = watch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE0EB3EB260DF37A00D607C9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CE0EB3E7260DF37A00D607C9 /* WalkHero.widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0EB40E260DF38F00D607C9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CE0EB3F8260DF38E00D607C9 /* WalkHero.wrapper.watch.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0EB412260DF38F00D607C9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CE0EB40A260DF38F00D607C9 /* WalkHero.wrapper.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CE0EB3C4260DF31B00D607C9 /* WalkHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0EB3CB260DF31B00D607C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE0EB3D0260DF31B00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE0EB3D9260DF37A00D607C9 /* WalkHero.widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WalkHero.widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0EB3DB260DF37A00D607C9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CE0EB3DD260DF37A00D607C9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		CE0EB3E0260DF37A00D607C9 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
+		CE0EB3E2260DF37A00D607C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE0EB3E4260DF37A00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE0EB3EE260DF38E00D607C9 /* WalkHero.wrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkHero.wrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0EB3F0260DF38E00D607C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE0EB3F2260DF38E00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE0EB3F7260DF38E00D607C9 /* WalkHero.wrapper.watch.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WalkHero.wrapper.watch.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0EB3FC260DF38F00D607C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE0EB3FE260DF38F00D607C9 /* WalkHeroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkHeroApp.swift; sourceTree = "<group>"; };
+		CE0EB400260DF38F00D607C9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		CE0EB402260DF38F00D607C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE0EB407260DF38F00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEB1EF60260DF9820036ECB5 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
+		CEB1EF61260DF9950036ECB5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
+		CEB1EF65260DF9C10036ECB5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		CEEA459D260E06D6004FC710 /* WalkHero.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WalkHero.entitlements; sourceTree = "<group>"; };
+		CEEA459E260E0705004FC710 /* WalkHero.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WalkHero.entitlements; sourceTree = "<group>"; };
+		CEEA459F260E0709004FC710 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		CEEA45A1260E0717004FC710 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		CEEA45A3260E07D0004FC710 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
+		CEEA45AD260E0A50004FC710 /* Detail.Steps.Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.Steps.Chart.swift; sourceTree = "<group>"; };
+		CEEA45AE260E0A50004FC710 /* Detail.Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.Steps.swift; sourceTree = "<group>"; };
+		CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.Metadata.swift; sourceTree = "<group>"; };
+		CEEA45B0260E0A50004FC710 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		CEEA45B1260E0A50004FC710 /* App.Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
+		CEEA45B2260E0A50004FC710 /* Control.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
+		CEEA45B3260E0A50004FC710 /* Detail.Streak.Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.Streak.Header.swift; sourceTree = "<group>"; };
+		CEEA45B4260E0A50004FC710 /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		CEEA45B5260E0A50004FC710 /* Ephemeris.Month.Continuous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.Month.Continuous.swift; sourceTree = "<group>"; };
+		CEEA45B6260E0A50004FC710 /* Detail.Streak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.Streak.swift; sourceTree = "<group>"; };
+		CEEA45B7260E0A50004FC710 /* Bar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		CEEA45CB260E0A73004FC710 /* Walking.Segmented.Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walking.Segmented.Status.swift; sourceTree = "<group>"; };
+		CEEA45CC260E0A73004FC710 /* Walking.Time.Ring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walking.Time.Ring.swift; sourceTree = "<group>"; };
+		CEEA45CD260E0A73004FC710 /* Ephemeris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.swift; sourceTree = "<group>"; };
+		CEEA45CE260E0A73004FC710 /* Walking.Segmented.Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walking.Segmented.Item.swift; sourceTree = "<group>"; };
+		CEEA45CF260E0A73004FC710 /* Home.Greet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.Greet.swift; sourceTree = "<group>"; };
+		CEEA45D0260E0A73004FC710 /* Leaderboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderboards.swift; sourceTree = "<group>"; };
+		CEEA45D1260E0A73004FC710 /* Session.Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.Section.swift; sourceTree = "<group>"; };
+		CEEA45D2260E0A73004FC710 /* Walking.Streak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walking.Streak.swift; sourceTree = "<group>"; };
+		CEEA45D3260E0A73004FC710 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		CEEA45D4260E0A73004FC710 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		CEEA45D5260E0A73004FC710 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		CEEA45D6260E0A73004FC710 /* Session.Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.Player.swift; sourceTree = "<group>"; };
+		CEEA45D7260E0A73004FC710 /* Walking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
+		CEEA45D8260E0A73004FC710 /* Walking.Segmented.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walking.Segmented.swift; sourceTree = "<group>"; };
+		CEEA45D9260E0A73004FC710 /* Ephemeris.Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.Navigation.swift; sourceTree = "<group>"; };
+		CEEA45DA260E0A73004FC710 /* Listed.Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listed.Item.swift; sourceTree = "<group>"; };
+		CEEA45DB260E0A73004FC710 /* Ephemeris.Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.Month.swift; sourceTree = "<group>"; };
+		CEEA45DC260E0A73004FC710 /* Leaderboards.Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderboards.Coordinator.swift; sourceTree = "<group>"; };
+		CEEA45DD260E0A73004FC710 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		CEEA45DE260E0A73004FC710 /* Walking.Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walking.Time.swift; sourceTree = "<group>"; };
+		CEEA45DF260E0A73004FC710 /* Metrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		CEEA45E0260E0A73004FC710 /* Ring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
+		CEEA45E1260E0A73004FC710 /* Ephemeris.Month.Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.Month.Day.swift; sourceTree = "<group>"; };
+		CEEA45E2260E0A73004FC710 /* Shadowed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadowed.swift; sourceTree = "<group>"; };
+		CEEA45E3260E0A73004FC710 /* Home.Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.Item.swift; sourceTree = "<group>"; };
+		CEEA45E4260E0A73004FC710 /* Walking.Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walking.Steps.swift; sourceTree = "<group>"; };
+		CEEA45E5260E0A73004FC710 /* Listed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listed.swift; sourceTree = "<group>"; };
+		CEEA45E6260E0A73004FC710 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeDateTimeFormatter.swift; sourceTree = "<group>"; };
+		CEEA4613260E0C7D004FC710 /* Health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE0EB3C1260DF31B00D607C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB1EF64260DF9BD0036ECB5 /* GameKit.framework in Frameworks */,
+				CEB1EF66260DF9C10036ECB5 /* HealthKit.framework in Frameworks */,
+				CEB1EF5B260DF9330036ECB5 /* Hero in Frameworks */,
+				CEB1EF62260DF9950036ECB5 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0EB3D6260DF37A00D607C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0EB3DE260DF37A00D607C9 /* SwiftUI.framework in Frameworks */,
+				CE0EB3DC260DF37A00D607C9 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0EB3F4260DF38E00D607C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEEA45A2260E0717004FC710 /* HealthKit.framework in Frameworks */,
+				CEEA459C260DFF8E004FC710 /* Hero in Frameworks */,
+				CEEA45A0260E0709004FC710 /* CloudKit.framework in Frameworks */,
+				CEEA45A4260E07D0004FC710 /* GameKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		CE0EB37A260DEC0900D607C9 = {
 			isa = PBXGroup;
 			children = (
+				CE0EB3DA260DF37A00D607C9 /* Frameworks */,
+				CE0EB3C6260DF31B00D607C9 /* iOS */,
+				CE0EB3C5260DF31B00D607C9 /* Products */,
+				CE0EB413260DF3D100D607C9 /* shared */,
+				CE0EB3FB260DF38F00D607C9 /* watch */,
+				CE0EB3DF260DF37A00D607C9 /* widget */,
+				CE0EB3EF260DF38E00D607C9 /* wrapper */,
 			);
 			sourceTree = "<group>";
 		};
+		CE0EB3C5260DF31B00D607C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE0EB3C4260DF31B00D607C9 /* WalkHero.app */,
+				CE0EB3D9260DF37A00D607C9 /* WalkHero.widget.appex */,
+				CE0EB3EE260DF38E00D607C9 /* WalkHero.wrapper.app */,
+				CE0EB3F7260DF38E00D607C9 /* WalkHero.wrapper.watch.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE0EB3C6260DF31B00D607C9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEB1EF60260DF9820036ECB5 /* iOS.entitlements */,
+				CE0EB3D0260DF31B00D607C9 /* Info.plist */,
+				CEEA45B1260E0A50004FC710 /* App.Delegate.swift */,
+				CEEA45B0260E0A50004FC710 /* App.swift */,
+				CEEA45B7260E0A50004FC710 /* Bar.swift */,
+				CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */,
+				CEEA45B2260E0A50004FC710 /* Control.swift */,
+				CEEA45AD260E0A50004FC710 /* Detail.Steps.Chart.swift */,
+				CEEA45AE260E0A50004FC710 /* Detail.Steps.swift */,
+				CEEA45B3260E0A50004FC710 /* Detail.Streak.Header.swift */,
+				CEEA45B6260E0A50004FC710 /* Detail.Streak.swift */,
+				CEEA45B4260E0A50004FC710 /* Detail.swift */,
+				CEEA45B5260E0A50004FC710 /* Ephemeris.Month.Continuous.swift */,
+				CEEA45E1260E0A73004FC710 /* Ephemeris.Month.Day.swift */,
+				CEEA45DB260E0A73004FC710 /* Ephemeris.Month.swift */,
+				CEEA45D9260E0A73004FC710 /* Ephemeris.Navigation.swift */,
+				CEEA45CD260E0A73004FC710 /* Ephemeris.swift */,
+				CEEA45D4260E0A73004FC710 /* Game.swift */,
+				CEEA45CF260E0A73004FC710 /* Home.Greet.swift */,
+				CEEA45E3260E0A73004FC710 /* Home.Item.swift */,
+				CEEA45DD260E0A73004FC710 /* Home.swift */,
+				CEEA45DC260E0A73004FC710 /* Leaderboards.Coordinator.swift */,
+				CEEA45D0260E0A73004FC710 /* Leaderboards.swift */,
+				CEEA45DA260E0A73004FC710 /* Listed.Item.swift */,
+				CEEA45E5260E0A73004FC710 /* Listed.swift */,
+				CEEA45DF260E0A73004FC710 /* Metrics.swift */,
+				CEEA45E0260E0A73004FC710 /* Ring.swift */,
+				CEEA45D6260E0A73004FC710 /* Session.Player.swift */,
+				CEEA45D1260E0A73004FC710 /* Session.Section.swift */,
+				CEEA45E6260E0A73004FC710 /* Session.swift */,
+				CEEA45E2260E0A73004FC710 /* Shadowed.swift */,
+				CEEA45D5260E0A73004FC710 /* UIApplication.swift */,
+				CEEA45CE260E0A73004FC710 /* Walking.Segmented.Item.swift */,
+				CEEA45CB260E0A73004FC710 /* Walking.Segmented.Status.swift */,
+				CEEA45D8260E0A73004FC710 /* Walking.Segmented.swift */,
+				CEEA45E4260E0A73004FC710 /* Walking.Steps.swift */,
+				CEEA45D2260E0A73004FC710 /* Walking.Streak.swift */,
+				CEEA45D7260E0A73004FC710 /* Walking.swift */,
+				CEEA45CC260E0A73004FC710 /* Walking.Time.Ring.swift */,
+				CEEA45DE260E0A73004FC710 /* Walking.Time.swift */,
+				CEEA45D3260E0A73004FC710 /* Window.swift */,
+				CE0EB3CB260DF31B00D607C9 /* Assets.xcassets */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		CE0EB3DA260DF37A00D607C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEEA459F260E0709004FC710 /* CloudKit.framework */,
+				CEB1EF61260DF9950036ECB5 /* CloudKit.framework */,
+				CEEA45A3260E07D0004FC710 /* GameKit.framework */,
+				CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */,
+				CEEA45A1260E0717004FC710 /* HealthKit.framework */,
+				CEB1EF65260DF9C10036ECB5 /* HealthKit.framework */,
+				CE0EB3DD260DF37A00D607C9 /* SwiftUI.framework */,
+				CE0EB3DB260DF37A00D607C9 /* WidgetKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE0EB3DF260DF37A00D607C9 /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				CEEA459D260E06D6004FC710 /* WalkHero.entitlements */,
+				CE0EB3E0260DF37A00D607C9 /* widget.swift */,
+				CE0EB3E2260DF37A00D607C9 /* Assets.xcassets */,
+				CE0EB3E4260DF37A00D607C9 /* Info.plist */,
+			);
+			path = widget;
+			sourceTree = "<group>";
+		};
+		CE0EB3EF260DF38E00D607C9 /* wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				CE0EB3F0260DF38E00D607C9 /* Assets.xcassets */,
+				CE0EB3F2260DF38E00D607C9 /* Info.plist */,
+			);
+			path = wrapper;
+			sourceTree = "<group>";
+		};
+		CE0EB3FB260DF38F00D607C9 /* watch */ = {
+			isa = PBXGroup;
+			children = (
+				CEEA459E260E0705004FC710 /* WalkHero.entitlements */,
+				CE0EB3FC260DF38F00D607C9 /* ContentView.swift */,
+				CE0EB3FE260DF38F00D607C9 /* WalkHeroApp.swift */,
+				CE0EB400260DF38F00D607C9 /* ComplicationController.swift */,
+				CE0EB402260DF38F00D607C9 /* Assets.xcassets */,
+				CE0EB407260DF38F00D607C9 /* Info.plist */,
+			);
+			path = watch;
+			sourceTree = "<group>";
+		};
+		CE0EB413260DF3D100D607C9 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				CEEA4613260E0C7D004FC710 /* Health.swift */,
+				CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE0EB3C3260DF31B00D607C9 /* iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE0EB3D3260DF31B00D607C9 /* Build configuration list for PBXNativeTarget "iOS" */;
+			buildPhases = (
+				CE0EB3C0260DF31B00D607C9 /* Sources */,
+				CE0EB3C1260DF31B00D607C9 /* Frameworks */,
+				CE0EB3C2260DF31B00D607C9 /* Resources */,
+				CE0EB3EB260DF37A00D607C9 /* Embed App Extensions */,
+				CE0EB412260DF38F00D607C9 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE0EB3E6260DF37A00D607C9 /* PBXTargetDependency */,
+				CE0EB409260DF38F00D607C9 /* PBXTargetDependency */,
+			);
+			name = iOS;
+			packageProductDependencies = (
+				CEB1EF5A260DF9330036ECB5 /* Hero */,
+			);
+			productName = iOS;
+			productReference = CE0EB3C4260DF31B00D607C9 /* WalkHero.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE0EB3D8260DF37A00D607C9 /* widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE0EB3E8260DF37A00D607C9 /* Build configuration list for PBXNativeTarget "widget" */;
+			buildPhases = (
+				CE0EB3D5260DF37A00D607C9 /* Sources */,
+				CE0EB3D6260DF37A00D607C9 /* Frameworks */,
+				CE0EB3D7260DF37A00D607C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widget;
+			productName = widgetExtension;
+			productReference = CE0EB3D9260DF37A00D607C9 /* WalkHero.widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		CE0EB3ED260DF38E00D607C9 /* wrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE0EB40F260DF38F00D607C9 /* Build configuration list for PBXNativeTarget "wrapper" */;
+			buildPhases = (
+				CE0EB3EC260DF38E00D607C9 /* Resources */,
+				CE0EB40E260DF38F00D607C9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE0EB3FA260DF38E00D607C9 /* PBXTargetDependency */,
+			);
+			name = wrapper;
+			productName = watch;
+			productReference = CE0EB3EE260DF38E00D607C9 /* WalkHero.wrapper.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CE0EB3F6260DF38E00D607C9 /* watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE0EB40B260DF38F00D607C9 /* Build configuration list for PBXNativeTarget "watch" */;
+			buildPhases = (
+				CE0EB3F3260DF38E00D607C9 /* Sources */,
+				CE0EB3F4260DF38E00D607C9 /* Frameworks */,
+				CE0EB3F5260DF38E00D607C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = watch;
+			packageProductDependencies = (
+				CEEA459B260DFF8E004FC710 /* Hero */,
+			);
+			productName = "watch Extension";
+			productReference = CE0EB3F7260DF38E00D607C9 /* WalkHero.wrapper.watch.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		CE0EB37B260DEC0900D607C9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					CE0EB3C3260DF31B00D607C9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CE0EB3D8260DF37A00D607C9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CE0EB3ED260DF38E00D607C9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CE0EB3F6260DF38E00D607C9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
 			};
 			buildConfigurationList = CE0EB37E260DEC0900D607C9 /* Build configuration list for PBXProject "WalkHero" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -30,23 +483,706 @@
 				Base,
 			);
 			mainGroup = CE0EB37A260DEC0900D607C9;
+			packageReferences = (
+				CEB1EF59260DF9330036ECB5 /* XCRemoteSwiftPackageReference "hero" */,
+			);
+			productRefGroup = CE0EB3C5260DF31B00D607C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				CE0EB3C3260DF31B00D607C9 /* iOS */,
+				CE0EB3D8260DF37A00D607C9 /* widget */,
+				CE0EB3F6260DF38E00D607C9 /* watch */,
+				CE0EB3ED260DF38E00D607C9 /* wrapper */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE0EB3C2260DF31B00D607C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0EB3CC260DF31B00D607C9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0EB3D7260DF37A00D607C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0EB3E3260DF37A00D607C9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0EB3EC260DF38E00D607C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0EB3F1260DF38E00D607C9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0EB3F5260DF38E00D607C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0EB403260DF38F00D607C9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE0EB3C0260DF31B00D607C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEEA45E9260E0A74004FC710 /* Ephemeris.swift in Sources */,
+				CEEA45B9260E0A50004FC710 /* Detail.Steps.swift in Sources */,
+				CEEA45C2260E0A50004FC710 /* Bar.swift in Sources */,
+				CEEA45F5260E0A74004FC710 /* Ephemeris.Navigation.swift in Sources */,
+				CEEA45F2260E0A74004FC710 /* Session.Player.swift in Sources */,
+				CEEA45EA260E0A74004FC710 /* Walking.Segmented.Item.swift in Sources */,
+				CEEA45FE260E0A74004FC710 /* Shadowed.swift in Sources */,
+				CEEA460C260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
+				CEEA45F7260E0A74004FC710 /* Ephemeris.Month.swift in Sources */,
+				CEEA45F3260E0A74004FC710 /* Walking.swift in Sources */,
+				CEEA45BA260E0A50004FC710 /* Challenge.Metadata.swift in Sources */,
+				CEEA45EE260E0A74004FC710 /* Walking.Streak.swift in Sources */,
+				CEEA45C1260E0A50004FC710 /* Detail.Streak.swift in Sources */,
+				CEEA45BF260E0A50004FC710 /* Detail.swift in Sources */,
+				CEEA45BD260E0A50004FC710 /* Control.swift in Sources */,
+				CEEA45E7260E0A73004FC710 /* Walking.Segmented.Status.swift in Sources */,
+				CEEA45EB260E0A74004FC710 /* Home.Greet.swift in Sources */,
+				CEEA4601260E0A74004FC710 /* Listed.swift in Sources */,
+				CEEA45F6260E0A74004FC710 /* Listed.Item.swift in Sources */,
+				CEEA45EF260E0A74004FC710 /* Window.swift in Sources */,
+				CEEA45BB260E0A50004FC710 /* App.swift in Sources */,
+				CEEA4602260E0A74004FC710 /* Session.swift in Sources */,
+				CEEA45E8260E0A74004FC710 /* Walking.Time.Ring.swift in Sources */,
+				CEEA45FF260E0A74004FC710 /* Home.Item.swift in Sources */,
+				CEEA45F8260E0A74004FC710 /* Leaderboards.Coordinator.swift in Sources */,
+				CEEA45FD260E0A74004FC710 /* Ephemeris.Month.Day.swift in Sources */,
+				CEEA45F1260E0A74004FC710 /* UIApplication.swift in Sources */,
+				CEEA45FA260E0A74004FC710 /* Walking.Time.swift in Sources */,
+				CEEA4600260E0A74004FC710 /* Walking.Steps.swift in Sources */,
+				CEEA45EC260E0A74004FC710 /* Leaderboards.swift in Sources */,
+				CEEA45F9260E0A74004FC710 /* Home.swift in Sources */,
+				CEEA45F4260E0A74004FC710 /* Walking.Segmented.swift in Sources */,
+				CEEA45ED260E0A74004FC710 /* Session.Section.swift in Sources */,
+				CEEA45F0260E0A74004FC710 /* Game.swift in Sources */,
+				CEEA45C0260E0A50004FC710 /* Ephemeris.Month.Continuous.swift in Sources */,
+				CEEA45B8260E0A50004FC710 /* Detail.Steps.Chart.swift in Sources */,
+				CEEA45BC260E0A50004FC710 /* App.Delegate.swift in Sources */,
+				CEEA45BE260E0A50004FC710 /* Detail.Streak.Header.swift in Sources */,
+				CEEA45FC260E0A74004FC710 /* Ring.swift in Sources */,
+				CEEA4614260E0C7D004FC710 /* Health.swift in Sources */,
+				CEEA45FB260E0A74004FC710 /* Metrics.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0EB3D5260DF37A00D607C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0EB3E1260DF37A00D607C9 /* widget.swift in Sources */,
+				CEEA460D260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0EB3F3260DF38E00D607C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0EB3FF260DF38F00D607C9 /* WalkHeroApp.swift in Sources */,
+				CE0EB3FD260DF38F00D607C9 /* ContentView.swift in Sources */,
+				CE0EB401260DF38F00D607C9 /* ComplicationController.swift in Sources */,
+				CEEA4615260E0C7D004FC710 /* Health.swift in Sources */,
+				CEEA460E260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE0EB3E6260DF37A00D607C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE0EB3D8260DF37A00D607C9 /* widget */;
+			targetProxy = CE0EB3E5260DF37A00D607C9 /* PBXContainerItemProxy */;
+		};
+		CE0EB3FA260DF38E00D607C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE0EB3F6260DF38E00D607C9 /* watch */;
+			targetProxy = CE0EB3F9260DF38E00D607C9 /* PBXContainerItemProxy */;
+		};
+		CE0EB409260DF38F00D607C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE0EB3ED260DF38E00D607C9 /* wrapper */;
+			targetProxy = CE0EB408260DF38F00D607C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CE0EB37F260DEC0900D607C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = "$(MARKETING_VERSION)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1;
+				PRODUCT_NAME = WalkHero;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
 		CE0EB380260DEC0900D607C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = "$(MARKETING_VERSION)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1;
+				PRODUCT_NAME = WalkHero;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		CE0EB3D1260DF31B00D607C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = walkhero;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE0EB3D2260DF31B00D607C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = walkhero;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE0EB3E9260DF37A00D607C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = widget/WalkHero.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = walkhero.widget;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = WalkHero.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE0EB3EA260DF37A00D607C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = widget/WalkHero.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = walkhero.widget;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = WalkHero.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE0EB40C260DF38F00D607C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = watch/WalkHero.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = walkhero.wrapper.watch;
+				PRODUCT_NAME = WalkHero.wrapper.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		CE0EB40D260DF38F00D607C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = watch/WalkHero.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = walkhero.wrapper.watch;
+				PRODUCT_NAME = WalkHero.wrapper.watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE0EB410260DF38F00D607C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBSC_MODULE = watch_Extension;
+				INFOPLIST_FILE = wrapper/Info.plist;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = walkhero.wrapper;
+				PRODUCT_NAME = WalkHero.wrapper;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		CE0EB411260DF38F00D607C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7AMWG3RLHN;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBSC_MODULE = watch_Extension;
+				INFOPLIST_FILE = wrapper/Info.plist;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = walkhero.wrapper;
+				PRODUCT_NAME = WalkHero.wrapper;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -62,7 +1198,67 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		CE0EB3D3260DF31B00D607C9 /* Build configuration list for PBXNativeTarget "iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0EB3D1260DF31B00D607C9 /* Debug */,
+				CE0EB3D2260DF31B00D607C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE0EB3E8260DF37A00D607C9 /* Build configuration list for PBXNativeTarget "widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0EB3E9260DF37A00D607C9 /* Debug */,
+				CE0EB3EA260DF37A00D607C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE0EB40B260DF38F00D607C9 /* Build configuration list for PBXNativeTarget "watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0EB40C260DF38F00D607C9 /* Debug */,
+				CE0EB40D260DF38F00D607C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE0EB40F260DF38F00D607C9 /* Build configuration list for PBXNativeTarget "wrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0EB410260DF38F00D607C9 /* Debug */,
+				CE0EB411260DF38F00D607C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEB1EF59260DF9330036ECB5 /* XCRemoteSwiftPackageReference "hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/walkhero/hero.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEB1EF5A260DF9330036ECB5 /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEB1EF59260DF9330036ECB5 /* XCRemoteSwiftPackageReference "hero" */;
+			productName = Hero;
+		};
+		CEEA459B260DFF8E004FC710 /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEB1EF59260DF9330036ECB5 /* XCRemoteSwiftPackageReference "hero" */;
+			productName = Hero;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE0EB37B260DEC0900D607C9 /* Project object */;
 }
