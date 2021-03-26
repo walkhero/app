@@ -5,6 +5,7 @@ import Hero
 extension App {
     final class Delegate: NSObject, UIApplicationDelegate {
         func application(_ application: UIApplication, willFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+            application.registerForRemoteNotifications()
             Memory.shared.load()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -19,6 +20,11 @@ extension App {
             }
             
             return true
+        }
+        
+        func application(_: UIApplication, didReceiveRemoteNotification: [AnyHashable : Any], fetchCompletionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+            Memory.shared.fetch()
+            fetchCompletionHandler(.newData)
         }
     }
 }

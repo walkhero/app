@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE0EB3ED260DF38E00D607C9"
-               BuildableName = "wrapper.app"
+               BuildableName = "WalkHero.wrapper.app"
                BlueprintName = "wrapper"
                ReferencedContainer = "container:WalkHero.xcodeproj">
             </BuildableReference>
