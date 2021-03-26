@@ -14,7 +14,7 @@ extension Home {
                     ZStack {
                         Circle()
                             .fill(LinearGradient(
-                                    gradient: .init(colors: [.pink, .init(.systemIndigo)]),
+                                    gradient: .init(colors: [.init(.systemIndigo), .pink]),
                                     startPoint: .topLeading,
                                     endPoint: .bottom))
                             .frame(width: 100, height: 100)
@@ -26,21 +26,20 @@ extension Home {
                             Image(uiImage: session.player.image!)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 90, height: 90)
+                                .frame(width: 94, height: 94)
                                 .clipShape(Circle())
                         }
                     }
                     Text(verbatim: session.player.name)
-                        .font(Font.title3)
-                        .fontWeight(.medium)
+                        .font(Font.title2.bold())
                         .padding(.horizontal)
                         .padding(.top, 5)
                         .id(session.player.name)
                     Label(session.archive.last == nil
                             ? "New Hero"
                             : session.relative.string(from: session.archive.last!.end, to: .init()), systemImage: "figure.walk")
-                        .foregroundColor(.secondary)
-                        .font(.callout)
+                        .foregroundColor(.primary)
+                        .font(.footnote)
                         .padding(.horizontal)
                 }
             }
