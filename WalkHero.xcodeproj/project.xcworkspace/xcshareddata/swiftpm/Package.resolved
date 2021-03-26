@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Hero",
+        "repositoryURL": "https://github.com/walkhero/hero.git",
+        "state": {
+          "branch": "main",
+          "revision": "eeea39fa7c7b45476a7a66b41230c72a6df9701d",
+          "version": null
+        }
+      },
+      {
+        "package": "Archivable",
+        "repositoryURL": "https://github.com/archivable/package.git",
+        "state": {
+          "branch": "main",
+          "revision": "9c14c1fe1f0d05b8c5b1cc5be9019c0a97457d21",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
