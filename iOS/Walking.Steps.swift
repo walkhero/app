@@ -40,7 +40,7 @@ extension Walking {
                     }
                 }
             }
-            .frame(maxWidth: 200, maxHeight: 200)
+            .frame(width: 250, height: 250)
             Spacer()
                 .onAppear {
                     max = session.archive.maxSteps
