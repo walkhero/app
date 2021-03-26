@@ -37,7 +37,7 @@ extension Home {
                         .padding(.top, 5)
                         .id(session.player.name)
                     Label(session.archive.last == nil
-                            ? "New player"
+                            ? "New Hero"
                             : session.relative.string(from: session.archive.last!.end, to: .init()), systemImage: "figure.walk")
                         .foregroundColor(.secondary)
                         .font(.callout)

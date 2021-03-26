@@ -63,6 +63,6 @@ extension Challenge {
     }
     
     var leaderboard: String {
-        "walksmith.\(self)"
+        "\(self)"
     }
 }

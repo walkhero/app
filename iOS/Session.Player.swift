@@ -1,6 +1,6 @@
 import UIKit
 
 struct Player {
-    var name = "Player"
+    var name = "Hero"
     var image: UIImage?
 }
