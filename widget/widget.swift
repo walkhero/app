@@ -1,10 +1,3 @@
-//
-//  widget.swift
-//  widget
-//
-//  Created by vaux on 26.03.21.
-//
-
 import WidgetKit
 import SwiftUI
 
@@ -56,12 +49,5 @@ struct widget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-    }
-}
-
-struct widget_Previews: PreviewProvider {
-    static var previews: some View {
-        widgetEntryView(entry: SimpleEntry(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
