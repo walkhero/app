@@ -5,7 +5,7 @@ extension Walking {
     struct Steps: View {
         @Binding var session: Session
         @Binding var steps: Int
-        @State private var max = 0
+        @State private var maximum = 1
         
         var body: some View {
             Text("STEPS")
@@ -14,7 +14,7 @@ extension Walking {
             ZStack {
                 Ring(percent: 1)
                     .stroke(Color.blue.opacity(0.2), lineWidth: 25)
-                Ring(percent: max == 0 ? 0 : .init(steps % max) / .init(max))
+                Ring(percent: .init(steps % maximum) / .init(maximum))
                     .stroke(LinearGradient(
                                 gradient: .init(colors: [.init(.systemIndigo), .blue]),
                                 startPoint: .top,
@@ -25,13 +25,13 @@ extension Walking {
                     Text(NSNumber(value: steps), formatter: session.decimal)
                         .font(Font.largeTitle.bold())
                         .padding(.horizontal)
-                    if max > 0 {
-                        Text(NSNumber(value: max), formatter: session.decimal)
+                    if maximum > Metrics.steps.min {
+                        Text(NSNumber(value: maximum), formatter: session.decimal)
                             .font(.title3)
                             .foregroundColor(.secondary)
-                        if steps > max {
+                        if steps > maximum {
                             Group {
-                                Text(NSNumber(value: steps / max), formatter: session.decimal) +
+                                Text(NSNumber(value: steps / maximum), formatter: session.decimal) +
                                 Text(verbatim: "x")
                             }
                             .font(Font.title.bold())
@@ -43,7 +43,7 @@ extension Walking {
             .frame(width: 250, height: 250)
             Spacer()
                 .onAppear {
-                    max = session.archive.maxSteps
+                    maximum = max(session.archive.maxSteps, Metrics.steps.min)
                 }
         }
     }

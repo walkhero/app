@@ -12,9 +12,8 @@ extension Detail.Streak {
                     .frame(width: Metrics.streak.header.width)
                 Text(NSNumber(value: streak.current), formatter: session.decimal)
                     .frame(width: Metrics.streak.header.width)
-                Image(systemName: today ? "checkmark.circle.fill" : "slash.circle")
+                Image(systemName: today ? "checkmark.circle.fill" : "exclamationmark.square.fill")
                     .font(.title2)
-                    .foregroundColor(today ? .primary : .init(.tertiaryLabel))
                     .frame(width: Metrics.streak.header.width)
             }
             .padding(.top, 10)

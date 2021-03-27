@@ -12,16 +12,12 @@ extension Walking {
             Spacer()
             ZStack {
                 Ring(indicator: indicator, center: .init(x: 80, y: 2))
-                Circle()
-                    .fill(Color.accentColor)
-                    .frame(width: 100, height: 100)
                 VStack {
                     Image(systemName: "figure.walk")
                         .font(.title2)
                     Text(verbatim: counter)
-                        .font(Font.body.bold().monospacedDigit())
+                        .font(Font.title3.bold().monospacedDigit())
                 }
-                .foregroundColor(.black)
             }
             .frame(width: 160, height: 160)
             Spacer()

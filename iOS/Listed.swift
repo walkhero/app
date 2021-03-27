@@ -1,7 +1,9 @@
 import SwiftUI
+import Hero
 
 struct Listed: View {
     @Binding var session: Session
+    let list: [Walk.Listed]
     
     var body: some View {
         VStack(spacing: 0) {
@@ -24,19 +26,29 @@ struct Listed: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color(.secondarySystemBackground))
-                ScrollView {
-                    VStack(spacing: 0) {
-                        Spacer()
-                            .frame(height: 5)
-                        ForEach(session.archive.list, id: \.self) {
-                            Item(session: $session, item: $0)
-                            Rectangle()
-                                .fill(Color(.tertiarySystemBackground))
-                                .frame(height: 1)
-                                .padding(.horizontal)
+                if list.isEmpty {
+                    VStack {
+                        Image("world")
+                        Text("Ready to start\nyour first walk")
+                            .font(.callout)
+                            .multilineTextAlignment(.center)
+                            .padding(.top)
+                    }
+                } else {
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            Spacer()
+                                .frame(height: 5)
+                            ForEach(list, id: \.self) {
+                                Item(session: $session, item: $0)
+                                Rectangle()
+                                    .fill(Color(.tertiarySystemBackground))
+                                    .frame(height: 1)
+                                    .padding(.horizontal)
+                            }
+                            Spacer()
+                                .frame(height: 5)
                         }
-                        Spacer()
-                            .frame(height: 5)
                     }
                 }
             }

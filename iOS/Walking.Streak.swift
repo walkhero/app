@@ -10,20 +10,29 @@ extension Walking {
             Text("STREAK")
                 .font(.headline)
             Spacer()
-            Text(NSNumber(value: streak.maximum), formatter: session.decimal)
-                .font(Font.title.bold())
-            HStack {
-                Text("Max")
+            ZStack {
+                Circle()
+                    .fill(Challenge.streak.background)
                 Text(NSNumber(value: streak.current), formatter: session.decimal)
+                    .font(Font.title.bold())
+                    .foregroundColor(.white)
+                    .padding()
             }
-            .font(.title3)
-            .foregroundColor(.secondary)
+            .fixedSize()
+            if streak.maximum > streak.current {
+                HStack {
+                    Text("Max")
+                    Text(NSNumber(value: streak.maximum), formatter: session.decimal)
+                }
+                .font(.title3)
+                .foregroundColor(.secondary)
+            }
             ZStack {
                 Bar(percent: 1)
                     .stroke(Color(.secondarySystemBackground), style: .init(lineWidth: 8, lineCap: .round))
                 Bar(percent: streak.maximum == 0 ? 0 : .init(streak.current) / .init(streak.maximum))
                     .stroke(LinearGradient(
-                                gradient: .init(colors: [.blue, .init(.systemIndigo)]),
+                                gradient: .init(colors: [.pink, .init(.systemIndigo)]),
                                 startPoint: .leading,
                                 endPoint: .trailing), style: .init(lineWidth: 8, lineCap: .round))
             }

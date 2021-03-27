@@ -16,11 +16,11 @@ extension Walking.Time {
                                                                                 ? 5
                                                                                 : 12)))
                     }
-                    .stroke(Color.accentColor, style: .init(lineWidth: index == indicator
+                    .stroke(Color.pink, style: .init(lineWidth: index == indicator
                                                                 ? 10
                                                                 : index < indicator
                                                                     ? 3
-                                                                    : 1, lineCap: .round))
+                                                                    : 0.5, lineCap: .round))
                     .rotationEffect(.degrees(.init(index * 6)))
                 }
             }

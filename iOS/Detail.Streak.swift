@@ -13,8 +13,12 @@ extension Detail {
             if let year = calendar.last {
                 Ephemeris(session: $session, index: year.months.count - 1, year: year)
             } else {
-                Image(systemName: "figure.walk")
+                Image(systemName: Challenge.streak.symbol)
                     .font(.largeTitle)
+                Text("Ready to start\nyour streak")
+                    .font(.callout)
+                    .multilineTextAlignment(.center)
+                    .padding(.top)
             }
         }
     }

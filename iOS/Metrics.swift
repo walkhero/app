@@ -7,6 +7,10 @@ struct Metrics {
         }
     }
     
+    struct steps {
+        static let min = 100
+    }
+    
     struct calendar {
         struct day {
             static let size = CGFloat(45)

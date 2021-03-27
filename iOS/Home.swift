@@ -6,8 +6,9 @@ struct Home: View {
     
     var body: some View {
         VStack {
+            Spacer()
             Greet(session: $session)
-                .padding(.top, 40)
+            Spacer()
             Button {
                 withAnimation(.spring(blendDuration: 0.4)) {
                     session.archive.start()
@@ -26,7 +27,6 @@ struct Home: View {
                 }
                 .frame(width: 40, height: 40)
             }
-            .padding(.top, 40)
             Spacer()
             ForEach(Challenge.allCases, id: \.self) { challenge in
                 Item(session: $session, challenge: challenge)

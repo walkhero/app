@@ -63,6 +63,12 @@ struct Detail: View {
                 }
             } else {
                 Spacer()
+                Image(systemName: challenge.symbol)
+                    .font(.largeTitle)
+                Text("New Challenge")
+                    .font(.callout)
+                    .padding(.top)
+                Spacer()
                 Control(title: "START", gradient: challenge.background) {
                     session.health.request(challenge) {
                         withAnimation(.easeInOut(duration: 0.3)) {
