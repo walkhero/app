@@ -11,6 +11,10 @@ struct Metrics {
         static let min = 100
     }
     
+    struct distance {
+        static let min = 1000
+    }
+    
     struct calendar {
         struct day {
             static let size = CGFloat(45)

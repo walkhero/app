@@ -14,6 +14,7 @@ struct Session {
     let monther = DateFormatter()
     let weeker = DateFormatter()
     let decimal = NumberFormatter()
+    let measures = MeasurementFormatter()
     
     init() {
         components.allowedUnits = [.minute, .second]
@@ -24,5 +25,9 @@ struct Session {
         weeker.dateFormat = "EEEEE"
         
         decimal.numberStyle = .decimal
+        
+        measures.unitStyle = .long
+        measures.unitOptions = .naturalScale
+        measures.numberFormatter.maximumFractionDigits = 1
     }
 }

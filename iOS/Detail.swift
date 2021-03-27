@@ -70,15 +70,23 @@ struct Detail: View {
                     .padding(.top)
                 Spacer()
                 Control(title: "START", gradient: challenge.background) {
-                    session.health.request(challenge) {
-                        withAnimation(.easeInOut(duration: 0.3)) {
-                            session.archive.start(challenge)
+                    switch challenge {
+                    case .steps, .distance:
+                        session.health.request(challenge) {
+                            start()
                         }
+                    default: break
                     }
                 }
             }
             Spacer()
                 .frame(height: 30)
+        }
+    }
+    
+    private func start() {
+        withAnimation(.easeInOut(duration: 0.3)) {
+            session.archive.start(challenge)
         }
     }
 }

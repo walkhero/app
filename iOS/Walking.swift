@@ -6,6 +6,7 @@ struct Walking: View {
     @State private var challenge: Challenge?
     @State private var disabled = false
     @State private var steps = 0
+    @State private var metres = 0
     
     var body: some View {
         VStack {
@@ -17,6 +18,8 @@ struct Walking: View {
                 Streak(session: $session)
             case .steps:
                 Steps(session: $session, steps: $steps)
+            case .distance:
+                Distance(session: $session, metres: $metres)
             default:
                 Time(session: $session)
             }
@@ -26,13 +29,16 @@ struct Walking: View {
                         startPoint: .leading,
                         endPoint: .trailing)) {
                 disabled = true
-                session.archive.end(steps: steps)
+                session.archive.end(steps: steps, metres: metres)
                 DispatchQueue.global(qos: .utility).async {
                     if session.archive.enrolled(.streak) {
                         session.game.submit(.streak, session.archive.calendar.streak.current)
                     }
                     if session.archive.enrolled(.steps) {
                         session.game.submit(.steps, steps)
+                    }
+                    if session.archive.enrolled(.distance) {
+                        session.game.submit(.distance, metres)
                     }
                 }
             }
@@ -55,8 +61,12 @@ struct Walking: View {
         .onReceive(session.health.steps.receive(on: DispatchQueue.main)) {
             steps = $0
         }
+        .onReceive(session.health.distance.receive(on: DispatchQueue.main)) {
+            metres = $0
+        }
         .onAppear {
             session.health.steps(session.archive)
+            session.health.distance(session.archive)
         }
         .onDisappear(perform: session.health.clear)
     }
