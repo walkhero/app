@@ -44,9 +44,9 @@ struct Detail: View {
                     let calendar = session.archive.calendar
                     Streak(session: $session, calendar: calendar, streak: calendar.streak)
                 case .steps:
-                    Steps(session: $session, steps: session.archive.steps, max: session.archive.maxSteps)
+                    Chart(session: $session, steps: session.archive.steps, max: session.archive.maxSteps)
                 case .distance:
-                    Text("")
+                    Chart(session: $session, steps: session.archive.metres, max: session.archive.maxMetres)
                 case .map:
                     Text("")
                 }

@@ -1,7 +1,7 @@
 import SwiftUI
 
-extension Detail.Steps {
-    struct Chart: View {
+extension Chart {
+    struct Display: View {
         let values: [Double]
         
         var body: some View {

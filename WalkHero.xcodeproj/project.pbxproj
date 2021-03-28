@@ -18,6 +18,7 @@
 		CE0EB3FF260DF38F00D607C9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EB3FE260DF38F00D607C9 /* App.swift */; };
 		CE0EB40A260DF38F00D607C9 /* WalkHero.wrapper.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CE0EB3EE260DF38E00D607C9 /* WalkHero.wrapper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE4E8C73260F6E2900480453 /* Walking.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E8C72260F6E2900480453 /* Walking.Distance.swift */; };
+		CE6E0A3C26108D3700A8D81B /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E0A3B26108D3700A8D81B /* Chart.swift */; };
 		CEB1EF5B260DF9330036ECB5 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEB1EF5A260DF9330036ECB5 /* Hero */; };
 		CEB1EF62260DF9950036ECB5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF61260DF9950036ECB5 /* CloudKit.framework */; };
 		CEB1EF64260DF9BD0036ECB5 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */; };
@@ -26,8 +27,7 @@
 		CEEA45A0260E0709004FC710 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA459F260E0709004FC710 /* CloudKit.framework */; };
 		CEEA45A2260E0717004FC710 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA45A1260E0717004FC710 /* HealthKit.framework */; };
 		CEEA45A4260E07D0004FC710 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA45A3260E07D0004FC710 /* GameKit.framework */; };
-		CEEA45B8260E0A50004FC710 /* Detail.Steps.Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45AD260E0A50004FC710 /* Detail.Steps.Chart.swift */; };
-		CEEA45B9260E0A50004FC710 /* Detail.Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45AE260E0A50004FC710 /* Detail.Steps.swift */; };
+		CEEA45B8260E0A50004FC710 /* Chart.Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45AD260E0A50004FC710 /* Chart.Display.swift */; };
 		CEEA45BA260E0A50004FC710 /* Challenge.Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */; };
 		CEEA45BB260E0A50004FC710 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B0260E0A50004FC710 /* App.swift */; };
 		CEEA45BC260E0A50004FC710 /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B1260E0A50004FC710 /* App.Delegate.swift */; };
@@ -149,6 +149,7 @@
 		CE0EB3FE260DF38F00D607C9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CE0EB407260DF38F00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4E8C72260F6E2900480453 /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
+		CE6E0A3B26108D3700A8D81B /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		CEB1EF60260DF9820036ECB5 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CEB1EF61260DF9950036ECB5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -158,8 +159,7 @@
 		CEEA459F260E0709004FC710 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEEA45A1260E0717004FC710 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEEA45A3260E07D0004FC710 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
-		CEEA45AD260E0A50004FC710 /* Detail.Steps.Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.Steps.Chart.swift; sourceTree = "<group>"; };
-		CEEA45AE260E0A50004FC710 /* Detail.Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.Steps.swift; sourceTree = "<group>"; };
+		CEEA45AD260E0A50004FC710 /* Chart.Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.Display.swift; sourceTree = "<group>"; };
 		CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.Metadata.swift; sourceTree = "<group>"; };
 		CEEA45B0260E0A50004FC710 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CEEA45B1260E0A50004FC710 /* App.Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
@@ -269,9 +269,9 @@
 				CEEA45B0260E0A50004FC710 /* App.swift */,
 				CEEA45B7260E0A50004FC710 /* Bar.swift */,
 				CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */,
+				CEEA45AD260E0A50004FC710 /* Chart.Display.swift */,
+				CE6E0A3B26108D3700A8D81B /* Chart.swift */,
 				CEEA45B2260E0A50004FC710 /* Control.swift */,
-				CEEA45AD260E0A50004FC710 /* Detail.Steps.Chart.swift */,
-				CEEA45AE260E0A50004FC710 /* Detail.Steps.swift */,
 				CEEA45B3260E0A50004FC710 /* Detail.Streak.Header.swift */,
 				CEEA45B6260E0A50004FC710 /* Detail.Streak.swift */,
 				CEEA45B4260E0A50004FC710 /* Detail.swift */,
@@ -532,7 +532,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEA45E9260E0A74004FC710 /* Ephemeris.swift in Sources */,
-				CEEA45B9260E0A50004FC710 /* Detail.Steps.swift in Sources */,
 				CEEA45C2260E0A50004FC710 /* Bar.swift in Sources */,
 				CEEA45F5260E0A74004FC710 /* Ephemeris.Navigation.swift in Sources */,
 				CEEA45F2260E0A74004FC710 /* Session.Player.swift in Sources */,
@@ -556,6 +555,7 @@
 				CEEA45E8260E0A74004FC710 /* Walking.Time.Ring.swift in Sources */,
 				CEEA45FF260E0A74004FC710 /* Home.Item.swift in Sources */,
 				CEEA45F8260E0A74004FC710 /* Leaderboards.Coordinator.swift in Sources */,
+				CE6E0A3C26108D3700A8D81B /* Chart.swift in Sources */,
 				CEEA45FD260E0A74004FC710 /* Ephemeris.Month.Day.swift in Sources */,
 				CEEA45F1260E0A74004FC710 /* UIApplication.swift in Sources */,
 				CEEA45FA260E0A74004FC710 /* Walking.Time.swift in Sources */,
@@ -567,7 +567,7 @@
 				CEEA45ED260E0A74004FC710 /* Session.Section.swift in Sources */,
 				CEEA45F0260E0A74004FC710 /* Game.swift in Sources */,
 				CEEA45C0260E0A50004FC710 /* Ephemeris.Month.Continuous.swift in Sources */,
-				CEEA45B8260E0A50004FC710 /* Detail.Steps.Chart.swift in Sources */,
+				CEEA45B8260E0A50004FC710 /* Chart.Display.swift in Sources */,
 				CEEA45BC260E0A50004FC710 /* App.Delegate.swift in Sources */,
 				CEEA45BE260E0A50004FC710 /* Detail.Streak.Header.swift in Sources */,
 				CEEA45FC260E0A74004FC710 /* Ring.swift in Sources */,
