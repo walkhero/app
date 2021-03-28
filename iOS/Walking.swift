@@ -7,7 +7,8 @@ struct Walking: View {
     @State private var disabled = false
     @State private var steps = 0
     @State private var metres = 0
-    @State private var maximum = 1
+    @State private var maximumSteps = 1
+    @State private var maximumMetres = 1
     @State private var streak = Hero.Streak.zero
 
     var body: some View {
@@ -19,9 +20,9 @@ struct Walking: View {
             case .streak:
                 Streak(session: $session, streak: streak)
             case .steps:
-                Steps(session: $session, steps: $steps, maximum: maximum)
+                Steps(session: $session, steps: $steps, maximum: maximumSteps)
             case .distance:
-                Distance(session: $session, metres: $metres)
+                Distance(session: $session, metres: $metres, maximum: maximumMetres)
             default:
                 Time(session: $session)
             }
@@ -72,7 +73,8 @@ struct Walking: View {
             session.health.steps(session.archive)
             session.health.distance(session.archive)
             streak = session.archive.calendar.streak
-            maximum = max(session.archive.maxSteps, Metrics.steps.min)
+            maximumSteps = max(session.archive.maxSteps, Metrics.steps.min)
+            maximumMetres = max(session.archive.maxMetres, Metrics.distance.min)
         }
         .onDisappear(perform: session.health.clear)
     }

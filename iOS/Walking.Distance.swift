@@ -5,7 +5,7 @@ extension Walking {
     struct Distance: View {
         @Binding var session: Session
         @Binding var metres: Int
-        @State private var maximum = 1
+        let maximum: Int
         
         var body: some View {
             Text("DISTANCE")
@@ -47,9 +47,6 @@ extension Walking {
             }
             .frame(width: 250, height: 250)
             Spacer()
-                .onAppear {
-                    maximum = max(session.archive.maxMetres, Metrics.distance.min)
-                }
         }
     }
 }

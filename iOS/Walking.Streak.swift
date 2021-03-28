@@ -12,11 +12,10 @@ extension Walking {
             Spacer()
             ZStack {
                 Circle()
-                    .fill(Challenge.streak.background)
+                    .stroke(Challenge.streak.background, lineWidth: 3)
                 Text(NSNumber(value: streak.current), formatter: session.decimal)
                     .font(Font.title.bold())
-                    .foregroundColor(.white)
-                    .padding()
+                    .padding(40)
             }
             .fixedSize()
             if streak.maximum > streak.current {
