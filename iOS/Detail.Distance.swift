@@ -23,7 +23,7 @@ extension Detail {
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                     .padding(.leading)
             }
-            Chart(values: metres.values, color: .purple)
+            Chart(values: metres.values, color: .orange)
                 .frame(height: 260)
                 .padding(.horizontal)
                 .padding(.vertical, 5)
