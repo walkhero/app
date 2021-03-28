@@ -7,7 +7,9 @@ struct Walking: View {
     @State private var disabled = false
     @State private var steps = 0
     @State private var metres = 0
-    
+    @State private var maximum = 1
+    @State private var streak = Hero.Streak.zero
+
     var body: some View {
         VStack {
             Segmented(session: $session, challenge: $challenge)
@@ -15,9 +17,9 @@ struct Walking: View {
             
             switch challenge {
             case .streak:
-                Streak(session: $session)
+                Streak(session: $session, streak: streak)
             case .steps:
-                Steps(session: $session, steps: $steps)
+                Steps(session: $session, steps: $steps, maximum: maximum)
             case .distance:
                 Distance(session: $session, metres: $metres)
             default:
@@ -29,17 +31,19 @@ struct Walking: View {
                         startPoint: .leading,
                         endPoint: .trailing)) {
                 disabled = true
-                session.archive.end(steps: steps, metres: metres)
-                DispatchQueue.global(qos: .utility).async {
-                    if session.archive.enrolled(.streak) {
-                        session.game.submit(.streak, session.archive.calendar.streak.current)
-                    }
-                    if session.archive.enrolled(.steps) {
-                        session.game.submit(.steps, steps)
-                    }
-                    if session.archive.enrolled(.distance) {
-                        session.game.submit(.distance, metres)
-                    }
+                
+                if session.archive.enrolled(.streak) {
+                    session.game.submit(.streak, streak.current)
+                }
+                if session.archive.enrolled(.steps) {
+                    session.game.submit(.steps, steps)
+                }
+                if session.archive.enrolled(.distance) {
+                    session.game.submit(.distance, metres)
+                }
+                
+                withAnimation(.easeInOut(duration: 0.3)) {
+                    session.archive.end(steps: steps, metres: metres)
                 }
             }
             .disabled(disabled)
@@ -67,6 +71,8 @@ struct Walking: View {
         .onAppear {
             session.health.steps(session.archive)
             session.health.distance(session.archive)
+            streak = session.archive.calendar.streak
+            maximum = max(session.archive.maxSteps, Metrics.steps.min)
         }
         .onDisappear(perform: session.health.clear)
     }

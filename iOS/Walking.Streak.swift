@@ -4,7 +4,7 @@ import Hero
 extension Walking {
     struct Streak: View {
         @Binding var session: Session
-        @State private var streak = Hero.Streak.zero
+        let streak: Hero.Streak
         
         var body: some View {
             Text("STREAK")
@@ -38,9 +38,6 @@ extension Walking {
             }
             .frame(width: 160, height: 10)
             Spacer()
-                .onAppear {
-                    streak = session.archive.calendar.streak
-                }
         }
     }
 }

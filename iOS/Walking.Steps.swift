@@ -5,7 +5,7 @@ extension Walking {
     struct Steps: View {
         @Binding var session: Session
         @Binding var steps: Int
-        @State private var maximum = 1
+        let maximum: Int
         
         var body: some View {
             Text("STEPS")
@@ -42,9 +42,6 @@ extension Walking {
             }
             .frame(width: 250, height: 250)
             Spacer()
-                .onAppear {
-                    maximum = max(session.archive.maxSteps, Metrics.steps.min)
-                }
         }
     }
 }
