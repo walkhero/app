@@ -48,7 +48,7 @@ struct Detail: View {
                 case .distance:
                     Distance(session: $session, metres: session.archive.metres, max: session.archive.maxMetres)
                 case .map:
-                    Text("")
+                    Map(session: $session)
                 }
                 Spacer()
                 Button {
@@ -75,6 +75,9 @@ struct Detail: View {
                         session.health.request(challenge) {
                             start()
                         }
+                    case .map:
+                        session.location.start()
+                        start()
                     default: break
                     }
                 }
