@@ -76,6 +76,7 @@
 		CEEA460E260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */; };
 		CEEA4614260E0C7D004FC710 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA4613260E0C7D004FC710 /* Health.swift */; };
 		CEEA4615260E0C7D004FC710 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA4613260E0C7D004FC710 /* Health.swift */; };
+		CEF987C426121535002B8022 /* Walking.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF987C326121535002B8022 /* Walking.Map.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,7 @@
 		CEEA45E6260E0A73004FC710 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeDateTimeFormatter.swift; sourceTree = "<group>"; };
 		CEEA4613260E0C7D004FC710 /* Health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		CEF987C326121535002B8022 /* Walking.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Map.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 				CEEA45E2260E0A73004FC710 /* Shadowed.swift */,
 				CEEA45D5260E0A73004FC710 /* UIApplication.swift */,
 				CE4E8C72260F6E2900480453 /* Walking.Distance.swift */,
+				CEF987C326121535002B8022 /* Walking.Map.swift */,
 				CEEA45CE260E0A73004FC710 /* Walking.Segmented.Item.swift */,
 				CEEA45CB260E0A73004FC710 /* Walking.Segmented.Status.swift */,
 				CEEA45D8260E0A73004FC710 /* Walking.Segmented.swift */,
@@ -559,6 +562,7 @@
 				CEEA45FE260E0A74004FC710 /* Shadowed.swift in Sources */,
 				CEEA460C260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
 				CE39B3422611EDAF0057943D /* Location.swift in Sources */,
+				CEF987C426121535002B8022 /* Walking.Map.swift in Sources */,
 				CEEA45F7260E0A74004FC710 /* Ephemeris.Month.swift in Sources */,
 				CEEA45F3260E0A74004FC710 /* Walking.swift in Sources */,
 				CEEA45BA260E0A50004FC710 /* Challenge.Metadata.swift in Sources */,
