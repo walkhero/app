@@ -5,24 +5,36 @@ extension Walking {
     struct Steps: View {
         @Binding var session: Session
         @Binding var steps: Int
+        @State private var display = 0
+        @State private var counter = 0
+        @State private var delta = 0
         let maximum: Int
+        private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
         
         var body: some View {
             Text("STEPS")
                 .font(.headline)
             Spacer()
             ZStack {
+                Water(percent: .init(display % maximum) / .init(maximum))
+                    .fill(LinearGradient(
+                            gradient: .init(colors: [.blue, .init(.systemIndigo)]),
+                            startPoint: .top,
+                            endPoint: .bottom))
+                    .opacity(0.5)
+                    .mask(Circle())
+                Water(percent: .init(display % maximum) / .init(maximum))
+                    .fill(LinearGradient(
+                            gradient: .init(colors: [.blue, .init(.systemIndigo)]),
+                            startPoint: .top,
+                            endPoint: .bottom))
+                    .scaleEffect(CGSize(width: -1.0, height: 1.0))
+                    .opacity(0.5)
+                    .mask(Circle())
                 Ring(percent: 1)
-                    .stroke(Color.blue.opacity(0.2), lineWidth: 25)
-                Ring(percent: .init(steps % maximum) / .init(maximum))
-                    .stroke(LinearGradient(
-                                gradient: .init(colors: [.init(.systemIndigo), .blue]),
-                                startPoint: .top,
-                                endPoint: .bottom),
-                            style: .init(lineWidth: 25,
-                                         lineCap: .round))
+                    .stroke(Color.blue, lineWidth: 5)
                 VStack {
-                    Text(NSNumber(value: steps), formatter: session.decimal)
+                    Text(NSNumber(value: counter), formatter: session.decimal)
                         .font(Font.largeTitle.bold())
                         .padding(.horizontal)
                     if maximum > Metrics.steps.min {
@@ -42,6 +54,24 @@ extension Walking {
             }
             .frame(width: 250, height: 250)
             Spacer()
+                .onChange(of: steps) { _ in
+                    refresh()
+                }
+                .onReceive(timer) { _ in
+                    if counter < display {
+                        counter += delta
+                    } else if counter > display {
+                        counter = display
+                    }
+                }
+                .onAppear(perform: refresh)
+        }
+        
+        private func refresh() {
+            delta = max((steps - display) / 5, 1)
+            withAnimation(.easeInOut(duration: 0.5)) {
+                display = steps
+            }
         }
     }
 }

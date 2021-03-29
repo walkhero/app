@@ -18,6 +18,7 @@
 		CE0EB3FF260DF38F00D607C9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EB3FE260DF38F00D607C9 /* App.swift */; };
 		CE0EB40A260DF38F00D607C9 /* WalkHero.wrapper.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CE0EB3EE260DF38E00D607C9 /* WalkHero.wrapper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE4E8C73260F6E2900480453 /* Walking.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E8C72260F6E2900480453 /* Walking.Distance.swift */; };
+		CE6177812611DCB40091EE0E /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6177802611DCB40091EE0E /* Water.swift */; };
 		CE6E0A4A26108EB200A8D81B /* Detail.Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E0A4926108EB200A8D81B /* Detail.Steps.swift */; };
 		CE6E0A582610903C00A8D81B /* Detail.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E0A572610903C00A8D81B /* Detail.Distance.swift */; };
 		CEB1EF5B260DF9330036ECB5 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEB1EF5A260DF9330036ECB5 /* Hero */; };
@@ -150,6 +151,7 @@
 		CE0EB3FE260DF38F00D607C9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CE0EB407260DF38F00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4E8C72260F6E2900480453 /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
+		CE6177802611DCB40091EE0E /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		CE6E0A4926108EB200A8D81B /* Detail.Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Steps.swift; sourceTree = "<group>"; };
 		CE6E0A572610903C00A8D81B /* Detail.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Distance.swift; sourceTree = "<group>"; };
 		CEB1EF60260DF9820036ECB5 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				CEEA45D7260E0A73004FC710 /* Walking.swift */,
 				CEEA45CC260E0A73004FC710 /* Walking.Time.Ring.swift */,
 				CEEA45DE260E0A73004FC710 /* Walking.Time.swift */,
+				CE6177802611DCB40091EE0E /* Water.swift */,
 				CEEA45D3260E0A73004FC710 /* Window.swift */,
 				CE0EB3CB260DF31B00D607C9 /* Assets.xcassets */,
 			);
@@ -547,6 +550,7 @@
 				CEEA45BA260E0A50004FC710 /* Challenge.Metadata.swift in Sources */,
 				CEEA45EE260E0A74004FC710 /* Walking.Streak.swift in Sources */,
 				CEEA45C1260E0A50004FC710 /* Detail.Streak.swift in Sources */,
+				CE6177812611DCB40091EE0E /* Water.swift in Sources */,
 				CEEA45BF260E0A50004FC710 /* Detail.swift in Sources */,
 				CEEA45BD260E0A50004FC710 /* Control.swift in Sources */,
 				CEEA45E7260E0A73004FC710 /* Walking.Segmented.Status.swift in Sources */,
