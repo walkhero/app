@@ -9,6 +9,10 @@ extension Walking {
         @State private var display = 0
         @State private var counter = 0
         @State private var delta = 0
+        @State private var a = CGFloat()
+        @State private var b = CGFloat()
+        @State private var c = CGFloat()
+        @State private var d = CGFloat()
         private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
         
         var body: some View {
@@ -16,14 +20,14 @@ extension Walking {
                 .font(.headline)
             Spacer()
             ZStack {
-                Water(percent: .init(display % maximum) / .init(maximum))
+                Water(percent: .init(display % maximum) / .init(maximum), a: a, b: b)
                     .fill(LinearGradient(
                             gradient: .init(colors: [.blue, .init(.systemIndigo)]),
                             startPoint: .top,
                             endPoint: .bottom))
                     .opacity(0.5)
                     .mask(Circle())
-                Water(percent: .init(display % maximum) / .init(maximum))
+                Water(percent: .init(display % maximum) / .init(maximum), a: c, b: d)
                     .fill(LinearGradient(
                             gradient: .init(colors: [.blue, .init(.systemIndigo)]),
                             startPoint: .top,
@@ -68,10 +72,18 @@ extension Walking {
         }
         
         private func refresh() {
-            delta = max((steps - display) / 5, 1)
-            withAnimation(.easeInOut(duration: 0.5)) {
+            delta = max((steps - display) / 10, 1)
+            a = random
+            b = random
+            c = random
+            d = random
+            withAnimation(.easeInOut(duration: 1)) {
                 display = steps
             }
+        }
+        
+        private var random: CGFloat {
+            .random(in: 1 ..< 75)
         }
     }
 }
