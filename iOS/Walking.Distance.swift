@@ -5,10 +5,10 @@ extension Walking {
     struct Distance: View {
         @Binding var session: Session
         @Binding var metres: Int
+        let maximum: Int
         @State private var display = 0
         @State private var counter = 0
         @State private var delta = 0
-        let maximum: Int
         private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
         
         var body: some View {

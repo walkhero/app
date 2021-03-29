@@ -5,9 +5,9 @@ struct Walking: View {
     @Binding var session: Session
     @State private var challenge: Challenge?
     @State private var disabled = false
-    @State private var steps = 500
+    @State private var steps = 0
     @State private var metres = 0
-    @State private var maximumSteps = 1000
+    @State private var maximumSteps = 1
     @State private var maximumMetres = 1
     @State private var streak = Hero.Streak.zero
 
@@ -63,8 +63,8 @@ struct Walking: View {
             .padding(.top, 10)
             .padding(.bottom)
         }
-        .onReceive(session.health.steps.receive(on: DispatchQueue.main)) { _ in
-//            steps = $0
+        .onReceive(session.health.steps.receive(on: DispatchQueue.main)) { 
+            steps = $0
         }
         .onReceive(session.health.distance.receive(on: DispatchQueue.main)) {
             metres = $0
@@ -73,7 +73,7 @@ struct Walking: View {
             session.health.steps(session.archive)
             session.health.distance(session.archive)
             streak = session.archive.calendar.streak
-//            maximumSteps = max(session.archive.maxSteps, Metrics.steps.min)
+            maximumSteps = max(session.archive.maxSteps, Metrics.steps.min)
             maximumMetres = max(session.archive.maxMetres, Metrics.distance.min)
         }
         .onDisappear(perform: session.health.clear)
