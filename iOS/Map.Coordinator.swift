@@ -17,8 +17,9 @@ extension Map {
             mapType = .standard
             delegate = self
             setUserTrackingMode(.follow, animated: false)
+            addOverlay(Tiler(tiles: [], dark: dark), level: .aboveLabels)
             
-            wrapper.tiles.sink { [weak self] in
+            wrapper.tiles.debounce(for: .seconds(1), scheduler: DispatchQueue.main).sink { [weak self] in
                 guard let self = self else { return }
                 self.removeOverlays(self.overlays)
                 self.addOverlay(Tiler(tiles: $0, dark: self.dark), level: .aboveLabels)

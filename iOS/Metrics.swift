@@ -15,6 +15,10 @@ struct Metrics {
         static let min = 1000
     }
     
+    struct map {
+        static let tiles = pow(Double(4), 20)
+    }
+    
     struct calendar {
         struct day {
             static let size = CGFloat(45)

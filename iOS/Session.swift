@@ -28,7 +28,8 @@ struct Session {
         
         decimal.numberStyle = .decimal
         percentil.numberStyle = .percent
-        percentil.maximumFractionDigits = 12
+        percentil.minimumSignificantDigits = 1
+        percentil.maximumSignificantDigits = 3
         
         measures.unitStyle = .long
         measures.unitOptions = .naturalScale
