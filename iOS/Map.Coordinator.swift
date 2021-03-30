@@ -19,11 +19,14 @@ extension Map {
             setUserTrackingMode(.follow, animated: false)
             addOverlay(Tiler(tiles: [], dark: dark), level: .aboveLabels)
             
-            wrapper.tiles.debounce(for: .seconds(1), scheduler: DispatchQueue.main).removeDuplicates().sink { [weak self] in
-                guard let self = self else { return }
-                self.removeOverlays(self.overlays)
-                self.addOverlay(Tiler(tiles: $0, dark: self.dark), level: .aboveLabels)
-            }.store(in: &subs)
+            wrapper.tiles
+                .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
+                .removeDuplicates()
+                .sink { [weak self] in
+                    guard let self = self, !$0.isEmpty else { return }
+                    self.removeOverlays(self.overlays)
+                    self.addOverlay(Tiler(tiles: $0, dark: self.dark), level: .aboveLabels)
+                }.store(in: &subs)
             
             var region = MKCoordinateRegion()
             region.center = userLocation.location == nil ? centerCoordinate : userLocation.coordinate
