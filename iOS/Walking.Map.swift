@@ -9,8 +9,15 @@ extension Walking {
         private let publisher = PassthroughSubject<Set<Tile>, Never>()
         
         var body: some View {
+            Text(NSNumber(value: tiles.count), formatter: session.decimal)
+                .font(Font.largeTitle.bold())
+                .padding(.top)
+            Text("Map Squares")
+                .font(.callout)
+                .foregroundColor(.secondary)
+                .padding(.bottom)
             WalkHero.Map(session: $session, tiles: publisher)
-                .padding()
+                .padding(.bottom)
                 .onChange(of: tiles) {
                     publisher.send($0)
                 }

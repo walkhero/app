@@ -78,7 +78,8 @@ struct Detail: View {
                     case .map:
                         session.location.enroll()
                         start()
-                    default: break
+                    case .streak:
+                        start()
                     }
                 }
             }

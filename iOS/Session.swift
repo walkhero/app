@@ -15,6 +15,7 @@ struct Session {
     let monther = DateFormatter()
     let weeker = DateFormatter()
     let decimal = NumberFormatter()
+    let percentil = NumberFormatter()
     let measures = MeasurementFormatter()
     
     init() {
@@ -26,6 +27,8 @@ struct Session {
         weeker.dateFormat = "EEEEE"
         
         decimal.numberStyle = .decimal
+        percentil.numberStyle = .percent
+        percentil.maximumFractionDigits = 12
         
         measures.unitStyle = .long
         measures.unitOptions = .naturalScale
