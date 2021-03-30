@@ -41,15 +41,21 @@ struct Walking: View {
                 if session.archive.enrolled(.streak) {
                     session.game.submit(.streak, streak.current)
                 }
+                
                 if session.archive.enrolled(.steps) {
                     session.game.submit(.steps, steps)
                 }
+                
                 if session.archive.enrolled(.distance) {
                     session.game.submit(.distance, metres)
                 }
                 
+                if session.archive.enrolled(.map) {
+                    session.game.submit(.map, tiles.count)
+                }
+                
                 withAnimation(.easeInOut(duration: 0.3)) {
-                    session.archive.end(steps: steps, metres: metres)
+                    session.archive.end(steps: steps, metres: metres, tiles: tiles)
                 }
             }
             .disabled(disabled)
