@@ -76,7 +76,7 @@ struct Detail: View {
                             start()
                         }
                     case .map:
-                        session.location.start()
+                        session.location.enroll()
                         start()
                     default: break
                     }

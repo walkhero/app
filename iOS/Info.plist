@@ -27,7 +27,7 @@
 	<key>NSHealthShareUsageDescription</key>
 	<string>WalkHero counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>WalkHero access your location to display when you are walking and discovering new areas of the world. This data is never shared nor stored, and never leaves your device. It is optional but useful if you want to participate on the leaderboards.</string>
+	<string>This permission is just to have more accuracy of what areas of the world are you walking, even when the app is not active. This only gets activated when you have a Walk active.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>WalkHero access your location to display when you are walking and discovering new areas of the world. This data is never shared nor stored, and never leaves your device. It is optional but useful if you want to participate on the leaderboards.</string>
 	<key>UIApplicationSceneManifest</key>

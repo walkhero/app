@@ -10,6 +10,7 @@ struct Walking: View {
     @State private var maximumSteps = 1
     @State private var maximumMetres = 1
     @State private var streak = Hero.Streak.zero
+    @State private var tiles = Set<Tile>()
 
     var body: some View {
         VStack {
@@ -25,7 +26,7 @@ struct Walking: View {
                 case .distance:
                     Distance(session: $session, metres: $metres, maximum: maximumMetres)
                 case .map:
-                    Map(session: $session)
+                    Map(session: $session, tiles: $tiles)
                 }
             } else {
                 Time(session: $session)
@@ -35,7 +36,7 @@ struct Walking: View {
                         gradient: .init(colors: [.init(.systemIndigo), .blue]),
                         startPoint: .leading,
                         endPoint: .trailing)) {
-                disabled = true
+                clear()
                 
                 if session.archive.enrolled(.streak) {
                     session.game.submit(.streak, streak.current)
@@ -54,6 +55,7 @@ struct Walking: View {
             .disabled(disabled)
             .padding(.top)
             Button {
+                clear()
                 withAnimation(.spring(blendDuration: 0.3)) {
                     session.archive.cancel()
                 }
@@ -68,18 +70,31 @@ struct Walking: View {
             .padding(.bottom)
         }
         .onReceive(session.health.steps.receive(on: DispatchQueue.main)) {
+            guard !disabled else { return }
             steps = $0
         }
         .onReceive(session.health.distance.receive(on: DispatchQueue.main)) {
+            guard !disabled else { return }
             metres = $0
         }
+        .onReceive(session.location.tiles.receive(on: DispatchQueue.main)) {
+            guard !disabled else { return }
+            tiles.insert($0)
+        }
         .onAppear {
+            tiles = session.archive.tiles
             session.health.steps(session.archive)
             session.health.distance(session.archive)
+            session.location.start(session.archive)
             streak = session.archive.calendar.streak
             maximumSteps = max(session.archive.maxSteps, Metrics.steps.min)
             maximumMetres = max(session.archive.maxMetres, Metrics.distance.min)
         }
-        .onDisappear(perform: session.health.clear)
+    }
+    
+    private func clear() {
+        disabled = true
+        session.health.clear()
+        session.location.end()
     }
 }
