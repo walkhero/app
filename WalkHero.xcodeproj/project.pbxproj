@@ -46,7 +46,6 @@
 		CEEA459C260DFF8E004FC710 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEEA459B260DFF8E004FC710 /* Hero */; };
 		CEEA45A0260E0709004FC710 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA459F260E0709004FC710 /* CloudKit.framework */; };
 		CEEA45A2260E0717004FC710 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA45A1260E0717004FC710 /* HealthKit.framework */; };
-		CEEA45A4260E07D0004FC710 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA45A3260E07D0004FC710 /* GameKit.framework */; };
 		CEEA45B8260E0A50004FC710 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45AD260E0A50004FC710 /* Chart.swift */; };
 		CEEA45BA260E0A50004FC710 /* Challenge.Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */; };
 		CEEA45BB260E0A50004FC710 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B0260E0A50004FC710 /* App.swift */; };
@@ -90,6 +89,7 @@
 		CEEA460E260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */; };
 		CEEA4614260E0C7D004FC710 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA4613260E0C7D004FC710 /* Health.swift */; };
 		CEEA4615260E0C7D004FC710 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA4613260E0C7D004FC710 /* Health.swift */; };
+		CEF0DD6B2614E0C90027A469 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF0DD6A2614E0C90027A469 /* GameKit.framework */; };
 		CEF987C426121535002B8022 /* Walking.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF987C326121535002B8022 /* Walking.Map.swift */; };
 /* End PBXBuildFile section */
 
@@ -196,7 +196,6 @@
 		CEEA459E260E0705004FC710 /* watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watch.entitlements; sourceTree = "<group>"; };
 		CEEA459F260E0709004FC710 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEEA45A1260E0717004FC710 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
-		CEEA45A3260E07D0004FC710 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEEA45AD260E0A50004FC710 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.Metadata.swift; sourceTree = "<group>"; };
 		CEEA45B0260E0A50004FC710 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -237,6 +236,7 @@
 		CEEA45E6260E0A73004FC710 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeDateTimeFormatter.swift; sourceTree = "<group>"; };
 		CEEA4613260E0C7D004FC710 /* Health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		CEF0DD6A2614E0C90027A469 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEF987C326121535002B8022 /* Walking.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Map.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -268,7 +268,7 @@
 				CEEA45A2260E0717004FC710 /* HealthKit.framework in Frameworks */,
 				CEEA459C260DFF8E004FC710 /* Hero in Frameworks */,
 				CEEA45A0260E0709004FC710 /* CloudKit.framework in Frameworks */,
-				CEEA45A4260E07D0004FC710 /* GameKit.framework in Frameworks */,
+				CEF0DD6B2614E0C90027A469 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,9 +357,9 @@
 		CE0EB3DA260DF37A00D607C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEF0DD6A2614E0C90027A469 /* GameKit.framework */,
 				CEEA459F260E0709004FC710 /* CloudKit.framework */,
 				CEB1EF61260DF9950036ECB5 /* CloudKit.framework */,
-				CEEA45A3260E07D0004FC710 /* GameKit.framework */,
 				CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */,
 				CEEA45A1260E0717004FC710 /* HealthKit.framework */,
 				CEB1EF65260DF9C10036ECB5 /* HealthKit.framework */,
