@@ -8,22 +8,16 @@ extension Walking {
         private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         
         var body: some View {
-            Spacer()
             ZStack {
-                Clock(indicator: indicator, center: .init(x: 80, y: 2))
-                VStack {
-                    Image(systemName: "figure.walk")
-                        .font(.title2)
-                    Text(verbatim: counter)
-                        .font(Font.title3.bold().monospacedDigit())
-                }
+                Clock(indicator: indicator, center: .init(x: 70, y: 2))
+                Text(verbatim: counter)
+                    .font(Font.callout.bold().monospacedDigit())
             }
-            .frame(width: 160, height: 160)
-            Spacer()
-                .onAppear(perform: refresh)
-                .onReceive(timer) { _ in
-                    refresh()
-                }
+            .frame(width: 140, height: 140)
+            .onAppear(perform: refresh)
+            .onReceive(timer) { _ in
+                refresh()
+            }
         }
         
         private func refresh() {
@@ -35,4 +29,5 @@ extension Walking {
             }
         }
     }
+
 }

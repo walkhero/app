@@ -1,4 +1,5 @@
-import Foundation
+import UIKit
+import SwiftUI
 import Hero
 
 extension Challenge {
@@ -43,5 +44,26 @@ extension Challenge {
     
     var leaderboard: String {
         "\(self)"
+    }
+    
+    var background: LinearGradient {
+        switch self {
+        case .streak:
+            return .init(gradient: .init(colors: [.blue, .init(.init(red: 0.345, green: 0.337, blue: 0.839, alpha: 1))]),
+                         startPoint: .topLeading,
+                         endPoint: .bottomTrailing)
+        case .steps:
+            return .init(gradient: .init(colors: [.orange, .pink]),
+                         startPoint: .topLeading,
+                         endPoint: .bottomTrailing)
+        case .distance:
+            return .init(gradient: .init(colors: [.green, .init(.init(red: 0.353, green: 0.784, blue: 0.980, alpha: 1))]),
+                         startPoint: .topLeading,
+                         endPoint: .bottomTrailing)
+        case .map:
+            return .init(gradient: .init(colors: [.init(.init(red: 0.345, green: 0.337, blue: 0.839, alpha: 1)), .purple]),
+                         startPoint: .topLeading,
+                         endPoint: .bottomTrailing)
+        }
     }
 }

@@ -13,7 +13,7 @@ struct Control: View {
                     .modifier(Shadowed())
                 Text(title)
                     .foregroundColor(.white)
-                    .font(Font.callout)
+                    .font(.callout)
                     .fontWeight(.medium)
                     .padding(.horizontal, 64)
                     .padding(.vertical, 10)

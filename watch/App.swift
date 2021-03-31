@@ -1,9 +1,12 @@
 import SwiftUI
+import Combine
 import Hero
 
 @main struct App: SwiftUI.App {
     @State private var session = Session()
     @Environment(\.scenePhase) private var phase
+    @WKExtensionDelegateAdaptor(Delegate.self) var delegate
+    @State private var first = true
     
     var body: some Scene {
         WindowGroup {
@@ -17,9 +20,11 @@ import Hero
                     }
                 }
                 .onAppear {
-                    Memory.shared.load()
-                    Memory.shared.fetch()
-                    session.game.login()
+                    if first {
+                        first = false
+                        Memory.shared.load()
+                        session.game.login()
+                    }
                 }
         }
     }

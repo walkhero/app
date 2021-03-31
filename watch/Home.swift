@@ -5,6 +5,9 @@ struct Home: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            Image(systemName: "figure.walk")
+                .font(.title2)
             Text(session.player.name)
                 .foregroundColor(.accentColor)
                 .font(Font.callout.bold())
@@ -28,9 +31,6 @@ struct Home: View {
             }
             .buttonStyle(PlainButtonStyle())
             .fixedSize()
-            Spacer()
-            Image(systemName: "figure.walk")
-                .font(.title2)
         }
     }
 }

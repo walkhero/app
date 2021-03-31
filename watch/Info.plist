@@ -32,6 +32,11 @@
 	</dict>
 	<key>NSHealthShareUsageDescription</key>
 	<string>WalkHero counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>remote-notification</string>
+	</array>
 	<key>WKRunsIndependentlyOfCompanionApp</key>
 	<true/>
 </dict>
