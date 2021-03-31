@@ -25,6 +25,14 @@
 		CE6177912611EAD10091EE0E /* Map.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6177902611EAD10091EE0E /* Map.Coordinator.swift */; };
 		CE6E0A4A26108EB200A8D81B /* Detail.Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E0A4926108EB200A8D81B /* Detail.Steps.swift */; };
 		CE6E0A582610903C00A8D81B /* Detail.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E0A572610903C00A8D81B /* Detail.Distance.swift */; };
+		CE7F0AED2614B087005C4585 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0AEC2614B087005C4585 /* Control.swift */; };
+		CE7F0AF72614B0DC005C4585 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0AF62614B0DC005C4585 /* Session.swift */; };
+		CE7F0AFD2614B1DF005C4585 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0AFC2614B1DF005C4585 /* Window.swift */; };
+		CE7F0B072614B3A4005C4585 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0B062614B3A4005C4585 /* Game.swift */; };
+		CE7F0B0C2614B461005C4585 /* Challenge.Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */; };
+		CE7F0B122614B49A005C4585 /* Challenge.Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0B112614B49A005C4585 /* Challenge.Color.swift */; };
+		CE7F0B1C2614B509005C4585 /* Session.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0B1B2614B509005C4585 /* Session.Player.swift */; };
+		CE7F0B2A2614BBD3005C4585 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0B292614BBD3005C4585 /* Home.swift */; };
 		CE8C3EC826136169004A6F39 /* Map.Tiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C3EC726136169004A6F39 /* Map.Tiler.swift */; };
 		CEB1EF5B260DF9330036ECB5 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEB1EF5A260DF9330036ECB5 /* Hero */; };
 		CEB1EF62260DF9950036ECB5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF61260DF9950036ECB5 /* CloudKit.framework */; };
@@ -164,6 +172,13 @@
 		CE6177902611EAD10091EE0E /* Map.Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Coordinator.swift; sourceTree = "<group>"; };
 		CE6E0A4926108EB200A8D81B /* Detail.Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Steps.swift; sourceTree = "<group>"; };
 		CE6E0A572610903C00A8D81B /* Detail.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Distance.swift; sourceTree = "<group>"; };
+		CE7F0AEC2614B087005C4585 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
+		CE7F0AF62614B0DC005C4585 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		CE7F0AFC2614B1DF005C4585 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		CE7F0B062614B3A4005C4585 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		CE7F0B112614B49A005C4585 /* Challenge.Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.Color.swift; sourceTree = "<group>"; };
+		CE7F0B1B2614B509005C4585 /* Session.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.Player.swift; sourceTree = "<group>"; };
+		CE7F0B292614BBD3005C4585 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CE8C3EC726136169004A6F39 /* Map.Tiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Tiler.swift; sourceTree = "<group>"; };
 		CEB1EF60260DF9820036ECB5 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CEB1EF61260DF9950036ECB5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -284,7 +299,7 @@
 				CEEA45B1260E0A50004FC710 /* App.Delegate.swift */,
 				CEEA45B0260E0A50004FC710 /* App.swift */,
 				CEEA45B7260E0A50004FC710 /* Bar.swift */,
-				CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */,
+				CE7F0B112614B49A005C4585 /* Challenge.Color.swift */,
 				CEEA45AD260E0A50004FC710 /* Chart.swift */,
 				CEEA45B2260E0A50004FC710 /* Control.swift */,
 				CE6E0A572610903C00A8D81B /* Detail.Distance.swift */,
@@ -308,8 +323,8 @@
 				CEEA45E5260E0A73004FC710 /* Listed.swift */,
 				CE39B3412611EDAF0057943D /* Location.swift */,
 				CE6177902611EAD10091EE0E /* Map.Coordinator.swift */,
-				CE8C3EC726136169004A6F39 /* Map.Tiler.swift */,
 				CE61778A2611EA890091EE0E /* Map.swift */,
+				CE8C3EC726136169004A6F39 /* Map.Tiler.swift */,
 				CEEA45DF260E0A73004FC710 /* Metrics.swift */,
 				CEEA45E0260E0A73004FC710 /* Ring.swift */,
 				CEEA45D6260E0A73004FC710 /* Session.Player.swift */,
@@ -375,6 +390,12 @@
 				CEEA459E260E0705004FC710 /* watch.entitlements */,
 				CE0EB407260DF38F00D607C9 /* Info.plist */,
 				CE0EB3FE260DF38F00D607C9 /* App.swift */,
+				CE7F0AEC2614B087005C4585 /* Control.swift */,
+				CE7F0B062614B3A4005C4585 /* Game.swift */,
+				CE7F0B292614BBD3005C4585 /* Home.swift */,
+				CE7F0B1B2614B509005C4585 /* Session.Player.swift */,
+				CE7F0AF62614B0DC005C4585 /* Session.swift */,
+				CE7F0AFC2614B1DF005C4585 /* Window.swift */,
 			);
 			path = watch;
 			sourceTree = "<group>";
@@ -382,6 +403,7 @@
 		CE0EB413260DF3D100D607C9 /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */,
 				CEEA4613260E0C7D004FC710 /* Health.swift */,
 				CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */,
 			);
@@ -603,6 +625,7 @@
 				CEEA45BC260E0A50004FC710 /* App.Delegate.swift in Sources */,
 				CEEA45BE260E0A50004FC710 /* Detail.Streak.Header.swift in Sources */,
 				CEEA45FC260E0A74004FC710 /* Ring.swift in Sources */,
+				CE7F0B122614B49A005C4585 /* Challenge.Color.swift in Sources */,
 				CEEA4614260E0C7D004FC710 /* Health.swift in Sources */,
 				CEEA45FB260E0A74004FC710 /* Metrics.swift in Sources */,
 			);
@@ -621,9 +644,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7F0AF72614B0DC005C4585 /* Session.swift in Sources */,
 				CE0EB3FF260DF38F00D607C9 /* App.swift in Sources */,
+				CE7F0B2A2614BBD3005C4585 /* Home.swift in Sources */,
+				CE7F0B072614B3A4005C4585 /* Game.swift in Sources */,
+				CE7F0AED2614B087005C4585 /* Control.swift in Sources */,
 				CEEA4615260E0C7D004FC710 /* Health.swift in Sources */,
+				CE7F0B0C2614B461005C4585 /* Challenge.Metadata.swift in Sources */,
 				CEEA460E260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
+				CE7F0B1C2614B509005C4585 /* Session.Player.swift in Sources */,
+				CE7F0AFD2614B1DF005C4585 /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
