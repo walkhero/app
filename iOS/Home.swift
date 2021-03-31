@@ -6,7 +6,6 @@ struct Home: View {
     
     var body: some View {
         VStack {
-            Spacer()
             Greet(session: $session)
             Spacer()
             Button {
