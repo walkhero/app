@@ -1,33 +1,23 @@
 import SwiftUI
+import Hero
 
 extension Walking {
     struct Menu: View {
         @Binding var session: Session
+        let streak: Int
+        let steps: Int
+        let metres: Int
+        let tiles: Set<Tile>
         @State private var disabled = false
         
         var body: some View {
             VStack {
                 Button {
                     clear()
-                    
-//                    if session.archive.enrolled(.streak) {
-//                        session.game.submit(.streak, streak.current)
-//                    }
-//
-//                    if session.archive.enrolled(.steps) {
-//                        session.game.submit(.steps, steps)
-//                    }
-//
-//                    if session.archive.enrolled(.distance) {
-//                        session.game.submit(.distance, metres)
-//                    }
-//
-//                    if session.archive.enrolled(.map) {
-//                        session.game.submit(.map, tiles.count)
-//                    }
+                    session.watch.send(.init(streak: streak, steps: steps, distance: metres, map: tiles.count))
                     
                     withAnimation(.easeInOut(duration: 0.3)) {
-//                        session.archive.end(steps: steps, metres: metres, tiles: tiles)
+                        session.archive.end(steps: steps, metres: metres, tiles: tiles)
                     }
                 } label: {
                     ZStack {

@@ -26,7 +26,7 @@ struct Walking: View {
                 case .distance:
                     Distance(session: $session, metres: $metres, maximum: maximumMetres)
                 case .map:
-                    Map(session: $session, tiles: $tiles)
+                    Map(session: $session, tiles: tiles)
                 }
             } else {
                 Time(session: $session)
@@ -37,22 +37,7 @@ struct Walking: View {
                         startPoint: .leading,
                         endPoint: .trailing)) {
                 clear()
-                
-                if session.archive.enrolled(.streak) {
-                    session.game.submit(.streak, streak.current)
-                }
-                
-                if session.archive.enrolled(.steps) {
-                    session.game.submit(.steps, steps)
-                }
-                
-                if session.archive.enrolled(.distance) {
-                    session.game.submit(.distance, metres)
-                }
-                
-                if session.archive.enrolled(.map) {
-                    session.game.submit(.map, tiles.count)
-                }
+                session.watch.challenges.send(.init(streak: streak.current, steps: steps, distance: metres, map: tiles.count))
                 
                 withAnimation(.easeInOut(duration: 0.3)) {
                     session.archive.end(steps: steps, metres: metres, tiles: tiles)

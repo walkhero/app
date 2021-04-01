@@ -5,7 +5,7 @@ import Hero
 extension Walking {
     struct Map: View {
         @Binding var session: Session
-        @Binding var tiles: Set<Tile>
+        let tiles: Set<Tile>
         private let publisher = PassthroughSubject<Set<Tile>, Never>()
         
         var body: some View {

@@ -12,11 +12,10 @@
 		CE0EB3DE260DF37A00D607C9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0EB3DD260DF37A00D607C9 /* SwiftUI.framework */; };
 		CE0EB3E1260DF37A00D607C9 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EB3E0260DF37A00D607C9 /* widget.swift */; };
 		CE0EB3E3260DF37A00D607C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0EB3E2260DF37A00D607C9 /* Assets.xcassets */; };
-		CE0EB3E7260DF37A00D607C9 /* WalkHero.widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE0EB3D9260DF37A00D607C9 /* WalkHero.widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE0EB3E7260DF37A00D607C9 /* WalkHero.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE0EB3D9260DF37A00D607C9 /* WalkHero.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE0EB3F1260DF38E00D607C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0EB3F0260DF38E00D607C9 /* Assets.xcassets */; };
-		CE0EB3F8260DF38E00D607C9 /* WalkHero.wrapper.watch.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE0EB3F7260DF38E00D607C9 /* WalkHero.wrapper.watch.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE0EB3FF260DF38F00D607C9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EB3FE260DF38F00D607C9 /* App.swift */; };
-		CE0EB40A260DF38F00D607C9 /* WalkHero.wrapper.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CE0EB3EE260DF38E00D607C9 /* WalkHero.wrapper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE0EB40A260DF38F00D607C9 /* WalkHero.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CE0EB3EE260DF38E00D607C9 /* WalkHero.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE39B3422611EDAF0057943D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3412611EDAF0057943D /* Location.swift */; };
 		CE39B3582611F31F0057943D /* Detail.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3572611F31F0057943D /* Detail.Map.swift */; };
 		CE4E8C73260F6E2900480453 /* Walking.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E8C72260F6E2900480453 /* Walking.Distance.swift */; };
@@ -44,6 +43,11 @@
 		CEAF80662615FEDE00564E3F /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45E0260E0A73004FC710 /* Ring.swift */; };
 		CEAF806F261601C100564E3F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3412611EDAF0057943D /* Location.swift */; };
 		CEAF8075261608D700564E3F /* Walking.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF8074261608D700564E3F /* Walking.Map.swift */; };
+		CEAF80912616268C00564E3F /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF80902616268C00564E3F /* Watch.swift */; };
+		CEAF809F26162AC400564E3F /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF809E26162AC400564E3F /* Transport.swift */; };
+		CEAF80A026162AC400564E3F /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF809E26162AC400564E3F /* Transport.swift */; };
+		CEAF80D126162E4F00564E3F /* WalkHero.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE0EB3F7260DF38E00D607C9 /* WalkHero.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CEAF80E626162F4C00564E3F /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF80E526162F4C00564E3F /* Watch.swift */; };
 		CEB1EF5B260DF9330036ECB5 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEB1EF5A260DF9330036ECB5 /* Hero */; };
 		CEB1EF62260DF9950036ECB5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF61260DF9950036ECB5 /* CloudKit.framework */; };
 		CEB1EF64260DF9BD0036ECB5 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */; };
@@ -105,18 +109,18 @@
 			remoteGlobalIDString = CE0EB3D8260DF37A00D607C9;
 			remoteInfo = widgetExtension;
 		};
-		CE0EB3F9260DF38E00D607C9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE0EB37B260DEC0900D607C9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE0EB3F6260DF38E00D607C9;
-			remoteInfo = "watch Extension";
-		};
 		CE0EB408260DF38F00D607C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE0EB37B260DEC0900D607C9 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CE0EB3ED260DF38E00D607C9;
+			remoteInfo = watch;
+		};
+		CEAF80D226162E4F00564E3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE0EB37B260DEC0900D607C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE0EB3F6260DF38E00D607C9;
 			remoteInfo = watch;
 		};
 /* End PBXContainerItemProxy section */
@@ -128,18 +132,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CE0EB3E7260DF37A00D607C9 /* WalkHero.widget.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE0EB40E260DF38F00D607C9 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				CE0EB3F8260DF38E00D607C9 /* WalkHero.wrapper.watch.appex in Embed App Extensions */,
+				CE0EB3E7260DF37A00D607C9 /* WalkHero.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,9 +143,20 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				CE0EB40A260DF38F00D607C9 /* WalkHero.wrapper.app in Embed Watch Content */,
+				CE0EB40A260DF38F00D607C9 /* WalkHero.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEAF80D426162E4F00564E3F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CEAF80D126162E4F00564E3F /* WalkHero.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -161,16 +165,16 @@
 		CE0EB3C4260DF31B00D607C9 /* WalkHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0EB3CB260DF31B00D607C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0EB3D0260DF31B00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE0EB3D9260DF37A00D607C9 /* WalkHero.widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WalkHero.widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0EB3D9260DF37A00D607C9 /* WalkHero.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WalkHero.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0EB3DB260DF37A00D607C9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CE0EB3DD260DF37A00D607C9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CE0EB3E0260DF37A00D607C9 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		CE0EB3E2260DF37A00D607C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0EB3E4260DF37A00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE0EB3EE260DF38E00D607C9 /* WalkHero.wrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkHero.wrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0EB3EE260DF38E00D607C9 /* WalkHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0EB3F0260DF38E00D607C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0EB3F2260DF38E00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE0EB3F7260DF38E00D607C9 /* WalkHero.wrapper.watch.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WalkHero.wrapper.watch.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0EB3F7260DF38E00D607C9 /* WalkHero.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WalkHero.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0EB3FE260DF38F00D607C9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CE0EB407260DF38F00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE39B3412611EDAF0057943D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -193,6 +197,9 @@
 		CEAF80482615F4E300564E3F /* Walking.Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Steps.swift; sourceTree = "<group>"; };
 		CEAF805C2615FEC600564E3F /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
 		CEAF8074261608D700564E3F /* Walking.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Map.swift; sourceTree = "<group>"; };
+		CEAF80902616268C00564E3F /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
+		CEAF809E26162AC400564E3F /* Transport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transport.swift; sourceTree = "<group>"; };
+		CEAF80E526162F4C00564E3F /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
 		CEB1EF60260DF9820036ECB5 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CEB1EF61260DF9950036ECB5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -295,9 +302,9 @@
 			isa = PBXGroup;
 			children = (
 				CE0EB3C4260DF31B00D607C9 /* WalkHero.app */,
-				CE0EB3D9260DF37A00D607C9 /* WalkHero.widget.appex */,
-				CE0EB3EE260DF38E00D607C9 /* WalkHero.wrapper.app */,
-				CE0EB3F7260DF38E00D607C9 /* WalkHero.wrapper.watch.appex */,
+				CE0EB3D9260DF37A00D607C9 /* WalkHero.appex */,
+				CE0EB3EE260DF38E00D607C9 /* WalkHero.app */,
+				CE0EB3F7260DF38E00D607C9 /* WalkHero.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -347,6 +354,7 @@
 				CEEA45D2260E0A73004FC710 /* Walking.Streak.swift */,
 				CEEA45D7260E0A73004FC710 /* Walking.swift */,
 				CEEA45DE260E0A73004FC710 /* Walking.Time.swift */,
+				CEAF80E526162F4C00564E3F /* Watch.swift */,
 				CEEA45D3260E0A73004FC710 /* Window.swift */,
 				CE0EB3CB260DF31B00D607C9 /* Assets.xcassets */,
 			);
@@ -403,6 +411,7 @@
 				CE8367422614D9BB00BE3AB5 /* Walking.Streak.swift */,
 				CE7F0B542614CA97005C4585 /* Walking.swift */,
 				CE7F0B412614C9A9005C4585 /* Walking.Time.swift */,
+				CEAF80902616268C00564E3F /* Watch.swift */,
 				CE7F0AFC2614B1DF005C4585 /* Window.swift */,
 			);
 			path = watch;
@@ -419,6 +428,7 @@
 				CEEA45DF260E0A73004FC710 /* Metrics.swift */,
 				CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */,
 				CEEA45E0260E0A73004FC710 /* Ring.swift */,
+				CEAF809E26162AC400564E3F /* Transport.swift */,
 				CE6177802611DCB40091EE0E /* Water.swift */,
 			);
 			path = shared;
@@ -465,7 +475,7 @@
 			);
 			name = widget;
 			productName = widgetExtension;
-			productReference = CE0EB3D9260DF37A00D607C9 /* WalkHero.widget.appex */;
+			productReference = CE0EB3D9260DF37A00D607C9 /* WalkHero.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		CE0EB3ED260DF38E00D607C9 /* wrapper */ = {
@@ -473,16 +483,16 @@
 			buildConfigurationList = CE0EB40F260DF38F00D607C9 /* Build configuration list for PBXNativeTarget "wrapper" */;
 			buildPhases = (
 				CE0EB3EC260DF38E00D607C9 /* Resources */,
-				CE0EB40E260DF38F00D607C9 /* Embed App Extensions */,
+				CEAF80D426162E4F00564E3F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CE0EB3FA260DF38E00D607C9 /* PBXTargetDependency */,
+				CEAF80D326162E4F00564E3F /* PBXTargetDependency */,
 			);
 			name = wrapper;
 			productName = watch;
-			productReference = CE0EB3EE260DF38E00D607C9 /* WalkHero.wrapper.app */;
+			productReference = CE0EB3EE260DF38E00D607C9 /* WalkHero.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		CE0EB3F6260DF38E00D607C9 /* watch */ = {
@@ -502,7 +512,7 @@
 				CEEA459B260DFF8E004FC710 /* Hero */,
 			);
 			productName = "watch Extension";
-			productReference = CE0EB3F7260DF38E00D607C9 /* WalkHero.wrapper.watch.appex */;
+			productReference = CE0EB3F7260DF38E00D607C9 /* WalkHero.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
@@ -592,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEA45E9260E0A74004FC710 /* Ephemeris.swift in Sources */,
+				CEAF809F26162AC400564E3F /* Transport.swift in Sources */,
 				CEEA45C2260E0A50004FC710 /* Bar.swift in Sources */,
 				CEEA45F5260E0A74004FC710 /* Ephemeris.Navigation.swift in Sources */,
 				CEEA45F2260E0A74004FC710 /* Session.Player.swift in Sources */,
@@ -631,6 +642,7 @@
 				CEEA45F9260E0A74004FC710 /* Home.swift in Sources */,
 				CE4E8C73260F6E2900480453 /* Walking.Distance.swift in Sources */,
 				CEEA45F4260E0A74004FC710 /* Walking.Segmented.swift in Sources */,
+				CEAF80E626162F4C00564E3F /* Watch.swift in Sources */,
 				CE6E0A4A26108EB200A8D81B /* Detail.Steps.swift in Sources */,
 				CEEA45ED260E0A74004FC710 /* Session.Section.swift in Sources */,
 				CEEA45F0260E0A74004FC710 /* Game.swift in Sources */,
@@ -665,11 +677,13 @@
 				CE8367432614D9BB00BE3AB5 /* Walking.Streak.swift in Sources */,
 				CE7F0B2A2614BBD3005C4585 /* Home.swift in Sources */,
 				CE7F0B4B2614CA4D005C4585 /* Clock.swift in Sources */,
+				CEAF80A026162AC400564E3F /* Transport.swift in Sources */,
 				CE7F0AED2614B087005C4585 /* Walking.Menu.swift in Sources */,
 				CEAF80492615F4E300564E3F /* Walking.Steps.swift in Sources */,
 				CEEA4615260E0C7D004FC710 /* Health.swift in Sources */,
 				CEAF804E2615F5C100564E3F /* Water.swift in Sources */,
 				CE8367542614DBB000BE3AB5 /* Bar.swift in Sources */,
+				CEAF80912616268C00564E3F /* Watch.swift in Sources */,
 				CE7F0B0C2614B461005C4585 /* Challenge.Metadata.swift in Sources */,
 				CE7F0B552614CA97005C4585 /* Walking.swift in Sources */,
 				CEAF80572615F67B00564E3F /* Metrics.swift in Sources */,
@@ -689,15 +703,15 @@
 			target = CE0EB3D8260DF37A00D607C9 /* widget */;
 			targetProxy = CE0EB3E5260DF37A00D607C9 /* PBXContainerItemProxy */;
 		};
-		CE0EB3FA260DF38E00D607C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE0EB3F6260DF38E00D607C9 /* watch */;
-			targetProxy = CE0EB3F9260DF38E00D607C9 /* PBXContainerItemProxy */;
-		};
 		CE0EB409260DF38F00D607C9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE0EB3ED260DF38E00D607C9 /* wrapper */;
 			targetProxy = CE0EB408260DF38F00D607C9 /* PBXContainerItemProxy */;
+		};
+		CEAF80D326162E4F00564E3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE0EB3F6260DF38E00D607C9 /* watch */;
+			targetProxy = CEAF80D226162E4F00564E3F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -931,8 +945,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = walkhero.widget;
-				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = WalkHero.widget;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)widget";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -997,8 +1010,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = walkhero.widget;
-				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = WalkHero.widget;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)widget";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1067,7 +1079,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = walkhero.wrapper.watch;
-				PRODUCT_NAME = WalkHero.wrapper.watch;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)watch";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1130,7 +1142,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = walkhero.wrapper.watch;
-				PRODUCT_NAME = WalkHero.wrapper.watch;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)watch";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1196,7 +1208,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = walkhero.wrapper;
-				PRODUCT_NAME = WalkHero.wrapper;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)wrapper";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1256,7 +1268,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = walkhero.wrapper;
-				PRODUCT_NAME = WalkHero.wrapper;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)wrapper";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;

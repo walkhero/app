@@ -9,6 +9,7 @@ struct Session {
     let game = Game()
     let health = Health()
     let location = Location()
+    let watch = Watch()
     let dismiss = PassthroughSubject<Void, Never>()
     let components = DateComponentsFormatter()
     let relative = RelativeDateTimeFormatter()

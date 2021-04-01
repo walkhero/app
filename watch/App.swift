@@ -1,4 +1,5 @@
 import SwiftUI
+import WatchConnectivity
 import Combine
 import Hero
 
@@ -19,6 +20,11 @@ import Hero
                         first = false
                         Memory.shared.load()
                         Memory.shared.fetch()
+                    }
+                    
+                    if WCSession.default.activationState != .activated {
+                        WCSession.default.delegate = session.watch
+                        WCSession.default.activate()
                     }
                 }
         }

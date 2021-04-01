@@ -4,7 +4,7 @@ import Combine
 extension Walking {
     struct Distance: View {
         @Binding var session: Session
-        @Binding var metres: Int
+        let metres: Int
         let maximum: Int
         @State private var display = 0
         @State private var counter = 0

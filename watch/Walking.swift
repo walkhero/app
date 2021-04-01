@@ -12,7 +12,7 @@ struct Walking: View {
     
     var body: some View {
         TabView {
-            Menu(session: $session)
+            Menu(session: $session, streak: streak.current, steps: steps, metres: metres, tiles: tiles)
             Time(session: $session)
             
             if session.archive.enrolled(.streak) {
@@ -20,15 +20,15 @@ struct Walking: View {
             }
             
             if session.archive.enrolled(.steps) {
-                Steps(session: $session, steps: $steps, maximum: maximumSteps)
+                Steps(session: $session, steps: steps, maximum: maximumSteps)
             }
             
             if session.archive.enrolled(.distance) {
-                Distance(session: $session, metres: $metres, maximum: maximumMetres)
+                Distance(session: $session, metres: metres, maximum: maximumMetres)
             }
             
             if session.archive.enrolled(.map) {
-                Map(session: $session, tiles: $tiles)
+                Map(session: $session, tiles: tiles.count)
             }
         }
         .tabViewStyle(PageTabViewStyle())
@@ -42,6 +42,7 @@ struct Walking: View {
             tiles.insert($0)
         }
         .onAppear {
+            tiles = session.archive.tiles
             session.health.steps(session.archive)
             session.health.distance(session.archive)
             session.location.start(session.archive)

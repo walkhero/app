@@ -22,11 +22,29 @@ import Hero
                         session.player.image = image
                     }
                 }
+                .onReceive(session.watch.challenges.receive(on: DispatchQueue.main)) {
+                    if session.archive.enrolled(.streak) {
+                        session.game.submit(.streak, $0.streak)
+                    }
+                    
+                    if session.archive.enrolled(.steps) {
+                        session.game.submit(.steps, $0.steps)
+                    }
+                    
+                    if session.archive.enrolled(.distance) {
+                        session.game.submit(.distance, $0.distance)
+                    }
+                    
+                    if session.archive.enrolled(.map) {
+                        session.game.submit(.map, $0.map)
+                    }
+                }
         }
         .onChange(of: phase) {
             if $0 == .active {
                 Memory.shared.fetch()
                 session.game.login()
+                session.watch.activate()
             }
         }
     }
