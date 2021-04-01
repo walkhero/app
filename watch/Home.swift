@@ -8,9 +8,6 @@ struct Home: View {
             Spacer()
             Image(systemName: "figure.walk")
                 .font(.title2)
-            Text(session.player.name)
-                .foregroundColor(.accentColor)
-                .font(Font.callout.bold())
             Spacer()
             Button {
                 withAnimation(.spring(blendDuration: 0.4)) {

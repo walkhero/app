@@ -50,9 +50,6 @@ extension Walking {
                 Spacer()
                 Image(systemName: "figure.walk")
                     .font(.footnote)
-                Text(session.player.name)
-                    .foregroundColor(.accentColor)
-                    .font(Font.footnote.bold())
                 Spacer()
                 Button {
                     clear()

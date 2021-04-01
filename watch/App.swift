@@ -14,16 +14,10 @@ import Hero
                 .onReceive(Memory.shared.archive) {
                     session.archive = $0
                 }
-                .onReceive(session.game.name) { name in
-                    withAnimation(.easeInOut(duration: 0.3)) {
-                        session.player.name = name
-                    }
-                }
                 .onAppear {
                     if first {
                         first = false
                         Memory.shared.load()
-                        session.game.login()
                     }
                 }
         }

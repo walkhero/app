@@ -28,9 +28,7 @@
 		CE7F0AED2614B087005C4585 /* Walking.Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0AEC2614B087005C4585 /* Walking.Menu.swift */; };
 		CE7F0AF72614B0DC005C4585 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0AF62614B0DC005C4585 /* Session.swift */; };
 		CE7F0AFD2614B1DF005C4585 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0AFC2614B1DF005C4585 /* Window.swift */; };
-		CE7F0B072614B3A4005C4585 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0B062614B3A4005C4585 /* Game.swift */; };
 		CE7F0B0C2614B461005C4585 /* Challenge.Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */; };
-		CE7F0B1C2614B509005C4585 /* Session.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0B1B2614B509005C4585 /* Session.Player.swift */; };
 		CE7F0B2A2614BBD3005C4585 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0B292614BBD3005C4585 /* Home.swift */; };
 		CE7F0B342614C59B005C4585 /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0B332614C59B005C4585 /* App.Delegate.swift */; };
 		CE7F0B422614C9A9005C4585 /* Walking.Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0B412614C9A9005C4585 /* Walking.Time.swift */; };
@@ -89,7 +87,6 @@
 		CEEA460E260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */; };
 		CEEA4614260E0C7D004FC710 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA4613260E0C7D004FC710 /* Health.swift */; };
 		CEEA4615260E0C7D004FC710 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA4613260E0C7D004FC710 /* Health.swift */; };
-		CEF0DD6B2614E0C90027A469 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF0DD6A2614E0C90027A469 /* GameKit.framework */; };
 		CEF987C426121535002B8022 /* Walking.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF987C326121535002B8022 /* Walking.Map.swift */; };
 /* End PBXBuildFile section */
 
@@ -180,8 +177,6 @@
 		CE7F0AEC2614B087005C4585 /* Walking.Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Menu.swift; sourceTree = "<group>"; };
 		CE7F0AF62614B0DC005C4585 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		CE7F0AFC2614B1DF005C4585 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
-		CE7F0B062614B3A4005C4585 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		CE7F0B1B2614B509005C4585 /* Session.Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.Player.swift; sourceTree = "<group>"; };
 		CE7F0B292614BBD3005C4585 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CE7F0B332614C59B005C4585 /* App.Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
 		CE7F0B412614C9A9005C4585 /* Walking.Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Time.swift; sourceTree = "<group>"; };
@@ -236,7 +231,6 @@
 		CEEA45E6260E0A73004FC710 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeDateTimeFormatter.swift; sourceTree = "<group>"; };
 		CEEA4613260E0C7D004FC710 /* Health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
-		CEF0DD6A2614E0C90027A469 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEF987C326121535002B8022 /* Walking.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Map.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -268,7 +262,6 @@
 				CEEA45A2260E0717004FC710 /* HealthKit.framework in Frameworks */,
 				CEEA459C260DFF8E004FC710 /* Hero in Frameworks */,
 				CEEA45A0260E0709004FC710 /* CloudKit.framework in Frameworks */,
-				CEF0DD6B2614E0C90027A469 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +350,6 @@
 		CE0EB3DA260DF37A00D607C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CEF0DD6A2614E0C90027A469 /* GameKit.framework */,
 				CEEA459F260E0709004FC710 /* CloudKit.framework */,
 				CEB1EF61260DF9950036ECB5 /* CloudKit.framework */,
 				CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */,
@@ -396,9 +388,7 @@
 				CE0EB407260DF38F00D607C9 /* Info.plist */,
 				CE7F0B332614C59B005C4585 /* App.Delegate.swift */,
 				CE0EB3FE260DF38F00D607C9 /* App.swift */,
-				CE7F0B062614B3A4005C4585 /* Game.swift */,
 				CE7F0B292614BBD3005C4585 /* Home.swift */,
-				CE7F0B1B2614B509005C4585 /* Session.Player.swift */,
 				CE7F0AF62614B0DC005C4585 /* Session.swift */,
 				CE7F0AEC2614B087005C4585 /* Walking.Menu.swift */,
 				CE8367422614D9BB00BE3AB5 /* Walking.Streak.swift */,
@@ -659,7 +649,6 @@
 				CE0EB3FF260DF38F00D607C9 /* App.swift in Sources */,
 				CE8367432614D9BB00BE3AB5 /* Walking.Streak.swift in Sources */,
 				CE7F0B2A2614BBD3005C4585 /* Home.swift in Sources */,
-				CE7F0B072614B3A4005C4585 /* Game.swift in Sources */,
 				CE7F0B4B2614CA4D005C4585 /* Clock.swift in Sources */,
 				CE7F0AED2614B087005C4585 /* Walking.Menu.swift in Sources */,
 				CEEA4615260E0C7D004FC710 /* Health.swift in Sources */,
@@ -668,7 +657,6 @@
 				CE7F0B552614CA97005C4585 /* Walking.swift in Sources */,
 				CEEA460E260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
 				CE7F0B342614C59B005C4585 /* App.Delegate.swift in Sources */,
-				CE7F0B1C2614B509005C4585 /* Session.Player.swift in Sources */,
 				CE7F0AFD2614B1DF005C4585 /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
