@@ -5,7 +5,6 @@ import Hero
 extension Map {
     final class Coordinator: MKMapView, MKMapViewDelegate {
         private var subs = Set<AnyCancellable>()
-        private let dark = UIImage(named: "dark")!.pngData()!
         
         required init?(coder: NSCoder) { nil }
         init(wrapper: Map) {
@@ -17,15 +16,15 @@ extension Map {
             mapType = .standard
             delegate = self
             setUserTrackingMode(.follow, animated: false)
-            addOverlay(Tiler(tiles: [], dark: dark), level: .aboveLabels)
             
-            wrapper.tiles
-                .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
+            let tiler = Tiler(tiles: wrapper.tiles)
+            addOverlay(tiler, level: .aboveRoads)
+            
+            wrapper.add?
+                .debounce(for: .seconds(3), scheduler: DispatchQueue.global(qos: .utility))
                 .removeDuplicates()
-                .sink { [weak self] in
-                    guard let self = self, !$0.isEmpty else { return }
-                    self.removeOverlays(self.overlays)
-                    self.addOverlay(Tiler(tiles: $0, dark: self.dark), level: .aboveLabels)
+                .sink {
+                    tiler.add($0)
                 }.store(in: &subs)
             
             var region = MKCoordinateRegion()
@@ -35,7 +34,7 @@ extension Map {
         }
         
         func mapView(_: MKMapView, rendererFor: MKOverlay) -> MKOverlayRenderer {
-            MKTileOverlayRenderer(tileOverlay: rendererFor as! Tiler)
+            (rendererFor as! Tiler).renderer
         }
     }
 }

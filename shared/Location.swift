@@ -12,9 +12,12 @@ final class Location: NSObject, CLLocationManagerDelegate {
         enroll()
         manager!.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         manager!.allowsBackgroundLocationUpdates = true
-        manager!.showsBackgroundLocationIndicator = true
         manager!.startUpdatingLocation()
+        
+        #if os(iOS)
+        manager!.showsBackgroundLocationIndicator = true
         manager!.startMonitoringSignificantLocationChanges()
+        #endif
     }
     
     func enroll() {
@@ -26,7 +29,10 @@ final class Location: NSObject, CLLocationManagerDelegate {
     }
     
     func end() {
+        #if os(iOS)
         manager?.stopMonitoringSignificantLocationChanges()
+        #endif
+        
         manager?.stopUpdatingLocation()
         manager = nil
     }
@@ -37,5 +43,8 @@ final class Location: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_: CLLocationManager, didChangeAuthorization: CLAuthorizationStatus) { }
     func locationManager(_: CLLocationManager, didFailWithError: Error) { }
+    
+    #if os(iOS)
     func locationManager(_: CLLocationManager, didFinishDeferredUpdatesWithError: Error?) { }
+    #endif
 }

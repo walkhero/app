@@ -32,7 +32,6 @@ extension Walking {
                         if metres > 0 {
                             Text(Measurement(value: .init(metres), unit: UnitLength.meters), formatter: session.measures)
                                 .font(Font.callout.bold())
-                                .padding(.horizontal)
                         } else {
                             Text("STARTING")
                                 .font(.caption2)

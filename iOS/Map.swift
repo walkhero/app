@@ -4,7 +4,8 @@ import Hero
 
 struct Map: UIViewRepresentable {
     @Binding var session: Session
-    let tiles: PassthroughSubject<Set<Tile>, Never>
+    let tiles: Set<Tile>
+    let add: PassthroughSubject<Set<Tile>, Never>?
     
     func makeCoordinator() -> Coordinator {
         .init(wrapper: self)

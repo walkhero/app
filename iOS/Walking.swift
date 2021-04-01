@@ -88,7 +88,6 @@ struct Walking: View {
             tiles.insert($0)
         }
         .onAppear {
-            tiles = session.archive.tiles
             session.health.steps(session.archive)
             session.health.distance(session.archive)
             session.location.start(session.archive)

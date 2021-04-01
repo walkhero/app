@@ -24,9 +24,11 @@ struct Session {
         components.zeroFormattingBehavior = .pad
         
         monther.dateFormat = "MMMM"
+        
         weeker.dateFormat = "EEEEE"
         
         decimal.numberStyle = .decimal
+        
         percentil.numberStyle = .percent
         percentil.minimumSignificantDigits = 1
         percentil.maximumSignificantDigits = 3

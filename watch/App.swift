@@ -18,6 +18,7 @@ import Hero
                     if first {
                         first = false
                         Memory.shared.load()
+                        Memory.shared.fetch()
                     }
                 }
         }

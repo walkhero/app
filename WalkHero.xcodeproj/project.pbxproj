@@ -42,6 +42,8 @@
 		CEAF80572615F67B00564E3F /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45DF260E0A73004FC710 /* Metrics.swift */; };
 		CEAF805D2615FEC600564E3F /* Walking.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF805C2615FEC600564E3F /* Walking.Distance.swift */; };
 		CEAF80662615FEDE00564E3F /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45E0260E0A73004FC710 /* Ring.swift */; };
+		CEAF806F261601C100564E3F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3412611EDAF0057943D /* Location.swift */; };
+		CEAF8075261608D700564E3F /* Walking.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF8074261608D700564E3F /* Walking.Map.swift */; };
 		CEB1EF5B260DF9330036ECB5 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEB1EF5A260DF9330036ECB5 /* Hero */; };
 		CEB1EF62260DF9950036ECB5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF61260DF9950036ECB5 /* CloudKit.framework */; };
 		CEB1EF64260DF9BD0036ECB5 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */; };
@@ -190,6 +192,7 @@
 		CE8C3EC726136169004A6F39 /* Map.Tiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Tiler.swift; sourceTree = "<group>"; };
 		CEAF80482615F4E300564E3F /* Walking.Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Steps.swift; sourceTree = "<group>"; };
 		CEAF805C2615FEC600564E3F /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
+		CEAF8074261608D700564E3F /* Walking.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Map.swift; sourceTree = "<group>"; };
 		CEB1EF60260DF9820036ECB5 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CEB1EF61260DF9950036ECB5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -327,7 +330,6 @@
 				CEEA45D0260E0A73004FC710 /* Leaderboards.swift */,
 				CEEA45DA260E0A73004FC710 /* Listed.Item.swift */,
 				CEEA45E5260E0A73004FC710 /* Listed.swift */,
-				CE39B3412611EDAF0057943D /* Location.swift */,
 				CE6177902611EAD10091EE0E /* Map.Coordinator.swift */,
 				CE61778A2611EA890091EE0E /* Map.swift */,
 				CE8C3EC726136169004A6F39 /* Map.Tiler.swift */,
@@ -395,6 +397,7 @@
 				CE7F0B292614BBD3005C4585 /* Home.swift */,
 				CE7F0AF62614B0DC005C4585 /* Session.swift */,
 				CEAF805C2615FEC600564E3F /* Walking.Distance.swift */,
+				CEAF8074261608D700564E3F /* Walking.Map.swift */,
 				CE7F0AEC2614B087005C4585 /* Walking.Menu.swift */,
 				CEAF80482615F4E300564E3F /* Walking.Steps.swift */,
 				CE8367422614D9BB00BE3AB5 /* Walking.Streak.swift */,
@@ -412,6 +415,7 @@
 				CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */,
 				CEEA45CC260E0A73004FC710 /* Clock.swift */,
 				CEEA4613260E0C7D004FC710 /* Health.swift */,
+				CE39B3412611EDAF0057943D /* Location.swift */,
 				CEEA45DF260E0A73004FC710 /* Metrics.swift */,
 				CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */,
 				CEEA45E0260E0A73004FC710 /* Ring.swift */,
@@ -655,6 +659,7 @@
 			files = (
 				CE7F0B422614C9A9005C4585 /* Walking.Time.swift in Sources */,
 				CEAF805D2615FEC600564E3F /* Walking.Distance.swift in Sources */,
+				CEAF806F261601C100564E3F /* Location.swift in Sources */,
 				CE7F0AF72614B0DC005C4585 /* Session.swift in Sources */,
 				CE0EB3FF260DF38F00D607C9 /* App.swift in Sources */,
 				CE8367432614D9BB00BE3AB5 /* Walking.Streak.swift in Sources */,
@@ -669,6 +674,7 @@
 				CE7F0B552614CA97005C4585 /* Walking.swift in Sources */,
 				CEAF80572615F67B00564E3F /* Metrics.swift in Sources */,
 				CEAF80662615FEDE00564E3F /* Ring.swift in Sources */,
+				CEAF8075261608D700564E3F /* Walking.Map.swift in Sources */,
 				CEEA460E260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
 				CE7F0B342614C59B005C4585 /* App.Delegate.swift in Sources */,
 				CE7F0AFD2614B1DF005C4585 /* Window.swift in Sources */,
