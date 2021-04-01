@@ -8,6 +8,7 @@ struct Session {
 //    let location = Location()
     let components = DateComponentsFormatter()
     let decimal = NumberFormatter()
+    let measures = MeasurementFormatter()
     
     init() {
         components.allowedUnits = [.minute, .second]
@@ -15,5 +16,9 @@ struct Session {
         components.zeroFormattingBehavior = .pad
         
         decimal.numberStyle = .decimal
+        
+        measures.unitStyle = .short
+        measures.unitOptions = .naturalScale
+        measures.numberFormatter.maximumFractionDigits = 1
     }
 }

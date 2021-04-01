@@ -37,6 +37,11 @@
 		CE8367432614D9BB00BE3AB5 /* Walking.Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8367422614D9BB00BE3AB5 /* Walking.Streak.swift */; };
 		CE8367542614DBB000BE3AB5 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B7260E0A50004FC710 /* Bar.swift */; };
 		CE8C3EC826136169004A6F39 /* Map.Tiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C3EC726136169004A6F39 /* Map.Tiler.swift */; };
+		CEAF80492615F4E300564E3F /* Walking.Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF80482615F4E300564E3F /* Walking.Steps.swift */; };
+		CEAF804E2615F5C100564E3F /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6177802611DCB40091EE0E /* Water.swift */; };
+		CEAF80572615F67B00564E3F /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45DF260E0A73004FC710 /* Metrics.swift */; };
+		CEAF805D2615FEC600564E3F /* Walking.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF805C2615FEC600564E3F /* Walking.Distance.swift */; };
+		CEAF80662615FEDE00564E3F /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45E0260E0A73004FC710 /* Ring.swift */; };
 		CEB1EF5B260DF9330036ECB5 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEB1EF5A260DF9330036ECB5 /* Hero */; };
 		CEB1EF62260DF9950036ECB5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF61260DF9950036ECB5 /* CloudKit.framework */; };
 		CEB1EF64260DF9BD0036ECB5 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */; };
@@ -183,6 +188,8 @@
 		CE7F0B542614CA97005C4585 /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		CE8367422614D9BB00BE3AB5 /* Walking.Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Streak.swift; sourceTree = "<group>"; };
 		CE8C3EC726136169004A6F39 /* Map.Tiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Tiler.swift; sourceTree = "<group>"; };
+		CEAF80482615F4E300564E3F /* Walking.Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Steps.swift; sourceTree = "<group>"; };
+		CEAF805C2615FEC600564E3F /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
 		CEB1EF60260DF9820036ECB5 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CEB1EF61260DF9950036ECB5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -324,8 +331,6 @@
 				CE6177902611EAD10091EE0E /* Map.Coordinator.swift */,
 				CE61778A2611EA890091EE0E /* Map.swift */,
 				CE8C3EC726136169004A6F39 /* Map.Tiler.swift */,
-				CEEA45DF260E0A73004FC710 /* Metrics.swift */,
-				CEEA45E0260E0A73004FC710 /* Ring.swift */,
 				CEEA45D6260E0A73004FC710 /* Session.Player.swift */,
 				CEEA45D1260E0A73004FC710 /* Session.Section.swift */,
 				CEEA45E6260E0A73004FC710 /* Session.swift */,
@@ -340,7 +345,6 @@
 				CEEA45D2260E0A73004FC710 /* Walking.Streak.swift */,
 				CEEA45D7260E0A73004FC710 /* Walking.swift */,
 				CEEA45DE260E0A73004FC710 /* Walking.Time.swift */,
-				CE6177802611DCB40091EE0E /* Water.swift */,
 				CEEA45D3260E0A73004FC710 /* Window.swift */,
 				CE0EB3CB260DF31B00D607C9 /* Assets.xcassets */,
 			);
@@ -390,7 +394,9 @@
 				CE0EB3FE260DF38F00D607C9 /* App.swift */,
 				CE7F0B292614BBD3005C4585 /* Home.swift */,
 				CE7F0AF62614B0DC005C4585 /* Session.swift */,
+				CEAF805C2615FEC600564E3F /* Walking.Distance.swift */,
 				CE7F0AEC2614B087005C4585 /* Walking.Menu.swift */,
+				CEAF80482615F4E300564E3F /* Walking.Steps.swift */,
 				CE8367422614D9BB00BE3AB5 /* Walking.Streak.swift */,
 				CE7F0B542614CA97005C4585 /* Walking.swift */,
 				CE7F0B412614C9A9005C4585 /* Walking.Time.swift */,
@@ -406,7 +412,10 @@
 				CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */,
 				CEEA45CC260E0A73004FC710 /* Clock.swift */,
 				CEEA4613260E0C7D004FC710 /* Health.swift */,
+				CEEA45DF260E0A73004FC710 /* Metrics.swift */,
 				CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */,
+				CEEA45E0260E0A73004FC710 /* Ring.swift */,
+				CE6177802611DCB40091EE0E /* Water.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -645,16 +654,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7F0B422614C9A9005C4585 /* Walking.Time.swift in Sources */,
+				CEAF805D2615FEC600564E3F /* Walking.Distance.swift in Sources */,
 				CE7F0AF72614B0DC005C4585 /* Session.swift in Sources */,
 				CE0EB3FF260DF38F00D607C9 /* App.swift in Sources */,
 				CE8367432614D9BB00BE3AB5 /* Walking.Streak.swift in Sources */,
 				CE7F0B2A2614BBD3005C4585 /* Home.swift in Sources */,
 				CE7F0B4B2614CA4D005C4585 /* Clock.swift in Sources */,
 				CE7F0AED2614B087005C4585 /* Walking.Menu.swift in Sources */,
+				CEAF80492615F4E300564E3F /* Walking.Steps.swift in Sources */,
 				CEEA4615260E0C7D004FC710 /* Health.swift in Sources */,
+				CEAF804E2615F5C100564E3F /* Water.swift in Sources */,
 				CE8367542614DBB000BE3AB5 /* Bar.swift in Sources */,
 				CE7F0B0C2614B461005C4585 /* Challenge.Metadata.swift in Sources */,
 				CE7F0B552614CA97005C4585 /* Walking.swift in Sources */,
+				CEAF80572615F67B00564E3F /* Metrics.swift in Sources */,
+				CEAF80662615FEDE00564E3F /* Ring.swift in Sources */,
 				CEEA460E260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
 				CE7F0B342614C59B005C4585 /* App.Delegate.swift in Sources */,
 				CE7F0AFD2614B1DF005C4585 /* Window.swift in Sources */,

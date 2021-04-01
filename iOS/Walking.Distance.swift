@@ -16,7 +16,7 @@ extension Walking {
                 .font(.headline)
             Spacer()
             ZStack {
-                Ring(percent: 1)
+                Circle()
                     .stroke(Color.blue.opacity(0.2), lineWidth: 25)
                 Ring(percent: .init(display % maximum) / .init(maximum))
                     .stroke(LinearGradient(

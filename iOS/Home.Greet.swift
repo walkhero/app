@@ -11,7 +11,7 @@ extension Home {
                 } label: {
                     Image(systemName: "line.horizontal.3")
                         .font(.title2)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.primary)
                         .frame(width: 60, height: 60)
                 }
                 Spacer()
@@ -22,7 +22,7 @@ extension Home {
                 } label: {
                     ZStack {
                         Capsule()
-                            .fill(Color.primary)
+                            .fill(Color(.secondarySystemBackground))
                         Label(session.archive.last == nil
                                 ? "New Hero"
                                 : session.relative.string(from: session.archive.last!.end, to: .init()),
@@ -30,7 +30,6 @@ extension Home {
                             .font(.footnote)
                             .foregroundColor(Color.primary)
                             .padding(.horizontal)
-                            .colorInvert()
                     }
                     .frame(height: 35)
                     .fixedSize()

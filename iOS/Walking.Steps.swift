@@ -35,7 +35,7 @@ extension Walking {
                     .scaleEffect(CGSize(width: -1.0, height: 1.0))
                     .opacity(0.5)
                     .mask(Circle())
-                Ring(percent: 1)
+                Circle()
                     .stroke(Color.blue, lineWidth: 5)
                 VStack {
                     Text(NSNumber(value: counter), formatter: session.decimal)

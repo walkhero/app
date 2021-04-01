@@ -10,14 +10,9 @@ extension Walking {
             Text("STREAK")
                 .font(.headline)
             Spacer()
-            ZStack {
-                Circle()
-                    .stroke(Challenge.streak.background, lineWidth: 3)
-                Text(NSNumber(value: streak.current), formatter: session.decimal)
-                    .font(Font.title.bold())
-                    .padding(40)
-            }
-            .fixedSize()
+            Text(NSNumber(value: streak.current), formatter: session.decimal)
+                .font(Font.largeTitle.bold())
+                .padding()
             if streak.maximum > streak.current {
                 HStack {
                     Text("Max")
