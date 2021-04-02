@@ -35,7 +35,7 @@ extension Walking {
                             .font(.footnote)
                     }
                     if maximum > Metrics.distance.min {
-                        Text(NSNumber(value: maximum), formatter: session.decimal)
+                        Text(Measurement(value: .init(maximum), unit: UnitLength.meters), formatter: session.measures)
                             .font(.title3)
                             .foregroundColor(.secondary)
                         if metres > maximum {

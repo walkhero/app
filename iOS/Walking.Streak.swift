@@ -12,7 +12,6 @@ extension Walking {
             Spacer()
             Text(NSNumber(value: streak.current), formatter: session.decimal)
                 .font(Font.largeTitle.bold())
-                .padding()
             if streak.maximum > streak.current {
                 HStack {
                     Text("Max")
@@ -26,7 +25,7 @@ extension Walking {
                     .stroke(Color(.secondarySystemBackground), style: .init(lineWidth: 8, lineCap: .round))
                 Bar(percent: streak.maximum == 0 ? 0 : .init(streak.current) / .init(streak.maximum))
                     .stroke(LinearGradient(
-                                gradient: .init(colors: [.pink, .init(.systemIndigo)]),
+                                gradient: .init(colors: [.pink, .purple]),
                                 startPoint: .leading,
                                 endPoint: .trailing), style: .init(lineWidth: 8, lineCap: .round))
             }

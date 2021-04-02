@@ -8,20 +8,22 @@ extension Walking {
         let tiles: Int
         
         var body: some View {
-            VStack {
-                Text("STREAK")
+            ZStack {
+                Text("MAP")
                     .font(.footnote)
-                    .padding(.leading)
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-                Spacer()
-                Text(NSNumber(value: tiles), formatter: session.decimal)
-                    .font(Font.title2.bold())
-                Text("Map Squares")
-                    .font(.callout)
-                Text(NSNumber(value: Double(tiles) / Metrics.map.tiles), formatter: session.percentil)
-                    .font(Font.caption.monospacedDigit())
-                    .foregroundColor(.secondary)
+                    .padding([.leading, .top])
+                    .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .topLeading)
+                VStack {
+                    Text(NSNumber(value: tiles), formatter: session.decimal)
+                        .font(Font.title.bold())
+                    Text("Map Squares")
+                        .font(.callout)
+                    Text(NSNumber(value: Double(tiles) / Metrics.map.tiles), formatter: session.percentil)
+                        .font(Font.caption.monospacedDigit())
+                        .foregroundColor(.secondary)
+                }
             }
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }

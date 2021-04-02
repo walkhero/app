@@ -14,7 +14,9 @@ final class Watch: NSObject, WCSessionDelegate {
     }
     
     func session(_: WCSession, didReceiveMessage: [String : Any]) {
-        challenges.send(.init(message: didReceiveMessage))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            self?.challenges.send(.init(message: didReceiveMessage))
+        }
     }
     
     func session(_: WCSession, activationDidCompleteWith: WCSessionActivationState, error: Error?) { }

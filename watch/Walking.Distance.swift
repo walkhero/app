@@ -12,47 +12,46 @@ extension Walking {
         private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
         
         var body: some View {
-            VStack {
+            ZStack {
                 Text("DISTANCE")
                     .font(.footnote)
-                    .padding(.leading)
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-                Spacer()
-                ZStack {
-                    Circle()
-                        .stroke(Color.blue.opacity(0.2), lineWidth: 6)
-                    Ring(percent: .init(display % maximum) / .init(maximum))
-                        .stroke(LinearGradient(
-                                    gradient: .init(colors: [.purple, .blue]),
-                                    startPoint: .top,
-                                    endPoint: .bottom),
-                                style: .init(lineWidth: 6,
-                                             lineCap: .round))
-                    VStack {
-                        if metres > 0 {
-                            Text(Measurement(value: .init(metres), unit: UnitLength.meters), formatter: session.measures)
-                                .font(Font.callout.bold())
-                        } else {
-                            Text("STARTING")
-                                .font(.caption2)
-                        }
-                        if maximum > Metrics.distance.min {
-                            Text(NSNumber(value: maximum), formatter: session.decimal)
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                            if metres > maximum {
-                                Group {
-                                    Text(NSNumber(value: metres / maximum), formatter: session.decimal) +
-                                    Text(verbatim: "x")
-                                }
-                                .font(Font.footnote.bold())
-                                .foregroundColor(.accentColor)
+                    .padding([.leading, .top])
+                    .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .topLeading)
+                Circle()
+                    .stroke(Color.blue.opacity(0.2), lineWidth: 12)
+                    .padding(Metrics.distance.padding)
+                Ring(percent: .init(display % maximum) / .init(maximum))
+                    .stroke(LinearGradient(
+                                gradient: .init(colors: [.purple, .blue]),
+                                startPoint: .top,
+                                endPoint: .bottom),
+                            style: .init(lineWidth: 12,
+                                         lineCap: .round))
+                    .padding(Metrics.distance.padding)
+                VStack {
+                    if metres > 0 {
+                        Text(Measurement(value: .init(metres), unit: UnitLength.meters), formatter: session.measures)
+                            .font(Font.title2.bold())
+                    } else {
+                        Text("STARTING")
+                            .font(.caption2)
+                    }
+                    if maximum > Metrics.distance.min {
+                        Text(Measurement(value: .init(maximum), unit: UnitLength.meters), formatter: session.measures)
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                        if metres > maximum {
+                            Group {
+                                Text(NSNumber(value: metres / maximum), formatter: session.decimal) +
+                                Text(verbatim: "x")
                             }
+                            .font(Font.footnote.bold())
+                            .foregroundColor(.accentColor)
                         }
                     }
                 }
-                .frame(width: 130, height: 130)
             }
+            .edgesIgnoringSafeArea(.all)
             .onChange(of: metres) { _ in
                 refresh()
             }

@@ -16,50 +16,50 @@ extension Walking {
         private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
         
         var body: some View {
-            VStack {
+            ZStack {
                 Text("STEPS")
                     .font(.footnote)
-                    .padding(.leading)
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-                Spacer()
-                ZStack {
-                    Water(percent: .init(display % maximum) / .init(maximum), a: a, b: b)
-                        .fill(LinearGradient(
-                                gradient: .init(colors: [.blue, .purple]),
-                                startPoint: .top,
-                                endPoint: .bottom))
-                        .opacity(0.5)
-                        .mask(Circle())
-                    Water(percent: .init(display % maximum) / .init(maximum), a: c, b: d)
-                        .fill(LinearGradient(
-                                gradient: .init(colors: [.blue, .purple]),
-                                startPoint: .top,
-                                endPoint: .bottom))
-                        .scaleEffect(CGSize(width: -1.0, height: 1.0))
-                        .opacity(0.5)
-                        .mask(Circle())
-                    Circle()
-                        .stroke(Color.blue, lineWidth: 2)
-                    VStack {
-                        Text(NSNumber(value: counter), formatter: session.decimal)
-                            .font(Font.title3.bold())
-                        if maximum > Metrics.steps.min {
-                            Text(NSNumber(value: maximum), formatter: session.decimal)
-                                .font(.callout)
-                                .foregroundColor(.secondary)
-                            if steps > maximum {
-                                Group {
-                                    Text(NSNumber(value: steps / maximum), formatter: session.decimal) +
-                                    Text(verbatim: "x")
-                                }
-                                .font(.callout)
-                                .foregroundColor(.accentColor)
+                    .padding([.leading, .top])
+                    .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .topLeading)
+                Water(percent: .init(display % maximum) / .init(maximum), a: a, b: b)
+                    .fill(LinearGradient(
+                            gradient: .init(colors: [.blue, .purple]),
+                            startPoint: .top,
+                            endPoint: .bottom))
+                    .opacity(0.5)
+                    .mask(Circle())
+                    .padding(Metrics.steps.padding)
+                Water(percent: .init(display % maximum) / .init(maximum), a: c, b: d)
+                    .fill(LinearGradient(
+                            gradient: .init(colors: [.blue, .purple]),
+                            startPoint: .top,
+                            endPoint: .bottom))
+                    .scaleEffect(CGSize(width: -1.0, height: 1.0))
+                    .opacity(0.5)
+                    .mask(Circle())
+                    .padding(Metrics.steps.padding)
+                Circle()
+                    .stroke(Color.blue, lineWidth: 5)
+                    .padding(Metrics.steps.padding)
+                VStack {
+                    Text(NSNumber(value: counter), formatter: session.decimal)
+                        .font(Font.title.bold())
+                    if maximum > Metrics.steps.min {
+                        Text(NSNumber(value: maximum), formatter: session.decimal)
+                            .font(.callout)
+                            .foregroundColor(.secondary)
+                        if steps > maximum {
+                            Group {
+                                Text(NSNumber(value: steps / maximum), formatter: session.decimal) +
+                                Text(verbatim: "x")
                             }
+                            .font(.callout)
+                            .foregroundColor(.accentColor)
                         }
                     }
                 }
-                .frame(width: 120, height: 120)
             }
+            .edgesIgnoringSafeArea(.all)
             .onChange(of: steps) { _ in
                 refresh()
             }

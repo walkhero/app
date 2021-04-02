@@ -15,7 +15,7 @@ extension Detail {
                 .font(Font.callout.monospacedDigit())
                 .foregroundColor(.secondary)
             WalkHero.Map(session: $session, tiles: session.archive.tiles, add: nil)
-            Text("Areas in dark is where you haven't walked yet")
+            Text("Areas in dark are where you haven't walked yet")
                 .font(.caption2)
                 .foregroundColor(.secondary)
                 .padding([.bottom, .horizontal])

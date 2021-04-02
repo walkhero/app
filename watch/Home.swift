@@ -7,10 +7,9 @@ struct Home: View {
         VStack {
             Spacer()
             Image(systemName: "figure.walk")
-                .font(.title2)
-            Spacer()
+                .font(.title)
             Button {
-                withAnimation(.spring(blendDuration: 0.4)) {
+                withAnimation(.easeInOut(duration: 0.4)) {
                     session.archive.start()
                 }
             } label: {
@@ -28,6 +27,7 @@ struct Home: View {
             }
             .buttonStyle(PlainButtonStyle())
             .fixedSize()
+            Spacer()
         }
     }
 }

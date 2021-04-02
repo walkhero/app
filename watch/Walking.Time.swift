@@ -11,7 +11,7 @@ extension Walking {
             ZStack {
                 Clock(indicator: indicator, center: .init(x: 70, y: 2))
                 Text(verbatim: counter)
-                    .font(Font.callout.bold().monospacedDigit())
+                    .font(Font.body.bold().monospacedDigit())
             }
             .frame(width: 140, height: 140)
             .onAppear(perform: refresh)
@@ -22,10 +22,10 @@ extension Walking {
         
         private func refresh() {
             if case let .walking(duration) = session.archive.status {
-                withAnimation(.easeInOut(duration: 1)) {
-                    self.indicator = .init(duration.truncatingRemainder(dividingBy: 60))
-                }
                 counter = session.components.string(from: duration) ?? ""
+                withAnimation(.easeInOut(duration: 1)) {
+                    indicator = .init(duration.truncatingRemainder(dividingBy: 60))
+                }
             }
         }
     }

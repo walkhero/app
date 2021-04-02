@@ -9,10 +9,12 @@ struct Metrics {
     
     struct steps {
         static let min = 100
+        static let padding = CGFloat(20)
     }
     
     struct distance {
         static let min = 1000
+        static let padding = CGFloat(20)
     }
     
     struct map {
