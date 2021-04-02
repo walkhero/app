@@ -9,6 +9,7 @@ extension Walking {
         var body: some View {
             Text("STREAK")
                 .font(.headline)
+                .padding(.top)
             Spacer()
             Text(NSNumber(value: streak.current), formatter: session.decimal)
                 .font(Font.largeTitle.bold())

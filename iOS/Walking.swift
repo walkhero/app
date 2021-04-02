@@ -54,7 +54,7 @@ struct Walking: View {
                 Text("CANCEL")
                     .foregroundColor(.secondary)
                     .font(.caption)
-                    .frame(width: 300, height: 34)
+                    .frame(width: 300, height: 40)
             }
             .disabled(disabled)
             .padding(.top, 10)

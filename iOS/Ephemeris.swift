@@ -8,7 +8,7 @@ struct Ephemeris: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 12)
+            RoundedRectangle(cornerRadius: 16)
                 .fill(Color(.secondarySystemBackground))
             VStack(spacing: 0) {
                 Navigation(session: $session, index: $index, months: year.months.count, month: year.months[index].value)

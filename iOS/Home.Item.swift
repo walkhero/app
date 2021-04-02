@@ -24,7 +24,6 @@ extension Home {
                                     .fixedSize(horizontal: false, vertical: true)
                                 Text(challenge.subtitle)
                                     .font(.caption)
-                                    .opacity(0.9)
                             }
                             Spacer()
                             Image(systemName: challenge.symbol)

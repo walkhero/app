@@ -14,15 +14,18 @@ struct Detail: View {
                         session.section = .home
                     }
                 } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.title3)
-                        .foregroundColor(.secondary)
-                        .frame(width: 30, height: 50)
-                        .padding(.leading)
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .font(.title3)
+                            .frame(width: 30, height: 50)
+                            .padding(.leading)
+                        Text(challenge.title)
+                            .font(Font.footnote.bold())
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .foregroundColor(.primary)
                 }
-                Text(challenge.title)
-                    .font(Font.footnote.bold())
-                    .fixedSize(horizontal: false, vertical: true)
+                
                 Spacer()
                 if session.archive.enrolled(challenge) {
                     Button {

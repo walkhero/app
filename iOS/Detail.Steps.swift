@@ -11,11 +11,11 @@ extension Detail {
             Spacer()
             if max > 0 {
                 HStack {
-                    Text("Max")
+                    Text("Max ") +
                     Text(NSNumber(value: steps.max), formatter: session.decimal)
                     Spacer()
                 }
-                .font(Font.body.bold())
+                .font(Font.title.bold())
                 .padding(.horizontal)
                 Text("Over the last " + (count == 1 ? "Walk" : "\(count) Walks"))
                     .font(.callout)
@@ -29,8 +29,8 @@ extension Detail {
                 .padding(.vertical, 5)
             if max > 0 {
                 HStack {
-                    Text("All Time Max")
-                    Text(NSNumber(value: max), formatter: session.decimal)
+                    Text("All Time Max ")
+                    + Text(NSNumber(value: max), formatter: session.decimal)
                     Spacer()
                 }
                 .font(.footnote)

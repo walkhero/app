@@ -18,6 +18,7 @@ extension Walking {
         var body: some View {
             Text("STEPS")
                 .font(.headline)
+                .padding(.top)
             Spacer()
             ZStack {
                 Water(percent: .init(display % maximum) / .init(maximum), a: a, b: b)
@@ -36,7 +37,7 @@ extension Walking {
                     .opacity(0.5)
                     .mask(Circle())
                 Circle()
-                    .stroke(Color.blue, lineWidth: 5)
+                    .stroke(Color.blue, lineWidth: 10)
                 VStack {
                     Text(NSNumber(value: counter), formatter: session.decimal)
                         .font(Font.largeTitle.bold())

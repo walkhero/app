@@ -19,6 +19,7 @@
 		CE39B3422611EDAF0057943D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3412611EDAF0057943D /* Location.swift */; };
 		CE39B3582611F31F0057943D /* Detail.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3572611F31F0057943D /* Detail.Map.swift */; };
 		CE4E8C73260F6E2900480453 /* Walking.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E8C72260F6E2900480453 /* Walking.Distance.swift */; };
+		CE5BCEA4261735A800E301F7 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BCEA3261735A800E301F7 /* Bundle.swift */; };
 		CE6177812611DCB40091EE0E /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6177802611DCB40091EE0E /* Water.swift */; };
 		CE61778B2611EA890091EE0E /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61778A2611EA890091EE0E /* Map.swift */; };
 		CE6177912611EAD10091EE0E /* Map.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6177902611EAD10091EE0E /* Map.Coordinator.swift */; };
@@ -180,6 +181,7 @@
 		CE39B3412611EDAF0057943D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CE39B3572611F31F0057943D /* Detail.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Map.swift; sourceTree = "<group>"; };
 		CE4E8C72260F6E2900480453 /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
+		CE5BCEA3261735A800E301F7 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		CE6177802611DCB40091EE0E /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		CE61778A2611EA890091EE0E /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		CE6177902611EAD10091EE0E /* Map.Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Coordinator.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				CEEA459D260E06D6004FC710 /* widget.entitlements */,
 				CE0EB3E4260DF37A00D607C9 /* Info.plist */,
 				CE0EB3E0260DF37A00D607C9 /* widget.swift */,
+				CE5BCEA3261735A800E301F7 /* Bundle.swift */,
 				CE0EB3E2260DF37A00D607C9 /* Assets.xcassets */,
 			);
 			path = widget;
@@ -661,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0EB3E1260DF37A00D607C9 /* widget.swift in Sources */,
+				CE5BCEA4261735A800E301F7 /* Bundle.swift in Sources */,
 				CEEA460D260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

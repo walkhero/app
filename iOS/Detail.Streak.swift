@@ -8,8 +8,8 @@ extension Detail {
         let streak: Hero.Streak
         
         var body: some View {
-            Header(session: $session, streak: streak)
             Spacer()
+            Header(session: $session, streak: streak)
             if let year = calendar.last {
                 Ephemeris(session: $session, index: year.months.count - 1, year: year)
             } else {

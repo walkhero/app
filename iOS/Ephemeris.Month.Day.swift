@@ -1,9 +1,11 @@
 import SwiftUI
 
+
 extension Ephemeris.Month {
     struct Day: View {
         let index: Int
         let continouos: Continuous
+        private let fill = Color.accentColor
         
         var body: some View {
             ZStack {
@@ -22,10 +24,10 @@ extension Ephemeris.Month {
                                                 height: Metrics.calendar.day.size_padding2),
                             byRoundingCorners: [.topLeft, .bottomLeft],
                             cornerRadii: Metrics.calendar.day.radius).cgPath)
-                        .fill(Color.accentColor)
+                        .fill(fill)
                 case .middle:
                     Rectangle()
-                        .fill(Color.accentColor)
+                        .fill(fill)
                         .padding(.vertical, 5)
                 case .trailing:
                     Path(UIBezierPath(
@@ -35,13 +37,14 @@ extension Ephemeris.Month {
                                                 height: Metrics.calendar.day.size_padding2),
                             byRoundingCorners: [.topRight, .bottomRight],
                             cornerRadii: Metrics.calendar.day.radius).cgPath)
-                        .fill(Color.accentColor)
+                        .fill(fill)
                 default:
                     EmptyView()
                 }
                 Text("\(index)")
+                    .font(.footnote)
                     .fontWeight(continouos == .none ? .regular : .bold)
-                    .foregroundColor(continouos == .none ? .secondary : .white)
+                    .foregroundColor(continouos == .none ? .init(.tertiaryLabel) : .black)
             }
             .frame(width: Metrics.calendar.day.size, height: Metrics.calendar.day.size)
         }

@@ -13,9 +13,10 @@ extension Detail.Streak {
                 Text(NSNumber(value: streak.current), formatter: session.decimal)
                     .frame(width: Metrics.streak.header.width)
                 Image(systemName: today ? "checkmark.circle.fill" : "exclamationmark.square.fill")
-                    .font(.title2)
+                    .foregroundColor(today ? .primary : .secondary)
                     .frame(width: Metrics.streak.header.width)
             }
+            .font(Font.title.bold())
             .padding(.top, 10)
             .padding(.bottom, 1)
             HStack(spacing: 0) {

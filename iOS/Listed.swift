@@ -13,18 +13,20 @@ struct Listed: View {
                         session.section = .home
                     }
                 } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.title3)
-                        .foregroundColor(.secondary)
-                        .frame(width: 30, height: 50)
-                        .padding(.leading)
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .font(.title3)
+                            .frame(width: 30, height: 50)
+                            .padding(.leading)
+                        Text("Walks")
+                            .font(Font.title3.bold())
+                    }
                 }
-                Text("Walks")
-                    .font(Font.footnote.bold())
+                .foregroundColor(.primary)
                 Spacer()
             }
             ZStack {
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 12)
                     .fill(Color(.secondarySystemBackground))
                 if list.isEmpty {
                     VStack {
@@ -52,7 +54,7 @@ struct Listed: View {
                     }
                 }
             }
-            .padding([.horizontal, .bottom])
+            .padding()
         }
     }
 }

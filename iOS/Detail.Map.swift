@@ -7,7 +7,7 @@ extension Detail {
         
         var body: some View {
             Text(NSNumber(value: session.archive.tiles.count), formatter: session.decimal)
-                .font(Font.title2.bold())
+                .font(Font.largeTitle.bold())
                 .padding(.top)
             Text("Map Squares")
                 .font(.footnote)

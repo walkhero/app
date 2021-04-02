@@ -10,7 +10,9 @@ extension Ephemeris {
         var body: some View {
             HStack {
                 Button {
-                    index -= 1
+                    withAnimation(.spring(blendDuration: 0.5)) {
+                        index -= 1
+                    }
                 } label: {
                     Image(systemName: "chevron.left")
                         .foregroundColor(index == 0 ? .init(.tertiaryLabel) : .primary)
@@ -21,7 +23,9 @@ extension Ephemeris {
                     .font(Font.callout.bold())
                     .frame(width: 130)
                 Button {
-                    index += 1
+                    withAnimation(.spring(blendDuration: 0.5)) {
+                        index += 1
+                    }
                 } label: {
                     Image(systemName: "chevron.right")
                         .foregroundColor(index == months - 1 ? .init(.tertiaryLabel) : .primary)
@@ -39,9 +43,9 @@ extension Ephemeris {
                         .frame(width: Metrics.calendar.day.size)
                 }
             }
-            .font(.footnote)
+            .font(.callout)
             .foregroundColor(.pink)
-            .padding(.vertical)
+            .padding(.vertical, 10)
         }
     }
 }

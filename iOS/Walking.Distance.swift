@@ -14,6 +14,7 @@ extension Walking {
         var body: some View {
             Text("DISTANCE")
                 .font(.headline)
+                .padding(.top)
             Spacer()
             ZStack {
                 Circle()

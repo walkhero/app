@@ -10,12 +10,10 @@ struct Chart: View {
                 .fill(Color(.secondarySystemBackground))
             ZStack {
                 Shade(values: values)
-                    .fill(LinearGradient(gradient: .init(colors: [color, .init(.secondarySystemBackground)]),
-                                         startPoint: .top,
-                                         endPoint: .bottom))
+                    .fill(color.opacity(0.3))
                     .opacity(0.3)
                 Road(values: values)
-                    .stroke(color, style: .init(lineWidth: 2, lineCap: .round, lineJoin: .round))
+                    .stroke(color, style: .init(lineWidth: 1, lineCap: .round, lineJoin: .round))
                 if let last = values.last {
                     Dot(y: last, index: values.count - 1)
                         .fill(color)
