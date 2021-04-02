@@ -3,7 +3,6 @@ import Hero
 
 extension Ephemeris {
     struct Month: View {
-        @Binding var session: Session
         let month: Year.Month
         let previous: Bool
         let next: Bool

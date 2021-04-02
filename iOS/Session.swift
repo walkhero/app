@@ -18,6 +18,11 @@ struct Session {
     let decimal = NumberFormatter()
     let percentil = NumberFormatter()
     let measures = MeasurementFormatter()
+    let widget = Memory.shared.archive
+        .merge(with: Memory.shared.save)
+        .removeDuplicates()
+        .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
+        .eraseToAnyPublisher()
     
     init() {
         components.allowedUnits = [.minute, .second]

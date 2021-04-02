@@ -10,12 +10,24 @@
 		CE0EB3CC260DF31B00D607C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0EB3CB260DF31B00D607C9 /* Assets.xcassets */; };
 		CE0EB3DC260DF37A00D607C9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0EB3DB260DF37A00D607C9 /* WidgetKit.framework */; };
 		CE0EB3DE260DF37A00D607C9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0EB3DD260DF37A00D607C9 /* SwiftUI.framework */; };
-		CE0EB3E1260DF37A00D607C9 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EB3E0260DF37A00D607C9 /* widget.swift */; };
 		CE0EB3E3260DF37A00D607C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0EB3E2260DF37A00D607C9 /* Assets.xcassets */; };
 		CE0EB3E7260DF37A00D607C9 /* WalkHero.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE0EB3D9260DF37A00D607C9 /* WalkHero.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE0EB3F1260DF38E00D607C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0EB3F0260DF38E00D607C9 /* Assets.xcassets */; };
 		CE0EB3FF260DF38F00D607C9 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EB3FE260DF38F00D607C9 /* App.swift */; };
 		CE0EB40A260DF38F00D607C9 /* WalkHero.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CE0EB3EE260DF38E00D607C9 /* WalkHero.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE1D19B5261741F2000A44DB /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D19B4261741F2000A44DB /* Streak.swift */; };
+		CE1D19BB26174285000A44DB /* Streak.Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D19BA26174285000A44DB /* Streak.Provider.swift */; };
+		CE1D19C126174294000A44DB /* Streak.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D19C026174294000A44DB /* Streak.Content.swift */; };
+		CE1D19C72617432E000A44DB /* Streak.Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D19C62617432E000A44DB /* Streak.Entry.swift */; };
+		CE1D19D0261745E0000A44DB /* Ephemeris.Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45DB260E0A73004FC710 /* Ephemeris.Month.swift */; };
+		CE1D19D1261745E0000A44DB /* Ephemeris.Month.Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45E1260E0A73004FC710 /* Ephemeris.Month.Day.swift */; };
+		CE1D19D2261745E0000A44DB /* Ephemeris.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45CD260E0A73004FC710 /* Ephemeris.swift */; };
+		CE1D19D3261745E0000A44DB /* Ephemeris.Month.Continuous.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B5260E0A50004FC710 /* Ephemeris.Month.Continuous.swift */; };
+		CE1D19D4261745E0000A44DB /* Ephemeris.Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45D9260E0A73004FC710 /* Ephemeris.Navigation.swift */; };
+		CE1D19D9261745E5000A44DB /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45DF260E0A73004FC710 /* Metrics.swift */; };
+		CE1D19DF261746C5000A44DB /* Ephermeris.Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D19DE261746C5000A44DB /* Ephermeris.Week.swift */; };
+		CE1D19F926174F3F000A44DB /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CE1D19F826174F3F000A44DB /* Hero */; };
+		CE1D1A0A26174F64000A44DB /* Ephermeris.Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D19DE261746C5000A44DB /* Ephermeris.Week.swift */; };
 		CE39B3422611EDAF0057943D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3412611EDAF0057943D /* Location.swift */; };
 		CE39B3582611F31F0057943D /* Detail.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3572611F31F0057943D /* Detail.Map.swift */; };
 		CE4E8C73260F6E2900480453 /* Walking.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E8C72260F6E2900480453 /* Walking.Distance.swift */; };
@@ -169,7 +181,6 @@
 		CE0EB3D9260DF37A00D607C9 /* WalkHero.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WalkHero.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0EB3DB260DF37A00D607C9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CE0EB3DD260DF37A00D607C9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		CE0EB3E0260DF37A00D607C9 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		CE0EB3E2260DF37A00D607C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0EB3E4260DF37A00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0EB3EE260DF38E00D607C9 /* WalkHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +189,11 @@
 		CE0EB3F7260DF38E00D607C9 /* WalkHero.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WalkHero.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0EB3FE260DF38F00D607C9 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CE0EB407260DF38F00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE1D19B4261741F2000A44DB /* Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
+		CE1D19BA26174285000A44DB /* Streak.Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.Provider.swift; sourceTree = "<group>"; };
+		CE1D19C026174294000A44DB /* Streak.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.Content.swift; sourceTree = "<group>"; };
+		CE1D19C62617432E000A44DB /* Streak.Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.Entry.swift; sourceTree = "<group>"; };
+		CE1D19DE261746C5000A44DB /* Ephermeris.Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ephermeris.Week.swift; sourceTree = "<group>"; };
 		CE39B3412611EDAF0057943D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CE39B3572611F31F0057943D /* Detail.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Map.swift; sourceTree = "<group>"; };
 		CE4E8C72260F6E2900480453 /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
@@ -270,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0EB3DE260DF37A00D607C9 /* SwiftUI.framework in Frameworks */,
+				CE1D19F926174F3F000A44DB /* Hero in Frameworks */,
 				CE0EB3DC260DF37A00D607C9 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,11 +343,6 @@
 				CEEA45B3260E0A50004FC710 /* Detail.Streak.Header.swift */,
 				CEEA45B6260E0A50004FC710 /* Detail.Streak.swift */,
 				CEEA45B4260E0A50004FC710 /* Detail.swift */,
-				CEEA45B5260E0A50004FC710 /* Ephemeris.Month.Continuous.swift */,
-				CEEA45E1260E0A73004FC710 /* Ephemeris.Month.Day.swift */,
-				CEEA45DB260E0A73004FC710 /* Ephemeris.Month.swift */,
-				CEEA45D9260E0A73004FC710 /* Ephemeris.Navigation.swift */,
-				CEEA45CD260E0A73004FC710 /* Ephemeris.swift */,
 				CEEA45D4260E0A73004FC710 /* Game.swift */,
 				CEEA45CF260E0A73004FC710 /* Home.Greet.swift */,
 				CEEA45E3260E0A73004FC710 /* Home.Item.swift */,
@@ -382,8 +394,11 @@
 			children = (
 				CEEA459D260E06D6004FC710 /* widget.entitlements */,
 				CE0EB3E4260DF37A00D607C9 /* Info.plist */,
-				CE0EB3E0260DF37A00D607C9 /* widget.swift */,
 				CE5BCEA3261735A800E301F7 /* Bundle.swift */,
+				CE1D19C026174294000A44DB /* Streak.Content.swift */,
+				CE1D19C62617432E000A44DB /* Streak.Entry.swift */,
+				CE1D19BA26174285000A44DB /* Streak.Provider.swift */,
+				CE1D19B4261741F2000A44DB /* Streak.swift */,
 				CE0EB3E2260DF37A00D607C9 /* Assets.xcassets */,
 			);
 			path = widget;
@@ -426,6 +441,12 @@
 				CEEA45B7260E0A50004FC710 /* Bar.swift */,
 				CEEA45AF260E0A50004FC710 /* Challenge.Metadata.swift */,
 				CEEA45CC260E0A73004FC710 /* Clock.swift */,
+				CEEA45B5260E0A50004FC710 /* Ephemeris.Month.Continuous.swift */,
+				CEEA45E1260E0A73004FC710 /* Ephemeris.Month.Day.swift */,
+				CEEA45DB260E0A73004FC710 /* Ephemeris.Month.swift */,
+				CEEA45D9260E0A73004FC710 /* Ephemeris.Navigation.swift */,
+				CEEA45CD260E0A73004FC710 /* Ephemeris.swift */,
+				CE1D19DE261746C5000A44DB /* Ephermeris.Week.swift */,
 				CEEA4613260E0C7D004FC710 /* Health.swift */,
 				CE39B3412611EDAF0057943D /* Location.swift */,
 				CEEA45DF260E0A73004FC710 /* Metrics.swift */,
@@ -477,6 +498,9 @@
 			dependencies = (
 			);
 			name = widget;
+			packageProductDependencies = (
+				CE1D19F826174F3F000A44DB /* Hero */,
+			);
 			productName = widgetExtension;
 			productReference = CE0EB3D9260DF37A00D607C9 /* WalkHero.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -636,6 +660,7 @@
 				CE39B3582611F31F0057943D /* Detail.Map.swift in Sources */,
 				CEEA45FF260E0A74004FC710 /* Home.Item.swift in Sources */,
 				CE61778B2611EA890091EE0E /* Map.swift in Sources */,
+				CE1D1A0A26174F64000A44DB /* Ephermeris.Week.swift in Sources */,
 				CEEA45F8260E0A74004FC710 /* Leaderboards.Coordinator.swift in Sources */,
 				CEEA45FD260E0A74004FC710 /* Ephemeris.Month.Day.swift in Sources */,
 				CEEA45F1260E0A74004FC710 /* UIApplication.swift in Sources */,
@@ -663,9 +688,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0EB3E1260DF37A00D607C9 /* widget.swift in Sources */,
+				CE1D19D9261745E5000A44DB /* Metrics.swift in Sources */,
+				CE1D19D1261745E0000A44DB /* Ephemeris.Month.Day.swift in Sources */,
+				CE1D19D2261745E0000A44DB /* Ephemeris.swift in Sources */,
+				CE1D19BB26174285000A44DB /* Streak.Provider.swift in Sources */,
+				CE1D19C126174294000A44DB /* Streak.Content.swift in Sources */,
+				CE1D19B5261741F2000A44DB /* Streak.swift in Sources */,
 				CE5BCEA4261735A800E301F7 /* Bundle.swift in Sources */,
 				CEEA460D260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
+				CE1D19D0261745E0000A44DB /* Ephemeris.Month.swift in Sources */,
+				CE1D19D4261745E0000A44DB /* Ephemeris.Navigation.swift in Sources */,
+				CE1D19C72617432E000A44DB /* Streak.Entry.swift in Sources */,
+				CE1D19DF261746C5000A44DB /* Ephermeris.Week.swift in Sources */,
+				CE1D19D3261745E0000A44DB /* Ephemeris.Month.Continuous.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1342,6 +1377,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE1D19F826174F3F000A44DB /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEB1EF59260DF9330036ECB5 /* XCRemoteSwiftPackageReference "hero" */;
+			productName = Hero;
+		};
 		CEB1EF5A260DF9330036ECB5 /* Hero */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CEB1EF59260DF9330036ECB5 /* XCRemoteSwiftPackageReference "hero" */;

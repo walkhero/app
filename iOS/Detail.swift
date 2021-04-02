@@ -45,7 +45,7 @@ struct Detail: View {
                 switch challenge {
                 case .streak:
                     let calendar = session.archive.calendar
-                    Streak(session: $session, calendar: calendar, streak: calendar.streak)
+                    Streak(session: $session, year: calendar.last!, streak: calendar.streak)
                 case .steps:
                     Steps(session: $session, steps: session.archive.steps, max: session.archive.maxSteps)
                 case .distance:

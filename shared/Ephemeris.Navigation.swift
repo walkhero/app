@@ -2,8 +2,8 @@ import SwiftUI
 
 extension Ephemeris {
     struct Navigation: View {
-        @Binding var session: Session
         @Binding var index: Int
+        let monther: DateFormatter
         let months: Int
         let month: Int
         
@@ -19,7 +19,7 @@ extension Ephemeris {
                         .frame(width: 50, height: 50)
                 }
                 .disabled(index == 0)
-                Text(verbatim: session.monther.string(from: Calendar.current.date(from: .init(month: month))!))
+                Text(verbatim: monther.string(from: Calendar.current.date(from: .init(month: month))!))
                     .font(Font.callout.bold())
                     .frame(width: 130)
                 Button {
@@ -33,19 +33,6 @@ extension Ephemeris {
                 }
                 .disabled(index == months - 1)
             }
-            HStack(spacing: 0) {
-                ForEach(0 ..< 7) {
-                    Text(verbatim: session.weeker.string(
-                            from: Calendar.current.date(
-                                from: .init(
-                                    weekday: $0 + Calendar.current.firstWeekday % 7,
-                                    weekOfMonth: 1))!))
-                        .frame(width: Metrics.calendar.day.size)
-                }
-            }
-            .font(.callout)
-            .foregroundColor(.pink)
-            .padding(.vertical, 10)
         }
     }
 }

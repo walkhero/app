@@ -1,4 +1,5 @@
 import SwiftUI
+import WidgetKit
 import Hero
 
 @main struct App: SwiftUI.App {
@@ -24,6 +25,10 @@ import Hero
                     withAnimation(.easeInOut(duration: 0.3)) {
                         session.player.image = image
                     }
+                }
+                .onReceive(session.widget) {
+                    Defaults.archive = $0
+                    WidgetCenter.shared.reloadAllTimelines()
                 }
                 .onReceive(session.watch.challenges.receive(on: DispatchQueue.main)) {
                     if session.archive.enrolled(.streak) {
