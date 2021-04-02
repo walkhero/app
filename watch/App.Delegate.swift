@@ -1,4 +1,5 @@
 import WatchKit
+import Combine
 import Hero
 
 extension App {
@@ -12,8 +13,17 @@ extension App {
         }
         
         func didReceiveRemoteNotification(_: [AnyHashable : Any], fetchCompletionHandler: @escaping (WKBackgroundFetchResult) -> Void) {
+            var sub: AnyCancellable?
+            sub = Memory.shared.archive
+                .timeout(.seconds(20), scheduler: DispatchQueue.global(qos: .utility))
+                .sink { _ in
+                    fetchCompletionHandler(.noData)
+                    sub?.cancel()
+                } receiveValue: { _ in
+                    fetchCompletionHandler(.newData)
+                    sub?.cancel()
+                }
             Memory.shared.fetch()
-            fetchCompletionHandler(.newData)
         }
     }
 }

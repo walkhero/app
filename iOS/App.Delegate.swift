@@ -1,5 +1,6 @@
 import UIKit
 import StoreKit
+import Combine
 import Hero
 
 extension App {
@@ -23,8 +24,17 @@ extension App {
         }
         
         func application(_: UIApplication, didReceiveRemoteNotification: [AnyHashable : Any], fetchCompletionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+            var sub: AnyCancellable?
+            sub = Memory.shared.archive
+                .timeout(.seconds(20), scheduler: DispatchQueue.global(qos: .utility))
+                .sink { _ in
+                    fetchCompletionHandler(.noData)
+                    sub?.cancel()
+                } receiveValue: { _ in
+                    fetchCompletionHandler(.newData)
+                    sub?.cancel()
+                }
             Memory.shared.fetch()
-            fetchCompletionHandler(.newData)
         }
     }
 }

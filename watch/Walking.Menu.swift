@@ -59,8 +59,7 @@ extension Walking {
         
         private func clear() {
             disabled = true
-            session.health.clear()
-            session.location.end()
+            session.clear()
         }
     }
 }

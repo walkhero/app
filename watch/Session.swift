@@ -26,4 +26,9 @@ struct Session {
         measures.unitOptions = .naturalScale
         measures.numberFormatter.maximumFractionDigits = 1
     }
+    
+    func clear() {
+        health.clear()
+        location.end()
+    }
 }

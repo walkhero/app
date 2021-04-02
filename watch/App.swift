@@ -14,6 +14,9 @@ import Hero
             Window(session: $session)
                 .onReceive(Memory.shared.archive) {
                     session.archive = $0
+                    if case .none = session.archive.status {
+                        session.clear()
+                    }
                 }
                 .onAppear {
                     if first {
