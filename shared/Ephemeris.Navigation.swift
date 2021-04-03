@@ -15,9 +15,10 @@ extension Ephemeris {
                     }
                 } label: {
                     Image(systemName: "chevron.left")
-                        .foregroundColor(index == 0 ? .init(.tertiaryLabel) : .primary)
+                        .foregroundColor(.primary)
                         .frame(width: 50, height: 50)
                 }
+                .opacity(index == 0 ? 0.15 : 1)
                 .disabled(index == 0)
                 Text(verbatim: monther.string(from: Calendar.current.date(from: .init(month: month))!))
                     .font(Font.callout.bold())
@@ -28,9 +29,10 @@ extension Ephemeris {
                     }
                 } label: {
                     Image(systemName: "chevron.right")
-                        .foregroundColor(index == months - 1 ? .init(.tertiaryLabel) : .primary)
+                        .foregroundColor(.primary)
                         .frame(width: 50, height: 50)
                 }
+                .opacity(index == months - 1 ? 0.15 : 1)
                 .disabled(index == months - 1)
             }
         }

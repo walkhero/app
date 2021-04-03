@@ -11,7 +11,7 @@ extension Ephemeris {
             ForEach(0 ..< month.days.count, id: \.self) { week in
                 HStack(spacing: 0) {
                     ForEach(0 ..< month.days[week].count, id: \.self) {
-                        Day(index: month.days[week][$0].value, continouos: continouos(week, $0))
+                        Day(index: month.days[week][$0].value, today: month.days[week][$0].today, continouos: continouos(week, $0))
                     }
                 }
                 .padding(.leading, leading(week))

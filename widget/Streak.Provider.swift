@@ -21,7 +21,7 @@ extension Streak {
             return .init(
                 year: calendar.last!,
                 streak: calendar.streak,
-                today: archive.last != nil && Calendar.current.isDate(archive.last!.start, inSameDayAs: .init()))
+                today: archive.last != nil && Calendar.current.isDateInToday(archive.last!.start))
         }
     }
 }

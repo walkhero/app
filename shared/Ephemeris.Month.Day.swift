@@ -4,11 +4,16 @@ import SwiftUI
 extension Ephemeris.Month {
     struct Day: View {
         let index: Int
+        let today: Bool
         let continouos: Continuous
         private let fill = Color.accentColor
         
         var body: some View {
             ZStack {
+                if today {
+                    RoundedRectangle(cornerRadius: 6)
+                        .fill(fill.opacity(0.35))
+                }
                 switch continouos {
                 case .single:
                     Circle()

@@ -15,7 +15,7 @@ extension Streak {
                         .foregroundColor(.secondary)
                     Spacer()
                     Text("TODAY")
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.accentColor)
                         .font(.caption2)
                     Image(systemName: entry.today ? "checkmark.circle.fill" : "exclamationmark.square.fill")
                         .font(.footnote)

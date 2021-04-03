@@ -13,7 +13,7 @@ extension Detail.Streak {
                 Text(NSNumber(value: streak.current), formatter: session.decimal)
                     .frame(width: Metrics.streak.header.width)
                 Image(systemName: today ? "checkmark.circle.fill" : "exclamationmark.square.fill")
-                    .foregroundColor(today ? .primary : .secondary)
+                    .foregroundColor(.primary)
                     .frame(width: Metrics.streak.header.width)
             }
             .font(Font.title.bold())
@@ -21,18 +21,20 @@ extension Detail.Streak {
             .padding(.bottom, 1)
             HStack(spacing: 0) {
                 Text("MAX")
+                    .foregroundColor(.secondary)
                     .frame(width: Metrics.streak.header.width)
                 Text("CURRENT")
+                    .foregroundColor(.secondary)
                     .frame(width: Metrics.streak.header.width)
                 Text("TODAY")
+                    .foregroundColor(.accentColor)
                     .frame(width: Metrics.streak.header.width)
             }
             .font(.footnote)
-            .foregroundColor(.secondary)
         }
         
         private var today: Bool {
-            session.archive.last != nil && Calendar.current.isDate(session.archive.last!.start, inSameDayAs: .init())
+            session.archive.last != nil && Calendar.current.isDateInToday(session.archive.last!.start)
         }
     }
 }
