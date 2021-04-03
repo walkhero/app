@@ -2,7 +2,7 @@ import Foundation
 import Hero
 
 struct Session {
-    var archive = Archive()
+    var archive = Archive.new
     let health = Health()
     let location = Location()
     let watch = Watch()

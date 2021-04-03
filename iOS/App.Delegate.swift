@@ -7,7 +7,6 @@ extension App {
     final class Delegate: NSObject, UIApplicationDelegate {
         func application(_ application: UIApplication, willFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
             application.registerForRemoteNotifications()
-            Memory.shared.load()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 if let created = Defaults.created {

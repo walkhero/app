@@ -5,9 +5,7 @@ import Hero
 
 @main struct App: SwiftUI.App {
     @State private var session = Session()
-    @Environment(\.scenePhase) private var phase
     @WKExtensionDelegateAdaptor(Delegate.self) var delegate
-    @State private var first = true
     
     var body: some Scene {
         WindowGroup {
@@ -19,11 +17,11 @@ import Hero
                     }
                 }
                 .onAppear {
-                    if first {
-                        first = false
+                    if session.archive == .new {
                         Memory.shared.load()
-                        Memory.shared.fetch()
                     }
+                    
+                    Memory.shared.fetch()
                     
                     if WCSession.default.activationState != .activated {
                         WCSession.default.delegate = session.watch

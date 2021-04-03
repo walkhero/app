@@ -3,7 +3,7 @@ import Combine
 import Hero
 
 struct Session {
-    var archive = Archive()
+    var archive = Archive.new
     var player = Player()
     var section = Section.home
     let game = Game()

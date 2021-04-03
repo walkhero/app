@@ -50,6 +50,10 @@ import Hero
         }
         .onChange(of: phase) {
             if $0 == .active {
+                if session.archive == .new {
+                    Memory.shared.load()
+                }
+                
                 Memory.shared.fetch()
                 session.game.login()
                 session.watch.activate()
