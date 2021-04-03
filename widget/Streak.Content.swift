@@ -5,25 +5,35 @@ extension Streak {
         let entry: Entry
         
         var body: some View {
-            HStack {
-                VStack {
+            VStack(spacing: 0) {
+                HStack {
                     Image(systemName: "figure.walk")
-                        .font(.largeTitle)
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
                     Text(NSNumber(value: entry.streak.current), formatter: NumberFormatter.decimal)
-                        .font(.largeTitle)
+                        .font(Font.footnote.bold())
+                        .foregroundColor(.secondary)
+                    Spacer()
+                    Text("TODAY")
+                        .foregroundColor(.secondary)
+                        .font(.caption2)
                     Image(systemName: entry.today ? "checkmark.circle.fill" : "exclamationmark.square.fill")
-                        .foregroundColor(entry.today ? .primary : .secondary)
+                        .font(.footnote)
                 }
+                .padding(.horizontal, 70)
+                .offset(y: 30)
                 VStack {
                     Text(verbatim: DateFormatter.monther.string(
                             from: Calendar.current.date(from: .init(month: entry.year.months[index].value))!))
                         .font(Font.callout.bold())
+                        .foregroundColor(.secondary)
                     Ephemeris.Week(weeker: .weeker)
                     Ephemeris.Month(month: entry.year.months[index],
                                     previous: index > 0 && entry.year.months[index - 1].days.last!.last!.hit,
                                     next: index < entry.year.months.count - 1 && entry.year.months[index + 1].days.first!.first!.hit)
                 }
-                .padding()
+                .scaleEffect(0.75)
+                .offset(y: 10)
             }
         }
         

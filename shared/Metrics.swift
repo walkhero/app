@@ -23,7 +23,7 @@ struct Metrics {
     
     struct calendar {
         struct day {
-            static let size = CGFloat(38)
+            static let size = CGFloat(40)
             static let padding = CGFloat(5)
             static let padding2 = padding * 2
             static let radii = size / 2 - padding
