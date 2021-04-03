@@ -204,6 +204,7 @@
 		CE2645842618A94700B53B91 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CE26458E2618A9FB00B53B91 /* Settings.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Item.swift; sourceTree = "<group>"; };
 		CE2645982618AD9E00B53B91 /* Session.Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.Modal.swift; sourceTree = "<group>"; };
+		CE26459E2618AF9B00B53B91 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		CE39B3412611EDAF0057943D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CE39B3572611F31F0057943D /* Detail.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Map.swift; sourceTree = "<group>"; };
 		CE4E8C72260F6E2900480453 /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
@@ -343,6 +344,7 @@
 			children = (
 				CEB1EF60260DF9820036ECB5 /* iOS.entitlements */,
 				CE0EB3D0260DF31B00D607C9 /* Info.plist */,
+				CE26459E2618AF9B00B53B91 /* Configuration.storekit */,
 				CEEA45B1260E0A50004FC710 /* App.Delegate.swift */,
 				CEEA45B0260E0A50004FC710 /* App.swift */,
 				CEEA45AD260E0A50004FC710 /* Chart.swift */,
@@ -366,10 +368,10 @@
 				CE8C3EC726136169004A6F39 /* Map.Tiler.swift */,
 				CE26457A26189B5200B53B91 /* Purchases.Item.swift */,
 				CE264574261897EE00B53B91 /* Purchases.swift */,
+				CE2645982618AD9E00B53B91 /* Session.Modal.swift */,
 				CEEA45D6260E0A73004FC710 /* Session.Player.swift */,
 				CEEA45D1260E0A73004FC710 /* Session.Section.swift */,
 				CEEA45E6260E0A73004FC710 /* Session.swift */,
-				CE2645982618AD9E00B53B91 /* Session.Modal.swift */,
 				CE26458E2618A9FB00B53B91 /* Settings.Item.swift */,
 				CE2645842618A94700B53B91 /* Settings.swift */,
 				CEEA45E2260E0A73004FC710 /* Shadowed.swift */,

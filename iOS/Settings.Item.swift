@@ -12,6 +12,7 @@ extension Settings {
             Image(purchase.image)
             Text(verbatim: purchase.subtitle)
                 .font(.callout)
+                .foregroundColor(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding()
             Text(verbatim: purchase.title)
@@ -26,12 +27,12 @@ extension Settings {
             } else {
                 Button(action: action) {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 16)
+                        RoundedRectangle(cornerRadius: 10)
                             .fill(Color.accentColor)
                         Text("Purchase")
                             .font(.callout)
                             .fontWeight(.medium)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .padding(.vertical, 10)
                     }
                     .frame(maxWidth: .greatestFiniteMagnitude)

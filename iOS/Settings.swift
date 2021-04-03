@@ -26,7 +26,7 @@ struct Settings: View {
             .frame(height: 60)
             ZStack {
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(Color(.tertiarySystemBackground))
+                    .fill(Color(.secondarySystemBackground))
                 ScrollView {
                     Spacer()
                         .frame(height: 20)
@@ -52,7 +52,9 @@ struct Settings: View {
                 }
                 .padding(2)
             }
-            .padding(.top)
+            .padding()
+            Spacer()
+                .frame(height: 20)
         }
         .animation(.easeInOut(duration: 0.3))
         .onReceive(session.dismiss) {
