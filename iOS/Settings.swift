@@ -12,6 +12,16 @@ struct Settings: View {
     var body: some View {
         ScrollView {
             HStack {
+                Button {
+                    session.purchases.restore()
+                } label: {
+                    Text("Restore purchases")
+                        .font(.callout)
+                        .foregroundColor(.secondary)
+                        .frame(height: 40)
+                        .contentShape(Rectangle())
+                }
+                .padding(.leading)
                 Spacer()
                 Button {
                     visible.wrappedValue.dismiss()
@@ -52,7 +62,7 @@ struct Settings: View {
                 }
                 .padding(2)
             }
-            .padding()
+            .padding([.horizontal])
             Spacer()
                 .frame(height: 20)
         }

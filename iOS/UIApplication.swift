@@ -10,4 +10,8 @@ extension UIApplication {
         }
         root.present(controller, animated: true)
     }
+    
+    func settings() {
+        open(URL(string: Self.openSettingsURLString)!)
+    }
 }
