@@ -28,6 +28,11 @@
 		CE1D19DF261746C5000A44DB /* Ephermeris.Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D19DE261746C5000A44DB /* Ephermeris.Week.swift */; };
 		CE1D19F926174F3F000A44DB /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CE1D19F826174F3F000A44DB /* Hero */; };
 		CE1D1A0A26174F64000A44DB /* Ephermeris.Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D19DE261746C5000A44DB /* Ephermeris.Week.swift */; };
+		CE264575261897EE00B53B91 /* Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE264574261897EE00B53B91 /* Purchases.swift */; };
+		CE26457B26189B5200B53B91 /* Purchases.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26457A26189B5200B53B91 /* Purchases.Item.swift */; };
+		CE2645852618A94700B53B91 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2645842618A94700B53B91 /* Settings.swift */; };
+		CE26458F2618A9FB00B53B91 /* Settings.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26458E2618A9FB00B53B91 /* Settings.Item.swift */; };
+		CE2645992618AD9E00B53B91 /* Session.Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2645982618AD9E00B53B91 /* Session.Modal.swift */; };
 		CE39B3422611EDAF0057943D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3412611EDAF0057943D /* Location.swift */; };
 		CE39B3582611F31F0057943D /* Detail.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3572611F31F0057943D /* Detail.Map.swift */; };
 		CE4E8C73260F6E2900480453 /* Walking.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E8C72260F6E2900480453 /* Walking.Distance.swift */; };
@@ -194,6 +199,11 @@
 		CE1D19C026174294000A44DB /* Streak.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.Content.swift; sourceTree = "<group>"; };
 		CE1D19C62617432E000A44DB /* Streak.Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.Entry.swift; sourceTree = "<group>"; };
 		CE1D19DE261746C5000A44DB /* Ephermeris.Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ephermeris.Week.swift; sourceTree = "<group>"; };
+		CE264574261897EE00B53B91 /* Purchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchases.swift; sourceTree = "<group>"; };
+		CE26457A26189B5200B53B91 /* Purchases.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchases.Item.swift; sourceTree = "<group>"; };
+		CE2645842618A94700B53B91 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CE26458E2618A9FB00B53B91 /* Settings.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Item.swift; sourceTree = "<group>"; };
+		CE2645982618AD9E00B53B91 /* Session.Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.Modal.swift; sourceTree = "<group>"; };
 		CE39B3412611EDAF0057943D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CE39B3572611F31F0057943D /* Detail.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Map.swift; sourceTree = "<group>"; };
 		CE4E8C72260F6E2900480453 /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
@@ -354,9 +364,14 @@
 				CE6177902611EAD10091EE0E /* Map.Coordinator.swift */,
 				CE61778A2611EA890091EE0E /* Map.swift */,
 				CE8C3EC726136169004A6F39 /* Map.Tiler.swift */,
+				CE26457A26189B5200B53B91 /* Purchases.Item.swift */,
+				CE264574261897EE00B53B91 /* Purchases.swift */,
 				CEEA45D6260E0A73004FC710 /* Session.Player.swift */,
 				CEEA45D1260E0A73004FC710 /* Session.Section.swift */,
 				CEEA45E6260E0A73004FC710 /* Session.swift */,
+				CE2645982618AD9E00B53B91 /* Session.Modal.swift */,
+				CE26458E2618A9FB00B53B91 /* Settings.Item.swift */,
+				CE2645842618A94700B53B91 /* Settings.swift */,
 				CEEA45E2260E0A73004FC710 /* Shadowed.swift */,
 				CEEA45D5260E0A73004FC710 /* UIApplication.swift */,
 				CE4E8C72260F6E2900480453 /* Walking.Distance.swift */,
@@ -636,6 +651,7 @@
 				CE6177912611EAD10091EE0E /* Map.Coordinator.swift in Sources */,
 				CE6E0A582610903C00A8D81B /* Detail.Distance.swift in Sources */,
 				CEEA45EA260E0A74004FC710 /* Walking.Segmented.Item.swift in Sources */,
+				CE264575261897EE00B53B91 /* Purchases.swift in Sources */,
 				CEEA45FE260E0A74004FC710 /* Shadowed.swift in Sources */,
 				CEEA460C260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
 				CE39B3422611EDAF0057943D /* Location.swift in Sources */,
@@ -645,6 +661,8 @@
 				CEEA45BA260E0A50004FC710 /* Challenge.Metadata.swift in Sources */,
 				CEEA45EE260E0A74004FC710 /* Walking.Streak.swift in Sources */,
 				CEEA45C1260E0A50004FC710 /* Detail.Streak.swift in Sources */,
+				CE2645852618A94700B53B91 /* Settings.swift in Sources */,
+				CE2645992618AD9E00B53B91 /* Session.Modal.swift in Sources */,
 				CE6177812611DCB40091EE0E /* Water.swift in Sources */,
 				CEEA45BF260E0A50004FC710 /* Detail.swift in Sources */,
 				CE8C3EC826136169004A6F39 /* Map.Tiler.swift in Sources */,
@@ -654,10 +672,12 @@
 				CEEA4601260E0A74004FC710 /* Listed.swift in Sources */,
 				CEEA45F6260E0A74004FC710 /* Listed.Item.swift in Sources */,
 				CEEA45EF260E0A74004FC710 /* Window.swift in Sources */,
+				CE26458F2618A9FB00B53B91 /* Settings.Item.swift in Sources */,
 				CEEA45BB260E0A50004FC710 /* App.swift in Sources */,
 				CEEA4602260E0A74004FC710 /* Session.swift in Sources */,
 				CEEA45E8260E0A74004FC710 /* Clock.swift in Sources */,
 				CE39B3582611F31F0057943D /* Detail.Map.swift in Sources */,
+				CE26457B26189B5200B53B91 /* Purchases.Item.swift in Sources */,
 				CEEA45FF260E0A74004FC710 /* Home.Item.swift in Sources */,
 				CE61778B2611EA890091EE0E /* Map.swift in Sources */,
 				CE1D1A0A26174F64000A44DB /* Ephermeris.Week.swift in Sources */,

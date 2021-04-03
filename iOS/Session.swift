@@ -3,6 +3,7 @@ import Combine
 import Hero
 
 struct Session {
+    var modal: Modal?
     var archive = Archive.new
     var player = Player()
     var section = Section.home
@@ -10,6 +11,7 @@ struct Session {
     let health = Health()
     let location = Location()
     let watch = Watch()
+    let purchases = Purchases()
     let dismiss = PassthroughSubject<Void, Never>()
     let components = DateComponentsFormatter()
     let relative = RelativeDateTimeFormatter()

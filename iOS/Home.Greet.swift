@@ -7,7 +7,7 @@ extension Home {
         var body: some View {
             HStack {
                 Button {
-                    
+                    session.purchases.open.send()
                 } label: {
                     Image(systemName: "line.horizontal.3")
                         .font(.title2)

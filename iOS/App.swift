@@ -10,6 +10,12 @@ import Hero
     var body: some Scene {
         WindowGroup {
             Window(session: $session)
+                .sheet(item: $session.modal) {
+                    switch $0 {
+                    case .store: Settings(session: $session)
+                    case let .challenge(challenge): Leaderboards(session: $session, challenge: challenge)
+                    }
+                }
                 .onReceive(Memory.shared.archive) {
                     session.archive = $0
                     if case .none = session.archive.status {
@@ -46,6 +52,10 @@ import Hero
                     if session.archive.enrolled(.map) {
                         session.game.submit(.map, $0.map)
                     }
+                }
+                .onReceive(session.purchases.open) {
+                    session.dismiss.send()
+                    session.modal = .store
                 }
         }
         .onChange(of: phase) {
