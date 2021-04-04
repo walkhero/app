@@ -64,7 +64,7 @@ import Hero
                     Memory.shared.load()
                 }
                 
-                Memory.shared.fetch()
+                Memory.shared.pull.send()
                 session.game.login()
                 session.watch.activate()
             }

@@ -33,7 +33,7 @@ extension App {
                     fetchCompletionHandler(.newData)
                     sub?.cancel()
                 }
-            Memory.shared.fetch()
+            Memory.shared.pull.send()
         }
     }
 }

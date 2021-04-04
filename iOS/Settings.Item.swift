@@ -10,6 +10,7 @@ extension Settings {
         
         var body: some View {
             Image(purchase.image)
+                .padding(.top)
             Text(verbatim: purchase.subtitle)
                 .font(.callout)
                 .foregroundColor(.secondary)

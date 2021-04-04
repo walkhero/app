@@ -29,11 +29,12 @@ struct Settings: View {
                     Image(systemName: "xmark")
                         .font(.callout)
                         .foregroundColor(.secondary)
-                        .frame(width: 60, height: 60)
+                        .frame(width: 60, height: 40)
                 }
                 .contentShape(Rectangle())
             }
-            .frame(height: 60)
+            .frame(height: 40)
+            .padding(.top, 10)
             ZStack {
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color(.secondarySystemBackground))
@@ -62,7 +63,7 @@ struct Settings: View {
                 }
                 .padding(2)
             }
-            .padding([.horizontal])
+            .padding(.horizontal)
             Spacer()
                 .frame(height: 20)
         }

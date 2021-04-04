@@ -9,7 +9,7 @@ extension App {
         }
         
         func applicationDidBecomeActive() {
-            Memory.shared.fetch()
+            Memory.shared.pull.send()
         }
         
         func didReceiveRemoteNotification(_: [AnyHashable : Any], fetchCompletionHandler: @escaping (WKBackgroundFetchResult) -> Void) {
@@ -23,7 +23,7 @@ extension App {
                     fetchCompletionHandler(.newData)
                     sub?.cancel()
                 }
-            Memory.shared.fetch()
+            Memory.shared.pull.send()
         }
     }
 }

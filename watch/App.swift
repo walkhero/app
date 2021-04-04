@@ -21,7 +21,7 @@ import Hero
                         Memory.shared.load()
                     }
                     
-                    Memory.shared.fetch()
+                    Memory.shared.pull.send()
                     
                     if WCSession.default.activationState != .activated {
                         WCSession.default.delegate = session.watch
