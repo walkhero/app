@@ -9,7 +9,6 @@ extension App {
         
         func application(_ application: UIApplication, willFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
             application.registerForRemoteNotifications()
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
                 if let created = Defaults.created {
                     let days = Calendar.current.dateComponents([.day], from: created, to: .init()).day!
