@@ -9,6 +9,7 @@ extension Session {
         
         case
         challenge(Challenge),
-        store
+        store,
+        froob
     }
 }

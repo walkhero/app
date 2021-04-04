@@ -13,6 +13,7 @@ import Hero
                 .sheet(item: $session.modal) {
                     switch $0 {
                     case .store: Settings(session: $session)
+                    case .froob: Settings.Froob(session: $session)
                     case let .challenge(challenge): Leaderboards(session: $session, challenge: challenge)
                     }
                 }
@@ -54,8 +55,10 @@ import Hero
                     }
                 }
                 .onReceive(session.purchases.open) {
-                    session.dismiss.send()
-                    session.modal = .store
+                    modal(.store)
+                }
+                .onReceive(delegate.froob) {
+                    modal(.froob)
                 }
         }
         .onChange(of: phase) {
@@ -67,6 +70,17 @@ import Hero
                 Memory.shared.pull.send()
                 session.game.login()
                 session.watch.activate()
+            }
+        }
+    }
+    
+    private func modal(_ mode: Session.Modal) {
+        if session.modal == nil {
+            session.modal = mode
+        } else {
+            session.dismiss.send()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                session.modal = mode
             }
         }
     }

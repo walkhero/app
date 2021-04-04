@@ -10,10 +10,6 @@ extension Ephemeris.Month {
         
         var body: some View {
             ZStack {
-                if today {
-                    RoundedRectangle(cornerRadius: 6)
-                        .fill(fill.opacity(0.35))
-                }
                 switch continouos {
                 case .single:
                     Circle()
@@ -44,12 +40,20 @@ extension Ephemeris.Month {
                             cornerRadii: Metrics.calendar.day.radius).cgPath)
                         .fill(fill)
                 default:
-                    EmptyView()
+                    if today {
+                        Circle()
+                            .fill(fill.opacity(0.25))
+                            .frame(
+                                width: Metrics.calendar.day.size_padding2,
+                                height: Metrics.calendar.day.size_padding2)
+                    }
                 }
                 Text("\(index)")
                     .font(.footnote)
                     .fontWeight(continouos == .none ? .regular : .bold)
-                    .foregroundColor(continouos == .none ? .init(.tertiaryLabel) : .black)
+                    .foregroundColor(today
+                                        ? .primary
+                                        : continouos == .none ? .init(.tertiaryLabel) : .black)
             }
             .frame(width: Metrics.calendar.day.size, height: Metrics.calendar.day.size)
         }

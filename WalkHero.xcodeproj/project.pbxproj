@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0784792619C60D00819883 /* Settings.Froob.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0784782619C60D00819883 /* Settings.Froob.swift */; };
 		CE0EB3CC260DF31B00D607C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0EB3CB260DF31B00D607C9 /* Assets.xcassets */; };
 		CE0EB3DC260DF37A00D607C9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0EB3DB260DF37A00D607C9 /* WidgetKit.framework */; };
 		CE0EB3DE260DF37A00D607C9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0EB3DD260DF37A00D607C9 /* SwiftUI.framework */; };
@@ -180,6 +181,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE0784782619C60D00819883 /* Settings.Froob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Froob.swift; sourceTree = "<group>"; };
 		CE0EB3C4260DF31B00D607C9 /* WalkHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0EB3CB260DF31B00D607C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0EB3D0260DF31B00D607C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				CEEA45D6260E0A73004FC710 /* Session.Player.swift */,
 				CEEA45D1260E0A73004FC710 /* Session.Section.swift */,
 				CEEA45E6260E0A73004FC710 /* Session.swift */,
+				CE0784782619C60D00819883 /* Settings.Froob.swift */,
 				CE26458E2618A9FB00B53B91 /* Settings.Item.swift */,
 				CE2645842618A94700B53B91 /* Settings.swift */,
 				CEEA45E2260E0A73004FC710 /* Shadowed.swift */,
@@ -669,6 +672,7 @@
 				CEEA45BF260E0A50004FC710 /* Detail.swift in Sources */,
 				CE8C3EC826136169004A6F39 /* Map.Tiler.swift in Sources */,
 				CEEA45BD260E0A50004FC710 /* Control.swift in Sources */,
+				CE0784792619C60D00819883 /* Settings.Froob.swift in Sources */,
 				CEEA45E7260E0A73004FC710 /* Walking.Segmented.Status.swift in Sources */,
 				CEEA45EB260E0A74004FC710 /* Home.Greet.swift in Sources */,
 				CEEA4601260E0A74004FC710 /* Listed.swift in Sources */,

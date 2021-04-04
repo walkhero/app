@@ -10,9 +10,10 @@ extension Settings {
         
         var body: some View {
             Image(purchase.image)
-                .padding(.top)
+                .padding(.top, 30)
             Text(verbatim: purchase.subtitle)
                 .font(.callout)
+                .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding()
@@ -24,7 +25,7 @@ extension Settings {
             if plus {
                 Image(systemName: "checkmark.seal.fill")
                     .font(.largeTitle)
-                    .padding(.top)
+                    .padding(.vertical)
             } else {
                 Button(action: action) {
                     ZStack {
@@ -39,6 +40,7 @@ extension Settings {
                     .frame(maxWidth: .greatestFiniteMagnitude)
                 }
                 .padding(.horizontal, 20)
+                .padding(.bottom)
             }
         }
     }
