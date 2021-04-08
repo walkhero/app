@@ -4,6 +4,8 @@ import Hero
 
 extension App {
     final class Delegate: NSObject, WKExtensionDelegate {
+        private var sub: AnyCancellable?
+        
         func applicationDidFinishLaunching() {
             WKExtension.shared().registerForRemoteNotifications()
         }
@@ -13,17 +15,12 @@ extension App {
         }
         
         func didReceiveRemoteNotification(_: [AnyHashable : Any], fetchCompletionHandler: @escaping (WKBackgroundFetchResult) -> Void) {
-            var sub: AnyCancellable?
-            sub = Memory.shared.archive
-                .timeout(.seconds(20), scheduler: DispatchQueue.global(qos: .utility))
-                .sink { _ in
-                    fetchCompletionHandler(.noData)
-                    sub?.cancel()
-                } receiveValue: { _ in
-                    fetchCompletionHandler(.newData)
-                    sub?.cancel()
-                }
-            Memory.shared.pull.send()
+            sub = Memory
+                    .shared
+                    .receipt
+                    .sink {
+                        fetchCompletionHandler($0 ? .newData : .noData)
+                    }
         }
     }
 }

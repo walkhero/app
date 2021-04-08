@@ -6,6 +6,7 @@ import Hero
 extension App {
     final class Delegate: NSObject, UIApplicationDelegate {
         let froob = PassthroughSubject<Void, Never>()
+        private var sub: AnyCancellable?
         
         func application(_ application: UIApplication, willFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
             application.registerForRemoteNotifications()
@@ -29,17 +30,12 @@ extension App {
         }
         
         func application(_: UIApplication, didReceiveRemoteNotification: [AnyHashable : Any], fetchCompletionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-            var sub: AnyCancellable?
-            sub = Memory.shared.archive
-                .timeout(.seconds(20), scheduler: DispatchQueue.global(qos: .utility))
-                .sink { _ in
-                    fetchCompletionHandler(.noData)
-                    sub?.cancel()
-                } receiveValue: { _ in
-                    fetchCompletionHandler(.newData)
-                    sub?.cancel()
-                }
-            Memory.shared.pull.send()
+            sub = Memory
+                    .shared
+                    .receipt
+                    .sink {
+                        fetchCompletionHandler($0 ? .newData : .noData)
+                    }
         }
     }
 }

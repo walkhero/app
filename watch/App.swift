@@ -11,7 +11,6 @@ import Hero
         WindowGroup {
             Window(session: $session)
                 .onReceive(Memory.shared.archive) {
-                    guard $0 > session.archive else { return }
                     session.archive = $0
                     if case .none = session.archive.status {
                         session.clear()
