@@ -6,7 +6,6 @@ extension Leaderboards {
         private var subs = Set<AnyCancellable>()
         
         required init?(coder: NSCoder) { nil }
-        
         override init(nibName: String?, bundle: Bundle?) { super.init(nibName: nil, bundle: nil) }
         
         init(wrapper: Leaderboards) {
@@ -20,6 +19,7 @@ extension Leaderboards {
         override func viewDidLoad() {
             super.viewDidLoad()
             gameCenterDelegate = self
+            GKAccessPoint.shared.trigger(state: .leaderboards) { }
         }
         
         func gameCenterViewControllerDidFinish(_: GKGameCenterViewController) {
