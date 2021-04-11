@@ -10,7 +10,7 @@ import Hero
     var body: some Scene {
         WindowGroup {
             Window(session: $session)
-                .onReceive(Memory.shared.archive) {
+                .onReceive(Repository.memory.archive) {
                     session.archive = $0
                     if case .none = session.archive.status {
                         session.clear()
@@ -18,10 +18,10 @@ import Hero
                 }
                 .onAppear {
                     if session.archive == .new {
-                        Memory.shared.load()
+                        Repository.memory.load()
                     }
                     
-                    Memory.shared.pull.send()
+                    Repository.memory.pull.send()
                     
                     if WCSession.default.activationState != .activated {
                         WCSession.default.delegate = session.watch

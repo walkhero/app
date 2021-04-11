@@ -1,5 +1,4 @@
 import SwiftUI
-import WidgetKit
 import Hero
 
 @main struct App: SwiftUI.App {
@@ -17,7 +16,7 @@ import Hero
                     case let .challenge(challenge): Leaderboards(session: $session, challenge: challenge)
                     }
                 }
-                .onReceive(Memory.shared.archive) {
+                .onReceive(Repository.memory.archive) {
                     session.archive = $0
                     if case .none = session.archive.status {
                         session.clear()
@@ -32,10 +31,6 @@ import Hero
                     withAnimation(.easeInOut(duration: 0.3)) {
                         session.player.image = image
                     }
-                }
-                .onReceive(session.widget) {
-                    Defaults.archive = $0
-                    WidgetCenter.shared.reloadAllTimelines()
                 }
                 .onReceive(session.watch.challenges.receive(on: DispatchQueue.main)) {
                     if session.archive.enrolled(.streak) {
@@ -64,10 +59,10 @@ import Hero
         .onChange(of: phase) {
             if $0 == .active {
                 if session.archive == .new {
-                    Memory.shared.load()
+                    Repository.memory.load()
                 }
                 
-                Memory.shared.pull.send()
+                Repository.memory.pull.send()
                 session.game.login()
                 session.watch.activate()
             }

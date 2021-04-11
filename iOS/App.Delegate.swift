@@ -1,15 +1,28 @@
 import UIKit
 import StoreKit
 import Combine
+import WidgetKit
 import Hero
 
 extension App {
     final class Delegate: NSObject, UIApplicationDelegate {
         let froob = PassthroughSubject<Void, Never>()
-        private var sub: AnyCancellable?
+        private var widget: AnyCancellable?
+        private var fetch: AnyCancellable?
         
         func application(_ application: UIApplication, willFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
             application.registerForRemoteNotifications()
+            
+            widget = Repository.memory
+                        .archive
+                        .merge(with: Repository.memory.save)
+                        .removeDuplicates()
+                        .debounce(for: .seconds(1), scheduler: DispatchQueue.global(qos: .utility))
+                                .sink {
+                                    Defaults.archive = $0
+                                    WidgetCenter.shared.reloadAllTimelines()
+                                }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
                 if let created = Defaults.created {
                     let days = Calendar.current.dateComponents([.day], from: created, to: .init()).day!
@@ -30,8 +43,8 @@ extension App {
         }
         
         func application(_: UIApplication, didReceiveRemoteNotification: [AnyHashable : Any], fetchCompletionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-            sub = Memory
-                    .shared
+            fetch = Repository
+                    .memory
                     .receipt
                     .sink {
                         fetchCompletionHandler($0 ? .newData : .noData)

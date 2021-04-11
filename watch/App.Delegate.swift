@@ -4,19 +4,19 @@ import Hero
 
 extension App {
     final class Delegate: NSObject, WKExtensionDelegate {
-        private var sub: AnyCancellable?
+        private var fetch: AnyCancellable?
         
         func applicationDidFinishLaunching() {
             WKExtension.shared().registerForRemoteNotifications()
         }
         
         func applicationDidBecomeActive() {
-            Memory.shared.pull.send()
+            Repository.memory.pull.send()
         }
         
         func didReceiveRemoteNotification(_: [AnyHashable : Any], fetchCompletionHandler: @escaping (WKBackgroundFetchResult) -> Void) {
-            sub = Memory
-                    .shared
+            fetch = Repository
+                    .memory
                     .receipt
                     .sink {
                         fetchCompletionHandler($0 ? .newData : .noData)
