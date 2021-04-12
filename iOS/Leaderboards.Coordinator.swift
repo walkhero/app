@@ -10,16 +10,11 @@ extension Leaderboards {
         
         init(wrapper: Leaderboards) {
             super.init(leaderboardID: wrapper.challenge.leaderboard, playerScope: .global, timeScope: .allTime)
+            gameCenterDelegate = self
             
             wrapper.session.dismiss.sink { [weak self] in
                 self?.dismiss(animated: false)
             }.store(in: &subs)
-        }
-        
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            gameCenterDelegate = self
-            GKAccessPoint.shared.trigger(state: .leaderboards) { }
         }
         
         func gameCenterViewControllerDidFinish(_: GKGameCenterViewController) {

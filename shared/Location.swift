@@ -8,7 +8,7 @@ final class Location: NSObject, CLLocationManagerDelegate {
     private var manager: CLLocationManager?
     
     func enrollIfNeeded() {
-        if CLLocationManager().authorizationStatus != .authorizedAlways {
+        if CLLocationManager().authorizationStatus == .notDetermined {
             enroll()
         }
     }
