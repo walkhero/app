@@ -54,7 +54,6 @@
 		CE7F0B552614CA97005C4585 /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F0B542614CA97005C4585 /* Walking.swift */; };
 		CE8367432614D9BB00BE3AB5 /* Walking.Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8367422614D9BB00BE3AB5 /* Walking.Streak.swift */; };
 		CE8367542614DBB000BE3AB5 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45B7260E0A50004FC710 /* Bar.swift */; };
-		CE8C3EC826136169004A6F39 /* Map.Tiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C3EC726136169004A6F39 /* Map.Tiler.swift */; };
 		CEAF80492615F4E300564E3F /* Walking.Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF80482615F4E300564E3F /* Walking.Steps.swift */; };
 		CEAF804E2615F5C100564E3F /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6177802611DCB40091EE0E /* Water.swift */; };
 		CEAF80572615F67B00564E3F /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA45DF260E0A73004FC710 /* Metrics.swift */; };
@@ -224,7 +223,6 @@
 		CE7F0B412614C9A9005C4585 /* Walking.Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Time.swift; sourceTree = "<group>"; };
 		CE7F0B542614CA97005C4585 /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		CE8367422614D9BB00BE3AB5 /* Walking.Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Streak.swift; sourceTree = "<group>"; };
-		CE8C3EC726136169004A6F39 /* Map.Tiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Tiler.swift; sourceTree = "<group>"; };
 		CEAF80482615F4E300564E3F /* Walking.Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Steps.swift; sourceTree = "<group>"; };
 		CEAF805C2615FEC600564E3F /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
 		CEAF8074261608D700564E3F /* Walking.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Map.swift; sourceTree = "<group>"; };
@@ -367,7 +365,6 @@
 				CEEA45E5260E0A73004FC710 /* Listed.swift */,
 				CE6177902611EAD10091EE0E /* Map.Coordinator.swift */,
 				CE61778A2611EA890091EE0E /* Map.swift */,
-				CE8C3EC726136169004A6F39 /* Map.Tiler.swift */,
 				CE26457A26189B5200B53B91 /* Purchases.Item.swift */,
 				CE264574261897EE00B53B91 /* Purchases.swift */,
 				CE2645982618AD9E00B53B91 /* Session.Modal.swift */,
@@ -670,7 +667,6 @@
 				CE2645992618AD9E00B53B91 /* Session.Modal.swift in Sources */,
 				CE6177812611DCB40091EE0E /* Water.swift in Sources */,
 				CEEA45BF260E0A50004FC710 /* Detail.swift in Sources */,
-				CE8C3EC826136169004A6F39 /* Map.Tiler.swift in Sources */,
 				CEEA45BD260E0A50004FC710 /* Control.swift in Sources */,
 				CE0784792619C60D00819883 /* Settings.Froob.swift in Sources */,
 				CEEA45E7260E0A73004FC710 /* Walking.Segmented.Status.swift in Sources */,

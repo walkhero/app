@@ -1,6 +1,4 @@
 import SwiftUI
-import Combine
-import Hero
 
 extension Walking {
     struct Map: View {

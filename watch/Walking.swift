@@ -6,9 +6,9 @@ struct Walking: View {
     @State private var streak = Hero.Streak.zero
     @State private var steps = 0
     @State private var metres = 0
+    @State private var tiles = 0
     @State private var maximumSteps = 1
     @State private var maximumMetres = 1
-    @State private var tiles = Set<Tile>()
     
     var body: some View {
         TabView {
@@ -28,7 +28,7 @@ struct Walking: View {
             }
             
             if session.archive.enrolled(.map) {
-                Map(session: $session, tiles: tiles.count)
+                Map(session: $session, tiles: tiles)
             }
         }
         .tabViewStyle(PageTabViewStyle())
@@ -39,10 +39,11 @@ struct Walking: View {
             metres = $0
         }
         .onReceive(session.location.tiles.receive(on: DispatchQueue.main)) {
-            tiles.insert($0)
+            session.archive.discover($0)
+            tiles = session.archive.tiles.count
         }
         .onAppear {
-            tiles = session.archive.tiles
+            tiles = session.archive.tiles.count
             session.health.steps(session.archive)
             session.health.distance(session.archive)
             session.location.start(session.archive)

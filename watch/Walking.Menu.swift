@@ -1,5 +1,4 @@
 import SwiftUI
-import Hero
 
 extension Walking {
     struct Menu: View {
@@ -7,7 +6,7 @@ extension Walking {
         let streak: Int
         let steps: Int
         let metres: Int
-        let tiles: Set<Tile>
+        let tiles: Int
         @State private var disabled = false
         
         var body: some View {
@@ -31,10 +30,10 @@ extension Walking {
                 Spacer()
                 Button {
                     clear()
-                    session.watch.send(.init(streak: streak, steps: steps, distance: metres, map: tiles.count))
+                    session.watch.send(.init(streak: streak, steps: steps, distance: metres, map: tiles))
                     
                     withAnimation(.easeInOut(duration: 0.3)) {
-                        session.archive.end(steps: steps, metres: metres, tiles: tiles)
+                        session.archive.end(steps: steps, metres: metres)
                     }
                 } label: {
                     ZStack {
