@@ -36,8 +36,8 @@ extension Home {
                 }
                 .padding(.trailing)
             }
-            ZStack {
-                if session.player.image == nil {
+            if session.player.image == nil {
+                ZStack {
                     Circle()
                         .fill(LinearGradient(
                                 gradient: .init(colors: [.init(.systemIndigo), .pink]),
@@ -47,13 +47,13 @@ extension Home {
                     Image(systemName: "person.fill")
                         .font(.largeTitle)
                         .foregroundColor(.white)
-                } else {
-                    Image(uiImage: session.player.image!)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
                 }
+            } else {
+                Image(uiImage: session.player.image!)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 100, height: 100)
+                    .clipShape(Circle())
             }
             Text(verbatim: session.player.name)
                 .font(Font.title2.bold())
