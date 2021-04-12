@@ -45,8 +45,8 @@ extension Map {
         
         func mapView(_: MKMapView, didUpdate: MKUserLocation) {
             guard let location = didUpdate.location else { return }
-            if abs(location.coordinate.latitude - region.center.latitude) > 1 ||
-                abs(location.coordinate.longitude - region.center.longitude) > 1 {
+            if abs(location.coordinate.latitude - region.center.latitude) > 0.1 ||
+                abs(location.coordinate.longitude - region.center.longitude) > 0.1 {
                 setCenter(location.coordinate, animated: false)
             }
         }
