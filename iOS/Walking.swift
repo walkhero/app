@@ -40,7 +40,7 @@ struct Walking: View {
                 session.watch.challenges.send(.init(streak: streak.current, steps: steps, distance: metres, map: tiles.count))
                 
                 withAnimation(.easeInOut(duration: 0.3)) {
-                    session.archive.end(steps: steps, metres: metres, tiles: tiles)
+                    session.archive.end(steps: steps, metres: metres)
                 }
             }
             .disabled(disabled)
@@ -70,7 +70,8 @@ struct Walking: View {
         }
         .onReceive(session.location.tiles.receive(on: DispatchQueue.main)) {
             guard !disabled else { return }
-            tiles.insert($0)
+            session.archive.discover($0)
+            tiles = session.archive.tiles
         }
         .onAppear {
             session.health.steps(session.archive)

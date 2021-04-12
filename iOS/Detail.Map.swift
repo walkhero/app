@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 import Hero
 
 extension Detail {
@@ -14,7 +15,7 @@ extension Detail {
             Text(NSNumber(value: Double(session.archive.tiles.count) / Metrics.map.tiles), formatter: session.percentil)
                 .font(Font.callout.monospacedDigit())
                 .foregroundColor(.secondary)
-            WalkHero.Map(session: $session, tiles: session.archive.tiles, add: nil)
+            WalkHero.Map(session: $session, tiles: session.archive.tiles)
             Text("Areas in dark are where you haven't walked yet")
                 .font(.caption2)
                 .foregroundColor(.secondary)

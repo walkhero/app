@@ -1,11 +1,9 @@
 import SwiftUI
-import Combine
 import Hero
 
 struct Map: UIViewRepresentable {
     @Binding var session: Session
     let tiles: Set<Tile>
-    let add: PassthroughSubject<Set<Tile>, Never>?
     
     func makeCoordinator() -> Coordinator {
         .init(wrapper: self)
@@ -15,5 +13,7 @@ struct Map: UIViewRepresentable {
         context.coordinator
     }
     
-    func updateUIView(_: Coordinator, context: Context) { }
+    func updateUIView(_ coordinator: Coordinator, context: Context) {
+        coordinator.tiles.send(tiles)
+    }
 }

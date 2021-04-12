@@ -22,7 +22,7 @@ struct Home: View {
                         .modifier(Shadowed())
                     Image(systemName: "plus")
                         .font(.title2)
-                        .foregroundColor(.black)
+                        .foregroundColor(.init(.systemBackground))
                 }
                 .frame(width: 40, height: 40)
             }

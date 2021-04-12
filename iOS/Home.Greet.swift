@@ -48,13 +48,10 @@ extension Home {
                         .font(.largeTitle)
                         .foregroundColor(.white)
                 } else {
-                    Circle()
-                        .fill(Color.black)
-                        .frame(width: 100, height: 100)
                     Image(uiImage: session.player.image!)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 96, height: 96)
+                        .frame(width: 100, height: 100)
                         .clipShape(Circle())
                 }
             }
