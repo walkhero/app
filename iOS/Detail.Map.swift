@@ -20,6 +20,9 @@ extension Detail {
                 .foregroundColor(.secondary)
                 .padding([.bottom, .horizontal])
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
+                .onAppear {
+                    session.location.enrollIfNeeded()
+                }
         }
     }
 }

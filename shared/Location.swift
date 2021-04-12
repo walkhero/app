@@ -7,6 +7,12 @@ final class Location: NSObject, CLLocationManagerDelegate {
     let tiles = PassthroughSubject<Tile, Never>()
     private var manager: CLLocationManager?
     
+    func enrollIfNeeded() {
+        if CLLocationManager().authorizationStatus != .authorizedAlways {
+            enroll()
+        }
+    }
+    
     func start(_ archive: Archive) {
         guard archive.enrolled(.map) else { return }
         enroll()
@@ -18,14 +24,6 @@ final class Location: NSObject, CLLocationManagerDelegate {
         manager!.showsBackgroundLocationIndicator = true
         manager!.startMonitoringSignificantLocationChanges()
         #endif
-    }
-    
-    func enroll() {
-        guard manager == nil else { return }
-        let manager = CLLocationManager()
-        manager.delegate = self
-        manager.requestAlwaysAuthorization()
-        self.manager = manager
     }
     
     func end() {
@@ -47,4 +45,12 @@ final class Location: NSObject, CLLocationManagerDelegate {
     #if os(iOS)
     func locationManager(_: CLLocationManager, didFinishDeferredUpdatesWithError: Error?) { }
     #endif
+    
+    private func enroll() {
+        guard manager == nil else { return }
+        let manager = CLLocationManager()
+        manager.delegate = self
+        manager.requestAlwaysAuthorization()
+        self.manager = manager
+    }
 }

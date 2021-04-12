@@ -75,7 +75,7 @@ struct Detail: View {
                             start()
                         }
                     case .map:
-                        session.location.enroll()
+                        session.location.enrollIfNeeded()
                         start()
                     case .streak:
                         start()
