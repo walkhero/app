@@ -13,7 +13,6 @@ extension Map {
             isRotateEnabled = false
             isPitchEnabled = false
             showsUserLocation = true
-            pointOfInterestFilter = .includingAll
             mapType = .standard
             delegate = self
             setUserTrackingMode(.follow, animated: false)
@@ -21,6 +20,7 @@ extension Map {
             tiles
                 .debounce(for: 1, scheduler: DispatchQueue.global(qos: .utility))
                 .map(\.overlay)
+                .receive(on: DispatchQueue.main)
                 .sink { [weak self] in
                     if let overlays = self?.overlays {
                         self?.removeOverlays(overlays)
@@ -41,6 +41,14 @@ extension Map {
             let renderer = MKPolygonRenderer(overlay: rendererFor)
             renderer.fillColor = .init(white: 0, alpha: UIApplication.dark ? 0.8 : 0.45)
             return renderer
+        }
+        
+        func mapView(_: MKMapView, didUpdate: MKUserLocation) {
+            guard let location = didUpdate.location else { return }
+            if abs(location.coordinate.latitude - region.center.latitude) > 1 ||
+                abs(location.coordinate.longitude - region.center.longitude) > 1 {
+                setCenter(location.coordinate, animated: false)
+            }
         }
     }
 }
