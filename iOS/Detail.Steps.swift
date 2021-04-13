@@ -12,7 +12,8 @@ extension Detail {
             if max > 0 {
                 HStack {
                     Text("Max ") +
-                    Text(NSNumber(value: steps.max), formatter: session.decimal)
+                    Text(NSNumber(value: steps.max), formatter: session.decimal) +
+                    Text(" steps")
                     Spacer()
                 }
                 .font(Font.title.bold())
@@ -24,13 +25,11 @@ extension Detail {
                     .padding(.leading)
             }
             Chart(values: steps.values, color: .pink)
-                .frame(height: 260)
-                .padding(.horizontal)
-                .padding(.vertical, 5)
             if max > 0 {
                 HStack {
-                    Text("All Time Max ")
-                    + Text(NSNumber(value: max), formatter: session.decimal)
+                    Text("All Time Max ") +
+                    Text(NSNumber(value: max), formatter: session.decimal) +
+                    Text(" steps")
                     Spacer()
                 }
                 .font(.footnote)

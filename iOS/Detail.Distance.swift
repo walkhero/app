@@ -24,9 +24,6 @@ extension Detail {
                     .padding(.leading)
             }
             Chart(values: metres.values, color: .orange)
-                .frame(height: 260)
-                .padding(.horizontal)
-                .padding(.vertical, 5)
             if max > 0 {
                 HStack {
                     Text("All Time Max ")

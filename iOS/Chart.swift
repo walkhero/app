@@ -9,20 +9,22 @@ struct Chart: View {
             RoundedRectangle(cornerRadius: 16)
                 .fill(Color(.secondarySystemBackground))
             ZStack {
-                Shade(values: values)
-                    .fill(color.opacity(0.3))
-                    .opacity(0.3)
                 Road(values: values)
                     .stroke(color, style: .init(lineWidth: 1, lineCap: .round, lineJoin: .round))
-                if let last = values.last {
-                    Dot(y: last, index: values.count - 1)
+                ForEach(0 ..< values.count, id: \.self) {
+                    Dot(y: values[$0], index: $0, radius: $0 == values.count - 1 ? 7 : 3)
                         .fill(color)
-                    Dot(y: last, index: values.count - 1)
-                        .stroke(Color(.secondarySystemBackground), lineWidth: 1)
+                    if $0 == values.count - 1 {
+                        Dot(y: values.last!, index: values.count - 1, radius: 7)
+                            .stroke(Color(.secondarySystemBackground), lineWidth: 1)
+                    }
                 }
             }
-            .padding()
+            .padding(30)
         }
+        .frame(height: 220)
+        .padding(.horizontal)
+        .padding(.vertical, 5)
     }
 }
 
@@ -80,10 +82,11 @@ private struct Road: Shape {
 private struct Dot: Shape {
     let y: Double
     let index: Int
+    let radius: CGFloat
 
     func path(in rect: CGRect) -> Path {
         .init {
-            $0.addArc(center: .init(x: .init(rect.maxX / Metrics.chart.max) * .init(index), y: .init(rect.maxY) - (.init(rect.maxY) * y)), radius: 6, startAngle: .zero, endAngle: .init(radians: .pi * 2), clockwise: true)
+            $0.addArc(center: .init(x: .init(rect.maxX / Metrics.chart.max) * .init(index), y: .init(rect.maxY) - (.init(rect.maxY) * y)), radius: radius, startAngle: .zero, endAngle: .init(radians: .pi * 2), clockwise: true)
         }
     }
 }
