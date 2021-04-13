@@ -25,11 +25,13 @@ final class Game {
     }
     
     func submit(_ challenge: Challenge, _ value: Int) {
+        #if !DEBUG
         guard GKLocalPlayer.local.isAuthenticated else { return }
         GKLeaderboard.submitScore(
             value,
             context: 0,
             player: GKLocalPlayer.local,
             leaderboardIDs: [challenge.leaderboard]) { _ in }
+        #endif
     }
 }
