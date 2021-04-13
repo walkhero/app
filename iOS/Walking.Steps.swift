@@ -37,7 +37,7 @@ extension Walking {
                     .opacity(0.5)
                     .mask(Circle())
                 Circle()
-                    .stroke(Color.blue, lineWidth: 8)
+                    .stroke(Color.blue, lineWidth: 6)
                 VStack {
                     Text(NSNumber(value: counter), formatter: session.decimal)
                         .font(Font.largeTitle.bold())

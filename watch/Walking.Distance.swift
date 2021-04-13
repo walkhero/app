@@ -29,23 +29,16 @@ extension Walking {
                                          lineCap: .round))
                     .padding(Metrics.distance.padding)
                 VStack {
-                    if metres > 0 {
-                        Text(Measurement(value: .init(metres), unit: UnitLength.meters), formatter: session.measures)
-                            .font(Font.title2.bold())
-                    } else {
-                        Text("STARTING")
-                            .font(.caption2)
-                    }
+                    Text(Measurement(value: .init(metres), unit: UnitLength.meters), formatter: session.measures)
+                        .font(Font.title2.bold())
                     if maximum > Metrics.distance.min {
                         Text(Measurement(value: .init(maximum), unit: UnitLength.meters), formatter: session.measures)
-                            .font(.footnote)
                             .foregroundColor(.secondary)
                         if metres > maximum {
                             Group {
                                 Text(NSNumber(value: metres / maximum), formatter: session.decimal) +
                                 Text(verbatim: "x")
                             }
-                            .font(Font.footnote.bold())
                             .foregroundColor(.accentColor)
                         }
                     }

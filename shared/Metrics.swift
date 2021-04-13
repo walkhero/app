@@ -6,6 +6,8 @@ struct Metrics {
         struct header {
             static let width = CGFloat(100)
         }
+        
+        static let padding = CGFloat(20)
     }
     
     struct steps {

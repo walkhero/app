@@ -20,13 +20,13 @@ extension Walking {
                     Text("CANCEL")
                         .foregroundColor(.secondary)
                         .font(.caption)
-                        .padding()
+                        .padding(6)
                 }
                 .buttonStyle(PlainButtonStyle())
                 .disabled(disabled)
                 Spacer()
                 Image(systemName: "figure.walk")
-                    .font(.title3)
+                    .font(.title2)
                 Spacer()
                 Button {
                     clear()
@@ -43,11 +43,11 @@ extension Walking {
                                     startPoint: .leading,
                                     endPoint: .trailing))
                         Text("FINISH")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .font(.callout)
                             .fontWeight(.medium)
-                            .padding(.horizontal, 36)
-                            .padding(.vertical, 8)
+                            .padding(.horizontal, 40)
+                            .padding(.vertical, 6)
                     }
                     .fixedSize()
                 }

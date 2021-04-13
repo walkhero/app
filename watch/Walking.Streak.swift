@@ -12,28 +12,22 @@ extension Walking {
                     .font(.footnote)
                     .padding([.leading, .top])
                     .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .topLeading)
-                VStack {
+                ZStack {
+                    Circle()
+                        .stroke(Color.primary.opacity(0.1), lineWidth: 7)
+                    Ring(percent: streak == .zero ? 0 : .init(streak.current) / .init(streak.maximum))
+                        .stroke(LinearGradient(
+                                    gradient: .init(colors: [.pink, .purple]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing), lineWidth: 7)
+                    Image(systemName: "figure.walk")
+                        .font(.title2)
                     Text(NSNumber(value: streak.current), formatter: session.decimal)
-                        .font(Font.largeTitle.bold())
-                    if streak.maximum > streak.current {
-                        HStack {
-                            Text("Max")
-                            Text(NSNumber(value: streak.maximum), formatter: session.decimal)
-                        }
-                        .font(.callout)
-                        .foregroundColor(.secondary)
-                    }
-                    ZStack {
-                        Bar(percent: 1)
-                            .stroke(Color.gray, style: .init(lineWidth: 8, lineCap: .round))
-                        Bar(percent: streak.maximum == 0 ? 0 : .init(streak.current) / .init(streak.maximum))
-                            .stroke(LinearGradient(
-                                        gradient: .init(colors: [.pink, .purple]),
-                                        startPoint: .leading,
-                                        endPoint: .trailing), style: .init(lineWidth: 8, lineCap: .round))
-                    }
-                    .frame(width: 100, height: 8)
+                        .font(Font.title3.bold())
+                        .frame(maxHeight: .greatestFiniteMagnitude, alignment: .bottom)
+                        .padding(.bottom, Metrics.streak.padding * 2)
                 }
+                .padding(Metrics.streak.padding)
             }
             .edgesIgnoringSafeArea(.all)
         }

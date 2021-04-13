@@ -39,21 +39,19 @@ extension Walking {
                     .mask(Circle())
                     .padding(Metrics.steps.padding)
                 Circle()
-                    .stroke(Color.blue, lineWidth: 5)
+                    .stroke(Color.blue, lineWidth: 4)
                     .padding(Metrics.steps.padding)
                 VStack {
                     Text(NSNumber(value: counter), formatter: session.decimal)
                         .font(Font.title.bold())
                     if maximum > Metrics.steps.min {
                         Text(NSNumber(value: maximum), formatter: session.decimal)
-                            .font(.callout)
                             .foregroundColor(.secondary)
                         if steps > maximum {
                             Group {
                                 Text(NSNumber(value: steps / maximum), formatter: session.decimal) +
                                 Text(verbatim: "x")
                             }
-                            .font(.callout)
                             .foregroundColor(.accentColor)
                         }
                     }
