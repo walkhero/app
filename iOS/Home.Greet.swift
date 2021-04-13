@@ -25,7 +25,7 @@ extension Home {
                             .fill(Color(.secondarySystemBackground))
                         Label(session.archive.last == nil
                                 ? "New Hero"
-                                : session.relative.string(from: session.archive.last!.start, to: .init()),
+                                : session.relative.string(from: session.archive.last!.end, to: .init()),
                               systemImage: "figure.walk")
                             .font(.footnote)
                             .foregroundColor(Color.primary)
