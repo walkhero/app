@@ -1,4 +1,5 @@
 import CoreGraphics
+import Hero
 
 struct Metrics {
     struct streak {
@@ -34,7 +35,6 @@ struct Metrics {
     
     struct chart {
         static let horizontal = 12
-        static let vertical = 20
-        static let max = CGFloat(vertical - 1)
+        static let limit = CGFloat(Constants.chart.max - 1)
     }
 }

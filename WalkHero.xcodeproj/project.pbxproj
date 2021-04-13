@@ -70,6 +70,7 @@
 		CEB1EF62260DF9950036ECB5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF61260DF9950036ECB5 /* CloudKit.framework */; };
 		CEB1EF64260DF9BD0036ECB5 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */; };
 		CEB1EF66260DF9C10036ECB5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF65260DF9C10036ECB5 /* HealthKit.framework */; };
+		CECAA3A42625A8FA0076B2CA /* Chart.Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAA3A32625A8FA0076B2CA /* Chart.Title.swift */; };
 		CEEA459C260DFF8E004FC710 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEEA459B260DFF8E004FC710 /* Hero */; };
 		CEEA45A0260E0709004FC710 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA459F260E0709004FC710 /* CloudKit.framework */; };
 		CEEA45A2260E0717004FC710 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA45A1260E0717004FC710 /* HealthKit.framework */; };
@@ -233,6 +234,7 @@
 		CEB1EF61260DF9950036ECB5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEB1EF65260DF9C10036ECB5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		CECAA3A32625A8FA0076B2CA /* Chart.Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.Title.swift; sourceTree = "<group>"; };
 		CEEA459D260E06D6004FC710 /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
 		CEEA459E260E0705004FC710 /* watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watch.entitlements; sourceTree = "<group>"; };
 		CEEA459F260E0709004FC710 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -348,6 +350,7 @@
 				CEEA45B1260E0A50004FC710 /* App.Delegate.swift */,
 				CEEA45B0260E0A50004FC710 /* App.swift */,
 				CEEA45AD260E0A50004FC710 /* Chart.swift */,
+				CECAA3A32625A8FA0076B2CA /* Chart.Title.swift */,
 				CEEA45B2260E0A50004FC710 /* Control.swift */,
 				CE6E0A572610903C00A8D81B /* Detail.Distance.swift */,
 				CE39B3572611F31F0057943D /* Detail.Map.swift */,
@@ -682,6 +685,7 @@
 				CE26457B26189B5200B53B91 /* Purchases.Item.swift in Sources */,
 				CEEA45FF260E0A74004FC710 /* Home.Item.swift in Sources */,
 				CE61778B2611EA890091EE0E /* Map.swift in Sources */,
+				CECAA3A42625A8FA0076B2CA /* Chart.Title.swift in Sources */,
 				CE1D1A0A26174F64000A44DB /* Ephermeris.Week.swift in Sources */,
 				CEEA45F8260E0A74004FC710 /* Leaderboards.Coordinator.swift in Sources */,
 				CEEA45FD260E0A74004FC710 /* Ephemeris.Month.Day.swift in Sources */,

@@ -1,4 +1,5 @@
 import SwiftUI
+import Hero
 
 struct Chart: View {
     let values: [Double]
@@ -36,7 +37,7 @@ private struct Pattern: Shape {
                 path.move(to: .init(x: $0, y: 0))
                 path.addLine(to: .init(x: $0, y: rect.maxY))
             }
-            (1 ..< Metrics.chart.vertical).map { rect.maxY / .init(Metrics.chart.vertical) * .init($0) }.forEach {
+            (1 ..< Constants.chart.max).map { rect.maxY / .init(Constants.chart.max) * .init($0) }.forEach {
                 path.move(to: .init(x: 0, y: $0))
                 path.addLine(to: .init(x: rect.maxX, y: $0))
             }
@@ -52,9 +53,9 @@ private struct Shade: Shape {
             if !values.isEmpty {
                 $0.move(to: .init(x: 0, y: rect.maxY))
                 $0.addLines(values.enumerated().map {
-                    .init(x: .init(rect.maxX / Metrics.chart.max) * .init($0.0), y: .init(rect.maxY) - (.init(rect.maxY) * $0.1))
+                    .init(x: .init(rect.maxX / Metrics.chart.limit) * .init($0.0), y: .init(rect.maxY) - (.init(rect.maxY) * $0.1))
                 })
-                $0.addLine(to: .init(x: rect.maxX / Metrics.chart.max * .init(values.count - 1), y: rect.maxY))
+                $0.addLine(to: .init(x: rect.maxX / Metrics.chart.limit * .init(values.count - 1), y: rect.maxY))
                 $0.addLine(to: .init(x: 0, y: rect.maxY))
                 $0.closeSubpath()
             }
@@ -70,7 +71,7 @@ private struct Road: Shape {
             $0.move(to: .init(x: 0, y: rect.maxY))
             if !values.isEmpty {
                 $0.addLines(values.enumerated().map {
-                    .init(x: .init(rect.maxX / Metrics.chart.max) * .init($0.0), y: .init(rect.maxY) - (.init(rect.maxY) * $0.1))
+                    .init(x: .init(rect.maxX / Metrics.chart.limit) * .init($0.0), y: .init(rect.maxY) - (.init(rect.maxY) * $0.1))
                 })
             } else {
                 $0.addLine(to: .init(x: rect.maxX, y: rect.maxY))
@@ -86,7 +87,7 @@ private struct Dot: Shape {
 
     func path(in rect: CGRect) -> Path {
         .init {
-            $0.addArc(center: .init(x: .init(rect.maxX / Metrics.chart.max) * .init(index), y: .init(rect.maxY) - (.init(rect.maxY) * y)), radius: radius, startAngle: .zero, endAngle: .init(radians: .pi * 2), clockwise: true)
+            $0.addArc(center: .init(x: .init(rect.maxX / Metrics.chart.limit) * .init(index), y: .init(rect.maxY) - (.init(rect.maxY) * y)), radius: radius, startAngle: .zero, endAngle: .init(radians: .pi * 2), clockwise: true)
         }
     }
 }

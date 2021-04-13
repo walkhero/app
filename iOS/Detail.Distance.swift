@@ -9,20 +9,9 @@ extension Detail {
         
         var body: some View {
             Spacer()
-            if max > 0 {
-                HStack {
-                    Text("Max ") +
-                    Text(Measurement(value: .init(metres.max), unit: UnitLength.meters), formatter: session.measures)
-                    Spacer()
-                }
-                .font(Font.title.bold())
-                .padding(.horizontal)
-                Text("Over the last " + (count == 1 ? "Walk" : "\(count) Walks"))
-                    .font(.callout)
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-                    .padding(.leading)
-            }
+            Chart.Title(max: session.measures.string(from: Measurement(value: .init(metres.max), unit: UnitLength.meters)),
+                        average: session.measures.string(from: Measurement(value: .init(metres.average), unit: UnitLength.meters)),
+                        count: metres.values.count)
             Chart(values: metres.values, color: .orange)
             if max > 0 {
                 HStack {
@@ -37,7 +26,7 @@ extension Detail {
         }
         
         private var count: Int {
-            min(Metrics.chart.vertical, metres.values.count)
+            min(Constants.chart.max, metres.values.count)
         }
     }
 }

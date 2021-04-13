@@ -9,21 +9,9 @@ extension Detail {
         
         var body: some View {
             Spacer()
-            if max > 0 {
-                HStack {
-                    Text("Max ") +
-                    Text(NSNumber(value: steps.max), formatter: session.decimal) +
-                    Text(" steps")
-                    Spacer()
-                }
-                .font(Font.title.bold())
-                .padding(.horizontal)
-                Text("Over the last " + (count == 1 ? "Walk" : "\(count) Walks"))
-                    .font(.callout)
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-                    .padding(.leading)
-            }
+            Chart.Title(max: session.decimal.string(from: NSNumber(value: steps.max))! + " steps",
+                        average: session.decimal.string(from: NSNumber(value: steps.average))! + " steps",
+                        count: steps.values.count)
             Chart(values: steps.values, color: .pink)
             if max > 0 {
                 HStack {
@@ -36,10 +24,6 @@ extension Detail {
                 .foregroundColor(.secondary)
                 .padding(.horizontal)
             }
-        }
-        
-        private var count: Int {
-            min(Metrics.chart.vertical, steps.values.count)
         }
     }
 }
