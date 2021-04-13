@@ -19,6 +19,7 @@ extension Map {
             
             tiles
                 .debounce(for: 1, scheduler: DispatchQueue.global(qos: .utility))
+                .removeDuplicates()
                 .map(\.overlay)
                 .receive(on: DispatchQueue.main)
                 .sink { [weak self] in

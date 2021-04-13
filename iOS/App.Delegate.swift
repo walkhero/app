@@ -17,7 +17,7 @@ extension App {
                         .archive
                         .merge(with: Repository.memory.save)
                         .removeDuplicates()
-                        .debounce(for: .seconds(1), scheduler: DispatchQueue.global(qos: .utility))
+                        .debounce(for: .seconds(3), scheduler: DispatchQueue.global(qos: .utility))
                                 .sink {
                                     Defaults.archive = $0
                                     WidgetCenter.shared.reloadAllTimelines()
