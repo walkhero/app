@@ -66,6 +66,9 @@ extension Walking {
                 .buttonStyle(PlainButtonStyle())
                 .disabled(disabled)
             }
+            .onAppear {
+                disabled = false
+            }
         }
         
         private func clear() {

@@ -12,44 +12,52 @@ struct Finish: View {
                     .font(Font.title2.bold())
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding([.trailing, .top])
+                    .padding(.trailing)
                 Text("STREAK")
                     .font(.callout)
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding([.trailing, .bottom])
+                    .padding(.trailing)
             }
             if session.archive.enrolled(.steps) {
                 Text(NSNumber(value: transport?.steps ?? 0), formatter: session.decimal)
                     .font(Font.title2.bold())
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding([.trailing, .top])
+                    .padding(.trailing)
                 Text("STEPS")
                     .font(.callout)
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding([.trailing, .bottom])
+                    .padding(.trailing)
             }
             if session.archive.enrolled(.distance) {
                 Text(Measurement(value: .init(transport?.distance ?? 0), unit: UnitLength.meters), formatter: session.measures)
                     .font(Font.title2.bold())
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding([.trailing, .top])
+                    .padding(.trailing)
                 Text("DISTANCE")
                     .font(.callout)
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding([.trailing, .bottom])
+                    .padding(.trailing)
             }
             if session.archive.enrolled(.map) {
                 Text(NSNumber(value: transport?.map ?? 0), formatter: session.decimal)
                     .font(Font.title2.bold())
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding([.trailing, .top])
+                    .padding(.trailing)
                 Text("MAP SQUARES")
                     .font(.callout)
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding([.trailing, .bottom])
+                    .padding(.trailing)
             }
             Button {
                 withAnimation(.easeInOut(duration: 0.3)) {

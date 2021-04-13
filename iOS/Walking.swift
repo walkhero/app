@@ -80,6 +80,7 @@ struct Walking: View {
             streak = session.archive.calendar.streak
             maximumSteps = max(session.archive.maxSteps, Metrics.steps.min)
             maximumMetres = max(session.archive.maxMetres, Metrics.distance.min)
+            disabled = false
         }
     }
     

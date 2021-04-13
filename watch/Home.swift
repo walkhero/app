@@ -17,14 +17,14 @@ struct Home: View {
                             endPoint: .bottom))
                 Image(systemName: "figure.walk")
                     .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .topLeading)
-                    .padding(20)
+                    .padding(15)
                 Image(systemName: "plus")
                     .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .bottomTrailing)
-                    .padding(20)
+                    .padding(15)
             }
             .foregroundColor(.black)
             .font(.title2)
-            .frame(width: 100, height: 100)
+            .frame(width: 75, height: 75)
         }
         .buttonStyle(PlainButtonStyle())
     }
