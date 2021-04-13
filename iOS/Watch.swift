@@ -1,6 +1,7 @@
 import Foundation
 import WatchConnectivity
 import Combine
+import Hero
 
 final class Watch: NSObject, WCSessionDelegate {
     let challenges = PassthroughSubject<Transport, Never>()
@@ -14,9 +15,7 @@ final class Watch: NSObject, WCSessionDelegate {
     }
     
     func session(_: WCSession, didReceiveMessage: [String : Any]) {
-        DispatchQueue.global(qos: .utility).asyncAfter(deadline: .now() + 4) { [weak self] in
-            self?.challenges.send(.init(message: didReceiveMessage))
-        }
+        challenges.send(.init(message: didReceiveMessage))
     }
     
     func session(_: WCSession, activationDidCompleteWith: WCSessionActivationState, error: Error?) { }

@@ -32,7 +32,7 @@ import Hero
                         session.player.image = image
                     }
                 }
-                .onReceive(session.watch.challenges.receive(on: DispatchQueue.main)) {
+                .onReceive(session.challenges) {
                     if session.archive.enrolled(.streak) {
                         session.game.submit(.streak, $0.streak)
                     }

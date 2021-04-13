@@ -1,5 +1,6 @@
 import Foundation
 import WatchConnectivity
+import Hero
 
 final class Watch: NSObject, WCSessionDelegate {
     func send(_ transport: Transport) {

@@ -62,8 +62,6 @@
 		CEAF806F261601C100564E3F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3412611EDAF0057943D /* Location.swift */; };
 		CEAF8075261608D700564E3F /* Walking.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF8074261608D700564E3F /* Walking.Map.swift */; };
 		CEAF80912616268C00564E3F /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF80902616268C00564E3F /* Watch.swift */; };
-		CEAF809F26162AC400564E3F /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF809E26162AC400564E3F /* Transport.swift */; };
-		CEAF80A026162AC400564E3F /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF809E26162AC400564E3F /* Transport.swift */; };
 		CEAF80D126162E4F00564E3F /* WalkHero.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE0EB3F7260DF38E00D607C9 /* WalkHero.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CEAF80E626162F4C00564E3F /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF80E526162F4C00564E3F /* Watch.swift */; };
 		CEB1EF5B260DF9330036ECB5 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEB1EF5A260DF9330036ECB5 /* Hero */; };
@@ -71,6 +69,7 @@
 		CEB1EF64260DF9BD0036ECB5 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */; };
 		CEB1EF66260DF9C10036ECB5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB1EF65260DF9C10036ECB5 /* HealthKit.framework */; };
 		CECAA3A42625A8FA0076B2CA /* Chart.Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAA3A32625A8FA0076B2CA /* Chart.Title.swift */; };
+		CEDCFC682625D1BE00AD8874 /* Finish.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDCFC672625D1BE00AD8874 /* Finish.swift */; };
 		CEEA459C260DFF8E004FC710 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEEA459B260DFF8E004FC710 /* Hero */; };
 		CEEA45A0260E0709004FC710 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA459F260E0709004FC710 /* CloudKit.framework */; };
 		CEEA45A2260E0717004FC710 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEA45A1260E0717004FC710 /* HealthKit.framework */; };
@@ -228,13 +227,13 @@
 		CEAF805C2615FEC600564E3F /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
 		CEAF8074261608D700564E3F /* Walking.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Map.swift; sourceTree = "<group>"; };
 		CEAF80902616268C00564E3F /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
-		CEAF809E26162AC400564E3F /* Transport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transport.swift; sourceTree = "<group>"; };
 		CEAF80E526162F4C00564E3F /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
 		CEB1EF60260DF9820036ECB5 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CEB1EF61260DF9950036ECB5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEB1EF63260DF9BD0036ECB5 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEB1EF65260DF9C10036ECB5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		CECAA3A32625A8FA0076B2CA /* Chart.Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.Title.swift; sourceTree = "<group>"; };
+		CEDCFC672625D1BE00AD8874 /* Finish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finish.swift; sourceTree = "<group>"; };
 		CEEA459D260E06D6004FC710 /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
 		CEEA459E260E0705004FC710 /* watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watch.entitlements; sourceTree = "<group>"; };
 		CEEA459F260E0709004FC710 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -440,6 +439,7 @@
 				CE0EB407260DF38F00D607C9 /* Info.plist */,
 				CE7F0B332614C59B005C4585 /* App.Delegate.swift */,
 				CE0EB3FE260DF38F00D607C9 /* App.swift */,
+				CEDCFC672625D1BE00AD8874 /* Finish.swift */,
 				CE7F0B292614BBD3005C4585 /* Home.swift */,
 				CE7F0AF62614B0DC005C4585 /* Session.swift */,
 				CEAF805C2615FEC600564E3F /* Walking.Distance.swift */,
@@ -472,7 +472,6 @@
 				CEEA45DF260E0A73004FC710 /* Metrics.swift */,
 				CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */,
 				CEEA45E0260E0A73004FC710 /* Ring.swift */,
-				CEAF809E26162AC400564E3F /* Transport.swift */,
 				CE6177802611DCB40091EE0E /* Water.swift */,
 			);
 			path = shared;
@@ -649,7 +648,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEA45E9260E0A74004FC710 /* Ephemeris.swift in Sources */,
-				CEAF809F26162AC400564E3F /* Transport.swift in Sources */,
 				CEEA45C2260E0A50004FC710 /* Bar.swift in Sources */,
 				CEEA45F5260E0A74004FC710 /* Ephemeris.Navigation.swift in Sources */,
 				CEEA45F2260E0A74004FC710 /* Session.Player.swift in Sources */,
@@ -741,8 +739,8 @@
 				CE0EB3FF260DF38F00D607C9 /* App.swift in Sources */,
 				CE8367432614D9BB00BE3AB5 /* Walking.Streak.swift in Sources */,
 				CE7F0B2A2614BBD3005C4585 /* Home.swift in Sources */,
+				CEDCFC682625D1BE00AD8874 /* Finish.swift in Sources */,
 				CE7F0B4B2614CA4D005C4585 /* Clock.swift in Sources */,
-				CEAF80A026162AC400564E3F /* Transport.swift in Sources */,
 				CE7F0AED2614B087005C4585 /* Walking.Menu.swift in Sources */,
 				CEAF80492615F4E300564E3F /* Walking.Steps.swift in Sources */,
 				CEEA4615260E0C7D004FC710 /* Health.swift in Sources */,
