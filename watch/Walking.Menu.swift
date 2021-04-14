@@ -22,6 +22,8 @@ extension Walking {
                         .font(.caption)
                         .padding(6)
                 }
+                .buttonStyle(PlainButtonStyle())
+                .disabled(disabled)
                 .alert(isPresented: $alert) {
                     Alert(title: .init("Cancel walk?"),
                           primaryButton: .default(.init("Continue")),
@@ -32,8 +34,6 @@ extension Walking {
                             }
                     })
                 }
-                .buttonStyle(PlainButtonStyle())
-                .disabled(disabled)
                 Spacer()
                 Image(systemName: "figure.walk")
                     .font(.title2)

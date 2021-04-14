@@ -24,7 +24,7 @@ struct Home: View {
             }
             .foregroundColor(.black)
             .font(.title2)
-            .frame(width: 75, height: 75)
+            .frame(width: 80, height: 80)
         }
         .buttonStyle(PlainButtonStyle())
     }

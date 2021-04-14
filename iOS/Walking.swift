@@ -3,8 +3,10 @@ import Hero
 
 struct Walking: View {
     @Binding var session: Session
+    @Binding var transport: Transport?
     @State private var challenge: Challenge?
     @State private var disabled = false
+    @State private var alert = false
     @State private var steps = 0
     @State private var metres = 0
     @State private var maximumSteps = 1
@@ -36,29 +38,39 @@ struct Walking: View {
                         gradient: .init(colors: [.init(.systemIndigo), .blue]),
                         startPoint: .leading,
                         endPoint: .trailing)) {
+                let transport = Transport(streak: streak.current, steps: steps, distance: metres, map: tiles.count)
                 clear()
-                session.watch.challenges.send(.init(streak: streak.current, steps: steps, distance: metres, map: tiles.count))
+                session.watch.challenges.send(transport)
                 
-                withAnimation(.easeInOut(duration: 0.3)) {
+                withAnimation(.easeInOut(duration: 0.4)) {
+                    self.transport = transport
                     session.archive.end(steps: steps, metres: metres)
                 }
             }
             .disabled(disabled)
             .padding(.top)
             Button {
-                clear()
-                withAnimation(.spring(blendDuration: 0.3)) {
-                    session.archive.cancel()
-                }
+                alert = true
             } label: {
                 Text("CANCEL")
                     .foregroundColor(.secondary)
                     .font(.caption)
-                    .frame(width: 300, height: 40)
+                    .frame(width: 300, height: 35)
             }
             .disabled(disabled)
             .padding(.top, 10)
             .padding(.bottom)
+            .alert(isPresented: $alert) {
+                Alert(title: .init("Cancel walk?"),
+                      message: .init("Data from this walk will be forgotten"),
+                      primaryButton: .default(.init("Continue")),
+                      secondaryButton: .destructive(.init("Cancel")) {
+                        clear()
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                            session.archive.cancel()
+                        }
+                })
+            }
         }
         .onReceive(session.health.steps.receive(on: DispatchQueue.main)) {
             guard !disabled else { return }

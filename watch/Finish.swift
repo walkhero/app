@@ -7,58 +7,65 @@ struct Finish: View {
     
     var body: some View {
         ScrollView {
-            if session.archive.enrolled(.streak) {
-                Text(NSNumber(value: transport?.streak ?? 0), formatter: session.decimal)
-                    .font(Font.title2.bold())
+            VStack {
+                Text(verbatim: session.components.string(from: session.archive.last!.duration) ?? "")
+                    .font(Font.title3.bold())
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
-                    .padding([.trailing, .top])
-                    .padding(.trailing)
-                Text("STREAK")
-                    .font(.callout)
+                    .padding(.top)
+                Text("DURATION")
+                    .font(.caption)
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
-                    .padding([.trailing, .bottom])
-                    .padding(.trailing)
+                    .padding(.bottom)
+                if session.archive.enrolled(.streak) {
+                    Text(NSNumber(value: transport?.streak ?? 0), formatter: session.decimal)
+                        .font(Font.title3.bold())
+                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
+                        .padding(.top)
+                    Text("STREAK")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
+                        .padding(.bottom)
+                }
+                if session.archive.enrolled(.steps) {
+                    Text(NSNumber(value: transport?.steps ?? 0), formatter: session.decimal)
+                        .font(Font.title3.bold())
+                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
+                        .padding(.top)
+                    Text("STEPS")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
+                        .padding(.bottom)
+                }
+                if session.archive.enrolled(.distance) {
+                    Text(Measurement(value: .init(transport?.distance ?? 0), unit: UnitLength.meters), formatter: session.measures)
+                        .font(Font.title3.bold())
+                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
+                        .padding(.top)
+                    Text("DISTANCE")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
+                        .padding(.bottom)
+                }
+                if session.archive.enrolled(.map) {
+                    Text(NSNumber(value: transport?.map ?? 0), formatter: session.decimal)
+                        .font(Font.title3.bold())
+                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
+                        .padding(.top)
+                    Text("MAP SQUARES")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
+                        .padding(.bottom)
+                }
             }
-            if session.archive.enrolled(.steps) {
-                Text(NSNumber(value: transport?.steps ?? 0), formatter: session.decimal)
-                    .font(Font.title2.bold())
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
-                    .padding([.trailing, .top])
-                    .padding(.trailing)
-                Text("STEPS")
-                    .font(.callout)
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
-                    .padding([.trailing, .bottom])
-                    .padding(.trailing)
-            }
-            if session.archive.enrolled(.distance) {
-                Text(Measurement(value: .init(transport?.distance ?? 0), unit: UnitLength.meters), formatter: session.measures)
-                    .font(Font.title2.bold())
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
-                    .padding([.trailing, .top])
-                    .padding(.trailing)
-                Text("DISTANCE")
-                    .font(.callout)
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
-                    .padding([.trailing, .bottom])
-                    .padding(.trailing)
-            }
-            if session.archive.enrolled(.map) {
-                Text(NSNumber(value: transport?.map ?? 0), formatter: session.decimal)
-                    .font(Font.title2.bold())
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
-                    .padding([.trailing, .top])
-                    .padding(.trailing)
-                Text("MAP SQUARES")
-                    .font(.callout)
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
-                    .padding([.trailing, .bottom])
-                    .padding(.trailing)
-            }
+            .padding(.trailing)
+            .padding(.trailing)
+            .padding(.bottom)
+            .padding(.bottom)
             Button {
                 withAnimation(.easeInOut(duration: 0.3)) {
                     transport = nil

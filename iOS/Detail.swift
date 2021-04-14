@@ -58,8 +58,10 @@ struct Detail: View {
                     Text("STOP")
                         .foregroundColor(.secondary)
                         .font(Font.footnote.bold())
-                        .frame(width: 300, height: 40)
+                        .frame(width: 300, height: 35)
                 }
+                Spacer()
+                    .frame(height: 20)
             } else {
                 Spacer()
                 Image(systemName: challenge.symbol)
@@ -81,9 +83,9 @@ struct Detail: View {
                         start()
                     }
                 }
+                Spacer()
+                    .frame(height: 30)
             }
-            Spacer()
-                .frame(height: 30)
         }
     }
     

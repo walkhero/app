@@ -21,15 +21,17 @@ struct Mapper: View {
             .foregroundColor(.secondary)
             .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
             .padding(.leading)
-        Rectangle()
-            .fill(Color.secondary)
-            .frame(height: 1)
-        Map(session: $session, tiles: tiles)
-        Rectangle()
-            .fill(Color.secondary)
-            .frame(height: 1)
-            .onAppear {
-                session.location.enrollIfNeeded()
-            }
+        VStack(spacing: 0) {
+            Rectangle()
+                .fill(Color.secondary)
+                .frame(height: 1)
+            Map(session: $session, tiles: tiles)
+            Rectangle()
+                .fill(Color.secondary)
+                .frame(height: 1)
+                .onAppear {
+                    session.location.enrollIfNeeded()
+                }
+        }
     }
 }

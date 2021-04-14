@@ -1,10 +1,15 @@
 import SwiftUI
+import Hero
 
 struct Window: View {
     @Binding var session: Session
+    @State private var transport: Transport?
     
     var body: some View {
-        if case .none = session.archive.status {
+        if transport != nil {
+            Finish(session: $session, transport: $transport)
+                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
+        } else if case .none = session.archive.status {
             switch session.section {
             case .home:
                 Home(session: $session)
@@ -17,7 +22,7 @@ struct Window: View {
                     .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
             }
         } else {
-            Walking(session: $session)
+            Walking(session: $session, transport: $transport)
                 .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
         }
     }

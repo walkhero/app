@@ -31,5 +31,6 @@ struct Home: View {
                 Item(session: $session, challenge: challenge)
             }
         }
+        .padding(.bottom)
     }
 }
