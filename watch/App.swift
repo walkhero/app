@@ -5,6 +5,7 @@ import Hero
 
 @main struct App: SwiftUI.App {
     @State private var session = Session()
+    @Environment(\.scenePhase) private var phase
     @WKExtensionDelegateAdaptor(Delegate.self) var delegate
     
     var body: some Scene {
@@ -16,18 +17,25 @@ import Hero
                         session.clear()
                     }
                 }
-                .onAppear {
-                    if session.archive == .new {
-                        Repository.memory.load()
-                    }
-                    
-                    Repository.memory.pull.send()
-                    
-                    if WCSession.default.activationState != .activated {
-                        WCSession.default.delegate = session.watch
-                        WCSession.default.activate()
-                    }
-                }
+                .onAppear(perform: refresh)
+        }
+        .onChange(of: phase) {
+            if $0 == .active {
+                refresh()
+            }
+        }
+    }
+    
+    private func refresh() {
+        if session.archive == .new {
+            Repository.memory.load()
+        }
+        
+        Repository.memory.pull.send()
+        
+        if WCSession.default.activationState != .activated {
+            WCSession.default.delegate = session.watch
+            WCSession.default.activate()
         }
     }
 }
