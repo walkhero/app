@@ -43,9 +43,9 @@ extension Walking {
                     let transport = Transport(streak: streak, steps: steps, distance: metres, map: tiles)
                     session.watch.send(transport)
                     
-                    withAnimation(.easeInOut(duration: 0.3)) {
-                        session.archive.end(steps: steps, metres: metres)
+                    withAnimation(.easeInOut(duration: 0.4)) {
                         self.transport = transport
+                        session.archive.end(steps: steps, metres: metres)
                     }
                 } label: {
                     ZStack {
