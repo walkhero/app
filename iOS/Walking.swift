@@ -26,7 +26,7 @@ struct Walking: View {
                 case .distance:
                     Distance(session: $session, metres: $metres, maximum: maximumMetres)
                 case .map:
-                    Map(session: $session, tiles: tiles)
+                    Mapper(session: $session, tiles: tiles)
                 }
             } else {
                 Time(session: $session)

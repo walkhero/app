@@ -35,7 +35,6 @@
 		CE26458F2618A9FB00B53B91 /* Settings.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26458E2618A9FB00B53B91 /* Settings.Item.swift */; };
 		CE2645992618AD9E00B53B91 /* Session.Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2645982618AD9E00B53B91 /* Session.Modal.swift */; };
 		CE39B3422611EDAF0057943D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3412611EDAF0057943D /* Location.swift */; };
-		CE39B3582611F31F0057943D /* Detail.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3572611F31F0057943D /* Detail.Map.swift */; };
 		CE4E8C73260F6E2900480453 /* Walking.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E8C72260F6E2900480453 /* Walking.Distance.swift */; };
 		CE5BCEA4261735A800E301F7 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BCEA3261735A800E301F7 /* Bundle.swift */; };
 		CE6177812611DCB40091EE0E /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6177802611DCB40091EE0E /* Water.swift */; };
@@ -116,7 +115,7 @@
 		CEEA460E260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */; };
 		CEEA4614260E0C7D004FC710 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA4613260E0C7D004FC710 /* Health.swift */; };
 		CEEA4615260E0C7D004FC710 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA4613260E0C7D004FC710 /* Health.swift */; };
-		CEF987C426121535002B8022 /* Walking.Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF987C326121535002B8022 /* Walking.Map.swift */; };
+		CEF987C426121535002B8022 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF987C326121535002B8022 /* Mapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,7 +206,6 @@
 		CE2645982618AD9E00B53B91 /* Session.Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.Modal.swift; sourceTree = "<group>"; };
 		CE26459E2618AF9B00B53B91 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		CE39B3412611EDAF0057943D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		CE39B3572611F31F0057943D /* Detail.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Map.swift; sourceTree = "<group>"; };
 		CE4E8C72260F6E2900480453 /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
 		CE5BCEA3261735A800E301F7 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		CE6177802611DCB40091EE0E /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
@@ -278,7 +276,7 @@
 		CEEA45E6260E0A73004FC710 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		CEEA460B260E0AAA004FC710 /* RelativeDateTimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeDateTimeFormatter.swift; sourceTree = "<group>"; };
 		CEEA4613260E0C7D004FC710 /* Health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
-		CEF987C326121535002B8022 /* Walking.Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Map.swift; sourceTree = "<group>"; };
+		CEF987C326121535002B8022 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,7 +350,6 @@
 				CECAA3A32625A8FA0076B2CA /* Chart.Title.swift */,
 				CEEA45B2260E0A50004FC710 /* Control.swift */,
 				CE6E0A572610903C00A8D81B /* Detail.Distance.swift */,
-				CE39B3572611F31F0057943D /* Detail.Map.swift */,
 				CE6E0A4926108EB200A8D81B /* Detail.Steps.swift */,
 				CEEA45B3260E0A50004FC710 /* Detail.Streak.Header.swift */,
 				CEEA45B6260E0A50004FC710 /* Detail.Streak.swift */,
@@ -367,6 +364,7 @@
 				CEEA45E5260E0A73004FC710 /* Listed.swift */,
 				CE6177902611EAD10091EE0E /* Map.Coordinator.swift */,
 				CE61778A2611EA890091EE0E /* Map.swift */,
+				CEF987C326121535002B8022 /* Mapper.swift */,
 				CE26457A26189B5200B53B91 /* Purchases.Item.swift */,
 				CE264574261897EE00B53B91 /* Purchases.swift */,
 				CE2645982618AD9E00B53B91 /* Session.Modal.swift */,
@@ -379,7 +377,6 @@
 				CEEA45E2260E0A73004FC710 /* Shadowed.swift */,
 				CEEA45D5260E0A73004FC710 /* UIApplication.swift */,
 				CE4E8C72260F6E2900480453 /* Walking.Distance.swift */,
-				CEF987C326121535002B8022 /* Walking.Map.swift */,
 				CEEA45CE260E0A73004FC710 /* Walking.Segmented.Item.swift */,
 				CEEA45CB260E0A73004FC710 /* Walking.Segmented.Status.swift */,
 				CEEA45D8260E0A73004FC710 /* Walking.Segmented.swift */,
@@ -658,7 +655,7 @@
 				CEEA45FE260E0A74004FC710 /* Shadowed.swift in Sources */,
 				CEEA460C260E0AAA004FC710 /* RelativeDateTimeFormatter.swift in Sources */,
 				CE39B3422611EDAF0057943D /* Location.swift in Sources */,
-				CEF987C426121535002B8022 /* Walking.Map.swift in Sources */,
+				CEF987C426121535002B8022 /* Mapper.swift in Sources */,
 				CEEA45F7260E0A74004FC710 /* Ephemeris.Month.swift in Sources */,
 				CEEA45F3260E0A74004FC710 /* Walking.swift in Sources */,
 				CEEA45BA260E0A50004FC710 /* Challenge.Metadata.swift in Sources */,
@@ -679,7 +676,6 @@
 				CEEA45BB260E0A50004FC710 /* App.swift in Sources */,
 				CEEA4602260E0A74004FC710 /* Session.swift in Sources */,
 				CEEA45E8260E0A74004FC710 /* Clock.swift in Sources */,
-				CE39B3582611F31F0057943D /* Detail.Map.swift in Sources */,
 				CE26457B26189B5200B53B91 /* Purchases.Item.swift in Sources */,
 				CEEA45FF260E0A74004FC710 /* Home.Item.swift in Sources */,
 				CE61778B2611EA890091EE0E /* Map.swift in Sources */,

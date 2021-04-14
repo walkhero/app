@@ -47,7 +47,7 @@ struct Detail: View {
                 case .distance:
                     Distance(session: $session, metres: session.archive.metres, max: session.archive.maxMetres)
                 case .map:
-                    Map(session: $session)
+                    Mapper(session: $session, tiles: session.archive.tiles)
                 }
                 Spacer()
                 Button {
