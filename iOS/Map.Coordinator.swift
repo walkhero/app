@@ -36,7 +36,7 @@ extension Map {
         
         func mapView(_: MKMapView, rendererFor: MKOverlay) -> MKOverlayRenderer {
             let renderer = MKPolygonRenderer(overlay: rendererFor)
-            renderer.fillColor = .init(white: 0, alpha: UIApplication.dark ? 0.7 : 0.35)
+            renderer.fillColor = .init(white: 0, alpha: UIApplication.dark ? 0.75 : 0.35)
             return renderer
         }
         
