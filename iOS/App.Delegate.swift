@@ -40,7 +40,6 @@ extension App {
                     Defaults.created = .init()
                 }
             }
-            
             return true
         }
         

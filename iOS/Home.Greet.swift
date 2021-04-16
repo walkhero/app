@@ -5,7 +5,7 @@ extension Home {
         @Binding var session: Session
         
         var body: some View {
-            ZStack {
+            VStack {
                 HStack {
                     Button {
                         session.purchases.open.send()
@@ -37,34 +37,30 @@ extension Home {
                     }
                     .padding(.trailing)
                 }
-                .offset(y: -70)
-                VStack {
-                    if session.player.image == nil {
-                        ZStack {
-                            Circle()
-                                .fill(LinearGradient(
-                                        gradient: .init(colors: [.init(.systemIndigo), .pink]),
-                                        startPoint: .topLeading,
-                                        endPoint: .bottom))
-                                .frame(width: 100, height: 100)
-                            Image(systemName: "person.fill")
-                                .font(.largeTitle)
-                                .foregroundColor(.white)
-                        }
-                    } else {
-                        Image(uiImage: session.player.image!)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 100, height: 100)
-                            .clipShape(Circle())
+                if session.player.image == nil {
+                    ZStack {
+                        Circle()
+                            .fill(LinearGradient(
+                                    gradient: .init(colors: [.init(.systemIndigo), .pink]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottom))
+                            .frame(width: Metrics.home.picture.size, height: Metrics.home.picture.size)
+                        Image(systemName: "person.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
                     }
-                    Text(verbatim: session.player.name)
-                        .font(Font.title2.bold())
-                        .foregroundColor(.accentColor)
-                        .padding(.horizontal)
-                        .id(session.player.name)
+                } else {
+                    Image(uiImage: session.player.image!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: Metrics.home.picture.size, height: Metrics.home.picture.size)
+                        .clipShape(Circle())
                 }
-                .padding(.top, 40)
+                Text(verbatim: session.player.name)
+                    .font(.title2)
+                    .fontWeight(.medium)
+                    .padding(.horizontal)
+                    .id(session.player.name)
             }
         }
     }

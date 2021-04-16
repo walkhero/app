@@ -22,13 +22,14 @@ extension Walking {
                 Image(systemName: "figure.walk")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .foregroundColor(.secondary)
                     .frame(height: 50)
                 Text(NSNumber(value: streak.current), formatter: session.decimal)
-                    .font(Font.title2.bold())
+                    .font(Font.title.bold())
                     .frame(maxHeight: .greatestFiniteMagnitude, alignment: .bottom)
-                    .padding(.bottom, 35)
+                    .padding(.bottom, 50)
             }
-            .frame(width: 200, height: 200)
+            .frame(width: 250, height: 250)
             Spacer()
         }
     }

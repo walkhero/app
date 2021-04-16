@@ -21,6 +21,7 @@ extension Walking {
                                     startPoint: .topLeading,
                                     endPoint: .bottomTrailing), lineWidth: 7)
                     Image(systemName: "figure.walk")
+                        .foregroundColor(.secondary)
                         .font(.title2)
                     Text(NSNumber(value: streak.current), formatter: session.decimal)
                         .font(Font.title3.bold())

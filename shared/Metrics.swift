@@ -24,6 +24,12 @@ struct Metrics {
         static let tiles = pow(Double(4), 20)
     }
     
+    struct home {
+        struct picture {
+            static let size = CGFloat(85)
+        }
+    }
+    
     struct calendar {
         struct day {
             static let size = CGFloat(40)
