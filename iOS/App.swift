@@ -54,6 +54,9 @@ import Hero
                 .onReceive(delegate.froob) {
                     modal(.froob)
                 }
+                .onReceive(session.dismiss) {
+                    UIApplication.shared.dismiss()
+                }
         }
         .onChange(of: phase) {
             if $0 == .active {

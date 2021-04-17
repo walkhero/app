@@ -12,12 +12,16 @@ extension UIApplication: GKGameCenterControllerDelegate {
         return root
     }
     
-    func present(_ controller: UIViewController) {
-        root?.present(controller, animated: true)
-    }
-    
     func settings() {
         open(URL(string: Self.openSettingsURLString)!)
+    }
+    
+    func dismiss() {
+        root?.dismiss(animated: false)
+    }
+    
+    func present(_ controller: UIViewController) {
+        root?.present(controller, animated: true)
     }
     
     public func gameCenterViewControllerDidFinish(_: GKGameCenterViewController) {
