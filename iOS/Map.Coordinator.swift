@@ -7,7 +7,7 @@ extension Map {
         let tiles = PassthroughSubject<Set<Tile>, Never>()
         private var subs = Set<AnyCancellable>()
         private var centred = false
-        private let start = Date()
+        private let dispatch = DispatchQueue(label: "", qos: .utility)
         
         required init?(coder: NSCoder) { nil }
         init(wrapper: Map) {
@@ -17,13 +17,15 @@ extension Map {
             showsUserLocation = true
             mapType = .standard
             delegate = self
+            setUserTrackingMode(.follow, animated: false)
             
             tiles
-                .debounce(for: 1, scheduler: DispatchQueue.global(qos: .utility))
+                .throttle(for: .seconds(1), scheduler: dispatch, latest: true)
                 .removeDuplicates()
                 .map(\.overlay)
                 .receive(on: DispatchQueue.main)
                 .sink { [weak self] in
+                    print("trot")
                     if let overlays = self?.overlays {
                         self?.removeOverlays(overlays)
                     }
@@ -36,22 +38,17 @@ extension Map {
         
         func mapView(_: MKMapView, rendererFor: MKOverlay) -> MKOverlayRenderer {
             let renderer = MKPolygonRenderer(overlay: rendererFor)
-            renderer.fillColor = .init(white: 0, alpha: UIApplication.dark ? 0.75 : 0.35)
+            renderer.fillColor = .init(white: 0, alpha: UIApplication.dark ? 0.65 : 0.3)
             return renderer
         }
         
         func mapView(_: MKMapView, didUpdate: MKUserLocation) {
             guard let coordinate = didUpdate.location?.coordinate else { return }
-            if !centred || Calendar.current.dateComponents([.second], from: start, to: .init()).second! < 3 {
+            if !centred {
                 centred = true
-                if abs(coordinate.latitude - region.center.latitude) > 0.01 ||
-                    abs(coordinate.longitude - region.center.longitude) > 0.01 {
-                    var region = MKCoordinateRegion()
-                    region.center = coordinate
-                    region.span = .init(latitudeDelta: 0.001, longitudeDelta: 0.001)
-                    setRegion(region, animated: false)
-                    setUserTrackingMode(.follow, animated: false)
-                }
+                setCamera(MKMapCamera(lookingAtCenter: coordinate, fromDistance: 500, pitch: 0, heading: 0), animated: false)
+            } else if abs(coordinate.latitude - region.center.latitude) + abs(coordinate.longitude - region.center.longitude) > 0.00075 {
+                setCenter(coordinate, animated: true)
             }
         }
     }
