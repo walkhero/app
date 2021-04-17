@@ -52,7 +52,7 @@ extension Ephemeris.Month {
                     .font(.footnote)
                     .fontWeight(continouos == .none ? .regular : .bold)
                     .foregroundColor(today
-                                        ? .primary
+                                        ? .white
                                         : continouos == .none ? .init(.tertiaryLabel) : .black)
             }
             .frame(width: Metrics.calendar.day.size, height: Metrics.calendar.day.size)

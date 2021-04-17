@@ -11,6 +11,7 @@ extension Detail {
             Spacer()
             Header(session: $session, streak: streak)
             Ephemeris(index: year.months.count - 1, monther: session.monther, weeker: session.weeker, year: year)
+            Spacer()
         }
     }
 }

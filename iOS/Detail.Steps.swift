@@ -15,7 +15,7 @@ extension Detail {
             Chart(values: steps.values, color: .pink)
             if max > 0 {
                 HStack {
-                    Text("All Time Max ") +
+                    Text("All time max ") +
                     Text(NSNumber(value: max), formatter: session.decimal) +
                     Text(" steps")
                     Spacer()
@@ -24,6 +24,7 @@ extension Detail {
                 .foregroundColor(.secondary)
                 .padding(.horizontal)
             }
+            Spacer()
         }
     }
 }

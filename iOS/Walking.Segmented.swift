@@ -8,33 +8,45 @@ extension Walking {
         
         var body: some View {
             HStack(spacing: 5) {
-                Item(symbol: "clock", status: challenge == nil ? .selected : .on) {
+                Item(symbol: "stopwatch", selected: challenge == nil) {
                     withAnimation(.spring(blendDuration: 0.5)) {
                         challenge = nil
                     }
                 }
-                Item(symbol: "calendar", status: challenge == .streak ? .selected : session.archive.enrolled(.streak) ? .on : .off) {
-                    guard session.archive.enrolled(.streak) else { return }
-                    withAnimation(.spring(blendDuration: 0.5)) {
-                        challenge = .streak
+                
+                if session.archive.enrolled(.streak) {
+                    Item(symbol: "calendar", selected: challenge == .streak) {
+                        guard session.archive.enrolled(.streak) else { return }
+                        withAnimation(.spring(blendDuration: 0.5)) {
+                            challenge = .streak
+                        }
                     }
                 }
-                Item(symbol: "speedometer", status: challenge == .steps ? .selected : session.archive.enrolled(.steps) ? .on : .off) {
-                    guard session.archive.enrolled(.steps) else { return }
-                    withAnimation(.spring(blendDuration: 0.5)) {
-                        challenge = .steps
+                
+                if session.archive.enrolled(.steps) {
+                    Item(symbol: "speedometer", selected: challenge == .steps) {
+                        guard session.archive.enrolled(.steps) else { return }
+                        withAnimation(.spring(blendDuration: 0.5)) {
+                            challenge = .steps
+                        }
                     }
                 }
-                Item(symbol: "point.topleft.down.curvedto.point.bottomright.up", status: challenge == .distance ? .selected : session.archive.enrolled(.distance) ? .on : .off) {
-                    guard session.archive.enrolled(.distance) else { return }
-                    withAnimation(.spring(blendDuration: 0.5)) {
-                        challenge = .distance
+                
+                if session.archive.enrolled(.distance) {
+                    Item(symbol: "point.topleft.down.curvedto.point.bottomright.up", selected: challenge == .distance) {
+                        guard session.archive.enrolled(.distance) else { return }
+                        withAnimation(.spring(blendDuration: 0.5)) {
+                            challenge = .distance
+                        }
                     }
                 }
-                Item(symbol: "map.fill", status: challenge == .map ? .selected : session.archive.enrolled(.map) ? .on : .off) {
-                    guard session.archive.enrolled(.map) else { return }
-                    withAnimation(.spring(blendDuration: 0.5)) {
-                        challenge = .map
+                
+                if session.archive.enrolled(.map) {
+                    Item(symbol: "map.fill", selected: challenge == .map) {
+                        guard session.archive.enrolled(.map) else { return }
+                        withAnimation(.spring(blendDuration: 0.5)) {
+                            challenge = .map
+                        }
                     }
                 }
             }

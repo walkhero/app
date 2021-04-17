@@ -15,7 +15,7 @@ extension Detail {
             Chart(values: metres.values, color: .orange)
             if max > 0 {
                 HStack {
-                    Text("All Time Max ")
+                    Text("All time max ")
                     + Text(Measurement(value: .init(max), unit: UnitLength.meters), formatter: session.measures)
                     Spacer()
                 }
@@ -23,6 +23,7 @@ extension Detail {
                 .foregroundColor(.secondary)
                 .padding(.horizontal)
             }
+            Spacer()
         }
         
         private var count: Int {

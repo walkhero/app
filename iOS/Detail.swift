@@ -7,36 +7,7 @@ struct Detail: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Button {
-                    withAnimation(.spring(blendDuration: 0.3)) {
-                        session.section = .home
-                    }
-                } label: {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                            .font(.title3)
-                            .frame(width: 30, height: 50)
-                            .padding(.leading)
-                        Text(challenge.title)
-                            .font(Font.footnote.bold())
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                    .foregroundColor(.primary)
-                }
-                
-                Spacer()
-                if session.archive.enrolled(challenge) {
-                    Button {
-                        session.game.leaderboard(challenge)
-                    } label: {
-                        Image(systemName: "star.fill")
-                            .font(.title3)
-                            .foregroundColor(.primary)
-                            .frame(width: 65, height: 50)
-                    }
-                }
-            }
+            Header(session: $session, challenge: challenge)
             if session.archive.enrolled(challenge) {
                 switch challenge {
                 case .streak:
@@ -47,21 +18,9 @@ struct Detail: View {
                 case .distance:
                     Distance(session: $session, metres: session.archive.metres, max: session.archive.maxMetres)
                 case .map:
-                    Mapper(session: $session, tiles: session.archive.tiles)
+                    Mapper(session: $session, tiles: session.archive.tiles, bottom: false)
+                        .edgesIgnoringSafeArea(.bottom)
                 }
-                Spacer()
-                Button {
-                    withAnimation(.easeInOut(duration: 0.3)) {
-                        session.archive.stop(challenge)
-                    }
-                } label: {
-                    Text("STOP")
-                        .foregroundColor(.secondary)
-                        .font(Font.footnote.bold())
-                        .frame(width: 300, height: 35)
-                }
-                Spacer()
-                    .frame(height: 20)
             } else {
                 Spacer()
                 Image(systemName: challenge.symbol)

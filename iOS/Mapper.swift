@@ -4,6 +4,7 @@ import Hero
 struct Mapper: View {
     @Binding var session: Session
     let tiles: Set<Tile>
+    let bottom: Bool
     @State private var follow = true
     
     var body: some View {
@@ -13,7 +14,7 @@ struct Mapper: View {
                     Text(NSNumber(value: tiles.count), formatter: session.decimal)
                         .font(Font.largeTitle.bold().monospacedDigit())
                     Text(" Map Squares")
-                        .font(.callout)
+                        .font(.caption2)
                         .foregroundColor(.secondary)
                         .padding(.bottom, 5)
                     Spacer()
@@ -40,12 +41,14 @@ struct Mapper: View {
                 .fill(Color.secondary)
                 .frame(height: 1)
             Map(session: $session, tiles: tiles, follow: follow)
-            Rectangle()
-                .fill(Color.secondary)
-                .frame(height: 1)
                 .onAppear {
                     session.location.enrollIfNeeded()
                 }
+            if bottom {
+                Rectangle()
+                    .fill(Color.secondary)
+                    .frame(height: 1)
+            }
         }
     }
 }

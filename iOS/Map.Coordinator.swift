@@ -4,10 +4,18 @@ import Hero
 
 extension Map {
     final class Coordinator: MKMapView, MKMapViewDelegate {
-        var follow = true
+        var follow = true {
+            didSet {
+                if follow && !oldValue {
+                    previous = .init()
+                }
+            }
+        }
+        
         let tiles = PassthroughSubject<Set<Tile>, Never>()
-        private var subs = Set<AnyCancellable>()
+        private var previous = CLLocationCoordinate2D()
         private var centred = false
+        private var subs = Set<AnyCancellable>()
         private let dispatch = DispatchQueue(label: "", qos: .utility)
         
         required init?(coder: NSCoder) { nil }
@@ -26,7 +34,6 @@ extension Map {
                 .map(\.overlay)
                 .receive(on: DispatchQueue.main)
                 .sink { [weak self] in
-                    print("trot")
                     if let overlays = self?.overlays {
                         self?.removeOverlays(overlays)
                     }
@@ -39,7 +46,7 @@ extension Map {
         
         func mapView(_: MKMapView, rendererFor: MKOverlay) -> MKOverlayRenderer {
             let renderer = MKPolygonRenderer(overlay: rendererFor)
-            renderer.fillColor = .init(white: 0, alpha: UIApplication.dark ? 0.65 : 0.3)
+            renderer.fillColor = .init(white: 0, alpha: UIApplication.dark ? 0.75 : 0.45)
             return renderer
         }
         
@@ -49,9 +56,10 @@ extension Map {
                 centred = true
                 setCamera(MKMapCamera(lookingAtCenter: coordinate, fromDistance: 500, pitch: 0, heading: 0), animated: false)
             } else if follow,
-                      abs(coordinate.latitude - region.center.latitude) + abs(coordinate.longitude - region.center.longitude) > 0.0007 {
+                      abs(coordinate.latitude - previous.latitude) + abs(coordinate.longitude - previous.longitude) > 0.0007 {
                 setCenter(coordinate, animated: true)
             }
+            previous = coordinate
         }
     }
 }
