@@ -14,15 +14,7 @@ extension Detail {
                         count: steps.values.count)
             Chart(values: steps.values, color: .pink)
             if max > 0 {
-                HStack {
-                    Text("All time max ") +
-                    Text(NSNumber(value: max), formatter: session.decimal) +
-                    Text(" steps")
-                    Spacer()
-                }
-                .font(.footnote)
-                .foregroundColor(.secondary)
-                .padding(.horizontal)
+                Chart.Footer(top: session.decimal.string(from: NSNumber(value: max))! + " steps")
             }
             Spacer()
         }

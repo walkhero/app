@@ -14,14 +14,7 @@ extension Detail {
                         count: metres.values.count)
             Chart(values: metres.values, color: .orange)
             if max > 0 {
-                HStack {
-                    Text("All time max ")
-                    + Text(Measurement(value: .init(max), unit: UnitLength.meters), formatter: session.measures)
-                    Spacer()
-                }
-                .font(.footnote)
-                .foregroundColor(.secondary)
-                .padding(.horizontal)
+                Chart.Footer(top: session.measures.string(from: Measurement(value: .init(max), unit: UnitLength.meters)))
             }
             Spacer()
         }

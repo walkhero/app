@@ -36,6 +36,7 @@
 		CE2645992618AD9E00B53B91 /* Session.Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2645982618AD9E00B53B91 /* Session.Modal.swift */; };
 		CE39B3422611EDAF0057943D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39B3412611EDAF0057943D /* Location.swift */; };
 		CE49E68C262AFFF800A9ABDA /* Detail.Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49E68B262AFFF800A9ABDA /* Detail.Header.swift */; };
+		CE49E696262B05B100A9ABDA /* Chart.Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49E695262B05B100A9ABDA /* Chart.Footer.swift */; };
 		CE4E8C73260F6E2900480453 /* Walking.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E8C72260F6E2900480453 /* Walking.Distance.swift */; };
 		CE5BCEA4261735A800E301F7 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BCEA3261735A800E301F7 /* Bundle.swift */; };
 		CE6177812611DCB40091EE0E /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6177802611DCB40091EE0E /* Water.swift */; };
@@ -206,6 +207,7 @@
 		CE26459E2618AF9B00B53B91 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		CE39B3412611EDAF0057943D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CE49E68B262AFFF800A9ABDA /* Detail.Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Header.swift; sourceTree = "<group>"; };
+		CE49E695262B05B100A9ABDA /* Chart.Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.Footer.swift; sourceTree = "<group>"; };
 		CE4E8C72260F6E2900480453 /* Walking.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Distance.swift; sourceTree = "<group>"; };
 		CE5BCEA3261735A800E301F7 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		CE6177802611DCB40091EE0E /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				CE26459E2618AF9B00B53B91 /* Configuration.storekit */,
 				CEEA45B1260E0A50004FC710 /* App.Delegate.swift */,
 				CEEA45B0260E0A50004FC710 /* App.swift */,
+				CE49E695262B05B100A9ABDA /* Chart.Footer.swift */,
 				CEEA45AD260E0A50004FC710 /* Chart.swift */,
 				CECAA3A32625A8FA0076B2CA /* Chart.Title.swift */,
 				CEEA45B2260E0A50004FC710 /* Control.swift */,
@@ -664,6 +667,7 @@
 				CE6177812611DCB40091EE0E /* Water.swift in Sources */,
 				CEEA45BF260E0A50004FC710 /* Detail.swift in Sources */,
 				CEEA45BD260E0A50004FC710 /* Control.swift in Sources */,
+				CE49E696262B05B100A9ABDA /* Chart.Footer.swift in Sources */,
 				CE0784792619C60D00819883 /* Settings.Froob.swift in Sources */,
 				CE49E68C262AFFF800A9ABDA /* Detail.Header.swift in Sources */,
 				CEEA45EB260E0A74004FC710 /* Home.Greet.swift in Sources */,
