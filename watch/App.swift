@@ -27,10 +27,6 @@ import Hero
     }
     
     private func refresh() {
-        if session.archive == .new {
-            Repository.memory.load()
-        }
-        
         Repository.memory.pull.send()
         
         if WCSession.default.activationState != .activated {

@@ -60,10 +60,6 @@ import Hero
         }
         .onChange(of: phase) {
             if $0 == .active {
-                if session.archive == .new {
-                    Repository.memory.load()
-                }
-                
                 Repository.memory.pull.send()
                 session.game.login()
                 session.watch.activate()
