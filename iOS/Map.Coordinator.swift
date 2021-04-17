@@ -4,6 +4,7 @@ import Hero
 
 extension Map {
     final class Coordinator: MKMapView, MKMapViewDelegate {
+        var follow = true
         let tiles = PassthroughSubject<Set<Tile>, Never>()
         private var subs = Set<AnyCancellable>()
         private var centred = false
@@ -47,7 +48,8 @@ extension Map {
             if !centred {
                 centred = true
                 setCamera(MKMapCamera(lookingAtCenter: coordinate, fromDistance: 500, pitch: 0, heading: 0), animated: false)
-            } else if abs(coordinate.latitude - region.center.latitude) + abs(coordinate.longitude - region.center.longitude) > 0.00075 {
+            } else if follow,
+                      abs(coordinate.latitude - region.center.latitude) + abs(coordinate.longitude - region.center.longitude) > 0.0007 {
                 setCenter(coordinate, animated: true)
             }
         }
