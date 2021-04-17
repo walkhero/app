@@ -13,7 +13,6 @@ import Hero
                     switch $0 {
                     case .store: Settings(session: $session)
                     case .froob: Settings.Froob(session: $session)
-                    case let .challenge(challenge): Leaderboards(session: $session, challenge: challenge)
                     }
                 }
                 .onReceive(Repository.memory.archive) {

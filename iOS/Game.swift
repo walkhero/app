@@ -24,6 +24,12 @@ final class Game {
         }
     }
     
+    func leaderboard(_ challenge: Challenge) {
+        let controller = GKGameCenterViewController(leaderboardID: challenge.leaderboard, playerScope: .global, timeScope: .allTime)
+        controller.gameCenterDelegate = UIApplication.shared
+        UIApplication.shared.present(controller)
+    }
+    
     func submit(_ challenge: Challenge, _ value: Int) {
         #if !DEBUG
         guard GKLocalPlayer.local.isAuthenticated else { return }

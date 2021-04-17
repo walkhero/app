@@ -28,7 +28,7 @@ struct Detail: View {
                 Spacer()
                 if session.archive.enrolled(challenge) {
                     Button {
-                        session.modal = .challenge(challenge)
+                        session.game.leaderboard(challenge)
                     } label: {
                         Image(systemName: "star.fill")
                             .font(.title3)
