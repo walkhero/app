@@ -42,6 +42,7 @@
 		CE6177812611DCB40091EE0E /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6177802611DCB40091EE0E /* Water.swift */; };
 		CE61778B2611EA890091EE0E /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61778A2611EA890091EE0E /* Map.swift */; };
 		CE6177912611EAD10091EE0E /* Map.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6177902611EAD10091EE0E /* Map.Coordinator.swift */; };
+		CE6270E2262C081000D404E5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6270E1262C081000D404E5 /* Game.swift */; };
 		CE6E0A4A26108EB200A8D81B /* Detail.Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E0A4926108EB200A8D81B /* Detail.Steps.swift */; };
 		CE6E0A582610903C00A8D81B /* Detail.Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E0A572610903C00A8D81B /* Detail.Distance.swift */; };
 		CE71A9BA2626EFA300FA84EC /* Finish.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71A9B92626EFA300FA84EC /* Finish.swift */; };
@@ -213,6 +214,7 @@
 		CE6177802611DCB40091EE0E /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		CE61778A2611EA890091EE0E /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		CE6177902611EAD10091EE0E /* Map.Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Coordinator.swift; sourceTree = "<group>"; };
+		CE6270E1262C081000D404E5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CE6E0A4926108EB200A8D81B /* Detail.Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Steps.swift; sourceTree = "<group>"; };
 		CE6E0A572610903C00A8D81B /* Detail.Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.Distance.swift; sourceTree = "<group>"; };
 		CE71A9B92626EFA300FA84EC /* Finish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finish.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 				CE7F0B332614C59B005C4585 /* App.Delegate.swift */,
 				CE0EB3FE260DF38F00D607C9 /* App.swift */,
 				CEDCFC672625D1BE00AD8874 /* Finish.swift */,
+				CE6270E1262C081000D404E5 /* Game.swift */,
 				CE7F0B292614BBD3005C4585 /* Home.swift */,
 				CE7F0AF62614B0DC005C4585 /* Session.swift */,
 				CEAF805C2615FEC600564E3F /* Walking.Distance.swift */,
@@ -735,6 +738,7 @@
 				CE0EB3FF260DF38F00D607C9 /* App.swift in Sources */,
 				CE8367432614D9BB00BE3AB5 /* Walking.Streak.swift in Sources */,
 				CE7F0B2A2614BBD3005C4585 /* Home.swift in Sources */,
+				CE6270E2262C081000D404E5 /* Game.swift in Sources */,
 				CEDCFC682625D1BE00AD8874 /* Finish.swift in Sources */,
 				CE7F0B4B2614CA4D005C4585 /* Clock.swift in Sources */,
 				CE7F0AED2614B087005C4585 /* Walking.Menu.swift in Sources */,

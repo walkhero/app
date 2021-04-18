@@ -6,6 +6,7 @@ struct Session {
     let health = Health()
     let location = Location()
     let watch = Watch()
+    let game = Game()
     let components = DateComponentsFormatter()
     let decimal = NumberFormatter()
     let measures = MeasurementFormatter()

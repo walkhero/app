@@ -33,5 +33,7 @@ import Hero
             WCSession.default.delegate = session.watch
             WCSession.default.activate()
         }
+        
+        session.game.login()
     }
 }

@@ -1,7 +1,9 @@
 import SwiftUI
+import GameKit
 
 struct Home: View {
     @Binding var session: Session
+    @State private var name = "hello"
     
     var body: some View {
         Button {
@@ -21,11 +23,23 @@ struct Home: View {
                 Image(systemName: "plus")
                     .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .bottomTrailing)
                     .padding(15)
+                Text(name)
             }
             .foregroundColor(.black)
             .font(.title2)
             .frame(width: 80, height: 80)
         }
         .buttonStyle(PlainButtonStyle())
+        .onAppear {
+            if !GKLocalPlayer.local.isAuthenticated {
+                GKLocalPlayer.local.authenticateHandler = {
+                    print("error")
+                    print($0)
+                    name = GKLocalPlayer.local.displayName
+                    print("name \(name)")
+                }
+            }
+            
+        }
     }
 }
