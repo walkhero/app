@@ -31,23 +31,6 @@ import Hero
                         session.player.image = image
                     }
                 }
-                .onReceive(session.challenges) {
-                    if session.archive.enrolled(.streak) {
-                        session.game.submit(.streak, $0.streak)
-                    }
-                    
-                    if session.archive.enrolled(.steps) {
-                        session.game.submit(.steps, $0.steps)
-                    }
-                    
-                    if session.archive.enrolled(.distance) {
-                        session.game.submit(.distance, $0.distance)
-                    }
-                    
-                    if session.archive.enrolled(.map) {
-                        session.game.submit(.map, $0.map)
-                    }
-                }
                 .onReceive(session.purchases.open) {
                     modal(.store)
                 }
@@ -62,7 +45,6 @@ import Hero
             if $0 == .active {
                 Repository.memory.pull.send()
                 session.game.login()
-                session.watch.activate()
             }
         }
     }

@@ -5,7 +5,6 @@ struct Session {
     var archive = Archive.new
     let health = Health()
     let location = Location()
-    let watch = Watch()
     let game = Game()
     let components = DateComponentsFormatter()
     let decimal = NumberFormatter()

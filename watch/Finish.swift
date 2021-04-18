@@ -3,12 +3,12 @@ import Hero
 
 struct Finish: View {
     @Binding var session: Session
-    @Binding var transport: Transport?
+    @Binding var finish: Hero.Finish?
     
     var body: some View {
         ScrollView {
             VStack {
-                Text(verbatim: session.components.string(from: session.archive.last!.duration) ?? "")
+                Text(verbatim: session.components.string(from: finish?.duration ?? 0) ?? "")
                     .font(Font.title3.bold())
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.top)
@@ -18,7 +18,7 @@ struct Finish: View {
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.bottom)
                 if session.archive.enrolled(.streak) {
-                    Text(NSNumber(value: transport?.streak ?? 0), formatter: session.decimal)
+                    Text(NSNumber(value: finish?.streak ?? 0), formatter: session.decimal)
                         .font(Font.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
@@ -29,7 +29,7 @@ struct Finish: View {
                         .padding(.bottom)
                 }
                 if session.archive.enrolled(.steps) {
-                    Text(NSNumber(value: transport?.steps ?? 0), formatter: session.decimal)
+                    Text(NSNumber(value: finish?.steps ?? 0), formatter: session.decimal)
                         .font(Font.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
@@ -40,7 +40,7 @@ struct Finish: View {
                         .padding(.bottom)
                 }
                 if session.archive.enrolled(.distance) {
-                    Text(Measurement(value: .init(transport?.distance ?? 0), unit: UnitLength.meters), formatter: session.measures)
+                    Text(Measurement(value: .init(finish?.distance ?? 0), unit: UnitLength.meters), formatter: session.measures)
                         .font(Font.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
@@ -51,7 +51,7 @@ struct Finish: View {
                         .padding(.bottom)
                 }
                 if session.archive.enrolled(.map) {
-                    Text(NSNumber(value: transport?.map ?? 0), formatter: session.decimal)
+                    Text(NSNumber(value: finish?.map ?? 0), formatter: session.decimal)
                         .font(Font.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
@@ -68,7 +68,7 @@ struct Finish: View {
             .padding(.bottom)
             Button {
                 withAnimation(.easeInOut(duration: 0.3)) {
-                    transport = nil
+                    finish = nil
                 }
             } label: {
                 ZStack {
@@ -77,7 +77,7 @@ struct Finish: View {
                     Text("DONE")
                         .font(.callout)
                         .fontWeight(.medium)
-                        .padding(.horizontal, 30)
+                        .padding(.horizontal, 32)
                         .padding(.vertical, 6)
                         .foregroundColor(.primary)
                         .colorInvert()
@@ -85,6 +85,7 @@ struct Finish: View {
                 .fixedSize()
             }
             .buttonStyle(PlainButtonStyle())
+            .padding(.vertical)
             .padding(.vertical)
         }
     }

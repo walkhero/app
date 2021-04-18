@@ -10,7 +10,6 @@ struct Session {
     let game = Game()
     let health = Health()
     let location = Location()
-    let watch = Watch()
     let purchases = Purchases()
     let dismiss = PassthroughSubject<Void, Never>()
     let components = DateComponentsFormatter()
@@ -20,17 +19,8 @@ struct Session {
     let decimal = NumberFormatter()
     let percentil = NumberFormatter()
     let measures = MeasurementFormatter()
-    let challenges: AnyPublisher<Transport, Never>
     
     init() {
-        challenges = Repository.memory
-            .archive
-            .zip(watch
-                    .challenges)
-            .map(\.1)
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
-        
         components.allowedUnits = [.minute, .second]
         components.unitsStyle = .positional
         components.zeroFormattingBehavior = .pad

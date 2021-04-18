@@ -4,7 +4,7 @@ import Hero
 extension Walking {
     struct Menu: View {
         @Binding var session: Session
-        @Binding var transport: Transport?
+        @Binding var finish: Hero.Finish?
         let streak: Int
         let steps: Int
         let metres: Int
@@ -40,12 +40,32 @@ extension Walking {
                 Spacer()
                 Button {
                     clear()
-                    let transport = Transport(streak: streak, steps: steps, distance: metres, map: tiles)
-                    session.watch.send(transport)
                     
-                    withAnimation(.easeInOut(duration: 0.4)) {
-                        self.transport = transport
-                        session.archive.end(steps: steps, metres: metres)
+                    if session.archive.enrolled(.streak) {
+                        session.game.submit(.streak, streak)
+                    }
+                    
+                    if session.archive.enrolled(.steps) {
+                        session.game.submit(.steps, steps)
+                    }
+                    
+                    if session.archive.enrolled(.distance) {
+                        session.game.submit(.distance, metres)
+                    }
+                    
+                    if session.archive.enrolled(.map) {
+                        session.game.submit(.map, tiles)
+                    }
+                    
+                    if case let .walking(duration) = session.archive.status {
+                        withAnimation(.easeInOut(duration: 0.4)) {
+                            finish = .init(duration: duration,
+                                           streak: streak,
+                                           steps: steps,
+                                           distance: metres,
+                                           map: tiles)
+                            session.archive.end(steps: steps, metres: metres)
+                        }
                     }
                 } label: {
                     ZStack {

@@ -1,5 +1,4 @@
 import SwiftUI
-import WatchConnectivity
 import Combine
 import Hero
 
@@ -27,13 +26,7 @@ import Hero
     }
     
     private func refresh() {
-        Repository.memory.pull.send()
-        
-        if WCSession.default.activationState != .activated {
-            WCSession.default.delegate = session.watch
-            WCSession.default.activate()
-        }
-        
+        Repository.memory.pull.send()        
         session.game.login()
     }
 }

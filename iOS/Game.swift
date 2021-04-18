@@ -29,15 +29,4 @@ final class Game {
         controller.gameCenterDelegate = UIApplication.shared
         UIApplication.shared.present(controller)
     }
-    
-    func submit(_ challenge: Challenge, _ value: Int) {
-        #if !DEBUG
-        guard GKLocalPlayer.local.isAuthenticated else { return }
-        GKLeaderboard.submitScore(
-            value,
-            context: 0,
-            player: GKLocalPlayer.local,
-            leaderboardIDs: [challenge.leaderboard]) { _ in }
-        #endif
-    }
 }

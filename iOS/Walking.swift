@@ -3,7 +3,7 @@ import Hero
 
 struct Walking: View {
     @Binding var session: Session
-    @Binding var transport: Transport?
+    @Binding var finish: Hero.Finish?
     @State private var challenge: Challenge?
     @State private var disabled = false
     @State private var alert = false
@@ -38,13 +38,33 @@ struct Walking: View {
                         gradient: .init(colors: [.init(.systemIndigo), .blue]),
                         startPoint: .leading,
                         endPoint: .trailing)) {
-                let transport = Transport(streak: streak.current, steps: steps, distance: metres, map: tiles.count)
                 clear()
-                session.watch.challenges.send(transport)
                 
-                withAnimation(.easeInOut(duration: 0.4)) {
-                    self.transport = transport
-                    session.archive.end(steps: steps, metres: metres)
+                if session.archive.enrolled(.streak) {
+                    session.game.submit(.streak, streak.current)
+                }
+                
+                if session.archive.enrolled(.steps) {
+                    session.game.submit(.steps, steps)
+                }
+                
+                if session.archive.enrolled(.distance) {
+                    session.game.submit(.distance, metres)
+                }
+                
+                if session.archive.enrolled(.map) {
+                    session.game.submit(.map, tiles.count)
+                }
+                
+                if case let .walking(duration) = session.archive.status {
+                    withAnimation(.easeInOut(duration: 0.4)) {
+                        finish = .init(duration: duration,
+                                       streak: streak.current,
+                                       steps: steps,
+                                       distance: metres,
+                                       map: tiles.count)
+                        session.archive.end(steps: steps, metres: metres)
+                    }
                 }
             }
             .disabled(disabled)

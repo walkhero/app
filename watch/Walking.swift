@@ -3,7 +3,7 @@ import Hero
 
 struct Walking: View {
     @Binding var session: Session
-    @Binding var transport: Transport?
+    @Binding var finish: Hero.Finish?
     @State private var streak = Hero.Streak.zero
     @State private var steps = 0
     @State private var metres = 0
@@ -13,7 +13,7 @@ struct Walking: View {
     
     var body: some View {
         TabView {
-            Menu(session: $session, transport: $transport, streak: streak.current, steps: steps, metres: metres, tiles: tiles)
+            Menu(session: $session, finish: $finish, streak: streak.current, steps: steps, metres: metres, tiles: tiles)
             Time(session: $session)
             
             if session.archive.enrolled(.streak) {
