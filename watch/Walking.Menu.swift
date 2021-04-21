@@ -5,11 +5,8 @@ extension Walking {
     struct Menu: View {
         @Binding var session: Session
         @Binding var finish: Hero.Finish?
-        let streak: Int
         let steps: Int
         let metres: Int
-        let tiles: Int
-        @State private var disabled = false
         @State private var alert = false
         
         var body: some View {
@@ -23,12 +20,11 @@ extension Walking {
                         .padding(6)
                 }
                 .buttonStyle(PlainButtonStyle())
-                .disabled(disabled)
                 .alert(isPresented: $alert) {
                     Alert(title: .init("Cancel walk?"),
                           primaryButton: .default(.init("Continue")),
                           secondaryButton: .destructive(.init("Cancel")) {
-                            clear()
+                            session.clear()
                             withAnimation(.easeInOut(duration: 0.3)) {
                                 session.archive.cancel()
                             }
@@ -39,33 +35,10 @@ extension Walking {
                     .font(.title2)
                 Spacer()
                 Button {
-                    clear()
-                    
-                    if session.archive.enrolled(.streak) {
-                        session.game.submit(.streak, streak)
-                    }
-                    
-                    if session.archive.enrolled(.steps) {
-                        session.game.submit(.steps, steps)
-                    }
-                    
-                    if session.archive.enrolled(.distance) {
-                        session.game.submit(.distance, metres)
-                    }
-                    
-                    if session.archive.enrolled(.map) {
-                        session.game.submit(.map, tiles)
-                    }
-                    
-                    if case let .walking(duration) = session.archive.status {
-                        withAnimation(.easeInOut(duration: 0.4)) {
-                            finish = .init(duration: duration,
-                                           streak: streak,
-                                           steps: steps,
-                                           distance: metres,
-                                           map: tiles)
-                            session.archive.end(steps: steps, metres: metres)
-                        }
+                    session.clear()
+                    withAnimation(.easeInOut(duration: 0.4)) {
+                        session.archive.finish(steps: steps, metres: metres)
+                        finish = session.archive.finish
                     }
                 } label: {
                     ZStack {
@@ -84,16 +57,7 @@ extension Walking {
                     .fixedSize()
                 }
                 .buttonStyle(PlainButtonStyle())
-                .disabled(disabled)
             }
-            .onAppear {
-                disabled = false
-            }
-        }
-        
-        private func clear() {
-            disabled = true
-            session.clear()
         }
     }
 }

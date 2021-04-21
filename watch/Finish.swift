@@ -40,7 +40,7 @@ struct Finish: View {
                         .padding(.bottom)
                 }
                 if session.archive.enrolled(.distance) {
-                    Text(Measurement(value: .init(finish?.distance ?? 0), unit: UnitLength.meters), formatter: session.measures)
+                    Text(Measurement(value: .init(finish?.metres ?? 0), unit: UnitLength.meters), formatter: session.measures)
                         .font(Font.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
@@ -51,7 +51,7 @@ struct Finish: View {
                         .padding(.bottom)
                 }
                 if session.archive.enrolled(.map) {
-                    Text(NSNumber(value: finish?.map ?? 0), formatter: session.decimal)
+                    Text(NSNumber(value: finish?.area ?? 0), formatter: session.decimal)
                         .font(Font.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)

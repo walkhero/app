@@ -13,7 +13,7 @@ struct Walking: View {
     
     var body: some View {
         TabView {
-            Menu(session: $session, finish: $finish, streak: streak.current, steps: steps, metres: metres, tiles: tiles)
+            Menu(session: $session, finish: $finish, steps: steps, metres: metres)
             Time(session: $session)
             
             if session.archive.enrolled(.streak) {

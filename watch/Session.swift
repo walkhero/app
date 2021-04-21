@@ -10,6 +10,7 @@ struct Session {
     let decimal = NumberFormatter()
     let measures = MeasurementFormatter()
     let percentil = NumberFormatter()
+    let relative = RelativeDateTimeFormatter()
     
     init() {
         components.allowedUnits = [.minute, .second]
