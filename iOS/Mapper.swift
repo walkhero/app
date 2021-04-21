@@ -8,7 +8,7 @@ struct Mapper: View {
     @State private var follow = true
     
     var body: some View {
-        HStack(alignment: .bottom) {
+        HStack {
             VStack {
                 HStack(alignment: .bottom, spacing: 0) {
                     Text(NSNumber(value: tiles.count), formatter: session.decimal)

@@ -23,9 +23,7 @@ extension Walking {
                           primaryButton: .default(.init("Continue")),
                           secondaryButton: .destructive(.init("Cancel")) {
                             session.clear()
-                            withAnimation(.easeInOut(duration: 0.3)) {
-                                session.archive.cancel()
-                            }
+                            session.archive.cancel()
                     })
                 }
                 Spacer()
@@ -34,10 +32,8 @@ extension Walking {
                 Spacer()
                 Button {
                     session.clear()
-                    withAnimation(.easeInOut(duration: 0.4)) {
-                        session.archive.finish(steps: steps, metres: metres)
-                        session.section = .finished(session.archive.finish)
-                    }
+                    session.archive.finish(steps: steps, metres: metres)
+                    session.section = .finished(session.archive.finish)
                 } label: {
                     ZStack {
                         Capsule()
