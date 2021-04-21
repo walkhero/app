@@ -3,12 +3,12 @@ import Hero
 
 struct Finish: View {
     @Binding var session: Session
-    @Binding var finish: Hero.Finish?
+    let finish: Hero.Finish
     
     var body: some View {
         ScrollView {
             VStack {
-                Text(verbatim: session.components.string(from: finish?.duration ?? 0) ?? "")
+                Text(verbatim: session.components.string(from: finish.duration) ?? "")
                     .font(Font.title3.bold())
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.top)
@@ -18,7 +18,7 @@ struct Finish: View {
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.bottom)
                 if session.archive.enrolled(.streak) {
-                    Text(NSNumber(value: finish?.streak ?? 0), formatter: session.decimal)
+                    Text(NSNumber(value: finish.streak), formatter: session.decimal)
                         .font(Font.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
@@ -29,7 +29,7 @@ struct Finish: View {
                         .padding(.bottom)
                 }
                 if session.archive.enrolled(.steps) {
-                    Text(NSNumber(value: finish?.steps ?? 0), formatter: session.decimal)
+                    Text(NSNumber(value: finish.steps), formatter: session.decimal)
                         .font(Font.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
@@ -40,7 +40,7 @@ struct Finish: View {
                         .padding(.bottom)
                 }
                 if session.archive.enrolled(.distance) {
-                    Text(Measurement(value: .init(finish?.metres ?? 0), unit: UnitLength.meters), formatter: session.measures)
+                    Text(Measurement(value: .init(finish.metres), unit: UnitLength.meters), formatter: session.measures)
                         .font(Font.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
@@ -51,7 +51,7 @@ struct Finish: View {
                         .padding(.bottom)
                 }
                 if session.archive.enrolled(.map) {
-                    Text(NSNumber(value: finish?.area ?? 0), formatter: session.decimal)
+                    Text(NSNumber(value: finish.area), formatter: session.decimal)
                         .font(Font.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
@@ -68,7 +68,7 @@ struct Finish: View {
             .padding(.bottom)
             Button {
                 withAnimation(.easeInOut(duration: 0.3)) {
-                    finish = nil
+                    session.section = .home
                 }
             } label: {
                 ZStack {

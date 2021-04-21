@@ -3,9 +3,7 @@ import Hero
 
 struct Walking: View {
     @Binding var session: Session
-    @Binding var finish: Hero.Finish?
     @State private var challenge: Challenge?
-    @State private var disabled = false
     @State private var alert = false
     @State private var steps = 0
     @State private var metres = 0
@@ -38,36 +36,14 @@ struct Walking: View {
                         gradient: .init(colors: [.init(.systemIndigo), .blue]),
                         startPoint: .leading,
                         endPoint: .trailing)) {
-                clear()
+                session.clear()
                 
-                if session.archive.enrolled(.streak) {
-                    session.game.submit(.streak, streak.current)
-                }
-                
-                if session.archive.enrolled(.steps) {
-                    session.game.submit(.steps, steps)
-                }
-                
-                if session.archive.enrolled(.distance) {
-                    session.game.submit(.distance, metres)
-                }
-                
-                if session.archive.enrolled(.map) {
-                    session.game.submit(.map, tiles.count)
-                }
-                
-                if case let .walking(duration) = session.archive.status {
-                    withAnimation(.easeInOut(duration: 0.4)) {
-                        finish = .init(duration: duration,
-                                       streak: streak.current,
-                                       steps: steps,
-                                       distance: metres,
-                                       map: tiles.count)
-                        session.archive.end(steps: steps, metres: metres)
-                    }
+                withAnimation(.easeInOut(duration: 0.4)) {
+                    session.archive.finish(steps: steps, metres: metres)
+                    session.section = .finished(session.archive.finish)
+                    session.publish.send()
                 }
             }
-            .disabled(disabled)
             .padding(.top)
             Button {
                 alert = true
@@ -77,7 +53,6 @@ struct Walking: View {
                     .font(.caption)
                     .frame(width: 300, height: 35)
             }
-            .disabled(disabled)
             .padding(.top, 10)
             .padding(.bottom)
             .alert(isPresented: $alert) {
@@ -85,7 +60,7 @@ struct Walking: View {
                       message: .init("Data from this walk will be forgotten"),
                       primaryButton: .default(.init("Continue")),
                       secondaryButton: .destructive(.init("Cancel")) {
-                        clear()
+                        session.clear()
                         withAnimation(.easeInOut(duration: 0.3)) {
                             session.archive.cancel()
                         }
@@ -93,15 +68,12 @@ struct Walking: View {
             }
         }
         .onReceive(session.health.steps.receive(on: DispatchQueue.main)) {
-            guard !disabled else { return }
             steps = $0
         }
         .onReceive(session.health.distance.receive(on: DispatchQueue.main)) {
-            guard !disabled else { return }
             metres = $0
         }
         .onReceive(session.location.tiles.receive(on: DispatchQueue.main)) {
-            guard !disabled else { return }
             session.archive.discover($0)
             tiles = session.archive.tiles
         }
@@ -112,12 +84,6 @@ struct Walking: View {
             streak = session.archive.calendar.streak
             maximumSteps = max(session.archive.maxSteps, Metrics.steps.min)
             maximumMetres = max(session.archive.maxMetres, Metrics.distance.min)
-            disabled = false
         }
-    }
-    
-    private func clear() {
-        disabled = true
-        session.clear()
     }
 }

@@ -1,10 +1,8 @@
 import SwiftUI
-import Hero
 
 extension Walking {
     struct Menu: View {
         @Binding var session: Session
-        @Binding var finish: Hero.Finish?
         let steps: Int
         let metres: Int
         @State private var alert = false
@@ -38,7 +36,7 @@ extension Walking {
                     session.clear()
                     withAnimation(.easeInOut(duration: 0.4)) {
                         session.archive.finish(steps: steps, metres: metres)
-                        finish = session.archive.finish
+                        session.section = .finished(session.archive.finish)
                     }
                 } label: {
                     ZStack {

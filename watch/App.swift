@@ -16,17 +16,12 @@ import Hero
                         session.clear()
                     }
                 }
-                .onAppear(perform: refresh)
+                .onAppear(perform: Repository.memory.pull.send)
         }
         .onChange(of: phase) {
             if $0 == .active {
-                refresh()
+                Repository.memory.pull.send()
             }
         }
-    }
-    
-    private func refresh() {
-        Repository.memory.pull.send()        
-        session.game.login()
     }
 }

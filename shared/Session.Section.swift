@@ -6,6 +6,7 @@ extension Session {
         case
         home,
         listed,
-        challenge(Challenge)
+        challenge(Challenge),
+        finished(Hero.Finish)
     }
 }

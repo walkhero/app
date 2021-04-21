@@ -1,17 +1,18 @@
 import SwiftUI
-import Hero
 
 struct Window: View {
     @Binding var session: Session
-    @State private var finish: Hero.Finish?
     
     var body: some View {
-        if finish != nil {
-            Finish(session: $session, finish: $finish)
-        } else if case .none = session.archive.status {
-            Home(session: $session)
+        if case .none = session.archive.status {
+            switch session.section {
+            case let .finished(finish):
+                Finish(session: $session, finish: finish)
+            default:
+                Home(session: $session)
+            }
         } else {
-            Walking(session: $session, finish: $finish)
+            Walking(session: $session)
         }
     }
 }

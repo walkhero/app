@@ -20,6 +20,9 @@ import Hero
                     if case .none = session.archive.status {
                         session.clear()
                     }
+                    if session.archive.finish.publish {
+                        session.publish.send()
+                    }
                 }
                 .onReceive(session.game.name) { name in
                     withAnimation(.easeInOut(duration: 0.3)) {
@@ -36,6 +39,25 @@ import Hero
                 }
                 .onReceive(delegate.froob) {
                     modal(.froob)
+                }
+                .onReceive(session.publish) {
+                    if session.archive.enrolled(.streak) {
+                        session.game.submit(.streak, session.archive.finish.streak)
+                    }
+                    
+                    if session.archive.enrolled(.steps) {
+                        session.game.submit(.steps, session.archive.finish.steps)
+                    }
+                    
+                    if session.archive.enrolled(.distance) {
+                        session.game.submit(.distance, session.archive.finish.metres)
+                    }
+                    
+                    if session.archive.enrolled(.map) {
+                        session.game.submit(.map, session.archive.finish.area)
+                    }
+                    
+                    session.archive.publish()
                 }
                 .onReceive(session.dismiss) {
                     UIApplication.shared.dismiss()
