@@ -43,7 +43,7 @@ extension Challenge {
     }
     
     var leaderboard: String {
-        "grp.hero.\(self)"
+        "\(self)"
     }
     
     var background: LinearGradient {
