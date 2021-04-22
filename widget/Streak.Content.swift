@@ -55,8 +55,6 @@ private extension DateFormatter {
         formatter.dateFormat = "MMMM"
         return formatter
     }
-    
-    
 }
 
 private extension NumberFormatter {
