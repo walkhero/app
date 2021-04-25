@@ -41,6 +41,7 @@ import Hero
                     modal(.froob)
                 }
                 .onReceive(session.publish) {
+                    guard session.game.publishing else { return }
                     if session.archive.enrolled(.streak) {
                         session.game.submit(.streak, session.archive.finish.streak)
                     }

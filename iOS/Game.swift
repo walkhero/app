@@ -3,6 +3,10 @@ import Combine
 import Hero
 
 final class Game {
+    var publishing: Bool {
+        GKLocalPlayer.local.isAuthenticated
+    }
+    
     let name = PassthroughSubject<String, Never>()
     let image = PassthroughSubject<UIImage, Never>()
     
@@ -31,7 +35,6 @@ final class Game {
     }
     
     func submit(_ challenge: Challenge, _ value: Int) {
-        guard GKLocalPlayer.local.isAuthenticated else { return }
         #if !DEBUG
             GKLeaderboard.submitScore(
                 value,
