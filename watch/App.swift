@@ -1,5 +1,4 @@
 import SwiftUI
-import Combine
 import Hero
 
 @main struct App: SwiftUI.App {
