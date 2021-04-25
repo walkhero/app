@@ -12,7 +12,7 @@ struct Session {
     let location = Location()
     let purchases = Purchases()
     let dismiss = PassthroughSubject<Void, Never>()
-    let publish = PassthroughSubject<Void, Never>()
+    let publish = PassthroughSubject<Bool, Never>()
     let components = DateComponentsFormatter()
     let relative = RelativeDateTimeFormatter()
     let monther = DateFormatter()

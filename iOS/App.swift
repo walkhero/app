@@ -21,7 +21,7 @@ import Hero
                         session.clear()
                     }
                     if session.archive.finish.publish {
-                        session.publish.send()
+                        session.publish.send(true)
                     }
                 }
                 .onReceive(session.game.name) { name in
@@ -41,7 +41,14 @@ import Hero
                     modal(.froob)
                 }
                 .onReceive(session.publish) {
-                    guard session.game.publishing else { return }
+                    guard session.game.publishing else {
+                        if $0 {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                session.publish.send(false)
+                            }
+                        }
+                        return
+                    }
                     if session.archive.enrolled(.streak) {
                         session.game.submit(.streak, session.archive.finish.streak)
                     }

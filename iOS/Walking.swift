@@ -41,7 +41,7 @@ struct Walking: View {
                 withAnimation(.easeInOut(duration: 0.4)) {
                     session.archive.finish(steps: steps, metres: metres)
                     session.section = .finished(session.archive.finish)
-                    session.publish.send()
+                    session.publish.send(true)
                 }
             }
             .padding(.top)
