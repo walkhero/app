@@ -4,7 +4,7 @@ import Hero
 @main struct App: SwiftUI.App {
     @State private var session = Session()
     @Environment(\.scenePhase) private var phase
-    @WKExtensionDelegateAdaptor(Delegate.self) var delegate
+    @WKExtensionDelegateAdaptor(Delegate.self) private var delegate
     
     var body: some Scene {
         WindowGroup {
