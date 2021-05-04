@@ -1,14 +1,16 @@
 import SwiftUI
 import Archivable
+import Hero
 
 @main struct App: SwiftUI.App {
     @State private var session = Session()
+    @State private var status = Status.none
     @Environment(\.scenePhase) private var phase
     @UIApplicationDelegateAdaptor(Delegate.self) private var delegate
     
     var body: some Scene {
         WindowGroup {
-            Window(session: $session)
+            Window(session: $session, status: status)
                 .sheet(item: $session.modal) {
                     switch $0 {
                     case .store: Settings(session: $session)
@@ -16,6 +18,7 @@ import Archivable
                     }
                 }
                 .onReceive(Cloud.shared.archive) { archive in
+                    status = archive.status
                     if case .none = archive.status {
                         session.clear()
                     }

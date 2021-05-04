@@ -1,4 +1,5 @@
 import SwiftUI
+import Archivable
 
 extension Walking {
     struct Time: View {
@@ -27,7 +28,7 @@ extension Walking {
         }
         
         private func refresh() {
-            if case let .walking(duration) = session.archive.status {
+            if case let .walking(duration) = Cloud.shared.archive.value.status {
                 counter = session.components.string(from: duration) ?? ""
                 withAnimation(.easeInOut(duration: 1)) {
                     indicator = .init(duration.truncatingRemainder(dividingBy: 60))

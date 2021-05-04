@@ -38,9 +38,10 @@ struct Walking: View {
                         endPoint: .trailing)) {
                 session.clear()
                 
-                withAnimation(.easeInOut(duration: 0.4)) {
-                    Cloud.shared.finish(steps: steps, metres: metres)
-                    session.section = .finished(session.archive.finish)
+                Cloud.shared.finish(steps: steps, metres: metres) { finish in
+                    withAnimation(.easeInOut(duration: 0.4)) {
+                        session.section = .finished(finish)
+                    }
                 }
             }
             .padding(.top)
@@ -74,9 +75,9 @@ struct Walking: View {
             Cloud.shared.discover($0)
         }
         .onAppear {
-            session.health.steps(session.archive)
-            session.health.distance(session.archive)
-            session.location.start(session.archive)
+            session.health.steps(Cloud.shared.archive.value)
+            session.health.distance(Cloud.shared.archive.value)
+            session.location.start(Cloud.shared.archive.value)
             streak = Cloud.shared.archive.value.calendar.streak
             maximumSteps = max(Cloud.shared.archive.value.maxSteps, Metrics.steps.min)
             maximumMetres = max(Cloud.shared.archive.value.maxMetres, Metrics.distance.min)
