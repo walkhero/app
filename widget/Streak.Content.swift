@@ -17,7 +17,7 @@ extension Streak {
             } else {
                 HStack {
                     Text(verbatim: months)
-                        .font(.callout.bold())
+                        .font(.footnote.bold())
                     Spacer()
                     VStack {
                         Text("TODAY")
@@ -27,12 +27,13 @@ extension Streak {
                         Image(systemName: entry.today ? "checkmark.circle.fill" : "exclamationmark.square.fill")
                             .font(.title3)
                     }
+                    .padding(.trailing)
                     VStack {
-                        Text(NSNumber(value: entry.streak.current), formatter: NumberFormatter.decimal)
+                        Image(systemName: "figure.walk")
                             .font(.footnote)
                             .padding(.bottom)
                             .foregroundColor(.secondary)
-                        Image(systemName: "figure.walk")
+                        Text(NSNumber(value: entry.streak.current), formatter: NumberFormatter.decimal)
                             .font(.title3)
                     }
                 }
