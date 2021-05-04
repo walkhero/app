@@ -1,10 +1,12 @@
 import SwiftUI
+import Archivable
 import Hero
 
 extension Detail {
     struct Header: View {
         @Binding var session: Session
         let challenge: Challenge
+        @State private var enrolled = false
         
         var body: some View {
             HStack {
@@ -26,10 +28,10 @@ extension Detail {
                 }
                 Spacer()
                 
-                if session.archive.enrolled(challenge) {
+                if enrolled {
                     Button {
                         withAnimation(.easeInOut(duration: 0.3)) {
-                            session.archive.stop(challenge)
+                            Cloud.shared.stop(challenge)
                         }
                     } label: {
                         Text("STOP")
@@ -46,6 +48,9 @@ extension Detail {
                             .frame(width: 65, height: 50)
                     }
                 }
+            }
+            .onReceive(Cloud.shared.archive) {
+                enrolled = $0.enrolled(challenge)
             }
             Rectangle()
                 .fill(Color.secondary)

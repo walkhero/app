@@ -1,10 +1,8 @@
 import Foundation
 import Combine
-import Hero
 
 struct Session {
     var modal: Modal?
-    var archive = Archive.new
     var section = Section.home
     var player = Player()
     let game = Game()
@@ -12,7 +10,6 @@ struct Session {
     let location = Location()
     let purchases = Purchases()
     let dismiss = PassthroughSubject<Void, Never>()
-    let publish = PassthroughSubject<Bool, Never>()
     let components = DateComponentsFormatter()
     let relative = RelativeDateTimeFormatter()
     let monther = DateFormatter()

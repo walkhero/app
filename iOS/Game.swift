@@ -11,7 +11,7 @@ final class Game {
     let image = PassthroughSubject<UIImage, Never>()
     
     func login() {
-        guard !GKLocalPlayer.local.isAuthenticated else { return }
+        guard !publishing else { return }
         GKLocalPlayer.local.authenticateHandler = { [weak self] controller, error in
             guard let controller = controller else {
                 if error == nil {

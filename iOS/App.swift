@@ -1,5 +1,5 @@
 import SwiftUI
-import Hero
+import Archivable
 
 @main struct App: SwiftUI.App {
     @State private var session = Session()
@@ -15,13 +15,32 @@ import Hero
                     case .froob: Settings.Froob(session: $session)
                     }
                 }
-                .onReceive(Repository.memory.archive) {
-                    session.archive = $0
-                    if case .none = session.archive.status {
+                .onReceive(Cloud.shared.archive) { archive in
+                    if case .none = archive.status {
                         session.clear()
                     }
-                    if session.archive.finish.publish {
-                        session.publish.send(true)
+                    if archive.finish.publish {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                            guard session.game.publishing else { return }
+
+                            if archive.enrolled(.streak) {
+                                session.game.submit(.streak, archive.finish.streak)
+                            }
+                            
+                            if archive.enrolled(.steps) {
+                                session.game.submit(.steps, archive.finish.steps)
+                            }
+                            
+                            if archive.enrolled(.distance) {
+                                session.game.submit(.distance, archive.finish.metres)
+                            }
+                            
+                            if archive.enrolled(.map) {
+                                session.game.submit(.map, archive.finish.area)
+                            }
+                            
+                            Cloud.shared.publish()
+                        }
                     }
                 }
                 .onReceive(session.game.name) { name in
@@ -40,40 +59,13 @@ import Hero
                 .onReceive(delegate.froob) {
                     modal(.froob)
                 }
-                .onReceive(session.publish) {
-                    guard session.game.publishing else {
-                        if $0 {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                                session.publish.send(false)
-                            }
-                        }
-                        return
-                    }
-                    if session.archive.enrolled(.streak) {
-                        session.game.submit(.streak, session.archive.finish.streak)
-                    }
-                    
-                    if session.archive.enrolled(.steps) {
-                        session.game.submit(.steps, session.archive.finish.steps)
-                    }
-                    
-                    if session.archive.enrolled(.distance) {
-                        session.game.submit(.distance, session.archive.finish.metres)
-                    }
-                    
-                    if session.archive.enrolled(.map) {
-                        session.game.submit(.map, session.archive.finish.area)
-                    }
-                    
-                    session.archive.publish()
-                }
                 .onReceive(session.dismiss) {
                     UIApplication.shared.dismiss()
                 }
         }
         .onChange(of: phase) {
             if $0 == .active {
-                Repository.memory.pull.send()
+                Cloud.shared.pull.send()
                 session.game.login()
             }
         }

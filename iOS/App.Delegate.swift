@@ -2,6 +2,7 @@ import UIKit
 import StoreKit
 import Combine
 import WidgetKit
+import Archivable
 import Hero
 
 extension App {
@@ -13,10 +14,9 @@ extension App {
         func application(_ application: UIApplication, willFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
             application.registerForRemoteNotifications()
             
-            Repository
-                .memory
+            Cloud
+                .shared
                 .archive
-                .merge(with: Repository.memory.save)
                 .removeDuplicates()
                 .debounce(for: .seconds(3), scheduler: DispatchQueue.global(qos: .utility))
                 .sink {
@@ -44,12 +44,9 @@ extension App {
         }
         
         func application(_: UIApplication, didReceiveRemoteNotification: [AnyHashable : Any], fetchCompletionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-            fetch = Repository
-                        .memory
-                        .receipt
-                        .sink {
-                            fetchCompletionHandler($0 ? .newData : .noData)
-                        }
+            Cloud.shared.receipt {
+                fetchCompletionHandler($0 ? .newData : .noData)
+            }
         }
     }
 }
