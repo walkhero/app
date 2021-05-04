@@ -1,4 +1,5 @@
 import SwiftUI
+import Archivable
 import Hero
 
 extension Detail.Streak {
@@ -16,7 +17,7 @@ extension Detail.Streak {
                     .foregroundColor(.primary)
                     .frame(width: Metrics.streak.header.width)
             }
-            .font(Font.title.bold())
+            .font(.title.bold())
             .padding(.top, 10)
             .padding(.bottom, 1)
             HStack(spacing: 0) {
@@ -34,7 +35,7 @@ extension Detail.Streak {
         }
         
         private var today: Bool {
-            session.archive.last != nil && Calendar.current.isDateInToday(session.archive.last!.start)
+            Cloud.shared.archive.value.last != nil && Calendar.current.isDateInToday(Cloud.shared.archive.value.last!.start)
         }
     }
 }

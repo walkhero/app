@@ -2,12 +2,11 @@ import SwiftUI
 import Hero
 
 struct Map: UIViewRepresentable {
-    @Binding var session: Session
     let tiles: Set<Tile>
     let follow: Bool
     
     func makeCoordinator() -> Coordinator {
-        .init(wrapper: self)
+        .init()
     }
     
     func makeUIView(context: Context) -> Coordinator {

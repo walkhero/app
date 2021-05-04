@@ -43,7 +43,7 @@ extension Walking {
                     .padding(Metrics.steps.padding)
                 VStack {
                     Text(NSNumber(value: counter), formatter: session.decimal)
-                        .font(Font.title.bold())
+                        .font(.title.bold())
                     if maximum > Metrics.steps.min {
                         Text(NSNumber(value: maximum), formatter: session.decimal)
                             .foregroundColor(.secondary)

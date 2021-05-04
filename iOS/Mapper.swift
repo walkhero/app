@@ -1,10 +1,11 @@
 import SwiftUI
+import Archivable
 import Hero
 
 struct Mapper: View {
     @Binding var session: Session
-    let tiles: Set<Tile>
     let bottom: Bool
+    @State private var tiles = Set<Tile>()
     @State private var follow = true
     
     var body: some View {
@@ -12,7 +13,7 @@ struct Mapper: View {
             VStack {
                 HStack(alignment: .bottom, spacing: 0) {
                     Text(NSNumber(value: tiles.count), formatter: session.decimal)
-                        .font(Font.largeTitle.bold().monospacedDigit())
+                        .font(.largeTitle.bold().monospacedDigit())
                     Text(" Map Squares")
                         .font(.caption2)
                         .foregroundColor(.secondary)
@@ -21,7 +22,7 @@ struct Mapper: View {
                 }
                 .padding(.leading)
                 Text(NSNumber(value: Double(tiles.count) / Metrics.map.tiles), formatter: session.percentil)
-                    .font(Font.callout.monospacedDigit())
+                    .font(.callout.monospacedDigit())
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                     .padding(.leading)
@@ -40,7 +41,7 @@ struct Mapper: View {
             Rectangle()
                 .fill(Color.secondary)
                 .frame(height: 1)
-            Map(session: $session, tiles: tiles, follow: follow)
+            Map(tiles: tiles, follow: follow)
                 .onAppear {
                     session.location.enrollIfNeeded()
                 }
@@ -49,6 +50,9 @@ struct Mapper: View {
                     .fill(Color.secondary)
                     .frame(height: 1)
             }
+        }
+        .onReceive(Cloud.shared.archive) {
+            tiles = $0.tiles
         }
     }
 }

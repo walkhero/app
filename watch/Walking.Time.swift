@@ -11,7 +11,7 @@ extension Walking {
             ZStack {
                 Clock(indicator: indicator, center: .init(x: 70, y: 2))
                 Text(verbatim: counter)
-                    .font(Font.body.bold().monospacedDigit())
+                    .font(.body.bold().monospacedDigit())
             }
             .frame(width: 140, height: 140)
             .onAppear(perform: refresh)

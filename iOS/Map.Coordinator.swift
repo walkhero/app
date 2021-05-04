@@ -19,7 +19,7 @@ extension Map {
         private let dispatch = DispatchQueue(label: "", qos: .utility)
         
         required init?(coder: NSCoder) { nil }
-        init(wrapper: Map) {
+        init() {
             super.init(frame: .zero)
             isRotateEnabled = false
             isPitchEnabled = false
@@ -54,7 +54,7 @@ extension Map {
             guard let coordinate = didUpdate.location?.coordinate else { return }
             if !centred {
                 centred = true
-                setCamera(MKMapCamera(lookingAtCenter: coordinate, fromDistance: 500, pitch: 0, heading: 0), animated: false)
+                setCamera(.init(lookingAtCenter: coordinate, fromDistance: 500, pitch: 0, heading: 0), animated: false)
             } else if follow,
                       abs(coordinate.latitude - previous.latitude) + abs(coordinate.longitude - previous.longitude) > 0.0007 {
                 setCenter(coordinate, animated: true)

@@ -1,4 +1,5 @@
 import SwiftUI
+import Archivable
 import Hero
 
 struct Walking: View {
@@ -10,7 +11,6 @@ struct Walking: View {
     @State private var maximumSteps = 1
     @State private var maximumMetres = 1
     @State private var streak = Hero.Streak.zero
-    @State private var tiles = Set<Tile>()
 
     var body: some View {
         VStack {
@@ -26,7 +26,7 @@ struct Walking: View {
                 case .distance:
                     Distance(session: $session, metres: $metres, maximum: maximumMetres)
                 case .map:
-                    Mapper(session: $session, tiles: tiles, bottom: true)
+                    Mapper(session: $session, bottom: true)
                 }
             } else {
                 Time(session: $session)
@@ -39,9 +39,8 @@ struct Walking: View {
                 session.clear()
                 
                 withAnimation(.easeInOut(duration: 0.4)) {
-                    session.archive.finish(steps: steps, metres: metres)
+                    Cloud.shared.finish(steps: steps, metres: metres)
                     session.section = .finished(session.archive.finish)
-                    session.publish.send(true)
                 }
             }
             .padding(.top)
@@ -61,9 +60,7 @@ struct Walking: View {
                       primaryButton: .default(.init("Continue")),
                       secondaryButton: .destructive(.init("Cancel")) {
                         session.clear()
-                        withAnimation(.easeInOut(duration: 0.3)) {
-                            session.archive.cancel()
-                        }
+                        Cloud.shared.cancel()
                 })
             }
         }
@@ -74,16 +71,15 @@ struct Walking: View {
             metres = $0
         }
         .onReceive(session.location.tiles.receive(on: DispatchQueue.main)) {
-            session.archive.discover($0)
-            tiles = session.archive.tiles
+            Cloud.shared.discover($0)
         }
         .onAppear {
             session.health.steps(session.archive)
             session.health.distance(session.archive)
             session.location.start(session.archive)
-            streak = session.archive.calendar.streak
-            maximumSteps = max(session.archive.maxSteps, Metrics.steps.min)
-            maximumMetres = max(session.archive.maxMetres, Metrics.distance.min)
+            streak = Cloud.shared.archive.value.calendar.streak
+            maximumSteps = max(Cloud.shared.archive.value.maxSteps, Metrics.steps.min)
+            maximumMetres = max(Cloud.shared.archive.value.maxMetres, Metrics.distance.min)
         }
     }
 }

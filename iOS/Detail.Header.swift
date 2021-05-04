@@ -21,7 +21,7 @@ extension Detail {
                             .frame(width: 30, height: 50)
                             .padding(.leading)
                         Text(challenge.title)
-                            .font(Font.footnote.bold())
+                            .font(.footnote.bold())
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     .foregroundColor(.primary)
@@ -36,7 +36,7 @@ extension Detail {
                     } label: {
                         Text("STOP")
                             .foregroundColor(.secondary)
-                            .font(Font.footnote.bold())
+                            .font(.footnote.bold())
                             .frame(width: 60, height: 40)
                     }
                     Button {

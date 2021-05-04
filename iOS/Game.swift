@@ -35,6 +35,7 @@ final class Game {
     }
     
     func submit(_ challenge: Challenge, _ value: Int) {
+        print("challenge \(challenge), score: \(value)")
         #if !DEBUG
             GKLeaderboard.submitScore(
                 value,

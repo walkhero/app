@@ -8,7 +8,7 @@ extension Settings {
         var body: some View {
             VStack {
                 Text("WalkHero+")
-                    .font(Font.largeTitle.bold())
+                    .font(.largeTitle.bold())
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                     .padding()
                 Text("""
@@ -35,7 +35,7 @@ WalkHero+ is an In-App Purchase, it is non-consumable, meaning it is a 1 time on
                         Capsule()
                             .fill(Color.blue)
                         Text("ACCEPT")
-                            .font(Font.footnote.bold())
+                            .font(.footnote.bold())
                             .foregroundColor(.white)
                     }
                     .frame(width: 140, height: 36)

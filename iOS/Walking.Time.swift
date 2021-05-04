@@ -15,7 +15,7 @@ extension Walking {
                     Image(systemName: "figure.walk")
                         .font(.title2)
                     Text(verbatim: counter)
-                        .font(Font.title3.bold().monospacedDigit())
+                        .font(.title3.bold().monospacedDigit())
                 }
             }
             .frame(width: 160, height: 160)

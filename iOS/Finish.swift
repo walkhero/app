@@ -1,4 +1,5 @@
 import SwiftUI
+import Archivable
 import Hero
 
 struct Finish: View {
@@ -11,7 +12,7 @@ struct Finish: View {
                 .font(.largeTitle)
             Spacer()
             Text(verbatim: session.components.string(from: finish.duration) ?? "")
-                .font(Font.title.bold())
+                .font(.title.bold())
                 .foregroundColor(.accentColor)
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
             Text("DURATION")
@@ -19,9 +20,9 @@ struct Finish: View {
                 .foregroundColor(.secondary)
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                 .padding(.bottom)
-            if session.archive.enrolled(.streak) {
+            if Cloud.shared.archive.value.enrolled(.streak) {
                 Text(NSNumber(value: finish.streak), formatter: session.decimal)
-                    .font(Font.title.bold())
+                    .font(.title.bold())
                     .foregroundColor(.accentColor)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.top)
@@ -31,9 +32,9 @@ struct Finish: View {
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.bottom)
             }
-            if session.archive.enrolled(.steps) {
+            if Cloud.shared.archive.value.enrolled(.steps) {
                 Text(NSNumber(value: finish.steps), formatter: session.decimal)
-                    .font(Font.title.bold())
+                    .font(.title.bold())
                     .foregroundColor(.accentColor)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.top)
@@ -43,9 +44,9 @@ struct Finish: View {
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.bottom)
             }
-            if session.archive.enrolled(.distance) {
+            if Cloud.shared.archive.value.enrolled(.distance) {
                 Text(Measurement(value: .init(finish.metres), unit: UnitLength.meters), formatter: session.measures)
-                    .font(Font.title.bold())
+                    .font(.title.bold())
                     .foregroundColor(.accentColor)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.top)
@@ -55,9 +56,9 @@ struct Finish: View {
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.bottom)
             }
-            if session.archive.enrolled(.map) {
+            if Cloud.shared.archive.value.enrolled(.map) {
                 Text(NSNumber(value: finish.area), formatter: session.decimal)
-                    .font(Font.title.bold())
+                    .font(.title.bold())
                     .foregroundColor(.accentColor)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.top)

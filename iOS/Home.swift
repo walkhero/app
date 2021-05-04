@@ -1,4 +1,5 @@
 import SwiftUI
+import Archivable
 import Hero
 
 struct Home: View {
@@ -9,9 +10,7 @@ struct Home: View {
             Greet(session: $session)
             Spacer()
             Button {
-                withAnimation(.spring(blendDuration: 0.4)) {
-                    session.archive.start()
-                }
+                Cloud.shared.start()
             } label: {
                 ZStack {
                     Circle()

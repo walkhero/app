@@ -25,7 +25,7 @@ extension Walking {
                     .frame(maxHeight: .greatestFiniteMagnitude, alignment: .bottom)
                     .padding(.bottom, 60)
                 Text(NSNumber(value: streak.current), formatter: session.decimal)
-                    .font(Font.largeTitle.bold())
+                    .font(.largeTitle.bold())
             }
             .frame(width: 250, height: 250)
             Spacer()

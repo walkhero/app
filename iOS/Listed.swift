@@ -19,7 +19,7 @@ struct Listed: View {
                             .frame(width: 30, height: 50)
                             .padding(.leading)
                         Text("Walks")
-                            .font(Font.title3.bold())
+                            .font(.title3.bold())
                     }
                 }
                 .foregroundColor(.primary)

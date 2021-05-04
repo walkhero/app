@@ -11,7 +11,7 @@ extension Streak {
                         .font(.footnote)
                         .foregroundColor(.secondary)
                     Text(NSNumber(value: entry.streak.current), formatter: NumberFormatter.decimal)
-                        .font(Font.footnote.bold())
+                        .font(.footnote.bold())
                         .foregroundColor(.secondary)
                     Spacer()
                     Text("TODAY")
@@ -25,7 +25,7 @@ extension Streak {
                 VStack {
                     Text(verbatim: DateFormatter.monther.string(
                             from: Calendar.current.date(from: .init(month: entry.year.months[index].value))!))
-                        .font(Font.callout.bold())
+                        .font(.callout.bold())
                         .foregroundColor(.secondary)
                     Ephemeris.Week(weeker: .weeker)
                     Ephemeris.Month(month: entry.year.months[index],

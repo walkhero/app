@@ -33,14 +33,14 @@ extension Walking {
                             gradient: .init(colors: [.blue, .init(.systemIndigo)]),
                             startPoint: .top,
                             endPoint: .bottom))
-                    .scaleEffect(CGSize(width: -1.0, height: 1.0))
+                    .scaleEffect(.init(width: -1.0, height: 1.0))
                     .opacity(0.5)
                     .mask(Circle())
                 Circle()
                     .stroke(Color.blue, lineWidth: 6)
                 VStack {
                     Text(NSNumber(value: counter), formatter: session.decimal)
-                        .font(Font.largeTitle.bold())
+                        .font(.largeTitle.bold())
                         .padding(.horizontal)
                     if maximum > Metrics.steps.min {
                         Text(NSNumber(value: maximum), formatter: session.decimal)
@@ -51,7 +51,7 @@ extension Walking {
                                 Text(NSNumber(value: steps / maximum), formatter: session.decimal) +
                                 Text(verbatim: "x")
                             }
-                            .font(Font.title.bold())
+                            .font(.title.bold())
                             .foregroundColor(.accentColor)
                         }
                     }

@@ -11,7 +11,7 @@ extension Chart {
             if count > 0 {
                 HStack {
                     Text("Max " + max)
-                        .font(Font.title.bold())
+                        .font(.title.bold())
                     Spacer()
                 }
                 .padding(.horizontal)

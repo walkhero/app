@@ -28,7 +28,7 @@ extension Walking {
                                          lineCap: .round))
                 VStack {
                     Text(Measurement(value: .init(metres), unit: UnitLength.meters), formatter: session.measures)
-                        .font(Font.title3.bold())
+                        .font(.title3.bold())
                         .padding(.horizontal)
                     if maximum > Metrics.distance.min {
                         Text(Measurement(value: .init(maximum), unit: UnitLength.meters), formatter: session.measures)
@@ -39,7 +39,7 @@ extension Walking {
                                 Text(NSNumber(value: metres / maximum), formatter: session.decimal) +
                                 Text(verbatim: "x")
                             }
-                            .font(Font.title3.bold())
+                            .font(.title3.bold())
                             .foregroundColor(.accentColor)
                         }
                     }

@@ -30,7 +30,7 @@ extension Walking {
                     .padding(Metrics.distance.padding)
                 VStack {
                     Text(Measurement(value: .init(metres), unit: UnitLength.meters), formatter: session.measures)
-                        .font(Font.title2.bold())
+                        .font(.title2.bold())
                     if maximum > Metrics.distance.min {
                         Text(Measurement(value: .init(maximum), unit: UnitLength.meters), formatter: session.measures)
                             .foregroundColor(.secondary)

@@ -9,7 +9,7 @@ struct Finish: View {
         ScrollView {
             VStack {
                 Text(verbatim: session.components.string(from: finish.duration) ?? "")
-                    .font(Font.title3.bold())
+                    .font(.title3.bold())
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.top)
                 Text("DURATION")
@@ -19,7 +19,7 @@ struct Finish: View {
                     .padding(.bottom)
                 if session.archive.enrolled(.streak) {
                     Text(NSNumber(value: finish.streak), formatter: session.decimal)
-                        .font(Font.title3.bold())
+                        .font(.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
                     Text("STREAK")
@@ -30,7 +30,7 @@ struct Finish: View {
                 }
                 if session.archive.enrolled(.steps) {
                     Text(NSNumber(value: finish.steps), formatter: session.decimal)
-                        .font(Font.title3.bold())
+                        .font(.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
                     Text("STEPS")
@@ -41,7 +41,7 @@ struct Finish: View {
                 }
                 if session.archive.enrolled(.distance) {
                     Text(Measurement(value: .init(finish.metres), unit: UnitLength.meters), formatter: session.measures)
-                        .font(Font.title3.bold())
+                        .font(.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
                     Text("DISTANCE")
@@ -52,7 +52,7 @@ struct Finish: View {
                 }
                 if session.archive.enrolled(.map) {
                     Text(NSNumber(value: finish.area), formatter: session.decimal)
-                        .font(Font.title3.bold())
+                        .font(.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.top)
                     Text("MAP SQUARES")

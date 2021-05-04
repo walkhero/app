@@ -21,7 +21,7 @@ extension Ephemeris {
                 .opacity(index == 0 ? 0.15 : 1)
                 .disabled(index == 0)
                 Text(verbatim: monther.string(from: Calendar.current.date(from: .init(month: month))!))
-                    .font(Font.callout.bold())
+                    .font(.callout.bold())
                     .frame(width: 130)
                 Button {
                     withAnimation(.spring(blendDuration: 0.5)) {

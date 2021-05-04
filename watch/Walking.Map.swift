@@ -13,12 +13,12 @@ extension Walking {
                     .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .topLeading)
                 VStack(alignment: .leading) {
                     Text(NSNumber(value: tiles), formatter: session.decimal)
-                        .font(Font.title.bold().monospacedDigit())
+                        .font(.title.bold().monospacedDigit())
                     Text("Map Squares")
                         .font(.callout)
                         .foregroundColor(.secondary)
                     Text(NSNumber(value: Double(tiles) / Metrics.map.tiles), formatter: session.percentil)
-                        .font(Font.callout.monospacedDigit())
+                        .font(.callout.monospacedDigit())
                         .foregroundColor(.secondary)
                 }
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)

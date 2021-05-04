@@ -1,24 +1,26 @@
 import SwiftUI
+import Archivable
 import Hero
 
 struct Detail: View {
     @Binding var session: Session
     let challenge: Challenge
+    @State private var enrolled = false
     
     var body: some View {
         VStack {
             Header(session: $session, challenge: challenge)
-            if session.archive.enrolled(challenge) {
+            if enrolled {
                 switch challenge {
                 case .streak:
-                    let calendar = session.archive.calendar
+                    let calendar = Cloud.shared.archive.value.calendar
                     Streak(session: $session, year: calendar.last!, streak: calendar.streak)
                 case .steps:
-                    Steps(session: $session, steps: session.archive.steps, max: session.archive.maxSteps)
+                    Steps(session: $session, steps: Cloud.shared.archive.value.steps, max: Cloud.shared.archive.value.maxSteps)
                 case .distance:
-                    Distance(session: $session, metres: session.archive.metres, max: session.archive.maxMetres)
+                    Distance(session: $session, metres: Cloud.shared.archive.value.metres, max: Cloud.shared.archive.value.maxMetres)
                 case .map:
-                    Mapper(session: $session, tiles: session.archive.tiles, bottom: false)
+                    Mapper(session: $session, tiles: Cloud.shared.archive.value.tiles, bottom: false)
                         .edgesIgnoringSafeArea(.bottom)
                 }
             } else {
@@ -33,24 +35,21 @@ struct Detail: View {
                     switch challenge {
                     case .steps, .distance:
                         session.health.request(challenge) {
-                            start()
+                            Cloud.shared.start(challenge)
                         }
                     case .map:
                         session.location.enrollIfNeeded()
-                        start()
+                        Cloud.shared.start(challenge)
                     case .streak:
-                        start()
+                        Cloud.shared.start(challenge)
                     }
                 }
                 Spacer()
                     .frame(height: 30)
             }
         }
-    }
-    
-    private func start() {
-        withAnimation(.easeInOut(duration: 0.3)) {
-            session.archive.start(challenge)
+        .onReceive(Cloud.shared.archive) {
+            enrolled = $0.enrolled(challenge)
         }
     }
 }

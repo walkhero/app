@@ -26,7 +26,7 @@ extension Walking {
                         .frame(maxHeight: .greatestFiniteMagnitude, alignment: .bottom)
                         .padding(.bottom, Metrics.streak.padding * 2)
                     Text(NSNumber(value: streak.current), formatter: session.decimal)
-                        .font(Font.largeTitle.bold())
+                        .font(.largeTitle.bold())
                 }
                 .padding(Metrics.streak.padding)
             }
