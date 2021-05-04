@@ -1,40 +1,50 @@
 import SwiftUI
+import WidgetKit
 
 extension Streak {
     struct Content: View {
         let entry: Entry
+        @Environment(\.widgetFamily) private var family: WidgetFamily
         
         var body: some View {
-            VStack(spacing: 0) {
-                HStack {
-                    Image(systemName: "figure.walk")
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
-                    Text(NSNumber(value: entry.streak.current), formatter: NumberFormatter.decimal)
-                        .font(.footnote.bold())
-                        .foregroundColor(.secondary)
-                    Spacer()
-                    Text("TODAY")
-                        .foregroundColor(.accentColor)
-                        .font(.caption2)
-                    Image(systemName: entry.today ? "checkmark.circle.fill" : "exclamationmark.square.fill")
-                        .font(.footnote)
-                }
-                .padding(.horizontal, 70)
-                .offset(y: 30)
-                VStack {
-                    Text(verbatim: DateFormatter.monther.string(
-                            from: Calendar.current.date(from: .init(month: entry.year.months[index].value))!))
-                        .font(.callout.bold())
-                        .foregroundColor(.secondary)
+            if family == .systemLarge {
+                VStack(spacing: 0) {
                     Ephemeris.Week(weeker: .weeker)
                     Ephemeris.Month(month: entry.year.months[index],
                                     previous: index > 0 && entry.year.months[index - 1].days.last!.last!.hit,
                                     next: index < entry.year.months.count - 1 && entry.year.months[index + 1].days.first!.first!.hit)
                 }
-                .scaleEffect(0.75)
-                .offset(y: 10)
+            } else {
+                HStack {
+                    Text(verbatim: months)
+                        .font(.callout.bold())
+                    Spacer()
+                    VStack {
+                        Text("TODAY")
+                            .font(.footnote)
+                            .padding(.bottom)
+                            .foregroundColor(.secondary)
+                        Image(systemName: entry.today ? "checkmark.circle.fill" : "exclamationmark.square.fill")
+                            .font(.title3)
+                    }
+                    VStack {
+                        Text(NSNumber(value: entry.streak.current), formatter: NumberFormatter.decimal)
+                            .font(.footnote)
+                            .padding(.bottom)
+                            .foregroundColor(.secondary)
+                        Image(systemName: "figure.walk")
+                            .font(.title3)
+                    }
+                }
+                .padding(30)
             }
+        }
+        
+        private var months: String {
+            DateFormatter.monther.string(
+                from: Calendar.current.date(from: .init(month: entry.year.months[0].value))!)
+                + (entry.year.months.count > 1 ? "-" + DateFormatter.monther.string(
+                    from: Calendar.current.date(from: .init(month: entry.year.months[index].value))!) : "")
         }
         
         private var index: Int {

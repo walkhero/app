@@ -7,7 +7,7 @@ struct Streak: Widget {
             Content(entry: entry)
         }
         .configurationDisplayName("STREAK")
-        .description("Overview of this month")
-        .supportedFamilies([.systemLarge])
+        .description("Your WalkHero Streak")
+        .supportedFamilies([.systemMedium, .systemLarge])
     }
 }
