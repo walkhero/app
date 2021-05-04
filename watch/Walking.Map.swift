@@ -1,9 +1,10 @@
 import SwiftUI
+import Archivable
 
 extension Walking {
     struct Map: View {
         @Binding var session: Session
-        let tiles: Int
+        @State var tiles = 0
         
         var body: some View {
             ZStack {
@@ -23,6 +24,9 @@ extension Walking {
                 }
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                 .padding(.leading)
+            }
+            .onReceive(Cloud.shared.archive) {
+                tiles = $0.tiles.count
             }
             .edgesIgnoringSafeArea(.all)
         }

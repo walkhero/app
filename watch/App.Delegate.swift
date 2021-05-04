@@ -1,26 +1,20 @@
 import WatchKit
-import Combine
-import Hero
+import Archivable
 
 extension App {
     final class Delegate: NSObject, WKExtensionDelegate {
-        private var fetch: AnyCancellable?
-        
         func applicationDidFinishLaunching() {
             WKExtension.shared().registerForRemoteNotifications()
         }
         
         func applicationDidBecomeActive() {
-            Repository.memory.pull.send()
+            Cloud.shared.pull.send()
         }
         
         func didReceiveRemoteNotification(_: [AnyHashable : Any], fetchCompletionHandler: @escaping (WKBackgroundFetchResult) -> Void) {
-            fetch = Repository
-                    .memory
-                    .receipt
-                    .sink {
-                        fetchCompletionHandler($0 ? .newData : .noData)
-                    }
+            Cloud.shared.receipt {
+                fetchCompletionHandler($0 ? .newData : .noData)
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 import SwiftUI
+import Archivable
 
 extension Walking {
     struct Menu: View {
@@ -23,7 +24,7 @@ extension Walking {
                           primaryButton: .default(.init("Continue")),
                           secondaryButton: .destructive(.init("Cancel")) {
                             session.clear()
-                            session.archive.cancel()
+                            Cloud.shared.cancel()
                     })
                 }
                 Spacer()
@@ -32,8 +33,9 @@ extension Walking {
                 Spacer()
                 Button {
                     session.clear()
-                    session.archive.finish(steps: steps, metres: metres)
-                    session.section = .finished(session.archive.finish)
+                    Cloud.shared.finish(steps: steps, metres: metres) {
+                        session.section = .finished($0)
+                    }
                 } label: {
                     ZStack {
                         Capsule()

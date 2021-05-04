@@ -1,4 +1,5 @@
 import SwiftUI
+import Archivable
 
 struct Home: View {
     @Binding var session: Session
@@ -6,15 +7,15 @@ struct Home: View {
     
     var body: some View {
         ZStack {
-            Label(session.archive.last == nil
+            Label(Cloud.shared.archive.value.last == nil
                     ? "New Hero"
-                    : session.relative.string(from: session.archive.last!.end, to: .init()),
+                    : session.relative.string(from: Cloud.shared.archive.value.last!.end, to: .init()),
                   systemImage: "figure.walk")
                 .font(.footnote)
                 .padding([.leading, .top])
                 .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .topLeading)
             Button {
-                session.archive.start()
+                Cloud.shared.start()
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 16)

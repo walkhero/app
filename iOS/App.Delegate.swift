@@ -8,7 +8,6 @@ import Hero
 extension App {
     final class Delegate: NSObject, UIApplicationDelegate {
         let froob = PassthroughSubject<Void, Never>()
-        private var fetch: AnyCancellable?
         private var subs = Set<AnyCancellable>()
         
         func application(_ application: UIApplication, willFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

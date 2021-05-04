@@ -1,9 +1,8 @@
 import SwiftUI
-import Hero
+import Archivable
 
 struct Listed: View {
     @Binding var session: Session
-    let list: [Walk.Listed]
     
     var body: some View {
         VStack(spacing: 0) {
@@ -28,7 +27,7 @@ struct Listed: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(Color(.secondarySystemBackground))
-                if list.isEmpty {
+                if Cloud.shared.archive.value.list.isEmpty {
                     VStack {
                         Image("world")
                         Text("Ready to start\nyour first walk")
@@ -41,7 +40,7 @@ struct Listed: View {
                         VStack(spacing: 0) {
                             Spacer()
                                 .frame(height: 5)
-                            ForEach(list, id: \.self) {
+                            ForEach(Cloud.shared.archive.value.list, id: \.self) {
                                 Item(session: $session, item: $0)
                                 Rectangle()
                                     .fill(Color(.tertiarySystemBackground))

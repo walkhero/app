@@ -1,8 +1,6 @@
 import Foundation
-import Hero
 
 struct Session {
-    var archive = Archive.new
     var section = Section.home
     let health = Health()
     let location = Location()

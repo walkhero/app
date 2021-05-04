@@ -20,7 +20,7 @@ struct Detail: View {
                 case .distance:
                     Distance(session: $session, metres: Cloud.shared.archive.value.metres, max: Cloud.shared.archive.value.maxMetres)
                 case .map:
-                    Mapper(session: $session, tiles: Cloud.shared.archive.value.tiles, bottom: false)
+                    Mapper(session: $session, bottom: false)
                         .edgesIgnoringSafeArea(.bottom)
                 }
             } else {
