@@ -12,7 +12,7 @@ extension Streak {
         }
 
         func getTimeline(in: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-            completion(.init(entries: [entry], policy: .never))
+            completion(.init(entries: [entry], policy: policy))
         }
         
         private var entry: Entry {
@@ -22,6 +22,12 @@ extension Streak {
                 year: calendar.last!,
                 streak: calendar.streak,
                 today: archive.last != nil && Calendar.current.isDateInToday(archive.last!.start))
+        }
+        
+        private var policy: TimelineReloadPolicy {
+            Calendar.current.date(byAdding: .init(day: 1), to: .init())
+                .map(Calendar.current.startOfDay(for:))
+                .map(TimelineReloadPolicy.after) ?? .never
         }
     }
 }
