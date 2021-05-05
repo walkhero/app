@@ -3,13 +3,13 @@ import Archivable
 
 struct Home: View {
     @Binding var session: Session
-    @State private var name = "hello"
+    @State private var last: DateInterval?
     
     var body: some View {
         ZStack {
-            Label(Cloud.shared.archive.value.last == nil
+            Label(last == nil
                     ? "New Hero"
-                    : session.relative.string(from: Cloud.shared.archive.value.last!.end, to: .init()),
+                    : session.relative.string(from: last!.end, to: .init()),
                   systemImage: "figure.walk")
                 .font(.footnote)
                 .padding([.leading, .top])
@@ -36,6 +36,9 @@ struct Home: View {
                 .frame(width: 64, height: 64)
             }
             .buttonStyle(PlainButtonStyle())
+        }
+        .onReceive(Cloud.shared.archive) {
+            last = $0.last
         }
         .edgesIgnoringSafeArea(.all)
     }
