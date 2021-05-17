@@ -1,5 +1,4 @@
 import Foundation
-import Hero
 
 extension Session {
     enum Modal: Identifiable {
