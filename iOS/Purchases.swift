@@ -7,7 +7,6 @@ final class Purchases: NSObject, SKRequestDelegate, SKProductsRequestDelegate, S
     let loading = CurrentValueSubject<Bool, Never>(true)
     let error = CurrentValueSubject<String?, Never>(nil)
     let open = PassthroughSubject<Void, Never>()
-    let plusOne = PassthroughSubject<Void, Never>()
     private weak var request: SKProductsRequest?
     
     override init() {
