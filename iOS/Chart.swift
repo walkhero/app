@@ -29,40 +29,6 @@ struct Chart: View {
     }
 }
 
-private struct Pattern: Shape {
-    func path(in rect: CGRect) -> Path {
-        .init { path in
-            path.move(to: .zero)
-            (1 ..< Metrics.chart.horizontal).map { rect.maxX / .init(Metrics.chart.horizontal) * .init($0) }.forEach {
-                path.move(to: .init(x: $0, y: 0))
-                path.addLine(to: .init(x: $0, y: rect.maxY))
-            }
-            (1 ..< Constants.chart.max).map { rect.maxY / .init(Constants.chart.max) * .init($0) }.forEach {
-                path.move(to: .init(x: 0, y: $0))
-                path.addLine(to: .init(x: rect.maxX, y: $0))
-            }
-        }
-    }
-}
-
-private struct Shade: Shape {
-    let values: [Double]
-    
-    func path(in rect: CGRect) -> Path {
-        .init {
-            if !values.isEmpty {
-                $0.move(to: .init(x: 0, y: rect.maxY))
-                $0.addLines(values.enumerated().map {
-                    .init(x: .init(rect.maxX / Metrics.chart.limit) * .init($0.0), y: .init(rect.maxY) - (.init(rect.maxY) * $0.1))
-                })
-                $0.addLine(to: .init(x: rect.maxX / Metrics.chart.limit * .init(values.count - 1), y: rect.maxY))
-                $0.addLine(to: .init(x: 0, y: rect.maxY))
-                $0.closeSubpath()
-            }
-        }
-    }
-}
-
 private struct Road: Shape {
     let values: [Double]
 

@@ -42,7 +42,6 @@ struct Metrics {
     }
     
     struct chart {
-        static let horizontal = 12
         static let limit = CGFloat(Constants.chart.max - 1)
     }
 }
