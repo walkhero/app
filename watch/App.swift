@@ -17,7 +17,6 @@ import Hero
                         session.clear()
                     }
                 }
-                .onAppear(perform: Cloud.shared.pull.send)
         }
         .onChange(of: phase) {
             if $0 == .active {
