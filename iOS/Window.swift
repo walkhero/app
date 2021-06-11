@@ -3,10 +3,9 @@ import Hero
 
 struct Window: View {
     @Binding var session: Session
-    let status: Status
     
     var body: some View {
-        if case .none = status {
+        if case .none = session.archive.status {
             switch session.section {
             case .home:
                 Home(session: $session)

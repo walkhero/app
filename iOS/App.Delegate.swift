@@ -2,7 +2,6 @@ import UIKit
 import StoreKit
 import Combine
 import WidgetKit
-import Archivable
 import Hero
 
 extension App {
@@ -13,8 +12,7 @@ extension App {
         func application(_ application: UIApplication, willFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
             application.registerForRemoteNotifications()
             
-            Cloud
-                .shared
+            cloud
                 .archive
                 .removeDuplicates()
                 .debounce(for: .seconds(3), scheduler: DispatchQueue.global(qos: .utility))
@@ -28,7 +26,7 @@ extension App {
                 if let created = Defaults.created {
                     let days = Calendar.current.dateComponents([.day], from: created, to: .init()).day!
                     if !Defaults.rated && days > 4 {
-                        SKStoreReviewController.requestReview(in: application.windows.first!.windowScene!)
+                        SKStoreReviewController.requestReview(in: application.connectedScenes.compactMap { $0 as? UIWindowScene }.first!)
                         Defaults.rated = true
                     } else if Defaults.rated && !Defaults.plus {
                         if days > 6 {
@@ -43,7 +41,7 @@ extension App {
         }
         
         func application(_: UIApplication, didReceiveRemoteNotification: [AnyHashable : Any], fetchCompletionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-            Cloud.shared.receipt {
+            cloud.receipt {
                 fetchCompletionHandler($0 ? .newData : .noData)
             }
         }

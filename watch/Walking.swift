@@ -1,5 +1,4 @@
 import SwiftUI
-import Archivable
 import Hero
 
 struct Walking: View {
@@ -32,22 +31,22 @@ struct Walking: View {
             }
         }
         .tabViewStyle(PageTabViewStyle())
-        .onReceive(session.health.steps.receive(on: DispatchQueue.main)) {
+        .onReceive(health.steps.receive(on: DispatchQueue.main)) {
             steps = $0
         }
-        .onReceive(session.health.distance.receive(on: DispatchQueue.main)) {
+        .onReceive(health.distance.receive(on: DispatchQueue.main)) {
             metres = $0
         }
-        .onReceive(session.location.tiles.receive(on: DispatchQueue.main)) {
-            Cloud.shared.discover($0)
+        .onReceive(location.tiles.receive(on: DispatchQueue.main)) {
+            cloud.discover($0)
         }
         .onAppear {
-            session.health.steps(Cloud.shared.archive.value)
-            session.health.distance(Cloud.shared.archive.value)
-            session.location.start(Cloud.shared.archive.value)
-            streak = Cloud.shared.archive.value.calendar.streak
-            maximumSteps = max(Cloud.shared.archive.value.maxSteps, Metrics.steps.min)
-            maximumMetres = max(Cloud.shared.archive.value.maxMetres, Metrics.distance.min)
+            health.steps(cloud.archive.value)
+            health.distance(cloud.archive.value)
+            location.start(cloud.archive.value)
+            streak = cloud.archive.value.calendar.streak
+            maximumSteps = max(cloud.archive.value.maxSteps, Metrics.steps.min)
+            maximumMetres = max(cloud.archive.value.maxMetres, Metrics.distance.min)
         }
     }
 }

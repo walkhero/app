@@ -71,13 +71,13 @@ struct Settings: View {
         .onReceive(session.dismiss) {
             visible.wrappedValue.dismiss()
         }
-        .onReceive(session.purchases.loading) {
+        .onReceive(purchases.loading) {
             loading = $0
         }
-        .onReceive(session.purchases.error) {
+        .onReceive(purchases.error) {
             error = $0
         }
-        .onReceive(session.purchases.products) {
+        .onReceive(purchases.products) {
             error = nil
             products = $0
         }

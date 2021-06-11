@@ -1,5 +1,4 @@
 import SwiftUI
-import Archivable
 
 extension Walking {
     struct Map: View {
@@ -24,9 +23,6 @@ extension Walking {
                 }
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                 .padding(.leading)
-            }
-            .onReceive(Cloud.shared.archive) {
-                tiles = $0.tiles.count
             }
             .edgesIgnoringSafeArea(.all)
         }

@@ -1,5 +1,4 @@
 import SwiftUI
-import Archivable
 import Hero
 
 extension Detail.Streak {
@@ -35,7 +34,7 @@ extension Detail.Streak {
         }
         
         private var today: Bool {
-            Cloud.shared.archive.value.last != nil && Calendar.current.isDateInToday(Cloud.shared.archive.value.last!.start)
+            cloud.archive.value.last != nil && Calendar.current.isDateInToday(cloud.archive.value.last!.start)
         }
     }
 }

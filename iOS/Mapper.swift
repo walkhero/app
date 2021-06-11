@@ -1,5 +1,4 @@
 import SwiftUI
-import Archivable
 import Hero
 
 struct Mapper: View {
@@ -50,9 +49,6 @@ struct Mapper: View {
                     .fill(Color.secondary)
                     .frame(height: 1)
             }
-        }
-        .onReceive(Cloud.shared.archive) {
-            tiles = $0.tiles
         }
     }
 }

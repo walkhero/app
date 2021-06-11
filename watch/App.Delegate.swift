@@ -1,5 +1,4 @@
 import WatchKit
-import Archivable
 
 extension App {
     final class Delegate: NSObject, WKExtensionDelegate {

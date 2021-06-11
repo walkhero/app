@@ -1,16 +1,14 @@
 import SwiftUI
-import Archivable
 import Hero
 
 struct Detail: View {
     @Binding var session: Session
     let challenge: Challenge
-    @State private var enrolled = false
     
     var body: some View {
         VStack {
             Header(session: $session, challenge: challenge)
-            if enrolled {
+            if session.archive.enrolled(challenge) {
                 switch challenge {
                 case .streak:
                     let calendar = Cloud.shared.archive.value.calendar
@@ -47,9 +45,6 @@ struct Detail: View {
                 Spacer()
                     .frame(height: 30)
             }
-        }
-        .onReceive(Cloud.shared.archive) {
-            enrolled = $0.enrolled(challenge)
         }
     }
 }

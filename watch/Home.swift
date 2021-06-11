@@ -1,5 +1,4 @@
 import SwiftUI
-import Archivable
 
 struct Home: View {
     @Binding var session: Session
@@ -36,9 +35,6 @@ struct Home: View {
                 .frame(width: 64, height: 64)
             }
             .buttonStyle(PlainButtonStyle())
-        }
-        .onReceive(Cloud.shared.archive) {
-            last = $0.last
         }
         .edgesIgnoringSafeArea(.all)
     }

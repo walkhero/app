@@ -1,5 +1,4 @@
 import SwiftUI
-import Archivable
 import Hero
 
 @main struct App: SwiftUI.App {
@@ -11,7 +10,7 @@ import Hero
     var body: some Scene {
         WindowGroup {
             Window(session: $session, status: status)
-                .onReceive(Cloud.shared.archive) {
+                .onReceive(cloud.archive) {
                     status = $0.status
                     if case .none = $0.status {
                         session.clear()

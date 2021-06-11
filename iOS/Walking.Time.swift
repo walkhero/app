@@ -1,5 +1,4 @@
 import SwiftUI
-import Archivable
 
 extension Walking {
     struct Time: View {
