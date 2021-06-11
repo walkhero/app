@@ -2,13 +2,12 @@ import SwiftUI
 
 struct Home: View {
     @Binding var session: Session
-    @State private var last: DateInterval?
     
     var body: some View {
         ZStack {
-            Label(last == nil
+            Label(session.archive.last == nil
                     ? "New Hero"
-                    : session.relative.string(from: last!.end, to: .init()),
+                    : session.relative.string(from: session.archive.last!.end, to: .init()),
                   systemImage: "figure.walk")
                 .font(.footnote)
                 .padding([.leading, .top])

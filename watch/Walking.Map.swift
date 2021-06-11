@@ -3,7 +3,6 @@ import SwiftUI
 extension Walking {
     struct Map: View {
         @Binding var session: Session
-        @State var tiles = 0
         
         var body: some View {
             ZStack {
@@ -12,12 +11,12 @@ extension Walking {
                     .padding([.leading, .top])
                     .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .topLeading)
                 VStack(alignment: .leading) {
-                    Text(NSNumber(value: tiles), formatter: session.decimal)
+                    Text(NSNumber(value: session.archive.tiles.count), formatter: session.decimal)
                         .font(.title.bold().monospacedDigit())
                     Text("Map Squares")
                         .font(.callout)
                         .foregroundColor(.secondary)
-                    Text(NSNumber(value: Double(tiles) / Metrics.map.tiles), formatter: session.percentil)
+                    Text(NSNumber(value: Double(session.archive.tiles.count) / Metrics.map.tiles), formatter: session.percentil)
                         .font(.callout.monospacedDigit())
                         .foregroundColor(.secondary)
                 }

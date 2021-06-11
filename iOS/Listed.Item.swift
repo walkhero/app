@@ -5,7 +5,6 @@ extension Listed {
     struct Item: View {
         @Binding var session: Session
         let item: Walk.Listed
-        @State private var percent = CGFloat()
         
         var body: some View {
             HStack {
