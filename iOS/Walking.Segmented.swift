@@ -14,7 +14,7 @@ extension Walking {
                     }
                 }
                 
-                if Cloud.shared.archive.value.enrolled(.streak) {
+                if session.archive.enrolled(.streak) {
                     Item(symbol: "calendar", selected: challenge == .streak) {
                         withAnimation(.spring(blendDuration: 0.5)) {
                             challenge = .streak
@@ -22,7 +22,7 @@ extension Walking {
                     }
                 }
                 
-                if Cloud.shared.archive.value.enrolled(.steps) {
+                if session.archive.enrolled(.steps) {
                     Item(symbol: "speedometer", selected: challenge == .steps) {
                         withAnimation(.spring(blendDuration: 0.5)) {
                             challenge = .steps
@@ -30,7 +30,7 @@ extension Walking {
                     }
                 }
                 
-                if Cloud.shared.archive.value.enrolled(.distance) {
+                if session.archive.enrolled(.distance) {
                     Item(symbol: "point.topleft.down.curvedto.point.bottomright.up", selected: challenge == .distance) {
                         withAnimation(.spring(blendDuration: 0.5)) {
                             challenge = .distance
@@ -38,7 +38,7 @@ extension Walking {
                     }
                 }
                 
-                if Cloud.shared.archive.value.enrolled(.map) {
+                if session.archive.enrolled(.map) {
                     Item(symbol: "map.fill", selected: challenge == .map) {
                         withAnimation(.spring(blendDuration: 0.5)) {
                             challenge = .map

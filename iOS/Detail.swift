@@ -11,12 +11,12 @@ struct Detail: View {
             if session.archive.enrolled(challenge) {
                 switch challenge {
                 case .streak:
-                    let calendar = Cloud.shared.archive.value.calendar
+                    let calendar = session.archive.calendar
                     Streak(session: $session, year: calendar.last!, streak: calendar.streak)
                 case .steps:
-                    Steps(session: $session, steps: Cloud.shared.archive.value.steps, max: Cloud.shared.archive.value.maxSteps)
+                    Steps(session: $session, steps: session.archive.steps, max: session.archive.maxSteps)
                 case .distance:
-                    Distance(session: $session, metres: Cloud.shared.archive.value.metres, max: Cloud.shared.archive.value.maxMetres)
+                    Distance(session: $session, metres: session.archive.metres, max: session.archive.maxMetres)
                 case .map:
                     Mapper(session: $session, bottom: false)
                         .edgesIgnoringSafeArea(.bottom)
@@ -32,14 +32,14 @@ struct Detail: View {
                 Control(title: "START", gradient: challenge.background) {
                     switch challenge {
                     case .steps, .distance:
-                        session.health.request(challenge) {
-                            Cloud.shared.start(challenge)
+                        health.request(challenge) {
+                            cloud.start(challenge)
                         }
                     case .map:
-                        session.location.enrollIfNeeded()
-                        Cloud.shared.start(challenge)
+                        location.enrollIfNeeded()
+                        cloud.start(challenge)
                     case .streak:
-                        Cloud.shared.start(challenge)
+                        cloud.start(challenge)
                     }
                 }
                 Spacer()

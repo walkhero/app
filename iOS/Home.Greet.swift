@@ -8,7 +8,7 @@ extension Home {
             VStack {
                 HStack {
                     Button {
-                        session.purchases.open.send()
+                        purchases.open.send()
                     } label: {
                         Image(systemName: "line.horizontal.3")
                             .font(.title2)
@@ -24,9 +24,9 @@ extension Home {
                         ZStack {
                             Capsule()
                                 .fill(Color(.secondarySystemBackground))
-                            Label(Cloud.shared.archive.value.last == nil
+                            Label(session.archive.last == nil
                                     ? "New Hero"
-                                    : session.relative.string(from: Cloud.shared.archive.value.last!.end, to: .init()),
+                                    : session.relative.string(from: session.archive.last!.end, to: .init()),
                                   systemImage: "figure.walk")
                                 .font(.footnote)
                                 .foregroundColor(.primary)

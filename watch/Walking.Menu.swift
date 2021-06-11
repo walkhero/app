@@ -23,7 +23,7 @@ extension Walking {
                           primaryButton: .default(.init("Continue")),
                           secondaryButton: .destructive(.init("Cancel")) {
                             session.clear()
-                            Cloud.shared.cancel()
+                            cloud.cancel()
                     })
                 }
                 Spacer()
@@ -32,7 +32,7 @@ extension Walking {
                 Spacer()
                 Button {
                     session.clear()
-                    Cloud.shared.finish(steps: steps, metres: metres) {
+                    cloud.finish(steps: steps, metres: metres) {
                         session.section = .finished($0)
                     }
                 } label: {

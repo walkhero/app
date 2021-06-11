@@ -14,7 +14,7 @@ struct Home: View {
                 .padding([.leading, .top])
                 .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .topLeading)
             Button {
-                Cloud.shared.start()
+                cloud.start()
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 16)

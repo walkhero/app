@@ -7,11 +7,11 @@ extension App {
         }
         
         func applicationDidBecomeActive() {
-            Cloud.shared.pull.send()
+            cloud.pull.send()
         }
         
         func didReceiveRemoteNotification(_: [AnyHashable : Any], fetchCompletionHandler: @escaping (WKBackgroundFetchResult) -> Void) {
-            Cloud.shared.receipt {
+            cloud.receipt {
                 fetchCompletionHandler($0 ? .newData : .noData)
             }
         }

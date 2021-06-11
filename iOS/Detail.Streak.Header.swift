@@ -34,7 +34,7 @@ extension Detail.Streak {
         }
         
         private var today: Bool {
-            cloud.archive.value.last != nil && Calendar.current.isDateInToday(cloud.archive.value.last!.start)
+            session.archive.last != nil && Calendar.current.isDateInToday(session.archive.last!.start)
         }
     }
 }

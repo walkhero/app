@@ -17,7 +17,7 @@ struct Finish: View {
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.bottom)
-                if Cloud.shared.archive.value.enrolled(.streak) {
+                if session.archive.enrolled(.streak) {
                     Text(NSNumber(value: finish.streak), formatter: session.decimal)
                         .font(.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
@@ -28,7 +28,7 @@ struct Finish: View {
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.bottom)
                 }
-                if Cloud.shared.archive.value.enrolled(.steps) {
+                if session.archive.enrolled(.steps) {
                     Text(NSNumber(value: finish.steps), formatter: session.decimal)
                         .font(.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
@@ -39,7 +39,7 @@ struct Finish: View {
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.bottom)
                 }
-                if Cloud.shared.archive.value.enrolled(.distance) {
+                if session.archive.enrolled(.distance) {
                     Text(Measurement(value: .init(finish.metres), unit: UnitLength.meters), formatter: session.measures)
                         .font(.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
@@ -50,7 +50,7 @@ struct Finish: View {
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.bottom)
                 }
-                if Cloud.shared.archive.value.enrolled(.map) {
+                if session.archive.enrolled(.map) {
                     Text(NSNumber(value: finish.area), formatter: session.decimal)
                         .font(.title3.bold())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)

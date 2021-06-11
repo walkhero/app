@@ -42,7 +42,7 @@ struct Mapper: View {
                 .frame(height: 1)
             Map(tiles: tiles, follow: follow)
                 .onAppear {
-                    session.location.enrollIfNeeded()
+                    location.enrollIfNeeded()
                 }
             if bottom {
                 Rectangle()

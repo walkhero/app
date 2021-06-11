@@ -9,7 +9,7 @@ struct Home: View {
             Greet(session: $session)
             Spacer()
             Button {
-                Cloud.shared.start()
+                cloud.start()
             } label: {
                 ZStack {
                     Circle()

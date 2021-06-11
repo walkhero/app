@@ -29,7 +29,7 @@ WalkHero+ is an In-App Purchase, it is non-consumable, meaning it is a 1 time on
                 Spacer()
                 Button {
                     visible.wrappedValue.dismiss()
-                    session.purchases.open.send()
+                    purchases.open.send()
                 } label: {
                     ZStack {
                         Capsule()

@@ -13,7 +13,7 @@ struct Settings: View {
         ScrollView {
             HStack {
                 Button {
-                    session.purchases.restore()
+                    purchases.restore()
                 } label: {
                     Text("Restore purchases")
                         .font(.callout)
@@ -53,7 +53,7 @@ struct Settings: View {
                         ForEach(products, id: \.0.productIdentifier) { product in
                             Item(purchase: Purchases.Item(rawValue: product.0.productIdentifier)!, price: product.1) {
                                 withAnimation(.easeInOut(duration: 0.5)) {
-                                    session.purchases.purchase(product.0)
+                                    purchases.purchase(product.0)
                                 }
                             }
                         }
@@ -83,7 +83,7 @@ struct Settings: View {
         }
         .onAppear {
             error = nil
-            session.purchases.load()
+            purchases.load()
         }
     }
 }

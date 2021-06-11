@@ -37,7 +37,7 @@ struct Walking: View {
                         endPoint: .trailing)) {
                 session.clear()
                 
-                Cloud.shared.finish(steps: steps, metres: metres) { finish in
+                cloud.finish(steps: steps, metres: metres) { finish in
                     withAnimation(.easeInOut(duration: 0.4)) {
                         session.section = .finished(finish)
                     }
@@ -60,7 +60,7 @@ struct Walking: View {
                       primaryButton: .default(.init("Continue")),
                       secondaryButton: .destructive(.init("Cancel")) {
                         session.clear()
-                        Cloud.shared.cancel()
+                        cloud.cancel()
                 })
             }
         }
@@ -74,12 +74,12 @@ struct Walking: View {
             cloud.discover($0)
         }
         .onAppear {
-            health.steps(cloud.archive.value)
-            health.distance(cloud.archive.value)
-            location.start(cloud.archive.value)
-            streak = cloud.archive.value.calendar.streak
-            maximumSteps = max(cloud.archive.value.maxSteps, Metrics.steps.min)
-            maximumMetres = max(cloud.archive.value.maxMetres, Metrics.distance.min)
+            health.steps(session.archive)
+            health.distance(session.archive)
+            location.start(session.archive)
+            streak = session.archive.calendar.streak
+            maximumSteps = max(session.archive.maxSteps, Metrics.steps.min)
+            maximumMetres = max(session.archive.maxMetres, Metrics.distance.min)
         }
     }
 }

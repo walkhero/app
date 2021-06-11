@@ -14,19 +14,19 @@ struct Walking: View {
             Menu(session: $session, steps: steps, metres: metres)
             Time(session: $session)
             
-            if Cloud.shared.archive.value.enrolled(.streak) {
+            if session.archive.enrolled(.streak) {
                 Streak(session: $session, streak: streak)
             }
             
-            if Cloud.shared.archive.value.enrolled(.steps) {
+            if session.archive.enrolled(.steps) {
                 Steps(session: $session, steps: steps, maximum: maximumSteps)
             }
             
-            if Cloud.shared.archive.value.enrolled(.distance) {
+            if session.archive.enrolled(.distance) {
                 Distance(session: $session, metres: metres, maximum: maximumMetres)
             }
             
-            if Cloud.shared.archive.value.enrolled(.map) {
+            if session.archive.enrolled(.map) {
                 Map(session: $session)
             }
         }
@@ -41,12 +41,12 @@ struct Walking: View {
             cloud.discover($0)
         }
         .onAppear {
-            health.steps(cloud.archive.value)
-            health.distance(cloud.archive.value)
-            location.start(cloud.archive.value)
-            streak = cloud.archive.value.calendar.streak
-            maximumSteps = max(cloud.archive.value.maxSteps, Metrics.steps.min)
-            maximumMetres = max(cloud.archive.value.maxMetres, Metrics.distance.min)
+            health.steps(session.archive)
+            health.distance(session.archive)
+            location.start(session.archive)
+            streak = session.archive.calendar.streak
+            maximumSteps = max(session.archive.maxSteps, Metrics.steps.min)
+            maximumMetres = max(session.archive.maxMetres, Metrics.distance.min)
         }
     }
 }

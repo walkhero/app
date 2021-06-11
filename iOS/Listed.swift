@@ -26,7 +26,7 @@ struct Listed: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(Color(.secondarySystemBackground))
-                if Cloud.shared.archive.value.list.isEmpty {
+                if session.archive.list.isEmpty {
                     VStack {
                         Image("world")
                         Text("Ready to start\nyour first walk")
@@ -39,7 +39,7 @@ struct Listed: View {
                         VStack(spacing: 0) {
                             Spacer()
                                 .frame(height: 5)
-                            ForEach(Cloud.shared.archive.value.list, id: \.self) {
+                            ForEach(session.archive.list, id: \.self) {
                                 Item(session: $session, item: $0)
                                 Rectangle()
                                     .fill(Color(.tertiarySystemBackground))
