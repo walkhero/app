@@ -13,7 +13,8 @@ extension Walking {
         @State private var b = CGFloat()
         @State private var c = CGFloat()
         @State private var d = CGFloat()
-        private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+        @State private var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+        @Environment(\.scenePhase) private var phase
         
         var body: some View {
             ZStack {
@@ -68,7 +69,28 @@ extension Walking {
                     counter = display
                 }
             }
-            .onAppear(perform: refresh)
+            .onDisappear(perform: stop)
+            .onAppear {
+                start()
+                refresh()
+            }
+            .onChange(of: phase) {
+                switch $0 {
+                case .active:
+                    start()
+                case .inactive:
+                    stop()
+                default: break
+                }
+            }
+        }
+        
+        private func start() {
+            timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        }
+        
+        private func stop() {
+            timer.upstream.connect().cancel()
         }
         
         private func refresh() {
