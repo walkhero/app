@@ -47,7 +47,7 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIImageName</key>
-		<string>splash</string>
+		<string>world</string>
 		<key>UIImageRespectsSafeAreaInsets</key>
 		<true/>
 	</dict>
