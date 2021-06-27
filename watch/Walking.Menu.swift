@@ -32,8 +32,10 @@ extension Walking {
                 Spacer()
                 Button {
                     session.clear()
-                    cloud.finish(steps: steps, metres: metres) {
-                        session.section = .finished($0)
+                    DispatchQueue.main.async {
+                        cloud.finish(steps: steps, metres: metres) {
+                            session.section = .finished($0)
+                        }
                     }
                 } label: {
                     ZStack {
