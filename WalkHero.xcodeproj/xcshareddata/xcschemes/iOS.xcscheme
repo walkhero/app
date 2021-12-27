@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1250"
+   LastUpgradeVersion = "1320"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CE0EB3C3260DF31B00D607C9"
+               BlueprintIdentifier = "CE512EE02779F1FF003ED854"
                BuildableName = "WalkHero.app"
                BlueprintName = "iOS"
                ReferencedContainer = "container:WalkHero.xcodeproj">
@@ -44,15 +44,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CE0EB3C3260DF31B00D607C9"
+            BlueprintIdentifier = "CE512EE02779F1FF003ED854"
             BuildableName = "WalkHero.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:WalkHero.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <StoreKitConfigurationFileReference
-         identifier = "../../iOS/Configuration.storekit">
-      </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -64,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CE0EB3C3260DF31B00D607C9"
+            BlueprintIdentifier = "CE512EE02779F1FF003ED854"
             BuildableName = "WalkHero.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:WalkHero.xcodeproj">
