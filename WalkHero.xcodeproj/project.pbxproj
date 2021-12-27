@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4B3486277A299200330CB4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B3485277A299200330CB4 /* CloudKit.framework */; };
+		CE4B3488277A29A500330CB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B3487277A29A500330CB4 /* HealthKit.framework */; };
 		CE512EE92779F1FF003ED854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE512EE82779F1FF003ED854 /* Assets.xcassets */; };
 		CE512EF22779F4BC003ED854 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE512EF12779F4BC003ED854 /* App.swift */; };
 		CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9C2779F53F001BECAB /* App.Delegate.swift */; };
@@ -28,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE4B3483277A297700330CB4 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
+		CE4B3485277A299200330CB4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		CE4B3487277A29A500330CB4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		CE512EE12779F1FF003ED854 /* WalkHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE512EE82779F1FF003ED854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE512EF02779F411003ED854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -54,7 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4B3488277A29A500330CB4 /* HealthKit.framework in Frameworks */,
 				CEF40CAF2779F760001BECAB /* Hero in Frameworks */,
+				CE4B3486277A299200330CB4 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +74,17 @@
 				CE512EE32779F1FF003ED854 /* iOS */,
 				CE512EE22779F1FF003ED854 /* Products */,
 				CEF40C9E2779F690001BECAB /* Shared */,
+				CE4B3484277A299200330CB4 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		CE4B3484277A299200330CB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE4B3487277A29A500330CB4 /* HealthKit.framework */,
+				CE4B3485277A299200330CB4 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CE512EE22779F1FF003ED854 /* Products */ = {
@@ -81,6 +98,7 @@
 		CE512EE32779F1FF003ED854 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				CE4B3483277A297700330CB4 /* iOS.entitlements */,
 				CE512EF02779F411003ED854 /* Info.plist */,
 				CEF40C9C2779F53F001BECAB /* App.Delegate.swift */,
 				CE512EF12779F4BC003ED854 /* App.swift */,
@@ -275,6 +293,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
@@ -351,6 +370,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
