@@ -9,6 +9,22 @@
 /* Begin PBXBuildFile section */
 		CE512EE92779F1FF003ED854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE512EE82779F1FF003ED854 /* Assets.xcassets */; };
 		CE512EF22779F4BC003ED854 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE512EF12779F4BC003ED854 /* App.swift */; };
+		CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9C2779F53F001BECAB /* App.Delegate.swift */; };
+		CEF40CA02779F6A0001BECAB /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */; };
+		CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA12779F6B3001BECAB /* Transaction.swift */; };
+		CEF40CA62779F6CE001BECAB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA32779F6CE001BECAB /* Store.swift */; };
+		CEF40CA72779F6CE001BECAB /* Store.State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA42779F6CE001BECAB /* Store.State.swift */; };
+		CEF40CA82779F6CE001BECAB /* Store.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA52779F6CE001BECAB /* Store.Item.swift */; };
+		CEF40CAA2779F6D9001BECAB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA92779F6D9001BECAB /* Global.swift */; };
+		CEF40CAC2779F6E2001BECAB /* Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CAB2779F6E2001BECAB /* Copy.swift */; };
+		CEF40CAF2779F760001BECAB /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEF40CAE2779F760001BECAB /* Hero */; };
+		CEF40CB12779FAAD001BECAB /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB02779FAAD001BECAB /* Window.swift */; };
+		CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB22779FAF7001BECAB /* UIApplication.swift */; };
+		CEF40CB52779FB27001BECAB /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB42779FB27001BECAB /* Navigation.swift */; };
+		CEF40CB72779FB44001BECAB /* Window.Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB62779FB44001BECAB /* Window.Modal.swift */; };
+		CEF40CB92779FB62001BECAB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB82779FB62001BECAB /* Status.swift */; };
+		CEF40CBB2779FB8A001BECAB /* Froob.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CBA2779FB8A001BECAB /* Froob.swift */; };
+		CEF40CBD2779FBB3001BECAB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF40CBC2779FBB3001BECAB /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +32,21 @@
 		CE512EE82779F1FF003ED854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE512EF02779F411003ED854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CE512EF12779F4BC003ED854 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		CEF40C9C2779F53F001BECAB /* App.Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
+		CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
+		CEF40CA12779F6B3001BECAB /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		CEF40CA32779F6CE001BECAB /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		CEF40CA42779F6CE001BECAB /* Store.State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.State.swift; sourceTree = "<group>"; };
+		CEF40CA52779F6CE001BECAB /* Store.Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.Item.swift; sourceTree = "<group>"; };
+		CEF40CA92779F6D9001BECAB /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		CEF40CAB2779F6E2001BECAB /* Copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copy.swift; sourceTree = "<group>"; };
+		CEF40CB02779FAAD001BECAB /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		CEF40CB22779FAF7001BECAB /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		CEF40CB42779FB27001BECAB /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		CEF40CB62779FB44001BECAB /* Window.Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.Modal.swift; sourceTree = "<group>"; };
+		CEF40CB82779FB62001BECAB /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		CEF40CBA2779FB8A001BECAB /* Froob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Froob.swift; sourceTree = "<group>"; };
+		CEF40CBC2779FBB3001BECAB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF40CAF2779F760001BECAB /* Hero in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +66,7 @@
 			children = (
 				CE512EE32779F1FF003ED854 /* iOS */,
 				CE512EE22779F1FF003ED854 /* Products */,
+				CEF40C9E2779F690001BECAB /* Shared */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,10 +82,32 @@
 			isa = PBXGroup;
 			children = (
 				CE512EF02779F411003ED854 /* Info.plist */,
+				CEF40C9C2779F53F001BECAB /* App.Delegate.swift */,
 				CE512EF12779F4BC003ED854 /* App.swift */,
+				CEF40CBA2779FB8A001BECAB /* Froob.swift */,
+				CEF40CB42779FB27001BECAB /* Navigation.swift */,
+				CEF40CB82779FB62001BECAB /* Status.swift */,
+				CEF40CB22779FAF7001BECAB /* UIApplication.swift */,
+				CEF40CB62779FB44001BECAB /* Window.Modal.swift */,
+				CEF40CB02779FAAD001BECAB /* Window.swift */,
 				CE512EE82779F1FF003ED854 /* Assets.xcassets */,
 			);
 			path = iOS;
+			sourceTree = "<group>";
+		};
+		CEF40C9E2779F690001BECAB /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CEF40CAB2779F6E2001BECAB /* Copy.swift */,
+				CEF40CA92779F6D9001BECAB /* Global.swift */,
+				CEF40CA52779F6CE001BECAB /* Store.Item.swift */,
+				CEF40CA42779F6CE001BECAB /* Store.State.swift */,
+				CEF40CA32779F6CE001BECAB /* Store.swift */,
+				CEF40CA12779F6B3001BECAB /* Transaction.swift */,
+				CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */,
+				CEF40CBC2779FBB3001BECAB /* Media.xcassets */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +126,9 @@
 			dependencies = (
 			);
 			name = iOS;
+			packageProductDependencies = (
+				CEF40CAE2779F760001BECAB /* Hero */,
+			);
 			productName = iOS;
 			productReference = CE512EE12779F1FF003ED854 /* WalkHero.app */;
 			productType = "com.apple.product-type.application";
@@ -99,6 +157,9 @@
 				Base,
 			);
 			mainGroup = CE14B65C2779F0AA00DC35FA;
+			packageReferences = (
+				CEF40CAD2779F760001BECAB /* XCRemoteSwiftPackageReference "hero" */,
+			);
 			productRefGroup = CE512EE22779F1FF003ED854 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -113,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF40CBD2779FBB3001BECAB /* Media.xcassets in Resources */,
 				CE512EE92779F1FF003ED854 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,7 +186,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF40CAC2779F6E2001BECAB /* Copy.swift in Sources */,
+				CEF40CB12779FAAD001BECAB /* Window.swift in Sources */,
+				CEF40CAA2779F6D9001BECAB /* Global.swift in Sources */,
+				CEF40CB52779FB27001BECAB /* Navigation.swift in Sources */,
+				CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */,
+				CEF40CA62779F6CE001BECAB /* Store.swift in Sources */,
 				CE512EF22779F4BC003ED854 /* App.swift in Sources */,
+				CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */,
+				CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */,
+				CEF40CB92779FB62001BECAB /* Status.swift in Sources */,
+				CEF40CA82779F6CE001BECAB /* Store.Item.swift in Sources */,
+				CEF40CB72779FB44001BECAB /* Window.Modal.swift in Sources */,
+				CEF40CA72779F6CE001BECAB /* Store.State.swift in Sources */,
+				CEF40CBB2779FB8A001BECAB /* Froob.swift in Sources */,
+				CEF40CA02779F6A0001BECAB /* UNUserNotificationCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +409,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEF40CAD2779F760001BECAB /* XCRemoteSwiftPackageReference "hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/walkhero/hero.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEF40CAE2779F760001BECAB /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEF40CAD2779F760001BECAB /* XCRemoteSwiftPackageReference "hero" */;
+			productName = Hero;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE14B65D2779F0AA00DC35FA /* Project object */;
 }
