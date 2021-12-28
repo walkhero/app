@@ -1,7 +1,8 @@
 import UIKit
 import StoreKit
+import GameKit
 
-extension UIApplication {
+extension UIApplication: GKGameCenterControllerDelegate {
     func settings() {
         open(URL(string: Self.openSettingsURLString)!)
     }
@@ -12,14 +13,21 @@ extension UIApplication {
     }
     
     func share(_ any: Any) {
+        present(controller: UIActivityViewController(activityItems: [any], applicationActivities: nil))
+    }
+    
+    func present(controller: UIViewController) {
         scene?
             .keyWindow?
             .rootViewController
             .map {
-                let controller = UIActivityViewController(activityItems: [any], applicationActivities: nil)
                 controller.popoverPresentationController?.sourceView = $0.view
                 $0.present(controller, animated: true)
             }
+    }
+    
+    public func gameCenterViewControllerDidFinish(_ controller: GKGameCenterViewController) {
+        controller.dismiss(animated: true)
     }
     
     private var scene: UIWindowScene? {

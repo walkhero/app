@@ -1,5 +1,6 @@
-import Foundation
+import UIKit
 
-struct Status {
-    
+final class Status: ObservableObject {
+    @Published var name = "hello"
+    @Published var image: UIImage?
 }

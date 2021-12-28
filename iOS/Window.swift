@@ -2,11 +2,11 @@ import SwiftUI
 import Hero
 
 struct Window: View {
-    @State private var status = Status()
+    let status: Status
     @State private var modal: Modal?
     
     var body: some View {
-        Navigation(status: $status)
+        Navigation(status: status)
             .sheet(item: $modal) {
                 switch $0 {
                 case .froob:
