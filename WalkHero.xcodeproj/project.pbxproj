@@ -11,11 +11,14 @@
 		CE4B3488277A29A500330CB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B3487277A29A500330CB4 /* HealthKit.framework */; };
 		CE512EE92779F1FF003ED854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE512EE82779F1FF003ED854 /* Assets.xcassets */; };
 		CE512EF22779F4BC003ED854 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE512EF12779F4BC003ED854 /* App.swift */; };
+		CE72231D277B3E6900E1E456 /* Navigation.Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72231C277B3E6900E1E456 /* Navigation.Geo.swift */; };
 		CEC805B0277B1C1400D1B046 /* Navigation.Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805AF277B1C1400D1B046 /* Navigation.Bar.swift */; };
 		CEC805B2277B1C7500D1B046 /* Navigation.Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B1277B1C7500D1B046 /* Navigation.Header.swift */; };
 		CEC805B4277B1DDD00D1B046 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B3277B1DDD00D1B046 /* Game.swift */; };
 		CEC805B6277B21DB00D1B046 /* Game.Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B5277B21DB00D1B046 /* Game.Challenge.swift */; };
 		CEC805B8277B291C00D1B046 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC805B7277B291C00D1B046 /* GameKit.framework */; };
+		CEC805BA277B36B400D1B046 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B9277B36B400D1B046 /* Map.swift */; };
+		CEC805BC277B36BB00D1B046 /* Map.Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805BB277B36BB00D1B046 /* Map.Representable.swift */; };
 		CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9C2779F53F001BECAB /* App.Delegate.swift */; };
 		CEF40CA02779F6A0001BECAB /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */; };
 		CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA12779F6B3001BECAB /* Transaction.swift */; };
@@ -42,11 +45,14 @@
 		CE512EE82779F1FF003ED854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE512EF02779F411003ED854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CE512EF12779F4BC003ED854 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		CE72231C277B3E6900E1E456 /* Navigation.Geo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.Geo.swift; sourceTree = "<group>"; };
 		CEC805AF277B1C1400D1B046 /* Navigation.Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.Bar.swift; sourceTree = "<group>"; };
 		CEC805B1277B1C7500D1B046 /* Navigation.Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.Header.swift; sourceTree = "<group>"; };
 		CEC805B3277B1DDD00D1B046 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CEC805B5277B21DB00D1B046 /* Game.Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.Challenge.swift; sourceTree = "<group>"; };
 		CEC805B7277B291C00D1B046 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
+		CEC805B9277B36B400D1B046 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		CEC805BB277B36BB00D1B046 /* Map.Representable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Representable.swift; sourceTree = "<group>"; };
 		CEF40C9C2779F53F001BECAB /* App.Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
 		CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
 		CEF40CA12779F6B3001BECAB /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -117,7 +123,10 @@
 				CEF40CBA2779FB8A001BECAB /* Froob.swift */,
 				CEC805B5277B21DB00D1B046 /* Game.Challenge.swift */,
 				CEC805B3277B1DDD00D1B046 /* Game.swift */,
+				CEC805BB277B36BB00D1B046 /* Map.Representable.swift */,
+				CEC805B9277B36B400D1B046 /* Map.swift */,
 				CEC805AF277B1C1400D1B046 /* Navigation.Bar.swift */,
+				CE72231C277B3E6900E1E456 /* Navigation.Geo.swift */,
 				CEC805B1277B1C7500D1B046 /* Navigation.Header.swift */,
 				CEF40CB42779FB27001BECAB /* Navigation.swift */,
 				CEF40CB82779FB62001BECAB /* Status.swift */,
@@ -229,9 +238,12 @@
 				CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */,
 				CEC805B6277B21DB00D1B046 /* Game.Challenge.swift in Sources */,
 				CEF40CA62779F6CE001BECAB /* Store.swift in Sources */,
+				CEC805BC277B36BB00D1B046 /* Map.Representable.swift in Sources */,
 				CE512EF22779F4BC003ED854 /* App.swift in Sources */,
+				CEC805BA277B36B400D1B046 /* Map.swift in Sources */,
 				CEC805B2277B1C7500D1B046 /* Navigation.Header.swift in Sources */,
 				CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */,
+				CE72231D277B3E6900E1E456 /* Navigation.Geo.swift in Sources */,
 				CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */,
 				CEF40CB92779FB62001BECAB /* Status.swift in Sources */,
 				CEF40CA82779F6CE001BECAB /* Store.Item.swift in Sources */,

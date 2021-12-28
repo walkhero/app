@@ -1,6 +1,7 @@
 import SwiftUI
 
-private let size = 36.0
+private let size = 40.0
+private let radius = 10.0
 
 extension Navigation {
     struct Header: View {
@@ -10,7 +11,7 @@ extension Navigation {
             VStack(spacing: 0) {
                 HStack {
                     ZStack {
-                        Circle()
+                        RoundedRectangle(cornerRadius: radius, style: .continuous)
                             .fill(LinearGradient(
                                 gradient: .init(colors: [.accentColor.opacity(0.6), .accentColor]),
                                     startPoint: .top,
@@ -21,8 +22,8 @@ extension Navigation {
                             Image(uiImage: image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: size - 2, height: size - 2)
-                                .clipShape(Circle())
+                                .frame(width: size - 3, height: size - 3)
+                                .clipShape(RoundedRectangle(cornerRadius: radius, style: .continuous))
                         } else {
                             Image(systemName: "person.fill")
                                 .font(.body)
@@ -38,9 +39,7 @@ extension Navigation {
                     
                     Spacer()
                     
-                    Button {
-                        
-                    } label: {
+                    Button(action: game.leaderboard) {
                         Image(systemName: "list.star")
                             .font(.body)
                             .allowsHitTesting(false)

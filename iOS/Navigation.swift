@@ -5,7 +5,20 @@ struct Navigation: View {
     
     var body: some View {
         VStack {
-            Circle()
+            Geo()
+            Spacer()
+            Text(256, format: .number)
+                .font(.largeTitle.monospaced())
+            Text("Streak")
+                .font(.callout)
+                .foregroundColor(.secondary)
+            Spacer()
+            Label("You haven't walked today", systemImage: "exclamationmark.triangle.fill")
+                .symbolRenderingMode(.multicolor)
+                .font(.footnote)
+                .foregroundColor(.pink)
+                .imageScale(.large)
+            Spacer()
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             Bar(status: status)

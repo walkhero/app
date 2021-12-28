@@ -4,7 +4,6 @@ import SwiftUI
     @StateObject private var status = Status()
     @Environment(\.scenePhase) private var phase
     @UIApplicationDelegateAdaptor(Delegate.self) private var delegate
-    private let game = Game()
     
     var body: some Scene {
         WindowGroup {
