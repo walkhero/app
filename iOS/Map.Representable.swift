@@ -23,23 +23,27 @@ extension Map {
             mapType = .standard
             delegate = self
             setUserTrackingMode(.follow, animated: false)
-//            cloud
-//                .map(\.tiles)
-//                .first()
-//                .merge(with: cloud
-//                        .map(\.tiles)
-//                        .combineLatest(location.tiles) { .init(.init($0) + .init($1)) }
-//                        .throttle(for: .seconds(1), scheduler: dispatch, latest: true))
-//                .removeDuplicates()
-//                .map(\.overlay)
-//                .receive(on: DispatchQueue.main)
-//                .sink { [weak self] in
-//                    if let overlays = self?.overlays {
-//                        self?.removeOverlays(overlays)
-//                    }
-//                    self?.addOverlay($0, level: .aboveLabels)
-//                }
-//                .store(in: &subs)
+            
+            cloud
+                .map(\.tiles)
+                .first()
+                .merge(with: cloud
+                        .map(\.tiles)
+                        .combineLatest(location.tiles) { .init(.init($0) + .init($1)) }
+                        .throttle(for: .seconds(1), scheduler: dispatch, latest: true))
+                .removeDuplicates()
+                .map(\.overlay)
+                .receive(on: DispatchQueue.main)
+                .combineLatest(location.overlays)
+                .sink { [weak self] overlay, show in
+                    if let overlays = self?.overlays {
+                        self?.removeOverlays(overlays)
+                    }
+                    if show {
+                        self?.addOverlay(overlay, level: .aboveLabels)
+                    }
+                }
+                .store(in: &subs)
         }
         
         func mapView(_: MKMapView, rendererFor: MKOverlay) -> MKOverlayRenderer {

@@ -4,6 +4,7 @@ import Hero
 
 final class Location: NSObject, CLLocationManagerDelegate {
     let tiles = CurrentValueSubject<Set<Tile>, Never>([])
+    let overlays = CurrentValueSubject<Bool, Never>(true)
     private let manager = CLLocationManager()
     
     override init() {

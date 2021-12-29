@@ -15,6 +15,8 @@
 		CE96340E277C6D3C00CCFF4B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96340D277C6D3C00CCFF4B /* Location.swift */; };
 		CE963412277C8A4500CCFF4B /* Map.Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963411277C8A4500CCFF4B /* Map.Bar.swift */; };
 		CE963414277C8B2100CCFF4B /* Map.Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963413277C8B2100CCFF4B /* Map.Header.swift */; };
+		CE963416277C9C6F00CCFF4B /* Map.Bar.Layers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963415277C9C6F00CCFF4B /* Map.Bar.Layers.swift */; };
+		CE963418277C9C9900CCFF4B /* Map.Bar.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963417277C9C9900CCFF4B /* Map.Bar.Content.swift */; };
 		CEC805B0277B1C1400D1B046 /* Navigation.Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805AF277B1C1400D1B046 /* Navigation.Bar.swift */; };
 		CEC805B2277B1C7500D1B046 /* Navigation.Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B1277B1C7500D1B046 /* Navigation.Header.swift */; };
 		CEC805B4277B1DDD00D1B046 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B3277B1DDD00D1B046 /* Game.swift */; };
@@ -52,6 +54,8 @@
 		CE96340D277C6D3C00CCFF4B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CE963411277C8A4500CCFF4B /* Map.Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Bar.swift; sourceTree = "<group>"; };
 		CE963413277C8B2100CCFF4B /* Map.Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Header.swift; sourceTree = "<group>"; };
+		CE963415277C9C6F00CCFF4B /* Map.Bar.Layers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Bar.Layers.swift; sourceTree = "<group>"; };
+		CE963417277C9C9900CCFF4B /* Map.Bar.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Bar.Content.swift; sourceTree = "<group>"; };
 		CEC805AF277B1C1400D1B046 /* Navigation.Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.Bar.swift; sourceTree = "<group>"; };
 		CEC805B1277B1C7500D1B046 /* Navigation.Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.Header.swift; sourceTree = "<group>"; };
 		CEC805B3277B1DDD00D1B046 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				CEF40CBA2779FB8A001BECAB /* Froob.swift */,
 				CEC805B5277B21DB00D1B046 /* Game.Challenge.swift */,
 				CEC805B3277B1DDD00D1B046 /* Game.swift */,
+				CE963417277C9C9900CCFF4B /* Map.Bar.Content.swift */,
+				CE963415277C9C6F00CCFF4B /* Map.Bar.Layers.swift */,
 				CE963411277C8A4500CCFF4B /* Map.Bar.swift */,
 				CE963413277C8B2100CCFF4B /* Map.Header.swift */,
 				CEC805BB277B36BB00D1B046 /* Map.Representable.swift */,
@@ -247,6 +253,7 @@
 				CEF40CB52779FB27001BECAB /* Navigation.swift in Sources */,
 				CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */,
 				CEC805B6277B21DB00D1B046 /* Game.Challenge.swift in Sources */,
+				CE963416277C9C6F00CCFF4B /* Map.Bar.Layers.swift in Sources */,
 				CEF40CA62779F6CE001BECAB /* Store.swift in Sources */,
 				CE963414277C8B2100CCFF4B /* Map.Header.swift in Sources */,
 				CEC805BC277B36BB00D1B046 /* Map.Representable.swift in Sources */,
@@ -255,6 +262,7 @@
 				CEC805B2277B1C7500D1B046 /* Navigation.Header.swift in Sources */,
 				CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */,
 				CE96340E277C6D3C00CCFF4B /* Location.swift in Sources */,
+				CE963418277C9C9900CCFF4B /* Map.Bar.Content.swift in Sources */,
 				CE72231D277B3E6900E1E456 /* Navigation.Geo.swift in Sources */,
 				CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */,
 				CEF40CB92779FB62001BECAB /* Status.swift in Sources */,

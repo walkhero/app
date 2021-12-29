@@ -4,6 +4,7 @@ extension Map {
     struct Bar: View {
         weak var representable: Representable!
         @State var follow: Bool
+        @State private var layers = false
         
         var body: some View {
             VStack(spacing: 0) {
@@ -13,14 +14,19 @@ extension Map {
                     Spacer()
     
                     Button {
-                        
+                        layers = true
                     } label: {
                         Image(systemName: "square.2.stack.3d.bottom.filled")
-                            .font(.title2)
+                            .font(.title3)
                             .allowsHitTesting(false)
+                            .symbolRenderingMode(.hierarchical)
+                            .foregroundColor(.secondary)
                     }
                     .frame(width: 60)
                     .padding(.trailing)
+                    .sheet(isPresented: $layers) {
+                        Layers(rootView: .init())
+                    }
                     
                     Button {
                         follow.toggle()
@@ -28,6 +34,7 @@ extension Map {
                     } label: {
                         Image(systemName: follow ? "location.viewfinder" : "location")
                             .font(follow ? .title2 : .callout)
+                            .symbolRenderingMode(.hierarchical)
                             .allowsHitTesting(false)
                             .foregroundColor(follow ? .blue : .secondary)
                     }
