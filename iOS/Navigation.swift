@@ -23,12 +23,14 @@ struct Navigation: View {
                     .foregroundColor(.secondary)
                     .font(.caption2)
             }
-            Spacer()
-            Label("You haven't walked today", systemImage: "exclamationmark.triangle.fill")
-                .symbolRenderingMode(.multicolor)
-                .font(.footnote)
-                .foregroundColor(.pink)
-                .imageScale(.large)
+            if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
+                Spacer()
+                Label("You haven't walked today", systemImage: "exclamationmark.triangle.fill")
+                    .symbolRenderingMode(.multicolor)
+                    .font(.footnote)
+                    .foregroundColor(.pink)
+                    .imageScale(.large)
+            }
             Spacer()
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
@@ -39,7 +41,7 @@ struct Navigation: View {
         }
         .onReceive(cloud) {
             streak = $0.streak
-            updated = $0.updated
+            updated = .init(start: .init(timeIntervalSinceNow: -1000), end: .init(timeIntervalSinceNow: -500))
         }
     }
 }

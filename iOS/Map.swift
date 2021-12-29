@@ -8,6 +8,7 @@ struct Map: View {
         NavigationView {
             VStack {
                 representable
+                    .equatable()
                     .edgesIgnoringSafeArea(.all)
             }
             .safeAreaInset(edge: .top, spacing: 0) {
