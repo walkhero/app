@@ -14,6 +14,7 @@ import SwiftUI
             case .active:
                 cloud.pull.send()
                 game.login(status: status)
+                location.requestIfNeeded()
             default:
                 break
             }

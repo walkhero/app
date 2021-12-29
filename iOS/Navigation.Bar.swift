@@ -2,8 +2,6 @@ import SwiftUI
 
 extension Navigation {
     struct Bar: View {
-        @ObservedObject var status: Status
-        
         var body: some View {
             VStack(spacing: 0) {
                 Divider()
@@ -21,7 +19,7 @@ extension Navigation {
                     Spacer()
                     
                     Button {
-                        print(status.name)
+                        
                     } label: {
                         Image(systemName: "figure.walk.circle.fill")
                             .font(.largeTitle)
