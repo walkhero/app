@@ -41,7 +41,7 @@ struct Navigation: View {
         }
         .onReceive(cloud) {
             streak = $0.streak
-            updated = .init(start: .init(timeIntervalSinceNow: -1000), end: .init(timeIntervalSinceNow: -500))
+            updated = $0.updated
         }
     }
 }
