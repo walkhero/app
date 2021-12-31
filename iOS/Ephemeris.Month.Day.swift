@@ -43,7 +43,7 @@ extension Ephemeris.Month {
                     }
                 }
                 Text("\(index)")
-                    .font(.footnote)
+                    .font(.caption2)
                     .fontWeight(continouos == .none ? .regular : .bold)
                     .foregroundColor(today
                                         ? .white

@@ -12,15 +12,20 @@ struct Ephemeris: View {
             List {
                 Section {
                     Week()
+                } header: {
                     if !calendar.isEmpty {
+                        Navigation(index: $index, calendar: calendar)
+                            .textCase(nil)
+                    }
+                }
+                
+                if !calendar.isEmpty {
+                    Section {
                         Month(days: calendar[index],
                               previous: index > 0 && calendar[index - 1].items.last!.last!.hit,
                               next: index < calendar.count - 1 && calendar[index + 1].items.first!.first!.hit)
                     }
-                } header: {
-                    if !calendar.isEmpty {
-                        Navigation(index: $index, calendar: calendar)
-                    }
+                    .allowsHitTesting(false)
                 }
                 
                 Section("Today") {
@@ -35,12 +40,14 @@ struct Ephemeris: View {
                     }
                 }
                 .headerProminence(.increased)
+                .allowsHitTesting(false)
                 
                 Section("Streak") {
                     Text("Current")
                     Text("Max")
                 }
                 .headerProminence(.increased)
+                .allowsHitTesting(false)
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Calendar")

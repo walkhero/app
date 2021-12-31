@@ -19,7 +19,7 @@ extension Navigation {
                     LinearGradient(
                         gradient: .init(colors: [.init(white: 0, opacity: 0),
                                                  .init(white: 0, opacity: 0),
-                                                 .init(white: 0, opacity: 0.9)]),
+                                                 .init(white: 0, opacity: 0.7)]),
                         startPoint: .top,
                         endPoint: .bottom)
                     RoundedRectangle(cornerRadius: radius)

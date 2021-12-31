@@ -42,8 +42,7 @@ extension Navigation {
                     }
                     .frame(width: 50)
                 }
-                .padding(.top, 10)
-                .padding(.bottom, 2)
+                .padding(.vertical, 10)
                 .padding(.horizontal)
             }
             .background(.thinMaterial)

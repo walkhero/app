@@ -16,7 +16,6 @@ extension Ephemeris {
             }
             .font(.callout)
             .foregroundColor(.pink)
-            .padding(.vertical, 10)
             .allowsHitTesting(false)
         }
     }
