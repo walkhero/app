@@ -40,7 +40,7 @@ struct Navigation: View {
             Header(status: status)
         }
         .onReceive(cloud) {
-            streak = $0.streak
+            streak = $0.calendar.streak
             updated = $0.updated
         }
     }

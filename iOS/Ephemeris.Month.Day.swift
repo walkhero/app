@@ -1,12 +1,10 @@
 import SwiftUI
 
-
 extension Ephemeris.Month {
     struct Day: View {
         let index: Int
         let today: Bool
         let continouos: Continuous
-        private let fill = Color.accentColor
         
         var body: some View {
             ZStack {
@@ -14,38 +12,34 @@ extension Ephemeris.Month {
                 case .single:
                     Circle()
                         .fill(Color.accentColor)
-                        .frame(
-                            width: Ephemeris.Constants.size_padding2,
-                            height: Ephemeris.Constants.size_padding2)
+                        .frame(width: 30, height: 30)
                 case .leading:
                     Path(UIBezierPath(
                             roundedRect: CGRect(x: 0,
-                                                y: Ephemeris.Constants.padding,
-                                                width: Ephemeris.Constants.size,
-                                                height: Ephemeris.Constants.size_padding2),
+                                                y: 5,
+                                                width: 40,
+                                                height: 30),
                             byRoundingCorners: [.topLeft, .bottomLeft],
-                            cornerRadii: Ephemeris.Constants.radius).cgPath)
-                        .fill(fill)
+                            cornerRadii: .init(width: 15, height: 15)).cgPath)
+                        .fill(Color.accentColor)
                 case .middle:
                     Rectangle()
-                        .fill(fill)
+                        .fill(Color.accentColor)
                         .padding(.vertical, 5)
                 case .trailing:
                     Path(UIBezierPath(
                             roundedRect: CGRect(x: 0,
-                                                y: Ephemeris.Constants.padding,
-                                                width: Ephemeris.Constants.size,
-                                                height: Ephemeris.Constants.size_padding2),
+                                                y: 5,
+                                                width: 40,
+                                                height: 30),
                             byRoundingCorners: [.topRight, .bottomRight],
-                            cornerRadii: Ephemeris.Constants.radius).cgPath)
-                        .fill(fill)
+                            cornerRadii: .init(width: 15, height: 15)).cgPath)
+                        .fill(Color.accentColor)
                 default:
                     if today {
                         Circle()
-                            .fill(fill.opacity(0.25))
-                            .frame(
-                                width: Ephemeris.Constants.size_padding2,
-                                height: Ephemeris.Constants.size_padding2)
+                            .fill(Color.accentColor.opacity(0.25))
+                            .frame(width: 30, height: 30)
                     }
                 }
                 Text("\(index)")
@@ -55,7 +49,7 @@ extension Ephemeris.Month {
                                         ? .white
                                         : continouos == .none ? .init(.tertiaryLabel) : .black)
             }
-            .frame(width: Ephemeris.Constants.size, height: Ephemeris.Constants.size)
+            .frame(width: 40, height: 40)
         }
     }
 }

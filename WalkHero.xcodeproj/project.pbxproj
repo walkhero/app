@@ -30,7 +30,6 @@
 		CEC805B8277B291C00D1B046 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC805B7277B291C00D1B046 /* GameKit.framework */; };
 		CEC805BA277B36B400D1B046 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B9277B36B400D1B046 /* Map.swift */; };
 		CEC805BC277B36BB00D1B046 /* Map.Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805BB277B36BB00D1B046 /* Map.Representable.swift */; };
-		CECD7DA9277CA5BB00A12847 /* Ephemeris.Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD7DA8277CA5BB00A12847 /* Ephemeris.Constants.swift */; };
 		CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9C2779F53F001BECAB /* App.Delegate.swift */; };
 		CEF40CA02779F6A0001BECAB /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */; };
 		CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA12779F6B3001BECAB /* Transaction.swift */; };
@@ -76,7 +75,6 @@
 		CEC805B7277B291C00D1B046 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEC805B9277B36B400D1B046 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		CEC805BB277B36BB00D1B046 /* Map.Representable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Representable.swift; sourceTree = "<group>"; };
-		CECD7DA8277CA5BB00A12847 /* Ephemeris.Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ephemeris.Constants.swift; sourceTree = "<group>"; };
 		CEF40C9C2779F53F001BECAB /* App.Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
 		CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
 		CEF40CA12779F6B3001BECAB /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				CE512EF02779F411003ED854 /* Info.plist */,
 				CEF40C9C2779F53F001BECAB /* App.Delegate.swift */,
 				CE512EF12779F4BC003ED854 /* App.swift */,
-				CECD7DA8277CA5BB00A12847 /* Ephemeris.Constants.swift */,
 				CE96341A277CA1F700CCFF4B /* Ephemeris.Month.Continuous.swift */,
 				CE963419277CA1F700CCFF4B /* Ephemeris.Month.Day.swift */,
 				CE96341D277CA1F700CCFF4B /* Ephemeris.Month.swift */,
@@ -284,7 +281,6 @@
 				CE512EF22779F4BC003ED854 /* App.swift in Sources */,
 				CEC805BA277B36B400D1B046 /* Map.swift in Sources */,
 				CEC805B2277B1C7500D1B046 /* Navigation.Header.swift in Sources */,
-				CECD7DA9277CA5BB00A12847 /* Ephemeris.Constants.swift in Sources */,
 				CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */,
 				CE96340E277C6D3C00CCFF4B /* Location.swift in Sources */,
 				CE963418277C9C9900CCFF4B /* Map.Bar.Content.swift in Sources */,

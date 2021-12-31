@@ -2,19 +2,24 @@ import SwiftUI
 
 extension Navigation {
     struct Bar: View {
+        @State private var calendar = false
+        
         var body: some View {
             VStack(spacing: 0) {
                 Divider()
                     .ignoresSafeArea(edges: .horizontal)
                 HStack {
                     Button {
-                        
+                        calendar = true
                     } label: {
                         Image(systemName: "calendar")
                             .font(.title3)
                             .allowsHitTesting(false)
                     }
                     .frame(width: 50)
+                    .sheet(isPresented: $calendar) {
+                        Ephemeris()
+                    }
                     
                     Spacer()
                     
@@ -44,5 +49,4 @@ extension Navigation {
             .background(.thinMaterial)
         }
     }
-
 }

@@ -3,36 +3,40 @@ import Hero
 
 extension Ephemeris {
     struct Month: View {
-        let month: Year.Month
+        let days: Days
         let previous: Bool
         let next: Bool
-        
+
         var body: some View {
-            ForEach(0 ..< month.days.count, id: \.self) { week in
+            ForEach(0 ..< days.items.count, id: \.self) { week in
                 HStack(spacing: 0) {
-                    ForEach(0 ..< month.days[week].count, id: \.self) {
-                        Day(index: month.days[week][$0].value, today: month.days[week][$0].today, continouos: continouos(week, $0))
+                    Spacer()
+                    ForEach(0 ..< days.items[week].count, id: \.self) {
+                        Day(index: days.items[week][$0].value,
+                            today: days.items[week][$0].today,
+                            continouos: continouos(week: week, day: $0))
+                            .padding(.leading, $0 == 0 ? leading(week) : 0)
+                            .padding(.trailing, $0 == days.items[week].count - 1 ? trailing(week) : 0)
                     }
+                    Spacer()
                 }
-                .padding(.leading, leading(week))
-                .padding(.trailing, trailing(week))
             }
         }
-        
+
         private func leading(_ week: Int) -> CGFloat {
             .init(Calendar.current
-                    .leadingWeekdays(year: 2021, month: month.value, day: month.days[week].first!.value))
-                * Constants.size
+                    .leadingWeekdays(year: 2021, month: days.month, day: days.items[week].first!.value))
+            * 40
         }
-        
+
         private func trailing(_ week: Int) -> CGFloat {
             .init(Calendar.current
-                    .trailingWeekdays(year: 2021, month: month.value, day: month.days[week].last!.value))
-                * Constants.size
+                    .trailingWeekdays(year: 2021, month: days.month, day: days.items[week].last!.value))
+            * 40
         }
-        
-        private func continouos(_ week: Int, _ day: Int) -> Continuous {
-            month.days[week][day].hit
+
+        private func continouos(week: Int, day: Int) -> Continuous {
+            days.items[week][day].hit
                 ? previous(week, day)
                     ? next(week, day)
                         ? .middle
@@ -42,20 +46,20 @@ extension Ephemeris {
                         : .single
                 : .none
         }
-        
+
         private func previous(_ week: Int, _ day: Int) -> Bool {
             day > 0
-                ? month.days[week][day - 1].hit
+                ? days.items[week][day - 1].hit
                 : week > 0
-                    ? month.days[week - 1].last!.hit
+                    ? days.items[week - 1].last!.hit
                     : previous
         }
-        
+
         private func next(_ week: Int, _ day: Int) -> Bool {
-            day < month.days[week].count - 1
-                ? month.days[week][day + 1].hit
-                : week < month.days.count - 1
-                    ? month.days[week + 1].first!.hit
+            day < days.items[week].count - 1
+                ? days.items[week][day + 1].hit
+                : week < days.items.count - 1
+                    ? days.items[week + 1].first!.hit
                     : next
         }
     }

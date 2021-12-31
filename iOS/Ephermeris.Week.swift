@@ -2,22 +2,22 @@ import SwiftUI
 
 extension Ephemeris {
     struct Week: View {
-        let weeker: DateFormatter
-        
         var body: some View {
             HStack(spacing: 0) {
+                Spacer()
                 ForEach(0 ..< 7) {
-                    Text(verbatim: weeker.string(
-                            from: Calendar.current.date(
-                                from: .init(
-                                    weekday: $0 + Calendar.current.firstWeekday % 7,
-                                    weekOfMonth: 1))!))
-                        .frame(width: Constants.size)
+                    Text(Calendar.current.date(from: .init(weekday: $0 + Calendar.current.firstWeekday % 7,
+                                                           weekOfMonth: 1))!,
+                         format: .dateTime.weekday(.narrow))
+                        .font(.caption)
+                        .frame(width: 40)
                 }
+                Spacer()
             }
             .font(.callout)
             .foregroundColor(.pink)
             .padding(.vertical, 10)
+            .allowsHitTesting(false)
         }
     }
 }
