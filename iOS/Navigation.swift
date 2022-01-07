@@ -27,7 +27,7 @@ struct Navigation: View {
             Spacer()
             
             if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
-                Label("No walk today yet", systemImage: "exclamationmark.triangle.fill")
+                Label("No walk today", systemImage: "exclamationmark.triangle.fill")
                     .symbolRenderingMode(.hierarchical)
                     .font(.footnote)
                     .foregroundColor(.secondary)

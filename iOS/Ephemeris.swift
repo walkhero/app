@@ -30,7 +30,18 @@ struct Ephemeris: View {
                 }
                 
                 Section("Today") {
-                    Text("Haven't walked today")
+                    if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
+                        HStack {
+                            Text("No walk today")
+                            Spacer()
+                            Image(systemName: "exclamationmark.triangle.fill")
+                        }
+                        .foregroundColor(.secondary)
+                        .font(.footnote)
+                    } else {
+                        
+                    }
+                    
                     if let updated = updated {
                         Text("Updated ")
                             .foregroundColor(.secondary)
@@ -44,8 +55,22 @@ struct Ephemeris: View {
                 .allowsHitTesting(false)
                 
                 Section("Streak") {
-                    Text("Current")
-                    Text("Max")
+                    HStack {
+                        Text("Current")
+                            .foregroundColor(.secondary)
+                            .font(.footnote)
+                        Spacer()
+                        Text(streak.current, format: .number)
+                            .font(.footnote.monospacedDigit())
+                    }
+                    HStack {
+                        Text("Max")
+                            .foregroundColor(.secondary)
+                            .font(.footnote)
+                        Spacer()
+                        Text(streak.maximum, format: .number)
+                            .font(.footnote.monospacedDigit())
+                    }
                 }
                 .headerProminence(.increased)
                 .allowsHitTesting(false)

@@ -11,7 +11,7 @@ extension Map {
                     Group {
                         Text(tiles, format: .number)
                             .foregroundColor(.primary)
-                            .font(.title3.monospaced())
+                            .font(.title3.monospacedDigit())
                         + Text(tiles == 1 ? " square" : " squares")
                             .foregroundColor(.secondary)
                             .font(.callout)
@@ -31,7 +31,7 @@ extension Map {
                 Divider()
                     .ignoresSafeArea(edges: .horizontal)
             }
-            .background(.ultraThinMaterial)
+            .background(.thinMaterial)
             .onReceive(cloud) {
                 tiles = $0.tiles.count
             }

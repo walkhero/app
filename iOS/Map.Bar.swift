@@ -20,7 +20,7 @@ extension Map {
                             .font(.title3)
                             .allowsHitTesting(false)
                             .symbolRenderingMode(.hierarchical)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.secondary)
                     }
                     .frame(width: 60)
                     .padding(.trailing)
@@ -36,13 +36,13 @@ extension Map {
                             .font(follow ? .title2 : .callout)
                             .symbolRenderingMode(.hierarchical)
                             .allowsHitTesting(false)
-                            .foregroundColor(follow ? .blue : .primary)
+                            .foregroundColor(follow ? .blue : .secondary)
                     }
                     .frame(width: 60)
                 }
                 .padding()
             }
-            .background(.ultraThinMaterial)
+            .background(.thinMaterial)
         }
     }
 }

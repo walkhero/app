@@ -29,7 +29,7 @@ extension Navigation {
                             .foregroundColor(.white)
                             .font(.callout.monospacedDigit())
                         + Text(tiles == 1 ? " square" : " squares")
-                            .foregroundColor(.init(white: 0.7))
+                            .foregroundColor(.init(white: 0.6))
                             .font(.footnote)
                     }
                     .padding()
@@ -37,7 +37,7 @@ extension Navigation {
                 .clipShape(RoundedRectangle(cornerRadius: radius))
                 .allowsHitTesting(false)
             }
-            .frame(height: 200)
+            .frame(height: 280)
             .padding()
             .onReceive(cloud) {
                 tiles = $0.tiles.count
