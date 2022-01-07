@@ -1,42 +1,35 @@
 import SwiftUI
 import Combine
+import Hero
 
 extension Map {
     struct Content: View {
         weak var status: Status!
         weak var leaderboards: PassthroughSubject<Void, Never>!
-        weak var center: PassthroughSubject<Void, Never>!
-        @State private var active = true
+        weak var center: PassthroughSubject<Bool, Never>!
+        @AppStorage(Defaults.follow.rawValue) private var follow = true
+        @AppStorage(Defaults.hide.rawValue) private var hidden = true
         @Environment(\.dismiss) private var dismiss
         
         var body: some View {
             List {
                 Section("Map") {
-                    Button {
-                        center.send()
-                    } label: {
-                        HStack {
-                            Text("Center on my location")
-                                .foregroundColor(.primary)
-                                .font(.footnote)
-                            Spacer()
-                            Image(systemName: "location.viewfinder")
-                                .symbolRenderingMode(.hierarchical)
-                                .font(.title3)
-                                .foregroundColor(.mint)
-                        }
-                        .allowsHitTesting(false)
+                    Toggle(isOn: $follow) {
+                        Text("Follow me")
+                    }
+                    .onChange(of: follow) {
+                        center.send($0)
                     }
                     
-                    Toggle(isOn: $active) {
+                    Toggle(isOn: $hidden) {
                         Text("Hide unexplored areas")
                     }
-                    .toggleStyle(SwitchToggleStyle(tint: .mint))
-                    .font(.footnote)
-                    .onChange(of: active) {
+                    .onChange(of: hidden) {
                         location.overlays.send($0)
                     }
                 }
+                .toggleStyle(SwitchToggleStyle(tint: .mint))
+                .font(.footnote)
                 .headerProminence(.increased)
                 
                 Section("Game Center") {
@@ -74,8 +67,9 @@ extension Map {
                     }
                 }
             }
-            .onReceive(location.overlays) {
-                active = $0
+            .onAppear {
+                center.send(Defaults.shouldFollow)
+                location.overlays.send(Defaults.shouldHide)
             }
         }
     }

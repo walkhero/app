@@ -10,7 +10,7 @@ extension Map {
         private let dispatch = DispatchQueue(label: "", qos: .utility)
         
         required init?(coder: NSCoder) { nil }
-        init(center: PassthroughSubject<Void, Never>) {
+        init(center: PassthroughSubject<Bool, Never>) {
             super.init(frame: .zero)
             isRotateEnabled = false
             isPitchEnabled = false
@@ -42,8 +42,7 @@ extension Map {
             
             center
                 .sink { [weak self] in
-                    guard let coordinate = self?.userLocation.coordinate else { return }
-                    self?.center(coordinate: coordinate)
+                    self?.setUserTrackingMode($0 ? .follow : .none, animated: true)
                 }
                 .store(in: &subs)
         }
@@ -58,7 +57,10 @@ extension Map {
             guard let coordinate = didUpdate.location?.coordinate else { return }
             if !centred {
                 centred = true
-                center(coordinate: coordinate)
+                setCamera(.init(lookingAtCenter: coordinate,
+                                fromDistance: 2500,
+                                pitch: 0,
+                                heading: 0), animated: false)
             }
         }
         
@@ -67,16 +69,5 @@ extension Map {
         }
         
         func updateUIView(_: Representable, context: Context) { }
-        
-        private func center(coordinate: CLLocationCoordinate2D) {
-            setCamera(.init(lookingAtCenter: coordinate,
-                            fromDistance: 2500,
-                            pitch: 0,
-                            heading: 0), animated: false)
-            
-            var point = convert(coordinate, toPointTo: self)
-            point.y += (bounds.height - point.y) / 2
-            camera.centerCoordinate = convert(point, toCoordinateFrom: self)
-        }
     }
 }
