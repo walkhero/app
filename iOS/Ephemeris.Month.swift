@@ -25,13 +25,17 @@ extension Ephemeris {
 
         private func leading(_ week: Int) -> CGFloat {
             .init(Calendar.current
-                    .leadingWeekdays(year: 2021, month: days.month, day: days.items[week].first!.value))
+                    .leadingWeekdays(year: days.year,
+                                     month: days.month,
+                                     day: days.items[week].first!.value))
             * 40
         }
 
         private func trailing(_ week: Int) -> CGFloat {
             .init(Calendar.current
-                    .trailingWeekdays(year: 2021, month: days.month, day: days.items[week].last!.value))
+                    .trailingWeekdays(year: days.year,
+                                      month: days.month,
+                                      day: days.items[week].last!.value))
             * 40
         }
 
