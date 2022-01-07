@@ -11,7 +11,7 @@ struct Navigation: View {
             Geo()
             Spacer()
             Text(streak.current, format: .number)
-                .font(.largeTitle.monospaced())
+                .font(.largeTitle.monospacedDigit())
             Text("Streak")
                 .font(.callout)
                 .foregroundColor(.secondary)
@@ -23,15 +23,17 @@ struct Navigation: View {
                     .foregroundColor(.secondary)
                     .font(.caption2)
             }
-            if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
-                Spacer()
-                Label("You haven't walked today", systemImage: "exclamationmark.triangle.fill")
-                    .symbolRenderingMode(.multicolor)
-                    .font(.footnote)
-                    .foregroundColor(.pink)
-                    .imageScale(.large)
-            }
+            
             Spacer()
+            
+            if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
+                Label("No walk today yet", systemImage: "exclamationmark.triangle.fill")
+                    .symbolRenderingMode(.hierarchical)
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
+                    .padding()
+            }
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             Bar()

@@ -6,20 +6,21 @@ struct Ephemeris: View {
     @State private var streak = Streak.zero
     @State private var updated: DateInterval?
     @State private var index = 0
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationView {
             List {
-                Section {
-                    Week()
-                } header: {
-                    if !calendar.isEmpty {
+                if !calendar.isEmpty {
+                    Section {
                         Navigation(index: $index, calendar: calendar)
                             .textCase(nil)
+                        Week()
                     }
-                }
-                
-                if !calendar.isEmpty {
+                    .listRowBackground(Color.clear)
+                    .listSectionSeparator(.hidden)
+                    .listRowSeparator(.hidden)
+                    
                     Section {
                         Month(days: calendar[index],
                               previous: index > 0 && calendar[index - 1].items.last!.last!.hit,
@@ -52,6 +53,20 @@ struct Ephemeris: View {
             .listStyle(.insetGrouped)
             .navigationTitle("Calendar")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Done")
+                            .font(.callout.weight(.medium))
+                            .padding(.leading)
+                            .frame(height: 34)
+                            .contentShape(Rectangle())
+                            .allowsHitTesting(false)
+                    }
+                }
+            }
         }
         .navigationViewStyle(.stack)
         .onReceive(cloud) {

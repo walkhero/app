@@ -17,9 +17,7 @@ extension Navigation {
                             .allowsHitTesting(false)
                     }
                     .frame(width: 50)
-                    .sheet(isPresented: $calendar) {
-                        Ephemeris()
-                    }
+                    .sheet(isPresented: $calendar, content: Ephemeris.init)
                     
                     Spacer()
                     

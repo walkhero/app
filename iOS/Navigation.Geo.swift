@@ -27,7 +27,7 @@ extension Navigation {
                     Group {
                         Text(tiles, format: .number)
                             .foregroundColor(.white)
-                            .font(.callout.monospaced())
+                            .font(.callout.monospacedDigit())
                         + Text(tiles == 1 ? " square" : " squares")
                             .foregroundColor(.init(white: 0.7))
                             .font(.footnote)
