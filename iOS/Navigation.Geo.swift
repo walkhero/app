@@ -37,7 +37,7 @@ extension Navigation {
                 .clipShape(RoundedRectangle(cornerRadius: radius))
                 .allowsHitTesting(false)
             }
-            .frame(height: 280)
+            .frame(height: 260)
             .padding()
             .onReceive(cloud) {
                 tiles = $0.tiles.count
