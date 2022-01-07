@@ -73,8 +73,7 @@ extension Map {
                     .frame(width: 44)
                     .sheet(isPresented: $calendar, content: Ephemeris.init)
                 }
-                .padding([.leading, .trailing, .top])
-                .padding(.bottom, 5)
+                .padding()
             }
             .background(Color(.secondarySystemBackground))
         }

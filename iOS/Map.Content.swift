@@ -7,12 +7,38 @@ extension Map {
         weak var status: Status!
         weak var leaderboards: PassthroughSubject<Void, Never>!
         weak var center: PassthroughSubject<Bool, Never>!
+        @State private var walking: TimeInterval?
         @AppStorage(Defaults.follow.rawValue) private var follow = true
         @AppStorage(Defaults.hide.rawValue) private var hidden = true
         @Environment(\.dismiss) private var dismiss
         
         var body: some View {
             List {
+                if let walking = walking {
+                    
+                } else {
+                    Section {
+                        Text("Start a walk")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .frame(maxWidth: .greatestFiniteMagnitude, alignment: .center)
+                    } header: {
+                        HStack {
+                            Spacer()
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "figure.walk.circle.fill")
+                                    .symbolRenderingMode(.hierarchical)
+                                    .font(.largeTitle)
+                            }
+                            .padding(.top)
+                            Spacer()
+                        }
+                    }
+                    .listRowBackground(Color.clear)
+                }
+                
                 Section("Map") {
                     Toggle(isOn: $follow) {
                         Text("Follow me")
@@ -53,23 +79,12 @@ extension Map {
             .safeAreaInset(edge: .top, spacing: 0) {
                 Header(status: status)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Text("Done")
-                            .font(.callout)
-                            .padding(.leading)
-                            .frame(height: 34)
-                            .allowsHitTesting(false)
-                            .contentShape(Rectangle())
-                    }
-                }
-            }
             .onAppear {
                 center.send(Defaults.shouldFollow)
                 location.overlays.send(Defaults.shouldHide)
+            }
+            .onReceive(cloud) {
+                walking = $0.walking
             }
         }
     }
