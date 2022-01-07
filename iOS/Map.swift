@@ -1,26 +1,18 @@
 import SwiftUI
+import Combine
 
 struct Map: View {
-    weak var representable: Representable!
-    @Environment(\.dismiss) private var dismiss
+    weak var status: Status!
+    private let center = PassthroughSubject<Void, Never>()
     
     var body: some View {
-        NavigationView {
-            VStack {
-                representable
+        Representable(center: center)
+            .equatable()
+            .edgesIgnoringSafeArea(.all)
+            .sheet(isPresented: .constant(true)) {
+                Options(status: status, center: center)
                     .equatable()
-                    .edgesIgnoringSafeArea(.all)
+                    .edgesIgnoringSafeArea(.bottom)
             }
-            .safeAreaInset(edge: .top, spacing: 0) {
-                Header {
-                    dismiss()
-                }
-            }
-            .safeAreaInset(edge: .bottom, spacing: 0) {
-                Bar(representable: representable, follow: representable.userTrackingMode == .follow)
-            }
-            .navigationBarHidden(true)
-        }
-        .navigationViewStyle(.stack)
     }
 }

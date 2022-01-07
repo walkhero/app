@@ -20,12 +20,6 @@ struct Game {
         }
     }
     
-    func leaderboard() {
-        let controller = GKGameCenterViewController(leaderboardID: Challenge.streak.rawValue, playerScope: .global, timeScope: .allTime)
-        controller.gameCenterDelegate = UIApplication.shared
-        UIApplication.shared.present(controller: controller)
-    }
-    
     func submit(_ challenge: Challenge, _ value: Int) {
         #if !DEBUG
             GKLeaderboard.submitScore(

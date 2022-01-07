@@ -1,40 +1,82 @@
 import SwiftUI
+import Combine
+
+private let size = 32.0
+private let radius = 8.0
 
 extension Map {
     struct Header: View {
-        let close: () -> Void
-        @State private var tiles = 0
+        @ObservedObject var status: Status
+        @State private var stats = false
+        @State private var calendar = false
         
         var body: some View {
             VStack(spacing: 0) {
                 HStack {
-                    Group {
-                        Text(tiles, format: .number)
-                            .foregroundColor(.primary)
-                            .font(.title3.monospacedDigit())
-                        + Text(tiles == 1 ? " square" : " squares")
-                            .foregroundColor(.secondary)
-                            .font(.callout)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: radius, style: .continuous)
+                            .fill(LinearGradient(
+                                gradient: .init(colors: [.accentColor.opacity(0.6), .accentColor]),
+                                    startPoint: .top,
+                                    endPoint: .bottom))
+                            .frame(width: size, height: size)
+
+                        if let image = status.image {
+                            Image(uiImage: image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: size - 3, height: size - 3)
+                                .clipShape(RoundedRectangle(cornerRadius: radius, style: .continuous))
+                        } else {
+                            Image(systemName: "person.fill")
+                                .font(.body)
+                                .foregroundColor(.white)
+                        }
                     }
-                    .padding()
+                    .allowsHitTesting(false)
+                    
+                    Text(verbatim: status.name)
+                        .lineLimit(2)
+                        .foregroundColor(.primary)
+                        .font(.footnote)
+                        .allowsHitTesting(false)
+                    
                     Spacer()
-                    Button(action: close) {
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.secondary)
-                            .symbolRenderingMode(.hierarchical)
-                            .font(.title2)
-                            .frame(width: 50, height: 50)
-                            .contentShape(Rectangle())
+                    
+                    Button {
+                        stats = true
+                    } label: {
+                        Image(systemName: "chart.xyaxis.line")
+                            .font(.callout)
+                            .allowsHitTesting(false)
                     }
+                    .frame(width: 44)
+                    .sheet(isPresented: $stats, content: Stats.init)
+                    
+                    Button {
+                        calendar = true
+                    } label: {
+                        Image(systemName: "calendar")
+                            .font(.callout)
+                            .allowsHitTesting(false)
+                    }
+                    .frame(width: 44)
+                    .sheet(isPresented: $calendar, content: Ephemeris.init)
+                    
+                    Button {
+                        calendar = true
+                    } label: {
+                        Image(systemName: "gear")
+                            .font(.callout)
+                            .allowsHitTesting(false)
+                    }
+                    .frame(width: 44)
+                    .sheet(isPresented: $calendar, content: Ephemeris.init)
                 }
-                .padding(.horizontal, 5)
-                Divider()
-                    .ignoresSafeArea(edges: .horizontal)
+                .padding([.leading, .trailing, .top])
+                .padding(.bottom, 5)
             }
-            .background(.thinMaterial)
-            .onReceive(cloud) {
-                tiles = $0.tiles.count
-            }
+            .background(Color(.secondarySystemBackground))
         }
     }
 }

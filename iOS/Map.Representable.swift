@@ -9,13 +9,8 @@ extension Map {
         private var subs = Set<AnyCancellable>()
         private let dispatch = DispatchQueue(label: "", qos: .utility)
         
-        deinit {
-            print("gone")
-        }
-        
         required init?(coder: NSCoder) { nil }
-        init() {
-            print("init")
+        init(center: PassthroughSubject<Void, Never>) {
             super.init(frame: .zero)
             isRotateEnabled = false
             isPitchEnabled = false
@@ -44,6 +39,13 @@ extension Map {
                     }
                 }
                 .store(in: &subs)
+            
+            center
+                .sink { [weak self] in
+                    guard let coordinate = self?.userLocation.coordinate else { return }
+                    self?.center(coordinate: coordinate)
+                }
+                .store(in: &subs)
         }
         
         func mapView(_: MKMapView, rendererFor: MKOverlay) -> MKOverlayRenderer {
@@ -56,10 +58,7 @@ extension Map {
             guard let coordinate = didUpdate.location?.coordinate else { return }
             if !centred {
                 centred = true
-                setCamera(.init(lookingAtCenter: coordinate,
-                                fromDistance: 500,
-                                pitch: 0,
-                                heading: 0), animated: false)
+                center(coordinate: coordinate)
             }
         }
         
@@ -68,5 +67,16 @@ extension Map {
         }
         
         func updateUIView(_: Representable, context: Context) { }
+        
+        private func center(coordinate: CLLocationCoordinate2D) {
+            setCamera(.init(lookingAtCenter: coordinate,
+                            fromDistance: 2500,
+                            pitch: 0,
+                            heading: 0), animated: false)
+            
+            var point = convert(coordinate, toPointTo: self)
+            point.y += (bounds.height - point.y) / 2
+            camera.centerCoordinate = convert(point, toCoordinateFrom: self)
+        }
     }
 }
