@@ -1,45 +1,39 @@
 import SwiftUI
 import Combine
 
-private let size = 32.0
-private let radius = 8.0
+private var width = 50.0
 
-extension Map {
+extension Map.Content {
     struct Header: View {
-        @ObservedObject var status: Status
+        let walking: Bool
         @State private var stats = false
         @State private var calendar = false
         
         var body: some View {
             VStack(spacing: 0) {
                 HStack {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: radius, style: .continuous)
-                            .fill(LinearGradient(
-                                gradient: .init(colors: [.accentColor.opacity(0.6), .accentColor]),
-                                    startPoint: .top,
-                                    endPoint: .bottom))
-                            .frame(width: size, height: size)
-
-                        if let image = status.image {
-                            Image(uiImage: image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: size - 3, height: size - 3)
-                                .clipShape(RoundedRectangle(cornerRadius: radius, style: .continuous))
-                        } else {
-                            Image(systemName: "person.fill")
-                                .font(.body)
-                                .foregroundColor(.white)
+                    if walking {
+                        Button {
+                            Task {
+                                await cloud.cancel()
+                            }
+                        } label: {
+                            Text("Cancel walk")
+                                .font(.footnote)
                         }
+                        .buttonStyle(.plain)
+                        .foregroundColor(.secondary)
+                    } else {
+                        Button {
+                            Task {
+                                await cloud.start()
+                            }
+                        } label: {
+                            Text("Start a walk")
+                                .font(.footnote)
+                        }
+                        .buttonStyle(.borderedProminent)
                     }
-                    .allowsHitTesting(false)
-                    
-                    Text(verbatim: status.name)
-                        .lineLimit(2)
-                        .foregroundColor(.primary)
-                        .font(.footnote)
-                        .allowsHitTesting(false)
                     
                     Spacer()
                     
@@ -50,7 +44,7 @@ extension Map {
                             .font(.callout)
                             .allowsHitTesting(false)
                     }
-                    .frame(width: 44)
+                    .frame(width: width)
                     .sheet(isPresented: $stats, content: Stats.init)
                     
                     Button {
@@ -60,7 +54,7 @@ extension Map {
                             .font(.callout)
                             .allowsHitTesting(false)
                     }
-                    .frame(width: 44)
+                    .frame(width: width)
                     .sheet(isPresented: $calendar, content: Ephemeris.init)
                     
                     Button {
@@ -70,7 +64,7 @@ extension Map {
                             .font(.callout)
                             .allowsHitTesting(false)
                     }
-                    .frame(width: 44)
+                    .frame(width: width)
                     .sheet(isPresented: $calendar, content: Ephemeris.init)
                 }
                 .padding()

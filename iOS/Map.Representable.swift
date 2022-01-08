@@ -10,7 +10,7 @@ extension Map {
         private let dispatch = DispatchQueue(label: "", qos: .utility)
         
         required init?(coder: NSCoder) { nil }
-        init(center: PassthroughSubject<Bool, Never>) {
+        init() {
             super.init(frame: .zero)
             isRotateEnabled = false
             isPitchEnabled = false
@@ -40,7 +40,8 @@ extension Map {
                 }
                 .store(in: &subs)
             
-            center
+            location
+                .center
                 .sink { [weak self] in
                     self?.setUserTrackingMode($0 ? .follow : .none, animated: true)
                 }

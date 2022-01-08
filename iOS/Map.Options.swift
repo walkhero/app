@@ -7,9 +7,9 @@ extension Map {
         private var subs = Set<AnyCancellable>()
         
         required init?(coder: NSCoder) { nil }
-        init(status: Status, center: PassthroughSubject<Bool, Never>) {
+        init(status: Status) {
             let leaderboards = PassthroughSubject<Void, Never>()
-            super.init(rootView: .init(status: status, leaderboards: leaderboards, center: center))
+            super.init(rootView: .init(status: status, leaderboards: leaderboards))
             
             leaderboards
                 .sink { [weak self] in
