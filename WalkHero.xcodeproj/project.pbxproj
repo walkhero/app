@@ -44,6 +44,7 @@
 		CEF40CB92779FB62001BECAB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB82779FB62001BECAB /* Status.swift */; };
 		CEF40CBB2779FB8A001BECAB /* Froob.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CBA2779FB8A001BECAB /* Froob.swift */; };
 		CEF40CBD2779FBB3001BECAB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF40CBC2779FBB3001BECAB /* Media.xcassets */; };
+		CEF9E4522789CD58004EFD64 /* GraphicsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		CEF40CB82779FB62001BECAB /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		CEF40CBA2779FB8A001BECAB /* Froob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Froob.swift; sourceTree = "<group>"; };
 		CEF40CBC2779FBB3001BECAB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsContext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			children = (
 				CEF40CAB2779F6E2001BECAB /* Copy.swift */,
 				CEF40CA92779F6D9001BECAB /* Global.swift */,
+				CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */,
 				CE96340D277C6D3C00CCFF4B /* Location.swift */,
 				CEF40CA52779F6CE001BECAB /* Store.Item.swift */,
 				CEF40CA42779F6CE001BECAB /* Store.State.swift */,
@@ -274,6 +277,7 @@
 				CEC805BA277B36B400D1B046 /* Map.swift in Sources */,
 				CEC805B2277B1C7500D1B046 /* Map.Content.Header.swift in Sources */,
 				CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */,
+				CEF9E4522789CD58004EFD64 /* GraphicsContext.swift in Sources */,
 				CE96340E277C6D3C00CCFF4B /* Location.swift in Sources */,
 				CEA12ED82788814C008D1084 /* Stats.swift in Sources */,
 				CE963418277C9C9900CCFF4B /* Map.Content.swift in Sources */,

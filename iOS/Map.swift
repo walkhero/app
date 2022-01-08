@@ -10,7 +10,7 @@ struct Map: View {
             VStack {
                 Representable()
                     .equatable()
-                    .frame(height: options ? proxy.size.height * 0.55 : nil)
+                    .frame(height: options ? proxy.size.height * 0.6 : nil)
                     .edgesIgnoringSafeArea(.all)
                 if options {
                     Spacer()

@@ -4,12 +4,29 @@ extension Map.Content {
     struct Walking: View {
         weak var status: Status!
         let started: Date
-        @State private var elapsed = ""
-        private let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
         
         var body: some View {
             Section {
-                Text(elapsed)
+                TimelineView(.periodic(from: started, by: 0.25)) { time in
+                    Canvas { context, size in
+                        let duration = time.date.timeIntervalSince(started)
+                        let center = CGPoint(x: size.width / 2, y: 100)
+                        
+                        context.draw(clock: .init(round(duration.truncatingRemainder(dividingBy: 60) * 2)),
+                                     center: center,
+                                     side: 80)
+                        status
+                            .components
+                            .string(from: duration)
+                            .map {
+                                context.draw(Text($0)
+                                                .font(.title.monospaced().weight(.ultraLight)), at: center)
+                            }
+                    }
+                    
+                }
+                .frame(height: 200)
+                
 //                if let walking = walking {
 //                    Section {
 //
@@ -37,20 +54,9 @@ extension Map.Content {
 //                    .listRowBackground(Color.clear)
 //                }
             }
-            .onAppear {
-                refresh(.now)
-            }
-            .onReceive(timer, perform: refresh)
-        }
-        
-        private func refresh(_ date: Date) {
-            status
-                .components
-                .string(from: date.timeIntervalSince(started))
-                .map {
-                    elapsed = $0
-                }
-            
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            .listSectionSeparator(.hidden)
         }
     }
 }
