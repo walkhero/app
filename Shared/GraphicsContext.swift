@@ -2,10 +2,6 @@ import SwiftUI
 
 extension GraphicsContext {
     mutating func draw(clock: Int, center: CGPoint, side: CGFloat) {
-//        translateBy(x: center.x, y: center.y)
-//        rotate(by: .degrees(-180))
-//        translateBy(x: -center.x, y: -center.y)
-
         (0 ..< 120)
             .forEach { index in
                 translateBy(x: center.x, y: center.y)

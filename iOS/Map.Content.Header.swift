@@ -8,21 +8,33 @@ extension Map.Content {
         let walking: Bool
         @State private var stats = false
         @State private var calendar = false
+        @State private var alert = false
         
         var body: some View {
             VStack(spacing: 0) {
                 HStack {
                     if walking {
+                        Image(systemName: "figure.walk")
+                            .foregroundColor(.accentColor)
                         Button {
-                            Task {
-                                await cloud.cancel()
-                            }
+                            alert = true
                         } label: {
-                            Text("Cancel walk")
+                            Text("Cancel")
                                 .font(.footnote)
                         }
                         .buttonStyle(.plain)
                         .foregroundColor(.secondary)
+                        .alert("Cancel walk?", isPresented: $alert) {
+                            Button("Continue", role: .cancel) {
+                                
+                            }
+                            Button("Cancel", role: .destructive) {
+                                Task {
+                                    await cloud.cancel()
+                                }
+                            }
+                        }
+                        
                     } else {
                         Button {
                             Task {
@@ -67,7 +79,7 @@ extension Map.Content {
                     .frame(width: width)
                     .sheet(isPresented: $calendar, content: Ephemeris.init)
                 }
-                .padding()
+                .padding([.leading, .trailing, .top])
             }
             .background(Color(.secondarySystemBackground))
         }

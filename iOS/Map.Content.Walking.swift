@@ -23,40 +23,33 @@ extension Map.Content {
                                                 .font(.title.monospaced().weight(.ultraLight)), at: center)
                             }
                     }
-                    
                 }
-                .frame(height: 200)
+                .frame(height: 180)
                 
-//                if let walking = walking {
-//                    Section {
-//
-//                    }
-//                } else {
-//                    Section {
-//                        Text("Start a walk")
-//                            .font(.caption)
-//                            .foregroundColor(.secondary)
-//                            .frame(maxWidth: .greatestFiniteMagnitude, alignment: .center)
-//                    } header: {
-//                        HStack {
-//                            Spacer()
-//                            Button {
-//
-//                            } label: {
-//                                Image(systemName: "figure.walk.circle.fill")
-//                                    .symbolRenderingMode(.hierarchical)
-//                                    .font(.largeTitle)
-//                            }
-//                            .padding(.top)
-//                            Spacer()
-//                        }
-//                    }
-//                    .listRowBackground(Color.clear)
-//                }
+                HStack {
+                    Spacer()
+                    Button {
+                        Task {
+                            await cloud.finish(steps: 0, metres: 0, tiles: [])
+                        }
+                    } label: {
+                        Text("Finish")
+                            .frame(maxWidth: 150)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .padding(.top)
+                    Spacer()
+                }
             }
             .listRowBackground(Color.clear)
             .listRowSeparator(.hidden)
             .listSectionSeparator(.hidden)
+            
+            Section {
+                Text("Steps")
+                Text("Distance")
+                Text("Squares")
+            }
         }
     }
 }
