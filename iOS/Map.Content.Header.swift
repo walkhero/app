@@ -10,6 +10,7 @@ extension Map.Content {
         weak var animate: PassthroughSubject<UISheetPresentationController.Detent.Identifier, Never>!
         @State private var stats = false
         @State private var calendar = false
+        @State private var settings = false
         @State private var alert = false
         
         var body: some View {
@@ -78,14 +79,14 @@ extension Map.Content {
                     .sheet(isPresented: $calendar, content: Ephemeris.init)
                     
                     Button {
-                        calendar = true
+                        settings = true
                     } label: {
                         Image(systemName: "gear")
                             .font(.callout)
                             .allowsHitTesting(false)
                     }
                     .frame(width: width)
-                    .sheet(isPresented: $calendar, content: Ephemeris.init)
+                    .sheet(isPresented: $settings, content: Settings.init)
                 }
                 .padding([.leading, .trailing, .top])
                 .padding(.bottom, 10)
