@@ -6,6 +6,7 @@ final class Location: NSObject, CLLocationManagerDelegate {
     let tiles = CurrentValueSubject<Set<Tile>, Never>([])
     let overlays = CurrentValueSubject<Bool, Never>(true)
     let center = PassthroughSubject<Bool, Never>()
+    private(set) var started = false
     private let manager = CLLocationManager()
     
     override init() {
@@ -22,6 +23,7 @@ final class Location: NSObject, CLLocationManagerDelegate {
     }
     
     func start() {
+        started = true
         manager.startUpdatingLocation()
         
         #if os(iOS)
@@ -31,6 +33,7 @@ final class Location: NSObject, CLLocationManagerDelegate {
     }
     
     func end() {
+        started = false
         tiles.value = []
         
         #if os(iOS)

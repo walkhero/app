@@ -31,8 +31,15 @@ extension Map {
                 withAnimation(.easeInOut(duration: 0.5)) {
                     walking = started
                 }
-                if let date = started, !health.started {
-                    health.start(date: date)
+                
+                if let date = started {
+                    if !health.started {
+                        health.start(date: date)
+                    }
+                    
+                    if !location.started {
+                        location.start()
+                    }
                 }
             }
         }

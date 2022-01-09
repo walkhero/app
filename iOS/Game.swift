@@ -20,13 +20,31 @@ struct Game {
         }
     }
     
-    func submit(_ challenge: Challenge, _ value: Int) {
-        #if !DEBUG
-            GKLeaderboard.submitScore(
-                value,
-                context: 0,
-                player: GKLocalPlayer.local,
-                leaderboardIDs: [challenge.leaderboard]) { _ in }
-        #endif
+    func submit(streak: Int, steps: Int, distance: Int, map: Int) {
+//        #if !DEBUG
+        GKLeaderboard.submitScore(
+            streak,
+            context: 0,
+            player: GKLocalPlayer.local,
+            leaderboardIDs: [Challenge.streak.leaderboard]) { _ in }
+        
+        GKLeaderboard.submitScore(
+            steps,
+            context: 0,
+            player: GKLocalPlayer.local,
+            leaderboardIDs: [Challenge.steps.leaderboard]) { _ in }
+        
+        GKLeaderboard.submitScore(
+            distance,
+            context: 0,
+            player: GKLocalPlayer.local,
+            leaderboardIDs: [Challenge.distance.leaderboard]) { _ in }
+        
+        GKLeaderboard.submitScore(
+            map,
+            context: 0,
+            player: GKLocalPlayer.local,
+            leaderboardIDs: [Challenge.map.leaderboard]) { _ in }
+//        #endif
     }
 }

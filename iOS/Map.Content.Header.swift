@@ -35,6 +35,7 @@ extension Map.Content {
                                 Task {
                                     await cloud.cancel()
                                     health.clear()
+                                    location.end()
                                     await UNUserNotificationCenter.send(message: "Walk cancelled!")
                                 }
                                 animate.send(.medium)

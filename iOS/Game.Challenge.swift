@@ -6,4 +6,8 @@ enum Challenge: String {
     steps,
     distance,
     map
+    
+    var leaderboard: String {
+        "\(self)"
+    }
 }

@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import Hero
 
 extension Map.Content {
     struct Walking: View {
@@ -7,6 +8,8 @@ extension Map.Content {
         @ObservedObject var health: Health
         weak var animate: PassthroughSubject<UISheetPresentationController.Detent.Identifier, Never>!
         let started: Date
+        @State private var currentTiles = Set<Tile>([])
+        @State private var newTiles = Set<Tile>([])
         
         var body: some View {
             Section {
@@ -33,9 +36,21 @@ extension Map.Content {
                     Spacer()
                     Button {
                         Task {
-                            await cloud.finish(steps: 0, metres: 0, tiles: [])
+                            let steps = health.steps
+                            let distance = health.distance
+                            let tiles = newTiles
+                            
+                            await cloud.finish(steps: steps,
+                                               metres: distance,
+                                               tiles: tiles)
                             health.clear()
+                            location.end()
                             await UNUserNotificationCenter.send(message: "Walk finished!")
+                            
+                            let streak = await cloud.model.calendar.streak.current
+                            let map = await cloud.model.tiles.count
+                            
+                            game.submit(streak: streak, steps: steps, distance: distance, map: map)
                         }
                         animate.send(.medium)
                     } label: {
@@ -58,20 +73,36 @@ extension Map.Content {
                         .font(.footnote)
                     Spacer()
                     Text(health.steps, format: .number)
+                        .font(.callout.monospacedDigit().weight(.light))
                 }
                 HStack {
                     Text("Distance")
                         .foregroundColor(.secondary)
                         .font(.footnote)
                     Spacer()
-                    Text(health.distance, format: .number)
+                    Text(.init(value: .init(health.distance),
+                                     unit: UnitLength.meters),
+                         format: .measurement(width: .wide,
+                                              usage: .road,
+                                              numberFormatStyle: .number))
+                        .font(.callout.monospacedDigit().weight(.light))
                 }
                 HStack {
-                    Text("Squares")
+                    Text("New squares")
                         .foregroundColor(.secondary)
                         .font(.footnote)
                     Spacer()
+                    Text(newTiles
+                            .subtracting(currentTiles)
+                            .count, format: .number)
+                        .font(.callout.monospacedDigit().weight(.light))
                 }
+            }
+            .onReceive(location.tiles) {
+                newTiles = $0
+            }
+            .onReceive(cloud) {
+                currentTiles = $0.tiles
             }
         }
     }

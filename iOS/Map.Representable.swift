@@ -18,6 +18,7 @@ extension Map {
             mapType = .standard
             delegate = self
             setUserTrackingMode(.follow, animated: false)
+            setCameraZoomRange(.init(maxCenterCoordinateDistance: 500), animated: false)
             
             cloud
                 .map(\.tiles)
@@ -59,7 +60,7 @@ extension Map {
             if !centred {
                 centred = true
                 setCamera(.init(lookingAtCenter: coordinate,
-                                fromDistance: 2500,
+                                fromDistance: 500,
                                 pitch: 0,
                                 heading: 0), animated: false)
             }
