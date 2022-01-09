@@ -44,19 +44,20 @@ extension Map.Content {
                 Button {
                     leaderboards.send()
                 } label: {
-                    HStack {
-                        Text("Leaderboards")
-                        Spacer()
-                        Image(systemName: "list.star")
-                            .symbolRenderingMode(.hierarchical)
-                    }
-                    .foregroundColor(.accentColor)
-                    .font(.footnote.weight(.medium))
-                    .imageScale(.large)
-                    .allowsHitTesting(false)
+                    Label("Leaderboards", systemImage: "list.star")
+                        .font(.callout.weight(.medium))
+                        .frame(maxWidth: .greatestFiniteMagnitude)
+                        .imageScale(.large)
+                        .allowsHitTesting(false)
                 }
+                .buttonStyle(.borderedProminent)
+                .tint(.mint)
+                .foregroundColor(.white)
             }
             .headerProminence(.increased)
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            .listSectionSeparator(.hidden)
         }
     }
 }

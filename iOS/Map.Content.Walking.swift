@@ -1,8 +1,10 @@
 import SwiftUI
+import Combine
 
 extension Map.Content {
     struct Walking: View {
         weak var status: Status!
+        weak var animate: PassthroughSubject<UISheetPresentationController.Detent.Identifier, Never>!
         let started: Date
         
         var body: some View {
@@ -31,10 +33,12 @@ extension Map.Content {
                     Button {
                         Task {
                             await cloud.finish(steps: 0, metres: 0, tiles: [])
+                            await UNUserNotificationCenter.send(message: "Walk finished!")
                         }
+                        animate.send(.medium)
                     } label: {
                         Text("Finish")
-                            .frame(maxWidth: 150)
+                            .frame(maxWidth: 120)
                     }
                     .buttonStyle(.borderedProminent)
                     .padding(.top)
@@ -46,9 +50,24 @@ extension Map.Content {
             .listSectionSeparator(.hidden)
             
             Section {
-                Text("Steps")
-                Text("Distance")
-                Text("Squares")
+                HStack {
+                    Text("Steps")
+                        .foregroundColor(.secondary)
+                        .font(.footnote)
+                    Spacer()
+                }
+                HStack {
+                    Text("Distance")
+                        .foregroundColor(.secondary)
+                        .font(.footnote)
+                    Spacer()
+                }
+                HStack {
+                    Text("Squares")
+                        .foregroundColor(.secondary)
+                        .font(.footnote)
+                    Spacer()
+                }
             }
         }
     }

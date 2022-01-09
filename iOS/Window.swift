@@ -15,6 +15,8 @@ struct Window: View {
                 case .none:
                     break
                 }
+                
+                _ = await UNUserNotificationCenter.request()
             }
     }
 }

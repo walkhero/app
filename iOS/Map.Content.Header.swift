@@ -6,6 +6,7 @@ private var width = 50.0
 extension Map.Content {
     struct Header: View {
         let walking: Bool
+        weak var animate: PassthroughSubject<UISheetPresentationController.Detent.Identifier, Never>!
         @State private var stats = false
         @State private var calendar = false
         @State private var alert = false
@@ -28,10 +29,13 @@ extension Map.Content {
                             Button("Continue", role: .cancel) {
                                 
                             }
+                            
                             Button("Cancel", role: .destructive) {
                                 Task {
                                     await cloud.cancel()
+                                    await UNUserNotificationCenter.send(message: "Walk cancelled!")
                                 }
+                                animate.send(.medium)
                             }
                         }
                         
@@ -39,6 +43,7 @@ extension Map.Content {
                         Button {
                             Task {
                                 await cloud.start()
+                                await UNUserNotificationCenter.send(message: "Walk started!")
                             }
                         } label: {
                             Text("Start a walk")
@@ -80,6 +85,12 @@ extension Map.Content {
                     .sheet(isPresented: $calendar, content: Ephemeris.init)
                 }
                 .padding([.leading, .trailing, .top])
+                .padding(.bottom, 10)
+                Rectangle()
+                    .fill(Color.primary.opacity(0.05))
+                    .frame(height: 1)
+                    .padding(.horizontal)
+                    .allowsHitTesting(false)
             }
             .background(Color(.secondarySystemBackground))
         }

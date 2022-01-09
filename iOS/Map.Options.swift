@@ -9,7 +9,10 @@ extension Map {
         required init?(coder: NSCoder) { nil }
         init(status: Status) {
             let leaderboards = PassthroughSubject<Void, Never>()
-            super.init(rootView: .init(status: status, leaderboards: leaderboards))
+            let animate = PassthroughSubject<UISheetPresentationController.Detent.Identifier, Never>()
+            super.init(rootView: .init(status: status,
+                                       leaderboards: leaderboards,
+                                       animate: animate))
             
             leaderboards
                 .sink { [weak self] in
@@ -17,12 +20,18 @@ extension Map {
                                                                 playerScope: .global,
                                                                 timeScope: .allTime)
                     controller.gameCenterDelegate = UIApplication.shared
+                    animate.send(.large)
+                    self?.present(controller, animated: true)
+                }
+                .store(in: &subs)
+            
+            animate
+                .sink { [weak self] detent in
                     self?.sheetPresentationController
                         .map { sheet in
                             sheet.animateChanges {
-                                sheet.selectedDetentIdentifier = .large
+                                sheet.selectedDetentIdentifier = detent
                             }
-                            self?.present(controller, animated: true)
                         }
                 }
                 .store(in: &subs)
