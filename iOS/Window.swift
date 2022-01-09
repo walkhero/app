@@ -6,7 +6,7 @@ struct Window: View {
     @StateObject private var health = Health()
     
     var body: some View {
-        Map(status: status)
+        Map(status: status, health: health)
             .task {
                 switch Defaults.action {
                 case .rate:

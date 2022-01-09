@@ -4,6 +4,7 @@ import HealthKit
 final class Health: ObservableObject {
     @Published private(set) var steps = 0
     @Published private(set) var distance = 0
+    private(set) var started = false
     private var queries = Set<HKQuery>()
     private let store = HKHealthStore()
     
@@ -12,6 +13,7 @@ final class Health: ObservableObject {
         queries = []
         steps = 0
         distance = 0
+        started = false
     }
     
     func request() async {
@@ -25,6 +27,7 @@ final class Health: ObservableObject {
         guard HKHealthStore.isHealthDataAvailable() else { return }
         
         clear()
+        started = true
         
         Challenge
             .steps

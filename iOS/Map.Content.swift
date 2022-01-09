@@ -4,6 +4,7 @@ import Combine
 extension Map {
     struct Content: View {
         weak var status: Status!
+        weak var health: Health!
         weak var leaderboards: PassthroughSubject<Void, Never>!
         weak var animate: PassthroughSubject<UISheetPresentationController.Detent.Identifier, Never>!
         @State private var walking: Date?
@@ -12,6 +13,7 @@ extension Map {
             List {
                 if let walking = walking {
                     Walking(status: status,
+                            health: health,
                             animate: animate,
                             started: walking)
                 }
@@ -20,11 +22,17 @@ extension Map {
             }
             .listStyle(.insetGrouped)
             .safeAreaInset(edge: .top, spacing: 0) {
-                Header(walking: walking != nil, animate: animate)
+                Header(walking: walking != nil,
+                       health: health,
+                       animate: animate)
             }
             .onReceive(cloud) { model in
+                let started = model.walking
                 withAnimation(.easeInOut(duration: 0.5)) {
-                    walking = model.walking
+                    walking = started
+                }
+                if let date = started, !health.started {
+                    health.start(date: date)
                 }
             }
         }

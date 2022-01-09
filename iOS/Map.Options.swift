@@ -7,10 +7,11 @@ extension Map {
         private var subs = Set<AnyCancellable>()
         
         required init?(coder: NSCoder) { nil }
-        init(status: Status) {
+        init(status: Status, health: Health) {
             let leaderboards = PassthroughSubject<Void, Never>()
             let animate = PassthroughSubject<UISheetPresentationController.Detent.Identifier, Never>()
             super.init(rootView: .init(status: status,
+                                       health: health,
                                        leaderboards: leaderboards,
                                        animate: animate))
             

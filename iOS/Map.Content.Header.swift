@@ -6,6 +6,7 @@ private var width = 50.0
 extension Map.Content {
     struct Header: View {
         let walking: Bool
+        weak var health: Health!
         weak var animate: PassthroughSubject<UISheetPresentationController.Detent.Identifier, Never>!
         @State private var stats = false
         @State private var calendar = false
@@ -33,6 +34,7 @@ extension Map.Content {
                             Button("Cancel", role: .destructive) {
                                 Task {
                                     await cloud.cancel()
+                                    health.clear()
                                     await UNUserNotificationCenter.send(message: "Walk cancelled!")
                                 }
                                 animate.send(.medium)

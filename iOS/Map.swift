@@ -3,6 +3,7 @@ import Combine
 
 struct Map: View {
     weak var status: Status!
+    weak var health: Health!
     @State private var options = false
     
     var body: some View {
@@ -24,7 +25,7 @@ struct Map: View {
             }
         }
         .sheet(isPresented: $options) {
-            Options(status: status)
+            Options(status: status, health: health)
                 .equatable()
                 .edgesIgnoringSafeArea(.bottom)
         }

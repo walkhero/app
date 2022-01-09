@@ -4,6 +4,7 @@ import Combine
 extension Map.Content {
     struct Walking: View {
         weak var status: Status!
+        @ObservedObject var health: Health
         weak var animate: PassthroughSubject<UISheetPresentationController.Detent.Identifier, Never>!
         let started: Date
         
@@ -33,6 +34,7 @@ extension Map.Content {
                     Button {
                         Task {
                             await cloud.finish(steps: 0, metres: 0, tiles: [])
+                            health.clear()
                             await UNUserNotificationCenter.send(message: "Walk finished!")
                         }
                         animate.send(.medium)
@@ -55,12 +57,14 @@ extension Map.Content {
                         .foregroundColor(.secondary)
                         .font(.footnote)
                     Spacer()
+                    Text(health.steps, format: .number)
                 }
                 HStack {
                     Text("Distance")
                         .foregroundColor(.secondary)
                         .font(.footnote)
                     Spacer()
+                    Text(health.distance, format: .number)
                 }
                 HStack {
                     Text("Squares")
