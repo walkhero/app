@@ -11,6 +11,7 @@
 		CE2241D0278B193D0049FDA0 /* Settings.Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2241CF278B193D0049FDA0 /* Settings.Option.swift */; };
 		CE2241D2278B19ED0049FDA0 /* Settings.About.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2241D1278B19ED0049FDA0 /* Settings.About.swift */; };
 		CE2241D4278B1A2C0049FDA0 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2241D3278B1A2C0049FDA0 /* Info.swift */; };
+		CE2241D6278B1D1E0049FDA0 /* Plus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2241D5278B1D1E0049FDA0 /* Plus.swift */; };
 		CE4B3486277A299200330CB4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B3485277A299200330CB4 /* CloudKit.framework */; };
 		CE4B3488277A29A500330CB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B3487277A29A500330CB4 /* HealthKit.framework */; };
 		CE512EE92779F1FF003ED854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE512EE82779F1FF003ED854 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		CE2241CF278B193D0049FDA0 /* Settings.Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Option.swift; sourceTree = "<group>"; };
 		CE2241D1278B19ED0049FDA0 /* Settings.About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.About.swift; sourceTree = "<group>"; };
 		CE2241D3278B1A2C0049FDA0 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		CE2241D5278B1D1E0049FDA0 /* Plus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plus.swift; sourceTree = "<group>"; };
 		CE4B3483277A297700330CB4 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CE4B3485277A299200330CB4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CE4B3487277A29A500330CB4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -174,6 +176,7 @@
 				CE2241CD278B191A0049FDA0 /* Settings.Notifications.swift */,
 				CE2241CF278B193D0049FDA0 /* Settings.Option.swift */,
 				CE9E4C49278B1847005CC3F7 /* Settings.swift */,
+				CE2241D5278B1D1E0049FDA0 /* Plus.swift */,
 				CEA12ED72788814C008D1084 /* Stats.swift */,
 				CEF40CB82779FB62001BECAB /* Status.swift */,
 				CEF40CB22779FAF7001BECAB /* UIApplication.swift */,
@@ -305,6 +308,7 @@
 				CE9E4C48278AF65A005CC3F7 /* Health.swift in Sources */,
 				CE963421277CA1F700CCFF4B /* Ephemeris.Navigation.swift in Sources */,
 				CE2241D4278B1A2C0049FDA0 /* Info.swift in Sources */,
+				CE2241D6278B1D1E0049FDA0 /* Plus.swift in Sources */,
 				CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */,
 				CECCDC082789B47400BD4532 /* Map.Content.Walking.swift in Sources */,
 				CEF40CB92779FB62001BECAB /* Status.swift in Sources */,

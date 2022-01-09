@@ -4,22 +4,26 @@ struct Settings: View {
     var body: some View {
         NavigationView {
             List {
-                Section("Personalize") {
+                Section("Location") {
                     Button {
-                        
+                        UIApplication.shared.settings()
                     } label: {
-                        Option(title: "Location",
-                               subtitle: "Accurately keep track of the Moon",
+                        Option(title: "Configure",
+                               subtitle: "Map the areas where you walk",
                                symbol: "location")
                     }
-//                    .sheet(isPresented: $location, content: Location.init)
-                    
                 }
                 .headerProminence(.increased)
                 
                 Notifications()
                 
                 Section("Walk Hero") {
+                    NavigationLink(destination: Plus()) {
+                        Option(title: "Walk Hero +",
+                               subtitle: "Support Walk Hero",
+                               symbol: "plus")
+                    }
+                    
                     NavigationLink(destination: About()) {
                         Option(title: "About",
                                subtitle: "App details",
