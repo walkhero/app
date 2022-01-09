@@ -3,6 +3,7 @@ import Hero
 
 struct Window: View {
     let status: Status
+    @StateObject private var health = Health()
     
     var body: some View {
         Map(status: status)
@@ -16,6 +17,8 @@ struct Window: View {
                     break
                 }
                 
+                location.request()
+                await health.request()
                 _ = await UNUserNotificationCenter.request()
             }
     }

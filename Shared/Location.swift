@@ -15,7 +15,7 @@ final class Location: NSObject, CLLocationManagerDelegate {
         manager.allowsBackgroundLocationUpdates = true
     }
     
-    func requestIfNeeded() {
+    func request() {
         if CLLocationManager().authorizationStatus == .notDetermined {
             manager.requestAlwaysAuthorization()
         }
