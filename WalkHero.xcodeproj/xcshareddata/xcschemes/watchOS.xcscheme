@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE252322278C6FFC000A26C5"
+               BuildableName = "WalkHero.app"
+               BlueprintName = "watchOS"
+               ReferencedContainer = "container:WalkHero.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE512EE02779F1FF003ED854"
                BuildableName = "WalkHero.app"
                BlueprintName = "iOS"
@@ -44,22 +58,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CE512EE02779F1FF003ED854"
+            BlueprintIdentifier = "CE252322278C6FFC000A26C5"
             BuildableName = "WalkHero.app"
-            BlueprintName = "iOS"
+            BlueprintName = "watchOS"
             ReferencedContainer = "container:WalkHero.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disable"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
-      <StoreKitConfigurationFileReference
-         identifier = "../../iOS/Configuration.storekit">
-      </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -71,9 +75,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CE512EE02779F1FF003ED854"
+            BlueprintIdentifier = "CE252322278C6FFC000A26C5"
             BuildableName = "WalkHero.app"
-            BlueprintName = "iOS"
+            BlueprintName = "watchOS"
             ReferencedContainer = "container:WalkHero.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

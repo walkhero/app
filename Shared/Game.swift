@@ -1,6 +1,7 @@
 import GameKit
 
 struct Game {
+#if os(iOS)
     func login(status: Status) {
         guard !GKLocalPlayer.local.isAuthenticated else { return }
         GKLocalPlayer.local.authenticateHandler = { controller, error in
@@ -19,9 +20,9 @@ struct Game {
             UIApplication.shared.present(controller: controller)
         }
     }
+#endif
     
     func submit(streak: Int, steps: Int, distance: Int, map: Int) {
-//        #if !DEBUG
         GKLeaderboard.submitScore(
             streak,
             context: 0,
@@ -45,6 +46,5 @@ struct Game {
             context: 0,
             player: GKLocalPlayer.local,
             leaderboardIDs: [Challenge.map.leaderboard]) { _ in }
-//        #endif
     }
 }
