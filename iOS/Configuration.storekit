@@ -1,0 +1,33 @@
+{
+  "identifier" : "B16D8434",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "30D8BC99",
+      "localizations" : [
+        {
+          "description" : "Support the development of Walk Hero.",
+          "displayName" : "Walk Hero +",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "walkhero.plus",
+      "referenceName" : "WalkHero+",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}

@@ -10,8 +10,7 @@ struct Plus: View {
             Section {
                 HStack {
                     Spacer()
-                    Circle()
-                        .frame(width: 250, height: 250)
+                    Image("Plus")
                     Spacer()
                 }
             }
@@ -110,13 +109,15 @@ struct Plus: View {
             } label: {
                 HStack {
                     Text("Restore purchases")
+                        .font(.footnote)
                     Spacer()
                     Image(systemName: "leaf.arrow.triangle.circlepath")
+                        .font(.title3)
                 }
                 .allowsHitTesting(false)
             }
         }
-        .font(.footnote)
+        .textCase(.none)
     }
     
     private func item(product: Product) -> some View {
@@ -141,8 +142,8 @@ struct Plus: View {
             } label: {
                 Text("Purchase")
                     .font(.callout)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 2)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 3)
                     .allowsHitTesting(false)
             }
             .buttonStyle(.borderedProminent)
