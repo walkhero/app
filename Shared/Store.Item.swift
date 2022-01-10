@@ -10,7 +10,7 @@ extension Store {
         func purchased(active: Bool) async {
             if active {
                 Defaults.isPremium = true
-                await UNUserNotificationCenter.send(message: "WalkHero + purchase successful!")
+                await UNUserNotificationCenter.send(message: "Walk Hero + purchase successful!")
             } else {
                 Defaults.isPremium = false
             }

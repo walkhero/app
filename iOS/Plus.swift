@@ -59,6 +59,7 @@ struct Plus: View {
                 .font(.largeTitle)
                 .symbolRenderingMode(.multicolor)
                 .frame(maxWidth: .greatestFiniteMagnitude)
+                .imageScale(.large)
                 
             Group {
                 Text("We received your support\n")
