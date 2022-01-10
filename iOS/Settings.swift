@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct Settings: View {
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         NavigationView {
             List {
@@ -41,6 +43,20 @@ struct Settings: View {
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.large)
             .listStyle(.insetGrouped)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Done")
+                            .font(.callout.weight(.medium))
+                            .padding(.leading)
+                            .frame(height: 34)
+                            .contentShape(Rectangle())
+                            .allowsHitTesting(false)
+                    }
+                }
+            }
         }
         .navigationViewStyle(.stack)
     }
