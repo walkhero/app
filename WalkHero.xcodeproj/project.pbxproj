@@ -16,7 +16,6 @@
 		CE4B3488277A29A500330CB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B3487277A29A500330CB4 /* HealthKit.framework */; };
 		CE512EE92779F1FF003ED854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE512EE82779F1FF003ED854 /* Assets.xcassets */; };
 		CE512EF22779F4BC003ED854 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE512EF12779F4BC003ED854 /* App.swift */; };
-		CE816D7D278C5DCD001D3F23 /* WalkHero.archive in Resources */ = {isa = PBXBuildFile; fileRef = CE816D7C278C5DCD001D3F23 /* WalkHero.archive */; };
 		CE96340E277C6D3C00CCFF4B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96340D277C6D3C00CCFF4B /* Location.swift */; };
 		CE963416277C9C6F00CCFF4B /* Map.Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963415277C9C6F00CCFF4B /* Map.Options.swift */; };
 		CE963418277C9C9900CCFF4B /* Map.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963417277C9C9900CCFF4B /* Map.Content.swift */; };
@@ -68,7 +67,6 @@
 		CE512EE82779F1FF003ED854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE512EF02779F411003ED854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CE512EF12779F4BC003ED854 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		CE816D7C278C5DCD001D3F23 /* WalkHero.archive */ = {isa = PBXFileReference; lastKnownFileType = file; path = WalkHero.archive; sourceTree = "<group>"; };
 		CE96340D277C6D3C00CCFF4B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CE963415277C9C6F00CCFF4B /* Map.Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Options.swift; sourceTree = "<group>"; };
 		CE963417277C9C9900CCFF4B /* Map.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Content.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 		CE512EE32779F1FF003ED854 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CE816D7C278C5DCD001D3F23 /* WalkHero.archive */,
 				CE4B3483277A297700330CB4 /* iOS.entitlements */,
 				CE512EF02779F411003ED854 /* Info.plist */,
 				CEAB4A2D278C44CB00E23DF5 /* Configuration.storekit */,
@@ -273,7 +270,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE816D7D278C5DCD001D3F23 /* WalkHero.archive in Resources */,
 				CEF40CBD2779FBB3001BECAB /* Media.xcassets in Resources */,
 				CE512EE92779F1FF003ED854 /* Assets.xcassets in Resources */,
 			);
