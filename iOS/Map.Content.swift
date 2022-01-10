@@ -12,8 +12,7 @@ extension Map {
         var body: some View {
             List {
                 if let walking = walking {
-                    Walking(status: status,
-                            health: health,
+                    Walking(health: health,
                             animate: animate,
                             started: walking)
                 }
@@ -29,6 +28,7 @@ extension Map {
             }
             .onReceive(cloud) { model in
                 let started = model.walking
+                
                 withAnimation(.easeInOut(duration: 0.5)) {
                     walking = started
                 }

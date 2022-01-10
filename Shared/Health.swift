@@ -37,18 +37,22 @@ final class Health: ObservableObject {
             }
             .map {
                 $0
-                    .initialResultsHandler = { [weak self] _, results, _ in
-                        results
-                            .map {
-                                self?.add(steps: $0)
+                    .initialResultsHandler = { _, results, _ in
+                        _ = results
+                            .map { value in
+                                Task { [weak self] in
+                                    await self?.add(steps: value)
+                                }
                             }
                     }
                 
                 $0
-                    .statisticsUpdateHandler = { [weak self] _, _, results, _ in
-                        results
-                            .map {
-                                self?.add(steps: $0)
+                    .statisticsUpdateHandler = { _, _, results, _ in
+                        _ = results
+                            .map { value in
+                                Task { [weak self] in
+                                    await self?.add(steps: value)
+                                }
                             }
                     }
                 
@@ -64,18 +68,22 @@ final class Health: ObservableObject {
             }
             .map {
                 $0
-                    .initialResultsHandler = { [weak self] _, results, _ in
-                        results
-                            .map {
-                                self?.add(distance: $0)
+                    .initialResultsHandler = { _, results, _ in
+                        _ = results
+                            .map { value in
+                                Task { [weak self] in
+                                    await self?.add(distance: value)
+                                }
                             }
                     }
                 
                 $0
-                    .statisticsUpdateHandler = { [weak self] _, _, results, _ in
-                        results
-                            .map {
-                                self?.add(distance: $0)
+                    .statisticsUpdateHandler = { _, _, results, _ in
+                        _ = results
+                            .map { value in
+                                Task { [weak self] in
+                                    await self?.add(distance: value)
+                                }
                             }
                     }
                 
@@ -93,7 +101,7 @@ final class Health: ObservableObject {
             intervalComponents: .init(minute: 1))
     }
     
-    private func add(steps: HKStatisticsCollection) {
+    @MainActor private func add(steps: HKStatisticsCollection) {
         self.steps = steps
             .statistics()
             .compactMap {
@@ -106,7 +114,7 @@ final class Health: ObservableObject {
             .reduce(0, +)
     }
     
-    private func add(distance: HKStatisticsCollection) {
+    @MainActor private func add(distance: HKStatisticsCollection) {
         self.distance = distance
             .statistics()
             .compactMap {

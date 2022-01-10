@@ -34,6 +34,9 @@
 		CE705304278C74BA00F6C10B /* GraphicsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */; };
 		CE705305278C74CE00F6C10B /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */; };
 		CE705306278C74E900F6C10B /* Game.Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B5277B21DB00D1B046 /* Game.Challenge.swift */; };
+		CE705308278C764800F6C10B /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE705307278C764800F6C10B /* Stats.swift */; };
+		CE70530A278C788400F6C10B /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE705309278C788400F6C10B /* Window.swift */; };
+		CE70530C278C79E700F6C10B /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70530B278C79E700F6C10B /* Walking.swift */; };
 		CE96340E277C6D3C00CCFF4B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96340D277C6D3C00CCFF4B /* Location.swift */; };
 		CE963416277C9C6F00CCFF4B /* Map.Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963415277C9C6F00CCFF4B /* Map.Options.swift */; };
 		CE963418277C9C9900CCFF4B /* Map.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963417277C9C9900CCFF4B /* Map.Content.swift */; };
@@ -137,6 +140,9 @@
 		CE7052FB278C732200F6C10B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		CE7052FD278C733100F6C10B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CE7052FF278C733F00F6C10B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		CE705307278C764800F6C10B /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		CE705309278C788400F6C10B /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		CE70530B278C79E700F6C10B /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		CE96340D277C6D3C00CCFF4B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CE963415277C9C6F00CCFF4B /* Map.Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Options.swift; sourceTree = "<group>"; };
 		CE963417277C9C9900CCFF4B /* Map.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Content.swift; sourceTree = "<group>"; };
@@ -228,6 +234,9 @@
 				CE25233B278C6FFD000A26C5 /* Info.plist */,
 				CE252330278C6FFD000A26C5 /* App.Delegate.swift */,
 				CE252332278C6FFD000A26C5 /* App.swift */,
+				CE705307278C764800F6C10B /* Stats.swift */,
+				CE70530B278C79E700F6C10B /* Walking.swift */,
+				CE705309278C788400F6C10B /* Window.swift */,
 			);
 			path = "watchOS Extension";
 			sourceTree = "<group>";
@@ -454,14 +463,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE252333278C6FFD000A26C5 /* App.swift in Sources */,
+				CE705308278C764800F6C10B /* Stats.swift in Sources */,
 				CE705303278C74B400F6C10B /* Health.swift in Sources */,
 				CE252331278C6FFD000A26C5 /* App.Delegate.swift in Sources */,
 				CE705306278C74E900F6C10B /* Game.Challenge.swift in Sources */,
+				CE70530C278C79E700F6C10B /* Walking.swift in Sources */,
 				CE705305278C74CE00F6C10B /* UNUserNotificationCenter.swift in Sources */,
 				CE705302278C74B100F6C10B /* Location.swift in Sources */,
 				CE705304278C74BA00F6C10B /* GraphicsContext.swift in Sources */,
 				CE252349278C70B0000A26C5 /* Global.swift in Sources */,
 				CE705301278C74AC00F6C10B /* Game.swift in Sources */,
+				CE70530A278C788400F6C10B /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

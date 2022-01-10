@@ -19,7 +19,14 @@ struct Stats: View {
                         .foregroundColor(.secondary)
                         .font(.footnote)
                     } else {
-                        
+                        HStack {
+                            Image(systemName: "figure.walk")
+                                .font(.title3.weight(.light))
+                            Image(systemName: "checkmark.circle.fill")
+                                .font(.title3)
+                                .foregroundColor(.blue)
+                            Spacer()
+                        }
                     }
                     
                     if let updated = updated {

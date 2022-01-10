@@ -4,7 +4,6 @@ import Hero
 
 extension Map.Content {
     struct Walking: View {
-        weak var status: Status!
         @ObservedObject var health: Health
         weak var animate: PassthroughSubject<UISheetPresentationController.Detent.Identifier, Never>!
         let started: Date
@@ -21,13 +20,10 @@ extension Map.Content {
                         context.draw(clock: .init(round(duration.truncatingRemainder(dividingBy: 60) * 2)),
                                      center: center,
                                      side: 80)
-                        status
-                            .components
-                            .string(from: duration)
-                            .map {
-                                context.draw(Text($0)
-                                                .font(.title.monospaced().weight(.ultraLight)), at: center)
-                            }
+                        
+                        context.draw(Text((started ..< .now).formatted(.timeDuration))
+                                        .font(duration < 60 ? .largeTitle.monospaced() : .title.monospaced())
+                                        .fontWeight(.ultraLight), at: center)
                     }
                 }
                 .frame(height: 180)

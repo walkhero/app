@@ -19,6 +19,7 @@ extension Map.Content {
                     if walking {
                         Image(systemName: "figure.walk")
                             .foregroundColor(.accentColor)
+                        
                         Button {
                             alert = true
                         } label: {
