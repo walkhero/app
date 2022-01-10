@@ -24,6 +24,8 @@ struct Window: View {
                 location.request()
                 await health.request()
                 _ = await UNUserNotificationCenter.request()
+                
+                await cloud.migrate(directory: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0])
             }
     }
 }

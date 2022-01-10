@@ -76,7 +76,10 @@ extension Map.Content {
                             .allowsHitTesting(false)
                     }
                     .frame(width: width)
-                    .sheet(isPresented: $calendar, content: Ephemeris.init)
+                    .sheet(isPresented: $calendar) {
+                        Ephemeris()
+                            .equatable()
+                    }
                     
                     Button {
                         settings = true
