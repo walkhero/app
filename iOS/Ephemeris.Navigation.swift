@@ -9,9 +9,7 @@ extension Ephemeris {
         var body: some View {
             HStack {
                 Button {
-                    withAnimation(.spring(blendDuration: 0.5)) {
-                        index -= 1
-                    }
+                    index -= 1
                 } label: {
                     Image(systemName: "chevron.left")
                         .font(.title3)
@@ -30,9 +28,7 @@ extension Ephemeris {
                         .allowsHitTesting(false)
                 
                 Button {
-                    withAnimation(.spring(blendDuration: 0.5)) {
-                        index += 1
-                    }
+                    index += 1
                 } label: {
                     Image(systemName: "chevron.right")
                         .font(.title3)

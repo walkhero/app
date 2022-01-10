@@ -1,7 +1,7 @@
 import SwiftUI
 import Hero
 
-struct Ephemeris: View {
+struct Ephemeris: View, Equatable {
     @State private var calendar = [Days]()
     @State private var index = 0
     @Environment(\.dismiss) private var dismiss
@@ -11,9 +11,10 @@ struct Ephemeris: View {
             List {
                 if !calendar.isEmpty {
                     Section {
+                        Week()
+                    } header: {
                         Navigation(index: $index, calendar: calendar)
                             .textCase(nil)
-                        Week()
                     }
                     .listRowBackground(Color.clear)
                     .listSectionSeparator(.hidden)
@@ -50,5 +51,9 @@ struct Ephemeris: View {
             calendar = $0.calendar
             index = calendar.count - 1
         }
+    }
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        true
     }
 }
