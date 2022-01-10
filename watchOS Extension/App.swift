@@ -16,6 +16,8 @@ import UserNotifications
                     location.request()
                     await health.request()
                     _ = await UNUserNotificationCenter.request()
+                    
+                    game.login()
                 }
                 .onReceive(cloud) { model in
                     let started = model.walking
@@ -35,6 +37,7 @@ import UserNotifications
         .onChange(of: phase) {
             if $0 == .active {
                 cloud.pull.send()
+                game.login()
             }
         }
     }

@@ -20,6 +20,13 @@ struct Game {
             UIApplication.shared.present(controller: controller)
         }
     }
+#elseif os(watchOS)
+    func login() {
+        guard !GKLocalPlayer.local.isAuthenticated else { return }
+        GKLocalPlayer.local.authenticateHandler = { _ in
+
+        }
+    }
 #endif
     
     func submit(streak: Int, steps: Int, distance: Int, map: Int) {
