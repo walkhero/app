@@ -156,6 +156,7 @@
 				CEAB4A2D278C44CB00E23DF5 /* Configuration.storekit */,
 				CEF40C9C2779F53F001BECAB /* App.Delegate.swift */,
 				CE512EF12779F4BC003ED854 /* App.swift */,
+				CEF40CAB2779F6E2001BECAB /* Copy.swift */,
 				CE96341A277CA1F700CCFF4B /* Ephemeris.Month.Continuous.swift */,
 				CE963419277CA1F700CCFF4B /* Ephemeris.Month.Day.swift */,
 				CE96341D277CA1F700CCFF4B /* Ephemeris.Month.swift */,
@@ -191,7 +192,6 @@
 		CEF40C9E2779F690001BECAB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				CEF40CAB2779F6E2001BECAB /* Copy.swift */,
 				CEF40CA92779F6D9001BECAB /* Global.swift */,
 				CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */,
 				CE9E4C47278AF65A005CC3F7 /* Health.swift */,

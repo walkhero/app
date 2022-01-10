@@ -23,5 +23,11 @@ If you allow **notifications** these are going to be displayed only for giving f
 Whatever you do with this app is up to you and we **don't** want to know about it.
 """
     
-    static let froob = ""
+    static let froob = """
+By purchasing _Walk Hero +_ you support the development and improvement of **Walk Hero**.
+
+_Walk Hero +_ is an In-App Purchase, it is non-consumable, meaning it is a **1 time only** purchase.
+
+This purchase is **optional**, you can keep using the app even without it.
+"""
 }

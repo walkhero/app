@@ -12,7 +12,11 @@ struct Window: View {
                 case .rate:
                     UIApplication.shared.review()
                 case .froob:
-                    status.froob = true
+                    DispatchQueue
+                        .main
+                        .asyncAfter(deadline: .now() + 1) {
+                            status.froob = true
+                        }
                 case .none:
                     break
                 }

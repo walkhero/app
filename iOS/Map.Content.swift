@@ -3,7 +3,7 @@ import Combine
 
 extension Map {
     struct Content: View {
-        weak var status: Status!
+        @ObservedObject var status: Status
         weak var health: Health!
         weak var leaderboards: PassthroughSubject<Void, Never>!
         weak var animate: PassthroughSubject<UISheetPresentationController.Detent.Identifier, Never>!
@@ -21,6 +21,7 @@ extension Map {
                 Game(status: status, leaderboards: leaderboards)
             }
             .listStyle(.insetGrouped)
+            .sheet(isPresented: $status.froob, content: Froob.init)
             .safeAreaInset(edge: .top, spacing: 0) {
                 Header(walking: walking != nil,
                        health: health,
