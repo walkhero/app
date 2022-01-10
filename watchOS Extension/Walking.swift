@@ -97,7 +97,7 @@ struct Walking: View {
                     Text(.init(value: .init(health.distance),
                                      unit: UnitLength.meters),
                          format: .measurement(width: .wide,
-                                              usage: .road,
+                                              usage: .general,
                                               numberFormatStyle: .number))
                         .font(.caption.monospacedDigit().weight(.light))
                 }
