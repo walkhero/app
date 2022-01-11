@@ -1,6 +1,6 @@
 import SwiftUI
 
-extension Walking.Content.Stats {
+extension Walking.Stats {
     struct Item: View {
         let text: Text
         let title: String

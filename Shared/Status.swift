@@ -117,7 +117,6 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func finish() async {
         guard started else { return }
-        started = false
         
         await cloud.finish(steps: steps,
                            metres: distance,
@@ -191,6 +190,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     private func clear() {
+        started = false
         tiles = []
         
         queries.forEach(store.stop)

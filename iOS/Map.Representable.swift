@@ -1,10 +1,13 @@
-import SwiftUI
 import MapKit
 import Combine
 import Hero
 
 extension Map {
-    final class Representable: MKMapView, MKMapViewDelegate, UIViewRepresentable {
+    final class Representable: MKMapView, MKMapViewDelegate {
+        static func == (lhs: Representable, rhs: Representable) -> Bool {
+            true
+        }
+        
         private weak var status: Status!
         private var first = true
         private var subs = Set<AnyCancellable>()
@@ -40,7 +43,7 @@ extension Map {
                     }
                 }
                 .store(in: &subs)
-            
+
             status
                 .$follow
                 .dropFirst()
@@ -57,7 +60,6 @@ extension Map {
         }
         
         func mapView(_: MKMapView, didChange mode: MKUserTrackingMode, animated: Bool) {
-            Defaults.shouldFollow = mode == .follow
             status.follow = mode == .follow
         }
         
@@ -66,11 +68,5 @@ extension Map {
             renderer.fillColor = .init(named: "Tile")
             return renderer
         }
-        
-        func makeUIView(context: Context) -> Representable {
-            self
-        }
-        
-        func updateUIView(_: Representable, context: Context) { }
     }
 }

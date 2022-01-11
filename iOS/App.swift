@@ -8,7 +8,7 @@ import Hero
     
     var body: some Scene {
         WindowGroup {
-            Map(status: status)
+            Main(status: status)
                 .task {
                     switch Defaults.action {
                     case .rate:
@@ -22,9 +22,9 @@ import Hero
                     case .none:
                         break
                     }
-                    
+
                     await status.request()
-                    
+
                     await cloud.migrate(directory: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0])
                 }
         }
@@ -32,7 +32,6 @@ import Hero
             switch $0 {
             case .active:
                 cloud.pull.send()
-//                status.login()
             default:
                 break
             }

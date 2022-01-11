@@ -1,7 +1,7 @@
 import SwiftUI
 import Hero
 
-extension Walking.Content {
+extension Walking {
     struct Stats: View {
         @ObservedObject var status: Status
         @State private var tiles = Set<Tile>([])
