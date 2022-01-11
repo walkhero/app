@@ -32,7 +32,7 @@ import Hero
             switch $0 {
             case .active:
                 cloud.pull.send()
-                status.login()
+//                status.login()
             default:
                 break
             }

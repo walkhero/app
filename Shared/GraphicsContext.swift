@@ -14,7 +14,7 @@ extension GraphicsContext {
                                           y: center.y - side))
                         $0.addLine(to: .init(x: center.x,
                                              y: center.y - side + (index == clock
-                                                                   ? 10
+                                                                   ? 12
                                                                    : index % 2 == 0
                                                                        ? 3
                                                                        : 5)))

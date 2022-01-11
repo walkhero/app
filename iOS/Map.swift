@@ -9,9 +9,7 @@ struct Map: View {
         ZStack(alignment: .bottom) {
             Representable(status: status)
                 .edgesIgnoringSafeArea(.top)
-                .padding(.bottom, UIDevice.current.userInterfaceIdiom == .phone || started == nil
-                         ? 220
-                         : 0)
+                .padding(.bottom, 220)
             
             ZStack(alignment: .topTrailing) {
                 Button {
@@ -22,7 +20,7 @@ struct Map: View {
                             .fill(.ultraThinMaterial)
                             .frame(width: 36, height: 36)
                         Circle()
-                            .stroke(Color(.quaternaryLabel), lineWidth: 1)
+                            .stroke(Color(.tertiaryLabel), lineWidth: 1)
                             .frame(width: 36, height: 36)
                         Image(systemName: "slider.horizontal.3")
                             .foregroundColor(.primary)
@@ -35,6 +33,8 @@ struct Map: View {
             
             if started == nil {
                 Card(status: status)
+            } else {
+                Placeholder()
             }
         }
         .onReceive(cloud) { model in

@@ -9,7 +9,7 @@ extension Walking {
         var body: some View {
             ZStack {
                 Rectangle()
-                    .fill(.thickMaterial)
+                    .fill(.thinMaterial)
                 VStack {
                     HStack {
                         Button {
@@ -31,43 +31,41 @@ extension Walking {
                                 }
                             }
                         }
-                        .padding(.leading)
                         
                         Spacer()
+                        
+                        Button {
+                            Task {
+                                await status.finish()
+                            }
+                        } label: {
+                            Text("Finish")
+                                .font(.body.weight(.medium))
+                                .padding(.horizontal)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .buttonBorderShape(.capsule)
+                        .tint(.indigo)
+                        .foregroundColor(.white)
+                        .font(.callout)
                     }
-                    .padding(.top)
+                    .padding()
                     
                     TimelineView(.periodic(from: started, by: 0.25)) { time in
                         Canvas { context, size in
                             let duration = time.date.timeIntervalSince(started)
-                            let center = CGPoint(x: size.width / 2, y: 70)
+                            let center = CGPoint(x: size.width / 2, y: 100)
                             
                             context.draw(clock: .init(round(duration.truncatingRemainder(dividingBy: 60) * 2)),
                                          center: center,
-                                         side: 65)
+                                         side: 95)
                             
                             context.draw(Text((started ..< .now).formatted(.timeDuration))
-                                            .font(duration < 60 ? .title.monospaced() : .title3.monospaced())
+                                            .font(duration < 60 ? .largeTitle.monospaced() : .title.monospaced())
                                             .fontWeight(.ultraLight), at: center)
                         }
                     }
-                    .frame(height: 140)
-                    
-                    Spacer()
-                    
-                    Button {
-                        Task {
-                            await status.finish()
-                        }
-                    } label: {
-                        Text("Finish")
-                            .padding(.horizontal, 30)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .buttonBorderShape(.capsule)
-                    .tint(.indigo)
-                    .foregroundColor(.white)
-                    .font(.callout)
+                    .frame(height: 200)
                     
                     Spacer()
                     

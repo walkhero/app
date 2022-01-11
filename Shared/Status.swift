@@ -1,7 +1,7 @@
 import Foundation
 import CoreLocation
 import HealthKit
-import GameKit
+import UserNotifications
 import Hero
 
 final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
@@ -24,26 +24,14 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
         manager.allowsBackgroundLocationUpdates = true
     }
     
-    func login() {
-        guard !GKLocalPlayer.local.isAuthenticated else { return }
-#if os(iOS)
-        GKLocalPlayer.local.authenticateHandler = { controller, _ in
-            guard let controller = controller else { return }
-            UIApplication.shared.present(controller: controller)
-        }
-#else
-        GKLocalPlayer.local.authenticateHandler = { _ in
-
-        }
-#endif
-    }
-    
     func request() async {
         if CLLocationManager().authorizationStatus == .notDetermined {
             manager.requestAlwaysAuthorization()
         }
         
+#if os(iOS)
         _ = await UNUserNotificationCenter.request()
+#endif
         
         guard HKHealthStore.isHealthDataAvailable() else { return }
         try? await store
@@ -135,19 +123,19 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
                            metres: distance,
                            tiles: tiles)
         
+#if os(iOS)
         await UNUserNotificationCenter.send(message: "Walk finished!")
-        
-        let streak = await cloud.model.calendar.streak.current
-        let map = await cloud.model.tiles.count
-        
-        submit(streak: streak, steps: steps, distance: distance, map: map)
+#endif
         clear()
     }
     
     func cancel() async {
         await cloud.cancel()
         clear()
+        
+#if os(iOS)
         await UNUserNotificationCenter.send(message: "Walk cancelled!")
+#endif
     }
     
     func locationManager(_: CLLocationManager, didUpdateLocations: [CLLocation]) {
@@ -217,45 +205,9 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         manager.stopUpdatingLocation()
     }
-    
-    private func submit(streak: Int, steps: Int, distance: Int, map: Int) {
-        GKLeaderboard.submitScore(
-            streak,
-            context: 0,
-            player: GKLocalPlayer.local,
-            leaderboardIDs: [Challenge.streak.leaderboard]) { _ in }
-        
-        GKLeaderboard.submitScore(
-            steps,
-            context: 0,
-            player: GKLocalPlayer.local,
-            leaderboardIDs: [Challenge.steps.leaderboard]) { _ in }
-        
-        GKLeaderboard.submitScore(
-            distance,
-            context: 0,
-            player: GKLocalPlayer.local,
-            leaderboardIDs: [Challenge.distance.leaderboard]) { _ in }
-        
-        GKLeaderboard.submitScore(
-            map,
-            context: 0,
-            player: GKLocalPlayer.local,
-            leaderboardIDs: [Challenge.map.leaderboard]) { _ in }
-    }
 }
 
-private enum Challenge: String {
-    case
-    streak,
-    steps,
-    distance,
-    map
-    
-    var leaderboard: String {
-        "\(self)"
-    }
-    
+private extension Challenge {
     var object: HKObjectType? {
         identifier
             .map {

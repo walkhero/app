@@ -6,7 +6,8 @@ struct Card: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color(.tertiarySystemBackground))
+                .fill(Color(.systemBackground))
+                .shadow(color: .black.opacity(0.3), radius: 3, x: 0, y: -2)
             VStack {
                 Button {
                     Task {
@@ -18,7 +19,7 @@ struct Card: View {
                         Circle()
                             .fill(Color.indigo)
                         Text("Start")
-                            .font(.callout)
+                            .font(.body.weight(.medium))
                             .foregroundColor(.white)
                     }
                     .frame(width: 80, height: 80)

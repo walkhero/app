@@ -10,10 +10,7 @@ struct Stats: View {
         List {
             Section {
                 Button {
-                    Task {
-                        await cloud.start()
-                        await UNUserNotificationCenter.send(message: "Walk started!")
-                    }
+                    
                 } label: {
                     Text("Start a walk")
                 }
