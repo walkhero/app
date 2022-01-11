@@ -9,7 +9,7 @@ extension Walking {
         var body: some View {
             ZStack {
                 Rectangle()
-                    .fill(.thinMaterial)
+                    .fill(.regularMaterial)
                 VStack {
                     HStack {
                         Button {
