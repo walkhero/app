@@ -37,6 +37,7 @@
 		CE7AF0CB278E334F00EA9F41 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AF0CA278E334F00EA9F41 /* Map.swift */; };
 		CE7AF0CD278E354900EA9F41 /* Main.Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AF0CC278E354900EA9F41 /* Main.Options.swift */; };
 		CE7AF0CF278E35D500EA9F41 /* Main.Options.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AF0CE278E35D500EA9F41 /* Main.Options.Item.swift */; };
+		CE7AF0D1278E3EAE00EA9F41 /* Stats.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AF0D0278E3EAE00EA9F41 /* Stats.Item.swift */; };
 		CE846E65278E173F005989B0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE846E64278E173F005989B0 /* Game.swift */; };
 		CE846E67278E178B005989B0 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE846E66278E178B005989B0 /* Challenge.swift */; };
 		CE846E68278E17A1005989B0 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE846E66278E178B005989B0 /* Challenge.swift */; };
@@ -150,6 +151,7 @@
 		CE7AF0CA278E334F00EA9F41 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		CE7AF0CC278E354900EA9F41 /* Main.Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Options.swift; sourceTree = "<group>"; };
 		CE7AF0CE278E35D500EA9F41 /* Main.Options.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Options.Item.swift; sourceTree = "<group>"; };
+		CE7AF0D0278E3EAE00EA9F41 /* Stats.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Item.swift; sourceTree = "<group>"; };
 		CE846E64278E173F005989B0 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CE846E66278E178B005989B0 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		CE846E6B278E2668005989B0 /* Card.Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.Home.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				CE2241CF278B193D0049FDA0 /* Settings.Option.swift */,
 				CE9E4C49278B1847005CC3F7 /* Settings.swift */,
 				CEA12ED72788814C008D1084 /* Stats.swift */,
+				CE7AF0D0278E3EAE00EA9F41 /* Stats.Item.swift */,
 				CEF40CA52779F6CE001BECAB /* Store.Item.swift */,
 				CEF40CA42779F6CE001BECAB /* Store.State.swift */,
 				CEF40CA32779F6CE001BECAB /* Store.swift */,
@@ -498,6 +501,7 @@
 				CE963423277CA1F700CCFF4B /* Ephemeris.Month.swift in Sources */,
 				CE2241CE278B191A0049FDA0 /* Settings.Notifications.swift in Sources */,
 				CE7AF0CF278E35D500EA9F41 /* Main.Options.Item.swift in Sources */,
+				CE7AF0D1278E3EAE00EA9F41 /* Stats.Item.swift in Sources */,
 				CEB0D6D8278DC0CE00A7C9AF /* Walking.swift in Sources */,
 				CE5FD9D4278DB0CB0099008F /* Card.swift in Sources */,
 				CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */,

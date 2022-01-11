@@ -3,8 +3,10 @@ import Hero
 
 struct Stats: View {
     @State private var streak = Streak.zero
+    @State private var squares = 0
     @State private var updated: DateInterval?
     @Environment(\.dismiss) private var dismiss
+    private let world = pow(Double(4), 20)
     
     var body: some View {
         NavigationView {
@@ -13,11 +15,12 @@ struct Stats: View {
                     if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
                         HStack {
                             Text("No walk today")
+                                .font(.body)
                             Spacer()
                             Image(systemName: "exclamationmark.triangle.fill")
+                                .font(.title3)
                         }
                         .foregroundColor(.secondary)
-                        .font(.footnote)
                     } else {
                         HStack {
                             Image(systemName: "figure.walk")
@@ -27,37 +30,29 @@ struct Stats: View {
                                 .foregroundColor(.blue)
                             Spacer()
                         }
+                        .font(.title3)
                     }
                     
                     if let updated = updated {
-                        Text("Updated ")
-                            .foregroundColor(.secondary)
-                            .font(.caption2)
-                        + Text(updated.end, format: .relative(presentation: .named))
-                            .foregroundColor(.secondary)
-                            .font(.caption2)
+                        Item(text: .init(updated.end,
+                                         format: .relative(presentation: .named)),
+                             title: "Updated")
                     }
                 }
                 .headerProminence(.increased)
                 .allowsHitTesting(false)
                 
                 Section("Streak") {
-                    HStack {
-                        Text("Current")
-                            .foregroundColor(.secondary)
-                            .font(.footnote)
-                        Spacer()
-                        Text(streak.current, format: .number)
-                            .font(.footnote.monospacedDigit())
-                    }
-                    HStack {
-                        Text("Max")
-                            .foregroundColor(.secondary)
-                            .font(.footnote)
-                        Spacer()
-                        Text(streak.maximum, format: .number)
-                            .font(.footnote.monospacedDigit())
-                    }
+                    Item(text: .init(streak.current, format: .number), title: "Current")
+                    Item(text: .init(streak.maximum, format: .number), title: "Max")
+                }
+                .headerProminence(.increased)
+                .allowsHitTesting(false)
+                
+                Section("Map") {
+                    Item(text: .init(squares, format: .number), title: "Squares")
+                    Item(text: .init(Double(squares) / world,
+                                     format: .percent.precision(.significantDigits(4))), title: "World")
                 }
                 .headerProminence(.increased)
                 .allowsHitTesting(false)
@@ -84,6 +79,7 @@ struct Stats: View {
         .onReceive(cloud) {
             updated = $0.updated
             streak = $0.calendar.streak
+            squares = $0.tiles.count
         }
     }
 }
