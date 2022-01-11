@@ -1,3 +1,4 @@
+/*
 import SwiftUI
 import UserNotifications
 import Hero
@@ -122,3 +123,4 @@ struct Walking: View {
         }
     }
 }
+*/

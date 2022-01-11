@@ -25,19 +25,16 @@
 		CE4B3488277A29A500330CB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B3487277A29A500330CB4 /* HealthKit.framework */; };
 		CE512EE92779F1FF003ED854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE512EE82779F1FF003ED854 /* Assets.xcassets */; };
 		CE512EF22779F4BC003ED854 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE512EF12779F4BC003ED854 /* App.swift */; };
+		CE5FD9D4278DB0CB0099008F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5FD9D3278DB0CB0099008F /* Card.swift */; };
+		CE5FD9D6278DB4700099008F /* Card.Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5FD9D5278DB4700099008F /* Card.Option.swift */; };
 		CE7052FC278C732200F6C10B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7052FB278C732200F6C10B /* HealthKit.framework */; };
 		CE7052FE278C733100F6C10B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7052FD278C733100F6C10B /* CloudKit.framework */; };
 		CE705300278C733F00F6C10B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7052FF278C733F00F6C10B /* StoreKit.framework */; };
-		CE705301278C74AC00F6C10B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B3277B1DDD00D1B046 /* Game.swift */; };
-		CE705302278C74B100F6C10B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96340D277C6D3C00CCFF4B /* Location.swift */; };
-		CE705303278C74B400F6C10B /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E4C47278AF65A005CC3F7 /* Health.swift */; };
 		CE705304278C74BA00F6C10B /* GraphicsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */; };
 		CE705305278C74CE00F6C10B /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */; };
-		CE705306278C74E900F6C10B /* Game.Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B5277B21DB00D1B046 /* Game.Challenge.swift */; };
 		CE705308278C764800F6C10B /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE705307278C764800F6C10B /* Stats.swift */; };
 		CE70530A278C788400F6C10B /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE705309278C788400F6C10B /* Window.swift */; };
 		CE70530C278C79E700F6C10B /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70530B278C79E700F6C10B /* Walking.swift */; };
-		CE96340E277C6D3C00CCFF4B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96340D277C6D3C00CCFF4B /* Location.swift */; };
 		CE963416277C9C6F00CCFF4B /* Map.Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963415277C9C6F00CCFF4B /* Map.Options.swift */; };
 		CE963418277C9C9900CCFF4B /* Map.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963417277C9C9900CCFF4B /* Map.Content.swift */; };
 		CE96341F277CA1F700CCFF4B /* Ephemeris.Month.Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963419277CA1F700CCFF4B /* Ephemeris.Month.Day.swift */; };
@@ -46,12 +43,17 @@
 		CE963422277CA1F700CCFF4B /* Ephemeris.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341C277CA1F700CCFF4B /* Ephemeris.swift */; };
 		CE963423277CA1F700CCFF4B /* Ephemeris.Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341D277CA1F700CCFF4B /* Ephemeris.Month.swift */; };
 		CE963424277CA1F700CCFF4B /* Ephermeris.Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341E277CA1F700CCFF4B /* Ephermeris.Week.swift */; };
-		CE9E4C48278AF65A005CC3F7 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E4C47278AF65A005CC3F7 /* Health.swift */; };
 		CE9E4C4A278B1848005CC3F7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E4C49278B1847005CC3F7 /* Settings.swift */; };
 		CEA12ED82788814C008D1084 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA12ED72788814C008D1084 /* Stats.swift */; };
+		CEB0D6D6278DBFA400A7C9AF /* Walking.Detent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6D5278DBFA400A7C9AF /* Walking.Detent.swift */; };
+		CEB0D6D8278DC0CE00A7C9AF /* Walking.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6D7278DC0CE00A7C9AF /* Walking.Content.swift */; };
+		CEB0D6DA278DC57500A7C9AF /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6D9278DC57500A7C9AF /* Walking.swift */; };
+		CEB0D6DC278DCF6F00A7C9AF /* Walking.Content.Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6DB278DCF6F00A7C9AF /* Walking.Content.Stats.swift */; };
+		CEB0D6DE278DD06900A7C9AF /* Walking.Content.Stats.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6DD278DD06900A7C9AF /* Walking.Content.Stats.Item.swift */; };
+		CEB0D6E0278DD6BB00A7C9AF /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6DF278DD6BB00A7C9AF /* Tools.swift */; };
+		CEB0D6E2278DD6D000A7C9AF /* Tools.Detent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6E1278DD6D000A7C9AF /* Tools.Detent.swift */; };
+		CEB0D6E4278DD72D00A7C9AF /* Tools.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6E3278DD72D00A7C9AF /* Tools.Content.swift */; };
 		CEC805B2277B1C7500D1B046 /* Map.Content.Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B1277B1C7500D1B046 /* Map.Content.Header.swift */; };
-		CEC805B4277B1DDD00D1B046 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B3277B1DDD00D1B046 /* Game.swift */; };
-		CEC805B6277B21DB00D1B046 /* Game.Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B5277B21DB00D1B046 /* Game.Challenge.swift */; };
 		CEC805B8277B291C00D1B046 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC805B7277B291C00D1B046 /* GameKit.framework */; };
 		CEC805BA277B36B400D1B046 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B9277B36B400D1B046 /* Map.swift */; };
 		CEC805BC277B36BB00D1B046 /* Map.Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805BB277B36BB00D1B046 /* Map.Representable.swift */; };
@@ -67,7 +69,6 @@
 		CEF40CAA2779F6D9001BECAB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA92779F6D9001BECAB /* Global.swift */; };
 		CEF40CAC2779F6E2001BECAB /* Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CAB2779F6E2001BECAB /* Copy.swift */; };
 		CEF40CAF2779F760001BECAB /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEF40CAE2779F760001BECAB /* Hero */; };
-		CEF40CB12779FAAD001BECAB /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB02779FAAD001BECAB /* Window.swift */; };
 		CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB22779FAF7001BECAB /* UIApplication.swift */; };
 		CEF40CB92779FB62001BECAB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB82779FB62001BECAB /* Status.swift */; };
 		CEF40CBB2779FB8A001BECAB /* Froob.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CBA2779FB8A001BECAB /* Froob.swift */; };
@@ -136,6 +137,8 @@
 		CE512EE82779F1FF003ED854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE512EF02779F411003ED854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CE512EF12779F4BC003ED854 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		CE5FD9D3278DB0CB0099008F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		CE5FD9D5278DB4700099008F /* Card.Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.Option.swift; sourceTree = "<group>"; };
 		CE7052FA278C732200F6C10B /* watchOS Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watchOS Extension.entitlements"; sourceTree = "<group>"; };
 		CE7052FB278C732200F6C10B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		CE7052FD278C733100F6C10B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -143,7 +146,6 @@
 		CE705307278C764800F6C10B /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		CE705309278C788400F6C10B /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		CE70530B278C79E700F6C10B /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
-		CE96340D277C6D3C00CCFF4B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CE963415277C9C6F00CCFF4B /* Map.Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Options.swift; sourceTree = "<group>"; };
 		CE963417277C9C9900CCFF4B /* Map.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Content.swift; sourceTree = "<group>"; };
 		CE963419277CA1F700CCFF4B /* Ephemeris.Month.Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.Month.Day.swift; sourceTree = "<group>"; };
@@ -152,13 +154,18 @@
 		CE96341C277CA1F700CCFF4B /* Ephemeris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.swift; sourceTree = "<group>"; };
 		CE96341D277CA1F700CCFF4B /* Ephemeris.Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.Month.swift; sourceTree = "<group>"; };
 		CE96341E277CA1F700CCFF4B /* Ephermeris.Week.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephermeris.Week.swift; sourceTree = "<group>"; };
-		CE9E4C47278AF65A005CC3F7 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
 		CE9E4C49278B1847005CC3F7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CEA12ED72788814C008D1084 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		CEAB4A2D278C44CB00E23DF5 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		CEB0D6D5278DBFA400A7C9AF /* Walking.Detent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Detent.swift; sourceTree = "<group>"; };
+		CEB0D6D7278DC0CE00A7C9AF /* Walking.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Content.swift; sourceTree = "<group>"; };
+		CEB0D6D9278DC57500A7C9AF /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
+		CEB0D6DB278DCF6F00A7C9AF /* Walking.Content.Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Content.Stats.swift; sourceTree = "<group>"; };
+		CEB0D6DD278DD06900A7C9AF /* Walking.Content.Stats.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Content.Stats.Item.swift; sourceTree = "<group>"; };
+		CEB0D6DF278DD6BB00A7C9AF /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		CEB0D6E1278DD6D000A7C9AF /* Tools.Detent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.Detent.swift; sourceTree = "<group>"; };
+		CEB0D6E3278DD72D00A7C9AF /* Tools.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.Content.swift; sourceTree = "<group>"; };
 		CEC805B1277B1C7500D1B046 /* Map.Content.Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Content.Header.swift; sourceTree = "<group>"; };
-		CEC805B3277B1DDD00D1B046 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		CEC805B5277B21DB00D1B046 /* Game.Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.Challenge.swift; sourceTree = "<group>"; };
 		CEC805B7277B291C00D1B046 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEC805B9277B36B400D1B046 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		CEC805BB277B36BB00D1B046 /* Map.Representable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Representable.swift; sourceTree = "<group>"; };
@@ -173,7 +180,6 @@
 		CEF40CA52779F6CE001BECAB /* Store.Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.Item.swift; sourceTree = "<group>"; };
 		CEF40CA92779F6D9001BECAB /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		CEF40CAB2779F6E2001BECAB /* Copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copy.swift; sourceTree = "<group>"; };
-		CEF40CB02779FAAD001BECAB /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		CEF40CB22779FAF7001BECAB /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		CEF40CB82779FB62001BECAB /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		CEF40CBA2779FB8A001BECAB /* Froob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Froob.swift; sourceTree = "<group>"; };
@@ -272,6 +278,8 @@
 				CEAB4A2D278C44CB00E23DF5 /* Configuration.storekit */,
 				CEF40C9C2779F53F001BECAB /* App.Delegate.swift */,
 				CE512EF12779F4BC003ED854 /* App.swift */,
+				CE5FD9D5278DB4700099008F /* Card.Option.swift */,
+				CE5FD9D3278DB0CB0099008F /* Card.swift */,
 				CEF40CAB2779F6E2001BECAB /* Copy.swift */,
 				CE96341A277CA1F700CCFF4B /* Ephemeris.Month.Continuous.swift */,
 				CE963419277CA1F700CCFF4B /* Ephemeris.Month.Day.swift */,
@@ -295,13 +303,19 @@
 				CE2241CF278B193D0049FDA0 /* Settings.Option.swift */,
 				CE9E4C49278B1847005CC3F7 /* Settings.swift */,
 				CEA12ED72788814C008D1084 /* Stats.swift */,
-				CEF40CB82779FB62001BECAB /* Status.swift */,
 				CEF40CA52779F6CE001BECAB /* Store.Item.swift */,
 				CEF40CA42779F6CE001BECAB /* Store.State.swift */,
 				CEF40CA32779F6CE001BECAB /* Store.swift */,
 				CEF40CA12779F6B3001BECAB /* Transaction.swift */,
 				CEF40CB22779FAF7001BECAB /* UIApplication.swift */,
-				CEF40CB02779FAAD001BECAB /* Window.swift */,
+				CEB0D6D7278DC0CE00A7C9AF /* Walking.Content.swift */,
+				CEB0D6DB278DCF6F00A7C9AF /* Walking.Content.Stats.swift */,
+				CEB0D6DD278DD06900A7C9AF /* Walking.Content.Stats.Item.swift */,
+				CEB0D6D5278DBFA400A7C9AF /* Walking.Detent.swift */,
+				CEB0D6D9278DC57500A7C9AF /* Walking.swift */,
+				CEB0D6DF278DD6BB00A7C9AF /* Tools.swift */,
+				CEB0D6E1278DD6D000A7C9AF /* Tools.Detent.swift */,
+				CEB0D6E3278DD72D00A7C9AF /* Tools.Content.swift */,
 				CE512EE82779F1FF003ED854 /* Assets.xcassets */,
 			);
 			path = iOS;
@@ -310,12 +324,9 @@
 		CEF40C9E2779F690001BECAB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				CEC805B5277B21DB00D1B046 /* Game.Challenge.swift */,
-				CEC805B3277B1DDD00D1B046 /* Game.swift */,
+				CEF40CB82779FB62001BECAB /* Status.swift */,
 				CEF40CA92779F6D9001BECAB /* Global.swift */,
 				CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */,
-				CE9E4C47278AF65A005CC3F7 /* Health.swift */,
-				CE96340D277C6D3C00CCFF4B /* Location.swift */,
 				CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */,
 				CEF40CBC2779FBB3001BECAB /* Media.xcassets */,
 			);
@@ -464,15 +475,11 @@
 			files = (
 				CE252333278C6FFD000A26C5 /* App.swift in Sources */,
 				CE705308278C764800F6C10B /* Stats.swift in Sources */,
-				CE705303278C74B400F6C10B /* Health.swift in Sources */,
 				CE252331278C6FFD000A26C5 /* App.Delegate.swift in Sources */,
-				CE705306278C74E900F6C10B /* Game.Challenge.swift in Sources */,
 				CE70530C278C79E700F6C10B /* Walking.swift in Sources */,
 				CE705305278C74CE00F6C10B /* UNUserNotificationCenter.swift in Sources */,
-				CE705302278C74B100F6C10B /* Location.swift in Sources */,
 				CE705304278C74BA00F6C10B /* GraphicsContext.swift in Sources */,
 				CE252349278C70B0000A26C5 /* Global.swift in Sources */,
-				CE705301278C74AC00F6C10B /* Game.swift in Sources */,
 				CE70530A278C788400F6C10B /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,33 +489,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF40CAC2779F6E2001BECAB /* Copy.swift in Sources */,
-				CEC805B4277B1DDD00D1B046 /* Game.swift in Sources */,
 				CECCDC042789B03D00BD4532 /* Map.Content.Game.swift in Sources */,
-				CEF40CB12779FAAD001BECAB /* Window.swift in Sources */,
 				CEF40CAA2779F6D9001BECAB /* Global.swift in Sources */,
 				CE963423277CA1F700CCFF4B /* Ephemeris.Month.swift in Sources */,
 				CE2241CE278B191A0049FDA0 /* Settings.Notifications.swift in Sources */,
+				CEB0D6D8278DC0CE00A7C9AF /* Walking.Content.swift in Sources */,
+				CE5FD9D4278DB0CB0099008F /* Card.swift in Sources */,
 				CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */,
+				CEB0D6E4278DD72D00A7C9AF /* Tools.Content.swift in Sources */,
+				CEB0D6D6278DBFA400A7C9AF /* Walking.Detent.swift in Sources */,
 				CE963420277CA1F700CCFF4B /* Ephemeris.Month.Continuous.swift in Sources */,
-				CEC805B6277B21DB00D1B046 /* Game.Challenge.swift in Sources */,
 				CE963416277C9C6F00CCFF4B /* Map.Options.swift in Sources */,
 				CEF40CA62779F6CE001BECAB /* Store.swift in Sources */,
+				CEB0D6DA278DC57500A7C9AF /* Walking.swift in Sources */,
 				CEC805BC277B36BB00D1B046 /* Map.Representable.swift in Sources */,
 				CECCDC062789B27E00BD4532 /* Map.Content.Geo.swift in Sources */,
 				CE963422277CA1F700CCFF4B /* Ephemeris.swift in Sources */,
 				CE512EF22779F4BC003ED854 /* App.swift in Sources */,
+				CEB0D6DC278DCF6F00A7C9AF /* Walking.Content.Stats.swift in Sources */,
 				CEC805BA277B36B400D1B046 /* Map.swift in Sources */,
 				CEC805B2277B1C7500D1B046 /* Map.Content.Header.swift in Sources */,
 				CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */,
 				CEF9E4522789CD58004EFD64 /* GraphicsContext.swift in Sources */,
 				CE2241D0278B193D0049FDA0 /* Settings.Option.swift in Sources */,
-				CE96340E277C6D3C00CCFF4B /* Location.swift in Sources */,
 				CE9E4C4A278B1848005CC3F7 /* Settings.swift in Sources */,
 				CEA12ED82788814C008D1084 /* Stats.swift in Sources */,
 				CE963418277C9C9900CCFF4B /* Map.Content.swift in Sources */,
-				CE9E4C48278AF65A005CC3F7 /* Health.swift in Sources */,
 				CE963421277CA1F700CCFF4B /* Ephemeris.Navigation.swift in Sources */,
 				CE2241D4278B1A2C0049FDA0 /* Info.swift in Sources */,
+				CEB0D6DE278DD06900A7C9AF /* Walking.Content.Stats.Item.swift in Sources */,
 				CE2241D6278B1D1E0049FDA0 /* Plus.swift in Sources */,
 				CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */,
 				CECCDC082789B47400BD4532 /* Map.Content.Walking.swift in Sources */,
@@ -518,6 +527,9 @@
 				CE963424277CA1F700CCFF4B /* Ephermeris.Week.swift in Sources */,
 				CEF40CBB2779FB8A001BECAB /* Froob.swift in Sources */,
 				CE96341F277CA1F700CCFF4B /* Ephemeris.Month.Day.swift in Sources */,
+				CE5FD9D6278DB4700099008F /* Card.Option.swift in Sources */,
+				CEB0D6E0278DD6BB00A7C9AF /* Tools.swift in Sources */,
+				CEB0D6E2278DD6D000A7C9AF /* Tools.Detent.swift in Sources */,
 				CE2241D2278B19ED0049FDA0 /* Settings.About.swift in Sources */,
 				CEF40CA02779F6A0001BECAB /* UNUserNotificationCenter.swift in Sources */,
 			);

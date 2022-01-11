@@ -3,35 +3,49 @@ import Combine
 
 struct Map: View {
     weak var status: Status!
-    weak var health: Health!
-    @State private var options = false
+    @State private var started: Date?
     
     var body: some View {
-        GeometryReader { proxy in
-            if UIDevice.current.userInterfaceIdiom == .phone {
-                VStack {
-                    Representable()
-                        .equatable()
-                        .frame(height: options ? proxy.size.height * 0.6 : nil)
-                        .edgesIgnoringSafeArea(.all)
-                    if options {
-                        Spacer()
+        ZStack(alignment: .bottom) {
+            Representable(status: status)
+                .edgesIgnoringSafeArea(.top)
+                .padding(.bottom, UIDevice.current.userInterfaceIdiom == .phone || started == nil
+                         ? 220
+                         : 0)
+            
+            ZStack(alignment: .topTrailing) {
+                Button {
+                    status.tools.toggle()
+                } label: {
+                    ZStack {
+                        Circle()
+                            .fill(.ultraThinMaterial)
+                            .frame(width: 36, height: 36)
+                        Circle()
+                            .stroke(Color(.quaternaryLabel), lineWidth: 1)
+                            .frame(width: 36, height: 36)
+                        Image(systemName: "slider.horizontal.3")
+                            .foregroundColor(.primary)
                     }
+                    .contentShape(Rectangle())
                 }
-                .background(Color.black)
-            } else {
-                Representable()
-                    .equatable()
-                    .edgesIgnoringSafeArea(.all)
+                .padding([.top, .trailing])
+            }
+            .frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .topTrailing)
+            
+            if started == nil {
+                Card(status: status)
             }
         }
-        .onAppear {
-            withAnimation(.easeInOut(duration: 0.5)) {
-                options = true
+        .onReceive(cloud) { model in
+            started = model.walking
+            
+            if let date = started, !status.started {
+                status.start(date: date)
             }
         }
-        .sheet(isPresented: $options) {
-            Options(status: status, health: health)
+        .sheet(isPresented: .init(get: { started != nil }, set: { _ in })) {
+            Walking.Detent(status: status, started: started ?? .now)
                 .equatable()
                 .edgesIgnoringSafeArea(.bottom)
         }

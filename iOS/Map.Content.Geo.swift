@@ -1,4 +1,4 @@
-import SwiftUI
+/*import SwiftUI
 import Hero
 
 extension Map.Content {
@@ -29,3 +29,4 @@ extension Map.Content {
         }
     }
 }
+*/

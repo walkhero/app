@@ -1,4 +1,4 @@
-import SwiftUI
+/*import SwiftUI
 import Combine
 
 private let size = 32.0
@@ -61,3 +61,4 @@ extension Map.Content {
         }
     }
 }
+*/

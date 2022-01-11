@@ -12,10 +12,6 @@ extension UIApplication: GKGameCenterControllerDelegate {
             .map(SKStoreReviewController.requestReview(in:))
     }
     
-    func share(_ any: Any) {
-        present(controller: UIActivityViewController(activityItems: [any], applicationActivities: nil))
-    }
-    
     func present(controller: UIViewController) {
         scene?
             .keyWindow?
