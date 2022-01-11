@@ -18,7 +18,7 @@ extension Map {
             mapType = .standard
             delegate = self
             setUserTrackingMode(.follow, animated: false)
-            setCameraZoomRange(.init(maxCenterCoordinateDistance: 500), animated: false)
+//            setCameraZoomRange(.init(maxCenterCoordinateDistance: 500), animated: false)
             
             cloud
                 .map(\.tiles)
@@ -47,6 +47,16 @@ extension Map {
                     self?.setUserTrackingMode($0 ? .follow : .none, animated: true)
                 }
                 .store(in: &subs)
+            
+            
+        }
+        
+        func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+            mapView
+                .view(for: mapView.userLocation)?
+                .detailCalloutAccessoryView = UIImageView(image: .init(systemName: "figure.walk"))
+            mapView.userLocation.title = nil
+            mapView.userLocation.subtitle = nil
         }
         
         func mapView(_: MKMapView, rendererFor: MKOverlay) -> MKOverlayRenderer {
@@ -65,6 +75,35 @@ extension Map {
                                 heading: 0), animated: false)
             }
         }
+        
+        func mapView(_: MKMapView, viewFor: MKAnnotation) -> MKAnnotationView? {
+//            print("a")
+            if viewFor === userLocation {
+                let original = view(for: viewFor)
+                original?.image = .init(systemName: "figure.walk")
+                original?.canShowCallout = false
+                original?.detailCalloutAccessoryView = UIImageView(image: UIImage(systemName: "figure.walk"))
+                return original
+            }
+            return nil
+        }
+//
+        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//            print(view as? MKMapItem)
+//            print(view as? MKMarkerAnnotationView)
+//            print(view as? MKPinAnnotationView)
+//            print(view as? MKPointAnnotation)
+//            print(view as? MKUserLocationView)
+//            view.detailCalloutAccessoryView = UIImageView(image: UIImage(systemName: "figure.walk"))
+        }
+        
+//        func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+//                if annotation.isEqual(mapView.userLocation) {
+//                let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "userLocation")
+//                annotationView.image = UIImage(named: "geo")
+//                return annotationView
+//            }
+//        }
         
         func makeUIView(context: Context) -> Representable {
             self
