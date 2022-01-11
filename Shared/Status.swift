@@ -5,8 +5,6 @@ import UserNotifications
 import Hero
 
 final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
-    @Published var froob = false
-    @Published var tools = false
     @Published var hide = Defaults.shouldHide
     @Published var follow = Defaults.shouldFollow
     @Published private(set) var tiles = Set<Tile>()

@@ -3,12 +3,14 @@ import Hero
 
 @main struct App: SwiftUI.App {
     @StateObject private var status = Status()
+    @State private var froob = false
     @Environment(\.scenePhase) private var phase
     @UIApplicationDelegateAdaptor(Delegate.self) private var delegate
     
     var body: some Scene {
         WindowGroup {
             Main(status: status)
+                .sheet(isPresented: $froob, content: Froob.init)
                 .task {
                     switch Defaults.action {
                     case .rate:
@@ -17,12 +19,12 @@ import Hero
                         DispatchQueue
                             .main
                             .asyncAfter(deadline: .now() + 1) {
-                                status.froob = true
+                                froob = true
                             }
                     case .none:
                         break
                     }
-
+                    
                     await status.request()
 
                     await cloud.migrate(directory: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0])

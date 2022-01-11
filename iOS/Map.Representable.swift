@@ -4,10 +4,6 @@ import Hero
 
 extension Map {
     final class Representable: MKMapView, MKMapViewDelegate {
-        static func == (lhs: Representable, rhs: Representable) -> Bool {
-            true
-        }
-        
         private weak var status: Status!
         private var first = true
         private var subs = Set<AnyCancellable>()
