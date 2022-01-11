@@ -1,13 +1,34 @@
 import GameKit
 
-struct Game {
-    func login() {
+final class Game: ObservableObject {
+    @Published private(set) var name = ""
+    @Published private(set) var image = UIImage()
+    
+    init() {
         guard !GKLocalPlayer.local.isAuthenticated else { return }
         
-        GKLocalPlayer.local.authenticateHandler = { controller, _ in
-            guard let controller = controller else { return }
+        GKLocalPlayer.local.authenticateHandler = { [weak self] controller, error in
+            guard let controller = controller else {
+                if error == nil {
+                    self?.name = GKLocalPlayer.local.displayName
+                    GKLocalPlayer.local.loadPhoto(for: .normal) { image, _ in
+                        image.map {
+                            self?.image = $0
+                        }
+                    }
+                }
+                return
+            }
             UIApplication.shared.present(controller: controller)
         }
+    }
+    
+    func leaderboard() {
+        let controller = GKGameCenterViewController(leaderboardID: Challenge.streak.leaderboard,
+                                                    playerScope: .global,
+                                                    timeScope: .allTime)
+        controller.gameCenterDelegate = UIApplication.shared
+        UIApplication.shared.present(controller: controller)
     }
     
     func submit(streak: Int, steps: Int, distance: Int, map: Int) {

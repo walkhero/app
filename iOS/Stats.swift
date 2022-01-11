@@ -13,36 +13,12 @@ struct Stats: View {
     var body: some View {
         NavigationView {
             List {
-                Section("Today") {
-                    if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
-                        HStack {
-                            Text("No walk today")
-                                .font(.body)
-                            Spacer()
-                            Image(systemName: "exclamationmark.triangle.fill")
-                                .font(.title3)
-                        }
-                        .foregroundColor(.secondary)
-                    } else {
-                        HStack {
-                            Image(systemName: "figure.walk")
-                                .font(.title3.weight(.light))
-                            Image(systemName: "checkmark.circle.fill")
-                                .font(.title3)
-                                .foregroundColor(.blue)
-                            Spacer()
-                        }
-                        .font(.title3)
-                    }
-                    
-                    if let updated = updated {
-                        Item(text: .init(updated.end,
-                                         format: .relative(presentation: .named)),
-                             title: "Updated")
-                    }
-                }
-                .headerProminence(.increased)
-                .allowsHitTesting(false)
+                Leaderboard(streak: streak.maximum,
+                            steps: steps.max,
+                            distance: metres.max,
+                            map: squares)
+                
+                Today(updated: updated)
                 
                 Section("Streak") {
                     Item(text: .init(streak.current, format: .number), title: "Current")
