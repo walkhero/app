@@ -23,7 +23,7 @@ struct Walking: View {
                                      side: min(size.width, size.height) * 0.35)
                         
                         context.draw(Text((started ..< .now).formatted(.timeDuration))
-                                        .font(duration < 60 ? .title3.monospaced() : .footnote.monospaced())
+                                        .font(duration < 60 ? .title3.monospacedDigit() : .footnote.monospacedDigit())
                                         .fontWeight(.ultraLight), at: center)
                     }
                 }

@@ -10,6 +10,7 @@ extension Card {
                 Image(systemName: symbol)
                     .font(.title3)
                     .allowsHitTesting(false)
+                    .foregroundColor(.secondary)
             }
             .frame(width: 50, height: 50)
         }

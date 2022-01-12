@@ -9,13 +9,14 @@ struct Main: View {
         ZStack(alignment: .bottom) {
             Map(status: status)
                 .edgesIgnoringSafeArea(.top)
-                .padding(.bottom, started == nil ? 180 : 380)
+                .padding(.bottom, started == nil ? 180 : 350)
             
             Options(status: status)
             
             Card(status: status, started: started)
                 .edgesIgnoringSafeArea(.bottom)
-                .frame(height: started == nil ? 220 : 420)
+                .frame(height: started == nil ? 250 : 420)
+                .offset(y: 30)
         }
         .onReceive(cloud) { model in
             withAnimation(.easeInOut(duration: 0.6)) {

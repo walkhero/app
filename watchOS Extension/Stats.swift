@@ -64,7 +64,7 @@ struct Stats: View {
                         .foregroundColor(.secondary)
                         .font(.footnote)
                     Spacer()
-                    Text(streak.maximum, format: .number)
+                    Text(streak.max, format: .number)
                         .font(.footnote.monospacedDigit())
                 }
             }

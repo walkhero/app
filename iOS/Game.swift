@@ -30,6 +30,7 @@ final class Game: ObservableObject {
     }
     
     func submit(streak: Int, steps: Int, distance: Int, map: Int) {
+#if !DEBUG
         GKLeaderboard.submitScore(
             streak,
             context: 0,
@@ -53,6 +54,7 @@ final class Game: ObservableObject {
             context: 0,
             player: GKLocalPlayer.local,
             leaderboardIDs: [Challenge.map.leaderboard]) { _ in }
+#endif
     }
     
     private func load() {

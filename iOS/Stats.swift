@@ -7,22 +7,20 @@ struct Stats: View {
     @State private var steps = Chart.zero
     @State private var metres = Chart.zero
     @State private var updated: DateInterval?
+    @StateObject private var game = Game()
     @Environment(\.dismiss) private var dismiss
     private let world = pow(Double(4), 20)
     
     var body: some View {
         NavigationView {
             List {
-                Leaderboard(streak: streak.maximum,
-                            steps: steps.max,
-                            distance: metres.max,
-                            map: squares)
+                Leaderboard(game: game)
                 
                 Today(updated: updated)
                 
                 Section("Streak") {
-                    Item(text: .init(streak.current, format: .number), title: "Current")
-                    Item(text: .init(streak.maximum, format: .number), title: "Max")
+                    Item(text: .init(streak.current, format: .number), title: "Current continous days")
+                    Item(text: .init(streak.max, format: .number), title: "Max continous days")
                 }
                 .headerProminence(.increased)
                 .allowsHitTesting(false)
@@ -88,6 +86,11 @@ struct Stats: View {
             squares = $0.tiles.count
             steps = $0.steps
             metres = $0.metres
+            
+            game.submit(streak: streak.max,
+                        steps: steps.max,
+                        distance: metres.max,
+                        map: squares)
         }
     }
 }

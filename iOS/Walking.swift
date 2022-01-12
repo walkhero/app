@@ -54,11 +54,11 @@ struct Walking: View {
                 
                 context.draw(clock: .init(round(duration.truncatingRemainder(dividingBy: 60) * 2)),
                              center: center,
-                             side: 90)
+                             side: 80)
                 
                 context.draw(Text((started ..< .now).formatted(.timeDuration))
-                                .font(duration < 60 ? .largeTitle.monospaced() : .title.monospaced())
-                                .fontWeight(.ultraLight), at: center)
+                                .font(duration < 60 ? .largeTitle.monospacedDigit() : .title.monospacedDigit())
+                                .fontWeight(.light), at: center)
             }
         }
         .frame(height: 184)

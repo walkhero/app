@@ -5,12 +5,7 @@ private let radius = 16.0
 
 extension Stats {
     struct Leaderboard: View {
-        let streak: Int
-        let steps: Int
-        let distance: Int
-        let map: Int
-        @StateObject private var game = Game()
-        @State private var published = false
+        @ObservedObject var game: Game
         
         var body: some View {
             Section {
@@ -44,6 +39,7 @@ extension Stats {
                         .allowsHitTesting(false)
                     Spacer()
                 }
+                .padding(.top)
                 .allowsHitTesting(false)
                 
                 HStack {
@@ -56,31 +52,9 @@ extension Stats {
                             .imageScale(.large)
                             .contentShape(Rectangle())
                     }
-                    .buttonStyle(.plain)
-                    .foregroundColor(.blue)
-                    Spacer()
-                }
-                
-                HStack {
-                    Spacer()
-                    Button {
-                        published = true
-                        game.submit(streak: streak,
-                                    steps: steps,
-                                    distance: distance,
-                                    map: map)
-                        
-                        Task {
-                            _ = await UNUserNotificationCenter.send(message: "Scores published!")
-                        }
-                    } label: {
-                        Label("Publish scores", systemImage: "arrow.up")
-                            .font(.callout.weight(.medium))
-                            .imageScale(.large)
-                    }
                     .buttonStyle(.borderedProminent)
+                    .tint(.blue)
                     .foregroundColor(.white)
-                    .disabled(published)
                     Spacer()
                 }
             }
