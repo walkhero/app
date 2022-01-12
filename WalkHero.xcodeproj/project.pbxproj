@@ -42,8 +42,6 @@
 		CE846E67278E178B005989B0 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE846E66278E178B005989B0 /* Challenge.swift */; };
 		CE846E68278E17A1005989B0 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE846E66278E178B005989B0 /* Challenge.swift */; };
 		CE846E6C278E2668005989B0 /* Card.Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE846E6B278E2668005989B0 /* Card.Home.swift */; };
-		CE963416277C9C6F00CCFF4B /* Map.Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963415277C9C6F00CCFF4B /* Map.Options.swift */; };
-		CE963418277C9C9900CCFF4B /* Map.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963417277C9C9900CCFF4B /* Map.Content.swift */; };
 		CE96341F277CA1F700CCFF4B /* Ephemeris.Month.Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963419277CA1F700CCFF4B /* Ephemeris.Month.Day.swift */; };
 		CE963420277CA1F700CCFF4B /* Ephemeris.Month.Continuous.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341A277CA1F700CCFF4B /* Ephemeris.Month.Continuous.swift */; };
 		CE963421277CA1F700CCFF4B /* Ephemeris.Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341B277CA1F700CCFF4B /* Ephemeris.Navigation.swift */; };
@@ -57,13 +55,9 @@
 		CEB0D6D8278DC0CE00A7C9AF /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6D7278DC0CE00A7C9AF /* Walking.swift */; };
 		CEB0D6DC278DCF6F00A7C9AF /* Walking.Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6DB278DCF6F00A7C9AF /* Walking.Stats.swift */; };
 		CEB0D6DE278DD06900A7C9AF /* Walking.Stats.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6DD278DD06900A7C9AF /* Walking.Stats.Item.swift */; };
-		CEC805B2277B1C7500D1B046 /* Map.Content.Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B1277B1C7500D1B046 /* Map.Content.Header.swift */; };
 		CEC805B8277B291C00D1B046 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC805B7277B291C00D1B046 /* GameKit.framework */; };
 		CEC805BA277B36B400D1B046 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B9277B36B400D1B046 /* Main.swift */; };
 		CEC805BC277B36BB00D1B046 /* Map.Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805BB277B36BB00D1B046 /* Map.Representable.swift */; };
-		CECCDC042789B03D00BD4532 /* Map.Content.Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCDC032789B03D00BD4532 /* Map.Content.Game.swift */; };
-		CECCDC062789B27E00BD4532 /* Map.Content.Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCDC052789B27E00BD4532 /* Map.Content.Geo.swift */; };
-		CECCDC082789B47400BD4532 /* Map.Content.Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCDC072789B47400BD4532 /* Map.Content.Walking.swift */; };
 		CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9C2779F53F001BECAB /* App.Delegate.swift */; };
 		CEF40CA02779F6A0001BECAB /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */; };
 		CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA12779F6B3001BECAB /* Transaction.swift */; };
@@ -157,8 +151,6 @@
 		CE846E64278E173F005989B0 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CE846E66278E178B005989B0 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		CE846E6B278E2668005989B0 /* Card.Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.Home.swift; sourceTree = "<group>"; };
-		CE963415277C9C6F00CCFF4B /* Map.Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Options.swift; sourceTree = "<group>"; };
-		CE963417277C9C9900CCFF4B /* Map.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Content.swift; sourceTree = "<group>"; };
 		CE963419277CA1F700CCFF4B /* Ephemeris.Month.Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.Month.Day.swift; sourceTree = "<group>"; };
 		CE96341A277CA1F700CCFF4B /* Ephemeris.Month.Continuous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.Month.Continuous.swift; sourceTree = "<group>"; };
 		CE96341B277CA1F700CCFF4B /* Ephemeris.Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.Navigation.swift; sourceTree = "<group>"; };
@@ -173,13 +165,9 @@
 		CEB0D6D7278DC0CE00A7C9AF /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		CEB0D6DB278DCF6F00A7C9AF /* Walking.Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Stats.swift; sourceTree = "<group>"; };
 		CEB0D6DD278DD06900A7C9AF /* Walking.Stats.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Stats.Item.swift; sourceTree = "<group>"; };
-		CEC805B1277B1C7500D1B046 /* Map.Content.Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Content.Header.swift; sourceTree = "<group>"; };
 		CEC805B7277B291C00D1B046 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEC805B9277B36B400D1B046 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		CEC805BB277B36BB00D1B046 /* Map.Representable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Representable.swift; sourceTree = "<group>"; };
-		CECCDC032789B03D00BD4532 /* Map.Content.Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Content.Game.swift; sourceTree = "<group>"; };
-		CECCDC052789B27E00BD4532 /* Map.Content.Geo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Content.Geo.swift; sourceTree = "<group>"; };
-		CECCDC072789B47400BD4532 /* Map.Content.Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Content.Walking.swift; sourceTree = "<group>"; };
 		CEF40C9C2779F53F001BECAB /* App.Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
 		CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
 		CEF40CA12779F6B3001BECAB /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -286,9 +274,9 @@
 				CEAB4A2D278C44CB00E23DF5 /* Configuration.storekit */,
 				CEF40C9C2779F53F001BECAB /* App.Delegate.swift */,
 				CE512EF12779F4BC003ED854 /* App.swift */,
+				CE846E6B278E2668005989B0 /* Card.Home.swift */,
 				CE5FD9D5278DB4700099008F /* Card.Option.swift */,
 				CE5FD9D3278DB0CB0099008F /* Card.swift */,
-				CE846E6B278E2668005989B0 /* Card.Home.swift */,
 				CEF40CAB2779F6E2001BECAB /* Copy.swift */,
 				CE96341A277CA1F700CCFF4B /* Ephemeris.Month.Continuous.swift */,
 				CE963419277CA1F700CCFF4B /* Ephemeris.Month.Day.swift */,
@@ -299,26 +287,20 @@
 				CEF40CBA2779FB8A001BECAB /* Froob.swift */,
 				CE846E64278E173F005989B0 /* Game.swift */,
 				CE2241D3278B1A2C0049FDA0 /* Info.swift */,
-				CECCDC032789B03D00BD4532 /* Map.Content.Game.swift */,
-				CECCDC052789B27E00BD4532 /* Map.Content.Geo.swift */,
-				CEC805B1277B1C7500D1B046 /* Map.Content.Header.swift */,
-				CE963417277C9C9900CCFF4B /* Map.Content.swift */,
-				CECCDC072789B47400BD4532 /* Map.Content.Walking.swift */,
-				CE963415277C9C6F00CCFF4B /* Map.Options.swift */,
-				CEC805BB277B36BB00D1B046 /* Map.Representable.swift */,
-				CEC805B9277B36B400D1B046 /* Main.swift */,
-				CE7AF0CC278E354900EA9F41 /* Main.Options.swift */,
 				CE7AF0CE278E35D500EA9F41 /* Main.Options.Item.swift */,
+				CE7AF0CC278E354900EA9F41 /* Main.Options.swift */,
+				CEC805B9277B36B400D1B046 /* Main.swift */,
+				CEC805BB277B36BB00D1B046 /* Map.Representable.swift */,
 				CE7AF0CA278E334F00EA9F41 /* Map.swift */,
 				CE2241D5278B1D1E0049FDA0 /* Plus.swift */,
 				CE2241D1278B19ED0049FDA0 /* Settings.About.swift */,
 				CE2241CD278B191A0049FDA0 /* Settings.Notifications.swift */,
 				CE2241CF278B193D0049FDA0 /* Settings.Option.swift */,
 				CE9E4C49278B1847005CC3F7 /* Settings.swift */,
+				CE7AF0D0278E3EAE00EA9F41 /* Stats.Item.swift */,
+				CEA0D6AA278E4B870028EE62 /* Stats.Leaderboard.swift */,
 				CEA12ED72788814C008D1084 /* Stats.swift */,
 				CEA0D6AC278E4BBE0028EE62 /* Stats.Today.swift */,
-				CEA0D6AA278E4B870028EE62 /* Stats.Leaderboard.swift */,
-				CE7AF0D0278E3EAE00EA9F41 /* Stats.Item.swift */,
 				CEF40CA52779F6CE001BECAB /* Store.Item.swift */,
 				CEF40CA42779F6CE001BECAB /* Store.State.swift */,
 				CEF40CA32779F6CE001BECAB /* Store.swift */,
@@ -502,7 +484,6 @@
 			files = (
 				CEF40CAC2779F6E2001BECAB /* Copy.swift in Sources */,
 				CE846E65278E173F005989B0 /* Game.swift in Sources */,
-				CECCDC042789B03D00BD4532 /* Map.Content.Game.swift in Sources */,
 				CEF40CAA2779F6D9001BECAB /* Global.swift in Sources */,
 				CE963423277CA1F700CCFF4B /* Ephemeris.Month.swift in Sources */,
 				CE2241CE278B191A0049FDA0 /* Settings.Notifications.swift in Sources */,
@@ -513,15 +494,12 @@
 				CEA0D6AD278E4BBE0028EE62 /* Stats.Today.swift in Sources */,
 				CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */,
 				CE963420277CA1F700CCFF4B /* Ephemeris.Month.Continuous.swift in Sources */,
-				CE963416277C9C6F00CCFF4B /* Map.Options.swift in Sources */,
 				CEF40CA62779F6CE001BECAB /* Store.swift in Sources */,
 				CEC805BC277B36BB00D1B046 /* Map.Representable.swift in Sources */,
-				CECCDC062789B27E00BD4532 /* Map.Content.Geo.swift in Sources */,
 				CE963422277CA1F700CCFF4B /* Ephemeris.swift in Sources */,
 				CE512EF22779F4BC003ED854 /* App.swift in Sources */,
 				CEB0D6DC278DCF6F00A7C9AF /* Walking.Stats.swift in Sources */,
 				CEC805BA277B36B400D1B046 /* Main.swift in Sources */,
-				CEC805B2277B1C7500D1B046 /* Map.Content.Header.swift in Sources */,
 				CE7AF0CD278E354900EA9F41 /* Main.Options.swift in Sources */,
 				CEA0D6AB278E4B870028EE62 /* Stats.Leaderboard.swift in Sources */,
 				CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */,
@@ -529,13 +507,11 @@
 				CE2241D0278B193D0049FDA0 /* Settings.Option.swift in Sources */,
 				CE9E4C4A278B1848005CC3F7 /* Settings.swift in Sources */,
 				CEA12ED82788814C008D1084 /* Stats.swift in Sources */,
-				CE963418277C9C9900CCFF4B /* Map.Content.swift in Sources */,
 				CE963421277CA1F700CCFF4B /* Ephemeris.Navigation.swift in Sources */,
 				CE2241D4278B1A2C0049FDA0 /* Info.swift in Sources */,
 				CEB0D6DE278DD06900A7C9AF /* Walking.Stats.Item.swift in Sources */,
 				CE2241D6278B1D1E0049FDA0 /* Plus.swift in Sources */,
 				CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */,
-				CECCDC082789B47400BD4532 /* Map.Content.Walking.swift in Sources */,
 				CEF40CB92779FB62001BECAB /* Status.swift in Sources */,
 				CEF40CA82779F6CE001BECAB /* Store.Item.swift in Sources */,
 				CEF40CA72779F6CE001BECAB /* Store.State.swift in Sources */,
