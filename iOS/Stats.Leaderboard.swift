@@ -13,7 +13,7 @@ extension Stats {
         @State private var published = false
         
         var body: some View {
-            Section("Game Center") {
+            Section {
                 HStack {
                     Spacer()
                     if let image = game.image {
@@ -32,7 +32,7 @@ extension Stats {
                                         endPoint: .bottom))
                                 .frame(width: size, height: size)
                             Image(systemName: "person.fill")
-                                .font(.body)
+                                .font(.title2)
                                 .foregroundColor(.white)
                         }
                         .padding(.vertical, 10)
@@ -49,6 +49,21 @@ extension Stats {
                 HStack {
                     Spacer()
                     Button {
+                        game.leaderboard()
+                    } label: {
+                        Label("Leaderboards", systemImage: "list.star")
+                            .font(.callout.weight(.medium))
+                            .imageScale(.large)
+                            .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundColor(.blue)
+                    Spacer()
+                }
+                
+                HStack {
+                    Spacer()
+                    Button {
                         published = true
                         game.submit(streak: streak,
                                     steps: steps,
@@ -61,33 +76,14 @@ extension Stats {
                     } label: {
                         Label("Publish scores", systemImage: "arrow.up")
                             .font(.callout.weight(.medium))
-                            .padding(.horizontal)
                             .imageScale(.large)
-                            .allowsHitTesting(false)
                     }
                     .buttonStyle(.borderedProminent)
                     .foregroundColor(.white)
                     .disabled(published)
                     Spacer()
                 }
-                
-                HStack {
-                    Spacer()
-                    Button {
-                        game.leaderboard()
-                    } label: {
-                        Label("Leaderboards", systemImage: "list.star")
-                            .font(.callout.weight(.medium))
-                            .imageScale(.large)
-                            .allowsHitTesting(false)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                    .foregroundColor(.blue)
-                    Spacer()
-                }
             }
-            .headerProminence(.increased)
             .listRowBackground(Color.clear)
             .listRowSeparator(.hidden)
             .listSectionSeparator(.hidden)

@@ -5,7 +5,7 @@ extension Stats {
         let updated: DateInterval?
         
         var body: some View {
-            Section("Today") {
+            Section {
                 if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
                     HStack {
                         Text("No walk today")
@@ -33,7 +33,6 @@ extension Stats {
                          title: "Updated")
                 }
             }
-            .headerProminence(.increased)
             .allowsHitTesting(false)
         }
     }

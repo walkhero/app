@@ -1,21 +1,19 @@
 import GameKit
 
 final class Game: ObservableObject {
-    @Published private(set) var name = ""
+    @Published private(set) var name = "Hero"
     @Published private(set) var image = UIImage()
     
     init() {
-        guard !GKLocalPlayer.local.isAuthenticated else { return }
+        guard !GKLocalPlayer.local.isAuthenticated else {
+            load()
+            return
+        }
         
         GKLocalPlayer.local.authenticateHandler = { [weak self] controller, error in
             guard let controller = controller else {
                 if error == nil {
-                    self?.name = GKLocalPlayer.local.displayName
-                    GKLocalPlayer.local.loadPhoto(for: .normal) { image, _ in
-                        image.map {
-                            self?.image = $0
-                        }
-                    }
+                    self?.load()
                 }
                 return
             }
@@ -55,6 +53,15 @@ final class Game: ObservableObject {
             context: 0,
             player: GKLocalPlayer.local,
             leaderboardIDs: [Challenge.map.leaderboard]) { _ in }
+    }
+    
+    private func load() {
+        name = GKLocalPlayer.local.displayName
+        GKLocalPlayer.local.loadPhoto(for: .normal) { image, _ in
+            image.map {
+                self.image = $0
+            }
+        }
     }
 }
 
