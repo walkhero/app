@@ -1,7 +1,7 @@
 import SwiftUI
 
 extension GraphicsContext {
-    mutating func draw(clock: Int, center: CGPoint, side: CGFloat) {
+    mutating func draw(clock: Int, center: CGPoint, side: CGFloat, color: Color) {
         (0 ..< 121)
             .forEach { index in
                 translateBy(x: center.x, y: center.y)
@@ -16,9 +16,9 @@ extension GraphicsContext {
                                              y: center.y - side + (index == clock
                                                                    ? 0
                                                                    : index % 2 == 0
-                                                                       ? 3
-                                                                       : 5)))
-                    }, with: .color(.secondary), style: .init(lineWidth: index == clock
+                                                                       ? 5
+                                                                       : 8)))
+                    }, with: .color(color), style: .init(lineWidth: index == clock
                                                          ? 10
                                                          : index < clock
                                                          ? 1.5

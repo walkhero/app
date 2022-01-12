@@ -1,43 +1,20 @@
 import SwiftUI
-import UserNotifications
 
 @main struct App: SwiftUI.App {
-    @State private var walking: Date?
+    @StateObject private var status = Status()
     @Environment(\.scenePhase) private var phase
     @WKExtensionDelegateAdaptor(Delegate.self) private var delegate
     
     var body: some Scene {
         WindowGroup {
-//            Window(health: health, walking: walking)
-//                .task {
-//                    cloud.pull.send()
-//
-//                    location.request()
-//                    await health.request()
-//                    _ = await UNUserNotificationCenter.request()
-//
-//                    game.login()
-//                }
-//                .onReceive(cloud) { model in
-//                    let started = model.walking
-//                    walking = started
-//
-//                    if let date = started {
-//                        if !health.started {
-//                            health.start(date: date)
-//                        }
-//
-//                        if !location.started {
-//                            location.start()
-//                        }
-//                    }
-//                }
-            Circle()
+            Main(status: status)
+                .task {
+                    await status.request()
+                }
         }
         .onChange(of: phase) {
             if $0 == .active {
                 cloud.pull.send()
-//                game.login()
             }
         }
     }

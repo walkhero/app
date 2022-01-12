@@ -5,8 +5,12 @@ import UserNotifications
 import Hero
 
 final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
+
+#if os(iOS)
     @Published var hide = Defaults.shouldHide
     @Published var follow = Defaults.shouldFollow
+#endif
+    
     @Published private(set) var tiles = Set<Tile>()
     @Published private(set) var steps = 0
     @Published private(set) var distance = 0
@@ -37,16 +41,16 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
                                   read: .init([Challenge.steps, .distance].compactMap(\.object)))
     }
     
-    func start(date: Date) {
-        clear()
+    func start(date: Date) async {
+        await clear()
         
         started = true
         manager.startUpdatingLocation()
         
-        #if os(iOS)
+#if os(iOS)
         manager.showsBackgroundLocationIndicator = true
         manager.startMonitoringSignificantLocationChanges()
-        #endif
+#endif
 
         guard HKHealthStore.isHealthDataAvailable() else { return }
         
@@ -123,12 +127,12 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
 #if os(iOS)
         await UNUserNotificationCenter.send(message: "Walk finished!")
 #endif
-        clear()
+        await clear()
     }
     
     func cancel() async {
         await cloud.cancel()
-        clear()
+        await clear()
         
 #if os(iOS)
         await UNUserNotificationCenter.send(message: "Walk cancelled!")
@@ -187,7 +191,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
             intervalComponents: .init(minute: 1))
     }
     
-    private func clear() {
+    @MainActor private func clear() {
         started = false
         tiles = []
         
@@ -197,9 +201,9 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
         steps = 0
         distance = 0
         
-        #if os(iOS)
+#if os(iOS)
         manager.stopMonitoringSignificantLocationChanges()
-        #endif
+#endif
         
         manager.stopUpdatingLocation()
     }

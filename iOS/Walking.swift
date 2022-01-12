@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Walking: View {
-    @ObservedObject var status: Status
+    weak var status: Status!
     let started: Date
     @State private var alert = false
     
@@ -11,11 +11,11 @@ struct Walking: View {
                 alert = true
             } label: {
                 Text("Cancel")
+                    .font(.callout)
                     .padding(.leading)
             }
             .buttonStyle(.plain)
             .foregroundColor(.pink)
-            .font(.callout)
             .alert("Cancel walk?", isPresented: $alert) {
                 Button("Continue", role: .cancel) {
                     
@@ -36,14 +36,13 @@ struct Walking: View {
                 }
             } label: {
                 Text("Finish")
-                    .font(.body.weight(.medium))
+                    .font(.callout.weight(.medium))
                     .padding(.horizontal)
             }
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
             .tint(.indigo)
             .foregroundColor(.white)
-            .font(.callout)
         }
         .padding()
         
@@ -54,7 +53,8 @@ struct Walking: View {
                 
                 context.draw(clock: .init(round(duration.truncatingRemainder(dividingBy: 60) * 2)),
                              center: center,
-                             side: 80)
+                             side: 80,
+                             color: .secondary)
                 
                 context.draw(Text((started ..< .now).formatted(.timeDuration))
                                 .font(duration < 60 ? .largeTitle.monospacedDigit() : .title.monospacedDigit())

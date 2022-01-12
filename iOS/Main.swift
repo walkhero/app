@@ -24,7 +24,9 @@ struct Main: View {
             }
             
             if let date = started, !status.started {
-                status.start(date: date)
+                Task {
+                    await status.start(date: date)
+                }
             }
         }
     }

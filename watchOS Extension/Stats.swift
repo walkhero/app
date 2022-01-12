@@ -1,78 +1,63 @@
 import SwiftUI
-import UserNotifications
 import Hero
 
 struct Stats: View {
     @State private var streak = Streak.zero
+    @State private var squares = 0
+    @State private var steps = Chart.zero
+    @State private var metres = Chart.zero
     @State private var updated: DateInterval?
+    private let world = pow(Double(4), 20)
     
     var body: some View {
         List {
+            Today(updated: updated)
+            
             Section {
-                Button {
-                    
-                } label: {
-                    Text("Start a walk")
-                }
-                .buttonStyle(.borderedProminent)
+                Header(title: "Streak")
+                Item(text: .init(streak.current, format: .number), title: "Current continous days")
+                Item(text: .init(streak.max, format: .number), title: "Max continous days")
             }
-            .listRowBackground(Color.clear)
             
-            Section("Today") {
-                if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
-                    HStack {
-                        Text("No walk today")
-                        Spacer()
-                        Image(systemName: "exclamationmark.triangle.fill")
-                    }
-                    .foregroundColor(.secondary)
-                    .font(.footnote)
-                } else {
-                    HStack {
-                        Image(systemName: "figure.walk")
-                            .font(.title3.weight(.light))
-                        Image(systemName: "checkmark.circle.fill")
-                            .font(.title3)
-                            .foregroundColor(.blue)
-                        Spacer()
-                    }
-                    .listRowBackground(Color.clear)
-                }
-                
-                if let updated = updated {
-                    Text("Updated ")
-                        .foregroundColor(.secondary)
-                        .font(.caption2)
-                    + Text(updated.end, format: .relative(presentation: .named))
-                        .foregroundColor(.secondary)
-                        .font(.caption2)
-                }
+            Section {
+                Header(title: "Steps")
+                Item(text: .init(steps.average, format: .number), title: "Average")
+                Item(text: .init(steps.max, format: .number), title: "Max")
+                Item(text: .init(steps.total, format: .number), title: "Total")
             }
-            .allowsHitTesting(false)
             
-            Section("Streak") {
-                HStack {
-                    Text("Current")
-                        .foregroundColor(.secondary)
-                        .font(.footnote)
-                    Spacer()
-                    Text(streak.current, format: .number)
-                        .font(.footnote.monospacedDigit())
-                }
-                HStack {
-                    Text("Max")
-                        .foregroundColor(.secondary)
-                        .font(.footnote)
-                    Spacer()
-                    Text(streak.max, format: .number)
-                        .font(.footnote.monospacedDigit())
-                }
+            Section {
+                Header(title: "Distance")
+                Item(text: .init(.init(value: .init(metres.average),
+                                       unit: UnitLength.meters),
+                                 format: .measurement(width: .abbreviated,
+                                                      usage: .general,
+                                                      numberFormatStyle: .number)), title: "Average")
+                Item(text: .init(.init(value: .init(metres.max),
+                                       unit: UnitLength.meters),
+                                 format: .measurement(width: .abbreviated,
+                                                      usage: .general,
+                                                      numberFormatStyle: .number)), title: "Max")
+                Item(text: .init(.init(value: .init(metres.total),
+                                       unit: UnitLength.meters),
+                                 format: .measurement(width: .abbreviated,
+                                                      usage: .general,
+                                                      numberFormatStyle: .number)), title: "Total")
             }
-            .allowsHitTesting(false)
+            
+            Section {
+                Header(title: "Map")
+                Item(text: .init(squares, format: .number), title: "Squares")
+                Item(text: .init(Double(squares) / world,
+                                 format: .percent.precision(.significantDigits(4))), title: "World")
+            }
         }
         .onReceive(cloud) {
             updated = $0.updated
             streak = $0.calendar.streak
+            squares = $0.tiles.count
+            steps = $0.steps
+            metres = $0.metres
         }
     }
 }
