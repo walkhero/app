@@ -2,7 +2,7 @@ import GameKit
 
 final class Game: ObservableObject {
     @Published private(set) var name = "Hero"
-    @Published private(set) var image = UIImage()
+    @Published private(set) var image: UIImage?
     
     init() {
         guard !GKLocalPlayer.local.isAuthenticated else {

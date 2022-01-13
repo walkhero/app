@@ -22,12 +22,12 @@ extension Stats {
                         ZStack {
                             RoundedRectangle(cornerRadius: radius, style: .continuous)
                                 .fill(LinearGradient(
-                                    gradient: .init(colors: [.accentColor.opacity(0.6), .accentColor]),
+                                    gradient: .init(colors: [.accentColor.opacity(0.8), .accentColor]),
                                         startPoint: .top,
                                         endPoint: .bottom))
                                 .frame(width: size, height: size)
                             Image(systemName: "person.fill")
-                                .font(.title2)
+                                .font(.title)
                                 .foregroundColor(.white)
                         }
                         .padding(.vertical, 10)
