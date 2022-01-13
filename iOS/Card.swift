@@ -6,9 +6,12 @@ struct Card: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 24)
+            RoundedRectangle(cornerRadius: 26)
+                .fill(Color(.systemBackground))
+                .shadow(color: .init("Shadow"), radius: 10)
+            RoundedRectangle(cornerRadius: 26)
                 .fill(Color(.tertiarySystemBackground))
-                .shadow(color: .black.opacity(0.25), radius: 5)
+                .padding(1)
             VStack(spacing: 0) {
                 if let started = started {
                     Walking(status: status, started: started)

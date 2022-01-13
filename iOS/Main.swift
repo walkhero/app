@@ -15,8 +15,8 @@ struct Main: View {
             
             Card(status: status, started: started)
                 .edgesIgnoringSafeArea(.bottom)
-                .frame(height: started == nil ? 250 : 420)
-                .offset(y: 30)
+                .frame(height: started == nil ? 260 : 460)
+                .offset(y: 40)
         }
         .onReceive(cloud) { model in
             withAnimation(.easeInOut(duration: 0.6)) {
