@@ -1,8 +1,11 @@
 import SwiftUI
 
 struct Walking: View {
-    weak var status: Status!
+    @ObservedObject var status: Status
     let started: Date
+    @State private var duration = 0
+    @State private var steps = 0
+    @State private var metres = 0
     @State private var alert = false
     
     var body: some View {
@@ -43,28 +46,64 @@ struct Walking: View {
             .buttonBorderShape(.capsule)
             .foregroundColor(.white)
         }
-        .padding()
-        
-        TimelineView(.periodic(from: started, by: 0.25)) { time in
+        .padding([.top, .leading, .trailing])
+
+        TimelineView(.periodic(from: started, by: 0.5)) { time in
             Canvas { context, size in
-                let duration = time.date.timeIntervalSince(started)
-                let center = CGPoint(x: size.width / 2, y: 92)
+                let center = CGPoint(x: size.width / 2, y: 125)
                 
-                context.draw(clock: .init(round(duration.truncatingRemainder(dividingBy: 60) * 2)),
-                             center: center,
-                             side: 80,
-                             color: .secondary)
+                if duration > 0 {
+                    context.ring(title: "duration",
+                                 center: center,
+                                 side: 90,
+                                 percent: (Date.now.timeIntervalSince1970 - started.timeIntervalSince1970) / .init(duration),
+                                 anchor: .bottomTrailing)
+                    
+                    context.draw(Text(.init(timeIntervalSinceNow: .init(-duration)) ..< .now, format: .timeDuration)
+                                    .font(.footnote.monospacedDigit())
+                                    .fontWeight(.light)
+                                    .foregroundColor(.init(.tertiaryLabel)),
+                                 at: .init(x: center.x, y: center.y + 22))
+                }
+                
+                if steps > 0 {
+                    context.ring(title: "steps",
+                                 center: center,
+                                 side: 82,
+                                 percent: Double(status.steps) / .init(steps),
+                                 anchor: .trailing)
+                }
+                
+                if metres > 0 {
+                    context.ring(title: "distance",
+                                 center: center,
+                                 side: 74,
+                                 percent: Double(status.distance) / .init(metres),
+                                 anchor: .topTrailing)
+                }
+                
+                if duration == 0 && steps == 0 && metres == 0 {
+                    context.ring(title: "First walk",
+                                 center: center,
+                                 side: 90,
+                                 percent: 1,
+                                 anchor: .trailing)
+                }
                 
                 context.draw(Text(started ..< .now, format: .timeDuration)
-                                .font(duration < 60 ? .largeTitle.monospacedDigit() : .title.monospacedDigit())
-                                .fontWeight(.light), at: center)
+                                .font(.title2.monospacedDigit())
+                                .fontWeight(.light),
+                             at: center)
             }
         }
-        .frame(height: 184)
-        
-        Spacer()
-        
-        Stats(status: status)
+        .frame(height: 240)
+        .onReceive(cloud) {
+            duration = $0.duration.max
+            steps = $0.steps.max
+            metres = $0.metres.max
+        }
+
+        Stats(status: status, steps: steps, metres: metres)
         
         Spacer()
     }

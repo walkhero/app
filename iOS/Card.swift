@@ -9,7 +9,7 @@ struct Card: View {
             RoundedRectangle(cornerRadius: 24)
                 .fill(Color(.tertiarySystemBackground))
                 .shadow(color: .black.opacity(0.25), radius: 5)
-            VStack {
+            VStack(spacing: 0) {
                 if let started = started {
                     Walking(status: status, started: started)
                 } else {
