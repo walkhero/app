@@ -6,34 +6,44 @@ extension Stats {
         
         var body: some View {
             Section {
-                if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
-                    HStack {
-                        Text("No walk today")
-                            .font(.body)
-                        Spacer()
-                        Image(systemName: "exclamationmark.triangle.fill")
-                            .font(.title3)
+                VStack(spacing: 10) {
+                    if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
+                        HStack {
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .font(.title3)
+                                .foregroundColor(.pink)
+                            Text("No walk today")
+                                .font(.body)
+                                .foregroundColor(.secondary)
+                        }
+                    } else {
+                        HStack {
+                            Image(systemName: "figure.walk")
+                                .font(.title3.weight(.light))
+                            Image(systemName: "checkmark.circle.fill")
+                                .font(.title3)
+                                .foregroundColor(.blue)
+                        }
+                        .font(.title3)
                     }
-                    .foregroundColor(.secondary)
-                } else {
-                    HStack {
-                        Image(systemName: "figure.walk")
-                            .font(.title3.weight(.light))
-                        Image(systemName: "checkmark.circle.fill")
-                            .font(.title3)
-                            .foregroundColor(.blue)
-                        Spacer()
+                    
+                    if let updated = updated {
+                        HStack {
+                            Spacer()
+                            Text("Updated ")
+                                .fontWeight(.light)
+                            + Text(updated.end, format: .relative(presentation: .named))
+                            Spacer()
+                        }
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
                     }
-                    .font(.title3)
-                }
-                
-                if let updated = updated {
-                    Item(text: .init(updated.end,
-                                     format: .relative(presentation: .named)),
-                         title: "Updated")
                 }
             }
             .allowsHitTesting(false)
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            .listSectionSeparator(.hidden)
         }
     }
 }

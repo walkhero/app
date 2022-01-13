@@ -41,22 +41,6 @@ extension Stats {
                 }
                 .padding(.top)
                 .allowsHitTesting(false)
-                
-                HStack {
-                    Spacer()
-                    Button {
-                        game.leaderboard()
-                    } label: {
-                        Label("Leaderboards", systemImage: "list.star")
-                            .font(.callout.weight(.medium))
-                            .imageScale(.large)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .tint(.blue)
-                    .foregroundColor(.white)
-                    Spacer()
-                }
             }
             .listRowBackground(Color.clear)
             .listRowSeparator(.hidden)

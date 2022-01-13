@@ -56,7 +56,7 @@ struct Walking: View {
                              side: 80,
                              color: .secondary)
                 
-                context.draw(Text((started ..< .now).formatted(.timeDuration))
+                context.draw(Text(started ..< .now, format: .timeDuration)
                                 .font(duration < 60 ? .largeTitle.monospacedDigit() : .title.monospacedDigit())
                                 .fontWeight(.light), at: center)
             }
