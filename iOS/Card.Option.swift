@@ -12,7 +12,7 @@ extension Card {
                     .font(font)
                     .allowsHitTesting(false)
                     .symbolRenderingMode(.hierarchical)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.primary)
             }
             .frame(width: 50, height: 50)
         }
