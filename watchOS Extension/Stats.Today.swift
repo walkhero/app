@@ -22,7 +22,7 @@ extension Stats {
                             .font(.title3.weight(.light))
                         Image(systemName: "checkmark.circle.fill")
                             .font(.title3)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.accentColor)
                         Spacer()
                     }
                     .font(.title3)

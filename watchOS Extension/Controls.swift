@@ -48,7 +48,7 @@ struct Controls: View {
             } label: {
                 ZStack {
                     Capsule()
-                        .fill(Color.indigo)
+                        .fill(Color.accentColor)
                     Text("Finish")
                         .font(.callout.weight(.medium))
                         .padding(.horizontal, 40)

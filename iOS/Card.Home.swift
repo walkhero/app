@@ -17,11 +17,14 @@ extension Card {
             } label: {
                 ZStack {
                     Circle()
-                        .fill(Color.indigo)
+                        .fill(Color.accentColor.opacity(0.15))
+                    Circle()
+                        .fill(Color.accentColor)
+                        .padding(3)
                     Text("Start")
                         .font(.body.weight(.medium))
                         .foregroundColor(.white)
-                        .padding(25)
+                        .padding(28)
                 }
                 .fixedSize()
                 .contentShape(Rectangle())

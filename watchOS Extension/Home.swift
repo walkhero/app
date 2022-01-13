@@ -9,7 +9,7 @@ struct Home: View {
         } label: {
             ZStack {
                 Circle()
-                    .fill(Color.indigo)
+                    .fill(Color.accentColor)
                 Text("Start")
                     .font(.body.weight(.medium))
                     .foregroundColor(.white)

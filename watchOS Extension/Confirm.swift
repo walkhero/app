@@ -11,7 +11,7 @@ struct Confirm: View {
                     Spacer()
                     Image(systemName: "checkmark.circle.fill")
                         .font(.title)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.accentColor)
                     Spacer()
                 }
             }

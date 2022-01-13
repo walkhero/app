@@ -42,7 +42,7 @@ struct Settings: View {
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.large)
-            .listStyle(.insetGrouped)
+            .listStyle(.grouped)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {

@@ -44,10 +44,16 @@ extension Ephemeris.Month {
                 }
                 Text("\(index)")
                     .font(.caption2)
-                    .fontWeight(continouos == .none ? .regular : .bold)
+                    .fontWeight(today
+                                ? .bold
+                                : continouos == .none
+                                    ? .light
+                                    : .regular)
                     .foregroundColor(today
                                         ? .white
-                                        : continouos == .none ? .init(.tertiaryLabel) : .black)
+                                        : continouos == .none
+                                            ? .init(.tertiaryLabel)
+                                            : .white)
             }
             .frame(width: 40, height: 40)
         }

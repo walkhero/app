@@ -41,7 +41,6 @@ struct Walking: View {
             }
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
-            .tint(.indigo)
             .foregroundColor(.white)
         }
         .padding()
