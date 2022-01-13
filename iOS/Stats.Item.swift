@@ -9,10 +9,10 @@ extension Stats {
             HStack {
                 Text(title)
                     .foregroundColor(.secondary)
-                    .font(.body)
+                    .font(.callout)
                 Spacer()
                 text
-                    .font(.title3.weight(.light).monospacedDigit())
+                    .font(.body.weight(.light).monospacedDigit())
             }
         }
     }
