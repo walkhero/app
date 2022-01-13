@@ -17,7 +17,7 @@ extension Card {
             } label: {
                 ZStack {
                     Circle()
-                        .fill(Color.accentColor.opacity(0.15))
+                        .fill(Color.accentColor.opacity(0.2))
                     Circle()
                         .fill(Color.accentColor)
                         .padding(3)

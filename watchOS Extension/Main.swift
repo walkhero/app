@@ -12,11 +12,9 @@ struct Main: View {
                     self.finish = nil
                 }
             } else if let started = started {
-                TabView {
-                    Controls(status: status, finish: $finish, started: started)
-                    Walking(started: started)
-                    Progress(status: status)
-                }
+                Walking(status: status,
+                        finish: $finish,
+                        started: started)
             } else {
                 TabView {
                     Home()

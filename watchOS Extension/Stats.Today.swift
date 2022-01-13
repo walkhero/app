@@ -8,11 +8,11 @@ extension Stats {
             Section {
                 if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
                     HStack {
-                        Text("No walk today")
-                            .font(.body)
-                        Spacer()
                         Image(systemName: "exclamationmark.triangle.fill")
                             .font(.title3)
+                            .foregroundColor(.pink)
+                        Text("No walk today")
+                            .font(.body)
                     }
                     .foregroundColor(.secondary)
                     .padding(.horizontal)
@@ -23,7 +23,6 @@ extension Stats {
                         Image(systemName: "checkmark.circle.fill")
                             .font(.title3)
                             .foregroundColor(.accentColor)
-                        Spacer()
                     }
                     .font(.title3)
                     .padding(.horizontal)

@@ -20,8 +20,8 @@ struct Stats: View {
                 Today(updated: updated)
                 
                 Section("Streak") {
-                    Item(text: .init(streak.current, format: .number), title: "Current continous days")
-                    Item(text: .init(streak.max, format: .number), title: "Max continous days")
+                    Item(text: .init(streak.current, format: .number), title: "Current days")
+                    Item(text: .init(streak.max, format: .number), title: "Max days")
                 }
                 .headerProminence(.increased)
                 .allowsHitTesting(false)

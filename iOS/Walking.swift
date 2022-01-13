@@ -63,7 +63,7 @@ struct Walking: View {
                                     .font(.footnote.monospacedDigit())
                                     .fontWeight(.light)
                                     .foregroundColor(.init(.tertiaryLabel)),
-                                 at: .init(x: center.x, y: center.y + 22))
+                                 at: .init(x: center.x, y: center.y + 16))
                 }
                 
                 if steps > 0 {
@@ -93,7 +93,7 @@ struct Walking: View {
                 context.draw(Text(started ..< .now, format: .timeDuration)
                                 .font(.title2.monospacedDigit())
                                 .fontWeight(.light),
-                             at: center)
+                             at: .init(x: center.x, y: center.y - 7))
             }
         }
         .frame(height: 240)
