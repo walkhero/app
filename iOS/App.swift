@@ -12,6 +12,8 @@ import Hero
             Main(status: status)
                 .sheet(isPresented: $froob, content: Froob.init)
                 .task {
+                    cloud.pull.send()
+                    
                     switch Defaults.action {
                     case .rate:
                         UIApplication.shared.review()

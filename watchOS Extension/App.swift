@@ -9,12 +9,16 @@ import SwiftUI
         WindowGroup {
             Main(status: status)
                 .task {
+                    cloud.pull.send()
                     await status.request()
                 }
         }
         .onChange(of: phase) {
-            if $0 == .active {
+            switch $0 {
+            case .active:
                 cloud.pull.send()
+            default:
+                break
             }
         }
     }
