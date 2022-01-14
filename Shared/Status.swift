@@ -201,7 +201,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
             quantitySamplePredicate: HKQuery.predicateForSamples(withStart: start, end: nil),
             options: .cumulativeSum,
             anchorDate: start,
-            intervalComponents: .init(minute: 1))
+            intervalComponents: .init(second: 10))
     }
     
     @MainActor private func clear() {
