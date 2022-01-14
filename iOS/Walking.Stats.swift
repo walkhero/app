@@ -9,7 +9,7 @@ extension Walking {
         @State private var tiles = Set<Tile>()
         
         var body: some View {
-            HStack(spacing: 0) {
+            HStack(alignment: .bottom, spacing: 0) {
                 Item(text: .init(status.steps, format: .number),
                      caption: steps > 0 ? .init(steps, format: .number) : nil,
                      title: "Steps")

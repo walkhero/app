@@ -8,24 +8,27 @@ extension Stats {
             Section {
                 if updated == nil || !Calendar.current.isDateInToday(updated!.start) {
                     HStack {
+                        Spacer()
                         Image(systemName: "exclamationmark.triangle.fill")
                             .font(.title3)
                             .foregroundColor(.pink)
                         Text("No walk today")
                             .font(.body)
+                        Spacer()
                     }
                     .foregroundColor(.secondary)
-                    .padding(.horizontal)
+                    .padding()
                 } else {
                     HStack {
+                        Spacer()
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.title.weight(.light))
+                            .foregroundColor(.accentColor)
                         Image(systemName: "figure.walk")
                             .font(.title3.weight(.light))
-                        Image(systemName: "checkmark.circle.fill")
-                            .font(.title3)
-                            .foregroundColor(.accentColor)
+                        Spacer()
                     }
-                    .font(.title3)
-                    .padding(.horizontal)
+                    .padding()
                 }
                 
                 if let updated = updated {

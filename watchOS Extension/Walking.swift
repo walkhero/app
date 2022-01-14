@@ -9,9 +9,10 @@ struct Walking: View {
     @State private var duration = 0
     @State private var steps = 0
     @State private var metres = 0
+    @State private var selection = 0
     
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             Ring(status: status,
                  started: started,
                  duration: duration,

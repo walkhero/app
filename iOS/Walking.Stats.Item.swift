@@ -7,7 +7,7 @@ extension Walking.Stats {
         let title: String
         
         var body: some View {
-            VStack {
+            VStack(spacing: 0) {
                 Spacer()
                 text
                     .font(.title2.monospacedDigit().weight(.light))
@@ -15,12 +15,20 @@ extension Walking.Stats {
                     caption
                         .foregroundColor(.init(.tertiaryLabel))
                         .font(.caption.monospacedDigit())
+                        .padding(.bottom, 4)
                 }
-                Text(title)
-                    .foregroundColor(.secondary)
-                    .font(.caption)
+                ZStack {
+                    Capsule()
+                        .fill(Color.accentColor)
+                    Text(title)
+                        .foregroundColor(.white)
+                        .font(.caption)
+                        .padding(.horizontal)
+                        .padding(.vertical, 4)
+                }
+                .fixedSize()
             }
-            .frame(width: 115, height: 70)
+            .frame(width: 115, height: 80)
         }
     }
 }

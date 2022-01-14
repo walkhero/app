@@ -6,17 +6,19 @@ struct Confirm: View {
     
     var body: some View {
         ScrollView {
-            HStack {
-                Text("Walk\ncompleted!")
+            HStack(spacing: 12) {
                 Image(systemName: "checkmark.circle.fill")
                     .symbolRenderingMode(.hierarchical)
                     .font(.largeTitle.weight(.light))
                     .foregroundColor(.accentColor)
+                Text("Walk\nfinished!")
+                    .font(.footnote)
             }
-            .padding(.vertical)
+            .padding(.top)
+            .padding(.vertical, 10)
             
             Item(text: .init(finish.streak, format: .number), title: "Streak")
-                .padding(.top)
+                .padding(.top, 10)
             Item(text: .init((finish.started ..< .now).formatted(.timeDuration)), title: "Duration")
             Item(text: .init(finish.steps, format: .number), title: "Steps")
             Item(text: .init(.init(value: .init(finish.meters),
@@ -25,22 +27,24 @@ struct Confirm: View {
                                             usage: .general,
                                             numberFormatStyle: .number)), title: "Distance")
             Item(text: .init(finish.squares, format: .number), title: "Squares")
-                .padding(.bottom)
+                .padding(.bottom, 10)
             
             Button(action: done) {
                 ZStack {
                     Capsule()
-                        .fill(Color.white)
+                        .fill(Color.primary)
                     Text("Done")
                         .font(.callout.weight(.medium))
-                        .padding(.horizontal, 20)
-                        .padding()
+                        .foregroundColor(.primary)
+                        .colorInvert()
+                        .padding(.horizontal, 30)
+                        .padding(8)
                 }
                 .fixedSize()
             }
             .buttonStyle(.plain)
             .foregroundColor(.black)
-            .padding(.vertical)
+            .padding(.vertical, 10)
         }
     }
 }

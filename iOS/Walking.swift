@@ -2,6 +2,7 @@ import SwiftUI
 
 struct Walking: View {
     @ObservedObject var status: Status
+    @Binding var finish: Finish?
     let started: Date
     @State private var duration = 0
     @State private var steps = 0
@@ -35,7 +36,7 @@ struct Walking: View {
             
             Button {
                 Task {
-                    await status.finish()
+                    finish = await status.finish()
                 }
             } label: {
                 Text("Finish")
@@ -50,7 +51,7 @@ struct Walking: View {
 
         TimelineView(.periodic(from: started, by: 0.5)) { time in
             Canvas { context, size in
-                let center = CGPoint(x: size.width / 2, y: 125)
+                let center = CGPoint(x: size.width / 2, y: 130)
                 
                 if duration > 0 {
                     context.ring(title: "duration",
@@ -93,7 +94,7 @@ struct Walking: View {
                 context.draw(Text(started ..< .now, format: .timeDuration)
                                 .font(.title2.monospacedDigit())
                                 .fontWeight(.light),
-                             at: .init(x: center.x, y: center.y - 7))
+                             at: .init(x: center.x, y: center.y - 3))
             }
         }
         .frame(height: 240)

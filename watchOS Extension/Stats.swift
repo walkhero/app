@@ -62,7 +62,7 @@ struct Stats: View {
                 Header(title: "Map")
                 Item(text: .init(squares, format: .number), title: "Squares")
                 Item(text: .init(Double(squares) / world,
-                                 format: .percent.precision(.significantDigits(4))), title: "World")
+                                 format: .percent.precision(.significantDigits(1))), title: "World")
             }
         }
         .onReceive(cloud) {

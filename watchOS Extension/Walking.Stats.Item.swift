@@ -10,22 +10,24 @@ extension Walking.Stats {
         var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 8)
-                    .foregroundColor(.accentColor.opacity(0.4))
+                    .foregroundColor(.accentColor.opacity(0.5))
                 HStack {
                     Text(title)
-                        .foregroundColor(.secondary)
-                        .font(.footnote.weight(.light))
+                        .foregroundColor(.primary.opacity(0.4))
+                        .font(.caption.weight(.light))
                     Spacer()
                     text
                         .font(.body.monospacedDigit())
                 }
-                .padding()
+                .padding(.horizontal)
+                .padding(.vertical, 3)
             }
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal)
         
             caption
                 .foregroundColor(.primary.opacity(0.4))
-                .font(.footnote.monospacedDigit())
+                .font(.caption2.monospacedDigit())
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                 .padding(.trailing)
         }

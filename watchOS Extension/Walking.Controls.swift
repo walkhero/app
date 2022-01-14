@@ -36,17 +36,7 @@ extension Walking {
                 
                 Button {
                     Task {
-                        let steps = status.steps
-                        let meters = status.distance
-                        let squares = await status.tiles.subtracting(cloud.model.tiles).count
-                        
-                        await status.finish()
-                        
-                        finish = .init(started: started,
-                                       steps: steps,
-                                       meters: meters,
-                                       squares: squares,
-                                       streak: await cloud.model.calendar.streak.current)
+                        finish = await status.finish()
                     }
                 } label: {
                     ZStack {
@@ -54,7 +44,7 @@ extension Walking {
                             .fill(Color.accentColor)
                         Text("Finish")
                             .font(.callout.weight(.medium))
-                            .padding(.horizontal, 24)
+                            .padding(.horizontal, 30)
                             .padding()
                     }
                     .fixedSize()

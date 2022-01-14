@@ -6,7 +6,7 @@ extension GraphicsContext {
         let origin = CGPoint(x: center.x - 100, y: center.y - side)
         draw(Text(title)
                 .font(.caption2)
-                .foregroundColor(.secondary),
+                .foregroundColor(.primary.opacity(0.4)),
              at: .init(x: origin.x - 7, y: origin.y),
              anchor: anchor)
         
@@ -18,7 +18,7 @@ extension GraphicsContext {
                       endAngle: .degrees(270),
                       clockwise: false)
         },
-               with: .color(.accentColor.opacity(0.1)),
+               with: .color(.accentColor.opacity(0.07)),
                style: .init(lineWidth: 5, lineCap: .round, lineJoin: .round))
         
         stroke(.init {
@@ -40,8 +40,8 @@ extension GraphicsContext {
                       endAngle: .degrees(270),
                       clockwise: false)
         },
-               with: .color(.accentColor.opacity(0.3)),
-               style: .init(lineWidth: 8, lineCap: .round, lineJoin: .round))
+               with: .color(.accentColor.opacity(0.2)),
+               style: .init(lineWidth: 6, lineCap: .round, lineJoin: .round))
         
         stroke(.init {
             $0.addArc(center: center,
@@ -51,7 +51,7 @@ extension GraphicsContext {
                       clockwise: false)
         },
                with: .color(.accentColor),
-               style: .init(lineWidth: 8, lineCap: .round, lineJoin: .round))
+               style: .init(lineWidth: 6, lineCap: .round, lineJoin: .round))
     }
 #endif
 }

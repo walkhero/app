@@ -14,9 +14,9 @@ extension Stats {
                     .padding(.trailing)
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
-                        .foregroundColor(.accentColor.opacity(0.4))
+                        .foregroundColor(.accentColor.opacity(0.3))
                     text
-                        .font(.title3.weight(.light).monospacedDigit())
+                        .font(.body.weight(.light).monospacedDigit())
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding()
                 }

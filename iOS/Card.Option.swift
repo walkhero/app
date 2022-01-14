@@ -14,7 +14,7 @@ extension Card {
                     .symbolRenderingMode(.hierarchical)
                     .foregroundColor(.primary)
             }
-            .frame(width: 50, height: 50)
+            .frame(width: 56, height: 54)
         }
     }
 }

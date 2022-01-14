@@ -8,17 +8,18 @@ extension Confirm {
         var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 8)
-                    .foregroundColor(.accentColor.opacity(0.2))
+                    .foregroundColor(.orange.opacity(0.6))
                 HStack {
                     Text(title)
-                        .foregroundColor(.secondary)
-                        .font(.footnote.weight(.light))
+                        .foregroundColor(.primary.opacity(0.7))
+                        .font(.caption.weight(.light))
                     Spacer()
                     text
                         .font(.body.monospacedDigit())
                 }
-                .padding()
+                .padding(10)
             }
+            .padding(.horizontal)
         }
     }
 }

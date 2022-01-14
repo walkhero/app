@@ -9,7 +9,7 @@ extension Walking {
         let metres: Int
         
         var body: some View {
-            ScrollView {
+            VStack {
                 Item(text: .init(status.steps, format: .number),
                      caption: .init(steps, format: .number),
                      title: "Steps",
@@ -36,6 +36,7 @@ extension Walking {
                      title: "Squares",
                      subtitle: "Total ")
             }
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }

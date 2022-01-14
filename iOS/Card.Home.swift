@@ -33,17 +33,17 @@ extension Card {
             Spacer()
             
             HStack {
-                Option(font: .title2.weight(.light), symbol: "calendar") {
+                Option(font: .title2.weight(.ultraLight), symbol: "calendar") {
                     calendar = true
                 }
                 .sheet(isPresented: $calendar, content: Ephemeris.init)
                 
-                Option(font: .largeTitle.weight(.light), symbol: "chart.line.uptrend.xyaxis.circle") {
+                Option(font: .largeTitle.weight(.ultraLight), symbol: "chart.line.uptrend.xyaxis.circle") {
                     stats = true
                 }
                 .sheet(isPresented: $stats, content: Stats.init)
                 
-                Option(font: .title2.weight(.light), symbol: "gear") {
+                Option(font: .title2.weight(.ultraLight), symbol: "gear") {
                     settings = true
                 }
                 .sheet(isPresented: $settings, content: Settings.init)

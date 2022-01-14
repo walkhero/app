@@ -18,24 +18,22 @@ extension Stats {
                         }
                     } else {
                         HStack {
-                            Image(systemName: "figure.walk")
-                                .font(.title3.weight(.light))
                             Image(systemName: "checkmark.circle.fill")
-                                .font(.title3)
+                                .font(.title.weight(.light))
                                 .foregroundColor(.accentColor)
+                            Image(systemName: "figure.walk")
+                                .font(.title2.weight(.light))
                         }
-                        .font(.title3)
                     }
                     
                     if let updated = updated {
                         HStack {
                             Spacer()
                             Text("Updated ")
-                                .fontWeight(.light)
                             + Text(updated.end, format: .relative(presentation: .named))
                             Spacer()
                         }
-                        .font(.footnote)
+                        .font(.footnote.weight(.light))
                         .foregroundColor(.secondary)
                     }
                 }

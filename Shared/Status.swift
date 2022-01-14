@@ -117,17 +117,30 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
     }
     
-    func finish() async {
-        guard started else { return }
+    func finish() async -> Finish? {
+        guard
+            started,
+            let date = await cloud.model.walking
+        else { return nil }
+        
+        let squares = await tiles.subtracting(cloud.model.tiles).count
         
         await cloud.finish(steps: steps,
                            metres: distance,
                            tiles: tiles)
         
+        let finish = Finish(started: date,
+                            steps: steps,
+                            meters: distance,
+                            squares: squares,
+                            streak: await cloud.model.calendar.streak.current)
+        
 #if os(iOS)
         await UNUserNotificationCenter.send(message: "Walk finished!")
 #endif
         await clear()
+        
+        return finish
     }
     
     func cancel() async {

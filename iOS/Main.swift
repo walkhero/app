@@ -9,17 +9,17 @@ struct Main: View {
         ZStack(alignment: .bottom) {
             Map(status: status)
                 .edgesIgnoringSafeArea(.top)
-                .padding(.bottom, started == nil ? 180 : 350)
+                .padding(.bottom, started == nil ? 180 : 320)
             
             Options(status: status)
             
             Card(status: status, started: started)
                 .edgesIgnoringSafeArea(.bottom)
-                .frame(height: started == nil ? 260 : 460)
+                .frame(height: started == nil ? 260 : 430)
                 .offset(y: 40)
         }
         .onReceive(cloud) { model in
-            withAnimation(.easeInOut(duration: 0.6)) {
+            withAnimation(.easeInOut(duration: 0.4)) {
                 started = model.walking
             }
             

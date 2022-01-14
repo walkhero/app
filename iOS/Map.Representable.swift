@@ -16,6 +16,7 @@ extension Map {
             isRotateEnabled = false
             isPitchEnabled = false
             showsUserLocation = true
+            pointOfInterestFilter = .excludingAll
             mapType = .standard
             delegate = self
             

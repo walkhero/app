@@ -50,6 +50,10 @@
 		CE7AF0CD278E354900EA9F41 /* Main.Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AF0CC278E354900EA9F41 /* Main.Options.swift */; };
 		CE7AF0CF278E35D500EA9F41 /* Main.Options.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AF0CE278E35D500EA9F41 /* Main.Options.Item.swift */; };
 		CE7AF0D1278E3EAE00EA9F41 /* Stats.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AF0D0278E3EAE00EA9F41 /* Stats.Item.swift */; };
+		CE83B95B2791AD7E0056B006 /* Finish.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75B9278F0B3B00C706D4 /* Finish.swift */; };
+		CE83B95C2791ADA00056B006 /* Confirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75BB278F0C1A00C706D4 /* Confirm.swift */; };
+		CE83B95D2791ADA30056B006 /* Confirm.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78825E27907FDF0031DE1C /* Confirm.Item.swift */; };
+		CE83B95F2791B3DB0056B006 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83B95E2791B3DB0056B006 /* Sheet.swift */; };
 		CE846E65278E173F005989B0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE846E64278E173F005989B0 /* Game.swift */; };
 		CE846E67278E178B005989B0 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE846E66278E178B005989B0 /* Challenge.swift */; };
 		CE846E68278E17A1005989B0 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE846E66278E178B005989B0 /* Challenge.swift */; };
@@ -171,6 +175,7 @@
 		CE7AF0CC278E354900EA9F41 /* Main.Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Options.swift; sourceTree = "<group>"; };
 		CE7AF0CE278E35D500EA9F41 /* Main.Options.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Options.Item.swift; sourceTree = "<group>"; };
 		CE7AF0D0278E3EAE00EA9F41 /* Stats.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Item.swift; sourceTree = "<group>"; };
+		CE83B95E2791B3DB0056B006 /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 		CE846E64278E173F005989B0 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CE846E66278E178B005989B0 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		CE846E6B278E2668005989B0 /* Card.Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.Home.swift; sourceTree = "<group>"; };
@@ -259,9 +264,6 @@
 				CE25233B278C6FFD000A26C5 /* Info.plist */,
 				CE252330278C6FFD000A26C5 /* App.Delegate.swift */,
 				CE252332278C6FFD000A26C5 /* App.swift */,
-				CE78825E27907FDF0031DE1C /* Confirm.Item.swift */,
-				CE1B75BB278F0C1A00C706D4 /* Confirm.swift */,
-				CE1B75B9278F0B3B00C706D4 /* Finish.swift */,
 				CE1B75AB278EFB3200C706D4 /* Home.swift */,
 				CE705309278C788400F6C10B /* Main.swift */,
 				CE1B75B1278EFEA700C706D4 /* Stats.Header.swift */,
@@ -331,6 +333,7 @@
 				CE2241CD278B191A0049FDA0 /* Settings.Notifications.swift */,
 				CE2241CF278B193D0049FDA0 /* Settings.Option.swift */,
 				CE9E4C49278B1847005CC3F7 /* Settings.swift */,
+				CE83B95E2791B3DB0056B006 /* Sheet.swift */,
 				CE7AF0D0278E3EAE00EA9F41 /* Stats.Item.swift */,
 				CEA0D6AA278E4B870028EE62 /* Stats.Leaderboard.swift */,
 				CEA12ED72788814C008D1084 /* Stats.swift */,
@@ -353,6 +356,9 @@
 			isa = PBXGroup;
 			children = (
 				CE846E66278E178B005989B0 /* Challenge.swift */,
+				CE78825E27907FDF0031DE1C /* Confirm.Item.swift */,
+				CE1B75BB278F0C1A00C706D4 /* Confirm.swift */,
+				CE1B75B9278F0B3B00C706D4 /* Finish.swift */,
 				CEF40CA92779F6D9001BECAB /* Global.swift */,
 				CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */,
 				CEF40CB82779FB62001BECAB /* Status.swift */,
@@ -558,13 +564,17 @@
 				CEB0D6DE278DD06900A7C9AF /* Walking.Stats.Item.swift in Sources */,
 				CE2241D6278B1D1E0049FDA0 /* Plus.swift in Sources */,
 				CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */,
+				CE83B95C2791ADA00056B006 /* Confirm.swift in Sources */,
+				CE83B95D2791ADA30056B006 /* Confirm.Item.swift in Sources */,
 				CEF40CB92779FB62001BECAB /* Status.swift in Sources */,
+				CE83B95F2791B3DB0056B006 /* Sheet.swift in Sources */,
 				CEF40CA82779F6CE001BECAB /* Store.Item.swift in Sources */,
 				CEF40CA72779F6CE001BECAB /* Store.State.swift in Sources */,
 				CE963424277CA1F700CCFF4B /* Ephermeris.Week.swift in Sources */,
 				CEF40CBB2779FB8A001BECAB /* Froob.swift in Sources */,
 				CE96341F277CA1F700CCFF4B /* Ephemeris.Month.Day.swift in Sources */,
 				CE5FD9D6278DB4700099008F /* Card.Option.swift in Sources */,
+				CE83B95B2791AD7E0056B006 /* Finish.swift in Sources */,
 				CE2241D2278B19ED0049FDA0 /* Settings.About.swift in Sources */,
 				CE7AF0CB278E334F00EA9F41 /* Map.swift in Sources */,
 				CE846E6C278E2668005989B0 /* Card.Home.swift in Sources */,

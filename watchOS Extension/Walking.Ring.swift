@@ -12,13 +12,13 @@ extension Walking {
             TimelineView(.periodic(from: started, by: 0.5)) { time in
                 Canvas { context, size in
                     let center = CGPoint(x: size.width / 2, y: size.height / 2)
-                    let side = min(size.width, size.height) * 0.47
+                    let side = min(size.width, size.height) * 0.44
                     var y = 10.0
                     
                     if duration > 0 {
                         context.draw(Text("duration")
                                         .font(.caption2.weight(.light))
-                                        .foregroundColor(.primary.opacity(0.4)),
+                                        .foregroundColor(.primary.opacity(0.3)),
                                      at: .init(x: 10, y: y), anchor: .topLeading)
                         y += 16
                     }
@@ -26,7 +26,7 @@ extension Walking {
                     if steps > 0 {
                         context.draw(Text("steps")
                                         .font(.caption2.weight(.light))
-                                        .foregroundColor(.primary.opacity(0.4)),
+                                        .foregroundColor(.primary.opacity(0.3)),
                                      at: .init(x: 10, y: y), anchor: .topLeading)
                         y += 16
                     }
@@ -34,7 +34,7 @@ extension Walking {
                     if metres > 0 {
                         context.draw(Text("distance")
                                         .font(.caption2.weight(.light))
-                                        .foregroundColor(.primary.opacity(0.4)),
+                                        .foregroundColor(.primary.opacity(0.3)),
                                      at: .init(x: 10, y: y), anchor: .topLeading)
                     }
                     
@@ -46,8 +46,8 @@ extension Walking {
                         context.draw(Text(.init(timeIntervalSinceNow: .init(-duration)) ..< .now, format: .timeDuration)
                                         .font(.caption2.monospacedDigit())
                                         .fontWeight(.light)
-                                        .foregroundColor(.init(.secondary)),
-                                     at: .init(x: center.x, y: center.y + 19))
+                                        .foregroundColor(.primary.opacity(0.4)),
+                                     at: .init(x: center.x, y: center.y + 14))
                     }
                     
                     if steps > 0 {
@@ -69,8 +69,8 @@ extension Walking {
                     }
                     
                     context.draw(Text(started ..< .now, format: .timeDuration)
-                                    .font(.title2.monospacedDigit()),
-                                 at: .init(x: center.x, y: center.y - 6))
+                                    .font(.title3.monospacedDigit()),
+                                 at: .init(x: center.x, y: center.y - 3))
                 }
             }
             .edgesIgnoringSafeArea(.all)

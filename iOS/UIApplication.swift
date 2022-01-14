@@ -17,12 +17,9 @@ extension UIApplication: GKGameCenterControllerDelegate {
             .keyWindow?
             .rootViewController
             .map {
-                var top = $0
-                while let presented = top.presentedViewController {
-                    top = presented
-                }
-                controller.popoverPresentationController?.sourceView = top.view
-                top.present(controller, animated: true)
+                $0.dismiss(animated: true)
+                controller.popoverPresentationController?.sourceView = $0.view
+                $0.present(controller, animated: true)
             }
     }
     
