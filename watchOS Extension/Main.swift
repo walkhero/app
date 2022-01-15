@@ -30,7 +30,7 @@ struct Main: View {
         .onReceive(cloud) { model in
             started = model.walking
             
-            if let date = started, !status.started {
+            if let date = started {
                 Task {
                     await status.start(date: date)
                 }

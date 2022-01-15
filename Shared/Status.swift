@@ -42,7 +42,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func start(date: Date) async {
-        await clear()
+        guard !started else { return }
         
         started = true
         manager.startUpdatingLocation()
