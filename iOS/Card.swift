@@ -1,9 +1,10 @@
 import SwiftUI
+import Hero
 
 struct Card: View {
     weak var status: Status!
     let started: Date?
-    @State private var finish: Finish?
+    @State private var summary: Summary?
     
     var body: some View {
         ZStack {
@@ -16,16 +17,16 @@ struct Card: View {
             VStack(spacing: 0) {
                 if let started = started {
                     Walking(status: status,
-                            finish: $finish,
+                            summary: $summary,
                             started: started)
                 } else {
                     Home()
                 }
             }
         }
-        .sheet(item: $finish) { result in
-            Sheet(rootView: Confirm(finish: result) {
-                finish = nil
+        .sheet(item: $summary) { result in
+            Sheet(rootView: Confirm(summary: result) {
+                summary = nil
             })
         }
     }

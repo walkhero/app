@@ -104,7 +104,7 @@ struct Stats: View {
         .onReceive(cloud) {
             updated = $0.updated
             streak = $0.calendar.streak
-            squares = $0.tiles.count
+            squares = $0.squares.count
             duration = $0.duration
             steps = $0.steps
             metres = $0.metres

@@ -6,7 +6,7 @@ extension Walking {
         @ObservedObject var status: Status
         let steps: Int
         let metres: Int
-        @State private var tiles = Set<Tile>()
+        @State private var squares = Set<Squares.Item>()
         
         var body: some View {
             HStack(alignment: .bottom, spacing: 0) {
@@ -27,14 +27,15 @@ extension Walking {
                      : nil,
                      title: "Distance")
                 Item(text: .init(status
-                                    .tiles
-                                    .subtracting(tiles)
+                                    .squares
+                                    .items
+                                    .subtracting(squares)
                                     .count, format: .number),
-                     caption: tiles.isEmpty ? nil : .init(tiles.count, format: .number),
+                     caption: squares.isEmpty ? nil : .init(squares.count, format: .number),
                      title: "Squares")
             }
             .onReceive(cloud) {
-                tiles = $0.tiles
+                squares = $0.squares
             }
         }
     }

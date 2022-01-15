@@ -1,8 +1,9 @@
 import SwiftUI
+import Hero
 
 struct Walking: View {
     @ObservedObject var status: Status
-    @Binding var finish: Finish?
+    @Binding var summary: Summary?
     let started: Date
     @State private var duration = 0
     @State private var steps = 0
@@ -36,7 +37,7 @@ struct Walking: View {
             
             Button {
                 Task {
-                    finish = await status.finish()
+                    summary = await status.finish()
                 }
             } label: {
                 Text("Finish")

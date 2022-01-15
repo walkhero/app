@@ -1,7 +1,8 @@
 import SwiftUI
+import Hero
 
 struct Confirm: View {
-    let finish: Finish
+    let summary: Summary
     let done: () -> Void
     
     var body: some View {
@@ -17,16 +18,16 @@ struct Confirm: View {
             .padding(.top)
             .padding(.vertical, 10)
             
-            Item(text: .init(finish.streak, format: .number), title: "Streak")
+            Item(text: .init(summary.streak, format: .number), title: "Streak")
                 .padding(.top, 10)
-            Item(text: .init((finish.started ..< .now).formatted(.timeDuration)), title: "Duration")
-            Item(text: .init(finish.steps, format: .number), title: "Steps")
-            Item(text: .init(.init(value: .init(finish.meters),
+            Item(text: .init((summary.started ..< .now).formatted(.timeDuration)), title: "Duration")
+            Item(text: .init(summary.steps, format: .number), title: "Steps")
+            Item(text: .init(.init(value: .init(summary.metres),
                              unit: UnitLength.meters),
                        format: .measurement(width: .abbreviated,
                                             usage: .general,
                                             numberFormatStyle: .number)), title: "Distance")
-            Item(text: .init(finish.squares, format: .number), title: "Squares")
+            Item(text: .init(summary.squares, format: .number), title: "Squares")
                 .padding(.bottom, 10)
             
             Button(action: done) {

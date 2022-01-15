@@ -3,9 +3,9 @@ import Hero
 
 struct Walking: View {
     weak var status: Status!
-    @Binding var finish: Finish?
+    @Binding var summary: Summary?
     let started: Date
-    @State private var tiles = Set<Tile>()
+    @State private var squares = Set<Squares.Item>()
     @State private var duration = 0
     @State private var steps = 0
     @State private var metres = 0
@@ -19,15 +19,15 @@ struct Walking: View {
                  steps: steps,
                  metres: metres)
             Stats(status: status,
-                  tiles: tiles,
+                  squares: squares,
                   steps: steps,
                   metres: metres)
             Controls(status: status,
-                     finish: $finish,
+                     summary: $summary,
                      started: started)
         }
         .onReceive(cloud) {
-            tiles = $0.tiles
+            squares = $0.squares
             duration = $0.duration.max
             steps = $0.steps.max
             metres = $0.metres.max

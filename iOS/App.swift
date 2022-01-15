@@ -28,8 +28,6 @@ import Hero
                     }
                     
                     await status.request()
-
-                    await cloud.migrate(directory: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0])
                 }
         }
         .onChange(of: phase) {

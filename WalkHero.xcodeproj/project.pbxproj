@@ -15,7 +15,6 @@
 		CE1B75B4278F022900C706D4 /* Walking.Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75B3278F022900C706D4 /* Walking.Controls.swift */; };
 		CE1B75B6278F085C00C706D4 /* Walking.Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75B5278F085C00C706D4 /* Walking.Stats.swift */; };
 		CE1B75B8278F087700C706D4 /* Walking.Stats.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75B7278F087700C706D4 /* Walking.Stats.Item.swift */; };
-		CE1B75BA278F0B3B00C706D4 /* Finish.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75B9278F0B3B00C706D4 /* Finish.swift */; };
 		CE1B75BC278F0C1A00C706D4 /* Confirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75BB278F0C1A00C706D4 /* Confirm.swift */; };
 		CE2241CE278B191A0049FDA0 /* Settings.Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2241CD278B191A0049FDA0 /* Settings.Notifications.swift */; };
 		CE2241D0278B193D0049FDA0 /* Settings.Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2241CF278B193D0049FDA0 /* Settings.Option.swift */; };
@@ -50,7 +49,6 @@
 		CE7AF0CD278E354900EA9F41 /* Main.Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AF0CC278E354900EA9F41 /* Main.Options.swift */; };
 		CE7AF0CF278E35D500EA9F41 /* Main.Options.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AF0CE278E35D500EA9F41 /* Main.Options.Item.swift */; };
 		CE7AF0D1278E3EAE00EA9F41 /* Stats.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AF0D0278E3EAE00EA9F41 /* Stats.Item.swift */; };
-		CE83B95B2791AD7E0056B006 /* Finish.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75B9278F0B3B00C706D4 /* Finish.swift */; };
 		CE83B95C2791ADA00056B006 /* Confirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75BB278F0C1A00C706D4 /* Confirm.swift */; };
 		CE83B95D2791ADA30056B006 /* Confirm.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE78825E27907FDF0031DE1C /* Confirm.Item.swift */; };
 		CE83B95F2791B3DB0056B006 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83B95E2791B3DB0056B006 /* Sheet.swift */; };
@@ -140,7 +138,6 @@
 		CE1B75B3278F022900C706D4 /* Walking.Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Controls.swift; sourceTree = "<group>"; };
 		CE1B75B5278F085C00C706D4 /* Walking.Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Stats.swift; sourceTree = "<group>"; };
 		CE1B75B7278F087700C706D4 /* Walking.Stats.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Stats.Item.swift; sourceTree = "<group>"; };
-		CE1B75B9278F0B3B00C706D4 /* Finish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finish.swift; sourceTree = "<group>"; };
 		CE1B75BB278F0C1A00C706D4 /* Confirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confirm.swift; sourceTree = "<group>"; };
 		CE2241CD278B191A0049FDA0 /* Settings.Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Notifications.swift; sourceTree = "<group>"; };
 		CE2241CF278B193D0049FDA0 /* Settings.Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Option.swift; sourceTree = "<group>"; };
@@ -358,7 +355,6 @@
 				CE846E66278E178B005989B0 /* Challenge.swift */,
 				CE78825E27907FDF0031DE1C /* Confirm.Item.swift */,
 				CE1B75BB278F0C1A00C706D4 /* Confirm.swift */,
-				CE1B75B9278F0B3B00C706D4 /* Finish.swift */,
 				CEF40CA92779F6D9001BECAB /* Global.swift */,
 				CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */,
 				CEF40CB82779FB62001BECAB /* Status.swift */,
@@ -524,7 +520,6 @@
 				CE78825D27907BB90031DE1C /* Walking.Ring.swift in Sources */,
 				CE252349278C70B0000A26C5 /* Global.swift in Sources */,
 				CE78825F27907FDF0031DE1C /* Confirm.Item.swift in Sources */,
-				CE1B75BA278F0B3B00C706D4 /* Finish.swift in Sources */,
 				CE1B75B0278EFC8300C706D4 /* Stats.Today.swift in Sources */,
 				CE70530A278C788400F6C10B /* Main.swift in Sources */,
 			);
@@ -574,7 +569,6 @@
 				CEF40CBB2779FB8A001BECAB /* Froob.swift in Sources */,
 				CE96341F277CA1F700CCFF4B /* Ephemeris.Month.Day.swift in Sources */,
 				CE5FD9D6278DB4700099008F /* Card.Option.swift in Sources */,
-				CE83B95B2791AD7E0056B006 /* Finish.swift in Sources */,
 				CE2241D2278B19ED0049FDA0 /* Settings.About.swift in Sources */,
 				CE7AF0CB278E334F00EA9F41 /* Map.swift in Sources */,
 				CE846E6C278E2668005989B0 /* Card.Home.swift in Sources */,

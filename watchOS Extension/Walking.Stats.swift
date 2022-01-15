@@ -4,7 +4,7 @@ import Hero
 extension Walking {
     struct Stats: View {
         @ObservedObject var status: Status
-        let tiles: Set<Tile>
+        let squares: Set<Squares.Item>
         let steps: Int
         let metres: Int
         
@@ -29,10 +29,11 @@ extension Walking {
                      subtitle: "Max ")
                 
                 Item(text: .init(status
-                                    .tiles
-                                    .subtracting(tiles)
+                                    .squares
+                                    .items
+                                    .subtracting(squares)
                                     .count, format: .number),
-                     caption: .init(tiles.count, format: .number),
+                     caption: .init(squares.count, format: .number),
                      title: "Squares",
                      subtitle: "Total ")
             }

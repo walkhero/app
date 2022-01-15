@@ -11,7 +11,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var follow = Defaults.shouldFollow
 #endif
     
-    @Published private(set) var tiles = Set<Tile>()
+    @Published private(set) var squares = Squares()
     @Published private(set) var steps = 0
     @Published private(set) var distance = 0
     private(set) var started = false
@@ -117,30 +117,19 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
     }
     
-    func finish() async -> Finish? {
-        guard
-            started,
-            let date = await cloud.model.walking
-        else { return nil }
+    func finish() async -> Summary? {
+        guard started else { return nil }
         
-        let squares = await tiles.subtracting(cloud.model.tiles).count
-        
-        await cloud.finish(steps: steps,
+        let summary = await cloud.finish(steps: steps,
                            metres: distance,
-                           tiles: tiles)
-        
-        let finish = Finish(started: date,
-                            steps: steps,
-                            meters: distance,
-                            squares: squares,
-                            streak: await cloud.model.calendar.streak.current)
+                           squares: squares.items)
         
 #if os(iOS)
         await UNUserNotificationCenter.send(message: "Walk finished!")
 #endif
         await clear()
         
-        return finish
+        return summary
     }
     
     func cancel() async {
@@ -153,13 +142,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_: CLLocationManager, didUpdateLocations: [CLLocation]) {
-        _ = didUpdateLocations
-            .last
-            .map(\.coordinate)
-            .map(Tile.init(coordinate:))
-            .map {
-                tiles.insert($0)
-            }
+        squares.add(locations: didUpdateLocations)
     }
     
     func locationManager(_: CLLocationManager, didChangeAuthorization: CLAuthorizationStatus) { }
@@ -206,7 +189,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     @MainActor private func clear() {
         started = false
-        tiles = []
+        squares.clear()
         
         queries.forEach(store.stop)
         queries = []

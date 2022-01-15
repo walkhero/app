@@ -1,9 +1,10 @@
 import SwiftUI
+import Hero
 
 extension Walking {
     struct Controls: View {
         weak var status: Status!
-        @Binding var finish: Finish?
+        @Binding var summary: Summary?
         let started: Date
         @State private var alert = false
         
@@ -36,7 +37,7 @@ extension Walking {
                 
                 Button {
                     Task {
-                        finish = await status.finish()
+                        summary = await status.finish()
                     }
                 } label: {
                     ZStack {
