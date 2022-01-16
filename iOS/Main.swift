@@ -27,6 +27,10 @@ struct Main: View {
                 Task {
                     await status.start(date: date)
                 }
+            } else if status.started {
+                Task {
+                    await status.cancel()
+                }
             }
         }
     }

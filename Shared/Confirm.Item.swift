@@ -8,7 +8,7 @@ extension Confirm {
         var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 8)
-                    .foregroundColor(.orange.opacity(0.6))
+                    .foregroundColor(.orange.opacity(0.7))
                 HStack {
                     Text(title)
                         .foregroundColor(.primary.opacity(0.7))

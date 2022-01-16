@@ -119,6 +119,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func finish() async -> Summary? {
         guard started else { return nil }
+        started = false
         
         let summary = await cloud.finish(steps: steps,
                            metres: distance,
@@ -133,12 +134,32 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func cancel() async {
+        guard started else { return }
+        started = false
+        
         await cloud.cancel()
         await clear()
         
 #if os(iOS)
         await UNUserNotificationCenter.send(message: "Walk cancelled!")
 #endif
+    }
+    
+    @MainActor func clear() {
+        started = false
+        squares.clear()
+        
+        queries.forEach(store.stop)
+        queries = []
+        
+        steps = 0
+        distance = 0
+        
+#if os(iOS)
+        manager.stopMonitoringSignificantLocationChanges()
+#endif
+        
+        manager.stopUpdatingLocation()
     }
     
     func locationManager(_: CLLocationManager, didUpdateLocations: [CLLocation]) {
@@ -185,23 +206,6 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
             options: .cumulativeSum,
             anchorDate: start,
             intervalComponents: .init(second: 2))
-    }
-    
-    @MainActor private func clear() {
-        started = false
-        squares.clear()
-        
-        queries.forEach(store.stop)
-        queries = []
-        
-        steps = 0
-        distance = 0
-        
-#if os(iOS)
-        manager.stopMonitoringSignificantLocationChanges()
-#endif
-        
-        manager.stopUpdatingLocation()
     }
 }
 
