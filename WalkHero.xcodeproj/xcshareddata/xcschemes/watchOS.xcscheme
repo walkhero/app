@@ -54,8 +54,10 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/Walk Hero">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE252322278C6FFC000A26C5"
@@ -63,7 +65,7 @@
             BlueprintName = "watchOS"
             ReferencedContainer = "container:WalkHero.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -71,8 +73,10 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/Walk Hero">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE252322278C6FFC000A26C5"
@@ -80,7 +84,16 @@
             BlueprintName = "watchOS"
             ReferencedContainer = "container:WalkHero.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CE252322278C6FFC000A26C5"
+            BuildableName = "WalkHero.app"
+            BlueprintName = "watchOS"
+            ReferencedContainer = "container:WalkHero.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
