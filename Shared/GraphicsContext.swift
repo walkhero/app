@@ -6,7 +6,7 @@ extension GraphicsContext {
         let origin = CGPoint(x: center.x - 100, y: center.y - side)
         draw(Text(title)
                 .font(.caption2)
-                .foregroundColor(.primary.opacity(0.4)),
+                .foregroundColor(.primary.opacity(0.45)),
              at: .init(x: origin.x - 7, y: origin.y),
              anchor: anchor)
         

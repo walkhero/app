@@ -18,7 +18,7 @@ extension Walking {
                     if duration > 0 {
                         context.draw(Text("duration")
                                         .font(.caption2.weight(.light))
-                                        .foregroundColor(.primary.opacity(0.3)),
+                                        .foregroundColor(.primary.opacity(0.4)),
                                      at: .init(x: 10, y: y), anchor: .topLeading)
                         y += 16
                     }
@@ -26,7 +26,7 @@ extension Walking {
                     if steps > 0 {
                         context.draw(Text("steps")
                                         .font(.caption2.weight(.light))
-                                        .foregroundColor(.primary.opacity(0.3)),
+                                        .foregroundColor(.primary.opacity(0.4)),
                                      at: .init(x: 10, y: y), anchor: .topLeading)
                         y += 16
                     }
@@ -34,7 +34,7 @@ extension Walking {
                     if metres > 0 {
                         context.draw(Text("distance")
                                         .font(.caption2.weight(.light))
-                                        .foregroundColor(.primary.opacity(0.3)),
+                                        .foregroundColor(.primary.opacity(0.4)),
                                      at: .init(x: 10, y: y), anchor: .topLeading)
                     }
                     
