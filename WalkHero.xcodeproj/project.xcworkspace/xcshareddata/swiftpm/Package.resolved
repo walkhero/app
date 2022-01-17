@@ -6,7 +6,7 @@
         "repositoryURL": "https://github.com/walkhero/hero.git",
         "state": {
           "branch": "main",
-          "revision": "cdb77429ffdede674bb8c2e4c8b3c03b5ff0b489",
+          "revision": "c8a86a95fc4b6fb6dfb4d88a546d79dd71aa7186",
           "version": null
         }
       },
@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/archivable/package.git",
         "state": {
           "branch": "main",
-          "revision": "f0b9d72548631cd5650f7dbbd5a9c7e29d0b47c9",
+          "revision": "a7b85916458ce2da99cd76049cf9d849dec32da9",
           "version": null
         }
       }

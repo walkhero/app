@@ -28,8 +28,6 @@ struct Walking: View {
                 
                 Button("Cancel", role: .destructive) {
                     Task {
-                        let walking = await cloud.model.walking
-                        print("walking = \(walking)")
                         await status.cancel()
                     }
                 }

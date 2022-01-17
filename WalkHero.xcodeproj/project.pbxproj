@@ -187,6 +187,7 @@
 		CEA0D6AC278E4BBE0028EE62 /* Stats.Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Today.swift; sourceTree = "<group>"; };
 		CEA12ED72788814C008D1084 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		CEAB4A2D278C44CB00E23DF5 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		CEADD73327960E8600636974 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		CEB0D6D7278DC0CE00A7C9AF /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		CEB0D6DB278DCF6F00A7C9AF /* Walking.Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Stats.swift; sourceTree = "<group>"; };
 		CEB0D6DD278DD06900A7C9AF /* Walking.Stats.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Stats.Item.swift; sourceTree = "<group>"; };
@@ -249,6 +250,7 @@
 		CE252324278C6FFC000A26C5 /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
+				CEADD73327960E8600636974 /* watchOS.entitlements */,
 				CE252325278C6FFD000A26C5 /* Assets.xcassets */,
 			);
 			path = watchOS;
@@ -716,6 +718,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = watchOS/watchOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
@@ -788,6 +791,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = watchOS/watchOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
