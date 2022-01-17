@@ -19,11 +19,12 @@ struct Main: View {
                 .offset(y: 40)
         }
         .onReceive(cloud) { model in
+            let walking = model.walking
             withAnimation(.easeInOut(duration: 0.4)) {
-                started = model.walking
+                started = walking
             }
             
-            if let date = started {
+            if let date = walking {
                 Task {
                     await status.start(date: date)
                 }

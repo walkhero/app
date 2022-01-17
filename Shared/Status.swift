@@ -62,7 +62,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
             .map {
                 $0
-                    .initialResultsHandler = { _, results, _ in
+                    .initialResultsHandler = { [weak self] _, results, _ in
                         _ = results
                             .map { value in
                                 Task { [weak self] in
@@ -72,7 +72,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
                     }
                 
                 $0
-                    .statisticsUpdateHandler = { _, _, results, _ in
+                    .statisticsUpdateHandler = {  [weak self] _, _, results, _ in
                         _ = results
                             .map { value in
                                 Task { [weak self] in
@@ -93,7 +93,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
             .map {
                 $0
-                    .initialResultsHandler = { _, results, _ in
+                    .initialResultsHandler = { [weak self] _, results, _ in
                         _ = results
                             .map { value in
                                 Task { [weak self] in
@@ -103,7 +103,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
                     }
                 
                 $0
-                    .statisticsUpdateHandler = { _, _, results, _ in
+                    .statisticsUpdateHandler = { [weak self] _, _, results, _ in
                         _ = results
                             .map { value in
                                 Task { [weak self] in
