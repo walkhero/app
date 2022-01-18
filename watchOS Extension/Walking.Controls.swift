@@ -17,6 +17,7 @@ extension Walking {
                         Text("Cancel")
                             .font(.callout)
                             .padding(.leading)
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .foregroundColor(.pink)
@@ -49,6 +50,7 @@ extension Walking {
                             .padding()
                     }
                     .fixedSize()
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .foregroundColor(.white)
