@@ -1,4 +1,5 @@
 import SwiftUI
+import UserNotifications
 
 @main struct App: SwiftUI.App {
     @StateObject private var status = Status()
@@ -11,6 +12,7 @@ import SwiftUI
                 .task {
                     cloud.pull.send()
                     await status.request()
+                    _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert])
                 }
         }
         .onChange(of: phase) {
