@@ -12,7 +12,9 @@ import Hero
             Main(status: status)
                 .sheet(isPresented: $froob, content: Froob.init)
                 .task {
-                    cloud.pull.send()
+                    cloud.ready.notify(queue: .main) {
+                        cloud.pull.send()
+                    }
                     
                     switch Defaults.action {
                     case .rate:
@@ -28,6 +30,7 @@ import Hero
                     }
                     
                     await status.request()
+                    UIApplication.shared.registerForRemoteNotifications()
                 }
         }
         .onChange(of: phase) {

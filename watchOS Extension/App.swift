@@ -10,9 +10,13 @@ import UserNotifications
         WindowGroup {
             Main(status: status)
                 .task {
-                    cloud.pull.send()
+                    cloud.ready.notify(queue: .main) {
+                        cloud.pull.send()
+                    }
+                    
                     await status.request()
                     _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert])
+                    WKExtension.shared().registerForRemoteNotifications()
                 }
         }
         .onChange(of: phase) {
