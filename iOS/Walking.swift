@@ -29,6 +29,7 @@ struct Walking: View {
                 Button("Cancel", role: .destructive) {
                     Task {
                         await status.cancel()
+                        await UNUserNotificationCenter.send(message: "Walk cancelled!")
                     }
                 }
             }
@@ -38,6 +39,7 @@ struct Walking: View {
             Button {
                 Task {
                     summary = await status.finish()
+                    await UNUserNotificationCenter.send(message: "Walk finished!")
                 }
             } label: {
                 Text("Finish")

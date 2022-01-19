@@ -125,9 +125,6 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
                            metres: distance,
                            squares: squares.items)
         
-#if os(iOS)
-        await UNUserNotificationCenter.send(message: "Walk finished!")
-#endif
         await clear()
         
         return summary
@@ -139,10 +136,6 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         await cloud.cancel()
         await clear()
-        
-#if os(iOS)
-        await UNUserNotificationCenter.send(message: "Walk cancelled!")
-#endif
     }
     
     @MainActor func clear() {
