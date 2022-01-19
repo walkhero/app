@@ -18,6 +18,7 @@ struct Walking: View {
                 Text("Cancel")
                     .font(.callout)
                     .padding(.leading)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
             .foregroundColor(.pink)
@@ -45,6 +46,7 @@ struct Walking: View {
                 Text("Finish")
                     .font(.callout.weight(.medium))
                     .padding(.horizontal)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)

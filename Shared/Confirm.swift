@@ -42,6 +42,7 @@ struct Confirm: View {
                         .padding(8)
                 }
                 .fixedSize()
+                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
             .foregroundColor(.black)
