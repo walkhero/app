@@ -13,7 +13,7 @@ extension Walking.Stats {
                     .font(.title2.monospacedDigit().weight(.light))
                 if let caption = caption {
                     caption
-                        .foregroundColor(.init(.tertiaryLabel))
+                        .foregroundStyle(.secondary)
                         .font(.caption.monospacedDigit())
                         .padding(.bottom, 4)
                 }

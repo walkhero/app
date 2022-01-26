@@ -5,6 +5,7 @@ struct Card: View {
     weak var status: Status!
     let started: Date?
     @State private var summary: Summary?
+    @State private var loading = true
     
     var body: some View {
         ZStack {
@@ -15,7 +16,11 @@ struct Card: View {
                 .fill(Color(.tertiarySystemBackground))
                 .padding(1)
             VStack(spacing: 0) {
-                if let started = started {
+                if loading {
+                    Image(systemName: "figure.walk")
+                        .font(.largeTitle.weight(.light))
+                        .foregroundStyle(.tertiary)
+                } else if let started = started {
                     Walking(status: status,
                             summary: $summary,
                             started: started)
@@ -28,6 +33,11 @@ struct Card: View {
             Sheet(rootView: Confirm(summary: result) {
                 summary = nil
             })
+        }
+        .onAppear {
+            cloud.ready.notify(queue: .main) {
+                loading = false
+            }
         }
     }
 }
