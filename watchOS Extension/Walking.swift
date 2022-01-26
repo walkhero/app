@@ -19,9 +19,7 @@ struct Walking: View {
                  steps: steps,
                  metres: metres)
             Stats(status: status,
-                  squares: squares,
-                  steps: steps,
-                  metres: metres)
+                  squares: squares)
             Controls(status: status,
                      summary: $summary,
                      started: started)

@@ -7,15 +7,25 @@ extension Stats {
         let text: Text
         
         var body: some View {
-            HStack {
+            VStack {
                 Text("Average")
                     .foregroundColor(.secondary)
-                    .font(.callout)
-                Spacer()
-                symbol
-                text
-                    .font(.body.weight(.light).monospacedDigit())
+                    .font(.footnote.weight(.light))
+                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
+                    .padding(.trailing)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .foregroundColor(.accentColor.opacity(0.3))
+                    HStack {
+                        Spacer()
+                        symbol
+                        text
+                            .font(.body.weight(.light).monospacedDigit())
+                    }
+                    .padding()
+                }
             }
+            .listRowBackground(Color.clear)
         }
         
         private var symbol: some View {

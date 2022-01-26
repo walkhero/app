@@ -22,8 +22,8 @@ struct Stats: View {
             
             Section {
                 Header(title: "Duration")
-                Item(text: .init(.init(timeIntervalSinceNow: .init(-duration.average)) ..< .now,
-                                 format: .timeDuration), title: "Average")
+                Trend(trend: duration.trend, text: .init(.init(timeIntervalSinceNow: .init(-duration.average)) ..< .now,
+                                 format: .timeDuration))
                 Item(text: .init(.init(timeIntervalSinceNow: .init(-duration.max)) ..< .now,
                                  format: .timeDuration), title: "Max")
                 Item(text: .init(.init(timeIntervalSinceNow: .init(-duration.total)) ..< .now,
@@ -34,18 +34,18 @@ struct Stats: View {
             
             Section {
                 Header(title: "Steps")
-                Item(text: .init(steps.average, format: .number), title: "Average")
+                Trend(trend: steps.trend, text: .init(steps.average, format: .number))
                 Item(text: .init(steps.max, format: .number), title: "Max")
                 Item(text: .init(steps.total, format: .number), title: "Total")
             }
             
             Section {
                 Header(title: "Distance")
-                Item(text: .init(.init(value: .init(metres.average),
+                Trend(trend: metres.trend, text: .init(.init(value: .init(metres.average),
                                        unit: UnitLength.meters),
                                  format: .measurement(width: .abbreviated,
                                                       usage: .general,
-                                                      numberFormatStyle: .number)), title: "Average")
+                                                      numberFormatStyle: .number)))
                 Item(text: .init(.init(value: .init(metres.max),
                                        unit: UnitLength.meters),
                                  format: .measurement(width: .abbreviated,
