@@ -2,11 +2,20 @@
   "object": {
     "pins": [
       {
+        "package": "Dater",
+        "repositoryURL": "https://github.com/archivable/dater.git",
+        "state": {
+          "branch": "main",
+          "revision": "30387e466bc68fc76b0d144d329e82683fae9bb9",
+          "version": null
+        }
+      },
+      {
         "package": "Hero",
         "repositoryURL": "https://github.com/walkhero/hero.git",
         "state": {
           "branch": "main",
-          "revision": "cd47642720de3c7e9347105aabf0ed7f4795d329",
+          "revision": "9b3cb8f32f4357878c3b72572fa942665081a5cb",
           "version": null
         }
       },

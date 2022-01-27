@@ -1,10 +1,11 @@
 import SwiftUI
+import Dater
 import Hero
 
 extension Ephemeris {
     struct Navigation: View {
         @Binding var index: Int
-        let calendar: [Days]
+        let calendar: [Days<Bool>]
         
         var body: some View {
             HStack {

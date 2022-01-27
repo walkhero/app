@@ -1,8 +1,9 @@
 import SwiftUI
+import Dater
 import Hero
 
 struct Ephemeris: View, Equatable {
-    @State private var calendar = [Days]()
+    @State private var calendar = [Days<Bool>]()
     @State private var index = 0
     @Environment(\.dismiss) private var dismiss
     
@@ -22,8 +23,8 @@ struct Ephemeris: View, Equatable {
                     
                     Section {
                         Month(days: calendar[index],
-                              previous: index > 0 && calendar[index - 1].items.last!.last!.hit,
-                              next: index < calendar.count - 1 && calendar[index + 1].items.first!.first!.hit)
+                              previous: index > 0 && calendar[index - 1].items.last!.last!.content,
+                              next: index < calendar.count - 1 && calendar[index + 1].items.first!.first!.content)
                     }
                     .allowsHitTesting(false)
                 }

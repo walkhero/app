@@ -1,9 +1,10 @@
 import SwiftUI
+import Dater
 import Hero
 
 extension Ephemeris {
     struct Month: View {
-        let days: Days
+        let days: Days<Bool>
         let previous: Bool
         let next: Bool
 
@@ -40,7 +41,7 @@ extension Ephemeris {
         }
 
         private func continouos(week: Int, day: Int) -> Continuous {
-            days.items[week][day].hit
+            days.items[week][day].content
                 ? previous(week, day)
                     ? next(week, day)
                         ? .middle
@@ -53,17 +54,17 @@ extension Ephemeris {
 
         private func previous(_ week: Int, _ day: Int) -> Bool {
             day > 0
-                ? days.items[week][day - 1].hit
+                ? days.items[week][day - 1].content
                 : week > 0
-                    ? days.items[week - 1].last!.hit
+                    ? days.items[week - 1].last!.content
                     : previous
         }
 
         private func next(_ week: Int, _ day: Int) -> Bool {
             day < days.items[week].count - 1
-                ? days.items[week][day + 1].hit
+                ? days.items[week][day + 1].content
                 : week < days.items.count - 1
-                    ? days.items[week + 1].first!.hit
+                    ? days.items[week + 1].first!.content
                     : next
         }
     }
