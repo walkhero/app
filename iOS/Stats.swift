@@ -3,6 +3,7 @@ import Hero
 
 struct Stats: View {
     @State private var streak = Streak.zero
+    @State private var walks = 0
     @State private var squares = 0
     @State private var duration = Chart.zero
     @State private var steps = Chart.zero
@@ -20,6 +21,7 @@ struct Stats: View {
                 Today(updated: updated)
                 
                 Section("Streak") {
+                    Item(text: .init(walks, format: .number), title: "Walks")
                     Item(text: .init(streak.current, format: .number), title: "Current days")
                     Item(text: .init(streak.max, format: .number), title: "Max days")
                 }
@@ -109,6 +111,7 @@ struct Stats: View {
             duration = $0.duration
             steps = $0.steps
             metres = $0.metres
+            walks = $0.count
             
             game.submit(streak: streak.max,
                         steps: steps.max,
