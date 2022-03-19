@@ -26,7 +26,7 @@ extension Map {
                 .merge(with: cloud
                         .map(\.squares)
                         .combineLatest(status.$squares) { $0.union($1.items) }
-                        .throttle(for: .seconds(1), scheduler: dispatch, latest: true))
+                        .throttle(for: .seconds(3), scheduler: dispatch, latest: true))
                 .removeDuplicates()
                 .map(\.overlay)
                 .receive(on: DispatchQueue.main)
