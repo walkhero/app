@@ -3,6 +3,7 @@ import Hero
 
 struct Stats: View {
     @State private var streak = Streak.zero
+    @State private var walks = 0
     @State private var squares = 0
     @State private var duration = Chart.zero
     @State private var steps = Chart.zero
@@ -16,6 +17,7 @@ struct Stats: View {
             
             Section {
                 Header(title: "Streak")
+                Item(text: .init(walks, format: .number), title: "Walks")
                 Item(text: .init(streak.current, format: .number), title: "Current days")
                 Item(text: .init(streak.max, format: .number), title: "Max days")
             }
@@ -62,10 +64,11 @@ struct Stats: View {
                 Header(title: "Map")
                 Item(text: .init(squares, format: .number), title: "Squares")
                 Item(text: .init(Double(squares) / world,
-                                 format: .percent.precision(.significantDigits(1))), title: "World")
+                                 format: .percent.precision(.significantDigits(4))), title: "World")
             }
         }
         .onReceive(cloud) {
+            walks = $0.count
             updated = $0.updated
             streak = $0.calendar.streak
             squares = $0.squares.count
