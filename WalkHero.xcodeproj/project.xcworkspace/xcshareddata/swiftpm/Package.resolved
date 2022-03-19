@@ -1,34 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Dater",
-        "repositoryURL": "https://github.com/archivable/dater.git",
-        "state": {
-          "branch": "main",
-          "revision": "30387e466bc68fc76b0d144d329e82683fae9bb9",
-          "version": null
-        }
-      },
-      {
-        "package": "Hero",
-        "repositoryURL": "https://github.com/walkhero/hero.git",
-        "state": {
-          "branch": "main",
-          "revision": "9b3cb8f32f4357878c3b72572fa942665081a5cb",
-          "version": null
-        }
-      },
-      {
-        "package": "Archivable",
-        "repositoryURL": "https://github.com/archivable/package.git",
-        "state": {
-          "branch": "main",
-          "revision": "d70e9e58e8b3bad3f9e793acda198ed44e25b656",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "dater",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/archivable/dater.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "86735924c265b3e889a4836318348c758e7fc03e"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "hero",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/walkhero/hero.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2f52f0f69ba34693b0c28f808c19ef2e19786b74"
+      }
+    },
+    {
+      "identity" : "package",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/archivable/package.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a2be1fd3ddc43fe62876114fe27c98eff7338a6d"
+      }
+    }
+  ],
+  "version" : 2
 }
