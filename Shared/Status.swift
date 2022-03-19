@@ -1,8 +1,11 @@
 import Foundation
 import CoreLocation
 import HealthKit
-import UserNotifications
 import Hero
+
+#if os(iOS)
+import UserNotifications
+#endif
 
 final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
 

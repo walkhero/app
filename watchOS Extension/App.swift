@@ -1,5 +1,4 @@
 import SwiftUI
-import UserNotifications
 
 @main struct App: SwiftUI.App {
     @StateObject private var status = Status()
@@ -15,7 +14,6 @@ import UserNotifications
                     }
                     
                     await status.request()
-                    _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert])
                     WKExtension.shared().registerForRemoteNotifications()
                 }
         }
