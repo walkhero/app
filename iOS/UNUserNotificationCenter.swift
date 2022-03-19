@@ -16,7 +16,7 @@ extension UNUserNotificationCenter {
     }
     
     static func request() async {
-        _ = try? await current().requestAuthorization(options: [.alert])
+        _ = try? await current().requestAuthorization(options: [.alert, .badge, .criticalAlert, .provisional])
     }
     
     func present(_ notification: UNNotification) async -> UNNotificationPresentationOptions {
