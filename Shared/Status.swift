@@ -8,7 +8,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
 
 #if os(iOS)
     @Published var hide = Defaults.shouldHide
-    @Published var follow = Defaults.shouldFollow
+    @Published var follow = true
 #endif
     
     @Published private(set) var squares = Squares()

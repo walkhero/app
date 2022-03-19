@@ -12,9 +12,6 @@ extension Main {
                      active: status.follow) {
                     status.follow.toggle()
                 }
-                .onChange(of: status.follow) {
-                    Defaults.shouldFollow = $0
-                }
                 
                 Item(font: .body,
                      symbol: status.hide ? "square.2.stack.3d.top.filled" : "square.2.stack.3d",

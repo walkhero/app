@@ -53,7 +53,7 @@ extension Map {
         func mapView(_: MKMapView, didUpdate: MKUserLocation) {
             guard first else { return }
             first = false
-            setUserTrackingMode(Defaults.shouldFollow ? .follow : .none, animated: true)
+            setUserTrackingMode(.follow, animated: true)
         }
         
         func mapView(_: MKMapView, didChange mode: MKUserTrackingMode, animated: Bool) {
