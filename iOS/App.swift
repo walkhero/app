@@ -30,7 +30,6 @@ import Hero
                     }
                     
                     await status.request()
-                    UIApplication.shared.registerForRemoteNotifications()
                 }
         }
         .onChange(of: phase) {

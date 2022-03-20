@@ -5,6 +5,7 @@ extension App {
         func application(_ application: UIApplication, willFinishLaunchingWithOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
             UNUserNotificationCenter.current().delegate = self
             SKPaymentQueue.default().add(self)
+            application.registerForRemoteNotifications()
             return true
         }
         
