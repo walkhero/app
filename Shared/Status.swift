@@ -162,7 +162,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
         squares.add(locations: didUpdateLocations)
     }
     
-    func locationManager(_: CLLocationManager, didChangeAuthorization: CLAuthorizationStatus) { }
+    func locationManagerDidChangeAuthorization(_: CLLocationManager) { }
     func locationManager(_: CLLocationManager, didFailWithError: Error) { }
     
     #if os(iOS)
