@@ -17,6 +17,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published private(set) var squares = Squares()
     @Published private(set) var steps = 0
     @Published private(set) var distance = 0
+    @Published private(set) var calories = 0
     private(set) var started = false
     private var queries = Set<HKQuery>()
     private let manager = CLLocationManager()
@@ -41,7 +42,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard HKHealthStore.isHealthDataAvailable() else { return }
         try? await store
             .requestAuthorization(toShare: [],
-                                  read: .init([Challenge.steps, .distance].compactMap(\.object)))
+                                  read: .init([Challenge.steps, .distance, .calories].compactMap(\.object)))
     }
     
     func start(date: Date) async {
@@ -195,6 +196,19 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
             .reduce(0, +)
     }
     
+    @MainActor private func add(calories: HKStatisticsCollection) {
+        self.calories = calories
+            .statistics()
+            .compactMap {
+                $0.sumQuantity()
+                    .map {
+                        $0.doubleValue(for: .largeCalorie())
+                    }
+                    .map(Int.init)
+            }
+            .reduce(0, +)
+    }
+    
     private func query(start: Date, quantity: HKQuantityType) -> HKStatisticsCollectionQuery {
         .init(
             quantityType: quantity,
@@ -224,6 +238,7 @@ private extension Challenge {
         switch self {
         case .steps: return .stepCount
         case .distance: return .distanceWalkingRunning
+        case .calories: return .activeEnergyBurned
         default: return nil
         }
     }

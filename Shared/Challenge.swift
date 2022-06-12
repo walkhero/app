@@ -3,5 +3,6 @@ enum Challenge: String {
     streak,
     steps,
     distance,
-    map
+    map,
+    calories
 }
