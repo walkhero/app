@@ -88,6 +88,7 @@ struct Walking: View {
                                  anchor: .topTrailing)
                 }
                 
+                
                 if duration == 0 && steps == 0 && metres == 0 {
                     context.ring(title: "First walk",
                                  center: center,

@@ -119,6 +119,37 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
                 store.execute($0)
                 queries.insert($0)
             }
+        
+        Challenge
+            .calories
+            .quantity
+            .map {
+                query(start: date, quantity: $0)
+            }
+            .map {
+                $0
+                    .initialResultsHandler = { [weak self] _, results, _ in
+                        _ = results
+                            .map { value in
+                                Task { [weak self] in
+                                    await self?.add(calories: value)
+                                }
+                            }
+                    }
+                
+                $0
+                    .statisticsUpdateHandler = { [weak self] _, _, results, _ in
+                        _ = results
+                            .map { value in
+                                Task { [weak self] in
+                                    await self?.add(calories: value)
+                                }
+                            }
+                    }
+                
+                store.execute($0)
+                queries.insert($0)
+            }
     }
     
     func finish() async -> Summary? {
@@ -202,7 +233,7 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
             .compactMap {
                 $0.sumQuantity()
                     .map {
-                        $0.doubleValue(for: .largeCalorie())
+                        $0.doubleValue(for: .smallCalorie())
                     }
                     .map(Int.init)
             }

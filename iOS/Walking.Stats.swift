@@ -26,6 +26,13 @@ extension Walking {
                                                   numberFormatStyle: .number))
                      : nil,
                      title: "Distance")
+                Item(text: .init(.init(value: .init(status.calories) / 1000.0,
+                                       unit: UnitEnergy.kilocalories),
+                                 format: .measurement(width: .abbreviated,
+                                                      usage: .workout,
+                                                      numberFormatStyle: .number)),
+                     caption: .init(verbatim: "lol"),
+                     title: "Calories")
                 Item(text: .init(status
                                     .squares
                                     .items
