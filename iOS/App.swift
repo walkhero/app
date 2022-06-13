@@ -1,4 +1,5 @@
 import SwiftUI
+import Hero
 
 @main struct App: SwiftUI.App {
     @StateObject private var status = Status()
@@ -11,9 +12,14 @@ import SwiftUI
                 .task {
                     cloud.ready.notify(queue: .main) {
                         cloud.pull.send()
+                        Defaults.start()
+                        
+                        Task
+                            .detached {
+                                await status.request()
+                                await store.launch()
+                            }
                     }
-                    
-                    await status.request()
                 }
         }
         .onChange(of: phase) {
