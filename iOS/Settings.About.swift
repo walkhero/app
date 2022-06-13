@@ -38,7 +38,6 @@ extension Settings {
                     
                     Button {
                         UIApplication.shared.review()
-                        Defaults.hasRated = true
                     } label: {
                         HStack {
                             Text("Rate on the App Store")

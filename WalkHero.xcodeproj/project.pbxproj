@@ -86,7 +86,6 @@
 		CEF40CAF2779F760001BECAB /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEF40CAE2779F760001BECAB /* Hero */; };
 		CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB22779FAF7001BECAB /* UIApplication.swift */; };
 		CEF40CB92779FB62001BECAB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB82779FB62001BECAB /* Status.swift */; };
-		CEF40CBB2779FB8A001BECAB /* Froob.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CBA2779FB8A001BECAB /* Froob.swift */; };
 		CEF40CBD2779FBB3001BECAB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF40CBC2779FBB3001BECAB /* Media.xcassets */; };
 		CEF9E4522789CD58004EFD64 /* GraphicsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */; };
 /* End PBXBuildFile section */
@@ -210,7 +209,6 @@
 		CEF40CAB2779F6E2001BECAB /* Copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copy.swift; sourceTree = "<group>"; };
 		CEF40CB22779FAF7001BECAB /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		CEF40CB82779FB62001BECAB /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
-		CEF40CBA2779FB8A001BECAB /* Froob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Froob.swift; sourceTree = "<group>"; };
 		CEF40CBC2779FBB3001BECAB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsContext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -327,7 +325,6 @@
 				CE96341B277CA1F700CCFF4B /* Ephemeris.Navigation.swift */,
 				CE96341C277CA1F700CCFF4B /* Ephemeris.swift */,
 				CE96341E277CA1F700CCFF4B /* Ephermeris.Week.swift */,
-				CEF40CBA2779FB8A001BECAB /* Froob.swift */,
 				CE846E64278E173F005989B0 /* Game.swift */,
 				CE2241D3278B1A2C0049FDA0 /* Info.swift */,
 				CE7AF0CE278E35D500EA9F41 /* Main.Options.Item.swift */,
@@ -580,7 +577,6 @@
 				CEF40CA82779F6CE001BECAB /* Store.Item.swift in Sources */,
 				CEF40CA72779F6CE001BECAB /* Store.State.swift in Sources */,
 				CE963424277CA1F700CCFF4B /* Ephermeris.Week.swift in Sources */,
-				CEF40CBB2779FB8A001BECAB /* Froob.swift in Sources */,
 				CE96341F277CA1F700CCFF4B /* Ephemeris.Month.Day.swift in Sources */,
 				CE5FD9D6278DB4700099008F /* Card.Option.swift in Sources */,
 				CE2241D2278B19ED0049FDA0 /* Settings.About.swift in Sources */,
