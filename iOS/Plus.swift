@@ -25,9 +25,9 @@ struct Plus: View {
         .onReceive(store.status) {
             state = $0
         }
-        .task {
-            await store.load()
-        }
+//        .task {
+//            await store.load()
+//        }
     }
     
     @ViewBuilder private var isPremium: some View {
@@ -52,22 +52,22 @@ struct Plus: View {
     }
     
     @ViewBuilder private var notPremium: some View {
-        switch state {
-        case .loading:
-            Spacer()
-            Image(systemName: "hourglass")
-                .font(.largeTitle.weight(.light))
-                .symbolRenderingMode(.multicolor)
-                .allowsHitTesting(false)
-        case let .error(error):
-            Spacer()
-            Text(verbatim: error)
-                .foregroundColor(.secondary)
-                .fixedSize(horizontal: false, vertical: true)
-                .frame(maxWidth: 240)
-        case let .products(products):
-            item(product: products.first!)
-        }
+//        switch state {
+//        case .loading:
+//            Spacer()
+//            Image(systemName: "hourglass")
+//                .font(.largeTitle.weight(.light))
+//                .symbolRenderingMode(.multicolor)
+//                .allowsHitTesting(false)
+//        case let .error(error):
+//            Spacer()
+//            Text(verbatim: error)
+//                .foregroundColor(.secondary)
+//                .fixedSize(horizontal: false, vertical: true)
+//                .frame(maxWidth: 240)
+//        case let .products(products):
+//            item(product: products.first!)
+//        }
         
         Spacer()
         

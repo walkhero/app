@@ -79,7 +79,7 @@
 		CEF40CA02779F6A0001BECAB /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */; };
 		CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA12779F6B3001BECAB /* Transaction.swift */; };
 		CEF40CA62779F6CE001BECAB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA32779F6CE001BECAB /* Store.swift */; };
-		CEF40CA72779F6CE001BECAB /* Store.State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA42779F6CE001BECAB /* Store.State.swift */; };
+		CEF40CA72779F6CE001BECAB /* Store.Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA42779F6CE001BECAB /* Store.Status.swift */; };
 		CEF40CA82779F6CE001BECAB /* Store.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA52779F6CE001BECAB /* Store.Item.swift */; };
 		CEF40CAA2779F6D9001BECAB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA92779F6D9001BECAB /* Global.swift */; };
 		CEF40CAC2779F6E2001BECAB /* Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CAB2779F6E2001BECAB /* Copy.swift */; };
@@ -203,7 +203,7 @@
 		CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
 		CEF40CA12779F6B3001BECAB /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		CEF40CA32779F6CE001BECAB /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		CEF40CA42779F6CE001BECAB /* Store.State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.State.swift; sourceTree = "<group>"; };
+		CEF40CA42779F6CE001BECAB /* Store.Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.Status.swift; sourceTree = "<group>"; };
 		CEF40CA52779F6CE001BECAB /* Store.Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.Item.swift; sourceTree = "<group>"; };
 		CEF40CA92779F6D9001BECAB /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		CEF40CAB2779F6E2001BECAB /* Copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copy.swift; sourceTree = "<group>"; };
@@ -344,7 +344,7 @@
 				CEA0D6AC278E4BBE0028EE62 /* Stats.Today.swift */,
 				CEE6F1A527A1ACA800D63EDB /* Stats.Trend.swift */,
 				CEF40CA52779F6CE001BECAB /* Store.Item.swift */,
-				CEF40CA42779F6CE001BECAB /* Store.State.swift */,
+				CEF40CA42779F6CE001BECAB /* Store.Status.swift */,
 				CEF40CA32779F6CE001BECAB /* Store.swift */,
 				CEF40CA12779F6B3001BECAB /* Transaction.swift */,
 				CEF40CB22779FAF7001BECAB /* UIApplication.swift */,
@@ -575,7 +575,7 @@
 				CEF40CB92779FB62001BECAB /* Status.swift in Sources */,
 				CE83B95F2791B3DB0056B006 /* Sheet.swift in Sources */,
 				CEF40CA82779F6CE001BECAB /* Store.Item.swift in Sources */,
-				CEF40CA72779F6CE001BECAB /* Store.State.swift in Sources */,
+				CEF40CA72779F6CE001BECAB /* Store.Status.swift in Sources */,
 				CE963424277CA1F700CCFF4B /* Ephermeris.Week.swift in Sources */,
 				CE96341F277CA1F700CCFF4B /* Ephemeris.Month.Day.swift in Sources */,
 				CE5FD9D6278DB4700099008F /* Card.Option.swift in Sources */,
