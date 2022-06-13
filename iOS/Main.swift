@@ -3,7 +3,7 @@ import Combine
 
 struct Main: View {
     weak var status: Status!
-    @State private var started: Date?
+    @State private var started: UInt32?
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -19,14 +19,13 @@ struct Main: View {
                 .offset(y: 40)
         }
         .onReceive(cloud) { model in
-            let walking = model.walking
             withAnimation(.easeInOut(duration: 0.4)) {
-                started = walking
+                started = model.walking
             }
             
-            if let date = walking {
+            if model.walking > 0 {
                 Task {
-                    await status.start(date: date)
+                    await status.start(date: .init(timestamp: model.walking))
                 }
             } else if status.started {
                 Task {

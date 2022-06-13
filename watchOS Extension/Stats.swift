@@ -1,34 +1,29 @@
 import SwiftUI
 import Hero
 
+private let world = pow(Double(4), 20)
+
 struct Stats: View {
-    @State private var streak = Streak.zero
-    @State private var walks = 0
-    @State private var squares = 0
-    @State private var duration = Chart.zero
-    @State private var steps = Chart.zero
-    @State private var metres = Chart.zero
-    @State private var updated: DateInterval?
-    private let world = pow(Double(4), 20)
+    @State private var chart = Chart.zero
     
     var body: some View {
         List {
-            Today(updated: updated)
+            Today(updated: chart.updated)
             
             Section {
                 Header(title: "Streak")
-                Item(text: .init(walks, format: .number), title: "Walks")
-                Item(text: .init(streak.current, format: .number), title: "Current days")
-                Item(text: .init(streak.max, format: .number), title: "Max days")
+                Item(text: .init(chart.walks, format: .number), title: "Walks")
+                Item(text: .init(chart.streak.current, format: .number), title: "Current days")
+                Item(text: .init(chart.streak.max, format: .number), title: "Max days")
             }
             
             Section {
                 Header(title: "Duration")
-                Trend(trend: duration.trend, text: .init(.init(timeIntervalSinceNow: .init(-duration.average)) ..< .now,
+                Trend(trend: chart.duration.trend, text: .init(.init(timeIntervalSinceNow: .init(-chart.duration.average)) ..< .now,
                                  format: .timeDuration))
-                Item(text: .init(.init(timeIntervalSinceNow: .init(-duration.max)) ..< .now,
+                Item(text: .init(.init(timeIntervalSinceNow: .init(-chart.duration.max)) ..< .now,
                                  format: .timeDuration), title: "Max")
-                Item(text: .init(.init(timeIntervalSinceNow: .init(-duration.total)) ..< .now,
+                Item(text: .init(.init(timeIntervalSinceNow: .init(-chart.duration.total)) ..< .now,
                                  format: .timeDuration), title: "Total")
             }
             .headerProminence(.increased)
@@ -36,24 +31,24 @@ struct Stats: View {
             
             Section {
                 Header(title: "Steps")
-                Trend(trend: steps.trend, text: .init(steps.average, format: .number))
-                Item(text: .init(steps.max, format: .number), title: "Max")
-                Item(text: .init(steps.total, format: .number), title: "Total")
+                Trend(trend: chart.steps.trend, text: .init(chart.steps.average, format: .number))
+                Item(text: .init(chart.steps.max, format: .number), title: "Max")
+                Item(text: .init(chart.steps.total, format: .number), title: "Total")
             }
             
             Section {
                 Header(title: "Distance")
-                Trend(trend: metres.trend, text: .init(.init(value: .init(metres.average),
+                Trend(trend: chart.metres.trend, text: .init(.init(value: .init(chart.metres.average),
                                        unit: UnitLength.meters),
                                  format: .measurement(width: .abbreviated,
                                                       usage: .general,
                                                       numberFormatStyle: .number)))
-                Item(text: .init(.init(value: .init(metres.max),
+                Item(text: .init(.init(value: .init(chart.metres.max),
                                        unit: UnitLength.meters),
                                  format: .measurement(width: .abbreviated,
                                                       usage: .general,
                                                       numberFormatStyle: .number)), title: "Max")
-                Item(text: .init(.init(value: .init(metres.total),
+                Item(text: .init(.init(value: .init(chart.metres.total),
                                        unit: UnitLength.meters),
                                  format: .measurement(width: .abbreviated,
                                                       usage: .general,
@@ -62,19 +57,13 @@ struct Stats: View {
             
             Section {
                 Header(title: "Map")
-                Item(text: .init(squares, format: .number), title: "Squares")
-                Item(text: .init(Double(squares) / world,
+                Item(text: .init(chart.squares, format: .number), title: "Squares")
+                Item(text: .init(Double(chart.squares) / world,
                                  format: .percent.precision(.significantDigits(4))), title: "World")
             }
         }
         .onReceive(cloud) {
-            walks = $0.count
-            updated = $0.updated
-            streak = $0.calendar.streak
-            squares = $0.squares.count
-            duration = $0.duration
-            steps = $0.steps
-            metres = $0.metres
+            chart = $0.chart
         }
     }
 }

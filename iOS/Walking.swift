@@ -4,7 +4,7 @@ import Hero
 struct Walking: View {
     @ObservedObject var status: Status
     @Binding var summary: Summary?
-    let started: Date
+    let started: UInt32
     @State private var duration = 0
     @State private var steps = 0
     @State private var metres = 0
@@ -54,7 +54,7 @@ struct Walking: View {
         }
         .padding([.top, .leading, .trailing])
 
-        TimelineView(.periodic(from: started, by: 0.5)) { time in
+        TimelineView(.periodic(from: .init(timestamp: started), by: 0.5)) { time in
             Canvas { context, size in
                 let center = CGPoint(x: size.width / 2, y: 130)
                 
@@ -62,7 +62,7 @@ struct Walking: View {
                     context.ring(title: "duration",
                                  center: center,
                                  side: 90,
-                                 percent: (Date.now.timeIntervalSince1970 - started.timeIntervalSince1970) / .init(duration),
+                                 percent: (Date.now.timeIntervalSince1970 - .init(started)) / .init(duration),
                                  anchor: .bottomTrailing)
                     
                     context.draw(Text(.init(timeIntervalSinceNow: .init(-duration)) ..< .now, format: .timeDuration)
@@ -97,18 +97,18 @@ struct Walking: View {
                                  anchor: .trailing)
                 }
                 
-                context.draw(Text(started ..< .now, format: .timeDuration)
+                context.draw(Text(.init(timestamp: started) ..< .now, format: .timeDuration)
                                 .font(.title2.monospacedDigit())
                                 .fontWeight(.light),
                              at: .init(x: center.x, y: center.y - 3))
             }
         }
         .frame(height: 240)
-        .onReceive(cloud) {
-            duration = $0.duration.max
-            steps = $0.steps.max
-            metres = $0.metres.max
-        }
+//        .onReceive(cloud) {
+//            duration = $0.duration.max
+//            steps = $0.steps.max
+//            metres = $0.metres.max
+//        }
 
         Stats(status: status, steps: steps, metres: metres)
         

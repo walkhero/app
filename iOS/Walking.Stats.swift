@@ -41,9 +41,9 @@ extension Walking {
                      caption: squares.isEmpty ? nil : .init(squares.count, format: .number),
                      title: "Squares")
             }
-            .onReceive(cloud) {
-                squares = $0.squares
-            }
+//            .onReceive(cloud) {
+//                squares = $0.squares
+//            }
         }
     }
 }

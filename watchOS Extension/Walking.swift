@@ -4,7 +4,7 @@ import Hero
 struct Walking: View {
     weak var status: Status!
     @Binding var summary: Summary?
-    let started: Date
+    let started: UInt32
     @State private var squares = Set<Squares.Item>()
     @State private var duration = 0
     @State private var steps = 0
@@ -13,22 +13,22 @@ struct Walking: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            Ring(status: status,
-                 started: started,
-                 duration: duration,
-                 steps: steps,
-                 metres: metres)
-            Stats(status: status,
-                  squares: squares)
-            Controls(status: status,
-                     summary: $summary,
-                     started: started)
+//            Ring(status: status,
+//                 started: started,
+//                 duration: duration,
+//                 steps: steps,
+//                 metres: metres)
+//            Stats(status: status,
+//                  squares: squares)
+//            Controls(status: status,
+//                     summary: $summary,
+//                     started: started)
         }
-        .onReceive(cloud) {
-            squares = $0.squares
-            duration = $0.duration.max
-            steps = $0.steps.max
-            metres = $0.metres.max
-        }
+//        .onReceive(cloud) {
+//            squares = $0.squares
+//            duration = $0.duration.max
+//            steps = $0.steps.max
+//            metres = $0.metres.max
+//        }
     }
 }

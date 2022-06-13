@@ -4,8 +4,8 @@ import Hero
 struct Main: View {
     weak var status: Status!
     @State private var summary: Summary?
-    @State private var started: Date?
     @State private var loading = true
+    @State private var started = UInt32()
     @State private var selection = 0
     
     var body: some View {
@@ -20,7 +20,7 @@ struct Main: View {
                         summary = nil
                     }
                 }
-            } else if let started = started {
+            } else if started > 0 {
                 Walking(status: status,
                         summary: $summary,
                         started: started)
@@ -40,9 +40,9 @@ struct Main: View {
         .onReceive(cloud) { model in
             started = model.walking
             
-            if let date = started {
+            if started > 0 {
                 Task {
-                    await status.start(date: date)
+                    await status.start(date: .init(timestamp: started))
                 }
             } else if status.started {
                 Task {

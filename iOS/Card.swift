@@ -3,7 +3,7 @@ import Hero
 
 struct Card: View {
     weak var status: Status!
-    let started: Date?
+    let started: UInt32?
     @State private var summary: Summary?
     @State private var loading = true
     

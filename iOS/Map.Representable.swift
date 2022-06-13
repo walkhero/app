@@ -21,10 +21,10 @@ extension Map {
             delegate = self
             
             cloud
-                .map(\.squares)
+                .map(\.tiles)
                 .first()
                 .merge(with: cloud
-                        .map(\.squares)
+                        .map(\.tiles)
                         .combineLatest(status.$squares) { $0.union($1.items) }
                         .throttle(for: .seconds(3), scheduler: dispatch, latest: true))
                 .removeDuplicates()

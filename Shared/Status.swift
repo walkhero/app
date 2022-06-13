@@ -157,8 +157,9 @@ final class Status: NSObject, ObservableObject, CLLocationManagerDelegate {
         started = false
         
         let summary = await cloud.finish(steps: steps,
-                           metres: distance,
-                           squares: squares.items)
+                                         metres: distance,
+                                         calories: calories,
+                                         squares: squares.items)
         
         await clear()
         
