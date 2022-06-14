@@ -15,8 +15,6 @@ struct Walking: View {
             if let display = display {
                 ForEach(display.items, id: \.key) { item in
                     switch item.key {
-                    case .duration:
-                        Circle()
                     case .steps:
                         Item(value: .init(423432.formatted()), title: "Steps")
                     case .metres:
@@ -60,8 +58,8 @@ struct Walking: View {
             }
             .background(Color(.systemBackground))
         }
-        .onReceive(cloud) {
-            display = $0.display
+        .onAppear {
+            display = Defaults.items
         }
         .onReceive(timer) { _ in
             duration = .init(timestamp: session.walking) ..< .now
