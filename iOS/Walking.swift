@@ -3,40 +3,64 @@ import Hero
 
 struct Walking: View {
     @StateObject var session: Sesssion
-    @State private var duration: Range<Date>?
+    @State private var display: Display?
+    @State private var duration = Date.now ..< Date.now
     private let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ScrollView {
-            Text("Walking")
+            Spacer()
+                .frame(height: 20)
             
-            if let duration = duration {
-                HStack {
-                    Image(systemName: "figure.walk")
-                        .foregroundColor(.accentColor)
-                        .font(.system(size: 20, weight: .heavy))
-                        .padding(.leading, 5)
-                    Spacer()
-                    Text(duration, format: .timeDuration)
-                        .font(.largeTitle.monospacedDigit().weight(.thin))
-                        .padding(.trailing, 5)
+            if let display = display {
+                ForEach(display.items, id: \.key) { item in
+                    switch item.key {
+                    case .duration:
+                        HStack {
+                            
+                            Text(duration, format: .timeDuration)
+                                .font(.largeTitle.monospacedDigit().weight(.light))
+                                .padding(.trailing, 5)
+                            Image(systemName: "figure.walk")
+                                .foregroundColor(.accentColor)
+                                .font(.system(size: 16, weight: .heavy))
+                                .padding(.leading, 8)
+                            Spacer()
+                        }
+                        .modifier(Card())
+                    case .steps:
+                        Item(value: .init(423432.formatted()), title: "Steps")
+                    case .metres:
+                        Item(value: .init(13432.formatted()), title: "Metres")
+                    default: Circle()
+                    }
                 }
-                .modifier(Card())
-                
-                HStack {
-                    Image(systemName: "figure.walk")
-                        .foregroundColor(.accentColor)
-                        .font(.system(size: 20, weight: .heavy))
-                        .padding(.leading, 5)
-                    Spacer()
-                    Text(duration, format: .timeDuration)
-                        .font(.largeTitle.monospacedDigit().weight(.thin))
-                        .padding(.trailing, 5)
-                }
-                .modifier(Card())
             }
         }
         .frame(maxWidth: .greatestFiniteMagnitude)
+        .safeAreaInset(edge: .top, spacing: 0) {
+            VStack(spacing: 0) {
+                HStack {
+                    Spacer()
+                    Button {
+                        
+                    } label: {
+                        Text("Finish")
+                            .font(.callout.weight(.semibold))
+                            .padding(.horizontal, 6)
+                    }
+                    .buttonBorderShape(.capsule)
+                    .buttonStyle(.borderedProminent)
+                }
+                .padding(.horizontal)
+                .padding(.vertical, 10)
+                Divider()
+            }
+            .background(Color(.systemBackground))
+        }
+        .onReceive(cloud) {
+            display = $0.display
+        }
         .onReceive(timer) { _ in
             duration = .init(timestamp: session.walking) ..< .now
         }
