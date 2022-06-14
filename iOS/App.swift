@@ -2,13 +2,13 @@ import SwiftUI
 import Hero
 
 @main struct App: SwiftUI.App {
-    @StateObject private var status = Status()
+//    @StateObject private var status = Status()
     @Environment(\.scenePhase) private var phase
     @UIApplicationDelegateAdaptor(Delegate.self) private var delegate
     
     var body: some Scene {
         WindowGroup {
-            Main(status: status)
+            Main()
                 .task {
                     cloud.ready.notify(queue: .main) {
                         cloud.pull.send()
@@ -16,7 +16,7 @@ import Hero
                         
                         Task
                             .detached {
-                                await status.request()
+//                                await status.request()
                                 await store.launch()
                             }
                     }

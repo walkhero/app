@@ -73,11 +73,11 @@
 		CEC805BA277B36B400D1B046 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B9277B36B400D1B046 /* Main.swift */; };
 		CEC805BC277B36BB00D1B046 /* Map.Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805BB277B36BB00D1B046 /* Map.Representable.swift */; };
 		CECD14DF27E60E77005FB1FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECD14DE27E60E77005FB1FC /* Launch Screen.storyboard */; };
+		CED84661285888EF002A4BE6 /* Main.Bottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED84660285888EF002A4BE6 /* Main.Bottom.swift */; };
 		CEE6F1A627A1ACA800D63EDB /* Stats.Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F1A527A1ACA800D63EDB /* Stats.Trend.swift */; };
 		CEE6F1A827A1AEEF00D63EDB /* Stats.Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F1A727A1AEEF00D63EDB /* Stats.Trend.swift */; };
 		CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9C2779F53F001BECAB /* App.Delegate.swift */; };
 		CEF40CA02779F6A0001BECAB /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */; };
-		CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA12779F6B3001BECAB /* Transaction.swift */; };
 		CEF40CA62779F6CE001BECAB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA32779F6CE001BECAB /* Store.swift */; };
 		CEF40CA72779F6CE001BECAB /* Store.Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA42779F6CE001BECAB /* Store.Status.swift */; };
 		CEF40CA82779F6CE001BECAB /* Store.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA52779F6CE001BECAB /* Store.Item.swift */; };
@@ -197,11 +197,11 @@
 		CEC805B9277B36B400D1B046 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		CEC805BB277B36BB00D1B046 /* Map.Representable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.Representable.swift; sourceTree = "<group>"; };
 		CECD14DE27E60E77005FB1FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		CED84660285888EF002A4BE6 /* Main.Bottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Bottom.swift; sourceTree = "<group>"; };
 		CEE6F1A527A1ACA800D63EDB /* Stats.Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Trend.swift; sourceTree = "<group>"; };
 		CEE6F1A727A1AEEF00D63EDB /* Stats.Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Trend.swift; sourceTree = "<group>"; };
 		CEF40C9C2779F53F001BECAB /* App.Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
 		CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
-		CEF40CA12779F6B3001BECAB /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		CEF40CA32779F6CE001BECAB /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		CEF40CA42779F6CE001BECAB /* Store.Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.Status.swift; sourceTree = "<group>"; };
 		CEF40CA52779F6CE001BECAB /* Store.Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.Item.swift; sourceTree = "<group>"; };
@@ -330,6 +330,7 @@
 				CE7AF0CE278E35D500EA9F41 /* Main.Options.Item.swift */,
 				CE7AF0CC278E354900EA9F41 /* Main.Options.swift */,
 				CEC805B9277B36B400D1B046 /* Main.swift */,
+				CED84660285888EF002A4BE6 /* Main.Bottom.swift */,
 				CEC805BB277B36BB00D1B046 /* Map.Representable.swift */,
 				CE7AF0CA278E334F00EA9F41 /* Map.swift */,
 				CE2241D5278B1D1E0049FDA0 /* Plus.swift */,
@@ -346,7 +347,6 @@
 				CEF40CA52779F6CE001BECAB /* Store.Item.swift */,
 				CEF40CA42779F6CE001BECAB /* Store.Status.swift */,
 				CEF40CA32779F6CE001BECAB /* Store.swift */,
-				CEF40CA12779F6B3001BECAB /* Transaction.swift */,
 				CEF40CB22779FAF7001BECAB /* UIApplication.swift */,
 				CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */,
 				CEB0D6DD278DD06900A7C9AF /* Walking.Stats.Item.swift */,
@@ -569,7 +569,6 @@
 				CE2241D4278B1A2C0049FDA0 /* Info.swift in Sources */,
 				CEB0D6DE278DD06900A7C9AF /* Walking.Stats.Item.swift in Sources */,
 				CE2241D6278B1D1E0049FDA0 /* Plus.swift in Sources */,
-				CEF40CA22779F6B3001BECAB /* Transaction.swift in Sources */,
 				CE83B95C2791ADA00056B006 /* Confirm.swift in Sources */,
 				CE83B95D2791ADA30056B006 /* Confirm.Item.swift in Sources */,
 				CEF40CB92779FB62001BECAB /* Status.swift in Sources */,
@@ -583,6 +582,7 @@
 				CE7AF0CB278E334F00EA9F41 /* Map.swift in Sources */,
 				CE846E6C278E2668005989B0 /* Card.Home.swift in Sources */,
 				CEF40CA02779F6A0001BECAB /* UNUserNotificationCenter.swift in Sources */,
+				CED84661285888EF002A4BE6 /* Main.Bottom.swift in Sources */,
 				CE846E67278E178B005989B0 /* Challenge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
