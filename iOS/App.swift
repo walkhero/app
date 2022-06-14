@@ -2,13 +2,18 @@ import SwiftUI
 import Hero
 
 @main struct App: SwiftUI.App {
-//    @StateObject private var status = Status()
+    @StateObject private var session = Sesssion()
     @Environment(\.scenePhase) private var phase
     @UIApplicationDelegateAdaptor(Delegate.self) private var delegate
     
     var body: some Scene {
         WindowGroup {
-            Main()
+            Window(session: session)
+                .onReceive(cloud) {
+                    session.walking = $0.walking
+                    
+                    
+                }
                 .task {
                     cloud.ready.notify(queue: .main) {
                         cloud.pull.send()
@@ -19,6 +24,8 @@ import Hero
 //                                await status.request()
                                 await store.launch()
                             }
+                        
+                        session.loading = false
                     }
                 }
         }

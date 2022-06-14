@@ -1,3 +1,48 @@
+import SwiftUI
+import Hero
+
+struct Walking: View {
+    @StateObject var session: Sesssion
+    @State private var duration: Range<Date>?
+    private let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+    
+    var body: some View {
+        ScrollView {
+            Text("Walking")
+            
+            if let duration = duration {
+                HStack {
+                    Image(systemName: "figure.walk")
+                        .foregroundColor(.accentColor)
+                        .font(.system(size: 20, weight: .heavy))
+                        .padding(.leading, 5)
+                    Spacer()
+                    Text(duration, format: .timeDuration)
+                        .font(.largeTitle.monospacedDigit().weight(.thin))
+                        .padding(.trailing, 5)
+                }
+                .modifier(Card())
+                
+                HStack {
+                    Image(systemName: "figure.walk")
+                        .foregroundColor(.accentColor)
+                        .font(.system(size: 20, weight: .heavy))
+                        .padding(.leading, 5)
+                    Spacer()
+                    Text(duration, format: .timeDuration)
+                        .font(.largeTitle.monospacedDigit().weight(.thin))
+                        .padding(.trailing, 5)
+                }
+                .modifier(Card())
+            }
+        }
+        .frame(maxWidth: .greatestFiniteMagnitude)
+        .onReceive(timer) { _ in
+            duration = .init(timestamp: session.walking) ..< .now
+        }
+    }
+}
+
 //import SwiftUI
 //import Hero
 //

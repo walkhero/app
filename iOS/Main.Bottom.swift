@@ -22,7 +22,7 @@ extension Main {
                     Button {
                         
                     } label: {
-                        Image(systemName: "star")
+                        Image(systemName: "app.badge")
                             .font(.system(size: 22, weight: .light))
                             .symbolRenderingMode(.hierarchical)
                             .frame(height: 60)

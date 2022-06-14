@@ -9,22 +9,21 @@ struct Main: View {
     var body: some View {
         ScrollView {
             if loading {
-                
+                Image("Logo")
+                    .foregroundColor(.secondary)
+                    .padding(.top, 50)
             } else {
                 
             }
-            Text("hello")
-            Spacer()
         }
-        .frame(maxWidth: .greatestFiniteMagnitude)
-        .background(Color(.secondarySystemBackground))
+        
         .safeAreaInset(edge: .bottom, spacing: 0) {
             
         }
         .task {
-            cloud.ready.notify(queue: .main) {
-                loading = false
-            }
+//            cloud.ready.notify(queue: .main) {
+//                loading = false
+//            }
         }
         .onReceive(cloud) { model in
             withAnimation(.easeInOut(duration: 0.3)) {
