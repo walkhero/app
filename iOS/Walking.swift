@@ -3,34 +3,25 @@ import Hero
 
 struct Walking: View {
     @StateObject var session: Sesssion
-    @State private var display: Display?
-    @State private var duration: Range<Date>?
-    private let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+    @State private var duration: String?
+    @State private var tick = false
+    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ScrollView {
             Spacer()
                 .frame(height: 20)
             
-            if let display = display {
-                ForEach(display.items, id: \.key) { item in
-                    switch item.key {
-                    case .steps:
-                        Item(value: .init(423432.formatted()), title: "Steps")
-                    case .metres:
-                        Item(value: .init(13432.formatted()), title: "Metres")
-                    default: Circle()
-                    }
-                }
-            }
+            Item(value: .init(423432.formatted()), title: "Steps")
+            Item(value: .init(13432.formatted()), title: "Metres")
         }
         .frame(maxWidth: .greatestFiniteMagnitude)
         .safeAreaInset(edge: .top, spacing: 0) {
             VStack(spacing: 0) {
                 ZStack {
                     if let duration = duration {
-                        Text(duration, format: .timeDuration)
-                            .font(.body.monospacedDigit().weight(.medium))
+                        Text(duration)
+                            .font(.title3.monospacedDigit().weight(.regular))
                             .allowsHitTesting(false)
                     } else {
                         Image(systemName: "figure.walk")
@@ -39,30 +30,43 @@ struct Walking: View {
                     }
                     
                     HStack {
+                        Button("Cancel", role: .cancel) {
+                            
+                        }
+                        .font(.callout.weight(.regular))
+                        .foregroundStyle(.secondary)
+                        .buttonStyle(.plain)
+                        
                         Spacer()
+                        
                         Button {
                             
                         } label: {
                             Text("Finish")
                                 .font(.callout.weight(.semibold))
-                                .padding(.horizontal, 6)
+                                .padding(.horizontal, 2)
                         }
                         .buttonBorderShape(.capsule)
                         .buttonStyle(.borderedProminent)
                     }
                     .padding(.horizontal)
-                    .padding(.vertical, 10)
+                    .padding(.vertical, 12)
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 Divider()
             }
             .background(Color(.systemBackground))
         }
-        .onAppear {
-            display = Defaults.items
-        }
         .onReceive(timer) { _ in
-            duration = .init(timestamp: session.walking) ..< .now
+            tick.toggle()
+            
+            let duration = (Date(timestamp: session.walking) ..< .now).formatted(.timeDuration)
+            
+            if tick {
+                self.duration = duration
+            } else {
+                self.duration = duration.replacingOccurrences(of: ":", with: " ")
+            }
         }
     }
 }
