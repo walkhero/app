@@ -2,7 +2,8 @@ import SwiftUI
 import Hero
 
 struct Walking: View {
-    @StateObject var session: Sesssion
+    @ObservedObject var session: Sesssion
+    @StateObject private var walker = Walker()
     @State private var duration: AttributedString?
     @State private var tick = false
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -17,14 +18,38 @@ struct Walking: View {
                         .font(.footnote.weight(.regular))
                         .foregroundColor(.secondary)
                     Spacer()
-                    Text(session.chart.walks.formatted() + " walks")
+                    Text(session.chart.walks.formatted()
+                         + (session.chart.walks == 1
+                            ? " Walk"
+                            : " Walks"))
                         .font(.footnote.monospacedDigit().weight(.light))
                         .foregroundStyle(.secondary)
                 }
                 .modifier(Card())
                 
-                Item(value: .init(423432.formatted()), limit: .init(423432.formatted()), title: "Steps", percent: 0.6)
-                Item(value: .init(13432.formatted()), limit: .init(13432.formatted()), title: "Metres", percent: 0.45)
+                Item(value: .init(walker.steps.formatted()),
+                     limit: .init(session.chart.steps.max.formatted()
+                                  + (session.chart.steps.max == 1
+                                     ? " Step"
+                                     : " Steps")),
+                     title: walker.steps == 1
+                        ? "Step"
+                        : "Steps",
+                     percent: session.chart.steps.max > 0
+                        ? .init(walker.steps) / .init(session.chart.steps.max)
+                        : 1)
+                Item(value: .init(.init(value: .init(1997), unit: UnitLength.meters),
+                                  format: .measurement(width: .wide,
+                                                       usage: .road,
+                                                       numberFormatStyle: .number.precision(.significantDigits(2 ... 4)))),
+                     limit: .init(.init(value: .init(session.chart.metres.max), unit: UnitLength.meters),
+                                  format: .measurement(width: .wide,
+                                                       usage: .road,
+                                                       numberFormatStyle: .number.precision(.significantDigits(1 ... 2)))),
+                     title: "Metres",
+                     percent: session.chart.metres.max > 0
+                         ? .init(walker.metres) / .init(session.chart.metres.max)
+                         : 1)
                 Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Calories", percent: 0.75)
                 Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Squares", percent: 0.2)
             }
@@ -111,6 +136,9 @@ struct Walking: View {
                 
                 self.duration = duration
             }
+        }
+        .task {
+            await walker.start(date: .init(timestamp: session.walking))
         }
     }
 }

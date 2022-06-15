@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE005EE3285A4B0B00CE370E /* Walker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE005EE2285A4B0B00CE370E /* Walker.swift */; };
+		CE005EE4285A4B0B00CE370E /* Walker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE005EE2285A4B0B00CE370E /* Walker.swift */; };
 		CE1B75AA278EFA1600C706D4 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB82779FB62001BECAB /* Status.swift */; };
 		CE1B75AC278EFB3200C706D4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75AB278EFB3200C706D4 /* Home.swift */; };
 		CE1B75AE278EFC6B00C706D4 /* Stats.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75AD278EFC6B00C706D4 /* Stats.Item.swift */; };
@@ -138,6 +140,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE005EE2285A4B0B00CE370E /* Walker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walker.swift; sourceTree = "<group>"; };
 		CE1B75AB278EFB3200C706D4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CE1B75AD278EFC6B00C706D4 /* Stats.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Item.swift; sourceTree = "<group>"; };
 		CE1B75AF278EFC8300C706D4 /* Stats.Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Today.swift; sourceTree = "<group>"; };
@@ -381,6 +384,7 @@
 				CEF40CA92779F6D9001BECAB /* Global.swift */,
 				CEF9E4512789CD58004EFD64 /* GraphicsContext.swift */,
 				CEF40CB82779FB62001BECAB /* Status.swift */,
+				CE005EE2285A4B0B00CE370E /* Walker.swift */,
 				CEF40CBC2779FBB3001BECAB /* Colors.xcassets */,
 			);
 			path = Shared;
@@ -540,6 +544,7 @@
 				CE252331278C6FFD000A26C5 /* App.Delegate.swift in Sources */,
 				CE70530C278C79E700F6C10B /* Walking.swift in Sources */,
 				CE705304278C74BA00F6C10B /* GraphicsContext.swift in Sources */,
+				CE005EE4285A4B0B00CE370E /* Walker.swift in Sources */,
 				CE1B75AA278EFA1600C706D4 /* Status.swift in Sources */,
 				CE846E68278E17A1005989B0 /* Challenge.swift in Sources */,
 				CE78825D27907BB90031DE1C /* Walking.Ring.swift in Sources */,
@@ -570,6 +575,7 @@
 				CEA0D6AD278E4BBE0028EE62 /* Stats.Today.swift in Sources */,
 				CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */,
 				CE963420277CA1F700CCFF4B /* Ephemeris.Month.Continuous.swift in Sources */,
+				CE005EE3285A4B0B00CE370E /* Walker.swift in Sources */,
 				CEF40CA62779F6CE001BECAB /* Store.swift in Sources */,
 				CEC805BC277B36BB00D1B046 /* Map.Representable.swift in Sources */,
 				CE963422277CA1F700CCFF4B /* Ephemeris.swift in Sources */,

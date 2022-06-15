@@ -55,7 +55,7 @@ import Hero
         if HKHealthStore.isHealthDataAvailable() {
             try? await HKHealthStore()
                 .requestAuthorization(toShare: [],
-                                      read: .init([Challenge.steps, .distance, .calories]
+                                      read: .init([Challenge.steps, .metres, .calories]
                                         .compactMap(\.object)))
         }
     }

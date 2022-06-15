@@ -1,10 +1,10 @@
 import HealthKit
 
-enum Challenge: String {
+enum Challenge {
     case
     streak,
     steps,
-    distance,
+    metres,
     map,
     calories
 }
@@ -27,7 +27,7 @@ extension Challenge {
     private var identifier: HKQuantityTypeIdentifier? {
         switch self {
         case .steps: return .stepCount
-        case .distance: return .distanceWalkingRunning
+        case .metres: return .distanceWalkingRunning
         case .calories: return .activeEnergyBurned
         default: return nil
         }
