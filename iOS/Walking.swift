@@ -10,13 +10,13 @@ struct Walking: View {
     var body: some View {
         ScrollView {
             HStack(alignment: .firstTextBaseline) {
-                Text(123.formatted())
+                Text(session.chart.streak.current.formatted())
                     .font(.largeTitle.monospacedDigit().weight(.regular))
                 Text("Streak")
                     .font(.footnote.weight(.regular))
                     .foregroundColor(.secondary)
                 Spacer()
-                Text(345.formatted() + " walks")
+                Text(session.chart.walks.formatted() + " walks")
                     .font(.footnote.monospacedDigit().weight(.light))
                     .foregroundStyle(.secondary)
             }

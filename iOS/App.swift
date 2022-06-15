@@ -9,10 +9,13 @@ import Hero
     var body: some Scene {
         WindowGroup {
             Window(session: session)
-                .onReceive(cloud) {
-                    session.walking = $0.walking
+                .onReceive(cloud) { model in
+                    session.walking = model.walking
                     
-                    
+                    Task
+                        .detached(priority: .utility) {
+                            await chart(chart: model.chart)
+                        }
                 }
                 .task {
                     cloud.ready.notify(queue: .main) {
@@ -37,5 +40,9 @@ import Hero
                 break
             }
         }
+    }
+    
+    private func chart(chart: Chart) {
+        session.chart = chart
     }
 }
