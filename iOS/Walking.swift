@@ -9,24 +9,27 @@ struct Walking: View {
     
     var body: some View {
         ScrollView {
-            HStack(alignment: .firstTextBaseline) {
-                Text(session.chart.streak.current.formatted())
-                    .font(.largeTitle.monospacedDigit().weight(.regular))
-                Text("Streak")
-                    .font(.footnote.weight(.regular))
-                    .foregroundColor(.secondary)
-                Spacer()
-                Text(session.chart.walks.formatted() + " walks")
-                    .font(.footnote.monospacedDigit().weight(.light))
-                    .foregroundStyle(.secondary)
+            VStack(spacing: 20) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text(session.chart.streak.current.formatted())
+                        .font(.largeTitle.monospacedDigit().weight(.regular))
+                    + Text(" Streak")
+                        .font(.footnote.weight(.regular))
+                        .foregroundColor(.secondary)
+                    Spacer()
+                    Text(session.chart.walks.formatted() + " walks")
+                        .font(.footnote.monospacedDigit().weight(.light))
+                        .foregroundStyle(.secondary)
+                }
+                .padding(.vertical, 6)
+                .modifier(Card())
+                
+                Item(value: .init(423432.formatted()), limit: .init(423432.formatted()), title: "Steps", percent: 0.6)
+                Item(value: .init(13432.formatted()), limit: .init(13432.formatted()), title: "Metres", percent: 0.45)
+                Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Calories", percent: 0.75)
+                Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Squares", percent: 0.2)
             }
-            .padding(.top, 5)
-            .modifier(Card())
-            .padding(.top, 20)
-            Item(value: .init(423432.formatted()), limit: .init(423432.formatted()), title: "Steps", percent: 0.6)
-            Item(value: .init(13432.formatted()), limit: .init(13432.formatted()), title: "Metres", percent: 0.45)
-            Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Calories", percent: 0.75)
-            Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Squares", percent: 0.2)
+            .padding(.vertical, 20)
         }
         .frame(maxWidth: .greatestFiniteMagnitude)
         .safeAreaInset(edge: .top, spacing: 0) {
@@ -34,19 +37,21 @@ struct Walking: View {
                 ZStack {
                     if let duration = duration {
                         Text(duration)
-                            .font(.title3.monospacedDigit().weight(.regular))
+                            .font(.system(size: 24, weight: .regular).monospacedDigit())
                             .allowsHitTesting(false)
+                            .accessibility(label: .init("Current walk duration"))
                     } else {
                         Image(systemName: "figure.walk")
                             .foregroundColor(.accentColor)
                             .font(.system(size: 16, weight: .heavy))
+                            .accessibility(label: .init("Loading current walk duration"))
                     }
                     
                     HStack {
                         Button("Cancel", role: .cancel) {
                             
                         }
-                        .font(.callout.weight(.regular))
+                        .font(.system(size: 15, weight: .regular))
                         .foregroundStyle(.secondary)
                         .buttonStyle(.plain)
                         
@@ -56,7 +61,7 @@ struct Walking: View {
                             
                         } label: {
                             Text("Finish")
-                                .font(.callout.weight(.semibold))
+                                .font(.system(size: 15, weight: .semibold))
                                 .padding(.horizontal, 2)
                         }
                         .buttonBorderShape(.capsule)

@@ -12,7 +12,7 @@ extension Walking {
                 HStack(alignment: .firstTextBaseline) {
                     value
                         .font(.title2.monospacedDigit().weight(.regular))
-                    Text(title)
+                    + Text(" " + title)
                         .font(.footnote.weight(.regular))
                         .foregroundColor(.secondary)
                     Spacer()
