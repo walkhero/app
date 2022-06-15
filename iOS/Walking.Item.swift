@@ -11,7 +11,7 @@ extension Walking {
             VStack(spacing: 8) {
                 HStack(alignment: .firstTextBaseline) {
                     value
-                        .font(.title2.monospacedDigit().weight(.light))
+                        .font(.title2.monospacedDigit().weight(.regular))
                     Text(title)
                         .font(.footnote.weight(.regular))
                         .foregroundColor(.secondary)
@@ -29,7 +29,6 @@ extension Walking {
                     }
                 }
                 .frame(height: 2)
-                .padding(.horizontal, 2)
             }
             .padding(.leading, 2)
             .modifier(Card())

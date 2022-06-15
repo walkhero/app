@@ -9,9 +9,20 @@ struct Walking: View {
     
     var body: some View {
         ScrollView {
-            Spacer()
-                .frame(height: 20)
-            
+            HStack(alignment: .firstTextBaseline) {
+                Text(123.formatted())
+                    .font(.largeTitle.monospacedDigit().weight(.regular))
+                Text("Streak")
+                    .font(.footnote.weight(.regular))
+                    .foregroundColor(.secondary)
+                Spacer()
+                Text(345.formatted() + " walks")
+                    .font(.footnote.monospacedDigit().weight(.light))
+                    .foregroundStyle(.secondary)
+            }
+            .padding(.top, 5)
+            .modifier(Card())
+            .padding(.top, 20)
             Item(value: .init(423432.formatted()), limit: .init(423432.formatted()), title: "Steps", percent: 0.6)
             Item(value: .init(13432.formatted()), limit: .init(13432.formatted()), title: "Metres", percent: 0.45)
             Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Calories", percent: 0.75)
@@ -59,6 +70,23 @@ struct Walking: View {
                     .stroke(Color.accentColor, style: .init(lineWidth: 2, lineCap: .round))
                     .frame(height: 2)
                 Divider()
+            }
+            .background(Color(.systemBackground))
+        }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            VStack(spacing: 0) {
+                Divider()
+                
+                Button {
+                    
+                } label: {
+                    Image(systemName: "globe.europe.africa")
+                        .font(.system(size: 30, weight: .light))
+                        .frame(width: 60, height: 60)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .padding(.vertical, 5)
             }
             .background(Color(.systemBackground))
         }
