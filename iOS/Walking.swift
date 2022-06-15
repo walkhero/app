@@ -3,7 +3,7 @@ import Hero
 
 struct Walking: View {
     @StateObject var session: Sesssion
-    @State private var duration: String?
+    @State private var duration: AttributedString?
     @State private var tick = false
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -12,8 +12,10 @@ struct Walking: View {
             Spacer()
                 .frame(height: 20)
             
-            Item(value: .init(423432.formatted()), title: "Steps")
-            Item(value: .init(13432.formatted()), title: "Metres")
+            Item(value: .init(423432.formatted()), limit: .init(423432.formatted()), title: "Steps", percent: 0.6)
+            Item(value: .init(13432.formatted()), limit: .init(13432.formatted()), title: "Metres", percent: 0.45)
+            Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Calories", percent: 0.75)
+            Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Squares", percent: 0.2)
         }
         .frame(maxWidth: .greatestFiniteMagnitude)
         .safeAreaInset(edge: .top, spacing: 0) {
@@ -53,6 +55,9 @@ struct Walking: View {
                     .padding(.vertical, 12)
                 }
                 .fixedSize(horizontal: false, vertical: true)
+                Progress(value: 0.8)
+                    .stroke(Color.accentColor, style: .init(lineWidth: 2, lineCap: .round))
+                    .frame(height: 2)
                 Divider()
             }
             .background(Color(.systemBackground))
@@ -60,12 +65,19 @@ struct Walking: View {
         .onReceive(timer) { _ in
             tick.toggle()
             
-            let duration = (Date(timestamp: session.walking) ..< .now).formatted(.timeDuration)
+            var duration = AttributedString((Date(timestamp: session.walking) ..< .now).formatted(.timeDuration))
             
             if tick {
                 self.duration = duration
             } else {
-                self.duration = duration.replacingOccurrences(of: ":", with: " ")
+                if let range = duration.range(of: ":") {
+                    duration[range].foregroundColor = .clear
+                }
+                if let range = duration.range(of: ":", options: [.backwards]) {
+                    duration[range].foregroundColor = .clear
+                }
+                
+                self.duration = duration
             }
         }
     }

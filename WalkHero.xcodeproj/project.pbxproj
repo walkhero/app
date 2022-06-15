@@ -30,6 +30,7 @@
 		CE252348278C703E000A26C5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF40CBC2779FBB3001BECAB /* Colors.xcassets */; };
 		CE252349278C70B0000A26C5 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA92779F6D9001BECAB /* Global.swift */; };
 		CE25234B278C710B000A26C5 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CE25234A278C710B000A26C5 /* Hero */; };
+		CE41574E2859D3A5001513A0 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41574D2859D3A5001513A0 /* Progress.swift */; };
 		CE4B3486277A299200330CB4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B3485277A299200330CB4 /* CloudKit.framework */; };
 		CE4B3488277A29A500330CB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B3487277A29A500330CB4 /* HealthKit.framework */; };
 		CE512EE92779F1FF003ED854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE512EE82779F1FF003ED854 /* Assets.xcassets */; };
@@ -156,6 +157,7 @@
 		CE252330278C6FFD000A26C5 /* App.Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
 		CE252332278C6FFD000A26C5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CE25233B278C6FFD000A26C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE41574D2859D3A5001513A0 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		CE4B3483277A297700330CB4 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CE4B3485277A299200330CB4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		CE4B3487277A29A500330CB4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -364,6 +366,7 @@
 				CEB0D6D7278DC0CE00A7C9AF /* Walking.swift */,
 				CEBF91B22858A96800811090 /* Walking.Item.swift */,
 				CED8466228589270002A4BE6 /* Window.swift */,
+				CE41574D2859D3A5001513A0 /* Progress.swift */,
 				CE512EE82779F1FF003ED854 /* Assets.xcassets */,
 			);
 			path = iOS;
@@ -557,6 +560,7 @@
 				CEF40CAA2779F6D9001BECAB /* Global.swift in Sources */,
 				CEBF91B32858A96800811090 /* Walking.Item.swift in Sources */,
 				CE963423277CA1F700CCFF4B /* Ephemeris.Month.swift in Sources */,
+				CE41574E2859D3A5001513A0 /* Progress.swift in Sources */,
 				CE2241CE278B191A0049FDA0 /* Settings.Notifications.swift in Sources */,
 				CED8466328589270002A4BE6 /* Window.swift in Sources */,
 				CE7AF0CF278E35D500EA9F41 /* Main.Options.Item.swift in Sources */,
