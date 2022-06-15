@@ -21,7 +21,6 @@ struct Walking: View {
                         .font(.footnote.monospacedDigit().weight(.light))
                         .foregroundStyle(.secondary)
                 }
-                .padding(.vertical, 6)
                 .modifier(Card())
                 
                 Item(value: .init(423432.formatted()), limit: .init(423432.formatted()), title: "Steps", percent: 0.6)

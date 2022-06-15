@@ -1,4 +1,6 @@
 import SwiftUI
+import CoreLocation
+import HealthKit
 import Hero
 
 @main struct App: SwiftUI.App {
@@ -24,7 +26,7 @@ import Hero
                         
                         Task
                             .detached {
-//                                await status.request()
+                                await request()
                                 await store.launch()
                             }
                         
@@ -39,6 +41,22 @@ import Hero
             default:
                 break
             }
+        }
+    }
+    
+    private func request() async {
+        let manager = CLLocationManager()
+        if manager.authorizationStatus == .notDetermined {
+            manager.requestAlwaysAuthorization()
+        }
+        
+        _ = await UNUserNotificationCenter.request()
+        
+        if HKHealthStore.isHealthDataAvailable() {
+            try? await HKHealthStore()
+                .requestAuthorization(toShare: [],
+                                      read: .init([Challenge.steps, .distance, .calories]
+                                        .compactMap(\.object)))
         }
     }
     
