@@ -4,7 +4,7 @@ import HealthKit
 import Hero
 
 @main struct App: SwiftUI.App {
-    @StateObject private var session = Sesssion()
+    @StateObject private var session = Session()
     @Environment(\.scenePhase) private var phase
     @UIApplicationDelegateAdaptor(Delegate.self) private var delegate
     

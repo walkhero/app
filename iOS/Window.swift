@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Window: View {
-    @ObservedObject var session: Sesssion
+    @ObservedObject var session: Session
     
     var body: some View {
         if session.loading {

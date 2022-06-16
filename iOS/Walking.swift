@@ -2,7 +2,7 @@ import SwiftUI
 import Hero
 
 struct Walking: View {
-    @ObservedObject var session: Sesssion
+    @ObservedObject var session: Session
     @StateObject private var walker = Walker()
     
     var body: some View {
@@ -14,54 +14,21 @@ struct Walking: View {
                 
                 Item(value: .steps(value: walker.steps),
                      limit: session.chart.steps.max > 0 ? .steps(value: session.chart.steps.max) : nil,
-                     percent: percent(current: walker.steps, max: session.chart.steps.max))
+                     progress: .init(current: walker.steps, max: session.chart.steps.max))
                 
                 Item(value: .metres(value: walker.metres, digits: 4),
                      limit: session.chart.metres.max > 0 ? .metres(value: session.chart.metres.max, digits: 2) : nil,
-                     percent: percent(current: walker.metres, max: session.chart.metres.max))
+                     progress: .init(current: walker.metres, max: session.chart.metres.max))
                 
                 Item(value: .calories(value: walker.calories, digits: 4),
                      limit: session.chart.calories.max > 0 ? .calories(value: session.chart.calories.max, digits: 2) : nil,
-                     percent: percent(current: walker.calories, max: session.chart.calories.max))
+                     progress: .init(current: walker.calories, max: session.chart.calories.max))
             }
             .padding(.vertical, 20)
         }
         .frame(maxWidth: .greatestFiniteMagnitude)
         .safeAreaInset(edge: .top, spacing: 0) {
-            VStack(spacing: 0) {
-                ZStack {
-                    Duration(session: session)
-                    
-                    HStack {
-                        Button("Cancel", role: .cancel) {
-                            
-                        }
-                        .font(.system(size: 15, weight: .regular))
-                        .foregroundStyle(.secondary)
-                        .buttonStyle(.plain)
-                        
-                        Spacer()
-                        
-                        Button {
-                            
-                        } label: {
-                            Text("Finish")
-                                .font(.system(size: 15, weight: .semibold))
-                                .padding(.horizontal, 2)
-                        }
-                        .buttonBorderShape(.capsule)
-                        .buttonStyle(.borderedProminent)
-                    }
-                    .padding(.horizontal)
-                    .padding(.vertical, 12)
-                }
-                .fixedSize(horizontal: false, vertical: true)
-                Progress(value: 0.8)
-                    .stroke(Color.accentColor, style: .init(lineWidth: 2, lineCap: .round))
-                    .frame(height: 2)
-                Divider()
-            }
-            .background(Color(.systemBackground))
+            Top(session: session)
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             VStack(spacing: 0) {
@@ -83,10 +50,6 @@ struct Walking: View {
         .task {
             await walker.start(date: .init(timestamp: session.walking))
         }
-    }
-    
-    private func percent(current: Int, max: Int) -> Double {
-        max > 0 ? min(.init(current) / .init(max), 1) : 1
     }
 }
 

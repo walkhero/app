@@ -2,6 +2,10 @@ import SwiftUI
 
 struct Progress: Shape {
     var value: Double
+    
+    init(current: Int, max: Int) {
+        value = max > 0 ? min(.init(current) / .init(max), 1) : 1
+    }
 
     func path(in rect: CGRect) -> Path {
         .init {

@@ -33,7 +33,7 @@ struct Explore: View {
             ZStack {
                 Capsule()
                     .fill(.quaternary)
-                Progress(value: .init(leaf.squares) / .init(leaf.next))
+                Progress(current: leaf.squares, max: leaf.next)
                     .stroke(Color.accentColor, style: .init(lineWidth: 3, lineCap: .round))
             }
             .frame(height: 2)

@@ -7,6 +7,7 @@ struct Leafer: View {
     var body: some View {
         Image(systemName: "leaf.circle.fill")
             .font(.system(size: 30, weight: .ultraLight))
-            .symbolRenderingMode(.hierarchical)
+            .symbolRenderingMode(.palette)
+            .foregroundStyle(leaf.color, Color("Leafer"))
     }
 }
