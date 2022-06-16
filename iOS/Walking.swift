@@ -10,6 +10,8 @@ struct Walking: View {
             VStack(spacing: 20) {
                 Streak(streak: session.chart.streak.current, walks: session.chart.walks)
 
+                Explore(explored: walker.explored, leaf: walker.leaf)
+                
                 Item(value: .steps(value: walker.steps),
                      limit: session.chart.steps.max > 0 ? .steps(value: session.chart.steps.max) : nil,
                      percent: percent(current: walker.steps, max: session.chart.steps.max))
@@ -21,13 +23,6 @@ struct Walking: View {
                 Item(value: .calories(value: walker.calories, digits: 4),
                      limit: session.chart.calories.max > 0 ? .calories(value: session.chart.calories.max, digits: 2) : nil,
                      percent: percent(current: walker.calories, max: session.chart.calories.max))
-                
-                Item(value: .squares(value: walker.squares.items.subtracting(session.squares).count),
-                     limit: session.chart.calories.max > 0 ? .calories(value: session.chart.calories.max, digits: 2) : nil,
-                     percent: percent(current: walker.calories, max: session.chart.calories.max))
-                
-//                Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Calories", percent: 0.75)
-//                Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Squares", percent: 0.2)
             }
             .padding(.vertical, 20)
         }
@@ -91,7 +86,7 @@ struct Walking: View {
     }
     
     private func percent(current: Int, max: Int) -> Double {
-        max > 0 ? .init(current) / .init(max) : 1
+        max > 0 ? min(.init(current) / .init(max), 1) : 1
     }
 }
 

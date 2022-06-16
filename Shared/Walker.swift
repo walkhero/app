@@ -7,19 +7,31 @@ import UserNotifications
 #endif
 
 final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
-    @Published private(set) var squares = Squares()
     @Published private(set) var steps = 0
     @Published private(set) var metres = 0
     @Published private(set) var calories = 0
+    @Published private(set) var explored = 0
+    @Published private(set) var leaf = Leaf(squares: 0)
+    private var squares = Squares()
+    private var tiles = Set<Squares.Item>()
     private var queries = Set<HKQuery>()
     private let manager = CLLocationManager()
     private let store = HKHealthStore()
 
+    deinit {
+        print("walker gone")
+    }
+    
     override init() {
         super.init()
+        print("walker")
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         manager.allowsBackgroundLocationUpdates = true
+        
+        Task.detached(priority: .utility) { [weak self] in
+            await self?.update(tiles: cloud.model.tiles)
+        }
     }
 
     func start(date: Date) async {
@@ -160,6 +172,7 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     func locationManager(_: CLLocationManager, didUpdateLocations: [CLLocation]) {
         squares.add(locations: didUpdateLocations)
+        releaf()
     }
 
     func locationManagerDidChangeAuthorization(_: CLLocationManager) { }
@@ -169,6 +182,11 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_: CLLocationManager, didFinishDeferredUpdatesWithError: Error?) { }
     #endif
 
+    @MainActor private func update(tiles: Set<Squares.Item>) {
+        self.tiles = tiles
+        releaf()
+    }
+    
     @MainActor private func add(steps: HKStatisticsCollection) {
         self.steps = steps
             .statistics()
@@ -207,6 +225,11 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
             .reduce(0, +)
     }
+    
+    private func releaf() {
+        explored = squares.items.subtracting(tiles).count
+        leaf = .init(squares: tiles.count + explored)
+    }
 
     private func query(start: Date, quantity: HKQuantityType) -> HKStatisticsCollectionQuery {
         .init(
@@ -217,5 +240,3 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
             intervalComponents: .init(second: 10))
     }
 }
-
-

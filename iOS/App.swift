@@ -13,12 +13,10 @@ import Hero
             Window(session: session)
                 .onReceive(cloud) { model in
                     session.walking = model.walking
-                    
+
                     Task
                         .detached(priority: .utility) {
-                            let chart = model.chart
-                            let squares = model.tiles
-                            await update(chart: chart, squares: squares)
+                            await update(chart: model.chart)
                         }
                 }
                 .task {
@@ -62,8 +60,7 @@ import Hero
         }
     }
     
-    private func update(chart: Chart, squares: Set<Squares.Item>) {
+    private func update(chart: Chart) {
         session.chart = chart
-        session.squares = squares
     }
 }

@@ -6,8 +6,7 @@ struct Card: ViewModifier {
             Rectangle()
                 .fill(Color(.tertiarySystemBackground))
             content
-                .padding()
-                .padding(.horizontal, 2)
+                .padding(18)
         }
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         .shadow(color: .init(white: 0, opacity: 0.05), radius: 5, y: 3)
