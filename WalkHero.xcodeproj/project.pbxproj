@@ -32,6 +32,9 @@
 		CE252348278C703E000A26C5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF40CBC2779FBB3001BECAB /* Colors.xcassets */; };
 		CE252349278C70B0000A26C5 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA92779F6D9001BECAB /* Global.swift */; };
 		CE25234B278C710B000A26C5 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CE25234A278C710B000A26C5 /* Hero */; };
+		CE3965DE285B37F9008A3CAF /* AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3965DD285B37F9008A3CAF /* AttributedString.swift */; };
+		CE3965DF285B37F9008A3CAF /* AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3965DD285B37F9008A3CAF /* AttributedString.swift */; };
+		CE3965E1285B3E5F008A3CAF /* Walking.Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3965E0285B3E5F008A3CAF /* Walking.Duration.swift */; };
 		CE41574E2859D3A5001513A0 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41574D2859D3A5001513A0 /* Progress.swift */; };
 		CE4B3486277A299200330CB4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B3485277A299200330CB4 /* CloudKit.framework */; };
 		CE4B3488277A29A500330CB4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B3487277A29A500330CB4 /* HealthKit.framework */; };
@@ -160,6 +163,8 @@
 		CE252330278C6FFD000A26C5 /* App.Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
 		CE252332278C6FFD000A26C5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CE25233B278C6FFD000A26C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE3965DD285B37F9008A3CAF /* AttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedString.swift; sourceTree = "<group>"; };
+		CE3965E0285B3E5F008A3CAF /* Walking.Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Duration.swift; sourceTree = "<group>"; };
 		CE41574D2859D3A5001513A0 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		CE4B3483277A297700330CB4 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		CE4B3485277A299200330CB4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -367,6 +372,7 @@
 				CEB0D6DD278DD06900A7C9AF /* Walking.Stats.Item.swift */,
 				CEB0D6DB278DCF6F00A7C9AF /* Walking.Stats.swift */,
 				CEB0D6D7278DC0CE00A7C9AF /* Walking.swift */,
+				CE3965E0285B3E5F008A3CAF /* Walking.Duration.swift */,
 				CEBF91B22858A96800811090 /* Walking.Item.swift */,
 				CED8466228589270002A4BE6 /* Window.swift */,
 				CE41574D2859D3A5001513A0 /* Progress.swift */,
@@ -378,6 +384,7 @@
 		CEF40C9E2779F690001BECAB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CE3965DD285B37F9008A3CAF /* AttributedString.swift */,
 				CE846E66278E178B005989B0 /* Challenge.swift */,
 				CE78825E27907FDF0031DE1C /* Confirm.Item.swift */,
 				CE1B75BB278F0C1A00C706D4 /* Confirm.swift */,
@@ -543,6 +550,7 @@
 				CE1B75B6278F085C00C706D4 /* Walking.Stats.swift in Sources */,
 				CE252331278C6FFD000A26C5 /* App.Delegate.swift in Sources */,
 				CE70530C278C79E700F6C10B /* Walking.swift in Sources */,
+				CE3965DF285B37F9008A3CAF /* AttributedString.swift in Sources */,
 				CE705304278C74BA00F6C10B /* GraphicsContext.swift in Sources */,
 				CE005EE4285A4B0B00CE370E /* Walker.swift in Sources */,
 				CE1B75AA278EFA1600C706D4 /* Status.swift in Sources */,
@@ -571,6 +579,7 @@
 				CE7AF0CF278E35D500EA9F41 /* Main.Options.Item.swift in Sources */,
 				CE7AF0D1278E3EAE00EA9F41 /* Stats.Item.swift in Sources */,
 				CEB0D6D8278DC0CE00A7C9AF /* Walking.swift in Sources */,
+				CE3965DE285B37F9008A3CAF /* AttributedString.swift in Sources */,
 				CE5FD9D4278DB0CB0099008F /* Card.swift in Sources */,
 				CEA0D6AD278E4BBE0028EE62 /* Stats.Today.swift in Sources */,
 				CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */,
@@ -604,6 +613,7 @@
 				CE96341F277CA1F700CCFF4B /* Ephemeris.Month.Day.swift in Sources */,
 				CE5FD9D6278DB4700099008F /* Card.Option.swift in Sources */,
 				CE2241D2278B19ED0049FDA0 /* Settings.About.swift in Sources */,
+				CE3965E1285B3E5F008A3CAF /* Walking.Duration.swift in Sources */,
 				CE7AF0CB278E334F00EA9F41 /* Map.swift in Sources */,
 				CE846E6C278E2668005989B0 /* Card.Home.swift in Sources */,
 				CED84665285893A7002A4BE6 /* Session.swift in Sources */,

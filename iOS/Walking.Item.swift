@@ -3,21 +3,11 @@ import SwiftUI
 extension Walking {
     struct Item: View {
         let value: AttributedString
-        let limit: Text
+        let limit: AttributedString
         let percent: Double
         
-        init(value: AttributedString, limit: Text, percent: Double) {
-            var value = value
-            value.runs.forEach { run in
-                if run.numberPart != nil || run.numberSymbol != nil {
-                    value[run.range].foregroundColor = .primary
-                    value[run.range].font = .title2.monospacedDigit().weight(.regular)
-                } else {
-                    value[run.range].foregroundColor = .secondary
-                    value[run.range].font = .footnote.weight(.regular)
-                }
-            }
-            self.value = value
+        init(value: AttributedString, limit: AttributedString, percent: Double) {
+            self.value = value.numeric(font: .title2.monospacedDigit().weight(.regular), color: .primary)
             self.limit = limit
             self.percent = percent
         }
@@ -26,8 +16,10 @@ extension Walking {
             VStack(spacing: 8) {
                 HStack(alignment: .firstTextBaseline) {
                     Text(value)
+                        .font(.footnote.weight(.regular))
+                        .foregroundColor(.secondary)
                     Spacer()
-                    limit
+                    Text(limit)
                         .font(.footnote.monospacedDigit().weight(.light))
                         .foregroundStyle(.secondary)
                 }

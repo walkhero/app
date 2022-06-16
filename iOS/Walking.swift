@@ -6,7 +6,6 @@ struct Walking: View {
     @StateObject private var walker = Walker()
     @State private var duration: AttributedString?
     @State private var tick = false
-    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ScrollView {
@@ -14,14 +13,11 @@ struct Walking: View {
                 HStack(alignment: .firstTextBaseline) {
                     Text(session.chart.streak.current.formatted())
                         .font(.largeTitle.monospacedDigit().weight(.regular))
-                    + Text(" Streak")
+                    + Text(" streak")
                         .font(.footnote.weight(.regular))
                         .foregroundColor(.secondary)
                     Spacer()
-                    Text(session.chart.walks.formatted()
-                         + (session.chart.walks == 1
-                            ? " Walk"
-                            : " Walks"))
+                    Text(.walks(value: session.chart.walks))
                         .font(.footnote.monospacedDigit().weight(.light))
                         .foregroundStyle(.secondary)
                 }
@@ -40,14 +36,8 @@ struct Walking: View {
 //                        : 1)
 
                 
-                Item(value: Measurement(value: .init(1997), unit: UnitLength.meters).formatted(.measurement(width: .wide,
-                                                                                                            usage: .road,
-                                                                                                            numberFormatStyle: .number.precision(.significantDigits(2 ... 4))).attributed),
-                     limit: .init(.init(value: .init(session.chart.metres.max), unit: UnitLength.meters),
-                                  format: .measurement(width: .wide,
-                                                       usage: .road,
-                                                       numberFormatStyle: .number.precision(.significantDigits(1 ... 2)))),
-//                     title: "Metres",
+                Item(value: .metres(value: walker.metres, digits: 1 ... 4),
+                     limit: .metres(value: session.chart.metres.max, digits: 1 ... 2),
                      percent: session.chart.metres.max > 0
                          ? .init(walker.metres) / .init(session.chart.metres.max)
                          : 1)
@@ -60,17 +50,7 @@ struct Walking: View {
         .safeAreaInset(edge: .top, spacing: 0) {
             VStack(spacing: 0) {
                 ZStack {
-                    if let duration = duration {
-                        Text(duration)
-                            .font(.system(size: 24, weight: .regular).monospacedDigit())
-                            .allowsHitTesting(false)
-                            .accessibility(label: .init("Current walk duration"))
-                    } else {
-                        Image(systemName: "figure.walk")
-                            .foregroundColor(.accentColor)
-                            .font(.system(size: 16, weight: .heavy))
-                            .accessibility(label: .init("Loading current walk duration"))
-                    }
+                    Duration(session: session)
                     
                     HStack {
                         Button("Cancel", role: .cancel) {
@@ -119,24 +99,6 @@ struct Walking: View {
                 .padding(.vertical, 5)
             }
             .background(Color(.systemBackground))
-        }
-        .onReceive(timer) { _ in
-            tick.toggle()
-            
-            var duration = AttributedString((Date(timestamp: session.walking) ..< .now).formatted(.timeDuration))
-            
-            if tick {
-                self.duration = duration
-            } else {
-                if let range = duration.range(of: ":") {
-                    duration[range].foregroundColor = .clear
-                }
-                if let range = duration.range(of: ":", options: [.backwards]) {
-                    duration[range].foregroundColor = .clear
-                }
-                
-                self.duration = duration
-            }
         }
         .task {
             await walker.start(date: .init(timestamp: session.walking))
