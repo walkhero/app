@@ -27,31 +27,32 @@ struct Walking: View {
                 }
                 .modifier(Card())
                 
-                Item(value: .init(walker.steps.formatted()),
-                     limit: .init(session.chart.steps.max.formatted()
-                                  + (session.chart.steps.max == 1
-                                     ? " Step"
-                                     : " Steps")),
-                     title: walker.steps == 1
-                        ? "Step"
-                        : "Steps",
-                     percent: session.chart.steps.max > 0
-                        ? .init(walker.steps) / .init(session.chart.steps.max)
-                        : 1)
-                Item(value: .init(.init(value: .init(1997), unit: UnitLength.meters),
-                                  format: .measurement(width: .wide,
-                                                       usage: .road,
-                                                       numberFormatStyle: .number.precision(.significantDigits(2 ... 4)))),
+//                Item(value: .init(walker.steps.formatted()),
+//                     limit: .init(session.chart.steps.max.formatted()
+//                                  + (session.chart.steps.max == 1
+//                                     ? " Step"
+//                                     : " Steps")),
+//                     title: walker.steps == 1
+//                        ? "Step"
+//                        : "Steps",
+//                     percent: session.chart.steps.max > 0
+//                        ? .init(walker.steps) / .init(session.chart.steps.max)
+//                        : 1)
+
+                
+                Item(value: Measurement(value: .init(1997), unit: UnitLength.meters).formatted(.measurement(width: .wide,
+                                                                                                            usage: .road,
+                                                                                                            numberFormatStyle: .number.precision(.significantDigits(2 ... 4))).attributed),
                      limit: .init(.init(value: .init(session.chart.metres.max), unit: UnitLength.meters),
                                   format: .measurement(width: .wide,
                                                        usage: .road,
                                                        numberFormatStyle: .number.precision(.significantDigits(1 ... 2)))),
-                     title: "Metres",
+//                     title: "Metres",
                      percent: session.chart.metres.max > 0
                          ? .init(walker.metres) / .init(session.chart.metres.max)
                          : 1)
-                Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Calories", percent: 0.75)
-                Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Squares", percent: 0.2)
+//                Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Calories", percent: 0.75)
+//                Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Squares", percent: 0.2)
             }
             .padding(.vertical, 20)
         }
