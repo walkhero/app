@@ -8,18 +8,39 @@ extension AttributedString {
     }
     
     static func walks(value: Int) -> Self {
-        var number = Self(value.formatted())
-        number.numberPart = .integer
-        return number + .init(value == 1 ? " walk" : " walks")
+        format(value: value, singular: "walk", plural: "walks")
     }
     
-    static func metres(value: Int, digits: ClosedRange<Int>) -> Self {
+    static func steps(value: Int) -> Self {
+        format(value: value, singular: "step", plural: "steps")
+    }
+    
+    static func squares(value: Int) -> Self {
+        format(value: value, singular: "square", plural: "squares")
+    }
+    
+    static func metres(value: Int, digits: Int) -> Self {
         Measurement(value: .init(value), unit: UnitLength.meters)
             .formatted(.measurement(width: .wide,
                                     usage: .road,
                                     numberFormatStyle: .number
-                .precision(.significantDigits(digits)))
+                .precision(.significantDigits(1 ... digits)))
                 .attributed)
+    }
+    
+    static func calories(value: Int, digits: Int) -> Self {
+        Measurement(value: .init(value), unit: UnitEnergy.calories)
+            .formatted(.measurement(width: .wide,
+                                    usage: .workout,
+                                    numberFormatStyle: .number
+                .precision(.significantDigits(1 ... digits)))
+                .attributed)
+    }
+    
+    private static func format(value: Int, singular: String, plural: String) -> Self {
+        var number = Self(value.formatted())
+        number.numberPart = .integer
+        return number + .init(value == 1 ? " " + singular : " " + plural)
     }
     
     func numeric(font: Font, color: Color) -> Self {

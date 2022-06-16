@@ -5,6 +5,7 @@ final class Sesssion: ObservableObject {
     @Published var loading = true
     @Published var walking = UInt32()
     @Published var chart = Chart.zero
+    @Published var squares = Set<Squares.Item>()
     
     func duration(date: Date) -> AttributedString {
         var duration = AttributedString((.init(timestamp: walking) ..< date).formatted(.timeDuration))

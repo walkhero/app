@@ -4,44 +4,28 @@ import Hero
 struct Walking: View {
     @ObservedObject var session: Sesssion
     @StateObject private var walker = Walker()
-    @State private var duration: AttributedString?
-    @State private var tick = false
     
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text(.streak(value: session.chart.streak.current)
-                        .numeric(font: .largeTitle.monospacedDigit().weight(.regular),
-                                 color: .primary))
-                        .font(.footnote.weight(.regular))
-                        .foregroundColor(.secondary)
-                    Spacer()
-                    Text(.walks(value: session.chart.walks))
-                        .font(.footnote.monospacedDigit().weight(.light))
-                        .foregroundStyle(.secondary)
-                }
-                .modifier(Card())
-                
-                
-//                Item(value: .init(walker.steps.formatted()),
-//                     limit: .init(session.chart.steps.max.formatted()
-//                                  + (session.chart.steps.max == 1
-//                                     ? " Step"
-//                                     : " Steps")),
-//                     title: walker.steps == 1
-//                        ? "Step"
-//                        : "Steps",
-//                     percent: session.chart.steps.max > 0
-//                        ? .init(walker.steps) / .init(session.chart.steps.max)
-//                        : 1)
+                Streak(streak: session.chart.streak.current, walks: session.chart.walks)
 
+                Item(value: .steps(value: walker.steps),
+                     limit: session.chart.steps.max > 0 ? .steps(value: session.chart.steps.max) : nil,
+                     percent: percent(current: walker.steps, max: session.chart.steps.max))
                 
-                Item(value: .metres(value: walker.metres, digits: 1 ... 4),
-                     limit: .metres(value: session.chart.metres.max, digits: 1 ... 2),
-                     percent: session.chart.metres.max > 0
-                         ? .init(walker.metres) / .init(session.chart.metres.max)
-                         : 1)
+                Item(value: .metres(value: walker.metres, digits: 4),
+                     limit: session.chart.metres.max > 0 ? .metres(value: session.chart.metres.max, digits: 2) : nil,
+                     percent: percent(current: walker.metres, max: session.chart.metres.max))
+                
+                Item(value: .calories(value: walker.calories, digits: 4),
+                     limit: session.chart.calories.max > 0 ? .calories(value: session.chart.calories.max, digits: 2) : nil,
+                     percent: percent(current: walker.calories, max: session.chart.calories.max))
+                
+                Item(value: .squares(value: walker.squares.items.subtracting(session.squares).count),
+                     limit: session.chart.calories.max > 0 ? .calories(value: session.chart.calories.max, digits: 2) : nil,
+                     percent: percent(current: walker.calories, max: session.chart.calories.max))
+                
 //                Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Calories", percent: 0.75)
 //                Item(value: .init(53432.formatted()), limit: .init(1332.formatted()), title: "Squares", percent: 0.2)
             }
@@ -104,6 +88,10 @@ struct Walking: View {
         .task {
             await walker.start(date: .init(timestamp: session.walking))
         }
+    }
+    
+    private func percent(current: Int, max: Int) -> Double {
+        max > 0 ? .init(current) / .init(max) : 1
     }
 }
 

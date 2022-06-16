@@ -16,7 +16,9 @@ import Hero
                     
                     Task
                         .detached(priority: .utility) {
-                            await chart(chart: model.chart)
+                            let chart = model.chart
+                            let squares = model.tiles
+                            await update(chart: chart, squares: squares)
                         }
                 }
                 .task {
@@ -60,7 +62,8 @@ import Hero
         }
     }
     
-    private func chart(chart: Chart) {
+    private func update(chart: Chart, squares: Set<Squares.Item>) {
         session.chart = chart
+        session.squares = squares
     }
 }

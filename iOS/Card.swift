@@ -1,43 +1,16 @@
-//import SwiftUI
-//import Hero
-//
-//struct Card: View {
-//    weak var status: Status!
-//    let started: UInt32?
-//    @State private var summary: Summary?
-//    @State private var loading = true
-//    
-//    var body: some View {
-//        ZStack {
-//            RoundedRectangle(cornerRadius: 26)
-//                .fill(Color(.systemBackground))
-//                .shadow(color: .init("Shadow"), radius: 10)
-//            RoundedRectangle(cornerRadius: 26)
-//                .fill(Color(.tertiarySystemBackground))
-//                .padding(1)
-//            VStack(spacing: 0) {
-//                if loading {
-//                    Image(systemName: "figure.walk")
-//                        .font(.largeTitle.weight(.light))
-//                        .foregroundStyle(.tertiary)
-//                } else if let started = started {
-//                    Walking(status: status,
-//                            summary: $summary,
-//                            started: started)
-//                } else {
-//                    Home()
-//                }
-//            }
-//        }
-//        .sheet(item: $summary) { result in
-//            Sheet(rootView: Confirm(summary: result) {
-//                summary = nil
-//            })
-//        }
-//        .onAppear {
-//            cloud.ready.notify(queue: .main) {
-//                loading = false
-//            }
-//        }
-//    }
-//}
+import SwiftUI
+
+struct Card: ViewModifier {
+    func body(content: Content) -> some View {
+        ZStack {
+            Rectangle()
+                .fill(Color(.tertiarySystemBackground))
+            content
+                .padding()
+                .padding(.horizontal, 2)
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .shadow(color: .init(white: 0, opacity: 0.05), radius: 5, y: 3)
+        .padding(.horizontal)
+    }
+}
