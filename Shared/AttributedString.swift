@@ -2,11 +2,15 @@ import SwiftUI
 
 extension AttributedString {
     static func streak(value: Int) -> Self {
-        .init(value.formatted() + " streak")
+        var number = Self(value.formatted())
+        number.numberPart = .integer
+        return number + .init(" streak")
     }
     
     static func walks(value: Int) -> Self {
-        .init(value.formatted() + (value == 1 ? " walk" : " walks"))
+        var number = Self(value.formatted())
+        number.numberPart = .integer
+        return number + .init(value == 1 ? " walk" : " walks")
     }
     
     static func metres(value: Int, digits: ClosedRange<Int>) -> Self {
@@ -22,8 +26,8 @@ extension AttributedString {
         var value = self
         value.runs.forEach { run in
             if run.numberPart != nil || run.numberSymbol != nil {
-                value[run.range].foregroundColor = .primary
-                value[run.range].font = .title2.monospacedDigit().weight(.regular)
+                value[run.range].foregroundColor = color
+                value[run.range].font = font
             }
         }
         return value

@@ -11,9 +11,9 @@ struct Walking: View {
         ScrollView {
             VStack(spacing: 20) {
                 HStack(alignment: .firstTextBaseline) {
-                    Text(session.chart.streak.current.formatted())
-                        .font(.largeTitle.monospacedDigit().weight(.regular))
-                    + Text(" streak")
+                    Text(.streak(value: session.chart.streak.current)
+                        .numeric(font: .largeTitle.monospacedDigit().weight(.regular),
+                                 color: .primary))
                         .font(.footnote.weight(.regular))
                         .foregroundColor(.secondary)
                     Spacer()
@@ -22,6 +22,7 @@ struct Walking: View {
                         .foregroundStyle(.secondary)
                 }
                 .modifier(Card())
+                
                 
 //                Item(value: .init(walker.steps.formatted()),
 //                     limit: .init(session.chart.steps.max.formatted()
