@@ -14,6 +14,7 @@
 		CE1912B6285CC7E400956D95 /* Main.Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912B5285CC7E400956D95 /* Main.Navigation.swift */; };
 		CE1912B8285CDD4000956D95 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912B7285CDD4000956D95 /* Settings.swift */; };
 		CE1912BA285CDEA400956D95 /* Settings.Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912B9285CDEA400956D95 /* Settings.Info.swift */; };
+		CE1912BC285CE2C700956D95 /* Main.Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912BB285CE2C700956D95 /* Main.Mapper.swift */; };
 		CE1B75AA278EFA1600C706D4 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB82779FB62001BECAB /* Status.swift */; };
 		CE1B75AC278EFB3200C706D4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75AB278EFB3200C706D4 /* Home.swift */; };
 		CE1B75AE278EFC6B00C706D4 /* Stats.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B75AD278EFC6B00C706D4 /* Stats.Item.swift */; };
@@ -161,6 +162,7 @@
 		CE1912B5285CC7E400956D95 /* Main.Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Navigation.swift; sourceTree = "<group>"; };
 		CE1912B7285CDD4000956D95 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CE1912B9285CDEA400956D95 /* Settings.Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Info.swift; sourceTree = "<group>"; };
+		CE1912BB285CE2C700956D95 /* Main.Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Mapper.swift; sourceTree = "<group>"; };
 		CE1B75AB278EFB3200C706D4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CE1B75AD278EFC6B00C706D4 /* Stats.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Item.swift; sourceTree = "<group>"; };
 		CE1B75AF278EFC8300C706D4 /* Stats.Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Today.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				CE7AF0CE278E35D500EA9F41 /* Main.Options.Item.swift */,
 				CE7AF0CC278E354900EA9F41 /* Main.Options.swift */,
 				CEC805B9277B36B400D1B046 /* Main.swift */,
+				CE1912BB285CE2C700956D95 /* Main.Mapper.swift */,
 				CE120552285C87E300584E58 /* Map.swift */,
 				CEC805BB277B36BB00D1B046 /* Mapold.Representable.swift */,
 				CE7AF0CA278E334F00EA9F41 /* Mapold.swift */,
@@ -632,6 +635,7 @@
 				CEE6F1A627A1ACA800D63EDB /* Stats.Trend.swift in Sources */,
 				CE7AF0CD278E354900EA9F41 /* Main.Options.swift in Sources */,
 				CEA0D6AB278E4B870028EE62 /* Stats.Leaderboard.swift in Sources */,
+				CE1912BC285CE2C700956D95 /* Main.Mapper.swift in Sources */,
 				CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */,
 				CEF9E4522789CD58004EFD64 /* GraphicsContext.swift in Sources */,
 				CE1912B6285CC7E400956D95 /* Main.Navigation.swift in Sources */,

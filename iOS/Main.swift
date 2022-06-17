@@ -38,7 +38,7 @@ struct Main: View {
     @ViewBuilder private var content: some View {
         switch navigation {
         case .map:
-            Circle()
+            Mapper()
         case .statistics:
             Rectangle()
         case .calendar:
