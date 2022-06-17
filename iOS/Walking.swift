@@ -4,6 +4,7 @@ import Hero
 struct Walking: View {
     @ObservedObject var session: Session
     @StateObject private var walker = Walker()
+    @State private var map = false
     
     var body: some View {
         ScrollView {
@@ -35,7 +36,7 @@ struct Walking: View {
                 Divider()
                 
                 Button {
-                    
+                    map = true
                 } label: {
                     Image(systemName: "globe.europe.africa")
                         .font(.system(size: 30, weight: .light))
@@ -44,6 +45,10 @@ struct Walking: View {
                 }
                 .buttonStyle(.plain)
                 .padding(.vertical, 5)
+                .sheet(isPresented: $map) {
+                    Sheet(rootView: Mapper())
+                        .edgesIgnoringSafeArea(.all)
+                }
             }
             .background(Color(.systemBackground))
         }

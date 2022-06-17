@@ -17,12 +17,14 @@ struct Explore: View {
                 Leafer(leaf: leaf)
             }
             HStack(alignment: .firstTextBaseline) {
-                Text(leaf.squares, format: .number)
-                    .font(.callout.monospacedDigit().weight(.regular))
-                    .foregroundColor(.secondary)
-                + Text(" total")
-                    .font(.footnote.weight(.regular))
-                    .foregroundColor(.secondary)
+                if leaf.squares > 0 {
+                    Text(leaf.squares, format: .number)
+                        .font(.callout.monospacedDigit().weight(.regular))
+                        .foregroundColor(.secondary)
+                    + Text(" total")
+                        .font(.footnote.weight(.regular))
+                        .foregroundColor(.secondary)
+                }
                 
                 Spacer()
                 
