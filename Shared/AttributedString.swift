@@ -37,6 +37,21 @@ extension AttributedString {
                 .attributed)
     }
     
+    static func duration(start: UInt32, current: Date) -> Self {
+        var duration = Self((.init(timestamp: start) ..< current).formatted(.timeDuration))
+        
+        if Int(current.timeIntervalSince1970) % 2 == 1 {
+            if let range = duration.range(of: ":") {
+                duration[range].foregroundColor = .clear
+            }
+            if let range = duration.range(of: ":", options: [.backwards]) {
+                duration[range].foregroundColor = .clear
+            }
+        }
+        
+        return duration
+    }
+    
     private static func format(value: Int, singular: String, plural: String) -> Self {
         var number = Self(value.formatted())
         number.numberPart = .integer

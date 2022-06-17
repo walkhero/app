@@ -16,7 +16,7 @@ import Hero
 
                     Task
                         .detached(priority: .utility) {
-                            await update(chart: model.chart)
+                            await session.update(chart: model.chart)
                         }
                 }
                 .task {
@@ -58,9 +58,5 @@ import Hero
                                       read: .init([Challenge.steps, .metres, .calories]
                                         .compactMap(\.object)))
         }
-    }
-    
-    private func update(chart: Chart) {
-        session.chart = chart
     }
 }

@@ -1,63 +1,196 @@
-//import SwiftUI
-//
-//struct Settings: View {
-//    @Environment(\.dismiss) private var dismiss
-//    
-//    var body: some View {
-//        NavigationView {
-//            List {
-//                Section("Location") {
-//                    Button {
-//                        UIApplication.shared.settings()
-//                    } label: {
-//                        Option(title: "Configure",
-//                               subtitle: "Map the areas where you walk",
-//                               symbol: "location")
-//                    }
-//                }
-//                .headerProminence(.increased)
-//                
-//                Notifications()
-//                
-//                Section("Walk Hero") {
-//                    NavigationLink(destination: Plus()) {
-//                        Option(title: "Walk Hero +",
-//                               subtitle: "Support Walk Hero",
-//                               symbol: "plus")
-//                    }
-//                    
-//                    NavigationLink(destination: About()) {
-//                        Option(title: "About",
-//                               subtitle: "App details",
-//                               symbol: "figure.walk")
-//                    }
-//                    
-//                    NavigationLink(destination: Info(title: "Privacy policy", text: Copy.privacy)) {
-//                        Option(title: "Privacy policy",
-//                               subtitle: "What we do with your data",
-//                               symbol: "hand.raised")
-//                    }
-//                }
-//                .headerProminence(.increased)
-//            }
-//            .navigationTitle("Settings")
-//            .navigationBarTitleDisplayMode(.large)
-//            .listStyle(.insetGrouped)
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button {
-//                        dismiss()
-//                    } label: {
-//                        Text("Done")
-//                            .font(.callout.weight(.medium))
-//                            .padding(.leading)
-//                            .frame(height: 34)
-//                            .contentShape(Rectangle())
-//                            .allowsHitTesting(false)
-//                    }
-//                }
-//            }
-//        }
-//        .navigationViewStyle(.stack)
-//    }
-//}
+import SwiftUI
+import CoreLocation
+
+struct Settings: View {
+    @State private var store = false
+    @State private var about = false
+    @State private var notifications = false
+    @State private var location = false
+    
+    var body: some View {
+        List {
+            purchases
+            privacy
+            app
+            help
+        }
+        .listStyle(.insetGrouped)
+        .safeAreaInset(edge: .top, spacing: 0) {
+            VStack(spacing: 0) {
+                Text("Settings")
+                    .font(.title.weight(.bold))
+                    .padding()
+                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
+                Divider()
+            }
+            .background(Color(.systemBackground))
+        }
+        .task {
+            let status = CLLocationManager().authorizationStatus
+            location = status != .denied || status != .notDetermined
+            
+            let settings = await UNUserNotificationCenter.current().notificationSettings().authorizationStatus
+            notifications = settings != .notDetermined && settings != .denied
+        }
+    }
+    
+    private var purchases: some View {
+        Section("In-App Purchases") {
+            Button {
+                store = true
+            } label: {
+                HStack {
+                    Text("Offline Cloud")
+                        .font(.callout)
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Image(systemName: "cloud")
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.primary)
+                        .font(.system(size: 16, weight: .light))
+                        .frame(width: 18)
+                }
+            }
+//            .sheet(isPresented: $store, content: Purchases.init)
+        }
+        .headerProminence(.increased)
+    }
+    
+    private var privacy: some View {
+        Section("Privacy") {
+            Button {
+                UIApplication.shared.settings()
+            } label: {
+                HStack {
+                    Text("Notifications")
+                        .font(.callout)
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Image(systemName: notifications
+                          ? "checkmark.circle.fill"
+                          : "exclamationmark.triangle.fill")
+                    .symbolRenderingMode(.hierarchical)
+                    .foregroundColor(.primary)
+                    .font(.system(size: 14, weight: .medium))
+                    .frame(width: 22)
+                    Image(systemName: "app.badge")
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.primary)
+                        .font(.system(size: 16, weight: .light))
+                        .frame(width: 18)
+                }
+            }
+            Button {
+                UIApplication.shared.settings()
+            } label: {
+                HStack {
+                    Text("Location")
+                        .font(.callout)
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Image(systemName: location
+                          ? "checkmark.circle.fill"
+                          : "exclamationmark.triangle.fill")
+                    .symbolRenderingMode(.hierarchical)
+                    .foregroundColor(.primary)
+                    .font(.system(size: 14, weight: .medium))
+                    .frame(width: 22)
+                    Image(systemName: "location")
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.primary)
+                        .font(.system(size: 16, weight: .light))
+                        .frame(width: 18)
+                }
+            }
+            Button {
+                UIApplication.shared.settings()
+            } label: {
+                HStack {
+                    Text("Photos and camera")
+                        .font(.callout)
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Image(systemName: "qrcode.viewfinder")
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.primary)
+                        .font(.system(size: 16, weight: .light))
+                        .frame(width: 18)
+                }
+            }
+        }
+        .headerProminence(.increased)
+    }
+    
+    private var app: some View {
+        Section("Offline") {
+            Button {
+                about = true
+            } label: {
+                HStack {
+                    Text("About")
+                        .font(.callout)
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Image("Logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 26)
+                }
+            }
+//            .sheet(isPresented: $about, content: About.init)
+            
+            Button {
+                Task {
+                    await UIApplication.shared.review()
+                }
+            } label: {
+                HStack {
+                    Text("Rate on the App Store")
+                        .font(.callout)
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Image(systemName: "star")
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.primary)
+                        .font(.system(size: 16, weight: .light))
+                        .frame(width: 18)
+                }
+            }
+            
+            Link(destination: .init(string: "https://appoff.github.io/about")!) {
+                HStack {
+                    Text("appoff.github.io/about")
+                        .foregroundColor(.primary)
+                        .font(.callout)
+                    
+                    Spacer()
+                    Image(systemName: "link")
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.primary)
+                        .font(.system(size: 16, weight: .light))
+                        .frame(width: 18)
+                }
+            }
+        }
+        .headerProminence(.increased)
+    }
+    
+    private var help: some View {
+        Section("Help") {
+            NavigationLink(destination: Info(title: "Privacy Policy", text: Copy.policy)) {
+                Label("Privacy Policy", systemImage: "hand.raised")
+                    .symbolRenderingMode(.hierarchical)
+                    .font(.callout)
+                    .foregroundColor(.primary)
+            }
+            
+            NavigationLink(destination: Info(title: "Terms and Conditions", text: Copy.terms)) {
+                Label("Terms and Conditions", systemImage: "doc.plaintext")
+                    .symbolRenderingMode(.hierarchical)
+                    .font(.callout)
+                    .foregroundColor(.primary)
+            }
+        }
+        .headerProminence(.increased)
+    }
+}

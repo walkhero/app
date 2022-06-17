@@ -29,7 +29,7 @@ struct Walking: View {
         }
         .frame(maxWidth: .greatestFiniteMagnitude)
         .safeAreaInset(edge: .top, spacing: 0) {
-            Top(session: session)
+            Top(session: session, walker: walker)
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             VStack(spacing: 0) {
@@ -39,12 +39,11 @@ struct Walking: View {
                     map = true
                 } label: {
                     Image(systemName: "globe.europe.africa")
-                        .font(.system(size: 30, weight: .light))
-                        .frame(width: 60, height: 60)
+                        .font(.system(size: 23, weight: .light))
+                        .frame(width: 70, height: 70)
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
-                .padding(.vertical, 5)
                 .sheet(isPresented: $map) {
                     Sheet(rootView: Mapper(walker: walker))
                         .edgesIgnoringSafeArea(.all)

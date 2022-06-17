@@ -12,7 +12,7 @@ struct Window: View {
         } else if session.walking > 0 {
             Walking(session: session)
         } else {
-            
+            Main(session: session)
         }
     }
 }

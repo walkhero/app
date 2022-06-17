@@ -1,57 +1,50 @@
 import SwiftUI
-import Hero
 
 struct Main: View {
-//    let status: Status
-    @State private var started = UInt32()
-    @State private var loading = true
+    @ObservedObject var session: Session
+    @State private var navigation = Navigation.statistics
     
     var body: some View {
-        ScrollView {
-            if loading {
-                Image("Logo")
-                    .foregroundColor(.secondary)
-                    .padding(.top, 50)
-            } else {
-                
+        content
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                VStack(spacing: 0) {
+                    Divider()
+                    HStack(spacing: 0) {
+                        Item(navigation: $navigation, item: .settings, symbol: "gear", size: 20)
+                        Item(navigation: $navigation, item: .calendar, symbol: "calendar", size: 21)
+                        
+                        Spacer()
+                        
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "figure.walk.circle.fill")
+                                .font(.system(size: 40, weight: .bold))
+                                .symbolRenderingMode(.hierarchical)
+                                .frame(width: 64, height: 70)
+                                .contentShape(Rectangle())
+                        }
+                        
+                        Spacer()
+                        
+                        Item(navigation: $navigation, item: .statistics, symbol: "chart.pie", size: 21)
+                        Item(navigation: $navigation, item: .map, symbol: "globe.europe.africa", size: 23)
+                    }
+                }
+                .background(Color(.systemBackground))
             }
+    }
+    
+    @ViewBuilder private var content: some View {
+        switch navigation {
+        case .map:
+            Circle()
+        case .statistics:
+            Rectangle()
+        case .calendar:
+            Circle()
+        case .settings:
+            Settings()
         }
-        
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-            
-        }
-        .task {
-//            cloud.ready.notify(queue: .main) {
-//                loading = false
-//            }
-        }
-        .onReceive(cloud) { model in
-            withAnimation(.easeInOut(duration: 0.3)) {
-                started = model.walking
-            }
-
-//            if model.walking > 0 {
-//                Task {
-//                    await status.start(date: .init(timestamp: model.walking))
-//                }
-//            } else if status.started {
-//                Task {
-//                    await status.cancel()
-//                }
-//            }
-        }
-        
-//        ZStack(alignment: .bottom) {
-//            Map(status: status)
-//                .edgesIgnoringSafeArea(.top)
-//                .padding(.bottom, started == nil ? 180 : 320)
-//
-//            Options(status: status)
-//
-//            Card(status: status, started: started)
-//                .edgesIgnoringSafeArea(.bottom)
-//                .frame(height: started == nil ? 260 : 430)
-//                .offset(y: 40)
-//        }
     }
 }
