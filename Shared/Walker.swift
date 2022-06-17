@@ -4,9 +4,14 @@ import Hero
 
 #if os(iOS)
 import UserNotifications
+import MapKit
 #endif
 
 final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
+#if os(iOS)
+    @Published private(set) var overlay = MKPolygon()
+#endif
+    
     @Published private(set) var steps = 0
     @Published private(set) var metres = 0
     @Published private(set) var calories = 0
@@ -15,6 +20,7 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     private var squares = Squares()
     private var tiles = Set<Squares.Item>()
     private var queries = Set<HKQuery>()
+    private var task: Task<Void, Never>?
     private let manager = CLLocationManager()
     private let store = HKHealthStore()
 
@@ -171,20 +177,24 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_: CLLocationManager, didUpdateLocations: [CLLocation]) {
-        squares.add(locations: didUpdateLocations)
-        releaf()
+        guard squares.add(locations: didUpdateLocations) else { return }
+        refresh()
     }
 
     func locationManagerDidChangeAuthorization(_: CLLocationManager) { }
     func locationManager(_: CLLocationManager, didFailWithError: Error) { }
 
-    #if os(iOS)
+#if os(iOS)
     func locationManager(_: CLLocationManager, didFinishDeferredUpdatesWithError: Error?) { }
-    #endif
+    
+    @MainActor private func update(overlay: MKPolygon) {
+        self.overlay = overlay
+    }
+#endif
 
     @MainActor private func update(tiles: Set<Squares.Item>) {
         self.tiles = tiles
-        releaf()
+        refresh()
     }
     
     @MainActor private func add(steps: HKStatisticsCollection) {
@@ -226,9 +236,27 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
             .reduce(0, +)
     }
     
-    private func releaf() {
+    private func refresh() {
+        let total = squares.items.union(tiles)
+        
+        guard total.count != leaf.squares else { return }
+        
+        task?.cancel()
+        
         explored = squares.items.subtracting(tiles).count
-        leaf = .init(squares: tiles.count + explored)
+        leaf = .init(squares: total.count)
+        
+#if os(iOS)
+        task = Task.detached(priority: .utility) { [weak self] in
+            do {
+                try await Task.sleep(nanoseconds: 3_000_000_000)
+                
+                guard !Task.isCancelled else { return }
+                
+                await self?.update(overlay: total.overlay)
+            } catch { }
+        }
+#endif
     }
 
     private func query(start: Date, quantity: HKQuantityType) -> HKStatisticsCollectionQuery {

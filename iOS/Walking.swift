@@ -46,7 +46,7 @@ struct Walking: View {
                 .buttonStyle(.plain)
                 .padding(.vertical, 5)
                 .sheet(isPresented: $map) {
-                    Sheet(rootView: Mapper())
+                    Sheet(rootView: Mapper(walker: walker))
                         .edgesIgnoringSafeArea(.all)
                 }
             }

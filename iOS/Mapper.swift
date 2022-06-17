@@ -1,31 +1,46 @@
 import SwiftUI
 
 struct Mapper: View {
-    @StateObject var map = Map()
+    @ObservedObject var walker: Walker
+    @StateObject private var map = Map()
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         map
             .edgesIgnoringSafeArea(.all)
             .safeAreaInset(edge: .top, spacing: 0) {
-                VStack(spacing: 0) {
-                    HStack {
-                        Spacer()
-                        
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image(systemName: "xmark.circle.fill")
-                                .font(.system(size: 30, weight: .light))
-                                .symbolRenderingMode(.hierarchical)
-                                .frame(width: 54, height: 54)
-                                .contentShape(Rectangle())
-                        }
+                HStack {
+                    Button {
+                        map.setUserTrackingMode(.follow, animated: true)
+                        map.setCameraZoomRange(.init(maxCenterCoordinateDistance: 1000), animated: true)
+                    } label: {
+                        Image(systemName: "location.circle.fill")
+                            .font(.system(size: 30, weight: .ultraLight))
+                            .symbolRenderingMode(.hierarchical)
+                            .foregroundColor(.white)
+                            .frame(width: 65, height: 65)
+                            .contentShape(Rectangle())
                     }
                     
-                    Divider()
+                    Spacer()
+                    
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.system(size: 30, weight: .light))
+                            .symbolRenderingMode(.hierarchical)
+                            .foregroundColor(.white)
+                            .frame(width: 65, height: 65)
+                            .contentShape(Rectangle())
+                    }
                 }
-                .background(.ultraThinMaterial)
+            }
+            .onChange(of: walker.overlay) {
+                map.update(overlay: $0)
+            }
+            .onAppear {
+                map.update(overlay: walker.overlay)
             }
     }
 }
