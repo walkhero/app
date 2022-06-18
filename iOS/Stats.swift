@@ -9,12 +9,15 @@ struct Stats: View {
             VStack(spacing: 20) {
                 Explore(leaf: .init(squares: session.tiles.count))
                 
-                Item(value: .streak(value: session.chart.streak.current)) {
-                    
-                }
+                Item(value: .streak(value: session.chart.streak.current),
+                     content: Streak(streak: session.chart.streak))
                 
-//                Item(value: .walks(value: session.chart.walks),
-//                     item: session.chart.duration)
+                Item(value: .walks(value: session.chart.walks),
+                     content: Detail(title: "Duration",
+                                     trend: session.chart.duration.trend,
+                                     average: .duration(amount: session.chart.duration.average),
+                                     max: .duration(amount: session.chart.duration.max),
+                                     total: .duration(amount: session.chart.duration.total)))
 //
 //                Item(value: .steps(value: session.chart.steps.total),
 //                     item: session.chart.steps)

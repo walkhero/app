@@ -41,6 +41,13 @@ extension AttributedString {
                 .attributed)
     }
     
+    static func duration(amount: Int) -> Self {
+        var duration = Self((Date(timeIntervalSinceNow: -.init(amount)) ..< .now)
+            .formatted(.timeDuration))
+        duration.numberPart = .integer
+        return duration
+    }
+    
     static func duration(start: UInt32, current: Date) -> Self {
         var duration = Self((.init(timestamp: start) ..< current).formatted(.timeDuration))
         

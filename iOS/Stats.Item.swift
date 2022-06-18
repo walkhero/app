@@ -7,10 +7,10 @@ extension Stats {
         let content: C
         @State private var detail = false
         
-        init(value: AttributedString, @ViewBuilder content: () -> C) {
+        init(value: AttributedString, content: C) {
             self.value = value.numeric(font: .title3.monospacedDigit().weight(.regular),
                                        color: .primary)
-            self.content = content()
+            self.content = content
         }
         
         var body: some View {
@@ -29,13 +29,14 @@ extension Stats {
                         .font(.system(size: 16, weight: .medium))
                         .contentShape(Rectangle())
                 }
-                .foregroundColor(.primary)
+                .foregroundColor(.secondary)
                 .buttonBorderShape(.capsule)
                 .buttonStyle(.bordered)
             }
             .modifier(Card())
             .sheet(isPresented: $detail) {
                 Sheet(rootView: content)
+                    .edgesIgnoringSafeArea(.bottom)
             }
         }
     }

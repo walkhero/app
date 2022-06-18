@@ -100,6 +100,8 @@
 		CEDF5D71285DF5CE00BD19A4 /* Stats.Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D70285DF5CE00BD19A4 /* Stats.Explore.swift */; };
 		CEDF5D73285DF87300BD19A4 /* Stats.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D72285DF87300BD19A4 /* Stats.Item.swift */; };
 		CEDF5D75285DFED200BD19A4 /* Stats.Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D74285DFED200BD19A4 /* Stats.Streak.swift */; };
+		CEDF5D77285E00B000BD19A4 /* Stats.Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D76285E00B000BD19A4 /* Stats.Detail.swift */; };
+		CEDF5D79285E037B00BD19A4 /* Chart.Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D78285E037B00BD19A4 /* Chart.Trend.swift */; };
 		CEE6F1A627A1ACA800D63EDB /* Stats.Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F1A527A1ACA800D63EDB /* Stats.Trend.swift */; };
 		CEE6F1A827A1AEEF00D63EDB /* Stats.Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F1A727A1AEEF00D63EDB /* Stats.Trend.swift */; };
 		CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9C2779F53F001BECAB /* App.Delegate.swift */; };
@@ -247,6 +249,8 @@
 		CEDF5D70285DF5CE00BD19A4 /* Stats.Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Explore.swift; sourceTree = "<group>"; };
 		CEDF5D72285DF87300BD19A4 /* Stats.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Item.swift; sourceTree = "<group>"; };
 		CEDF5D74285DFED200BD19A4 /* Stats.Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Streak.swift; sourceTree = "<group>"; };
+		CEDF5D76285E00B000BD19A4 /* Stats.Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Detail.swift; sourceTree = "<group>"; };
+		CEDF5D78285E037B00BD19A4 /* Chart.Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.Trend.swift; sourceTree = "<group>"; };
 		CEE6F1A527A1ACA800D63EDB /* Stats.Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Trend.swift; sourceTree = "<group>"; };
 		CEE6F1A727A1AEEF00D63EDB /* Stats.Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Trend.swift; sourceTree = "<group>"; };
 		CEF40C9C2779F53F001BECAB /* App.Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
@@ -403,6 +407,7 @@
 				CEA0D6AA278E4B870028EE62 /* Stats.Leaderboard.swift */,
 				CEDF5D6C285DE16500BD19A4 /* Stats.swift */,
 				CEDF5D74285DFED200BD19A4 /* Stats.Streak.swift */,
+				CEDF5D76285E00B000BD19A4 /* Stats.Detail.swift */,
 				CEDF5D70285DF5CE00BD19A4 /* Stats.Explore.swift */,
 				CEA0D6AC278E4BBE0028EE62 /* Stats.Today.swift */,
 				CEE6F1A527A1ACA800D63EDB /* Stats.Trend.swift */,
@@ -439,6 +444,7 @@
 				CE005EE2285A4B0B00CE370E /* Walker.swift */,
 				CEF40CBC2779FBB3001BECAB /* Accent.xcassets */,
 				CE3965E9285B7C71008A3CAF /* Leaf.xcassets */,
+				CEDF5D78285E037B00BD19A4 /* Chart.Trend.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 				CE963422277CA1F700CCFF4B /* Ephemeris.swift in Sources */,
 				CE3965ED285B7CFE008A3CAF /* Leaf.Name.swift in Sources */,
 				CE512EF22779F4BC003ED854 /* App.swift in Sources */,
+				CEDF5D77285E00B000BD19A4 /* Stats.Detail.swift in Sources */,
 				CEB0D6DC278DCF6F00A7C9AF /* Walking.Stats.swift in Sources */,
 				CEC805BA277B36B400D1B046 /* Main.swift in Sources */,
 				CEE6F1A627A1ACA800D63EDB /* Stats.Trend.swift in Sources */,
@@ -671,6 +678,7 @@
 				CE3965E4285B48D1008A3CAF /* Walking.Streak.swift in Sources */,
 				CE3965F0285B80CE008A3CAF /* Walking.Top.swift in Sources */,
 				CEDF5D6D285DE16500BD19A4 /* Stats.swift in Sources */,
+				CEDF5D79285E037B00BD19A4 /* Chart.Trend.swift in Sources */,
 				CE96341F277CA1F700CCFF4B /* Ephemeris.Month.Day.swift in Sources */,
 				CE5FD9D6278DB4700099008F /* Card.Option.swift in Sources */,
 				CE2241D2278B19ED0049FDA0 /* Settings.About.swift in Sources */,
