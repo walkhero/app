@@ -27,7 +27,6 @@ struct Walking: View {
             }
             .padding(.vertical, 20)
         }
-        .frame(maxWidth: .greatestFiniteMagnitude)
         .safeAreaInset(edge: .top, spacing: 0) {
             Top(session: session, walker: walker)
         }

@@ -7,7 +7,8 @@ extension Walking {
         let progress: Progress
         
         init(value: AttributedString, limit: AttributedString?, progress: Progress) {
-            self.value = value.numeric(font: .title2.monospacedDigit().weight(.regular), color: .primary)
+            self.value = value.numeric(font: .title2.monospacedDigit().weight(.regular),
+                                       color: .primary)
             self.limit = limit
             self.progress = progress
         }

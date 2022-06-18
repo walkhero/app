@@ -33,7 +33,7 @@ extension Stats {
                 
                 if leaf.squares > 0 {
                     Text(.squares(value: leaf.squares)
-                        .numeric(font: .largeTitle.monospacedDigit().weight(.regular),
+                        .numeric(font: .title.monospacedDigit().weight(.regular),
                                  color: .primary))
                         .font(.footnote.weight(.regular))
                         .foregroundColor(.secondary)
@@ -42,7 +42,7 @@ extension Stats {
             }
             .modifier(Card())
             .sheet(isPresented: $badges) {
-                Badges(leaf: leaf)
+                Sheet(rootView: Badges(leaf: leaf))
             }
         }
     }
