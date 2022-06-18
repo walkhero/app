@@ -7,6 +7,10 @@ extension AttributedString {
         return number + .init(" streak")
     }
     
+    static func days(value: Int) -> Self {
+        format(value: value, singular: "day", plural: "days")
+    }
+    
     static func walks(value: Int) -> Self {
         format(value: value, singular: "walk", plural: "walks")
     }

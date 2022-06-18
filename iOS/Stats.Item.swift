@@ -2,15 +2,15 @@ import SwiftUI
 import Hero
 
 extension Stats {
-    struct Item: View {
+    struct Item<C>: View where C : View {
         let value: AttributedString
-        let item: Chart.Item
+        let content: C
         @State private var detail = false
         
-        init(value: AttributedString, item: Chart.Item) {
+        init(value: AttributedString, @ViewBuilder content: () -> C) {
             self.value = value.numeric(font: .title3.monospacedDigit().weight(.regular),
                                        color: .primary)
-            self.item = item
+            self.content = content()
         }
         
         var body: some View {
@@ -35,7 +35,7 @@ extension Stats {
             }
             .modifier(Card())
             .sheet(isPresented: $detail) {
-                Sheet(rootView: Circle())
+                Sheet(rootView: content)
             }
         }
     }
