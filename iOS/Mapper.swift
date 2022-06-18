@@ -11,8 +11,7 @@ struct Mapper: View {
             .safeAreaInset(edge: .top, spacing: 0) {
                 HStack {
                     Button {
-                        map.setUserTrackingMode(.follow, animated: true)
-                        map.setCameraZoomRange(.init(maxCenterCoordinateDistance: 1000), animated: true)
+                        map.center()
                     } label: {
                         Image(systemName: "location.circle.fill")
                             .font(.system(size: 30, weight: .ultraLight))

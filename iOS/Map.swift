@@ -1,6 +1,8 @@
 import SwiftUI
 import MapKit
 
+private let limit = CLLocationDistance(1000)
+
 final class Map: MKMapView, UIViewRepresentable, ObservableObject, MKMapViewDelegate {
     private var centred = 0
     
@@ -15,12 +17,17 @@ final class Map: MKMapView, UIViewRepresentable, ObservableObject, MKMapViewDele
         showsTraffic = false
         mapType = .standard
         delegate = self
-        setCameraZoomRange(.init(maxCenterCoordinateDistance: 1000), animated: false)
+        setCameraZoomRange(.init(maxCenterCoordinateDistance: limit), animated: false)
         setUserTrackingMode(.follow, animated: false)
     }
     
     deinit {
         print("map gone")
+    }
+    
+    func center() {
+        setUserTrackingMode(.follow, animated: true)
+        setCameraZoomRange(.init(maxCenterCoordinateDistance: limit), animated: true)
     }
     
     func update(overlay: MKPolygon) {
@@ -47,7 +54,7 @@ final class Map: MKMapView, UIViewRepresentable, ObservableObject, MKMapViewDele
     }
     
     override func touchesBegan(_: Set<UITouch>, with: UIEvent?) {
-        guard cameraZoomRange.maxCenterCoordinateDistance == 1000 else { return }
+        guard cameraZoomRange.maxCenterCoordinateDistance == limit else { return }
         setCameraZoomRange(.init(maxCenterCoordinateDistance: 6000), animated: true)
     }
     

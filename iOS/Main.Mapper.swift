@@ -5,24 +5,22 @@ extension Main {
         @StateObject private var map = Map()
         
         var body: some View {
-            map
-                .safeAreaInset(edge: .top, spacing: 0) {
-                    HStack {
-                        Button {
-                            map.setUserTrackingMode(.follow, animated: true)
-                            map.setCameraZoomRange(.init(maxCenterCoordinateDistance: 1000), animated: true)
-                        } label: {
-                            Image(systemName: "location.circle.fill")
-                                .font(.system(size: 30, weight: .ultraLight))
-                                .symbolRenderingMode(.hierarchical)
-                                .foregroundColor(.accentColor)
-                                .frame(width: 65, height: 65)
-                                .contentShape(Rectangle())
-                        }
-                        
-                        Spacer()
-                    }
+            ZStack(alignment: .topLeading) {
+                map
+                Button {
+                    map.center()
+                } label: {
+                    Image(systemName: "location.circle.fill")
+                        .font(.system(size: 30, weight: .ultraLight))
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(Color(.systemBackground), Color.primary)
+                        .frame(width: 65, height: 65)
+                        .contentShape(Rectangle())
                 }
+            }.safeAreaInset(edge: .top, spacing: 0) {
+                Divider()
+                    .background(.ultraThinMaterial)
+            }
 //                .onChange(of: walker.overlay) {
 //                    map.update(overlay: $0)
 //                }
