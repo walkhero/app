@@ -3,16 +3,16 @@ import Hero
 
 struct Walking: View {
     @ObservedObject var session: Session
-    @StateObject private var walker = Walker()
+    @StateObject var walker: Walker
     @State private var map = false
     
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                Streak(streak: session.chart.streak.current, walks: session.chart.walks)
-
                 Explore(explored: walker.explored, leaf: walker.leaf)
                 
+                Streak(streak: session.chart.streak.current, walks: session.chart.walks)
+
                 Item(value: .steps(value: walker.steps),
                      limit: session.chart.steps.max > 0 ? .steps(value: session.chart.steps.max) : nil,
                      progress: .init(current: walker.steps, max: session.chart.steps.max))

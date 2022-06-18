@@ -16,7 +16,7 @@ import Hero
 
                     Task
                         .detached(priority: .utility) {
-                            await session.update(chart: model.chart)
+                            await session.update(chart: model.chart, tiles: model.tiles)
                         }
                 }
                 .task {

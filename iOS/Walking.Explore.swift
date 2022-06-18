@@ -14,7 +14,10 @@ struct Explore: View {
                     .font(.footnote.weight(.regular))
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-                Leafer(leaf: leaf)
+                Image(systemName: "leaf.circle.fill")
+                    .font(.system(size: 30, weight: .ultraLight))
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(leaf.name.color, Color("Leafer"))
             }
             HStack(alignment: .firstTextBaseline) {
                 if leaf.squares > 0 {

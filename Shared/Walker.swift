@@ -17,27 +17,27 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published private(set) var calories = 0
     @Published private(set) var explored = 0
     @Published private(set) var leaf = Leaf(squares: 0)
+    private weak var session: Session!
     private var squares = Squares()
-    private var tiles = Set<Squares.Item>()
     private var queries = Set<HKQuery>()
     private var task: Task<Void, Never>?
     private let manager = CLLocationManager()
     private let store = HKHealthStore()
-
+    
     deinit {
         print("walker gone")
     }
     
-    override init() {
+    init(session: Session) {
+        self.session = session
+        
         super.init()
         print("walker")
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         manager.allowsBackgroundLocationUpdates = true
         
-        Task.detached(priority: .utility) { [weak self] in
-            await self?.update(tiles: cloud.model.tiles)
-        }
+        refresh()
     }
 
     func start(date: Date) async {
@@ -191,11 +191,6 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
         self.overlay = overlay
     }
 #endif
-
-    @MainActor private func update(tiles: Set<Squares.Item>) {
-        self.tiles = tiles
-        refresh()
-    }
     
     @MainActor private func add(steps: HKStatisticsCollection) {
         self.steps = steps
@@ -237,13 +232,13 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     private func refresh() {
-        let total = squares.items.union(tiles)
+        let total = squares.items.union(session.tiles)
         
         guard total.count != leaf.squares else { return }
         
         task?.cancel()
         
-        explored = squares.items.subtracting(tiles).count
+        explored = squares.items.subtracting(session.tiles).count
         leaf = .init(squares: total.count)
         
 #if os(iOS)

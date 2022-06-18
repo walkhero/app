@@ -10,7 +10,7 @@ struct Window: View {
                 .frame(maxHeight: .greatestFiniteMagnitude)
                 .edgesIgnoringSafeArea(.all)
         } else if session.walking > 0 {
-            Walking(session: session)
+            Walking(session: session, walker: .init(session: session))
         } else {
             Main(session: session)
         }

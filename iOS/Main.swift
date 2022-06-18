@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Main: View {
-    @ObservedObject var session: Session
+    let session: Session
     @State private var navigation = Navigation.statistics
     
     var body: some View {
@@ -38,9 +38,9 @@ struct Main: View {
     @ViewBuilder private var content: some View {
         switch navigation {
         case .map:
-            Mapper()
+            Mapper(session: session)
         case .statistics:
-            Rectangle()
+            Stats(session: session)
         case .calendar:
             Circle()
         case .settings:

@@ -2,6 +2,7 @@ import SwiftUI
 
 extension Main {
     struct Mapper: View {
+        @ObservedObject var session: Session
         @StateObject private var map = Map()
         
         var body: some View {
@@ -13,20 +14,19 @@ extension Main {
                     Image(systemName: "location.circle.fill")
                         .font(.system(size: 30, weight: .ultraLight))
                         .symbolRenderingMode(.palette)
-                        .foregroundStyle(Color(.systemBackground), Color.primary)
+                        .foregroundStyle(Color.accentColor, Color.black)
                         .frame(width: 65, height: 65)
                         .contentShape(Rectangle())
                 }
             }.safeAreaInset(edge: .top, spacing: 0) {
                 Divider()
-                    .background(.ultraThinMaterial)
             }
-//                .onChange(of: walker.overlay) {
-//                    map.update(overlay: $0)
-//                }
-//                .onAppear {
-//                    map.update(overlay: walker.overlay)
-//                }
+            .onChange(of: session.tiles) {
+                map.update(overlay: $0.overlay)
+            }
+            .onAppear {
+                map.update(overlay: session.tiles.overlay)
+            }
         }
     }
 

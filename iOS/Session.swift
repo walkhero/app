@@ -5,8 +5,10 @@ final class Session: ObservableObject {
     @Published var loading = true
     @Published var walking = UInt32()
     @Published var chart = Chart.zero
+    @Published var tiles = Set<Squares.Item>()
     
-    @MainActor func update(chart: Chart) {
+    @MainActor func update(chart: Chart, tiles: Set<Squares.Item>) {
         self.chart = chart
+        self.tiles = tiles
     }
 }
