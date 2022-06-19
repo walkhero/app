@@ -18,8 +18,14 @@ struct Badges: View {
                             Text(badge.name.title)
                                 .font(.callout.weight(.regular))
                             Spacer()
-                            Text(badge.squares, format: .number)
-                                .font(.callout.monospacedDigit().weight(.light))
+                            ZStack(alignment: .trailing) {
+                                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                    .fill(Color(.secondarySystemBackground))
+                                    .frame(width: 90, height: 36)
+                                Text(badge.squares, format: .number)
+                                    .font(.system(size: 16, weight: .light).monospacedDigit())
+                                    .padding(.trailing, 12)
+                            }
                         }
                         .padding(.vertical, 6)
                     }
