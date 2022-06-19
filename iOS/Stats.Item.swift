@@ -4,12 +4,14 @@ import Hero
 extension Stats {
     struct Item<C>: View where C : View {
         let value: AttributedString
+        let active: Bool
         let content: C
         @State private var detail = false
         
-        init(value: AttributedString, content: C) {
+        init(value: AttributedString, active: Bool, content: C) {
             self.value = value.numeric(font: .title3.monospacedDigit().weight(.regular),
                                        color: .primary)
+            self.active = active
             self.content = content
         }
         
@@ -23,12 +25,15 @@ extension Stats {
                 Spacer()
                 
                 Button {
+                    guard active else { return }
                     detail = true
                 } label: {
                     Image(systemName: "ellipsis")
                         .font(.system(size: 16, weight: .medium))
                         .contentShape(Rectangle())
                 }
+                .opacity(active ? 1 : 0.3)
+                .disabled(!active)
                 .foregroundColor(.secondary)
                 .buttonBorderShape(.capsule)
                 .buttonStyle(.bordered)

@@ -13,6 +13,22 @@ extension Stats {
         var body: some View {
             NavigationView {
                 List {
+                    Section {
+                        VStack {
+                            Text("Trend")
+                                .font(.title2.weight(.semibold))
+                            ZStack {
+                                Circle()
+                                    .fill(Color(.systemBackground))
+                                trend.symbol
+                                    .padding(20)
+                            }
+                        }
+                    }
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listSectionSeparator(.hidden)
+                    
                     Section("Average") {
                         Text(average
                             .numeric(font: .title3.monospacedDigit().weight(.regular),
@@ -20,7 +36,8 @@ extension Stats {
                             .font(.footnote.weight(.regular))
                             .foregroundColor(.secondary)
                     }
-                    .textCase(.none)
+                    .headerProminence(.increased)
+                    
                     Section("Max") {
                         Text(max
                             .numeric(font: .title3.monospacedDigit().weight(.regular),
@@ -28,7 +45,8 @@ extension Stats {
                             .font(.footnote.weight(.regular))
                             .foregroundColor(.secondary)
                     }
-                    .textCase(.none)
+                    .headerProminence(.increased)
+                    
                     Section("Total") {
                         Text(total
                             .numeric(font: .title3.monospacedDigit().weight(.regular),
@@ -36,15 +54,17 @@ extension Stats {
                             .font(.footnote.weight(.regular))
                             .foregroundColor(.secondary)
                     }
-                    .textCase(.none)
+                    .headerProminence(.increased)
+                    
+                    Section {
+                        
+                    }
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listSectionSeparator(.hidden)
                 }
                 .listStyle(.insetGrouped)
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        trend.symbol
-                            .padding(4)
-                    }
-                    
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             dismiss()

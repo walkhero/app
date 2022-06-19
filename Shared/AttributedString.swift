@@ -28,7 +28,7 @@ extension AttributedString {
             .formatted(.measurement(width: .wide,
                                     usage: .road,
                                     numberFormatStyle: .number
-                .precision(.significantDigits(1 ... digits)))
+                .precision(.fractionLength(digits > 0 ? 1 ... digits : 0 ... 0)))
                 .attributed)
     }
     
@@ -37,12 +37,12 @@ extension AttributedString {
             .formatted(.measurement(width: .wide,
                                     usage: .workout,
                                     numberFormatStyle: .number
-                .precision(.significantDigits(1 ... digits)))
+                .precision(.fractionLength(digits > 0 ? 1 ... digits : 0 ... 0)))
                 .attributed)
     }
     
-    static func duration(amount: Int) -> Self {
-        var duration = Self((Date(timeIntervalSinceNow: -.init(amount)) ..< .now)
+    static func duration(value: Int) -> Self {
+        var duration = Self((Date(timeIntervalSinceNow: -.init(value)) ..< .now)
             .formatted(.timeDuration))
         duration.numberPart = .integer
         return duration

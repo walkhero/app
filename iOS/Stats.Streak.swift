@@ -16,7 +16,8 @@ extension Stats {
                             .font(.footnote.weight(.regular))
                             .foregroundColor(.secondary)
                     }
-                    .textCase(.none)
+                    .headerProminence(.increased)
+                    
                     Section("Max") {
                         Text(.days(value: streak.max)
                             .numeric(font: .title3.monospacedDigit().weight(.regular),
@@ -24,7 +25,14 @@ extension Stats {
                             .font(.footnote.weight(.regular))
                             .foregroundColor(.secondary)
                     }
-                    .textCase(.none)
+                    .headerProminence(.increased)
+                    
+                    Section {
+                        
+                    }
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listSectionSeparator(.hidden)
                 }
                 .listStyle(.insetGrouped)
                 .toolbar {
