@@ -19,7 +19,7 @@ extension Main {
                         .contentShape(Rectangle())
                 }
             }.safeAreaInset(edge: .top, spacing: 0) {
-                Divider()
+                Title(title: "Squares")
             }
             .onChange(of: session.tiles) {
                 map.update(overlay: $0.overlay)

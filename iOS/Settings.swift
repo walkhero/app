@@ -16,14 +16,7 @@ struct Settings: View {
         }
         .listStyle(.insetGrouped)
         .safeAreaInset(edge: .top, spacing: 0) {
-            VStack(spacing: 0) {
-                Text("Settings")
-                    .font(.title.weight(.bold))
-                    .padding()
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-                Divider()
-            }
-            .background(Color(.systemBackground))
+            Main.Title(title: "Settings")
         }
         .task {
             let status = CLLocationManager().authorizationStatus
