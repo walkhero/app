@@ -11,27 +11,30 @@ struct Streak: View {
     }
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             if !calendar.isEmpty {
-                Section {
-                    Week()
-                } header: {
-                    Navigation(index: $index, calendar: calendar)
-                        .textCase(nil)
+                Navigation(index: $index, calendar: calendar)
+                
+                ZStack {
+                    Capsule()
+                        .fill(.quaternary)
+                    Progress(current: index, max: calendar.count - 1)
+                        .stroke(Color.accentColor, style: .init(lineWidth: 5, lineCap: .round))
                 }
-                .listRowBackground(Color.clear)
-                .listSectionSeparator(.hidden)
-                .listRowSeparator(.hidden)
+                .frame(width: 180, height: 4)
+                .padding(.bottom, 30)
 
-                Section {
-                    Month(days: calendar[index],
-                          previous: index > 0 && calendar[index - 1].items.last!.last!.content,
-                          next: index < calendar.count - 1 && calendar[index + 1].items.first!.first!.content)
-                }
-                .allowsHitTesting(false)
+                Week()
+                    .padding(.vertical)
+                
+                Month(days: calendar[index],
+                      previous: index > 0 && calendar[index - 1].items.last!.last!.content,
+                      next: index < calendar.count - 1 && calendar[index + 1].items.first!.first!.content)
             }
             Spacer()
         }
+        .frame(maxWidth: 380)
+        .padding(.top)
         .safeAreaInset(edge: .top, spacing: 0) {
             Main.Title(title: "Streak")
         }

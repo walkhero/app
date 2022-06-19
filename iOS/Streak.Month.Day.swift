@@ -55,7 +55,8 @@ extension Streak.Month {
                                             ? .init(.tertiaryLabel)
                                             : .white)
             }
-            .frame(width: 40, height: 40)
+            .frame(height: 60)
+            .frame(maxWidth: .greatestFiniteMagnitude)
         }
     }
 }

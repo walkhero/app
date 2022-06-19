@@ -10,7 +10,6 @@ extension Streak {
         var body: some View {
             ForEach(0 ..< days.items.count, id: \.self) { week in
                 HStack(spacing: 0) {
-                    Spacer()
                     ForEach(0 ..< days.items[week].count, id: \.self) {
                         Day(index: days.items[week][$0].value,
                             today: days.items[week][$0].today,
@@ -18,7 +17,6 @@ extension Streak {
                             .padding(.leading, $0 == 0 ? leading(week) : 0)
                             .padding(.trailing, $0 == days.items[week].count - 1 ? trailing(week) : 0)
                     }
-                    Spacer()
                 }
             }
         }

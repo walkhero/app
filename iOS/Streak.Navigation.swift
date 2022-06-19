@@ -7,22 +7,24 @@ extension Streak {
         let calendar: [Days<Bool>]
         
         var body: some View {
-            HStack {
+            HStack(spacing: 0) {
                 Button {
                     index -= 1
                 } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.title3)
-                        .foregroundColor(.primary)
-                        .frame(width: 50, height: 50)
+                    Image(systemName: "chevron.left.circle.fill")
+                        .font(.system(size: 30, weight: .regular))
+                        .symbolRenderingMode(.hierarchical)
+                        .frame(width: 40, height: 60)
+                        .padding(.leading)
                         .contentShape(Rectangle())
                 }
-                .opacity(index == 0 ? 0.15 : 1)
+                .opacity(index == 0 ? 0.6 : 1)
                 .disabled(index == 0)
                 
-                Text(Calendar.current.date(from: .init(year: calendar[index].year, month: calendar[index].month))!,
+                Text(Calendar.current.date(from: .init(year: calendar[index].year,
+                                                       month: calendar[index].month))!,
                      format: .dateTime.year().month(.wide))
-                        .font(.footnote)
+                        .font(.body.weight(.medium))
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .center)
                         .foregroundColor(.primary)
                         .allowsHitTesting(false)
@@ -30,13 +32,14 @@ extension Streak {
                 Button {
                     index += 1
                 } label: {
-                    Image(systemName: "chevron.right")
-                        .font(.title3)
-                        .foregroundColor(.primary)
-                        .frame(width: 50, height: 50)
+                    Image(systemName: "chevron.right.circle.fill")
+                        .font(.system(size: 30, weight: .regular))
+                        .symbolRenderingMode(.hierarchical)
+                        .frame(width: 40, height: 60)
+                        .padding(.trailing)
                         .contentShape(Rectangle())
                 }
-                .opacity(index == calendar.count - 1 ? 0.15 : 1)
+                .opacity(index == calendar.count - 1 ? 0.6 : 1)
                 .disabled(index == calendar.count - 1)
             }
         }
