@@ -24,15 +24,10 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let manager = CLLocationManager()
     private let store = HKHealthStore()
     
-    deinit {
-        print("walker gone")
-    }
-    
     init(session: Session) {
         self.session = session
         
         super.init()
-        print("walker")
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         manager.allowsBackgroundLocationUpdates = true

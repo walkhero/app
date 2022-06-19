@@ -42,7 +42,7 @@ struct Main: View {
         case .statistics:
             Stats(session: session)
         case .calendar:
-            Circle()
+            Streak(calendar: session.chart.calendar)
         case .settings:
             Settings()
         }

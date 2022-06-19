@@ -8,7 +8,6 @@ final class Map: MKMapView, UIViewRepresentable, ObservableObject, MKMapViewDele
     
     required init?(coder: NSCoder) { nil }
     init() {
-        print("map")
         super.init(frame: .zero)
         isRotateEnabled = false
         isPitchEnabled = false
@@ -19,10 +18,6 @@ final class Map: MKMapView, UIViewRepresentable, ObservableObject, MKMapViewDele
         delegate = self
         setCameraZoomRange(.init(maxCenterCoordinateDistance: limit), animated: false)
         setUserTrackingMode(.follow, animated: false)
-    }
-    
-    deinit {
-        print("map gone")
     }
     
     func center() {
