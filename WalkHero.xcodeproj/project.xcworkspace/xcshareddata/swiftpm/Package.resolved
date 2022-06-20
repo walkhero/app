@@ -6,7 +6,7 @@
       "location" : "https://github.com/archivable/dater.git",
       "state" : {
         "branch" : "main",
-        "revision" : "991a33d8365df1b673a9e7244a1b4994e3f10684"
+        "revision" : "e43ec5c90155bf06dfb67ce97c604669abd4eec8"
       }
     },
     {
@@ -15,7 +15,7 @@
       "location" : "https://github.com/walkhero/hero.git",
       "state" : {
         "branch" : "main",
-        "revision" : "7256cc80f85a5b06b796874678b918d8399c0623"
+        "revision" : "d0facc0abc547296043b9aaafc856432fbdd77fa"
       }
     },
     {

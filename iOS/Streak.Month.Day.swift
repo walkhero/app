@@ -2,29 +2,20 @@ import SwiftUI
 
 extension Streak.Month {
     struct Day: View {
-        let index: Int
-        let today: Bool
+        let index: UInt8
+        let hit: Bool
         
         var body: some View {
             ZStack {
-                Rectangle()
-                    .fill(Color.accentColor)
-                    .padding(.vertical, 5)
-                
-                if today {
+                if hit {
                     Circle()
-                        .fill(Color.accentColor.opacity(0.25))
-                        .frame(width: 30, height: 30)
+                        .fill(Color.accentColor)
+                        .frame(width: 35, height: 35)
                 }
                 
                 Text("\(index)")
-                    .font(.caption2)
-                    .fontWeight(today
-                                ? .bold
-                                : .regular)
-                    .foregroundColor(today
-                                        ? .white
-                                        : .white)
+                    .font(.footnote.weight(hit ? .bold : .regular))
+                    .foregroundColor(hit ? .white : .secondary)
             }
             .frame(height: 60)
             .frame(maxWidth: .greatestFiniteMagnitude)

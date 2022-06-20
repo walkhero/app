@@ -13,8 +13,8 @@ extension Streak {
                     }
                     
                     ForEach(0 ..< days.items[week].count, id: \.self) {
-                        Day(index: .init(days.items[week][$0].value),
-                            today: .init(days.items[week][$0].today))
+                        Day(index: days.items[week][$0].value,
+                            hit: days.items[week][$0].content)
                     }
                     
                     ForEach(0 ..< trailing(week: week), id: \.self) { _ in
