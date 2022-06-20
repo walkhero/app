@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE000CF3286076F000FAB4BD /* Settings.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF2286076F000FAB4BD /* Settings.Item.swift */; };
+		CE000CF528607C8500FAB4BD /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF428607C8500FAB4BD /* About.swift */; };
 		CE005EE3285A4B0B00CE370E /* Walker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE005EE2285A4B0B00CE370E /* Walker.swift */; };
 		CE1091B5285F3E8D00CB88EB /* Main.Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B4285F3E8D00CB88EB /* Main.Title.swift */; };
 		CE1091B7285F408B00CB88EB /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B6285F408B00CB88EB /* Streak.swift */; };
@@ -164,6 +165,7 @@
 
 /* Begin PBXFileReference section */
 		CE000CF2286076F000FAB4BD /* Settings.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Item.swift; sourceTree = "<group>"; };
+		CE000CF428607C8500FAB4BD /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		CE005EE2285A4B0B00CE370E /* Walker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walker.swift; sourceTree = "<group>"; };
 		CE1091B4285F3E8D00CB88EB /* Main.Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Title.swift; sourceTree = "<group>"; };
 		CE1091B6285F408B00CB88EB /* Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				CE512EF02779F411003ED854 /* Info.plist */,
 				CEAB4A2D278C44CB00E23DF5 /* Configuration.storekit */,
 				CECD14DE27E60E77005FB1FC /* Launch Screen.storyboard */,
+				CE000CF428607C8500FAB4BD /* About.swift */,
 				CEF40C9C2779F53F001BECAB /* App.Delegate.swift */,
 				CE512EF12779F4BC003ED854 /* App.swift */,
 				CEDF5D6E285DEFF300BD19A4 /* Badges.swift */,
@@ -397,10 +400,10 @@
 				CED84664285893A7002A4BE6 /* Session.swift */,
 				CE2241D1278B19ED0049FDA0 /* Settings.About.swift */,
 				CE1912B9285CDEA400956D95 /* Settings.Info.swift */,
+				CE000CF2286076F000FAB4BD /* Settings.Item.swift */,
 				CE2241CD278B191A0049FDA0 /* Settings.Notifications.swift */,
 				CE2241CF278B193D0049FDA0 /* Settings.Option.swift */,
 				CE1912B7285CDD4000956D95 /* Settings.swift */,
-				CE000CF2286076F000FAB4BD /* Settings.Item.swift */,
 				CE9E4C49278B1847005CC3F7 /* SettingsOld.swift */,
 				CE83B95E2791B3DB0056B006 /* Sheet.swift */,
 				CEDF5D76285E00B000BD19A4 /* Stats.Detail.swift */,
@@ -652,6 +655,7 @@
 				CEC805BC277B36BB00D1B046 /* Mapold.Representable.swift in Sources */,
 				CE963422277CA1F700CCFF4B /* Ephemeris.swift in Sources */,
 				CE3965ED285B7CFE008A3CAF /* Leaf.Name.swift in Sources */,
+				CE000CF528607C8500FAB4BD /* About.swift in Sources */,
 				CE512EF22779F4BC003ED854 /* App.swift in Sources */,
 				CEDF5D77285E00B000BD19A4 /* Stats.Detail.swift in Sources */,
 				CEB0D6DC278DCF6F00A7C9AF /* Walking.Stats.swift in Sources */,

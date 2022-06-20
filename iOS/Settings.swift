@@ -92,7 +92,7 @@ struct Settings: View {
             Item(title: "About", symbol: "figure.walk") {
                 about = true
             }
-//            .sheet(isPresented: $about, content: About.init)
+            .sheet(isPresented: $about, content: About.init)
             
             Item(title: "Rate on the App Store", symbol: "star") {
                 Task {
@@ -104,12 +104,11 @@ struct Settings: View {
                 HStack {
                     Text("walkhero.github.io/about")
                         .foregroundColor(.primary)
-                        .font(.callout)
+                        .font(.callout.weight(.light))
                     
                     Spacer()
                     Image(systemName: "link")
-                        .symbolRenderingMode(.hierarchical)
-                        .foregroundColor(.primary)
+                        .symbolRenderingMode(.multicolor)
                         .font(.system(size: 16, weight: .light))
                         .frame(width: 18)
                 }

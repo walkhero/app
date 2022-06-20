@@ -11,6 +11,20 @@ extension UIApplication {
             .map(SKStoreReviewController.requestReview(in:))
     }
     
+    func share(_ any: Any) {
+        scene?
+            .keyWindow?
+            .rootViewController
+            .map {
+                $0.presentedViewController ?? $0
+            }
+            .map {
+                let controller = UIActivityViewController(activityItems: [any], applicationActivities: nil)
+                controller.popoverPresentationController?.sourceView = $0.view
+                $0.present(controller, animated: true)
+            }
+    }
+    
     private var scene: UIWindowScene? {
         { (connected: [UIWindowScene]) -> UIWindowScene? in
             connected.count > 1
