@@ -23,8 +23,17 @@ struct Streak: View {
             .frame(width: 100, height: 4)
             .padding(.bottom, 30)
 
-            Week()
-                .padding(.vertical)
+            HStack(spacing: 0) {
+                ForEach(0 ..< 7) {
+                    Text(Calendar.global.date(from: .init(weekday: $0 + Calendar.global.firstWeekday % 7,
+                                                          weekOfMonth: 1))!,
+                         format: .dateTime.weekday(.narrow))
+                        .font(.footnote.weight(.bold))
+                        .frame(maxWidth: .greatestFiniteMagnitude)
+                }
+            }
+            .foregroundColor(.accentColor)
+            .padding(.vertical)
             
             Month(days: calendar[index])
             

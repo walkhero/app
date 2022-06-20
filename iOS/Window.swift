@@ -11,7 +11,7 @@ struct Window: View {
     @ViewBuilder private var content: some View {
         if session.loading {
             Image("Logo")
-                .foregroundColor(.init(.tertiaryLabel))
+                .foregroundColor(.secondary)
                 .frame(maxHeight: .greatestFiniteMagnitude)
                 .edgesIgnoringSafeArea(.all)
         } else if session.walking > 0 {
