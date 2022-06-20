@@ -16,7 +16,9 @@ struct Main: View {
                         Spacer()
                         
                         Button {
-                            
+                            Task {
+                                await cloud.start()
+                            }
                         } label: {
                             Image(systemName: "figure.walk.circle.fill")
                                 .font(.system(size: 40, weight: .bold))

@@ -9,7 +9,9 @@ extension Main {
         
         var body: some View {
             Button {
-                navigation = item
+                withAnimation(.easeInOut(duration: 0.25)) {
+                    navigation = item
+                }
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)

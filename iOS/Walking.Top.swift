@@ -17,8 +17,8 @@ extension Walking {
                                 .frame(height: 60)
                             Progress(current: .init(time.date.timestamp - session.walking),
                                      max: session.chart.duration.max)
-                                .stroke(Color.accentColor, style: .init(lineWidth: 2, lineCap: .round))
-                                .frame(height: 2)
+                                .stroke(Color.accentColor, style: .init(lineWidth: 4, lineCap: .round))
+                                .frame(height: 4)
                         }
                     }
                     
