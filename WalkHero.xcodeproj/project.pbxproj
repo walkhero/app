@@ -76,7 +76,6 @@
 		CE846E68278E17A1005989B0 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE846E66278E178B005989B0 /* Challenge.swift */; };
 		CE846E6C278E2668005989B0 /* Card.Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE846E6B278E2668005989B0 /* Card.Home.swift */; };
 		CE96341F277CA1F700CCFF4B /* Streak.Month.Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963419277CA1F700CCFF4B /* Streak.Month.Day.swift */; };
-		CE963420277CA1F700CCFF4B /* Streak.Month.Continuous.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341A277CA1F700CCFF4B /* Streak.Month.Continuous.swift */; };
 		CE963421277CA1F700CCFF4B /* Streak.Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341B277CA1F700CCFF4B /* Streak.Navigation.swift */; };
 		CE963422277CA1F700CCFF4B /* Ephemeris.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341C277CA1F700CCFF4B /* Ephemeris.swift */; };
 		CE963423277CA1F700CCFF4B /* Streak.Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341D277CA1F700CCFF4B /* Streak.Month.swift */; };
@@ -225,7 +224,6 @@
 		CE846E66278E178B005989B0 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		CE846E6B278E2668005989B0 /* Card.Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.Home.swift; sourceTree = "<group>"; };
 		CE963419277CA1F700CCFF4B /* Streak.Month.Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.Month.Day.swift; sourceTree = "<group>"; };
-		CE96341A277CA1F700CCFF4B /* Streak.Month.Continuous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.Month.Continuous.swift; sourceTree = "<group>"; };
 		CE96341B277CA1F700CCFF4B /* Streak.Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.Navigation.swift; sourceTree = "<group>"; };
 		CE96341C277CA1F700CCFF4B /* Ephemeris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ephemeris.swift; sourceTree = "<group>"; };
 		CE96341D277CA1F700CCFF4B /* Streak.Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.Month.swift; sourceTree = "<group>"; };
@@ -415,7 +413,6 @@
 				CEF40CA52779F6CE001BECAB /* Store.Item.swift */,
 				CEF40CA42779F6CE001BECAB /* Store.Status.swift */,
 				CEF40CA32779F6CE001BECAB /* Store.swift */,
-				CE96341A277CA1F700CCFF4B /* Streak.Month.Continuous.swift */,
 				CE963419277CA1F700CCFF4B /* Streak.Month.Day.swift */,
 				CE96341D277CA1F700CCFF4B /* Streak.Month.swift */,
 				CE96341B277CA1F700CCFF4B /* Streak.Navigation.swift */,
@@ -647,7 +644,6 @@
 				CE5FD9D4278DB0CB0099008F /* Cardold.swift in Sources */,
 				CEA0D6AD278E4BBE0028EE62 /* Stats.Today.swift in Sources */,
 				CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */,
-				CE963420277CA1F700CCFF4B /* Streak.Month.Continuous.swift in Sources */,
 				CE005EE3285A4B0B00CE370E /* Walker.swift in Sources */,
 				CEF40CA62779F6CE001BECAB /* Store.swift in Sources */,
 				CEC805BC277B36BB00D1B046 /* Mapold.Representable.swift in Sources */,
