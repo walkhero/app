@@ -33,7 +33,9 @@ struct Streak: View {
         .frame(maxWidth: 380)
         .padding(.top)
         .safeAreaInset(edge: .top, spacing: 0) {
-            Main.Title(title: "Streak")
+            Main.Title(title: "Streak") {
+                EmptyView()
+            }
         }
     }
 }

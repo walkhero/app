@@ -13,7 +13,9 @@ struct Stats: View {
             .padding(.bottom, 50)
         }
         .safeAreaInset(edge: .top, spacing: 0) {
-            Main.Title(title: "Overview")
+            Main.Title(title: "Overview")  {
+                EmptyView()
+            }
         }
     }
     

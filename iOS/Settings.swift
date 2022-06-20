@@ -16,7 +16,9 @@ struct Settings: View {
         }
         .listStyle(.insetGrouped)
         .safeAreaInset(edge: .top, spacing: 0) {
-            Main.Title(title: "Settings")
+            Main.Title(title: "Settings") {
+                EmptyView()
+            }
         }
         .task {
             let status = CLLocationManager().authorizationStatus
