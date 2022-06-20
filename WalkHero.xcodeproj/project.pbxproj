@@ -10,6 +10,7 @@
 		CE000CF3286076F000FAB4BD /* Settings.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF2286076F000FAB4BD /* Settings.Item.swift */; };
 		CE000CF528607C8500FAB4BD /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF428607C8500FAB4BD /* About.swift */; };
 		CE000CF728607F6200FAB4BD /* Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF628607F6200FAB4BD /* Purchases.swift */; };
+		CE000CF92860857900FAB4BD /* Upgrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF82860857900FAB4BD /* Upgrade.swift */; };
 		CE005EE3285A4B0B00CE370E /* Walker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE005EE2285A4B0B00CE370E /* Walker.swift */; };
 		CE1091B5285F3E8D00CB88EB /* Main.Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B4285F3E8D00CB88EB /* Main.Title.swift */; };
 		CE1091B7285F408B00CB88EB /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B6285F408B00CB88EB /* Streak.swift */; };
@@ -168,6 +169,7 @@
 		CE000CF2286076F000FAB4BD /* Settings.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Item.swift; sourceTree = "<group>"; };
 		CE000CF428607C8500FAB4BD /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		CE000CF628607F6200FAB4BD /* Purchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchases.swift; sourceTree = "<group>"; };
+		CE000CF82860857900FAB4BD /* Upgrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upgrade.swift; sourceTree = "<group>"; };
 		CE005EE2285A4B0B00CE370E /* Walker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walker.swift; sourceTree = "<group>"; };
 		CE1091B4285F3E8D00CB88EB /* Main.Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Title.swift; sourceTree = "<group>"; };
 		CE1091B6285F408B00CB88EB /* Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				CE96341E277CA1F700CCFF4B /* Streak.Week.swift */,
 				CEF40CB22779FAF7001BECAB /* UIApplication.swift */,
 				CEF40C9F2779F6A0001BECAB /* UNUserNotificationCenter.swift */,
+				CE000CF82860857900FAB4BD /* Upgrade.swift */,
 				CE3965E5285B73ED008A3CAF /* Walking.Explore.swift */,
 				CEBF91B22858A96800811090 /* Walking.Item.swift */,
 				CEB0D6DD278DD06900A7C9AF /* Walking.Stats.Item.swift */,
@@ -637,6 +640,7 @@
 				CEF40CAC2779F6E2001BECAB /* Copy.swift in Sources */,
 				CE846E65278E173F005989B0 /* Game.swift in Sources */,
 				CED8466728589B0B002A4BE6 /* Card.swift in Sources */,
+				CE000CF92860857900FAB4BD /* Upgrade.swift in Sources */,
 				CEF40CAA2779F6D9001BECAB /* Global.swift in Sources */,
 				CEBF91B32858A96800811090 /* Walking.Item.swift in Sources */,
 				CE963423277CA1F700CCFF4B /* Streak.Month.swift in Sources */,

@@ -4,7 +4,7 @@ import StoreKit
 struct Purchases: View {
     @State private var status = Store.Status.loading
     @State private var product: Product?
-    @AppStorage("premium") private var cloud = false
+    @AppStorage("premium") private var premium = false
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -30,7 +30,7 @@ struct Purchases: View {
             
             Spacer()
             
-            if cloud {
+            if premium {
                 Text("Walk Hero +")
                     .font(.title.weight(.regular))
                 Image(systemName: "checkmark.circle.fill")

@@ -3,10 +3,17 @@ import Hero
 
 struct Stats: View {
     @ObservedObject var session: Session
+    @AppStorage("premium") private var premium = false
     
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
+                if Defaults.froob {
+                    if !premium {
+                        Upgrade()
+                    }
+                }
+                
                 achievements
                 health
             }
