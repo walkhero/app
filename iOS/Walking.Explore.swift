@@ -18,7 +18,7 @@ extension Walking {
                     Image(systemName: "leaf.circle.fill")
                         .font(.system(size: 30, weight: .ultraLight))
                         .symbolRenderingMode(.palette)
-                        .foregroundStyle(leaf.name.color, Color("Leafer"))
+                        .foregroundStyle(.black, leaf.name.color)
                 }
                 HStack(alignment: .firstTextBaseline) {
                     if leaf.squares > 0 {

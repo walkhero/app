@@ -3,7 +3,7 @@ import Hero
 
 struct Walking: View {
     @ObservedObject var session: Session
-    @StateObject var walker: Walker
+    @StateObject private var walker = Walker()
     @State private var map = false
     
     var body: some View {
@@ -26,6 +26,9 @@ struct Walking: View {
                      progress: .init(current: walker.calories, max: session.chart.calories.max))
             }
             .padding(.vertical, 20)
+        }
+        .onChange(of: session.tiles) {
+            walker.update(tiles: $0)
         }
         .safeAreaInset(edge: .top, spacing: 0) {
             Top(session: session, walker: walker)

@@ -17,16 +17,14 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published private(set) var calories = 0
     @Published private(set) var explored = 0
     @Published private(set) var leaf = Leaf(squares: 0)
-    private weak var session: Session!
+    private var tiles = Set<Squares.Item>()
     private var squares = Squares()
     private var queries = Set<HKQuery>()
     private var task: Task<Void, Never>?
     private let manager = CLLocationManager()
     private let store = HKHealthStore()
     
-    init(session: Session) {
-        self.session = session
-        
+    override init() {
         super.init()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -154,21 +152,10 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
         await cloud.cancel()
         await clear()
     }
-
-    @MainActor func clear() {
-        squares.clear()
-
-        queries.forEach(store.stop)
-        queries = []
-
-        steps = 0
-        metres = 0
-
-#if os(iOS)
-        manager.stopMonitoringSignificantLocationChanges()
-#endif
-
-        manager.stopUpdatingLocation()
+    
+    func update(tiles: Set<Squares.Item>) {
+        self.tiles = tiles
+        refresh()
     }
 
     func locationManager(_: CLLocationManager, didUpdateLocations: [CLLocation]) {
@@ -186,6 +173,22 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
         self.overlay = overlay
     }
 #endif
+    
+    @MainActor private func clear() {
+        squares.clear()
+
+        queries.forEach(store.stop)
+        queries = []
+
+        steps = 0
+        metres = 0
+
+#if os(iOS)
+        manager.stopMonitoringSignificantLocationChanges()
+#endif
+
+        manager.stopUpdatingLocation()
+    }
     
     @MainActor private func add(steps: HKStatisticsCollection) {
         self.steps = steps
@@ -227,13 +230,13 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     private func refresh() {
-        let total = squares.items.union(session.tiles)
+        let total = squares.items.union(tiles)
         
         guard total.count != leaf.squares else { return }
         
         task?.cancel()
         
-        explored = squares.items.subtracting(session.tiles).count
+        explored = squares.items.subtracting(tiles).count
         leaf = .init(squares: total.count)
         
 #if os(iOS)

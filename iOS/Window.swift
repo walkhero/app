@@ -15,7 +15,7 @@ struct Window: View {
                 .frame(maxHeight: .greatestFiniteMagnitude)
                 .edgesIgnoringSafeArea(.all)
         } else if session.walking > 0 {
-            Walking(session: session, walker: .init(session: session))
+            Walking(session: session)
                 .transition(.asymmetric(insertion: .move(edge: .bottom),
                                         removal: .move(edge: .top)))
         } else {
