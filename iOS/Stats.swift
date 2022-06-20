@@ -31,20 +31,23 @@ struct Stats: View {
         
         Explore(leaf: .init(squares: session.tiles.count))
         
-        Item(value: .streak(value: session.chart.streak.current),
+        Item(value: .streak(value: session.chart.streak.current)
+             + .init(" ") + .walks(value: session.chart.walks),
              active: session.chart.walks > 0,
-             content: Streak(streak: session.chart.streak))
+             content: Streak(streak: session.chart.streak, walks: session.chart.walks))
+    }
+    
+    @ViewBuilder private var health: some View {
+        title(value: "Time")
         
-        Item(value: .walks(value: session.chart.walks),
-             active: session.chart.walks > 0,
-             content: Detail(title: "Duration",
+        Item(value: .duration(value: session.chart.duration.total),
+             active: session.chart.duration.total > 0,
+             content: Detail(title: "Time",
                              trend: session.chart.duration.trend,
                              average: .duration(value: session.chart.duration.average),
                              max: .duration(value: session.chart.duration.max),
                              total: .duration(value: session.chart.duration.total)))
-    }
-    
-    @ViewBuilder private var health: some View {
+        
         title(value: "Steps")
         
         Item(value: .steps(value: session.chart.steps.total),

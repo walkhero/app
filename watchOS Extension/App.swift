@@ -1,22 +1,36 @@
 import SwiftUI
+import CoreLocation
+import HealthKit
+import Hero
 
 @main struct App: SwiftUI.App {
-//    @StateObject private var status = Status()
+    @StateObject private var session = Session()
     @Environment(\.scenePhase) private var phase
     @WKExtensionDelegateAdaptor(Delegate.self) private var delegate
     
     var body: some Scene {
         WindowGroup {
-//            Main(status: status)
-//                .task {
-//                    cloud.ready.notify(queue: .main) {
-//                        cloud.pull.send()
-//                    }
-//
-//                    await status.request()
-//                    WKExtension.shared().registerForRemoteNotifications()
-//                }
-            Circle()
+            Window(session: session)
+                .onReceive(cloud) { model in
+                    session.walking = model.walking
+
+                    Task
+                        .detached(priority: .utility) {
+                            await session.update(chart: model.chart, tiles: model.tiles)
+                        }
+                }
+                .task {
+                    cloud.ready.notify(queue: .main) {
+                        cloud.pull.send()
+                        
+                        Task
+                            .detached {
+                                await request()
+                            }
+                        
+                        session.loading = false
+                    }
+                }
         }
         .onChange(of: phase) {
             switch $0 {
@@ -25,6 +39,20 @@ import SwiftUI
             default:
                 break
             }
+        }
+    }
+    
+    private func request() async {
+        let manager = CLLocationManager()
+        if manager.authorizationStatus == .notDetermined {
+            manager.requestAlwaysAuthorization()
+        }
+        
+        if HKHealthStore.isHealthDataAvailable() {
+            try? await HKHealthStore()
+                .requestAuthorization(toShare: [],
+                                      read: .init([Challenge.steps, .metres, .calories]
+                                        .compactMap(\.object)))
         }
     }
 }

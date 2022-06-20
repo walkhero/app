@@ -4,12 +4,13 @@ import Hero
 extension Stats {
     struct Streak: View {
         let streak: Hero.Streak
+        let walks: Int
         @Environment(\.dismiss) private var dismiss
         
         var body: some View {
             NavigationView {
                 List {
-                    Section("Current") {
+                    Section("Current streak") {
                         Text(.days(value: streak.current)
                             .numeric(font: .title3.monospacedDigit().weight(.regular),
                                      color: .primary))
@@ -18,8 +19,17 @@ extension Stats {
                     }
                     .headerProminence(.increased)
                     
-                    Section("Max") {
+                    Section("Max streak") {
                         Text(.days(value: streak.max)
+                            .numeric(font: .title3.monospacedDigit().weight(.regular),
+                                     color: .primary))
+                            .font(.footnote.weight(.regular))
+                            .foregroundColor(.secondary)
+                    }
+                    .headerProminence(.increased)
+                    
+                    Section("Total") {
+                        Text(.walks(value: walks)
                             .numeric(font: .title3.monospacedDigit().weight(.regular),
                                      color: .primary))
                             .font(.footnote.weight(.regular))
@@ -50,7 +60,7 @@ extension Stats {
                         }
                     }
                 }
-                .navigationTitle("Streak")
+                .navigationTitle("Walks")
                 .navigationBarTitleDisplayMode(.inline)
             }
             .navigationViewStyle(.stack)
