@@ -4,12 +4,11 @@ import Hero
 struct Walking: View {
     @ObservedObject var session: Session
     @StateObject private var walker = Walker()
-    @State private var map = false
     
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                Explore(explored: walker.explored, leaf: walker.leaf)
+                Explore(walker: walker)
                 
                 Streak(streak: session.chart.streak.current, walks: session.chart.walks)
 
@@ -28,32 +27,13 @@ struct Walking: View {
             .padding(.vertical, 20)
         }
         .onChange(of: session.tiles) {
-            walker.update(tiles: $0)
+            walker.tiles = $0
         }
         .safeAreaInset(edge: .top, spacing: 0) {
             Top(session: session, walker: walker)
         }
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-            VStack(spacing: 0) {
-                Divider()
-                
-                Button {
-                    map = true
-                } label: {
-                    Image(systemName: "globe.europe.africa")
-                        .font(.system(size: 23, weight: .light))
-                        .frame(width: 70, height: 70)
-                        .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .sheet(isPresented: $map) {
-                    Sheet(rootView: Mapper(walker: walker))
-                        .edgesIgnoringSafeArea(.all)
-                }
-            }
-            .background(Color(.systemBackground))
-        }
         .task {
+            walker.tiles = session.tiles
             await walker.start(date: .init(timestamp: session.walking))
         }
     }

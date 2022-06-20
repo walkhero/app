@@ -17,7 +17,13 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published private(set) var calories = 0
     @Published private(set) var explored = 0
     @Published private(set) var leaf = Leaf(squares: 0)
-    private var tiles = Set<Squares.Item>()
+    
+    var tiles = Set<Squares.Item>() {
+        didSet {
+            refresh()
+        }
+    }
+    
     private var squares = Squares()
     private var queries = Set<HKQuery>()
     private var task: Task<Void, Never>?
@@ -151,11 +157,6 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     func cancel() async {
         await cloud.cancel()
         await clear()
-    }
-    
-    func update(tiles: Set<Squares.Item>) {
-        self.tiles = tiles
-        refresh()
     }
 
     func locationManager(_: CLLocationManager, didUpdateLocations: [CLLocation]) {

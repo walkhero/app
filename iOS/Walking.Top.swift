@@ -13,12 +13,12 @@ extension Walking {
                     TimelineView(.animation(minimumInterval: 1, paused: phase != .active)) { time in
                         VStack(spacing: 0) {
                             Text(.duration(start: session.walking, current: time.date))
-                                .font(.system(size: 24, weight: .regular).monospacedDigit())
-                                .frame(height: 60)
+                                .font(.system(size: 30, weight: .medium).monospacedDigit())
+                                .frame(height: 70)
                             Progress(current: .init(time.date.timestamp - session.walking),
                                      max: session.chart.duration.max)
-                                .stroke(Color.accentColor, style: .init(lineWidth: 4, lineCap: .round))
-                                .frame(height: 4)
+                                .stroke(Color.accentColor, style: .init(lineWidth: 6, lineCap: .round))
+                                .frame(height: 6)
                         }
                     }
                     
@@ -53,7 +53,7 @@ extension Walking {
                         .buttonStyle(.borderedProminent)
                     }
                     .padding(.horizontal)
-                    .frame(height: 60)
+                    .frame(height: 70)
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 Divider()

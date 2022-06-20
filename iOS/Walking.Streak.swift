@@ -8,14 +8,14 @@ extension Walking {
         var body: some View {
             HStack(alignment: .firstTextBaseline) {
                 Text(.streak(value: streak)
-                    .numeric(font: .largeTitle.monospacedDigit().weight(.regular),
+                    .numeric(font: .title.monospacedDigit().weight(.medium),
                              color: .primary))
-                    .font(.footnote.weight(.regular))
+                    .font(.callout.weight(.regular))
                     .foregroundColor(.secondary)
                 Spacer()
                 if walks > 0 {
                     Text(.walks(value: walks))
-                        .font(.footnote.monospacedDigit().weight(.light))
+                        .font(.footnote.monospacedDigit().weight(.regular))
                         .foregroundStyle(.secondary)
                 }
             }

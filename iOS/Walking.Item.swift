@@ -7,7 +7,7 @@ extension Walking {
         let progress: Progress
         
         init(value: AttributedString, limit: AttributedString?, progress: Progress) {
-            self.value = value.numeric(font: .title2.monospacedDigit().weight(.regular),
+            self.value = value.numeric(font: .title.monospacedDigit().weight(.medium),
                                        color: .primary)
             self.limit = limit
             self.progress = progress
@@ -17,12 +17,12 @@ extension Walking {
             VStack(spacing: 8) {
                 HStack(alignment: .firstTextBaseline) {
                     Text(value)
-                        .font(.footnote.weight(.regular))
+                        .font(.callout.weight(.regular))
                         .foregroundColor(.secondary)
                     Spacer()
                     if let limit = limit {
                         Text(limit)
-                            .font(.footnote.monospacedDigit().weight(.light))
+                            .font(.footnote.monospacedDigit().weight(.regular))
                             .foregroundStyle(.secondary)
                     }
                 }
