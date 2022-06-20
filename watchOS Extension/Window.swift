@@ -14,15 +14,15 @@ struct Window: View {
                 .foregroundColor(.secondary)
                 .frame(maxHeight: .greatestFiniteMagnitude)
                 .edgesIgnoringSafeArea(.all)
-//        } else if session.walking > 0 {
-//            Walking(session: session)
-//                .transition(.asymmetric(insertion: .move(edge: .bottom),
-//                                        removal: .move(edge: .top)))
+        } else if session.walking > 0 {
+            Walking(session: session)
+                .transition(.asymmetric(insertion: .move(edge: .bottom),
+                                        removal: .move(edge: .top)))
 //        } else if let summary = session.summary {
 //            Results(session: session, summary: summary)
 //                .transition(.opacity)
         } else {
-            Stats(session: session)
+            Main(session: session)
                 .transition(.asymmetric(insertion: .move(edge: .bottom),
                                         removal: .move(edge: .top)))
         }

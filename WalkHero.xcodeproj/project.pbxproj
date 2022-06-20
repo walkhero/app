@@ -21,6 +21,9 @@
 		CE000D072860CE2200FAB4BD /* Chart.Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D78285E037B00BD19A4 /* Chart.Trend.swift */; };
 		CE000D0A2860CE4000FAB4BD /* Stats.Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000D082860CE4000FAB4BD /* Stats.Explore.swift */; };
 		CE000D0C2860D05E00FAB4BD /* Stats.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000D0B2860D05E00FAB4BD /* Stats.Item.swift */; };
+		CE000D0E2860D7F900FAB4BD /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000D0D2860D7F900FAB4BD /* Main.swift */; };
+		CE000D102860D9DE00FAB4BD /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000D0F2860D9DE00FAB4BD /* Walking.swift */; };
+		CE000D112860DA1D00FAB4BD /* Walker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE005EE2285A4B0B00CE370E /* Walker.swift */; };
 		CE005EE3285A4B0B00CE370E /* Walker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE005EE2285A4B0B00CE370E /* Walker.swift */; };
 		CE1091B5285F3E8D00CB88EB /* Main.Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B4285F3E8D00CB88EB /* Main.Title.swift */; };
 		CE1091B7285F408B00CB88EB /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B6285F408B00CB88EB /* Streak.swift */; };
@@ -143,6 +146,8 @@
 		CE000D042860CD3700FAB4BD /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		CE000D082860CE4000FAB4BD /* Stats.Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Explore.swift; sourceTree = "<group>"; };
 		CE000D0B2860D05E00FAB4BD /* Stats.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Item.swift; sourceTree = "<group>"; };
+		CE000D0D2860D7F900FAB4BD /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		CE000D0F2860D9DE00FAB4BD /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		CE005EE2285A4B0B00CE370E /* Walker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walker.swift; sourceTree = "<group>"; };
 		CE1091B4285F3E8D00CB88EB /* Main.Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Title.swift; sourceTree = "<group>"; };
 		CE1091B6285F408B00CB88EB /* Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
@@ -263,9 +268,11 @@
 				CE25233B278C6FFD000A26C5 /* Info.plist */,
 				CE252330278C6FFD000A26C5 /* App.Delegate.swift */,
 				CE252332278C6FFD000A26C5 /* App.swift */,
+				CE000D0D2860D7F900FAB4BD /* Main.swift */,
 				CE000D082860CE4000FAB4BD /* Stats.Explore.swift */,
 				CE000D0B2860D05E00FAB4BD /* Stats.Item.swift */,
 				CE000D042860CD3700FAB4BD /* Stats.swift */,
+				CE000D0F2860D9DE00FAB4BD /* Walking.swift */,
 				CE000CFF2860CC8200FAB4BD /* Window.swift */,
 			);
 			path = "watchOS Extension";
@@ -511,13 +518,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE252333278C6FFD000A26C5 /* App.swift in Sources */,
+				CE000D112860DA1D00FAB4BD /* Walker.swift in Sources */,
 				CE000D062860CD3700FAB4BD /* Stats.swift in Sources */,
 				CE252331278C6FFD000A26C5 /* App.Delegate.swift in Sources */,
 				CE000CFE2860CBFD00FAB4BD /* Session.swift in Sources */,
+				CE000D0E2860D7F900FAB4BD /* Main.swift in Sources */,
 				CE3965DF285B37F9008A3CAF /* AttributedString.swift in Sources */,
 				CE846E68278E17A1005989B0 /* Challenge.swift in Sources */,
 				CE252349278C70B0000A26C5 /* Global.swift in Sources */,
 				CE000D072860CE2200FAB4BD /* Chart.Trend.swift in Sources */,
+				CE000D102860D9DE00FAB4BD /* Walking.swift in Sources */,
 				CE3965EE285B7CFE008A3CAF /* Leaf.Name.swift in Sources */,
 				CE000D0A2860CE4000FAB4BD /* Stats.Explore.swift in Sources */,
 				CE000D002860CC8200FAB4BD /* Window.swift in Sources */,
