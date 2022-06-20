@@ -36,7 +36,7 @@ struct Settings: View {
             Item(title: "Walk Hero Plus", symbol: "plus") {
                 store = true
             }
-//            .sheet(isPresented: $store, content: Purchases.init)
+            .sheet(isPresented: $store, content: Purchases.init)
         }
         .headerProminence(.increased)
     }

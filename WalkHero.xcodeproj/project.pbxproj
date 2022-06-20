@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE000CF3286076F000FAB4BD /* Settings.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF2286076F000FAB4BD /* Settings.Item.swift */; };
 		CE000CF528607C8500FAB4BD /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF428607C8500FAB4BD /* About.swift */; };
+		CE000CF728607F6200FAB4BD /* Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF628607F6200FAB4BD /* Purchases.swift */; };
 		CE005EE3285A4B0B00CE370E /* Walker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE005EE2285A4B0B00CE370E /* Walker.swift */; };
 		CE1091B5285F3E8D00CB88EB /* Main.Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B4285F3E8D00CB88EB /* Main.Title.swift */; };
 		CE1091B7285F408B00CB88EB /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B6285F408B00CB88EB /* Streak.swift */; };
@@ -166,6 +167,7 @@
 /* Begin PBXFileReference section */
 		CE000CF2286076F000FAB4BD /* Settings.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Item.swift; sourceTree = "<group>"; };
 		CE000CF428607C8500FAB4BD /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		CE000CF628607F6200FAB4BD /* Purchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchases.swift; sourceTree = "<group>"; };
 		CE005EE2285A4B0B00CE370E /* Walker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walker.swift; sourceTree = "<group>"; };
 		CE1091B4285F3E8D00CB88EB /* Main.Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Title.swift; sourceTree = "<group>"; };
 		CE1091B6285F408B00CB88EB /* Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				CE120554285C8A3100584E58 /* Mapper.swift */,
 				CE2241D5278B1D1E0049FDA0 /* Plus.swift */,
 				CE41574D2859D3A5001513A0 /* Progress.swift */,
+				CE000CF628607F6200FAB4BD /* Purchases.swift */,
 				CED84664285893A7002A4BE6 /* Session.swift */,
 				CE2241D1278B19ED0049FDA0 /* Settings.About.swift */,
 				CE1912B9285CDEA400956D95 /* Settings.Info.swift */,
@@ -638,6 +641,7 @@
 				CEBF91B32858A96800811090 /* Walking.Item.swift in Sources */,
 				CE963423277CA1F700CCFF4B /* Streak.Month.swift in Sources */,
 				CE41574E2859D3A5001513A0 /* Progress.swift in Sources */,
+				CE000CF728607F6200FAB4BD /* Purchases.swift in Sources */,
 				CE2241CE278B191A0049FDA0 /* Settings.Notifications.swift in Sources */,
 				CE120555285C8A3100584E58 /* Mapper.swift in Sources */,
 				CED8466328589270002A4BE6 /* Window.swift in Sources */,

@@ -13,7 +13,7 @@ import Hero
             Window(session: session)
                 .onReceive(cloud) { model in
                     session.walking = model.walking
-
+                    
                     Task
                         .detached(priority: .utility) {
                             await session.update(chart: model.chart, tiles: model.tiles)
