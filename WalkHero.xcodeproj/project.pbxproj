@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE000CF3286076F000FAB4BD /* Settings.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF2286076F000FAB4BD /* Settings.Item.swift */; };
 		CE005EE3285A4B0B00CE370E /* Walker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE005EE2285A4B0B00CE370E /* Walker.swift */; };
 		CE1091B5285F3E8D00CB88EB /* Main.Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B4285F3E8D00CB88EB /* Main.Title.swift */; };
 		CE1091B7285F408B00CB88EB /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B6285F408B00CB88EB /* Streak.swift */; };
@@ -162,6 +163,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE000CF2286076F000FAB4BD /* Settings.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Item.swift; sourceTree = "<group>"; };
 		CE005EE2285A4B0B00CE370E /* Walker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walker.swift; sourceTree = "<group>"; };
 		CE1091B4285F3E8D00CB88EB /* Main.Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Title.swift; sourceTree = "<group>"; };
 		CE1091B6285F408B00CB88EB /* Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				CE2241CD278B191A0049FDA0 /* Settings.Notifications.swift */,
 				CE2241CF278B193D0049FDA0 /* Settings.Option.swift */,
 				CE1912B7285CDD4000956D95 /* Settings.swift */,
+				CE000CF2286076F000FAB4BD /* Settings.Item.swift */,
 				CE9E4C49278B1847005CC3F7 /* SettingsOld.swift */,
 				CE83B95E2791B3DB0056B006 /* Sheet.swift */,
 				CEDF5D76285E00B000BD19A4 /* Stats.Detail.swift */,
@@ -656,6 +659,7 @@
 				CEE6F1A627A1ACA800D63EDB /* Stats.Trend.swift in Sources */,
 				CE7AF0CD278E354900EA9F41 /* Main.Options.swift in Sources */,
 				CEA0D6AB278E4B870028EE62 /* Stats.Leaderboard.swift in Sources */,
+				CE000CF3286076F000FAB4BD /* Settings.Item.swift in Sources */,
 				CE1912BC285CE2C700956D95 /* Main.Mapper.swift in Sources */,
 				CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */,
 				CEF9E4522789CD58004EFD64 /* GraphicsContext.swift in Sources */,
