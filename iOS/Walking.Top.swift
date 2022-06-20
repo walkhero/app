@@ -1,4 +1,5 @@
 import SwiftUI
+import Hero
 
 extension Walking {
     struct Top: View {
@@ -43,7 +44,10 @@ extension Walking {
                         Spacer()
                         
                         Button {
-                            
+                            Task {
+                                await summary(summary: walker.finish())
+                                await UNUserNotificationCenter.send(message: "Walk finished!")
+                            }
                         } label: {
                             Text("Finish")
                                 .font(.system(size: 15, weight: .semibold))
@@ -59,6 +63,12 @@ extension Walking {
                 Divider()
             }
             .background(Color(.systemBackground))
+        }
+        
+        private func summary(summary: Summary?) async {
+            withAnimation(.easeInOut(duration: 0.6)) {
+                session.summary = summary
+            }
         }
     }
 }

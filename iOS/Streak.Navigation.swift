@@ -21,7 +21,7 @@ extension Streak {
                 .opacity(index == 0 ? 0.6 : 1)
                 .disabled(index == 0)
                 
-                Text(Calendar.current.date(from: .init(year: .init(calendar[index].year),
+                Text(Calendar.global.date(from: .init(year: .init(calendar[index].year),
                                                        month: .init(calendar[index].month)))!,
                      format: .dateTime.year().month(.wide))
                         .font(.body.weight(.medium))

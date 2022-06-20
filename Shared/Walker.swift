@@ -38,6 +38,10 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         refresh()
     }
+    
+    deinit {
+        print("walker gone")
+    }
 
     func start(date: Date) async {
         manager.startUpdatingLocation()
@@ -144,10 +148,11 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     func finish() async -> Summary? {
-        let summary = await cloud.finish(steps: steps,
-                                         metres: metres,
-                                         calories: calories,
-                                         squares: squares.items)
+        let summary = await cloud
+            .finish(steps: steps,
+                    metres: metres,
+                    calories: calories,
+                    squares: squares.items)
 
         await clear()
 

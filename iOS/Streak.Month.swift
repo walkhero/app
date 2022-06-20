@@ -14,7 +14,12 @@ extension Streak {
                     
                     ForEach(0 ..< days.items[week].count, id: \.self) {
                         Day(index: days.items[week][$0].value,
-                            hit: days.items[week][$0].content)
+                            hit: days.items[week][$0].content,
+                            future: Calendar.global.date(
+                                from: .init(
+                                    year: .init(days.year),
+                                    month: .init(days.month),
+                                    day: .init(days.items[week][$0].value)))! > Date.now)
                     }
                     
                     ForEach(0 ..< trailing(week: week), id: \.self) { _ in
@@ -32,14 +37,14 @@ extension Streak {
         }
 
         private func leading(week: Int) -> Int {
-            Calendar.current
+            Calendar.global
                     .leadingWeekdays(year: days.year,
                                      month: days.month,
                                      day: days.items[week].first!.value)
         }
 
         private func trailing(week: Int) -> Int {
-            Calendar.current
+            Calendar.global
                     .trailingWeekdays(year: days.year,
                                       month: days.month,
                                       day: days.items[week].last!.value)

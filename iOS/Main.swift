@@ -6,6 +6,7 @@ struct Main: View {
     
     var body: some View {
         content
+            .transition(.opacity)
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 VStack(spacing: 0) {
                     Divider()

@@ -8,16 +8,11 @@ extension Stats {
         let content: C
         @State private var detail = false
         
-        init(value: AttributedString, active: Bool, content: C) {
-            self.value = value.numeric(font: .title3.monospacedDigit().weight(.regular),
-                                       color: .primary)
-            self.active = active
-            self.content = content
-        }
-        
         var body: some View {
             HStack(spacing: 0) {
-                Text(value)
+                Text(value
+                    .numeric(font: .title3.monospacedDigit().weight(.regular),
+                             color: .primary))
                     .font(.footnote.weight(.regular))
                     .foregroundColor(.secondary)
                     .padding(.leading, 2)

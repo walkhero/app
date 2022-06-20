@@ -18,6 +18,9 @@ struct Window: View {
             Walking(session: session)
                 .transition(.asymmetric(insertion: .move(edge: .bottom),
                                         removal: .move(edge: .top)))
+        } else if let summary = session.summary {
+            Results(session: session, summary: summary)
+                .transition(.opacity)
         } else {
             Main(session: session)
                 .transition(.asymmetric(insertion: .move(edge: .bottom),

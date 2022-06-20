@@ -23,6 +23,14 @@ extension AttributedString {
         format(value: value, singular: "square", plural: "squares")
     }
     
+    static func ordinal(value: Int) -> Self {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .ordinal
+        var number = Self(formatter.string(from: .init(value: value)) ?? "")
+        number.numberPart = .integer
+        return number + .init(" walk")
+    }
+    
     static func metres(value: Int, digits: Int) -> Self {
         Measurement(value: .init(value), unit: UnitLength.meters)
             .formatted(.measurement(width: .wide,

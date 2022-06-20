@@ -11,6 +11,8 @@
 		CE000CF528607C8500FAB4BD /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF428607C8500FAB4BD /* About.swift */; };
 		CE000CF728607F6200FAB4BD /* Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF628607F6200FAB4BD /* Purchases.swift */; };
 		CE000CF92860857900FAB4BD /* Upgrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CF82860857900FAB4BD /* Upgrade.swift */; };
+		CE000CFB2860A00800FAB4BD /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CFA2860A00800FAB4BD /* Results.swift */; };
+		CE000CFD2860AD3C00FAB4BD /* Results.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE000CFC2860AD3C00FAB4BD /* Results.Item.swift */; };
 		CE005EE3285A4B0B00CE370E /* Walker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE005EE2285A4B0B00CE370E /* Walker.swift */; };
 		CE1091B5285F3E8D00CB88EB /* Main.Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B4285F3E8D00CB88EB /* Main.Title.swift */; };
 		CE1091B7285F408B00CB88EB /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B6285F408B00CB88EB /* Streak.swift */; };
@@ -170,6 +172,8 @@
 		CE000CF428607C8500FAB4BD /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		CE000CF628607F6200FAB4BD /* Purchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchases.swift; sourceTree = "<group>"; };
 		CE000CF82860857900FAB4BD /* Upgrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upgrade.swift; sourceTree = "<group>"; };
+		CE000CFA2860A00800FAB4BD /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		CE000CFC2860AD3C00FAB4BD /* Results.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.Item.swift; sourceTree = "<group>"; };
 		CE005EE2285A4B0B00CE370E /* Walker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walker.swift; sourceTree = "<group>"; };
 		CE1091B4285F3E8D00CB88EB /* Main.Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Title.swift; sourceTree = "<group>"; };
 		CE1091B6285F408B00CB88EB /* Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
@@ -402,6 +406,8 @@
 				CE2241D5278B1D1E0049FDA0 /* Plus.swift */,
 				CE41574D2859D3A5001513A0 /* Progress.swift */,
 				CE000CF628607F6200FAB4BD /* Purchases.swift */,
+				CE000CFC2860AD3C00FAB4BD /* Results.Item.swift */,
+				CE000CFA2860A00800FAB4BD /* Results.swift */,
 				CED84664285893A7002A4BE6 /* Session.swift */,
 				CE2241D1278B19ED0049FDA0 /* Settings.About.swift */,
 				CE1912B9285CDEA400956D95 /* Settings.Info.swift */,
@@ -660,6 +666,8 @@
 				CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */,
 				CE005EE3285A4B0B00CE370E /* Walker.swift in Sources */,
 				CEF40CA62779F6CE001BECAB /* Store.swift in Sources */,
+				CE000CFD2860AD3C00FAB4BD /* Results.Item.swift in Sources */,
+				CE000CFB2860A00800FAB4BD /* Results.swift in Sources */,
 				CEC805BC277B36BB00D1B046 /* Mapold.Representable.swift in Sources */,
 				CE963422277CA1F700CCFF4B /* Ephemeris.swift in Sources */,
 				CE3965ED285B7CFE008A3CAF /* Leaf.Name.swift in Sources */,

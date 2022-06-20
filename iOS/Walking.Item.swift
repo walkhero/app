@@ -6,17 +6,12 @@ extension Walking {
         let limit: AttributedString?
         let progress: Progress
         
-        init(value: AttributedString, limit: AttributedString?, progress: Progress) {
-            self.value = value.numeric(font: .title.monospacedDigit().weight(.medium),
-                                       color: .primary)
-            self.limit = limit
-            self.progress = progress
-        }
-        
         var body: some View {
             VStack(spacing: 8) {
                 HStack(alignment: .firstTextBaseline) {
-                    Text(value)
+                    Text(value
+                        .numeric(font: .title.monospacedDigit().weight(.medium),
+                                 color: .primary))
                         .font(.callout.weight(.regular))
                         .foregroundColor(.secondary)
                     Spacer()
