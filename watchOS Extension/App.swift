@@ -1,10 +1,10 @@
 import SwiftUI
 import CoreLocation
 import HealthKit
-import Hero
 
 @main struct App: SwiftUI.App {
     @StateObject private var session = Session()
+    @State private var first = true
     @Environment(\.scenePhase) private var phase
     @WKExtensionDelegateAdaptor(Delegate.self) private var delegate
     
@@ -20,6 +20,9 @@ import Hero
                         }
                 }
                 .task {
+                    guard first else { return }
+                    
+                    first = false
                     cloud.ready.notify(queue: .main) {
                         cloud.pull.send()
                         

@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 
-private let limit = CLLocationDistance(1000)
+private let limit = CLLocationDistance(500)
 
 final class Map: MKMapView, UIViewRepresentable, ObservableObject, MKMapViewDelegate {
     private var centred = 0

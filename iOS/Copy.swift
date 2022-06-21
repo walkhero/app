@@ -1,5 +1,3 @@
-import Foundation
-
 enum Copy {
     static let policy = """
 This app is **not** tracking you in anyway, nor sharing any information from you with no one, we are also not storing any data concerning you.

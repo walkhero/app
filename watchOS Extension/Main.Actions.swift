@@ -24,9 +24,8 @@ extension Main {
                         .font(.system(size: 24, weight: .medium))
                         .contentShape(Rectangle())
                 }
-                .buttonBorderShape(.capsule)
                 .buttonStyle(.borderedProminent)
-                .padding(.horizontal, 30)
+                .padding(.horizontal, 16)
                 
                 if let updated = session.chart.updated?.start, Calendar.global.isDateInToday(updated) {
                     HStack {

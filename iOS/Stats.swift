@@ -88,13 +88,13 @@ struct Stats: View {
         
         title(value: "Calories")
         
-        Item(value: .calories(value: session.chart.calories.total),
+        Item(value: .plain(value: session.chart.calories.total),
              active: session.chart.calories.total > 0,
              content: Detail(title: "Calories",
                              trend: session.chart.metres.trend,
-                             average: .calories(value: session.chart.calories.average),
-                             max: .calories(value: session.chart.calories.max),
-                             total: .calories(value: session.chart.calories.total)))
+                             average: .plain(value: session.chart.calories.average),
+                             max: .plain(value: session.chart.calories.max),
+                             total: .plain(value: session.chart.calories.total)))
     }
     
     private func title(value: String) -> some View {

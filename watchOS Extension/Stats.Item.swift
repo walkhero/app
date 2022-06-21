@@ -1,5 +1,4 @@
 import SwiftUI
-import Hero
 
 extension Stats {
     struct Item: View {

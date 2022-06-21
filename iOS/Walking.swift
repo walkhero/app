@@ -1,5 +1,4 @@
 import SwiftUI
-import Hero
 
 struct Walking: View {
     @ObservedObject var session: Session
@@ -31,6 +30,11 @@ struct Walking: View {
         }
         .safeAreaInset(edge: .top, spacing: 0) {
             Top(session: session, walker: walker)
+        }
+        .onDisappear {
+            Task {
+                await walker.clear()
+            }
         }
         .task {
             walker.tiles = session.tiles

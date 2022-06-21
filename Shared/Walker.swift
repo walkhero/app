@@ -20,7 +20,9 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     var tiles = Set<Squares.Item>() {
         didSet {
-            refresh()
+            Task {
+                await refresh()
+            }
         }
     }
     
@@ -36,14 +38,16 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
         manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         manager.allowsBackgroundLocationUpdates = true
         
-        refresh()
+        Task {
+            await refresh()
+        }
     }
     
     deinit {
         print("walker gone")
     }
 
-    func start(date: Date) async {
+    @MainActor func start(date: Date) async {
         manager.startUpdatingLocation()
 
 #if os(iOS)
@@ -64,8 +68,8 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
                     .initialResultsHandler = { [weak self] _, results, _ in
                         _ = results
                             .map { value in
-                                Task { [weak self] in
-                                    await self?.add(steps: value)
+                                DispatchQueue.main.async { [weak self] in
+                                    self?.add(steps: value)
                                 }
                             }
                     }
@@ -74,8 +78,8 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
                     .statisticsUpdateHandler = {  [weak self] _, _, results, _ in
                         _ = results
                             .map { value in
-                                Task { [weak self] in
-                                    await self?.add(steps: value)
+                                DispatchQueue.main.async { [weak self] in
+                                    self?.add(steps: value)
                                 }
                             }
                     }
@@ -95,8 +99,8 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
                     .initialResultsHandler = { [weak self] _, results, _ in
                         _ = results
                             .map { value in
-                                Task { [weak self] in
-                                    await self?.add(metres: value)
+                                DispatchQueue.main.async { [weak self] in
+                                    self?.add(metres: value)
                                 }
                             }
                     }
@@ -105,8 +109,8 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
                     .statisticsUpdateHandler = { [weak self] _, _, results, _ in
                         _ = results
                             .map { value in
-                                Task { [weak self] in
-                                    await self?.add(metres: value)
+                                DispatchQueue.main.async { [weak self] in
+                                    self?.add(metres: value)
                                 }
                             }
                     }
@@ -126,8 +130,8 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
                     .initialResultsHandler = { [weak self] _, results, _ in
                         _ = results
                             .map { value in
-                                Task { [weak self] in
-                                    await self?.add(calories: value)
+                                DispatchQueue.main.async { [weak self] in
+                                    self?.add(calories: value)
                                 }
                             }
                     }
@@ -136,8 +140,8 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
                     .statisticsUpdateHandler = { [weak self] _, _, results, _ in
                         _ = results
                             .map { value in
-                                Task { [weak self] in
-                                    await self?.add(calories: value)
+                                DispatchQueue.main.async { [weak self] in
+                                    self?.add(calories: value)
                                 }
                             }
                     }
@@ -147,41 +151,22 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
     }
 
-    func finish() async -> Summary? {
+    @MainActor func finish() async -> Summary? {
         let summary = await cloud
             .finish(steps: steps,
                     metres: metres,
                     calories: calories,
                     squares: squares.items)
 
-        await clear()
-
         return summary
     }
 
-    func cancel() async {
+    @MainActor func cancel() async {
         await cloud.cancel()
-        await clear()
     }
-
-    func locationManager(_: CLLocationManager, didUpdateLocations: [CLLocation]) {
-        guard squares.add(locations: didUpdateLocations) else { return }
-        refresh()
-    }
-
-    func locationManagerDidChangeAuthorization(_: CLLocationManager) { }
-    func locationManager(_: CLLocationManager, didFailWithError: Error) { }
-
-#if os(iOS)
-    func locationManager(_: CLLocationManager, didFinishDeferredUpdatesWithError: Error?) { }
     
-    @MainActor private func update(overlay: MKPolygon) {
-        self.overlay = overlay
-    }
-#endif
-    
-    @MainActor private func clear() {
-        squares.clear()
+    @MainActor func clear() async {
+        await squares.clear()
 
         queries.forEach(store.stop)
         queries = []
@@ -194,7 +179,27 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
 #endif
 
         manager.stopUpdatingLocation()
+        
+        print("cleared")
     }
+
+    func locationManager(_: CLLocationManager, didUpdateLocations: [CLLocation]) {
+        Task {
+            guard await squares.add(locations: didUpdateLocations) else { return }
+            await refresh()
+        }
+    }
+
+    func locationManagerDidChangeAuthorization(_: CLLocationManager) { }
+    func locationManager(_: CLLocationManager, didFailWithError: Error) { }
+
+#if os(iOS)
+    func locationManager(_: CLLocationManager, didFinishDeferredUpdatesWithError: Error?) { }
+    
+    @MainActor private func update(overlay: MKPolygon) {
+        self.overlay = overlay
+    }
+#endif
     
     @MainActor private func add(steps: HKStatisticsCollection) {
         self.steps = steps
@@ -235,20 +240,20 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
             .reduce(0, +)
     }
     
-    private func refresh() {
-        let total = squares.items.union(tiles)
+    @MainActor private func refresh() async {
+        let total = await squares.items.union(tiles)
         
         guard total.count != leaf.squares else { return }
         
         task?.cancel()
         
-        explored = squares.items.subtracting(tiles).count
+        explored = await squares.items.subtracting(tiles).count
         leaf = .init(squares: total.count)
         
 #if os(iOS)
         task = Task.detached(priority: .utility) { [weak self] in
             do {
-                try await Task.sleep(nanoseconds: 3_000_000_000)
+                try await Task.sleep(nanoseconds: 2_000_000_000)
                 
                 guard !Task.isCancelled else { return }
                 
@@ -258,7 +263,7 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
 #endif
     }
 
-    private func query(start: Date, quantity: HKQuantityType) -> HKStatisticsCollectionQuery {
+    @MainActor private func query(start: Date, quantity: HKQuantityType) -> HKStatisticsCollectionQuery {
         .init(
             quantityType: quantity,
             quantitySamplePredicate: HKQuery.predicateForSamples(withStart: start, end: nil),
