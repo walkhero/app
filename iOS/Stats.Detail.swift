@@ -14,15 +14,21 @@ extension Stats {
             NavigationView {
                 List {
                     Section {
-                        VStack {
+                        HStack(spacing: 12) {
+                            Spacer()
                             Text("Trend")
-                                .font(.title2.weight(.semibold))
+                                .font(.body.weight(.medium))
+                                .foregroundStyle(.tertiary)
                             ZStack {
                                 Circle()
-                                    .fill(Color(.systemBackground))
-                                trend.symbol
-                                    .padding(20)
+                                    .stroke(trend.color, lineWidth: 3)
+                                Image(systemName: trend.symbol)
+                                    .foregroundColor(trend.color)
+                                    .font(.system(size: 24, weight: .bold))
+                                    .frame(width: 42, height: 42)
                             }
+                            .fixedSize()
+                            Spacer()
                         }
                     }
                     .listRowBackground(Color.clear)

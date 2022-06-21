@@ -30,13 +30,11 @@ struct Stats: View {
                 if let updated = session.chart.updated {
                     Group {
                         Text("Updated ")
-                            .font(.footnote.weight(.regular))
-                            
                         + Text(updated.end, format: .relative(presentation: .named,
                                                               unitsStyle: .abbreviated))
-                        .font(.footnote.weight(.regular))
                         .foregroundColor(.secondary)
                     }
+                    .font(.footnote.weight(.regular))
                     .padding(.trailing)
                 }
             }

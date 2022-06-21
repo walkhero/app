@@ -12,9 +12,17 @@ extension Stats {
                         .font(.system(size: 50, weight: .ultraLight))
                         .symbolRenderingMode(.palette)
                         .foregroundStyle(.black, leaf.name.color)
-                    Text(leaf.name.title)
-                        .font(.body.weight(.medium))
-                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
+                    VStack(alignment: .leading) {
+                        Text(leaf.name.title)
+                            .font(.title3.weight(.medium))
+                            .lineLimit(1)
+                            .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
+                        Text(leaf.next.formatted() + " next")
+                            .font(.caption2.monospacedDigit().weight(.light))
+                            .lineLimit(1)
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
+                    }
                 }
                 .padding(.bottom, 5)
                 
@@ -23,17 +31,10 @@ extension Stats {
                         .numeric(font: .title3.monospacedDigit().weight(.regular),
                                  color: .primary))
                         .font(.footnote.weight(.regular))
+                        .lineLimit(1)
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                 }
-                
-                Text(leaf.next.formatted() + " next")
-                    .font(.caption2.monospacedDigit().weight(.light))
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-                
-                Divider()
-                    .padding(.top, 5)
             }
         }
     }

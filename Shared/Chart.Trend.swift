@@ -2,20 +2,25 @@ import SwiftUI
 import Hero
 
 extension Chart.Trend {
-    var symbol: some View {
+    var symbol: String {
         switch self {
         case .increase:
-            return Image(systemName: "chevron.up")
-                .font(.system(size: 18, weight: .heavy))
-                .foregroundColor(.blue)
+            return "chevron.up"
         case .decrease:
-            return Image(systemName: "chevron.down")
-                .font(.system(size: 18, weight: .heavy))
-                .foregroundColor(.pink)
+            return "chevron.down"
         case .stable:
-            return Image(systemName: "alternatingcurrent")
-                .font(.system(size: 18, weight: .heavy))
-                .foregroundColor(.indigo)
+            return "alternatingcurrent"
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .increase:
+            return .blue
+        case .decrease:
+            return .pink
+        case .stable:
+            return .indigo
         }
     }
 }

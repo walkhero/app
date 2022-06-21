@@ -68,6 +68,7 @@
 		CEB0D6D8278DC0CE00A7C9AF /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6D7278DC0CE00A7C9AF /* Walking.swift */; };
 		CEBE58EB2861B7050062733B /* Walking.Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE58EA2861B7050062733B /* Walking.Actions.swift */; };
 		CEBE58ED2861C4DB0062733B /* Stats.Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE58EC2861C4DB0062733B /* Stats.Today.swift */; };
+		CEBE58EF2861CA730062733B /* Main.Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE58EE2861CA730062733B /* Main.Actions.swift */; };
 		CEBF91B32858A96800811090 /* Walking.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF91B22858A96800811090 /* Walking.Item.swift */; };
 		CEC805BA277B36B400D1B046 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B9277B36B400D1B046 /* Main.swift */; };
 		CECD14DF27E60E77005FB1FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECD14DE27E60E77005FB1FC /* Launch Screen.storyboard */; };
@@ -193,6 +194,7 @@
 		CEB0D6D7278DC0CE00A7C9AF /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		CEBE58EA2861B7050062733B /* Walking.Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Actions.swift; sourceTree = "<group>"; };
 		CEBE58EC2861C4DB0062733B /* Stats.Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Today.swift; sourceTree = "<group>"; };
+		CEBE58EE2861CA730062733B /* Main.Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Actions.swift; sourceTree = "<group>"; };
 		CEBF91B22858A96800811090 /* Walking.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Item.swift; sourceTree = "<group>"; };
 		CEC805B7277B291C00D1B046 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEC805B9277B36B400D1B046 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				CE25233B278C6FFD000A26C5 /* Info.plist */,
 				CE252330278C6FFD000A26C5 /* App.Delegate.swift */,
 				CE252332278C6FFD000A26C5 /* App.swift */,
+				CEBE58EE2861CA730062733B /* Main.Actions.swift */,
 				CE000D0D2860D7F900FAB4BD /* Main.swift */,
 				CE000D082860CE4000FAB4BD /* Stats.Explore.swift */,
 				CE000D0B2860D05E00FAB4BD /* Stats.Item.swift */,
@@ -530,6 +533,7 @@
 				CE000CFE2860CBFD00FAB4BD /* Session.swift in Sources */,
 				CE000D0E2860D7F900FAB4BD /* Main.swift in Sources */,
 				CE3965DF285B37F9008A3CAF /* AttributedString.swift in Sources */,
+				CEBE58EF2861CA730062733B /* Main.Actions.swift in Sources */,
 				CE846E68278E17A1005989B0 /* Challenge.swift in Sources */,
 				CE252349278C70B0000A26C5 /* Global.swift in Sources */,
 				CE000D072860CE2200FAB4BD /* Chart.Trend.swift in Sources */,
