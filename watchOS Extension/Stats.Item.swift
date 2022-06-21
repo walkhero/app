@@ -15,7 +15,7 @@ extension Stats {
             .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
             .padding(.vertical, 7)
             .padding(.horizontal, 12)
-            .background(Color.accentColor.opacity(0.5))
+            .background(Color.accentColor.opacity(0.6))
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .padding(.horizontal)
             .padding(.vertical, 5)

@@ -75,14 +75,13 @@ struct Stats: View {
                     .stroke(trend.color, lineWidth: 2)
                 Image(systemName: trend.symbol)
                     .foregroundColor(trend.color)
-                    .font(.system(size: 16, weight: .bold))
-                    .frame(width: 30, height: 30)
+                    .font(.system(size: 14, weight: .bold))
+                    .frame(width: 26, height: 26)
             }
             .fixedSize()
             
             Text(value)
-                .font(.callout.weight(.semibold))
-                .foregroundStyle(.secondary)
+                .font(.callout.weight(.medium))
                 .lineLimit(1)
             
             Spacer()
