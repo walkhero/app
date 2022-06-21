@@ -3,21 +3,22 @@ import Hero
 
 extension Stats {
     struct Item: View {
+        let title: String
         let value: AttributedString
-        let trend: Chart.Trend?
         
         var body: some View {
-            HStack {
-//                if let trend = trend {
-//                    trend.symbol
-//                }
-//                Text(value
-//                    .numeric(font: .title3.monospacedDigit().weight(.regular),
-//                             color: .primary))
-//                    .font(.footnote.weight(.regular))
-//                    .foregroundColor(.secondary)
-//                Spacer()
-            }
+            Text(value.numeric(font: .body.monospacedDigit().weight(.medium),
+                                 color: .primary)
+                 + .init(" " + title))
+            .font(.footnote.weight(.regular))
+            .foregroundStyle(.secondary)
+            .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
+            .padding(.vertical, 7)
+            .padding(.horizontal, 12)
+            .background(Color.accentColor.opacity(0.5))
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .padding(.horizontal)
+            .padding(.vertical, 5)
         }
     }
 }

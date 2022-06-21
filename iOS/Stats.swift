@@ -65,13 +65,13 @@ struct Stats: View {
         
         title(value: "Steps")
         
-        Item(value: .steps(value: session.chart.steps.total),
+        Item(value: .plain(value: session.chart.steps.total),
              active: session.chart.steps.total > 0,
              content: Detail(title: "Steps",
                              trend: session.chart.steps.trend,
-                             average: .steps(value: session.chart.steps.average),
-                             max: .steps(value: session.chart.steps.max),
-                             total: .steps(value: session.chart.steps.total)))
+                             average: .plain(value: session.chart.steps.average),
+                             max: .plain(value: session.chart.steps.max),
+                             total: .plain(value: session.chart.steps.total)))
         
         title(value: "Distance")
         
@@ -86,18 +86,15 @@ struct Stats: View {
                              total: .metres(value: session.chart.metres.total,
                                            digits: 1)))
         
-        title(value: "Active calories")
+        title(value: "Calories")
         
-        Item(value: .calories(value: session.chart.calories.total, digits: 0),
+        Item(value: .calories(value: session.chart.calories.total),
              active: session.chart.calories.total > 0,
-             content: Detail(title: "Active calories",
+             content: Detail(title: "Calories",
                              trend: session.chart.metres.trend,
-                             average: .calories(value: session.chart.calories.average,
-                                              digits: 3),
-                             max: .calories(value: session.chart.calories.max,
-                                         digits: 3),
-                             total: .calories(value: session.chart.calories.total,
-                                           digits: 1)))
+                             average: .calories(value: session.chart.calories.average),
+                             max: .calories(value: session.chart.calories.max),
+                             total: .calories(value: session.chart.calories.total)))
     }
     
     private func title(value: String) -> some View {

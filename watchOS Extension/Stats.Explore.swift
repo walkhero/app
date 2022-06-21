@@ -34,6 +34,7 @@ extension Stats {
                         .lineLimit(1)
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
+                        .padding(.leading)
                 }
             }
         }

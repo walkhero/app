@@ -1,6 +1,12 @@
 import SwiftUI
 
 extension AttributedString {
+    static func plain(value: Int) -> Self {
+        var number = Self(value.formatted())
+        number.numberPart = .integer
+        return number
+    }
+    
     static func streak(value: Int) -> Self {
         var number = Self(value.formatted())
         number.numberPart = .integer
@@ -40,13 +46,8 @@ extension AttributedString {
                 .attributed)
     }
     
-    static func calories(value: Int, digits: Int) -> Self {
-        Measurement(value: .init(value), unit: UnitEnergy.calories)
-            .formatted(.measurement(width: .wide,
-                                    usage: .workout,
-                                    numberFormatStyle: .number
-                .precision(.fractionLength(digits > 0 ? 1 ... digits : 0 ... 0)))
-                .attributed)
+    static func calories(value: Int) -> Self {
+        format(value: value, singular: "calorie", plural: "calories")
     }
     
     static func duration(value: Int) -> Self {

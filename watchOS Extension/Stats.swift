@@ -9,6 +9,9 @@ struct Stats: View {
             VStack(spacing: 0) {
                 achievements
                 time
+                steps
+                distance
+                calories
             }
         }
     }
@@ -39,25 +42,31 @@ struct Stats: View {
     
     @ViewBuilder private var time: some View {
         title(value: "Time", trend: session.chart.duration.trend)
+        Item(title: "average", value: .duration(value: session.chart.duration.average))
+        Item(title: "max", value: .duration(value: session.chart.duration.max))
+        Item(title: "total", value: .duration(value: session.chart.duration.total))
     }
     
-//    @ViewBuilder private var health: some View {
-//        title(value: "Time")
-//
-//        Item(value: .duration(value: session.chart.duration.total),
-//             trend: nil)
-//
-//        title(value: "Health")
-//
-//        Item(value: .steps(value: session.chart.steps.total),
-//             trend: session.chart.steps.trend)
-//
-//        Item(value: .metres(value: session.chart.metres.total, digits: 0),
-//             trend: session.chart.metres.trend)
-//
-//        Item(value: .calories(value: session.chart.calories.total, digits: 0),
-//             trend: session.chart.calories.trend)
-//    }
+    @ViewBuilder private var steps: some View {
+        title(value: "Steps", trend: session.chart.steps.trend)
+        Item(title: "average", value: .plain(value: session.chart.steps.average))
+        Item(title: "max", value: .plain(value: session.chart.steps.max))
+        Item(title: "total", value: .plain(value: session.chart.steps.total))
+    }
+    
+    @ViewBuilder private var distance: some View {
+        title(value: "Distance", trend: session.chart.metres.trend)
+        Item(title: "average", value: .metres(value: session.chart.metres.average, digits: 1))
+        Item(title: "max", value: .metres(value: session.chart.metres.max, digits: 1))
+        Item(title: "total", value: .metres(value: session.chart.metres.total, digits: 1))
+    }
+    
+    @ViewBuilder private var calories: some View {
+        title(value: "Calories", trend: session.chart.calories.trend)
+        Item(title: "average", value: .plain(value: session.chart.calories.average))
+        Item(title: "max", value: .plain(value: session.chart.calories.max))
+        Item(title: "total", value: .plain(value: session.chart.calories.total))
+    }
     
     private func title(value: String, trend: Chart.Trend) -> some View {
         HStack(spacing: 10) {
@@ -80,5 +89,6 @@ struct Stats: View {
         }
         .padding(.horizontal)
         .padding(.top, 30)
+        .padding(.bottom, 10)
     }
 }
