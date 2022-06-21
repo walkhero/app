@@ -50,7 +50,6 @@ struct Upgrade: View {
         }
         .padding(.vertical, 12)
         .modifier(Card())
-        .padding(.top, 24)
         .alert(error, isPresented: $alert) { }
         .onReceive(store.status) {
             switch $0 {

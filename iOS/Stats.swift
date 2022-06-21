@@ -8,11 +8,17 @@ struct Stats: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
+                Spacer()
+                    .frame(height: 5)
+                
                 if Defaults.froob {
                     if !premium {
                         Upgrade()
                     }
                 }
+                
+                Today(updated: session.chart.updated?.start)
+                    .modifier(Card())
                 
                 achievements
                 health
@@ -21,7 +27,18 @@ struct Stats: View {
         }
         .safeAreaInset(edge: .top, spacing: 0) {
             Main.Title(title: "Overview")  {
-                EmptyView()
+                if let updated = session.chart.updated {
+                    Group {
+                        Text("Updated ")
+                            .font(.footnote.weight(.regular))
+                            
+                        + Text(updated.end, format: .relative(presentation: .named,
+                                                              unitsStyle: .abbreviated))
+                        .font(.footnote.weight(.regular))
+                        .foregroundColor(.secondary)
+                    }
+                    .padding(.trailing)
+                }
             }
         }
     }
@@ -89,8 +106,7 @@ struct Stats: View {
         Text(value)
             .font(.body.weight(.medium))
             .foregroundStyle(.tertiary)
-            .padding(.leading, 20)
-            .padding(.top, 25)
+            .padding([.top, .leading], 20)
             .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
     }
 }

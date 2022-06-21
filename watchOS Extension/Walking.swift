@@ -4,10 +4,18 @@ import Hero
 struct Walking: View {
     @ObservedObject var session: Session
     @StateObject private var walker = Walker()
+    @State private var selection = 0
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
+        TabView(selection: $selection) {
+            Actions(walker: walker)
+            
+//            Stats(session: session)
+        }
+        
+        
+//        ScrollView {
+//            VStack(spacing: 20) {
 //                Explore(walker: walker)
 //                
 //                Streak(streak: session.chart.streak.current, walks: session.chart.walks)
@@ -23,15 +31,15 @@ struct Walking: View {
 //                Item(value: .calories(value: walker.calories, digits: 3),
 //                     limit: session.chart.calories.max > 0 ? .calories(value: session.chart.calories.max, digits: 1) : nil,
 //                     progress: .init(current: walker.calories, max: session.chart.calories.max))
-            }
-            .padding(.vertical, 20)
-        }
-        .onChange(of: session.tiles) {
-            walker.tiles = $0
-        }
-        .task {
-            walker.tiles = session.tiles
-            await walker.start(date: .init(timestamp: session.walking))
-        }
+//            }
+//            .padding(.vertical, 20)
+//        }
+//        .onChange(of: session.tiles) {
+//            walker.tiles = $0
+//        }
+//        .task {
+//            walker.tiles = session.tiles
+//            await walker.start(date: .init(timestamp: session.walking))
+//        }
     }
 }

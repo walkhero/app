@@ -7,6 +7,8 @@ struct Main: View {
     var body: some View {
         TabView(selection: $selection) {
             VStack {
+                Spacer()
+                
                 Text("Walk")
                     .font(.title3.weight(.bold))
                     .foregroundStyle(.tertiary)
@@ -23,6 +25,8 @@ struct Main: View {
                 .buttonBorderShape(.capsule)
                 .buttonStyle(.borderedProminent)
                 .padding(.horizontal, 30)
+                
+                Spacer()
             }
             
             Stats(session: session)
