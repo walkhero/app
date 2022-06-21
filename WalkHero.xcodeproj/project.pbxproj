@@ -294,12 +294,12 @@
 				CE000D0B2860D05E00FAB4BD /* Stats.Item.swift */,
 				CE000D042860CD3700FAB4BD /* Stats.swift */,
 				CEBE58EA2861B7050062733B /* Walking.Actions.swift */,
+				CE12C6782862145E00274FE6 /* Walking.Card.swift */,
 				CE12C66E286209B000274FE6 /* Walking.Explore.swift */,
+				CE12C6762862108500274FE6 /* Walking.Item.swift */,
 				CE12C67428620F5E00274FE6 /* Walking.Streak.swift */,
 				CE000D0F2860D9DE00FAB4BD /* Walking.swift */,
-				CE12C6762862108500274FE6 /* Walking.Item.swift */,
 				CE12C67028620C6E00274FE6 /* Walking.Top.swift */,
-				CE12C6782862145E00274FE6 /* Walking.Card.swift */,
 				CE000CFF2860CC8200FAB4BD /* Window.swift */,
 			);
 			path = "watchOS Extension";

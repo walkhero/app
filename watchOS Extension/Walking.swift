@@ -28,7 +28,7 @@ struct Walking: View {
                     
                     Streak(streak: session.chart.streak.current, walks: session.chart.walks)
                 }
-                .padding(.horizontal)
+//                .padding(.horizontal)
             }
         }
         .onChange(of: session.tiles) {

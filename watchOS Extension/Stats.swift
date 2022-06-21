@@ -37,7 +37,6 @@ struct Stats: View {
         }
         .font(.footnote.weight(.regular))
         .foregroundColor(.secondary)
-        .padding(.horizontal)
     }
     
     @ViewBuilder private var time: some View {
@@ -75,8 +74,8 @@ struct Stats: View {
                     .stroke(trend.color, lineWidth: 2)
                 Image(systemName: trend.symbol)
                     .foregroundColor(trend.color)
-                    .font(.system(size: 14, weight: .bold))
-                    .frame(width: 26, height: 26)
+                    .font(.system(size: 12, weight: .bold))
+                    .frame(width: 24, height: 24)
             }
             .fixedSize()
             
@@ -86,8 +85,8 @@ struct Stats: View {
             
             Spacer()
         }
-        .padding(.horizontal)
-        .padding(.top, 30)
-        .padding(.bottom, 10)
+        .padding(.top, 20)
+        .padding(.bottom, 7)
+        .padding(.leading, 4)
     }
 }

@@ -16,8 +16,7 @@ extension Stats {
             .padding(.horizontal, 12)
             .background(Color.accentColor.opacity(0.6))
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-            .padding(.horizontal)
-            .padding(.vertical, 5)
+            .padding(.vertical, 2)
         }
     }
 }
