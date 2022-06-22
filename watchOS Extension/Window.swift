@@ -16,9 +16,8 @@ struct Window: View {
                 .edgesIgnoringSafeArea(.all)
         } else if session.walking > 0 {
             Walking(session: session)
-//        } else if let summary = session.summary {
-//            Results(session: session, summary: summary)
-//                .transition(.opacity)
+        } else if let summary = session.summary {
+            Results(session: session, summary: summary)
         } else {
             Main(session: session)
         }
