@@ -14,7 +14,7 @@ final class Map: MKMapView, UIViewRepresentable, ObservableObject, MKMapViewDele
         showsUserLocation = true
         pointOfInterestFilter = .excludingAll
         showsTraffic = false
-        mapType = .standard
+        mapType = .mutedStandard
         delegate = self
         setCameraZoomRange(.init(maxCenterCoordinateDistance: limit), animated: false)
         setUserTrackingMode(.follow, animated: false)
