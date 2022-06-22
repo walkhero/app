@@ -61,14 +61,12 @@ struct Results: View {
                     
                     item(date: timeline.date,
                          index: 18) {
-                        Button {
+                        Button("Done") {
                             withAnimation(.easeInOut(duration: 0.6)) {
                                 session.summary = nil
                             }
-                        } label: {
-                            Text("Done")
-                                .font(.callout.weight(.bold))
                         }
+                        .font(.callout.weight(.bold))
                         .tint(.white)
                         .foregroundColor(.accentColor)
                         .buttonStyle(.borderedProminent)

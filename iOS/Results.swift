@@ -63,6 +63,10 @@ struct Results: View {
                         withAnimation(.easeInOut(duration: 0.6)) {
                             session.summary = nil
                         }
+                        
+                        if Defaults.rate {
+                            UIApplication.shared.review()
+                        }
                     } label: {
                         Text("Done")
                             .font(.callout.weight(.bold))
