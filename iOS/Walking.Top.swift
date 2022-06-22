@@ -16,10 +16,17 @@ extension Walking {
                             Text(.duration(start: session.walking, current: time.date))
                                 .font(.system(size: 30, weight: .medium).monospacedDigit())
                                 .frame(height: 70)
-                            Progress(current: .init(time.date.timestamp - session.walking),
-                                     max: session.chart.duration.max)
-                                .stroke(Color.accentColor, style: .init(lineWidth: 6, lineCap: .round))
-                                .frame(height: 6)
+                            
+                            ZStack {
+                                Capsule()
+                                    .fill(.quaternary)
+                                if session.walking > 0 && session.chart.duration.max > 0 {
+                                    Progress(current: .init(time.date.timestamp - session.walking),
+                                             max: 300)
+                                        .stroke(Color.accentColor, style: .init(lineWidth: 3, lineCap: .round))
+                                }
+                            }
+                            .frame(height: 3)
                         }
                     }
                     
