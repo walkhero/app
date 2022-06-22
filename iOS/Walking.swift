@@ -9,8 +9,6 @@ struct Walking: View {
             VStack(spacing: 20) {
                 Explore(walker: walker)
                 
-                Streak(streak: session.chart.streak.current, walks: session.chart.walks)
-
                 Item(value: .steps(value: walker.steps),
                      limit: session.chart.steps.max > 0 ? .steps(value: session.chart.steps.max) : nil,
                      progress: .init(current: walker.steps, max: session.chart.steps.max))
@@ -22,6 +20,8 @@ struct Walking: View {
                 Item(value: .calories(value: walker.calories),
                      limit: session.chart.calories.max > 0 ? .calories(value: session.chart.calories.max) : nil,
                      progress: .init(current: walker.calories, max: session.chart.calories.max))
+                
+                Streak(streak: session.chart.streak.current, walks: session.chart.walks)
             }
             .padding(.vertical, 20)
         }

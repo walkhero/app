@@ -19,14 +19,14 @@ extension Walking {
                             
                             ZStack {
                                 Capsule()
-                                    .fill(.quaternary)
+                                    .fill(Color.accentColor.opacity(0.2))
                                 if session.walking > 0 && session.chart.duration.max > 0 {
                                     Progress(current: .init(time.date.timestamp - session.walking),
                                              max: session.chart.duration.max)
-                                        .stroke(Color.accentColor, style: .init(lineWidth: 3, lineCap: .round))
+                                        .stroke(Color.accentColor, style: .init(lineWidth: 4, lineCap: .round))
                                 }
                             }
-                            .frame(height: 3)
+                            .frame(height: 4)
                         }
                     }
                     
@@ -67,7 +67,6 @@ extension Walking {
                     .frame(height: 70)
                 }
                 .fixedSize(horizontal: false, vertical: true)
-                Divider()
             }
             .background(Color(.systemBackground))
         }

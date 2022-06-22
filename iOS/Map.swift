@@ -50,7 +50,7 @@ final class Map: MKMapView, UIViewRepresentable, ObservableObject, MKMapViewDele
     
     override func touchesBegan(_: Set<UITouch>, with: UIEvent?) {
         guard cameraZoomRange.maxCenterCoordinateDistance == limit else { return }
-        setCameraZoomRange(.init(maxCenterCoordinateDistance: 6000), animated: true)
+        setCameraZoomRange(.init(maxCenterCoordinateDistance: 5000), animated: true)
     }
     
     func makeUIView(context: Context) -> Map {
