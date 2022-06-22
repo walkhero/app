@@ -42,10 +42,6 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
             await refresh()
         }
     }
-    
-    deinit {
-        print("walker gone")
-    }
 
     @MainActor func start(date: Date) async {
         manager.startUpdatingLocation()
@@ -179,8 +175,6 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
 #endif
 
         manager.stopUpdatingLocation()
-        
-        print("cleared")
     }
 
     func locationManager(_: CLLocationManager, didUpdateLocations: [CLLocation]) {
