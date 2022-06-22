@@ -22,7 +22,7 @@ extension Walking {
                                     .fill(.quaternary)
                                 if session.walking > 0 && session.chart.duration.max > 0 {
                                     Progress(current: .init(time.date.timestamp - session.walking),
-                                             max: 300)
+                                             max: session.chart.duration.max)
                                         .stroke(Color.accentColor, style: .init(lineWidth: 3, lineCap: .round))
                                 }
                             }

@@ -6,12 +6,23 @@ extension Walking {
         @State private var alert = false
         
         var body: some View {
-            VStack(spacing: 0) {
+            ZStack {
                 if alert {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .font(.system(size: 35, weight: .light))
-                        .symbolRenderingMode(.hierarchical)
-                        .foregroundColor(.yellow)
+                    VStack {
+                        Image(systemName: "exclamationmark.triangle.fill")
+                            .font(.system(size: 35, weight: .light))
+                            .symbolRenderingMode(.hierarchical)
+                            .foregroundColor(.yellow)
+                        
+                        Spacer()
+                        
+                        Button("Keep walking", role: .cancel) {
+                            alert = false
+                        }
+                        .font(.callout.weight(.regular))
+                        .buttonStyle(.plain)
+                        .foregroundStyle(.secondary)
+                    }
                     
                     Button("Cancel walk", role: .destructive) {
                         Task {
@@ -20,28 +31,26 @@ extension Walking {
                     }
                     .font(.callout)
                     .padding(.horizontal)
-                    .padding(.vertical, 20)
-                    
-                    Button("Keep walking", role: .cancel) {
-                        alert = false
-                    }
-                    .font(.callout.weight(.regular))
-                    .buttonStyle(.plain)
-                    .foregroundStyle(.secondary)
                 } else {
-                    HStack {
-                        Button("Cancel", role: .destructive) {
-                            alert = true
+                    VStack {
+                        HStack {
+                            Button("Cancel", role: .destructive) {
+                                alert = true
+                            }
+                            .font(.callout.weight(.regular))
+                            .foregroundStyle(.secondary)
+                            .buttonStyle(.plain)
+                            .padding(.leading, 22)
+                            
+                            Spacer()
                         }
-                        .font(.callout.weight(.regular))
-                        .foregroundStyle(.secondary)
-                        .buttonStyle(.plain)
-                        .padding(.leading, 22)
                         
                         Spacer()
+                        
+                        Image(systemName: "figure.walk")
+                            .font(.system(size: 25, weight: .light))
+                            .foregroundStyle(.tertiary)
                     }
-                    
-                    Spacer()
                     
                     Button("Finish") {
                         Task {
@@ -51,8 +60,6 @@ extension Walking {
                     .font(.body.weight(.semibold))
                     .buttonStyle(.borderedProminent)
                     .padding(.horizontal, 16)
-                    
-                    Spacer()
                 }
             }
             .animation(.easeInOut(duration: 0.4), value: alert)

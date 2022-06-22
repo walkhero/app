@@ -7,26 +7,21 @@ extension Walking {
         let indicator: Indicator
         
         var body: some View {
-            VStack {
-                Text(value
-                    .numeric(font: .title3.monospacedDigit().weight(.medium),
-                             color: .primary))
-                .font(.footnote.weight(.regular))
-                .lineLimit(1)
-                .foregroundColor(.secondary)
-                .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-                
-                if let limit = limit {
-                    Text(limit)
-                        .font(.footnote.monospacedDigit().weight(.regular))
-                        .foregroundStyle(.tertiary)
-                        .lineLimit(1)
-                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
-                }
-                
-                indicator
+            Text(value
+                .numeric(font: .title2.monospacedDigit().weight(.medium),
+                         color: .primary))
+            .font(.footnote.weight(.regular))
+            .lineLimit(1)
+            .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
+            .modifier(indicator)
+            
+            if let limit = limit {
+                Text(limit)
+                    .font(.footnote.monospacedDigit().weight(.regular))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
             }
-            .modifier(Card())
         }
     }
 }

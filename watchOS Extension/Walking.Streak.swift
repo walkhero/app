@@ -7,15 +7,12 @@ extension Walking {
         
         var body: some View {
             Text(.streak(value: streak)
-                .numeric(font: .title3.monospacedDigit().weight(.medium),
-                         color: .primary)
                  + .init(", ")
                  + .walks(value: walks))
-            .font(.footnote.weight(.regular))
+            .font(.footnote.monospacedDigit().weight(.regular))
             .lineLimit(1)
-            .foregroundColor(.secondary)
-            .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-            .modifier(Card())
+            .foregroundStyle(.secondary)
+            .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
         }
     }
 }

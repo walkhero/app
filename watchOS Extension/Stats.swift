@@ -6,13 +6,11 @@ struct Stats: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 0) {
-                achievements
-                time
-                steps
-                distance
-                calories
-            }
+            achievements
+            time
+            steps
+            distance
+            calories
         }
     }
     
@@ -20,18 +18,17 @@ struct Stats: View {
         Explore(leaf: .init(squares: session.tiles.count))
 
         Divider()
-            .padding(.vertical, 10)
         
         HStack {
             Text(.streak(value: session.chart.streak.current)
-                .numeric(font: .title3.monospacedDigit().weight(.regular),
+                .numeric(font: .body.monospacedDigit().weight(.regular),
                          color: .primary))
             .lineLimit(1)
             
             Spacer()
             
             Text(.walks(value: session.chart.walks)
-                .numeric(font: .title3.monospacedDigit().weight(.regular),
+                .numeric(font: .body.monospacedDigit().weight(.regular),
                          color: .primary))
             .lineLimit(1)
         }
@@ -86,7 +83,7 @@ struct Stats: View {
             Spacer()
         }
         .padding(.top, 20)
-        .padding(.bottom, 7)
+        .padding(.bottom, 5)
         .padding(.leading, 4)
     }
 }

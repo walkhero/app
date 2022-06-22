@@ -29,13 +29,12 @@
 		CE1091B7285F408B00CB88EB /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1091B6285F408B00CB88EB /* Streak.swift */; };
 		CE120553285C87E300584E58 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE120552285C87E300584E58 /* Map.swift */; };
 		CE120555285C8A3100584E58 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE120554285C8A3100584E58 /* Mapper.swift */; };
-		CE12C66D2862099900274FE6 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41574D2859D3A5001513A0 /* Progress.swift */; };
 		CE12C66F286209B000274FE6 /* Walking.Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C66E286209B000274FE6 /* Walking.Explore.swift */; };
 		CE12C67128620C6E00274FE6 /* Walking.Top.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C67028620C6E00274FE6 /* Walking.Top.swift */; };
 		CE12C67328620D1600274FE6 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C67228620D1600274FE6 /* Indicator.swift */; };
 		CE12C67528620F5E00274FE6 /* Walking.Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C67428620F5E00274FE6 /* Walking.Streak.swift */; };
 		CE12C6772862108500274FE6 /* Walking.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C6762862108500274FE6 /* Walking.Item.swift */; };
-		CE12C6792862145E00274FE6 /* Walking.Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C6782862145E00274FE6 /* Walking.Card.swift */; };
+		CE12C6792862145E00274FE6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C6782862145E00274FE6 /* Card.swift */; };
 		CE1912B6285CC7E400956D95 /* Main.Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912B5285CC7E400956D95 /* Main.Navigation.swift */; };
 		CE1912B8285CDD4000956D95 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912B7285CDD4000956D95 /* Settings.swift */; };
 		CE1912BA285CDEA400956D95 /* Settings.Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1912B9285CDEA400956D95 /* Settings.Info.swift */; };
@@ -72,6 +71,8 @@
 		CE96341F277CA1F700CCFF4B /* Streak.Month.Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963419277CA1F700CCFF4B /* Streak.Month.Day.swift */; };
 		CE963421277CA1F700CCFF4B /* Streak.Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341B277CA1F700CCFF4B /* Streak.Navigation.swift */; };
 		CE963423277CA1F700CCFF4B /* Streak.Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341D277CA1F700CCFF4B /* Streak.Month.swift */; };
+		CEAA8C8A286317FB0009D440 /* Indicator.Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA8C89286317FB0009D440 /* Indicator.Progress.swift */; };
+		CEAA8C8C28631CEF0009D440 /* Walking.Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA8C8B28631CEF0009D440 /* Walking.Progress.swift */; };
 		CEB0D6D8278DC0CE00A7C9AF /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6D7278DC0CE00A7C9AF /* Walking.swift */; };
 		CEBE58EB2861B7050062733B /* Walking.Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE58EA2861B7050062733B /* Walking.Actions.swift */; };
 		CEBE58ED2861C4DB0062733B /* Stats.Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE58EC2861C4DB0062733B /* Stats.Today.swift */; };
@@ -168,7 +169,7 @@
 		CE12C67228620D1600274FE6 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		CE12C67428620F5E00274FE6 /* Walking.Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Streak.swift; sourceTree = "<group>"; };
 		CE12C6762862108500274FE6 /* Walking.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Item.swift; sourceTree = "<group>"; };
-		CE12C6782862145E00274FE6 /* Walking.Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Card.swift; sourceTree = "<group>"; };
+		CE12C6782862145E00274FE6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CE1912B5285CC7E400956D95 /* Main.Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Navigation.swift; sourceTree = "<group>"; };
 		CE1912B7285CDD4000956D95 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CE1912B9285CDEA400956D95 /* Settings.Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Info.swift; sourceTree = "<group>"; };
@@ -202,6 +203,8 @@
 		CE963419277CA1F700CCFF4B /* Streak.Month.Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.Month.Day.swift; sourceTree = "<group>"; };
 		CE96341B277CA1F700CCFF4B /* Streak.Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.Navigation.swift; sourceTree = "<group>"; };
 		CE96341D277CA1F700CCFF4B /* Streak.Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.Month.swift; sourceTree = "<group>"; };
+		CEAA8C89286317FB0009D440 /* Indicator.Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.Progress.swift; sourceTree = "<group>"; };
+		CEAA8C8B28631CEF0009D440 /* Walking.Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Progress.swift; sourceTree = "<group>"; };
 		CEAB4A2D278C44CB00E23DF5 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		CEADD73327960E8600636974 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		CEB0D6D7278DC0CE00A7C9AF /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
@@ -287,6 +290,8 @@
 				CE25233B278C6FFD000A26C5 /* Info.plist */,
 				CE252330278C6FFD000A26C5 /* App.Delegate.swift */,
 				CE252332278C6FFD000A26C5 /* App.swift */,
+				CE12C6782862145E00274FE6 /* Card.swift */,
+				CEAA8C89286317FB0009D440 /* Indicator.Progress.swift */,
 				CE12C67228620D1600274FE6 /* Indicator.swift */,
 				CEBE58EE2861CA730062733B /* Main.Actions.swift */,
 				CE000D0D2860D7F900FAB4BD /* Main.swift */,
@@ -294,9 +299,9 @@
 				CE000D0B2860D05E00FAB4BD /* Stats.Item.swift */,
 				CE000D042860CD3700FAB4BD /* Stats.swift */,
 				CEBE58EA2861B7050062733B /* Walking.Actions.swift */,
-				CE12C6782862145E00274FE6 /* Walking.Card.swift */,
 				CE12C66E286209B000274FE6 /* Walking.Explore.swift */,
 				CE12C6762862108500274FE6 /* Walking.Item.swift */,
+				CEAA8C8B28631CEF0009D440 /* Walking.Progress.swift */,
 				CE12C67428620F5E00274FE6 /* Walking.Streak.swift */,
 				CE000D0F2860D9DE00FAB4BD /* Walking.swift */,
 				CE12C67028620C6E00274FE6 /* Walking.Top.swift */,
@@ -348,6 +353,7 @@
 				CE1091B4285F3E8D00CB88EB /* Main.Title.swift */,
 				CE120552285C87E300584E58 /* Map.swift */,
 				CE120554285C8A3100584E58 /* Mapper.swift */,
+				CE41574D2859D3A5001513A0 /* Progress.swift */,
 				CE000CF628607F6200FAB4BD /* Purchases.swift */,
 				CE000CFC2860AD3C00FAB4BD /* Results.Item.swift */,
 				CE000CFA2860A00800FAB4BD /* Results.swift */,
@@ -390,7 +396,6 @@
 				CEDF5D78285E037B00BD19A4 /* Chart.Trend.swift */,
 				CEF40CA92779F6D9001BECAB /* Global.swift */,
 				CE3965EC285B7CFE008A3CAF /* Leaf.Name.swift */,
-				CE41574D2859D3A5001513A0 /* Progress.swift */,
 				CED84664285893A7002A4BE6 /* Session.swift */,
 				CE005EE2285A4B0B00CE370E /* Walker.swift */,
 				CEF40CBC2779FBB3001BECAB /* Accent.xcassets */,
@@ -547,16 +552,17 @@
 			files = (
 				CE252333278C6FFD000A26C5 /* App.swift in Sources */,
 				CE12C67328620D1600274FE6 /* Indicator.swift in Sources */,
-				CE12C6792862145E00274FE6 /* Walking.Card.swift in Sources */,
+				CEAA8C8C28631CEF0009D440 /* Walking.Progress.swift in Sources */,
+				CE12C6792862145E00274FE6 /* Card.swift in Sources */,
 				CE000D112860DA1D00FAB4BD /* Walker.swift in Sources */,
 				CE000D062860CD3700FAB4BD /* Stats.swift in Sources */,
 				CE252331278C6FFD000A26C5 /* App.Delegate.swift in Sources */,
 				CE12C6772862108500274FE6 /* Walking.Item.swift in Sources */,
-				CE12C66D2862099900274FE6 /* Progress.swift in Sources */,
 				CE000CFE2860CBFD00FAB4BD /* Session.swift in Sources */,
 				CE000D0E2860D7F900FAB4BD /* Main.swift in Sources */,
 				CE3965DF285B37F9008A3CAF /* AttributedString.swift in Sources */,
 				CEBE58EF2861CA730062733B /* Main.Actions.swift in Sources */,
+				CEAA8C8A286317FB0009D440 /* Indicator.Progress.swift in Sources */,
 				CE846E68278E17A1005989B0 /* Challenge.swift in Sources */,
 				CE12C67128620C6E00274FE6 /* Walking.Top.swift in Sources */,
 				CE252349278C70B0000A26C5 /* Global.swift in Sources */,
