@@ -7,9 +7,11 @@ struct Stats: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
+            VStack(spacing: 10) {
                 Spacer()
                     .frame(height: 5)
+                
+                Today(updated: session.chart.updated?.start)
                 
                 if Defaults.froob {
                     if !premium {
@@ -17,13 +19,10 @@ struct Stats: View {
                     }
                 }
                 
-                Today(updated: session.chart.updated?.start)
-                    .modifier(Card())
-                
                 achievements
                 health
             }
-            .padding(.bottom, 50)
+            .padding(.bottom, 40)
         }
         .safeAreaInset(edge: .top, spacing: 0) {
             Main.Title(title: "Overview")  {
@@ -42,8 +41,6 @@ struct Stats: View {
     }
     
     @ViewBuilder private var achievements: some View {
-        title(value: "Achievements")
-        
         Explore(leaf: .init(squares: session.tiles.count))
         
         Item(value: .streak(value: session.chart.streak.current)

@@ -5,29 +5,28 @@ extension Stats {
         let updated: Date?
         
         var body: some View {
-            if let updated = updated, Calendar.global.isDateInToday(updated) {
-                HStack {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 22, weight: .light))
-                        .symbolRenderingMode(.hierarchical)
-                        .foregroundColor(.accentColor)
+            HStack {
+                Spacer()
+                if let updated = updated, Calendar.global.isDateInToday(updated) {
                     Text("Walk today")
                         .font(.footnote.weight(.semibold))
                         .foregroundColor(.accentColor)
-                    Spacer()
-                }
-            } else {
-                HStack {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .font(.system(size: 22, weight: .light))
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: 20, weight: .light))
                         .symbolRenderingMode(.hierarchical)
-                        .foregroundColor(.pink)
+                        .foregroundColor(.accentColor)
+                } else {
                     Text("No walk today")
                         .font(.footnote.weight(.semibold))
                         .foregroundColor(.accentColor)
-                    Spacer()
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .font(.system(size: 20, weight: .light))
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.pink)
                 }
             }
+            .padding(.horizontal)
+            .padding(.vertical, 4)
         }
     }
 }
