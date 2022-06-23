@@ -16,7 +16,7 @@ extension Walking {
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                     
                     Image(systemName: "leaf.circle.fill")
-                        .font(.system(size: 32, weight: .ultraLight))
+                        .font(.system(size: 30, weight: .ultraLight))
                         .symbolRenderingMode(.palette)
                         .foregroundStyle(.black, walker.leaf.name.color)
                         .padding(.trailing, 10)
