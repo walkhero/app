@@ -6,19 +6,28 @@ extension Walking {
         let limit: Bool
         
         var body: some View {
-            Text(.squares(value: walker.explored)
-                .numeric(font: .title2.monospacedDigit().weight(.medium),
-                         color: .primary))
-                .font(.footnote.weight(.regular))
-                .lineLimit(1)
-                .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-                .modifier(Indicator(current: walker.leaf.squares, max: walker.leaf.next))
+            HStack(alignment: .firstTextBaseline) {
+                Text(.squares(value: walker.explored)
+                    .numeric(font: .title3.monospacedDigit().weight(.medium),
+                             color: .primary))
+                    .font(.footnote.weight(.regular))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .fixedSize()
+                
+                Indicator(current: walker.leaf.squares, max: walker.leaf.next)
+            }
+            .padding(.top, 2)
             
             if limit && walker.leaf.squares > 0 {
-                Text(walker.leaf.squares.formatted() + " of " + walker.leaf.next.formatted())
+                Text((.plain(value: walker.leaf.squares)
+                    + .init(" of ")
+                      + .plain(value: walker.leaf.next))
+                    .numeric(font: .footnote.monospacedDigit().weight(.regular),
+                             color: .secondary))
                     .font(.footnote.weight(.regular))
                     .lineLimit(1)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(.tertiary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
             }
         }

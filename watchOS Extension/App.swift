@@ -30,8 +30,6 @@ import HealthKit
                             .detached {
                                 await request()
                             }
-                        
-                        session.loading = false
                     }
                 }
         }

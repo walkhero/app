@@ -7,18 +7,24 @@ extension Walking {
         let indicator: Indicator
         
         var body: some View {
-            Text(value
-                .numeric(font: .title2.monospacedDigit().weight(.medium),
-                         color: .primary))
-            .font(.footnote.weight(.regular))
-            .lineLimit(1)
-            .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-            .modifier(indicator)
+            HStack(alignment: .firstTextBaseline) {
+                Text(value
+                    .numeric(font: .title3.monospacedDigit().weight(.medium),
+                             color: .primary))
+                .font(.footnote.weight(.regular))
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .fixedSize()
+                
+                indicator
+            }
+            .padding(.top, 6)
             
             if let limit = limit {
-                Text(limit)
-                    .font(.footnote.monospacedDigit().weight(.regular))
-                    .foregroundStyle(.secondary)
+                Text(limit.numeric(font: .footnote.monospacedDigit().weight(.regular),
+                                   color: .secondary))
+                    .font(.footnote.weight(.regular))
+                    .foregroundStyle(.tertiary)
                     .lineLimit(1)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
             }

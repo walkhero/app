@@ -13,9 +13,11 @@ extension Walking {
                 ZStack {
                     TimelineView(.animation(minimumInterval: 1, paused: phase != .active)) { time in
                         VStack(spacing: 0) {
-                            Text(.duration(start: session.walking, current: time.date))
-                                .font(.system(size: 30, weight: .medium).monospacedDigit())
-                                .frame(height: 60)
+                            if session.walking > 0 {
+                                Text(.duration(start: session.walking, current: time.date))
+                                    .font(.system(size: 30, weight: .medium).monospacedDigit())
+                                    .frame(height: 60)
+                            }
                             
                             if session.chart.walks > 0 {
                                 Text((.streak(value: session.chart.streak.current)

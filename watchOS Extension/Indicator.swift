@@ -1,23 +1,17 @@
 import SwiftUI
 
-struct Indicator: ViewModifier {
+struct Indicator: View {
     let current: Int
     let max: Int
     
-    func body(content: Content) -> some View {
-        content
-            .padding(.vertical, 2)
-            .padding(.leading, 16)
-            .background(background)
-            .clipShape(Capsule())
-    }
-    
-    private var background: some View {
+    var body: some View {
         ZStack {
-            Progress(current: 1, max: 1)
+            Capsule()
                 .fill(.quaternary)
             Progress(current: current, max: max)
-                .fill(Color.accentColor.opacity(1))
+                .stroke(Color.accentColor, style: .init(lineWidth: 5, lineCap: .round))
         }
+        .frame(height: 5)
+        .padding(.leading)
     }
 }

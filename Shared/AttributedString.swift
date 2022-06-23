@@ -39,7 +39,7 @@ extension AttributedString {
     
     static func metres(value: Int, digits: Int) -> Self {
         Measurement(value: .init(value), unit: UnitLength.meters)
-            .formatted(.measurement(width: .wide,
+            .formatted(.measurement(width: metresWidth,
                                     usage: .road,
                                     numberFormatStyle: .number
                 .precision(.fractionLength(digits > 0 ? 1 ... digits : 0 ... 0)))
@@ -73,14 +73,14 @@ extension AttributedString {
         
         var duration = Self(string)
         
-        if Int(current.timeIntervalSince1970) % 2 == 1 {
-            if let range = duration.range(of: ":") {
-                duration[range].foregroundColor = .clear
+        [duration.range(of: ":"),
+         duration.range(of: ":", options: [.backwards])]
+            .compactMap { $0 }
+            .forEach {
+                duration[$0].foregroundColor = Int(current.timeIntervalSince1970) % 2 == 1
+                ? .clear
+                : .secondary
             }
-            if let range = duration.range(of: ":", options: [.backwards]) {
-                duration[range].foregroundColor = .clear
-            }
-        }
         
         return duration
     }
@@ -101,4 +101,14 @@ extension AttributedString {
         }
         return value
     }
+    
+#if os(watchOS)
+    private static var metresWidth: Measurement<UnitLength>.FormatStyle.UnitWidth {
+        .abbreviated
+    }
+#else
+    private static var metresWidth: Measurement<UnitLength>.FormatStyle.UnitWidth {
+        .wide
+    }
+#endif
 }

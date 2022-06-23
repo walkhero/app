@@ -56,7 +56,7 @@ extension Walking {
                     
                     Button("Finish") {
                         Task {
-                            await summary(summary: walker.finish())
+                            session.summary = await walker.finish()
                         }
                     }
                     .font(.body.weight(.semibold))
@@ -65,12 +65,6 @@ extension Walking {
                 }
             }
             .animation(.easeInOut(duration: 0.4), value: alert)
-        }
-        
-        private func summary(summary: Summary?) async {
-            withAnimation(.easeInOut(duration: 0.6)) {
-                session.summary = summary
-            }
         }
     }
 }

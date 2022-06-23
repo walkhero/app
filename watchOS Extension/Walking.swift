@@ -7,8 +7,8 @@ struct Walking: View {
     
     var body: some View {
         TabView(selection: $selection) {
+            Info(session: session, walker: walker)
             Actions(session: session, walker: walker)
-            Progress(session: session, walker: walker)
         }
         .onChange(of: session.tiles) {
             walker.tiles = $0
