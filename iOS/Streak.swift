@@ -33,8 +33,18 @@ struct Streak: View {
             
             Month(days: calendar[index])
                 .frame(maxWidth: 350)
+                .animation(.spring(), value: index)
             
             Spacer()
+            
+            if index < calendar.count - 1 {
+                Button("Today") {
+                    index = calendar.count - 1
+                }
+                .font(.callout.weight(.medium))
+                .buttonStyle(.borderedProminent)
+                .padding(.bottom, 20)
+            }
         }
         .safeAreaInset(edge: .top, spacing: 0) {
             Main.Title(title: "Streak") {
