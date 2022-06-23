@@ -58,7 +58,20 @@ extension AttributedString {
     }
     
     static func duration(start: UInt32, current: Date) -> Self {
-        var duration = Self((.init(timestamp: start) ..< current).formatted(.timeDuration))
+        var string = (.init(timestamp: start) ..< current).formatted(.timeDuration)
+        
+        switch string.count {
+        case 1:
+            string = "00:0" + string
+        case 2:
+            string = "00:" + string
+        case 4:
+            string = "0" + string
+        default:
+            break
+        }
+        
+        var duration = Self(string)
         
         if Int(current.timeIntervalSince1970) % 2 == 1 {
             if let range = duration.range(of: ":") {
