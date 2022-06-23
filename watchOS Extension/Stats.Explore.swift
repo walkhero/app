@@ -23,7 +23,7 @@ extension Stats {
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                 }
             }
-            .padding(.bottom, 2)
+            .padding(.vertical, 2)
             
             if leaf.squares > 0 {
                 Text(.squares(value: leaf.squares)
