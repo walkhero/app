@@ -29,8 +29,6 @@ import Hero
                                 await request()
                                 await store.launch()
                             }
-                        
-                        session.loading = false
                     }
                 }
         }

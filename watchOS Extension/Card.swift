@@ -5,7 +5,7 @@ struct Card: ViewModifier {
         content
             .padding(.vertical, 7)
             .padding(.horizontal, 10)
-            .background(Color.accentColor.opacity(0.4))
+            .background(Color.accentColor.opacity(0.6))
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
 }

@@ -11,5 +11,8 @@ final class Session: ObservableObject {
     @MainActor func update(chart: Chart, tiles: Set<Squares.Item>) {
         self.chart = chart
         self.tiles = tiles
+        
+        guard loading else { return }
+        loading = false
     }
 }
