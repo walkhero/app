@@ -10,7 +10,7 @@ extension Results {
                          color: .primary))
                 .font(.body.weight(.medium))
                 .foregroundStyle(.secondary)
-                .padding(.top, 14)
+                .padding(.top, 10)
                 .padding(.bottom, 3)
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
             

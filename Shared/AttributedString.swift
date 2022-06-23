@@ -52,26 +52,16 @@ extension AttributedString {
     
     static func duration(value: Int) -> Self {
         var duration = Self((Date(timeIntervalSinceNow: -.init(value)) ..< .now)
-            .formatted(.timeDuration))
+            .formatted(.timeDuration)
+            .zeroPad)
         duration.numberPart = .integer
         return duration
     }
     
     static func duration(start: UInt32, current: Date) -> Self {
-        var string = (.init(timestamp: start) ..< current).formatted(.timeDuration)
-        
-        switch string.count {
-        case 1:
-            string = "00:0" + string
-        case 2:
-            string = "00:" + string
-        case 4:
-            string = "0" + string
-        default:
-            break
-        }
-        
-        var duration = Self(string)
+        var duration = Self((.init(timestamp: start) ..< current)
+            .formatted(.timeDuration)
+            .zeroPad)
         
         [duration.range(of: ":"),
          duration.range(of: ":", options: [.backwards])]
@@ -111,4 +101,19 @@ extension AttributedString {
         .wide
     }
 #endif
+}
+
+private extension String {
+    var zeroPad: Self {
+        switch count {
+        case 1:
+            return "00:0" + self
+        case 2:
+            return "00:" + self
+        case 4:
+            return "0" + self
+        default:
+            return self
+        }
+    }
 }

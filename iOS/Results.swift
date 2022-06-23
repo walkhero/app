@@ -15,7 +15,7 @@ struct Results: View {
             TimelineView(.animation(minimumInterval: 0.05, paused: phase != .active)) { timeline in
                 item(date: timeline.date,
                      index: 4) {
-                    Text("Walk finished")
+                    Text("Finished")
                         .font(.title.weight(.bold))
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                 }

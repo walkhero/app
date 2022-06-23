@@ -9,7 +9,7 @@ extension Results {
                 .numeric(font: .title3.monospacedDigit().weight(.medium),
                          color: .primary))
                 .font(.footnote.weight(.medium))
-                .padding(.top, 3)
+                .foregroundStyle(.secondary)
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
             
             Rectangle()
