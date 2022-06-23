@@ -13,16 +13,9 @@ struct Streak: View {
     var body: some View {
         VStack(spacing: 0) {
             Navigation(index: $index, calendar: calendar)
-            
-            ZStack {
-                Capsule()
-                    .fill(.quaternary)
-                Progress(current: index, max: calendar.count - 1)
-                    .stroke(Color.accentColor, style: .init(lineWidth: 5, lineCap: .round))
-            }
-            .frame(width: 100, height: 4)
-            .padding(.bottom, 30)
 
+            Divider()
+            
             HStack(spacing: 0) {
                 ForEach(0 ..< 7) {
                     Text(Calendar.global.date(from: .init(weekday: $0 + Calendar.global.firstWeekday % 7,
@@ -34,16 +27,23 @@ struct Streak: View {
             }
             .foregroundColor(.accentColor)
             .padding(.vertical)
+            .frame(maxWidth: 350)
+            
+            Divider()
             
             Month(days: calendar[index])
+                .frame(maxWidth: 350)
             
             Spacer()
         }
-        .frame(maxWidth: 380)
-        .padding(.top)
         .safeAreaInset(edge: .top, spacing: 0) {
             Main.Title(title: "Streak") {
-                EmptyView()
+                Text(Calendar.global.date(from: .init(year: .init(calendar[index].year),
+                                                      month: .init(calendar[index].month)))!,
+                     format: .dateTime.year().month(.wide))
+                .font(.body.weight(.semibold))
+                .foregroundColor(.accentColor)
+                .padding(.trailing)
             }
         }
     }

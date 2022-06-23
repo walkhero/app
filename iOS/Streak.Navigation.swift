@@ -12,36 +12,40 @@ extension Streak {
                     index -= 1
                 } label: {
                     Image(systemName: "chevron.left.circle.fill")
-                        .font(.system(size: 30, weight: .regular))
+                        .font(.system(size: 24, weight: .regular))
                         .symbolRenderingMode(.hierarchical)
-                        .frame(width: 40, height: 60)
-                        .padding(.leading)
+                        .foregroundColor(.white)
+                        .frame(width: 50, height: 50)
                         .contentShape(Rectangle())
                 }
-                .opacity(index == 0 ? 0.6 : 1)
+                .opacity(index == 0 ? 0.4 : 1)
                 .disabled(index == 0)
+                .padding(.leading)
                 
-                Text(Calendar.global.date(from: .init(year: .init(calendar[index].year),
-                                                       month: .init(calendar[index].month)))!,
-                     format: .dateTime.year().month(.wide))
-                        .font(.body.weight(.medium))
-                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .center)
-                        .foregroundColor(.primary)
-                        .allowsHitTesting(false)
+                ZStack {
+                    Capsule()
+                        .fill(Color(white: 1, opacity: 0.2))
+                    Progress(current: index, max: calendar.count - 1)
+                        .stroke(Color.white, style: .init(lineWidth: 4, lineCap: .round))
+                }
+                .frame(height: 4)
+                .padding(.horizontal)
                 
                 Button {
                     index += 1
                 } label: {
                     Image(systemName: "chevron.right.circle.fill")
-                        .font(.system(size: 30, weight: .regular))
+                        .font(.system(size: 24, weight: .regular))
                         .symbolRenderingMode(.hierarchical)
-                        .frame(width: 40, height: 60)
-                        .padding(.trailing)
+                        .foregroundColor(.white)
+                        .frame(width: 50, height: 50)
                         .contentShape(Rectangle())
                 }
-                .opacity(index == calendar.count - 1 ? 0.6 : 1)
+                .opacity(index == calendar.count - 1 ? 0.4 : 1)
                 .disabled(index == calendar.count - 1)
+                .padding(.trailing)
             }
+            .background(Color.accentColor)
         }
     }
 }

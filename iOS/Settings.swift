@@ -104,7 +104,7 @@ struct Settings: View {
                 HStack {
                     Text("walkhero.github.io/about")
                         .foregroundColor(.primary)
-                        .font(.callout.weight(.light))
+                        .font(.footnote.weight(.regular))
                     
                     Spacer()
                     Image(systemName: "link")

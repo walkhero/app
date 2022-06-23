@@ -15,7 +15,7 @@ extension Main {
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .fill(navigation == item ? Color.accentColor : .clear)
+                        .fill(navigation == item ? Color.accentColor.opacity(0.6) : .clear)
                         .frame(width: 40, height: 40)
                     Image(systemName: symbol)
                         .font(.system(size: size, weight: navigation == item ? .medium : .light))

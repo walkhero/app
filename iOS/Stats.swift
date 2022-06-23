@@ -27,12 +27,9 @@ struct Stats: View {
         .safeAreaInset(edge: .top, spacing: 0) {
             Main.Title(title: "Overview")  {
                 if let updated = session.chart.updated {
-                    Group {
-                        Text("Updated ")
-                        + Text(updated.end, format: .relative(presentation: .named,
-                                                              unitsStyle: .abbreviated))
-                        .foregroundColor(.secondary)
-                    }
+                    Text("Walked " + updated.end
+                        .formatted(.relative(presentation: .named,
+                                             unitsStyle: .abbreviated)))
                     .font(.footnote.weight(.regular))
                     .padding(.trailing)
                 }

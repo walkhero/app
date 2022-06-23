@@ -32,7 +32,7 @@ extension Streak {
         private var blank: some View {
             Rectangle()
                 .fill(Color.clear)
-                .frame(height: 60)
+                .frame(height: 50)
                 .frame(maxWidth: .greatestFiniteMagnitude)
         }
 

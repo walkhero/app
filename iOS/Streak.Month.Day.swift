@@ -11,15 +11,15 @@ extension Streak.Month {
                 if hit {
                     Circle()
                         .fill(Color.accentColor)
-                        .frame(width: 35, height: 35)
+                        .frame(width: 30, height: 30)
                 }
                 
                 Text("\(index)")
-                    .font(.footnote.weight(hit ? .bold : .regular))
+                    .font(.footnote.weight(hit ? .medium : .light))
                     .foregroundStyle(future ? .tertiary : .primary)
                     .foregroundColor(hit ? .white : .secondary)
             }
-            .frame(height: 60)
+            .frame(height: 50)
             .frame(maxWidth: .greatestFiniteMagnitude)
         }
     }

@@ -12,6 +12,7 @@ struct Main: View {
                     Divider()
                     HStack(spacing: 0) {
                         Item(navigation: $navigation, item: .settings, symbol: "gear", size: 20)
+                            .padding(.leading, 8)
                         Item(navigation: $navigation, item: .calendar, symbol: "calendar", size: 21)
                         
                         Spacer()
@@ -23,7 +24,8 @@ struct Main: View {
                         } label: {
                             Image(systemName: "figure.walk.circle.fill")
                                 .font(.system(size: 40, weight: .bold))
-                                .symbolRenderingMode(.hierarchical)
+                                .symbolRenderingMode(.palette)
+                                .foregroundStyle(.white, Color.accentColor)
                                 .frame(width: 64, height: 70)
                                 .contentShape(Rectangle())
                         }
@@ -32,6 +34,7 @@ struct Main: View {
                         
                         Item(navigation: $navigation, item: .statistics, symbol: "chart.pie", size: 21)
                         Item(navigation: $navigation, item: .map, symbol: "globe.europe.africa", size: 23)
+                            .padding(.trailing, 8)
                     }
                 }
                 .background(Color(.systemBackground))
