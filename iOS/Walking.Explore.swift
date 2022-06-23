@@ -29,10 +29,9 @@ extension Walking {
                             .padding(.horizontal, 6)
                             .contentShape(Rectangle())
                     }
-                    .tint(.accentColor)
-                    .foregroundColor(.white)
+                    .foregroundColor(.secondary)
                     .buttonBorderShape(.capsule)
-                    .buttonStyle(.borderedProminent)
+                    .buttonStyle(.bordered)
                     .sheet(isPresented: $map) {
                         Sheet(rootView: Mapper(walker: walker))
                             .edgesIgnoringSafeArea(.all)
@@ -61,6 +60,7 @@ extension Walking {
                 .frame(height: 2)
             }
             .modifier(Card())
+            .fixedSize(horizontal: false, vertical: true)
         }
     }
 }

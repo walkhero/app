@@ -3,8 +3,8 @@ import Hero
 
 extension Walking {
     struct Top: View {
-        let session: Session
-        let walker: Walker
+        @ObservedObject var session: Session
+        @ObservedObject var walker: Walker
         @State private var alert = false
         @Environment(\.scenePhase) private var phase
         
@@ -15,7 +15,18 @@ extension Walking {
                         VStack(spacing: 0) {
                             Text(.duration(start: session.walking, current: time.date))
                                 .font(.system(size: 30, weight: .medium).monospacedDigit())
-                                .frame(height: 70)
+                                .frame(height: 60)
+                            
+                            if session.chart.walks > 0 {
+                                Text((.streak(value: session.chart.streak.current)
+                                      + .init("  ")
+                                      + .walks(value: session.chart.walks))
+                                    .numeric(font: .callout.monospacedDigit(),
+                                             color: .primary))
+                                .font(.caption.weight(.regular))
+                                .foregroundStyle(.secondary)
+                                .padding(.bottom, 6)
+                            }
                             
                             ZStack {
                                 Capsule()
@@ -23,48 +34,52 @@ extension Walking {
                                 if session.walking > 0 && session.chart.duration.max > 0 {
                                     Progress(current: .init(time.date.timestamp - session.walking),
                                              max: session.chart.duration.max)
-                                        .stroke(Color.accentColor, style: .init(lineWidth: 4, lineCap: .round))
+                                        .stroke(Color.accentColor, style: .init(lineWidth: 6, lineCap: .round))
                                 }
                             }
-                            .frame(height: 4)
+                            .frame(height: 6)
                         }
                     }
                     
-                    HStack {
-                        Button("Cancel", role: .cancel) {
-                            alert = true
-                        }
-                        .font(.system(size: 15, weight: .regular))
-                        .foregroundStyle(.secondary)
-                        .buttonStyle(.plain)
-                        .alert("Cancel walk?", isPresented: $alert) {
-                            Button("Cancel", role: .destructive) {
-                                Task {
-                                    await walker.cancel()
-                                    await UNUserNotificationCenter.send(message: "Walk cancelled!")
+                    VStack {
+                        HStack {
+                            Button("Cancel", role: .cancel) {
+                                alert = true
+                            }
+                            .font(.system(size: 15, weight: .regular))
+                            .foregroundStyle(.secondary)
+                            .buttonStyle(.plain)
+                            .alert("Cancel walk?", isPresented: $alert) {
+                                Button("Cancel", role: .destructive) {
+                                    Task {
+                                        await walker.cancel()
+                                        await UNUserNotificationCenter.send(message: "Walk cancelled!")
+                                    }
                                 }
+                                
+                                Button("Keep walking", role: .cancel) { }
                             }
                             
-                            Button("Keep walking", role: .cancel) { }
+                            Spacer()
+                            
+                            Button {
+                                Task {
+                                    await summary(summary: walker.finish())
+                                    await UNUserNotificationCenter.send(message: "Walk finished!")
+                                }
+                            } label: {
+                                Text("Finish")
+                                    .font(.system(size: 15, weight: .semibold))
+                                    .padding(.horizontal, 2)
+                            }
+                            .buttonBorderShape(.capsule)
+                            .buttonStyle(.borderedProminent)
                         }
+                        .padding(.horizontal)
+                        .frame(height: 60)
                         
                         Spacer()
-                        
-                        Button {
-                            Task {
-                                await summary(summary: walker.finish())
-                                await UNUserNotificationCenter.send(message: "Walk finished!")
-                            }
-                        } label: {
-                            Text("Finish")
-                                .font(.system(size: 15, weight: .semibold))
-                                .padding(.horizontal, 2)
-                        }
-                        .buttonBorderShape(.capsule)
-                        .buttonStyle(.borderedProminent)
                     }
-                    .padding(.horizontal)
-                    .frame(height: 70)
                 }
                 .fixedSize(horizontal: false, vertical: true)
             }

@@ -31,6 +31,7 @@ extension Walking {
             }
             .padding(.leading, 2)
             .modifier(Card())
+            .fixedSize(horizontal: false, vertical: true)
         }
     }
 }
