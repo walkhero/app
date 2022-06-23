@@ -43,6 +43,7 @@ extension Stats {
             .modifier(Card())
             .sheet(isPresented: $badges) {
                 Sheet(rootView: Badges(leaf: leaf))
+                    .edgesIgnoringSafeArea(.bottom)
             }
         }
     }

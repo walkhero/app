@@ -90,7 +90,6 @@
 		CEDF5D6F285DEFF300BD19A4 /* Badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D6E285DEFF300BD19A4 /* Badges.swift */; };
 		CEDF5D71285DF5CE00BD19A4 /* Stats.Explore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D70285DF5CE00BD19A4 /* Stats.Explore.swift */; };
 		CEDF5D73285DF87300BD19A4 /* Stats.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D72285DF87300BD19A4 /* Stats.Item.swift */; };
-		CEDF5D75285DFED200BD19A4 /* Stats.Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D74285DFED200BD19A4 /* Stats.Streak.swift */; };
 		CEDF5D77285E00B000BD19A4 /* Stats.Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D76285E00B000BD19A4 /* Stats.Detail.swift */; };
 		CEDF5D79285E037B00BD19A4 /* Chart.Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF5D78285E037B00BD19A4 /* Chart.Trend.swift */; };
 		CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40C9C2779F53F001BECAB /* App.Delegate.swift */; };
@@ -227,7 +226,6 @@
 		CEDF5D6E285DEFF300BD19A4 /* Badges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badges.swift; sourceTree = "<group>"; };
 		CEDF5D70285DF5CE00BD19A4 /* Stats.Explore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Explore.swift; sourceTree = "<group>"; };
 		CEDF5D72285DF87300BD19A4 /* Stats.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Item.swift; sourceTree = "<group>"; };
-		CEDF5D74285DFED200BD19A4 /* Stats.Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Streak.swift; sourceTree = "<group>"; };
 		CEDF5D76285E00B000BD19A4 /* Stats.Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Detail.swift; sourceTree = "<group>"; };
 		CEDF5D78285E037B00BD19A4 /* Chart.Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.Trend.swift; sourceTree = "<group>"; };
 		CEF40C9C2779F53F001BECAB /* App.Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
@@ -370,7 +368,6 @@
 				CEDF5D76285E00B000BD19A4 /* Stats.Detail.swift */,
 				CEDF5D70285DF5CE00BD19A4 /* Stats.Explore.swift */,
 				CEDF5D72285DF87300BD19A4 /* Stats.Item.swift */,
-				CEDF5D74285DFED200BD19A4 /* Stats.Streak.swift */,
 				CEDF5D6C285DE16500BD19A4 /* Stats.swift */,
 				CEBE58EC2861C4DB0062733B /* Stats.Today.swift */,
 				CEF40CA52779F6CE001BECAB /* Store.Item.swift */,
@@ -620,7 +617,6 @@
 				CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */,
 				CE1912B6285CC7E400956D95 /* Main.Navigation.swift in Sources */,
 				CEDF5D73285DF87300BD19A4 /* Stats.Item.swift in Sources */,
-				CEDF5D75285DFED200BD19A4 /* Stats.Streak.swift in Sources */,
 				CE963421277CA1F700CCFF4B /* Streak.Navigation.swift in Sources */,
 				CE1912BA285CDEA400956D95 /* Settings.Info.swift in Sources */,
 				CEDF5D6F285DEFF300BD19A4 /* Badges.swift in Sources */,

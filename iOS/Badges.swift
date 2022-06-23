@@ -11,35 +11,49 @@ struct Badges: View {
                 Section {
                     ForEach(leaf.badges, id: \.name) { badge in
                         HStack {
-                            Image(systemName: "leaf.circle.fill")
-                                .font(.system(size: 36, weight: .ultraLight))
-                                .symbolRenderingMode(.palette)
-                                .foregroundStyle(.black, badge.name.color)
+                            ZStack {
+                                Circle()
+                                    .fill(Color.accentColor)
+                                    .padding(2.5)
+                                Image(systemName: "leaf.circle.fill")
+                                    .font(.system(size: 45, weight: .ultraLight))
+                                    .symbolRenderingMode(.palette)
+                                    .foregroundStyle(.black, badge.name.color)
+                            }
+                            .fixedSize()
+                            
                             Text(badge.name.title)
-                                .font(.callout.weight(.regular))
+                                .font(.callout.weight(.medium))
+                            
                             Spacer()
+                            
                             ZStack(alignment: .trailing) {
                                 RoundedRectangle(cornerRadius: 6, style: .continuous)
-                                    .fill(Color(.secondarySystemBackground))
+                                    .fill(Color.accentColor.opacity(0.3))
                                     .frame(width: 90, height: 36)
                                 Text(badge.squares, format: .number)
-                                    .font(.system(size: 16, weight: .light).monospacedDigit())
+                                    .font(.system(size: 16, weight: .regular).monospacedDigit())
                                     .padding(.trailing, 12)
                             }
                         }
-                        .padding(.vertical, 6)
+                        .padding(.vertical, 3)
                     }
                 } header: {
                     HStack {
                         Text("Badge")
-                            .font(.title3.weight(.medium))
+                            .font(.callout.weight(.medium))
                         Spacer()
                         Text("Squares")
-                            .font(.title3.weight(.medium))
+                            .font(.body.weight(.medium))
                     }
-                    .foregroundStyle(.secondary)
+                    .foregroundColor(.accentColor)
+                    .padding(.vertical, 8)
                 }
                 .textCase(.none)
+                
+                Section {
+                    
+                }
             }
             .listStyle(.plain)
             .toolbar {
