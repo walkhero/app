@@ -17,8 +17,8 @@ struct Walking: View {
                  limit: session.chart.metres.max > 0 ? .metres(value: session.chart.metres.max, digits: 1) : nil,
                  progress: .init(current: walker.metres, max: session.chart.metres.max))
             
-            Item(value: .calories(value: walker.calories),
-                 limit: session.chart.calories.max > 0 ? .calories(value: session.chart.calories.max) : nil,
+            Item(value: .calories(value: walker.calories, digits: 2, caption: true),
+                 limit: session.chart.calories.max > 0 ? .calories(value: session.chart.calories.max, digits: 2, caption: true) : nil,
                  progress: .init(current: walker.calories, max: session.chart.calories.max))
             
             Spacer()

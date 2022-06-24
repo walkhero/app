@@ -37,9 +37,9 @@ extension Walking {
                          : nil,
                          indicator: .init(current: walker.metres, max: session.chart.metres.max))
                     
-                    Item(value: .calories(value: walker.calories),
+                    Item(value: .calories(value: walker.calories, digits: 2, caption: true),
                          limit: limit && session.chart.calories.max > 0
-                         ? .calories(value: session.chart.calories.max)
+                         ? .calories(value: session.chart.calories.max, digits: 2, caption: true)
                          : nil,
                          indicator: .init(current: walker.calories, max: session.chart.calories.max))
                 }

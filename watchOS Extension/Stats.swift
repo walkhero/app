@@ -63,10 +63,10 @@ struct Stats: View {
                 Item(title: "Calories",
                      trend: session.chart.calories.trend,
                      average: heading(title: "Average")
-                     + .plain(value: session.chart.calories.average),
+                     + .calories(value: session.chart.calories.average, digits: 2, caption: false),
                      max: heading(title: "Max")
-                     + .plain(value: session.chart.calories.max),
-                     total: .plain(value: session.chart.calories.total),
+                     + .calories(value: session.chart.calories.max, digits: 2, caption: false),
+                     total: .calories(value: session.chart.calories.total, digits: 0, caption: false),
                      progress: .init(current: session.chart.calories.average,
                                      max: session.chart.calories.max))
             }

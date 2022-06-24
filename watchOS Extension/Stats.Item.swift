@@ -17,10 +17,10 @@ extension Stats {
             if let trend = trend {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8, style: .continuous)
-                        .fill(Color.accentColor.opacity(0.4))
+                        .fill(Color.accentColor.opacity(0.35))
                     Image(systemName: trend.symbol)
                         .foregroundColor(.accentColor)
-                        .font(.system(size: 16, weight: .medium))
+                        .font(.system(size: 16, weight: .bold))
                         .frame(width: 32, height: 32)
                 }
                 .fixedSize()
@@ -35,7 +35,7 @@ extension Stats {
                          color: .white))
             .font(.callout.weight(.regular))
             .foregroundStyle(.secondary)
-            .padding(.bottom, 10)
+            .padding(.bottom, 15)
             
             Text(average
                 .numeric(font: .body.monospacedDigit().weight(.regular),
@@ -53,6 +53,7 @@ extension Stats {
             }
             .frame(height: 8)
             .padding(.horizontal, 12)
+            .padding(.vertical, 4)
             
             Text(max
                 .numeric(font: .body.monospacedDigit().weight(.regular),

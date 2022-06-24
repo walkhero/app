@@ -30,7 +30,7 @@ struct Results: View {
                 
                 Item(value: .metres(value: summary.metres, digits: 3))
                 
-                Item(value: .calories(value: summary.calories))
+                Item(value: .calories(value: summary.calories, digits: 2, caption: true))
                 
                 Spacer()
                     .frame(height: 20)
@@ -41,8 +41,8 @@ struct Results: View {
                     }
                 }
                 .font(.callout.weight(.bold))
-                .tint(.black)
-                .foregroundColor(.white)
+                .tint(.white)
+                .foregroundColor(.accentColor)
                 .buttonStyle(.borderedProminent)
                 .padding(.horizontal)
             }

@@ -12,15 +12,4 @@ extension Chart.Trend {
             return "alternatingcurrent"
         }
     }
-    
-    var color: Color {
-        switch self {
-        case .increase:
-            return .blue
-        case .decrease:
-            return .pink
-        case .stable:
-            return .indigo
-        }
-    }
 }

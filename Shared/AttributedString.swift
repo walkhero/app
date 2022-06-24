@@ -46,8 +46,18 @@ extension AttributedString {
                 .attributed)
     }
     
-    static func calories(value: Int) -> Self {
-        format(value: value, singular: "calorie", plural: "calories")
+    static func calories(value: Int, digits: Int, caption: Bool) -> Self {
+        var number = Self((Double(value) / 1000)
+            .formatted(.number.precision(.fractionLength(digits > 0
+                                                         ? 1 ... digits
+                                                         : 0 ... 0))))
+        number.numberPart = .integer
+        
+        if caption {
+            return number + .init(" calories")
+        } else {
+            return number
+        }
     }
     
     static func duration(value: Int) -> Self {

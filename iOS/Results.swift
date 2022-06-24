@@ -52,7 +52,7 @@ struct Results: View {
                 
                 item(date: timeline.date,
                      index: 12) {
-                    Item(value: .calories(value: summary.calories))
+                    Item(value: .calories(value: summary.calories, digits: 2, caption: true))
                 }
                 
                 Spacer()
