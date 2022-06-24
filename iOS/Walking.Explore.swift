@@ -54,7 +54,7 @@ extension Walking {
                 ZStack {
                     Capsule()
                         .fill(.quaternary)
-                    Progress(current: walker.leaf.squares, max: walker.leaf.next)
+                    Progress(current: walker.leaf.current, max: walker.leaf.total)
                         .stroke(Color.accentColor, style: .init(lineWidth: 3, lineCap: .round))
                 }
                 .frame(height: 2)

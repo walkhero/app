@@ -21,6 +21,7 @@ extension Walking {
                         .lineLimit(1)
                         .foregroundStyle(.tertiary)
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
+                        .padding(.bottom, 10)
                     }
                     
                     Explore(walker: walker, limit: limit)

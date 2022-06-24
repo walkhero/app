@@ -7,7 +7,7 @@ struct Indicator: View {
     var body: some View {
         ZStack {
             Capsule()
-                .fill(.quaternary)
+                .fill(Color.accentColor.opacity(0.35))
             Progress(current: current, max: max)
                 .stroke(Color.accentColor, style: .init(lineWidth: 5, lineCap: .round))
         }

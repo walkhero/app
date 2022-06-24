@@ -36,10 +36,10 @@ extension Walking {
                                 if session.walking > 0 && session.chart.duration.max > 0 {
                                     Progress(current: .init(time.date.timestamp - session.walking),
                                              max: session.chart.duration.max)
-                                        .stroke(Color.accentColor, style: .init(lineWidth: 6, lineCap: .round))
+                                        .stroke(Color.accentColor, style: .init(lineWidth: 7, lineCap: .round))
                                 }
                             }
-                            .frame(height: 6)
+                            .frame(height: 7)
                         }
                     }
                     

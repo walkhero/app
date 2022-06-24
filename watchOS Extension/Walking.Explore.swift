@@ -15,7 +15,7 @@ extension Walking {
                     .lineLimit(1)
                     .fixedSize()
                 
-                Indicator(current: walker.leaf.squares, max: walker.leaf.next)
+                Indicator(current: walker.leaf.current, max: walker.leaf.total)
             }
             .padding(.top, 2)
             

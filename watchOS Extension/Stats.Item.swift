@@ -11,7 +11,9 @@ extension Stats {
         let progress: Progress
         
         var body: some View {
-            Divider()
+            Rectangle()
+                .fill(Color.accentColor)
+                .frame(height: 1)
                 .padding(.vertical, 15)
             
             if let trend = trend {
