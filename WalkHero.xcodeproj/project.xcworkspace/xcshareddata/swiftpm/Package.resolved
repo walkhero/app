@@ -15,7 +15,7 @@
       "location" : "https://github.com/walkhero/hero.git",
       "state" : {
         "branch" : "main",
-        "revision" : "fb02fa576c3e209deb9173a7d40417a7fd0d2cd1"
+        "revision" : "d98523cdaf2e2e76cb25b9f3645bcc59f3caa9e6"
       }
     },
     {
@@ -24,7 +24,7 @@
       "location" : "https://github.com/archivable/package.git",
       "state" : {
         "branch" : "main",
-        "revision" : "4c6e8eed424f5b84a7b3d3f7f8b0e42bb6dc4708"
+        "revision" : "4f9ebb01170824d9433fad5de49eee72bbcf98ae"
       }
     }
   ],
