@@ -6,6 +6,8 @@ extension Main {
         
         var body: some View {
             VStack {
+                Spacer()
+                
                 Button {
                     Task {
                         await cloud.start()
