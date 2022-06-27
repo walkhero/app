@@ -14,10 +14,10 @@ struct Window: View {
                 .foregroundColor(.secondary)
                 .frame(maxHeight: .greatestFiniteMagnitude)
                 .edgesIgnoringSafeArea(.all)
-        } else if session.walking > 0 {
-            Walking(session: session)
         } else if let summary = session.summary {
-            Results(session: session, summary: summary)
+           Results(session: session, summary: summary)
+       } else if session.walking > 0 {
+            Walking(session: session)
         } else {
             Main(session: session)
         }

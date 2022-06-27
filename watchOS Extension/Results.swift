@@ -13,14 +13,15 @@ struct Results: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("Finished")
-                    .font(.title2.weight(.medium))
+                Text(.ordinal(value: summary.walks)
+                    .numeric(font: .title2.weight(.bold),
+                             color: .primary))
+                    .font(.title3.weight(.regular))
+                    .foregroundStyle(.secondary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                     .padding(.bottom)
                 
                 Item(value: .duration(value: summary.duration))
-                
-                Item(value: .ordinal(value: summary.walks))
                 
                 Item(value: .streak(value: summary.streak))
                 

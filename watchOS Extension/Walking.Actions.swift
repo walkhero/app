@@ -3,7 +3,7 @@ import Hero
 
 extension Walking {
     struct Actions: View {
-        let session: Session
+        @ObservedObject var session: Session
         let walker: Walker
         @State private var alert = false
         
