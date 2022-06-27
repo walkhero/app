@@ -66,7 +66,7 @@ extension Walking {
                             
                             Button {
                                 Task {
-                                    await summary(summary: walker.finish())
+                                    session.summary = await walker.finish()
                                     await UNUserNotificationCenter.send(message: "Walk finished!")
                                 }
                             } label: {
@@ -86,12 +86,6 @@ extension Walking {
                 .fixedSize(horizontal: false, vertical: true)
             }
             .background(Color(.systemBackground))
-        }
-        
-        private func summary(summary: Summary?) async {
-            withAnimation(.easeInOut(duration: 0.6)) {
-                session.summary = summary
-            }
         }
     }
 }

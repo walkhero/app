@@ -4,7 +4,7 @@ import Hero
 struct Results: View {
     let session: Session
     let summary: Summary
-    private let dates = (0 ..< 20)
+    private let dates = (0 ..< 15)
         .map {
             Date.now.timeIntervalSince1970 + (.init($0) / 10)
         }
@@ -15,8 +15,11 @@ struct Results: View {
             TimelineView(.animation(minimumInterval: 0.05, paused: phase != .active)) { timeline in
                 item(date: timeline.date,
                      index: 4) {
-                    Text("Finished")
-                        .font(.title.weight(.bold))
+                    Text(.ordinal(value: summary.walks)
+                        .numeric(font: .title.weight(.bold),
+                                 color: .primary))
+                        .font(.title3.weight(.regular))
+                        .foregroundStyle(.secondary)
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                 }
                 
@@ -27,38 +30,33 @@ struct Results: View {
                 
                 item(date: timeline.date,
                      index: 7) {
-                    Item(value: .ordinal(value: summary.walks))
-                }
-                
-                item(date: timeline.date,
-                     index: 8) {
                     Item(value: .streak(value: summary.streak))
                 }
                 
                 item(date: timeline.date,
-                     index: 9) {
+                     index: 8) {
                     Item(value: .squares(value: summary.squares))
                 }
                 
                 item(date: timeline.date,
-                     index: 10) {
+                     index: 9) {
                     Item(value: .steps(value: summary.steps))
                 }
                 
                 item(date: timeline.date,
-                     index: 11) {
+                     index: 10) {
                     Item(value: .metres(value: summary.metres, digits: 3))
                 }
                 
                 item(date: timeline.date,
-                     index: 12) {
+                     index: 11) {
                     Item(value: .calories(value: summary.calories, digits: 2, caption: true))
                 }
                 
                 Spacer()
                 
                 item(date: timeline.date,
-                     index: 18) {
+                     index: 13) {
                     Button {
                         withAnimation(.easeInOut(duration: 0.6)) {
                             session.summary = nil

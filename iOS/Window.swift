@@ -14,11 +14,11 @@ struct Window: View {
                 .foregroundColor(.secondary)
                 .frame(maxHeight: .greatestFiniteMagnitude)
                 .edgesIgnoringSafeArea(.all)
-        } else if session.walking > 0 {
-            Walking(session: session)
-                .transition(.opacity)
         } else if let summary = session.summary {
             Results(session: session, summary: summary)
+                .transition(.opacity)
+        } else if session.walking > 0 {
+            Walking(session: session)
                 .transition(.opacity)
         } else {
             Main(session: session)

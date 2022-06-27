@@ -30,11 +30,9 @@ extension AttributedString {
     }
     
     static func ordinal(value: Int) -> Self {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .ordinal
-        var number = Self(formatter.string(from: .init(value: value)) ?? "")
+        var number = Self(value.formatted())
         number.numberPart = .integer
-        return number + .init(" walk")
+        return .init("#") + number
     }
     
     static func metres(value: Int, digits: Int) -> Self {
