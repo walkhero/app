@@ -21,9 +21,9 @@ extension Walking {
             .padding(.top, 6)
             
             if let limit = limit {
-                Text(limit.numeric(font: .footnote.monospacedDigit().weight(.regular),
+                Text(limit.numeric(font: .body.monospacedDigit().weight(.regular),
                                    color: .secondary))
-                    .font(.footnote.weight(.regular))
+                    .font(.callout.weight(.regular))
                     .foregroundStyle(.tertiary)
                     .lineLimit(1)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)

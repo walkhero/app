@@ -23,9 +23,9 @@ extension Walking {
                 Text((.plain(value: walker.leaf.squares)
                     + .init(" of ")
                       + .plain(value: walker.leaf.next))
-                    .numeric(font: .footnote.monospacedDigit().weight(.regular),
+                    .numeric(font: .body.monospacedDigit().weight(.regular),
                              color: .secondary))
-                    .font(.footnote.weight(.regular))
+                    .font(.callout.weight(.regular))
                     .lineLimit(1)
                     .foregroundStyle(.tertiary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)

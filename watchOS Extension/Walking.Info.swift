@@ -15,9 +15,9 @@ extension Walking {
                         Text((.streak(value: session.chart.streak.current)
                               + .init(", ")
                               + .walks(value: session.chart.walks))
-                            .numeric(font: .footnote.monospacedDigit().weight(.regular),
+                            .numeric(font: .body.monospacedDigit().weight(.regular),
                                      color: .secondary))
-                        .font(.footnote.weight(.regular))
+                        .font(.callout.weight(.regular))
                         .lineLimit(1)
                         .foregroundStyle(.tertiary)
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
@@ -48,7 +48,7 @@ extension Walking {
                 .onTapGesture {
                     limit.toggle()
                 }
-                .padding()
+                .padding(.horizontal)
             }
         }
     }
