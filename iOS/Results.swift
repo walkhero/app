@@ -45,12 +45,12 @@ struct Results: View {
                 
                 item(date: timeline.date,
                      index: 10) {
-                    Item(value: .metres(value: summary.metres, digits: 3))
+                    Item(value: .metres(value: summary.metres, fraction: true))
                 }
                 
                 item(date: timeline.date,
                      index: 11) {
-                    Item(value: .calories(value: summary.calories, digits: 2, caption: true))
+                    Item(value: .calories(value: summary.calories, caption: true))
                 }
                 
                 Spacer()

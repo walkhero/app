@@ -29,9 +29,9 @@ struct Results: View {
                 
                 Item(value: .steps(value: summary.steps))
                 
-                Item(value: .metres(value: summary.metres, digits: 3))
+                Item(value: .metres(value: summary.metres, fraction: true))
                 
-                Item(value: .calories(value: summary.calories, digits: 2, caption: true))
+                Item(value: .calories(value: summary.calories, caption: true))
                 
                 Spacer()
                     .frame(height: 20)

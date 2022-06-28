@@ -27,7 +27,7 @@ extension Walking {
                     .foregroundStyle(.tertiary)
                     .lineLimit(1)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 15)
             }
         }
     }

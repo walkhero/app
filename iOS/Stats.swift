@@ -87,32 +87,32 @@ struct Stats: View {
              : nil)
         
         Item(title: "Distance",
-             value: .metres(value: session.chart.metres.total, digits: 0),
+             value: .metres(value: session.chart.metres.total, fraction: false),
              content: session.chart.metres.total > 0
              ? .init(title: "Distance",
                      trend: session.chart.metres.trend,
                      average: heading(title: "Average")
                          + .metres(value: session.chart.metres.average,
-                                   digits: 3),
+                                   fraction: true),
                      max: heading(title: "Max")
                          + .metres(value: session.chart.metres.max,
-                                   digits: 3),
+                                   fraction: true),
                      total: .metres(value: session.chart.metres.total,
-                                    digits: 0),
+                                    fraction: false),
                      progress: .init(current: session.chart.metres.average,
                                      max: session.chart.metres.max))
              : nil)
         
         Item(title: "Calories",
-             value: .calories(value: session.chart.calories.total, digits: 0, caption: false),
+             value: .calories(value: session.chart.calories.total, caption: false),
              content: session.chart.calories.total > 0
              ? .init(title: "Calories",
                      trend: session.chart.calories.trend,
                      average: heading(title: "Average")
-                         + .calories(value: session.chart.calories.average, digits: 2, caption: false),
+                         + .calories(value: session.chart.calories.average, caption: false),
                      max: heading(title: "Max")
-                         + .calories(value: session.chart.calories.max, digits: 2, caption: false),
-                     total: .calories(value: session.chart.calories.total, digits: 0, caption: false),
+                         + .calories(value: session.chart.calories.max, caption: false),
+                     total: .calories(value: session.chart.calories.total, caption: false),
                      progress: .init(current: session.chart.calories.average,
                                      max: session.chart.calories.max))
              : nil)

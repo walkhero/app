@@ -21,7 +21,7 @@ extension Walking {
                         .lineLimit(1)
                         .foregroundStyle(.tertiary)
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
-                        .padding(.bottom, 10)
+                        .padding(.bottom, 15)
                     }
                     
                     Explore(walker: walker, limit: limit)
@@ -32,15 +32,15 @@ extension Walking {
                          : nil,
                          indicator: .init(current: walker.steps, max: session.chart.steps.max))
                     
-                    Item(value: .metres(value: walker.metres, digits: 3),
+                    Item(value: .metres(value: walker.metres, fraction: true),
                          limit: limit && session.chart.metres.max > 0
-                         ? .metres(value: session.chart.metres.max, digits: 1)
+                         ? .metres(value: session.chart.metres.max, fraction: false)
                          : nil,
                          indicator: .init(current: walker.metres, max: session.chart.metres.max))
                     
-                    Item(value: .calories(value: walker.calories, digits: 2, caption: true),
+                    Item(value: .calories(value: walker.calories, caption: true),
                          limit: limit && session.chart.calories.max > 0
-                         ? .calories(value: session.chart.calories.max, digits: 2, caption: true)
+                         ? .calories(value: session.chart.calories.max, caption: true)
                          : nil,
                          indicator: .init(current: walker.calories, max: session.chart.calories.max))
                 }

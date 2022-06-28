@@ -35,20 +35,18 @@ extension AttributedString {
         return .init("#") + number
     }
     
-    static func metres(value: Int, digits: Int) -> Self {
+    static func metres(value: Int, fraction: Bool) -> Self {
         Measurement(value: .init(value), unit: UnitLength.meters)
             .formatted(.measurement(width: metresWidth,
                                     usage: .road,
                                     numberFormatStyle: .number
-                .precision(.fractionLength(digits > 0 ? 1 ... digits : 0 ... 0)))
+                .precision(.fractionLength(fraction ? 0 ... 1 : 0 ... 0)))
                 .attributed)
     }
     
-    static func calories(value: Int, digits: Int, caption: Bool) -> Self {
-        var number = Self((Double(value) / 1000)
-            .formatted(.number.precision(.fractionLength(digits > 0
-                                                         ? 1 ... digits
-                                                         : 0 ... 0))))
+    static func calories(value: Int, caption: Bool) -> Self {
+        var number = Self(Int(Double(value) / 1000)
+            .formatted())
         number.numberPart = .integer
         
         if caption {
