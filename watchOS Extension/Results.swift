@@ -12,11 +12,11 @@ struct Results: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            VStack(spacing: 0) {
                 Text(.ordinal(value: summary.walks)
-                    .numeric(font: .title2.weight(.bold),
+                    .numeric(font: .title.weight(.bold),
                              color: .primary))
-                    .font(.title3.weight(.regular))
+                    .font(.title.weight(.regular))
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                     .padding(.bottom)
@@ -46,10 +46,11 @@ struct Results: View {
                 .foregroundColor(.accentColor)
                 .buttonStyle(.borderedProminent)
                 .padding(.horizontal)
+                .padding(.bottom, 40)
             }
             .foregroundColor(.white)
             .padding(.horizontal)
-            .padding(.vertical, 35)
+            .padding(.vertical, 10)
         }
         .edgesIgnoringSafeArea(.all)
         .background(LinearGradient(stops: [.init(color: .init("Middle"), location: 0),

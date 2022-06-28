@@ -10,6 +10,7 @@ extension Walking {
             ScrollView {
                 VStack(spacing: 0) {
                     Top(session: session)
+                        .padding(.top, limit ? 25 : 8)
                     
                     if limit {
                         Text((.streak(value: session.chart.streak.current)
@@ -49,6 +50,7 @@ extension Walking {
                     limit.toggle()
                 }
                 .padding(.horizontal)
+                .padding(.bottom, 15)
             }
         }
     }

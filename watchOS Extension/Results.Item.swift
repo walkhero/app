@@ -6,9 +6,9 @@ extension Results {
         
         var body: some View {
             Text(value
-                .numeric(font: .title3.monospacedDigit().weight(.medium),
+                .numeric(font: .title2.monospacedDigit().weight(.medium),
                          color: .primary))
-                .font(.footnote.weight(.medium))
+                .font(.body.weight(.medium))
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
             

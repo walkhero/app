@@ -8,7 +8,7 @@ extension Walking {
         var body: some View {
             HStack(alignment: .firstTextBaseline) {
                 Text(.squares(value: walker.explored)
-                    .numeric(font: .title3.monospacedDigit().weight(.medium),
+                    .numeric(font: .title2.monospacedDigit().weight(.medium),
                              color: .primary))
                     .font(.footnote.weight(.regular))
                     .foregroundStyle(.secondary)
@@ -17,7 +17,6 @@ extension Walking {
                 
                 Indicator(current: walker.leaf.current, max: walker.leaf.total)
             }
-            .padding(.top, 2)
             
             if limit && walker.leaf.squares > 0 {
                 Text((.plain(value: walker.leaf.squares)

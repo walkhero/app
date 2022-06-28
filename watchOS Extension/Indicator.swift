@@ -7,11 +7,11 @@ struct Indicator: View {
     var body: some View {
         ZStack {
             Capsule()
-                .fill(Color.accentColor.opacity(0.35))
+                .fill(Color.accentColor.opacity(0.3))
             Progress(current: current, max: max)
-                .stroke(Color.accentColor, style: .init(lineWidth: 5, lineCap: .round))
+                .stroke(Color.accentColor, style: .init(lineWidth: 6, lineCap: .round))
         }
-        .frame(height: 5)
+        .frame(height: 6)
         .padding(.leading)
     }
 }

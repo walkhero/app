@@ -8,6 +8,7 @@ struct Walking: View {
     var body: some View {
         TabView(selection: $selection) {
             Info(session: session, walker: walker)
+                .edgesIgnoringSafeArea(.all)
             Actions(session: session, walker: walker)
         }
         .onChange(of: session.tiles) {

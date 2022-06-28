@@ -51,7 +51,7 @@ extension Walking {
                         
                         Image(systemName: "figure.walk")
                             .font(.system(size: 25, weight: .light))
-                            .foregroundStyle(.tertiary)
+                            .foregroundColor(.accentColor)
                     }
                     
                     Button("Finish") {
