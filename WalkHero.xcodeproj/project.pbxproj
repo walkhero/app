@@ -100,6 +100,7 @@
 		CEF40CAF2779F760001BECAB /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CEF40CAE2779F760001BECAB /* Hero */; };
 		CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB22779FAF7001BECAB /* UIApplication.swift */; };
 		CEF40CBD2779FBB3001BECAB /* Accent.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF40CBC2779FBB3001BECAB /* Accent.xcassets */; };
+		CEF6D83C286C39E9006A87F0 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6D83B286C39E9006A87F0 /* Achievement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +233,7 @@
 		CEF40CAB2779F6E2001BECAB /* Copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copy.swift; sourceTree = "<group>"; };
 		CEF40CB22779FAF7001BECAB /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		CEF40CBC2779FBB3001BECAB /* Accent.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Accent.xcassets; sourceTree = "<group>"; };
+		CEF6D83B286C39E9006A87F0 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 				CEAB4A2D278C44CB00E23DF5 /* Configuration.storekit */,
 				CECD14DE27E60E77005FB1FC /* Launch Screen.storyboard */,
 				CE000CF428607C8500FAB4BD /* About.swift */,
+				CEF6D83B286C39E9006A87F0 /* Achievement.swift */,
 				CEF40C9C2779F53F001BECAB /* App.Delegate.swift */,
 				CE512EF12779F4BC003ED854 /* App.swift */,
 				CEDF5D6E285DEFF300BD19A4 /* Badges.swift */,
@@ -608,6 +611,7 @@
 				CEF40C9D2779F53F001BECAB /* App.Delegate.swift in Sources */,
 				CE1912B6285CC7E400956D95 /* Main.Navigation.swift in Sources */,
 				CEDF5D73285DF87300BD19A4 /* Stats.Item.swift in Sources */,
+				CEF6D83C286C39E9006A87F0 /* Achievement.swift in Sources */,
 				CE963421277CA1F700CCFF4B /* Streak.Navigation.swift in Sources */,
 				CE1912BA285CDEA400956D95 /* Settings.Info.swift in Sources */,
 				CEDF5D6F285DEFF300BD19A4 /* Badges.swift in Sources */,

@@ -55,7 +55,6 @@ extension Walking {
                                 Button("Cancel", role: .destructive) {
                                     Task {
                                         await walker.cancel()
-                                        await UNUserNotificationCenter.send(message: "Walk cancelled!")
                                     }
                                 }
                                 
@@ -67,7 +66,6 @@ extension Walking {
                             Button {
                                 Task {
                                     session.summary = await walker.finish()
-                                    await UNUserNotificationCenter.send(message: "Walk finished!")
                                 }
                             } label: {
                                 Text("Finish")

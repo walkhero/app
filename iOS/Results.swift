@@ -58,7 +58,8 @@ struct Results: View {
                 item(date: timeline.date,
                      index: 13) {
                     Button {
-                        withAnimation(.easeInOut(duration: 0.6)) {
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            session.achievement = summary.leaf
                             session.summary = nil
                         }
                         
