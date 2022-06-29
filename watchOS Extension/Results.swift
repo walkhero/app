@@ -37,7 +37,8 @@ struct Results: View {
                     .frame(height: 20)
                 
                 Button("Done") {
-                    withAnimation(.easeInOut(duration: 0.6)) {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        session.achievement = summary.leaf
                         session.summary = nil
                     }
                 }

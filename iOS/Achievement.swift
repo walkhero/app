@@ -9,12 +9,13 @@ struct Achievement: View {
         VStack(spacing: 0) {
             Spacer()
             
-            Text("NEW ACHIEVEMENT")
+            Text("NEW\nACHIEVEMENT")
                 .font(.body.weight(.bold))
                 .foregroundColor(.white)
+                .multilineTextAlignment(.center)
                 .padding(.horizontal, 25)
                 .padding(.vertical, 10)
-                .background(Color.accentColor)
+                .background(Color.accentColor.opacity(0.6))
                 .clipShape(Capsule())
             
             Spacer()

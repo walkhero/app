@@ -101,6 +101,7 @@
 		CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CB22779FAF7001BECAB /* UIApplication.swift */; };
 		CEF40CBD2779FBB3001BECAB /* Accent.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF40CBC2779FBB3001BECAB /* Accent.xcassets */; };
 		CEF6D83C286C39E9006A87F0 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6D83B286C39E9006A87F0 /* Achievement.swift */; };
+		CEF6D83E286C43BB006A87F0 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6D83D286C43BB006A87F0 /* Achievement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,7 @@
 		CEF40CB22779FAF7001BECAB /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		CEF40CBC2779FBB3001BECAB /* Accent.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Accent.xcassets; sourceTree = "<group>"; };
 		CEF6D83B286C39E9006A87F0 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		CEF6D83D286C43BB006A87F0 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +289,7 @@
 			children = (
 				CE7052FA278C732200F6C10B /* watchOS Extension.entitlements */,
 				CE25233B278C6FFD000A26C5 /* Info.plist */,
+				CEF6D83D286C43BB006A87F0 /* Achievement.swift */,
 				CE252330278C6FFD000A26C5 /* App.Delegate.swift */,
 				CE252332278C6FFD000A26C5 /* App.swift */,
 				CE12C6782862145E00274FE6 /* Card.swift */,
@@ -556,6 +559,7 @@
 				CEAA8C902863238B0009D440 /* Results.Item.swift in Sources */,
 				CE252331278C6FFD000A26C5 /* App.Delegate.swift in Sources */,
 				CE12C6772862108500274FE6 /* Walking.Item.swift in Sources */,
+				CEF6D83E286C43BB006A87F0 /* Achievement.swift in Sources */,
 				CE000CFE2860CBFD00FAB4BD /* Session.swift in Sources */,
 				CE0FEBD728649E7F009F6663 /* Progress.swift in Sources */,
 				CE000D0E2860D7F900FAB4BD /* Main.swift in Sources */,

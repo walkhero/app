@@ -14,6 +14,8 @@ struct Window: View {
                 .foregroundColor(.secondary)
                 .frame(maxHeight: .greatestFiniteMagnitude)
                 .edgesIgnoringSafeArea(.all)
+        } else if let leaf = session.achievement {
+            Achievement(session: session, leaf: leaf)
         } else if let summary = session.summary {
            Results(session: session, summary: summary)
        } else if session.walking > 0 {
