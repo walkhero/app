@@ -9,7 +9,7 @@ struct Window: View {
     }
     
     @ViewBuilder private var content: some View {
-        if session.loading {
+        if session.loading < 2 {
             Image("Logo")
                 .foregroundColor(.secondary)
                 .frame(maxHeight: .greatestFiniteMagnitude)

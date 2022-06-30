@@ -23,6 +23,7 @@ import Hero
                     cloud.ready.notify(queue: .main) {
                         cloud.pull.send()
                         Defaults.start()
+                        session.loading += 1
                         
                         Task
                             .detached {

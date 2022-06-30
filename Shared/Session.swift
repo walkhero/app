@@ -2,7 +2,7 @@ import Foundation
 import Hero
 
 final class Session: ObservableObject {
-    @Published var loading = true
+    @Published var loading = Int()
     @Published var walking = UInt32()
     @Published var chart = Chart.zero
     @Published var tiles = Set<Squares.Item>()
@@ -13,7 +13,7 @@ final class Session: ObservableObject {
         self.chart = chart
         self.tiles = tiles
         
-        guard loading else { return }
-        loading = false
+        guard loading < 2 else { return }
+        loading += 1
     }
 }
