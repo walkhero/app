@@ -45,14 +45,12 @@ extension AttributedString {
     }
     
     static func calories(value: Int, caption: Bool) -> Self {
-        var number = Self(Int(Double(value) / 1000)
-            .formatted())
-        number.numberPart = .integer
+        let value = Int(Double(value) / 1000)
         
         if caption {
-            return number + .init(" calories")
+            return format(value: value, singular: "calorie", plural: "calories")
         } else {
-            return number
+            return plain(value: value)
         }
     }
     
