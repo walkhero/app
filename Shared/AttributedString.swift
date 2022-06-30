@@ -73,9 +73,11 @@ extension AttributedString {
          duration.range(of: ":", options: [.backwards])]
             .compactMap { $0 }
             .forEach {
-                duration[$0].foregroundColor = Int(current.timeIntervalSince1970) % 2 == 1
-                ? .clear
-                : .secondary
+                if Int(current.timeIntervalSince1970) % 2 == 1 {
+                    duration[$0].foregroundColor = .clear
+                }
+                
+                duration[$0].font = .title.weight(.regular)
             }
         
         return duration
