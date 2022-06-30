@@ -8,14 +8,16 @@ extension Walking {
         var body: some View {
             HStack(alignment: .firstTextBaseline) {
                 Text(.squares(value: walker.explored)
-                    .numeric(font: .title2.monospacedDigit().weight(.medium),
+                    .numeric(font: .title.monospacedDigit().weight(.medium),
                              color: .primary))
-                    .font(.footnote.weight(.regular))
+                    .font(.callout.weight(.regular))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
                     .fixedSize()
                 
-                Indicator(current: walker.leaf.current, max: walker.leaf.total)
+                Indicator(current: walker.leaf.current,
+                          max: walker.leaf.total,
+                          height: 6)
             }
             
             if limit && walker.leaf.squares > 0 {

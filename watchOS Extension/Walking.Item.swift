@@ -9,16 +9,15 @@ extension Walking {
         var body: some View {
             HStack(alignment: .firstTextBaseline) {
                 Text(value
-                    .numeric(font: .title2.monospacedDigit().weight(.medium),
+                    .numeric(font: .title.monospacedDigit().weight(.medium),
                              color: .primary))
-                .font(.footnote.weight(.regular))
+                .font(.callout.weight(.regular))
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
                 .fixedSize()
                 
                 indicator
             }
-            .padding(.top, 1)
             
             if let limit = limit {
                 Text(limit.numeric(font: .body.monospacedDigit().weight(.regular),

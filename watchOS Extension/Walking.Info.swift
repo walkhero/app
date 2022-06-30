@@ -10,7 +10,7 @@ extension Walking {
             ScrollView {
                 VStack(spacing: 0) {
                     Top(session: session)
-                        .padding(.top, limit ? 25 : 8)
+                        .padding(.top, 15)
                     
                     if limit {
                         Text((.streak(value: session.chart.streak.current)
@@ -21,7 +21,6 @@ extension Walking {
                         .font(.callout.weight(.regular))
                         .lineLimit(1)
                         .foregroundStyle(.tertiary)
-                        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                         .padding(.bottom, 15)
                     }
                     
@@ -31,26 +30,32 @@ extension Walking {
                          limit: limit && session.chart.steps.max > 0
                          ? .steps(value: session.chart.steps.max)
                          : nil,
-                         indicator: .init(current: walker.steps, max: session.chart.steps.max))
+                         indicator: .init(current: walker.steps,
+                                          max: session.chart.steps.max,
+                                          height: 6))
                     
                     Item(value: .metres(value: walker.metres, fraction: true),
                          limit: limit && session.chart.metres.max > 0
                          ? .metres(value: session.chart.metres.max, fraction: false)
                          : nil,
-                         indicator: .init(current: walker.metres, max: session.chart.metres.max))
+                         indicator: .init(current: walker.metres,
+                                          max: session.chart.metres.max,
+                                          height: 6))
                     
                     Item(value: .calories(value: walker.calories, caption: true),
                          limit: limit && session.chart.calories.max > 0
                          ? .calories(value: session.chart.calories.max, caption: true)
                          : nil,
-                         indicator: .init(current: walker.calories, max: session.chart.calories.max))
+                         indicator: .init(current: walker.calories,
+                                          max: session.chart.calories.max,
+                                          height: 6))
                 }
                 .animation(.easeInOut(duration: 0.4), value: limit)
                 .onTapGesture {
                     limit.toggle()
                 }
                 .padding(.horizontal)
-                .padding(.bottom, 15)
+                .padding(.bottom, 35)
             }
         }
     }
