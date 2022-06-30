@@ -10,7 +10,7 @@ extension Walking {
             ScrollView {
                 VStack(spacing: 0) {
                     Top(session: session)
-                        .padding(.top, 15)
+                        .padding(.top, 16)
                     
                     if limit {
                         Text((.streak(value: session.chart.streak.current)
@@ -50,11 +50,10 @@ extension Walking {
                                           max: session.chart.calories.max,
                                           height: 6))
                 }
-                .animation(.easeInOut(duration: 0.4), value: limit)
+                .animation(.easeInOut(duration: 0.3), value: limit)
                 .onTapGesture {
                     limit.toggle()
                 }
-                .padding(.horizontal)
                 .padding(.bottom, 35)
             }
         }

@@ -6,18 +6,20 @@ extension Walking {
         let limit: Bool
         
         var body: some View {
-            HStack(alignment: .firstTextBaseline) {
-                Text(.squares(value: walker.explored)
-                    .numeric(font: .title.monospacedDigit().weight(.medium),
-                             color: .primary))
-                    .font(.callout.weight(.regular))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                    .fixedSize()
-                
+            ZStack(alignment: .topTrailing) {
                 Indicator(current: walker.leaf.current,
                           max: walker.leaf.total,
                           height: 6)
+                    .frame(width: 80)
+                    .padding(.top, 13)
+                
+                Text(.squares(value: walker.explored)
+                    .numeric(font: .title.monospacedDigit().weight(.medium),
+                             color: .primary))
+                .font(.callout.weight(.regular))
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
             }
             
             if limit && walker.leaf.squares > 0 {
@@ -29,7 +31,6 @@ extension Walking {
                     .font(.callout.weight(.regular))
                     .lineLimit(1)
                     .foregroundStyle(.tertiary)
-                    .frame(maxWidth: .greatestFiniteMagnitude, alignment: .trailing)
                     .padding(.bottom, 15)
             }
         }
