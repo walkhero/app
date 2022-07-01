@@ -10,7 +10,7 @@ extension Main {
                     Text("Walked")
                         .font(.footnote.weight(.regular))
                     Text(.duration(value: .init(updated.duration)))
-                        .font(.footnote.weight(.regular))
+                        .font(.footnote.weight(.regular).monospacedDigit())
                         .foregroundStyle(.secondary)
                     Text(updated.end, format: .relative(presentation: .named,
                                                         unitsStyle: .abbreviated))

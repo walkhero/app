@@ -11,7 +11,7 @@ struct Stats: View {
                 Spacer()
                     .frame(height: 5)
                 
-                Today(updated: session.chart.updated?.start)
+                Walked(updated: session.chart.updated)
                 
                 if Defaults.froob {
                     if !premium {
@@ -26,12 +26,25 @@ struct Stats: View {
         }
         .safeAreaInset(edge: .top, spacing: 0) {
             Main.Title(title: "Overview")  {
-                if let updated = session.chart.updated {
-                    Text("Walked " + updated.end
-                        .formatted(.relative(presentation: .named,
-                                             unitsStyle: .abbreviated)))
-                    .font(.footnote.weight(.regular))
-                    .padding(.trailing)
+                if let updated = session.chart.updated?.start,
+                    Calendar.global.isDateInToday(updated) {
+                    Text("Walk today")
+                        .font(.callout.weight(.medium))
+                        .foregroundColor(.accentColor)
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: 22, weight: .light))
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.accentColor)
+                        .padding(.trailing)
+                } else {
+                    Text("No walk today")
+                        .font(.callout.weight(.medium))
+                        .foregroundColor(.pink)
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .font(.system(size: 22, weight: .light))
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.pink)
+                        .padding(.trailing)
                 }
             }
         }

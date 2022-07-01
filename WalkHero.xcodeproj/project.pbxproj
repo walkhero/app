@@ -77,7 +77,7 @@
 		CEAA8C902863238B0009D440 /* Results.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA8C8F2863238B0009D440 /* Results.Item.swift */; };
 		CEB0D6D8278DC0CE00A7C9AF /* Walking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0D6D7278DC0CE00A7C9AF /* Walking.swift */; };
 		CEBE58EB2861B7050062733B /* Walking.Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE58EA2861B7050062733B /* Walking.Actions.swift */; };
-		CEBE58ED2861C4DB0062733B /* Stats.Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE58EC2861C4DB0062733B /* Stats.Today.swift */; };
+		CEBE58ED2861C4DB0062733B /* Stats.Walked.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE58EC2861C4DB0062733B /* Stats.Walked.swift */; };
 		CEBE58EF2861CA730062733B /* Main.Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE58EE2861CA730062733B /* Main.Actions.swift */; };
 		CEBF91B32858A96800811090 /* Walking.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF91B22858A96800811090 /* Walking.Item.swift */; };
 		CEC805BA277B36B400D1B046 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC805B9277B36B400D1B046 /* Main.swift */; };
@@ -212,7 +212,7 @@
 		CEADD73327960E8600636974 /* watchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS.entitlements; sourceTree = "<group>"; };
 		CEB0D6D7278DC0CE00A7C9AF /* Walking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.swift; sourceTree = "<group>"; };
 		CEBE58EA2861B7050062733B /* Walking.Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Actions.swift; sourceTree = "<group>"; };
-		CEBE58EC2861C4DB0062733B /* Stats.Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Today.swift; sourceTree = "<group>"; };
+		CEBE58EC2861C4DB0062733B /* Stats.Walked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.Walked.swift; sourceTree = "<group>"; };
 		CEBE58EE2861CA730062733B /* Main.Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Actions.swift; sourceTree = "<group>"; };
 		CEBF91B22858A96800811090 /* Walking.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Item.swift; sourceTree = "<group>"; };
 		CEC805B7277B291C00D1B046 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -370,7 +370,7 @@
 				CEDF5D70285DF5CE00BD19A4 /* Stats.Explore.swift */,
 				CEDF5D72285DF87300BD19A4 /* Stats.Item.swift */,
 				CEDF5D6C285DE16500BD19A4 /* Stats.swift */,
-				CEBE58EC2861C4DB0062733B /* Stats.Today.swift */,
+				CEBE58EC2861C4DB0062733B /* Stats.Walked.swift */,
 				CEF40CA52779F6CE001BECAB /* Store.Item.swift */,
 				CEF40CA42779F6CE001BECAB /* Store.Status.swift */,
 				CEF40CA32779F6CE001BECAB /* Store.swift */,
@@ -636,7 +636,7 @@
 				CE3965E6285B73ED008A3CAF /* Walking.Explore.swift in Sources */,
 				CED84665285893A7002A4BE6 /* Session.swift in Sources */,
 				CEF40CA02779F6A0001BECAB /* UNUserNotificationCenter.swift in Sources */,
-				CEBE58ED2861C4DB0062733B /* Stats.Today.swift in Sources */,
+				CEBE58ED2861C4DB0062733B /* Stats.Walked.swift in Sources */,
 				CED84661285888EF002A4BE6 /* Main.Item.swift in Sources */,
 				CEDF5D71285DF5CE00BD19A4 /* Stats.Explore.swift in Sources */,
 				CE846E67278E178B005989B0 /* Challenge.swift in Sources */,
