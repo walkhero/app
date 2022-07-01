@@ -14,7 +14,6 @@ extension Stats {
             Text(leaf.name.title)
                 .font(.title2.weight(.medium))
                 .lineLimit(1)
-                .padding(.horizontal)
             
             if leaf.squares > 0 {
                 Text(.squares(value: leaf.squares)
@@ -23,14 +22,12 @@ extension Stats {
                 .font(.footnote.weight(.regular))
                 .lineLimit(1)
                 .foregroundColor(.secondary)
-                .padding(.horizontal)
             }
             
             Text(leaf.next.formatted() + " next")
                 .font(.caption2.monospacedDigit().weight(.light))
                 .lineLimit(1)
                 .foregroundStyle(.secondary)
-                .padding(.horizontal)
         }
     }
 }

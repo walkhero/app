@@ -6,7 +6,17 @@ extension Main {
         
         var body: some View {
             VStack {
-                Spacer()
+                if let updated = session.chart.updated {
+                    Text("Walked")
+                        .font(.footnote.weight(.regular))
+                    Text(.duration(value: .init(updated.duration)))
+                        .font(.footnote.weight(.regular))
+                        .foregroundStyle(.secondary)
+                    Text(updated.end, format: .relative(presentation: .named,
+                                                        unitsStyle: .abbreviated))
+                    .font(.footnote.weight(.regular))
+                    .foregroundStyle(.secondary)
+                }
                 
                 Button {
                     Task {
@@ -18,19 +28,11 @@ extension Main {
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.borderedProminent)
-                .padding(.horizontal, 16)
-                .padding(.bottom)
+                .padding(.horizontal, 25)
+                .padding(.vertical, 10)
                 
-                if let updated = session.chart.updated {
-                    Text("Walked " + updated.end
-                        .formatted(.relative(presentation: .named,
-                                             unitsStyle: .abbreviated)))
-                    .font(.footnote.weight(.regular))
-                    .foregroundStyle(.secondary)
-                }
-                
-                if let updated = session.chart.updated?.start, Calendar.global.isDateInToday(updated) {
-                    HStack {
+                HStack {
+                    if let updated = session.chart.updated?.start, Calendar.global.isDateInToday(updated) {
                         Image(systemName: "checkmark.circle.fill")
                             .font(.system(size: 22, weight: .light))
                             .symbolRenderingMode(.hierarchical)
@@ -38,9 +40,7 @@ extension Main {
                         Text("Walk today")
                             .font(.footnote.weight(.medium))
                             .foregroundColor(.accentColor)
-                    }
-                } else {
-                    HStack {
+                    } else {
                         Image(systemName: "exclamationmark.triangle.fill")
                             .font(.system(size: 22, weight: .light))
                             .symbolRenderingMode(.hierarchical)
@@ -50,6 +50,7 @@ extension Main {
                             .foregroundStyle(.pink)
                     }
                 }
+                .padding(.bottom, 10)
             }
         }
     }

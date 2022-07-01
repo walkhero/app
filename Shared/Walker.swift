@@ -147,14 +147,39 @@ final class Walker: NSObject, ObservableObject, CLLocationManagerDelegate {
             }
     }
 
-    @MainActor func finish() async -> Summary? {
-        let summary = await cloud
-            .finish(steps: steps,
+    @MainActor func finish(walking: UInt32, chart: Chart) async -> Summary? {
+        guard walking != 0 else { return nil }
+        
+        let duration = Calendar.global.duration(from: walking)
+        let steps = steps
+        let metres = metres
+        let calories = calories
+        let items = await squares.items
+        let current = Leaf(squares: items.union(tiles).count)
+        var total = chart.walks
+        
+        if duration > 0 {
+            total += 1
+        }
+        
+        Task.detached {
+            await cloud
+                .finish(
+                    duration: duration,
+                    steps: steps,
                     metres: metres,
                     calories: calories,
-                    squares: squares.items)
+                    squares: items)
+        }
 
-        return summary
+        return .init(leaf: leaf.name == current.name ? nil : current,
+                     duration: .init(duration),
+                     walks: total,
+                     steps: steps,
+                     metres: metres,
+                     calories: calories,
+                     squares: explored,
+                     streak: chart.streak.current)
     }
 
     @MainActor func cancel() async {

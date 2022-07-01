@@ -33,7 +33,7 @@ struct Streak: View {
             
             Month(days: calendar[index])
                 .frame(maxWidth: 350)
-                .animation(.spring(), value: index)
+                .animation(.spring(blendDuration: 0.3), value: index)
             
             Spacer()
             

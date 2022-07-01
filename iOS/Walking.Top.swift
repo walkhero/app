@@ -65,7 +65,8 @@ extension Walking {
                             
                             Button {
                                 Task {
-                                    session.summary = await walker.finish()
+                                    session.summary = await walker.finish(walking: session.walking,
+                                                                          chart: session.chart)
                                 }
                             } label: {
                                 Text("Finish")

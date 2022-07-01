@@ -11,11 +11,12 @@ extension Walking {
                     Indicator(current: .init(time.date.timestamp - session.walking),
                               max: session.chart.duration.max,
                               height: 12)
-                    .frame(width: 60)
+                    .frame(width: 56)
+                    .padding(.bottom, 2)
                     
                     if session.walking > 0 {
                         Text(.duration(start: session.walking, current: time.date))
-                            .font(.largeTitle.weight(.medium).monospacedDigit())
+                            .font(.system(size: 35, weight: .medium).monospacedDigit())
                             .lineLimit(1)
                             .frame(maxWidth: .greatestFiniteMagnitude)
                     }

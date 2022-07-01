@@ -8,17 +8,17 @@ extension Walking {
         
         var body: some View {
             ScrollView {
-                VStack(spacing: 0) {
+                VStack(spacing: -1) {
                     Top(session: session)
-                        .padding(.top, 16)
+                        .padding(.top, 12)
                     
                     if limit {
                         Text((.streak(value: session.chart.streak.current)
                               + .init(", ")
                               + .walks(value: session.chart.walks))
-                            .numeric(font: .body.monospacedDigit().weight(.regular),
+                            .numeric(font: .system(size: 17, weight: .regular).monospacedDigit(),
                                      color: .secondary))
-                        .font(.callout.weight(.regular))
+                        .font(.system(size: 15, weight: .regular))
                         .lineLimit(1)
                         .foregroundStyle(.tertiary)
                         .padding(.bottom, 15)

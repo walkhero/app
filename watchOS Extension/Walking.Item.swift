@@ -9,22 +9,22 @@ extension Walking {
         var body: some View {
             ZStack(alignment: .topTrailing) {
                 indicator
-                    .frame(width: 80)
-                    .padding(.top, 13)
+                    .frame(width: 90)
+                    .padding(.top, 8)
                 
                 Text(value
-                    .numeric(font: .title.monospacedDigit().weight(.medium),
+                    .numeric(font: .system(size: 30, weight: .medium).monospacedDigit(),
                              color: .primary))
-                .font(.callout.weight(.regular))
+                .font(.system(size: 15, weight: .regular))
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
             }
             
             if let limit = limit {
-                Text(limit.numeric(font: .body.monospacedDigit().weight(.regular),
+                Text(limit.numeric(font: .system(size: 17, weight: .regular).monospacedDigit(),
                                    color: .secondary))
-                    .font(.callout.weight(.regular))
+                    .font(.system(size: 15, weight: .regular))
                     .foregroundStyle(.tertiary)
                     .lineLimit(1)
                     .padding(.bottom, 15)

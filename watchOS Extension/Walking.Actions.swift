@@ -32,7 +32,7 @@ extension Walking {
                         }
                     }
                     .font(.callout)
-                    .padding(.horizontal)
+                    .padding(.horizontal, 10)
                 } else {
                     VStack {
                         HStack {
@@ -56,15 +56,16 @@ extension Walking {
                     
                     Button("Finish") {
                         Task {
-                            session.summary = await walker.finish()
+                            session.summary = await walker.finish(walking: session.walking,
+                                                                  chart: session.chart)
                         }
                     }
                     .font(.body.weight(.semibold))
                     .buttonStyle(.borderedProminent)
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 20)
                 }
             }
-            .animation(.easeInOut(duration: 0.4), value: alert)
+            .animation(.easeInOut(duration: 0.3), value: alert)
         }
     }
 }

@@ -4,11 +4,6 @@ import Hero
 struct Results: View {
     let session: Session
     let summary: Summary
-    private let dates = (0 ..< 20)
-        .map {
-            Date.now.timeIntervalSince1970 + (.init($0) / 10)
-        }
-    @Environment(\.scenePhase) private var phase
     
     var body: some View {
         ScrollView {

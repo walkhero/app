@@ -70,6 +70,8 @@
 		CE96341F277CA1F700CCFF4B /* Streak.Month.Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE963419277CA1F700CCFF4B /* Streak.Month.Day.swift */; };
 		CE963421277CA1F700CCFF4B /* Streak.Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341B277CA1F700CCFF4B /* Streak.Navigation.swift */; };
 		CE963423277CA1F700CCFF4B /* Streak.Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96341D277CA1F700CCFF4B /* Streak.Month.swift */; };
+		CEA8F73B286EEFFA00745901 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F73A286EEFFA00745901 /* Summary.swift */; };
+		CEA8F73C286EEFFA00745901 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F73A286EEFFA00745901 /* Summary.swift */; };
 		CEAA8C8C28631CEF0009D440 /* Walking.Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA8C8B28631CEF0009D440 /* Walking.Info.swift */; };
 		CEAA8C8E286323780009D440 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA8C8D286323780009D440 /* Results.swift */; };
 		CEAA8C902863238B0009D440 /* Results.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA8C8F2863238B0009D440 /* Results.Item.swift */; };
@@ -202,6 +204,7 @@
 		CE963419277CA1F700CCFF4B /* Streak.Month.Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.Month.Day.swift; sourceTree = "<group>"; };
 		CE96341B277CA1F700CCFF4B /* Streak.Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.Navigation.swift; sourceTree = "<group>"; };
 		CE96341D277CA1F700CCFF4B /* Streak.Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.Month.swift; sourceTree = "<group>"; };
+		CEA8F73A286EEFFA00745901 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		CEAA8C8B28631CEF0009D440 /* Walking.Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walking.Info.swift; sourceTree = "<group>"; };
 		CEAA8C8D286323780009D440 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		CEAA8C8F2863238B0009D440 /* Results.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.Item.swift; sourceTree = "<group>"; };
@@ -398,6 +401,7 @@
 				CE3965EC285B7CFE008A3CAF /* Leaf.Name.swift */,
 				CE41574D2859D3A5001513A0 /* Progress.swift */,
 				CED84664285893A7002A4BE6 /* Session.swift */,
+				CEA8F73A286EEFFA00745901 /* Summary.swift */,
 				CE005EE2285A4B0B00CE370E /* Walker.swift */,
 				CEF40CBC2779FBB3001BECAB /* Accent.xcassets */,
 				CE3965E9285B7C71008A3CAF /* Leaf.xcassets */,
@@ -557,6 +561,7 @@
 				CE000D112860DA1D00FAB4BD /* Walker.swift in Sources */,
 				CE000D062860CD3700FAB4BD /* Stats.swift in Sources */,
 				CEAA8C902863238B0009D440 /* Results.Item.swift in Sources */,
+				CEA8F73C286EEFFA00745901 /* Summary.swift in Sources */,
 				CE252331278C6FFD000A26C5 /* App.Delegate.swift in Sources */,
 				CE12C6772862108500274FE6 /* Walking.Item.swift in Sources */,
 				CEF6D83E286C43BB006A87F0 /* Achievement.swift in Sources */,
@@ -601,6 +606,7 @@
 				CE1912B8285CDD4000956D95 /* Settings.swift in Sources */,
 				CE3965DE285B37F9008A3CAF /* AttributedString.swift in Sources */,
 				CEF40CB32779FAF7001BECAB /* UIApplication.swift in Sources */,
+				CEA8F73B286EEFFA00745901 /* Summary.swift in Sources */,
 				CE005EE3285A4B0B00CE370E /* Walker.swift in Sources */,
 				CEF40CA62779F6CE001BECAB /* Store.swift in Sources */,
 				CE000CFD2860AD3C00FAB4BD /* Results.Item.swift in Sources */,
