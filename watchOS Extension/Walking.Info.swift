@@ -8,7 +8,7 @@ extension Walking {
         
         var body: some View {
             ScrollView {
-                VStack(spacing: -1) {
+                VStack(spacing: 0) {
                     Top(session: session)
                         .padding(.top, 12)
                     
@@ -16,9 +16,9 @@ extension Walking {
                         Text((.streak(value: session.chart.streak.current)
                               + .init(", ")
                               + .walks(value: session.chart.walks))
-                            .numeric(font: .system(size: 17, weight: .regular).monospacedDigit(),
+                            .numeric(font: .system(size: 16, weight: .regular).monospacedDigit(),
                                      color: .secondary))
-                        .font(.system(size: 15, weight: .regular))
+                        .font(.system(size: 14, weight: .regular))
                         .lineLimit(1)
                         .foregroundStyle(.tertiary)
                         .padding(.bottom, 15)

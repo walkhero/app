@@ -75,7 +75,7 @@ extension AttributedString {
                     duration[$0].foregroundColor = .clear
                 }
                 
-                duration[$0].font = .system(size: 32, weight: .regular)
+                duration[$0].font = .system(size: 30, weight: .regular)
             }
         
         return duration

@@ -10,13 +10,13 @@ extension Walking {
                 Indicator(current: walker.leaf.current,
                           max: walker.leaf.total,
                           height: 6)
-                    .frame(width: 90)
-                    .padding(.top, 8)
+                    .frame(width: 60)
+                    .padding(.top, 12)
                 
                 Text(.squares(value: walker.explored)
-                    .numeric(font: .system(size: 30, weight: .medium).monospacedDigit(),
+                    .numeric(font: .system(size: 28, weight: .medium).monospacedDigit(),
                              color: .primary))
-                .font(.system(size: 15, weight: .regular))
+                .font(.system(size: 14, weight: .regular))
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
@@ -26,9 +26,9 @@ extension Walking {
                 Text((.plain(value: walker.leaf.squares)
                       + .init(" of ")
                       + .plain(value: walker.leaf.next))
-                    .numeric(font: .system(size: 17, weight: .regular).monospacedDigit(),
+                    .numeric(font: .system(size: 16, weight: .regular).monospacedDigit(),
                              color: .secondary))
-                .font(.system(size: 15, weight: .regular))
+                .font(.system(size: 14, weight: .regular))
                 .lineLimit(1)
                 .foregroundStyle(.tertiary)
                 .padding(.bottom, 15)
