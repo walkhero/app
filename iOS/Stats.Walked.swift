@@ -12,7 +12,7 @@ extension Stats {
                         .foregroundColor(.accentColor)
                     + Text(" ") +
                     Text(.duration(value: .init(updated.duration)))
-                        .font(.callout.weight(.medium).monospacedDigit())
+                        .font(.callout.weight(.regular).monospacedDigit())
                     + Text(" ") +
                     Text(updated.end, format: .relative(presentation: .named,
                                                         unitsStyle: .abbreviated))
