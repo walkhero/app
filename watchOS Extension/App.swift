@@ -25,7 +25,7 @@ import HealthKit
                     first = false
                     cloud.ready.notify(queue: .main) {
                         cloud.pull.send()
-                        session.loading += 1
+                        session.ready = true
                         
                         Task
                             .detached {
