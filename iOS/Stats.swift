@@ -29,7 +29,7 @@ struct Stats: View {
                 if let updated = session.chart.updated?.start,
                     Calendar.global.isDateInToday(updated) {
                     Text("Walk today")
-                        .font(.callout.weight(.medium))
+                        .font(.footnote.weight(.medium))
                         .foregroundColor(.accentColor)
                     Image(systemName: "checkmark.circle.fill")
                         .font(.system(size: 22, weight: .light))
@@ -38,7 +38,7 @@ struct Stats: View {
                         .padding(.trailing)
                 } else {
                     Text("No walk today")
-                        .font(.callout.weight(.medium))
+                        .font(.footnote.weight(.medium))
                         .foregroundColor(.pink)
                     Image(systemName: "exclamationmark.triangle.fill")
                         .font(.system(size: 22, weight: .light))
