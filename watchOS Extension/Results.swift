@@ -4,6 +4,7 @@ import Hero
 struct Results: View, Equatable {
     let session: Session
     let summary: Summary
+    private let id = UUID()
     
     var body: some View {
         ScrollView {

@@ -59,7 +59,7 @@ extension Walking {
                             let summary = await walker.finish(walking: session.walking,
                                                                   chart: session.chart)
                             
-                            withAnimation(.easeInOut(duration: 0.45)) {
+                            withAnimation(.easeInOut(duration: 0.7)) {
                                 session.summary = summary
                             }
                         }
