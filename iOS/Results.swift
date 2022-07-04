@@ -6,7 +6,7 @@ struct Results: View, Equatable {
     let summary: Summary
     private let dates = (0 ..< 20)
         .map {
-            Date(timeIntervalSinceNow: (.init($0) / 10))
+            Date(timeIntervalSinceNow: .init($0) / 10)
         }
     
     var body: some View {
