@@ -6,11 +6,11 @@ extension Results {
         
         var body: some View {
             Text(value
-                .numeric(font: .title3.monospacedDigit().weight(.bold),
+                .numeric(font: .title.monospacedDigit().weight(.bold),
                          color: .primary))
                 .font(.body.weight(.medium))
                 .foregroundStyle(.secondary)
-                .padding(.top, 10)
+                .padding(.top, 5)
                 .padding(.bottom, 3)
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
             

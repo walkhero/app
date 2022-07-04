@@ -19,6 +19,7 @@ struct Window: View {
                 .transition(.opacity)
         } else if let summary = session.summary {
             Results(session: session, summary: summary)
+                .equatable()
                 .transition(.opacity)
         } else if session.walking > 0 {
             Walking(session: session)

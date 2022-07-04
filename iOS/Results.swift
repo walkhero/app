@@ -1,61 +1,62 @@
 import SwiftUI
 import Hero
 
-struct Results: View {
+struct Results: View, Equatable {
     let session: Session
     let summary: Summary
-    private let dates = (0 ..< 12)
+    private let dates = (0 ..< 20)
         .map {
-            Date.now.timeIntervalSince1970 + (.init($0) / 10)
+            Date(timeIntervalSinceNow: (.init($0) / 10))
         }
     
     var body: some View {
         VStack(spacing: 0) {
-            TimelineView(.animation(minimumInterval: 0.05, paused: false)) { timeline in
+            TimelineView(.explicit(dates)) { timeline in
                 item(date: timeline.date,
-                     index: 3) {
+                     index: 1) {
                     Text(.ordinal(value: summary.walks)
-                        .numeric(font: .title.weight(.bold),
+                        .numeric(font: .largeTitle.weight(.bold),
                                  color: .primary))
-                        .font(.title3.weight(.regular))
+                        .font(.title2.weight(.regular))
                         .foregroundStyle(.secondary)
+                        .padding(.top, 20)
                         .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
                 }
                 
                 item(date: timeline.date,
-                     index: 4) {
+                     index: 2) {
                     Item(value: .duration(value: summary.duration))
                 }
                 
                 item(date: timeline.date,
-                     index: 5) {
+                     index: 3) {
                     Item(value: .streak(value: summary.streak))
                 }
                 
                 item(date: timeline.date,
-                     index: 6) {
+                     index: 4) {
                     Item(value: .squares(value: summary.squares))
                 }
                 
                 item(date: timeline.date,
-                     index: 7) {
+                     index: 5) {
                     Item(value: .steps(value: summary.steps))
                 }
                 
                 item(date: timeline.date,
-                     index: 8) {
+                     index: 6) {
                     Item(value: .metres(value: summary.metres, fraction: true))
                 }
                 
                 item(date: timeline.date,
-                     index: 9) {
+                     index: 7) {
                     Item(value: .calories(value: summary.calories, caption: true))
                 }
                 
                 Spacer()
                 
                 item(date: timeline.date,
-                     index: 10) {
+                     index: 9) {
                     Button {
                         withAnimation(.easeInOut(duration: 0.5)) {
                             session.achievement = summary.leaf
@@ -74,11 +75,12 @@ struct Results: View {
                     .tint(.white)
                     .foregroundColor(.accentColor)
                     .buttonStyle(.borderedProminent)
+                    .padding(.bottom, 30)
                 }
             }
         }
         .frame(maxWidth: .greatestFiniteMagnitude)
-        .padding(30)
+        .padding(.horizontal, 30)
         .background(LinearGradient(stops: [.init(color: .init("Middle"), location: 0),
                                            .init(color: .init("Top"), location: 0.75),
                                            .init(color: .init("Bottom"), location: 1)],
@@ -91,9 +93,13 @@ struct Results: View {
     @inlinable @ViewBuilder func item<C>(date: Date,
                                       index: Int,
                                       content: () -> C) -> some View where C : View {
-        if date.timeIntervalSince1970 > dates[index] {
+        if date > dates[index] {
             content()
-                .opacity(date.timeIntervalSince1970 > dates[index + 1] ? 1 : 0.3)
+                .opacity(date > dates[index + 1] ? 1 : 0.3)
         }
+    }
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        true
     }
 }
