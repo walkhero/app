@@ -12,6 +12,10 @@ import Hero
         WindowGroup {
             Window(session: session)
                 .onReceive(cloud) { model in
+                    if session.chart.walks == 0 {
+                        session.loaded = false
+                    }
+                    
                     session.walking = model.walking
                     
                     Task
@@ -20,6 +24,9 @@ import Hero
                         }
                 }
                 .task {
+                    session.ready = false
+                    session.loaded = false
+                    
                     cloud.ready.notify(queue: .main) {
                         cloud.pull.send()
                         Defaults.start()
