@@ -56,8 +56,12 @@ extension Walking {
                     
                     Button("Finish") {
                         Task {
-                            session.summary = await walker.finish(walking: session.walking,
+                            let summary = await walker.finish(walking: session.walking,
                                                                   chart: session.chart)
+                            
+                            withAnimation(.easeInOut(duration: 0.45)) {
+                                session.summary = summary
+                            }
                         }
                     }
                     .font(.body.weight(.semibold))

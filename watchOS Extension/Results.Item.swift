@@ -9,8 +9,8 @@ extension Results {
                 .numeric(font: .title2.monospacedDigit().weight(.medium),
                          color: .primary))
                 .font(.body.weight(.medium))
-                .foregroundStyle(.secondary)
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
+                .padding(.vertical, 3)
             
             Rectangle()
                 .foregroundStyle(.quaternary)

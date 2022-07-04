@@ -18,6 +18,7 @@ struct Window: View {
             Achievement(session: session, leaf: leaf)
         } else if let summary = session.summary {
            Results(session: session, summary: summary)
+                .equatable()
        } else if session.walking > 0 {
             Walking(session: session)
         } else {
