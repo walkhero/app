@@ -19,7 +19,7 @@ import Hero
                     session.walking = model.walking
                     
                     Task
-                        .detached(priority: .utility) {
+                        .detached {
                             await session.update(chart: model.chart, tiles: model.tiles)
                         }
                 }
