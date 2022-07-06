@@ -4,7 +4,7 @@ import Hero
 extension Walking {
     struct Top: View {
         @ObservedObject var session: Session
-        let walker: Walker
+        @ObservedObject var walker: Walker
         let chart: Chart
         @State private var alert = false
         @Environment(\.scenePhase) private var phase

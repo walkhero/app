@@ -2,7 +2,7 @@ import SwiftUI
 import Hero
 
 struct Results: View, Equatable {
-    let session: Session
+    @ObservedObject var session: Session
     let summary: Summary
     private let dates = (0 ..< 20)
         .map {
