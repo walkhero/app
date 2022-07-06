@@ -1,7 +1,9 @@
 import SwiftUI
+import Hero
 
 struct Main: View {
     let session: Session
+    let chart: Chart
     @State private var navigation = Navigation.statistics
     
     var body: some View {
@@ -46,9 +48,9 @@ struct Main: View {
         case .map:
             Mapper(session: session)
         case .statistics:
-            Stats(session: session)
+            Stats(session: session, chart: chart)
         case .calendar:
-            Streak(calendar: session.chart.calendar)
+            Streak(calendar: chart.calendar)
         case .settings:
             Settings()
         }

@@ -1,12 +1,13 @@
 import SwiftUI
+import Hero
 
 extension Main {
     struct Actions: View {
-        @ObservedObject var session: Session
+        let chart: Chart
         
         var body: some View {
             VStack {
-                if let updated = session.chart.updated {
+                if let updated = chart.updated {
                     Text("Walked")
                         .font(.footnote.weight(.regular))
                     Text(.duration(value: .init(updated.duration)))
@@ -32,7 +33,7 @@ extension Main {
                 .padding(.vertical, 10)
                 
                 HStack {
-                    if let updated = session.chart.updated?.start, Calendar.global.isDateInToday(updated) {
+                    if let updated = chart.updated?.start, Calendar.global.isDateInToday(updated) {
                         Image(systemName: "checkmark.circle.fill")
                             .font(.system(size: 22, weight: .light))
                             .symbolRenderingMode(.hierarchical)

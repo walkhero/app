@@ -1,21 +1,23 @@
 import SwiftUI
+import Hero
 
 extension Walking {
     struct Info: View {
-        @ObservedObject var session: Session
         @ObservedObject var walker: Walker
+        let session: Session
+        let chart: Chart
         @State private var limit = false
         
         var body: some View {
             ScrollView {
                 VStack(spacing: 0) {
-                    Top(session: session)
+                    Top(chart: chart, walking: session.walking)
                         .padding(.top, 12)
                     
                     if limit {
-                        Text((.streak(value: session.chart.streak.current)
+                        Text((.streak(value: chart.streak.current)
                               + .init(", ")
-                              + .walks(value: session.chart.walks))
+                              + .walks(value: chart.walks))
                             .numeric(font: .system(size: 16, weight: .regular).monospacedDigit(),
                                      color: .secondary))
                         .font(.system(size: 14, weight: .regular))
@@ -27,27 +29,27 @@ extension Walking {
                     Explore(walker: walker, limit: limit)
                     
                     Item(value: .steps(value: walker.steps),
-                         limit: limit && session.chart.steps.max > 0
-                         ? .steps(value: session.chart.steps.max)
+                         limit: limit && chart.steps.max > 0
+                         ? .steps(value: chart.steps.max)
                          : nil,
                          indicator: .init(current: walker.steps,
-                                          max: session.chart.steps.max,
+                                          max: chart.steps.max,
                                           height: 6))
                     
                     Item(value: .metres(value: walker.metres, fraction: true),
-                         limit: limit && session.chart.metres.max > 0
-                         ? .metres(value: session.chart.metres.max, fraction: false)
+                         limit: limit && chart.metres.max > 0
+                         ? .metres(value: chart.metres.max, fraction: false)
                          : nil,
                          indicator: .init(current: walker.metres,
-                                          max: session.chart.metres.max,
+                                          max: chart.metres.max,
                                           height: 6))
                     
                     Item(value: .calories(value: walker.calories, caption: true),
-                         limit: limit && session.chart.calories.max > 0
-                         ? .calories(value: session.chart.calories.max, caption: true)
+                         limit: limit && chart.calories.max > 0
+                         ? .calories(value: chart.calories.max, caption: true)
                          : nil,
                          indicator: .init(current: walker.calories,
-                                          max: session.chart.calories.max,
+                                          max: chart.calories.max,
                                           height: 6))
                 }
                 .animation(.easeInOut(duration: 0.3), value: limit)

@@ -4,7 +4,6 @@ import HealthKit
 
 @main struct App: SwiftUI.App {
     @StateObject private var session = Session()
-    @State private var first = true
     @Environment(\.scenePhase) private var phase
     @WKExtensionDelegateAdaptor(Delegate.self) private var delegate
     
@@ -20,12 +19,9 @@ import HealthKit
                         }
                 }
                 .task {
-                    guard first else { return }
-                    
-                    first = false
                     cloud.ready.notify(queue: .main) {
                         cloud.pull.send()
-                        session.ready = true
+                        session.loaded = true
                         
                         Task
                             .detached {

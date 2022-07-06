@@ -12,25 +12,18 @@ import Hero
         WindowGroup {
             Window(session: session)
                 .onReceive(cloud) { model in
-                    if session.chart.walks == 0 {
-                        session.loaded = false
-                    }
-                    
                     session.walking = model.walking
                     
                     Task
-                        .detached {
+                        .detached(priority: .utility) {
                             await session.update(chart: model.chart, tiles: model.tiles)
                         }
                 }
                 .task {
-                    session.ready = false
-                    session.loaded = false
-                    
                     cloud.ready.notify(queue: .main) {
                         cloud.pull.send()
                         Defaults.start()
-                        session.ready = true
+                        session.loaded = true
                         
                         Task
                             .detached {

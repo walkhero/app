@@ -1,7 +1,9 @@
 import SwiftUI
+import Hero
 
 struct Walking: View {
     @ObservedObject var session: Session
+    let chart: Chart
     @StateObject private var walker = Walker()
     
     var body: some View {
@@ -10,16 +12,16 @@ struct Walking: View {
                 .padding(.top, 20)
             
             Item(value: .steps(value: walker.steps),
-                 limit: session.chart.steps.max > 0 ? .steps(value: session.chart.steps.max) : nil,
-                 progress: .init(current: walker.steps, max: session.chart.steps.max))
+                 limit: chart.steps.max > 0 ? .steps(value: chart.steps.max) : nil,
+                 progress: .init(current: walker.steps, max: chart.steps.max))
             
             Item(value: .metres(value: walker.metres, fraction: true),
-                 limit: session.chart.metres.max > 0 ? .metres(value: session.chart.metres.max, fraction: true) : nil,
-                 progress: .init(current: walker.metres, max: session.chart.metres.max))
+                 limit: chart.metres.max > 0 ? .metres(value: chart.metres.max, fraction: true) : nil,
+                 progress: .init(current: walker.metres, max: chart.metres.max))
             
             Item(value: .calories(value: walker.calories, caption: true),
-                 limit: session.chart.calories.max > 0 ? .calories(value: session.chart.calories.max, caption: true) : nil,
-                 progress: .init(current: walker.calories, max: session.chart.calories.max))
+                 limit: chart.calories.max > 0 ? .calories(value: chart.calories.max, caption: true) : nil,
+                 progress: .init(current: walker.calories, max: chart.calories.max))
             
             Spacer()
         }
@@ -27,7 +29,7 @@ struct Walking: View {
             walker.tiles = $0
         }
         .safeAreaInset(edge: .top, spacing: 0) {
-            Top(session: session, walker: walker)
+            Top(session: session, walker: walker, chart: chart)
         }
         .onDisappear {
             Task {

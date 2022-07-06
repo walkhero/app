@@ -1,8 +1,30 @@
 import StoreKit
 import UserNotifications
 import Combine
+import Hero
 
 final actor Store {
+    enum Status: Equatable {
+        case
+        loading,
+        ready,
+        error(String)
+    }
+    
+    enum Item: String, CaseIterable {
+        case
+        plus = "walkhero.plus"
+        
+        func purchased(active: Bool) async {
+            if active {
+                Defaults.isPremium = true
+                await UNUserNotificationCenter.send(message: "Walk Hero + purchase successful!")
+            } else {
+                Defaults.isPremium = false
+            }
+        }
+    }
+    
     nonisolated let status = CurrentValueSubject<Status, Never>(.ready)
     private var products = [Item : Product]()
     private var restored = false

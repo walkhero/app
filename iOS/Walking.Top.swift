@@ -4,7 +4,8 @@ import Hero
 extension Walking {
     struct Top: View {
         @ObservedObject var session: Session
-        @ObservedObject var walker: Walker
+        let walker: Walker
+        let chart: Chart
         @State private var alert = false
         @Environment(\.scenePhase) private var phase
         
@@ -19,10 +20,10 @@ extension Walking {
                                     .frame(height: 60)
                             }
                             
-                            if session.chart.walks > 0 {
-                                Text((.streak(value: session.chart.streak.current)
+                            if chart.walks > 0 {
+                                Text((.streak(value: chart.streak.current)
                                       + .init("  ")
-                                      + .walks(value: session.chart.walks))
+                                      + .walks(value: chart.walks))
                                     .numeric(font: .callout.monospacedDigit(),
                                              color: .primary))
                                 .font(.caption.weight(.regular))
@@ -33,9 +34,9 @@ extension Walking {
                             ZStack {
                                 Capsule()
                                     .fill(Color.accentColor.opacity(0.2))
-                                if session.walking > 0 && session.chart.duration.max > 0 {
+                                if session.walking > 0 && chart.duration.max > 0 {
                                     Progress(current: .init(time.date.timestamp - session.walking),
-                                             max: session.chart.duration.max)
+                                             max: chart.duration.max)
                                         .stroke(Color.accentColor, style: .init(lineWidth: 7, lineCap: .round))
                                 }
                             }
@@ -65,8 +66,9 @@ extension Walking {
                             
                             Button {
                                 Task {
-                                    session.summary = await walker.finish(walking: session.walking,
-                                                                          chart: session.chart)
+                                    session.summary = await walker.finish(
+                                        walking: session.walking,
+                                        chart: chart)
                                 }
                             } label: {
                                 Text("Finish")

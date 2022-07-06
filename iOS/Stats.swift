@@ -3,6 +3,7 @@ import Hero
 
 struct Stats: View {
     @ObservedObject var session: Session
+    let chart: Chart
     @AppStorage("premium") private var premium = false
     
     var body: some View {
@@ -11,7 +12,7 @@ struct Stats: View {
                 Spacer()
                     .frame(height: 5)
                 
-                Walked(updated: session.chart.updated)
+                Walked(updated: chart.updated)
                 
                 if Defaults.froob {
                     if !premium {
@@ -26,7 +27,7 @@ struct Stats: View {
         }
         .safeAreaInset(edge: .top, spacing: 0) {
             Main.Title(title: "Overview")  {
-                if let updated = session.chart.updated?.start,
+                if let updated = chart.updated?.start,
                     Calendar.global.isDateInToday(updated) {
                     Text("Walk today")
                         .font(.footnote.weight(.medium))
@@ -54,80 +55,80 @@ struct Stats: View {
         Explore(leaf: .init(squares: session.tiles.count))
         
         Item(title: nil,
-             value: .streak(value: session.chart.streak.current)
+             value: .streak(value: chart.streak.current)
                      + .init("  ")
-                     + .walks(value: session.chart.walks),
-             content: session.chart.walks > 0
+                     + .walks(value: chart.walks),
+             content: chart.walks > 0
              ? .init(title: "Streak",
                      trend: nil,
                      average: heading(title: "Current")
-                             + .streak(value: session.chart.streak.current),
+                             + .streak(value: chart.streak.current),
                      max: heading(title: "Max")
-                             + .streak(value: session.chart.streak.max),
-                     total: .walks(value: session.chart.walks),
-                     progress: .init(current: session.chart.streak.current,
-                                        max: session.chart.streak.max))
+                             + .streak(value: chart.streak.max),
+                     total: .walks(value: chart.walks),
+                     progress: .init(current: chart.streak.current,
+                                        max: chart.streak.max))
              : nil)
     }
     
     @ViewBuilder private var health: some View {
         Item(title: "Time",
-             value: .duration(value: session.chart.duration.total),
-             content: session.chart.duration.total > 0
+             value: .duration(value: chart.duration.total),
+             content: chart.duration.total > 0
              ? .init(title: "Time",
-                     trend: session.chart.duration.trend,
+                     trend: chart.duration.trend,
                      average: heading(title: "Average")
-                         + .duration(value: session.chart.duration.average),
+                         + .duration(value: chart.duration.average),
                      max: heading(title: "Max")
-                         + .duration(value: session.chart.duration.max),
-                     total: .duration(value: session.chart.duration.total),
-                     progress: .init(current: session.chart.duration.average,
-                                     max: session.chart.duration.max))
+                         + .duration(value: chart.duration.max),
+                     total: .duration(value: chart.duration.total),
+                     progress: .init(current: chart.duration.average,
+                                     max: chart.duration.max))
              : nil)
         
         Item(title: "Steps",
-             value: .plain(value: session.chart.duration.total),
-             content: session.chart.steps.total > 0
+             value: .plain(value: chart.duration.total),
+             content: chart.steps.total > 0
              ? .init(title: "Steps",
-                     trend: session.chart.steps.trend,
+                     trend: chart.steps.trend,
                      average: heading(title: "Average")
-                         + .plain(value: session.chart.steps.average),
+                         + .plain(value: chart.steps.average),
                      max: heading(title: "Max")
-                         + .plain(value: session.chart.steps.max),
-                     total: .plain(value: session.chart.steps.total),
-                     progress: .init(current: session.chart.steps.average,
-                                     max: session.chart.steps.max))
+                         + .plain(value: chart.steps.max),
+                     total: .plain(value: chart.steps.total),
+                     progress: .init(current: chart.steps.average,
+                                     max: chart.steps.max))
              : nil)
         
         Item(title: "Distance",
-             value: .metres(value: session.chart.metres.total, fraction: false),
-             content: session.chart.metres.total > 0
+             value: .metres(value: chart.metres.total, fraction: false),
+             content: chart.metres.total > 0
              ? .init(title: "Distance",
-                     trend: session.chart.metres.trend,
+                     trend: chart.metres.trend,
                      average: heading(title: "Average")
-                         + .metres(value: session.chart.metres.average,
+                         + .metres(value: chart.metres.average,
                                    fraction: true),
                      max: heading(title: "Max")
-                         + .metres(value: session.chart.metres.max,
+                         + .metres(value: chart.metres.max,
                                    fraction: true),
-                     total: .metres(value: session.chart.metres.total,
+                     total: .metres(value: chart.metres.total,
                                     fraction: false),
-                     progress: .init(current: session.chart.metres.average,
-                                     max: session.chart.metres.max))
+                     progress: .init(current: chart.metres.average,
+                                     max: chart.metres.max))
              : nil)
         
         Item(title: "Calories",
-             value: .calories(value: session.chart.calories.total, caption: false),
-             content: session.chart.calories.total > 0
+             value: .calories(value: chart.calories.total, caption: false),
+             content: chart.calories.total > 0
              ? .init(title: "Calories",
-                     trend: session.chart.calories.trend,
+                     trend: chart.calories.trend,
                      average: heading(title: "Average")
-                         + .calories(value: session.chart.calories.average, caption: false),
+                         + .calories(value: chart.calories.average, caption: false),
                      max: heading(title: "Max")
-                         + .calories(value: session.chart.calories.max, caption: false),
-                     total: .calories(value: session.chart.calories.total, caption: false),
-                     progress: .init(current: session.chart.calories.average,
-                                     max: session.chart.calories.max))
+                         + .calories(value: chart.calories.max, caption: false),
+                     total: .calories(value: chart.calories.total, caption: false),
+                     progress: .init(current: chart.calories.average,
+                                     max: chart.calories.max))
              : nil)
     }
     

@@ -3,8 +3,9 @@ import Hero
 
 extension Walking {
     struct Actions: View {
-        @ObservedObject var session: Session
+        let session: Session
         let walker: Walker
+        let chart: Chart
         @State private var alert = false
         
         var body: some View {
@@ -57,7 +58,7 @@ extension Walking {
                     Button("Finish") {
                         Task {
                             let summary = await walker.finish(walking: session.walking,
-                                                                  chart: session.chart)
+                                                                  chart: chart)
                             
                             withAnimation(.easeInOut(duration: 0.7)) {
                                 session.summary = summary

@@ -2,7 +2,7 @@ import SwiftUI
 import Hero
 
 struct Achievement: View {
-    @ObservedObject var session: Session
+    let session: Session
     let leaf: Leaf
     
     var body: some View {
