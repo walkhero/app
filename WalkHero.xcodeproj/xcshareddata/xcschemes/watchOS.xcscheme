@@ -87,7 +87,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "Walk Hero"
+      customArchiveName = "Walk"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

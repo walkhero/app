@@ -43,7 +43,7 @@
 		CE25232C278C6FFD000A26C5 /* WalkHero.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE25232B278C6FFD000A26C5 /* WalkHero.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE252331278C6FFD000A26C5 /* App.Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE252330278C6FFD000A26C5 /* App.Delegate.swift */; };
 		CE252333278C6FFD000A26C5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE252332278C6FFD000A26C5 /* App.swift */; };
-		CE25233E278C6FFD000A26C5 /* WalkHero.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CE252323278C6FFC000A26C5 /* WalkHero.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE25233E278C6FFD000A26C5 /* Walk.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CE252323278C6FFC000A26C5 /* Walk.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE252347278C703C000A26C5 /* Accent.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF40CBC2779FBB3001BECAB /* Accent.xcassets */; };
 		CE252348278C703E000A26C5 /* Accent.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF40CBC2779FBB3001BECAB /* Accent.xcassets */; };
 		CE252349278C70B0000A26C5 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF40CA92779F6D9001BECAB /* Global.swift */; };
@@ -128,7 +128,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				CE25233E278C6FFD000A26C5 /* WalkHero.app in Embed Watch Content */,
+				CE25233E278C6FFD000A26C5 /* Walk.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,7 +174,7 @@
 		CE1912B7285CDD4000956D95 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CE1912B9285CDEA400956D95 /* Settings.Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.Info.swift; sourceTree = "<group>"; };
 		CE1912BB285CE2C700956D95 /* Main.Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.Mapper.swift; sourceTree = "<group>"; };
-		CE252323278C6FFC000A26C5 /* WalkHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE252323278C6FFC000A26C5 /* Walk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE252325278C6FFD000A26C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE25232B278C6FFD000A26C5 /* WalkHero.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WalkHero.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE252330278C6FFD000A26C5 /* App.Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.Delegate.swift; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				CE512EE12779F1FF003ED854 /* WalkHero.app */,
-				CE252323278C6FFC000A26C5 /* WalkHero.app */,
+				CE252323278C6FFC000A26C5 /* Walk.app */,
 				CE25232B278C6FFD000A26C5 /* WalkHero.appex */,
 			);
 			name = Products;
@@ -421,7 +421,7 @@
 			);
 			name = watchOS;
 			productName = watchOS;
-			productReference = CE252323278C6FFC000A26C5 /* WalkHero.app */;
+			productReference = CE252323278C6FFC000A26C5 /* Walk.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		CE25232A278C6FFD000A26C5 /* watchOS Extension */ = {
@@ -797,7 +797,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = watchOS_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "Walk Hero";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = walkhero;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -805,6 +804,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = walkhero.wrapper;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)wrapper";
+				PRODUCT_NAME = Walk;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -867,13 +867,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = watchOS_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "Walk Hero";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = walkhero;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = walkhero.wrapper;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)wrapper";
+				PRODUCT_NAME = Walk;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -939,12 +939,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "watchOS Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Walk Hero";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Walk Hero counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Walk Hero counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "2021-2022 Walk Hero";
+				INFOPLIST_KEY_CFBundleDisplayName = Walk;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Walk counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Walk counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "2021-2022 Walk";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This permission is just to have more accuracy of what areas of the world are you walking, even when the app is not active. This only gets activated when you have a Walk active.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Walk Hero access your location to display where you are walking and discovering new areas of the world. This data is never shared nor stored, and never leaves your device. It is optional but useful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Walk access your location to display where you are walking and discovering new areas of the world. This data is never shared nor stored, and never leaves your device. It is optional but useful if you want to participate on the leaderboards.";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1016,12 +1016,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "watchOS Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Walk Hero";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Walk Hero counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Walk Hero counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "2021-2022 Walk Hero";
+				INFOPLIST_KEY_CFBundleDisplayName = Walk;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Walk counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Walk counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "2021-2022 Walk";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This permission is just to have more accuracy of what areas of the world are you walking, even when the app is not active. This only gets activated when you have a Walk active.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Walk Hero access your location to display where you are walking and discovering new areas of the world. This data is never shared nor stored, and never leaves your device. It is optional but useful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Walk access your location to display where you are walking and discovering new areas of the world. This data is never shared nor stored, and never leaves your device. It is optional but useful if you want to participate on the leaderboards.";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1098,11 +1098,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Walk Hero";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Walk Hero counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Walk Hero counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_CFBundleDisplayName = Walk;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Walk counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Walk counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This permission is just to have more accuracy of what areas of the world are you walking, even when the app is not active. This only gets activated when you have a Walk active.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Walk Hero access your location to display where you are walking and discovering new areas of the world. This data is never shared nor stored, and never leaves your device. It is optional but useful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Walk access your location to display where you are walking and discovering new areas of the world. This data is never shared nor stored, and never leaves your device. It is optional but useful if you want to participate on the leaderboards.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
@@ -1177,11 +1177,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Walk Hero";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Walk Hero counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Walk Hero counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_CFBundleDisplayName = Walk;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Walk counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Walk counts your steps and walking distance, this permission is optional but helpful if you want to participate on the leaderboards.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This permission is just to have more accuracy of what areas of the world are you walking, even when the app is not active. This only gets activated when you have a Walk active.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Walk Hero access your location to display where you are walking and discovering new areas of the world. This data is never shared nor stored, and never leaves your device. It is optional but useful if you want to participate on the leaderboards.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Walk access your location to display where you are walking and discovering new areas of the world. This data is never shared nor stored, and never leaves your device. It is optional but useful if you want to participate on the leaderboards.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;

@@ -31,7 +31,7 @@ struct Purchases: View {
             Spacer()
             
             if premium {
-                Text("Walk Hero +")
+                Text("Walk Sponsor")
                     .font(.title.weight(.regular))
                 Image(systemName: "checkmark.circle.fill")
                     .font(.system(size: 50, weight: .medium))
@@ -64,7 +64,7 @@ struct Purchases: View {
                                 await store.purchase(product)
                             }
                         } label: {
-                            Text("Get Walk Hero +")
+                            Text("Get Walk Sponsor")
                                 .font(.callout.weight(.semibold))
                                 .frame(minWidth: 260)
                                 .frame(minHeight: 28)

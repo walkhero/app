@@ -18,7 +18,7 @@ final actor Store {
         func purchased(active: Bool) async {
             if active {
                 Defaults.isPremium = true
-                await UNUserNotificationCenter.send(message: "Walk Hero + purchase successful!")
+                await UNUserNotificationCenter.send(message: "Walk Sponsor purchase successful!")
             } else {
                 Defaults.isPremium = false
             }

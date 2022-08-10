@@ -33,7 +33,7 @@ struct Settings: View {
     
     private var purchases: some View {
         Section("In-App Purchases") {
-            Item(title: "Walk Hero Plus", symbol: "plus") {
+            Item(title: "Walk Sponsor", symbol: "heart") {
                 store = true
             }
             .sheet(isPresented: $store, content: Purchases.init)
@@ -88,7 +88,7 @@ struct Settings: View {
     }
     
     private var app: some View {
-        Section("Walk Hero") {
+        Section("Walk") {
             Item(title: "About", symbol: "figure.walk") {
                 about = true
             }

@@ -29,7 +29,7 @@ struct Upgrade: View {
                         alert = true
                     }
                 } label: {
-                    Text("Get Walk Hero +")
+                    Text("Get Walk Sponsor")
                         .font(.callout.weight(.medium))
                         .padding(.horizontal)
                         .frame(minHeight: 28)

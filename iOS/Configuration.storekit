@@ -10,13 +10,13 @@
       "internalID" : "30D8BC99",
       "localizations" : [
         {
-          "description" : "Support the development of Walk Hero.",
-          "displayName" : "Walk Hero +",
+          "description" : "Sponsor the development of Walk.",
+          "displayName" : "Walk Sponsor",
           "locale" : "en_US"
         }
       ],
       "productID" : "walkhero.plus",
-      "referenceName" : "WalkHero+",
+      "referenceName" : "Walk Sponsor",
       "type" : "NonConsumable"
     }
   ],
@@ -28,6 +28,6 @@
   ],
   "version" : {
     "major" : 1,
-    "minor" : 1
+    "minor" : 2
   }
 }

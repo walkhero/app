@@ -23,7 +23,7 @@ struct About: View {
             Image("Logo")
                 .foregroundColor(.accentColor)
                 .padding(.top, 50)
-            Text("Walk Hero")
+            Text("Walk")
                 .font(.title.weight(.regular))
                 .foregroundColor(.primary)
                 .padding(.top, 10)
@@ -32,7 +32,7 @@ struct About: View {
             VStack {
                 Spacer()
                 Button {
-                    UIApplication.shared.share(URL(string: "https://apps.apple.com/us/app/walkhero/id1560309078?platform=iphone")!)
+                    UIApplication.shared.share(URL(string: "https://apps.apple.com/us/app/walk/id1560309078?platform=iphone")!)
                 } label: {
                     Image(systemName: "square.and.arrow.up.circle.fill")
                         .symbolRenderingMode(.hierarchical)
