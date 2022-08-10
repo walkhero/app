@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE252322278C6FFC000A26C5"
-               BuildableName = "WalkHero.app"
+               BuildableName = "Walk.app"
                BlueprintName = "watchOS"
                ReferencedContainer = "container:WalkHero.xcodeproj">
             </BuildableReference>
@@ -59,7 +59,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE252322278C6FFC000A26C5"
-            BuildableName = "WalkHero.app"
+            BuildableName = "Walk.app"
             BlueprintName = "watchOS"
             ReferencedContainer = "container:WalkHero.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE252322278C6FFC000A26C5"
-            BuildableName = "WalkHero.app"
+            BuildableName = "Walk.app"
             BlueprintName = "watchOS"
             ReferencedContainer = "container:WalkHero.xcodeproj">
          </BuildableReference>
