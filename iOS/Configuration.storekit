@@ -10,13 +10,13 @@
       "internalID" : "30D8BC99",
       "localizations" : [
         {
-          "description" : "Sponsor the development of Walk.",
-          "displayName" : "Walk Sponsor",
+          "description" : "Contribute to the development of the app.",
+          "displayName" : "Sponsor Walk",
           "locale" : "en_US"
         }
       ],
       "productID" : "walkhero.plus",
-      "referenceName" : "Walk Sponsor",
+      "referenceName" : "Sponsor Walk",
       "type" : "NonConsumable"
     }
   ],

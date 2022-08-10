@@ -15,7 +15,7 @@ struct Upgrade: View {
                     .symbolRenderingMode(.hierarchical)
                     .foregroundStyle(.secondary)
             } else {
-                Text("Support the\nteam behind the app.")
+                Text("Support the\ndevelopment of Walk.")
                     .multilineTextAlignment(.center)
                     .font(.callout)
                     .fixedSize(horizontal: false, vertical: true)
@@ -29,7 +29,7 @@ struct Upgrade: View {
                         alert = true
                     }
                 } label: {
-                    Text("Get Walk Sponsor")
+                    Text("Sponsor Walk")
                         .font(.callout.weight(.medium))
                         .padding(.horizontal)
                         .frame(minHeight: 28)

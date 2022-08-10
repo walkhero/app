@@ -56,7 +56,7 @@ struct Purchases: View {
                         Text(product.description)
                             .font(.body.weight(.medium))
                             .multilineTextAlignment(.center)
-                            .frame(maxWidth: 220)
+                            .frame(maxWidth: 200)
                             .fixedSize(horizontal: false, vertical: true)
                         
                         Button {
@@ -64,7 +64,7 @@ struct Purchases: View {
                                 await store.purchase(product)
                             }
                         } label: {
-                            Text("Get Walk Sponsor")
+                            Text("Get Sponsor Walk")
                                 .font(.callout.weight(.semibold))
                                 .frame(minWidth: 260)
                                 .frame(minHeight: 28)

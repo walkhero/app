@@ -33,7 +33,7 @@ struct Settings: View {
     
     private var purchases: some View {
         Section("In-App Purchases") {
-            Item(title: "Walk Sponsor", symbol: "heart") {
+            Item(title: "Sponsor Walk", symbol: "heart") {
                 store = true
             }
             .sheet(isPresented: $store, content: Purchases.init)

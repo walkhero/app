@@ -14,11 +14,11 @@ struct Stats: View {
                 
                 Walked(updated: chart.updated)
                 
-                if Defaults.froob {
-                    if !premium {
+//                if Defaults.froob {
+//                    if !premium {
                         Upgrade()
-                    }
-                }
+//                    }
+//                }
                 
                 achievements
                 health
