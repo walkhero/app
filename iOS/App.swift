@@ -21,16 +21,16 @@ import Hero
                 }
                 .task {
                     cloud.ready.notify(queue: .main) {
-                        cloud.pull.send()
-                        Defaults.start()
                         session.loaded = true
+                        Defaults.start()
                         
-                        Task
-                            .detached {
-                                await request()
-                                await store.launch()
-                            }
                     }
+                    
+                    Task
+                        .detached {
+                            await request()
+                            await store.launch()
+                        }
                 }
         }
         .onChange(of: phase) {

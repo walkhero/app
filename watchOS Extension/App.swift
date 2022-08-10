@@ -20,14 +20,13 @@ import HealthKit
                 }
                 .task {
                     cloud.ready.notify(queue: .main) {
-                        cloud.pull.send()
                         session.loaded = true
-                        
-                        Task
-                            .detached {
-                                await request()
-                            }
                     }
+                    
+                    Task
+                        .detached {
+                            await request()
+                        }
                 }
         }
         .onChange(of: phase) {
